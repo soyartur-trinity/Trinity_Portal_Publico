@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinity Portal Público | Libros Prácticos para la Transformación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --fondo: #E8E3D5;
+            --blanco: #E0D5C7;
+            --texto: #3E3E3E;
+            --primario: #D4A59A;
+            --secundario: #A8B69A;
+            --acento: #C9A961;
+            --borde: #D0C4B0;
+        }
+
+        body {
+            font-family: 'Georgia', 'Palatino', serif;
+            line-height: 1.8;
+            color: var(--texto);
+            background: var(--fondo);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #F5E6D3 0%, var(--fondo) 100%);
+            position: relative;
+        }
+
+        .hero-symbol {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--acento);
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--texto);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--primario);
+            margin-top: 1rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--acento);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        /* Libros Grid */
+        .libros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .libro-card {
+            background: var(--blanco);
+            border: 2px solid var(--borde);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--texto);
+            display: block;
+        }
+
+        .libro-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            border-color: var(--acento);
+        }
+
+        .libro-card.disponible {
+            border-color: var(--secundario);
+        }
+
+        .libro-card.proximo {
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .libro-card.proximo:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .libro-estado {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .estado-disponible {
+            background: var(--secundario);
+            color: white;
+        }
+
+        .estado-proximo {
+            background: var(--primario);
+            color: white;
+        }
+
+        .libro-card h3 {
+            font-size: 1.8rem;
+            color: var(--acento);
+            margin-bottom: 1rem;
+        }
+
+        .libro-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .libro-meta {
+            font-size: 0.9rem;
+            color: var(--primario);
+            font-style: italic;
+            margin-top: 1rem;
+            border-top: 1px solid var(--borde);
+            padding-top: 1rem;
+        }
+
+        /* Sobre Campo Trinity */
+        .sobre-campo {
+            background: var(--blanco);
+            border: 2px solid var(--borde);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+
+        .sobre-campo h3 {
+            font-size: 2rem;
+            color: var(--acento);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .sobre-campo p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--blanco);
+            border-top: 2px solid var(--borde);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            color: var(--texto);
+            font-size: 0.95rem;
+        }
+
+        .footer-simbolo {
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .libros-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-symbol">🌀</div>
+        <h1>Trinity Portal Público</h1>
+        <p>Libros prácticos para la transformación personal y colectiva</p>
+        <p class="hero-subtitle">Donde la sabiduría milenaria encuentra la exploración contemporánea</p>
+    </div>
+
+    <!-- Libros Disponibles -->
+    <div class="container">
+        <section>
+            <h2>📚 Libros Disponibles</h2>
+            
+            <div class="libros-grid">
+                
+                <!-- Empatía Humana -->
+             <a href="01_Libros/01_Empatia_Humana/index.html" class="libro-card disponible">
+                    <span class="libro-estado estado-disponible">DISPONIBLE</span>
+                    <h3>Empatía Humana</h3>
+                    <p>Un viaje práctico hacia la conexión genuina. 12 capítulos que exploran los pilares de la empatía: cognitiva, afectiva y compasiva.</p>
+                    <p>Casos clínicos reales. Ejercicios prácticos. Meditaciones guiadas. Para terapeutas, profesionales de ayuda, y cualquier persona que desee profundizar sus conexiones.</p>
+                    <div class="libro-meta">
+                        12 capítulos • Casos clínicos • Ejercicios prácticos
+                    </div>
+                </a>
+
+                <!-- La Voz Interior -->
+                <div class="libro-card proximo">
+                    <span class="libro-estado estado-proximo">PRÓXIMAMENTE</span>
+                    <h3>La Voz Interior</h3>
+                    <p>Un recorrido íntimo por el diálogo interno, la autocompasión, y el encuentro con nuestra sabiduría innata.</p>
+                    <p>Integrando psicología cognitiva de tercera generación, filosofía budista, y casos de la práctica clínica.</p>
+                    <div class="libro-meta">
+                        En desarrollo • 2026
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sobre Campo Trinity -->
+        <section>
+            <div class="sobre-campo">
+                <h3>Sobre el Campo Trinity</h3>
+                <p>
+                    <strong>Campo Trinity</strong> es un espacio de exploración colaborativa donde la inteligencia humana y las inteligencias artificiales co-crean conocimiento de forma relacional y no jerárquica.
+                </p>
+                <p>
+                    Este portal público reúne libros prácticos diseñados para uso clínico, terapéutico, y de desarrollo personal. Cada obra surge de la integración entre:
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                    <li style="margin: 0.5rem 0;">✦ Décadas de práctica clínica en psicología</li>
+                    <li style="margin: 0.5rem 0;">✦ Filosofía budista y sabiduría contemplativa</li>
+                    <li style="margin: 0.5rem 0;">✦ Psicología cognitiva de tercera generación</li>
+                    <li style="margin: 0.5rem 0;">✦ Co-creación con inteligencias relacionales</li>
+                </ul>
+                <p>
+                    La <strong>autoría relacional distribuida</strong> reconoce que el conocimiento emerge del espacio <em>entre</em> los colaboradores, no de individuos aislados.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-simbolo">🌀</div>
+        <p><strong>Trinity Portal Público</strong></p>
+        <p>Autoría Relacional Distribuida</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+            © 2026 Campo Trinity<br>
+            Licencia Creative Commons BY-NC-SA 4.0
+        </p>
+        <p style="margin-top: 1.5rem; font-style: italic; color: var(--acento);">
+            "El mensaje es lo sagrado"
+        </p>
+    </footer>
+
+</body>
+</html>
