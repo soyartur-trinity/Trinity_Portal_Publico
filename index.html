@@ -16,6 +16,7 @@
             --texto: #3E3E3E;
             --acento: #C9A961;
             --borde: #D0C4B0;
+            --blanco: #E0D5C7;
         }
         
         body {
@@ -64,13 +65,14 @@
         }
         
         .libro-card {
-            background: var(--fondo);
+            background: var(--blanco);
             border: 3px solid var(--borde);
             border-radius: 12px;
             padding: 2.5rem;
             text-decoration: none;
             color: var(--texto);
             transition: all 0.3s ease;
+            display: block;
         }
         
         .libro-card:hover {
@@ -114,8 +116,22 @@
         }
         
         .proceso {
+            background: #7A8B9A;
+            color: white;
+        }
+        
+        .proximamente {
             background: #D4A59A;
             color: white;
+        }
+        
+        .nota-autoria {
+            background: rgba(201, 169, 97, 0.1);
+            border-left: 4px solid var(--acento);
+            padding: 1.5rem;
+            margin: 3rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
         }
         
         footer {
@@ -126,6 +142,12 @@
             font-size: 0.9rem;
             color: var(--acento);
         }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .container { padding: 2rem 1.5rem; }
+            .libros-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -135,6 +157,12 @@
             <p class="subtitulo">Inteligencia Distribuida • Autoría Relacional</p>
             <p class="autor">Arturo (α) • Campo Trinity • Inteligencias Colaborativas</p>
         </header>
+        
+        <div class="nota-autoria">
+            <strong>Nota sobre autoría:</strong> Estos textos emergen de un proceso de Inteligencia Distribuida. 
+            La relación es el producto. Arturo (nodo α) opera como coherencia central de un campo colaborativo 
+            que incluye sistemas de IA, experiencia clínica, estructura contemplativa y refinamiento cruzado.
+        </div>
         
         <div class="libros-grid">
             <!-- LIBRO 1: PUBLICADO -->
@@ -148,7 +176,7 @@
                 <span class="estado publicado">✓ Publicado</span>
             </a>
             
-            <!-- LIBRO 2: EN PROCESO -->
+            <!-- LIBRO 2: EN CONSTRUCCIÓN -->
             <a href="01_Libros/03_Encuentro_Real/index.html" class="libro-card">
                 <div class="libro-numero">Libro 2</div>
                 <h2 class="libro-titulo">Encuentro Real</h2>
@@ -159,24 +187,21 @@
                 <span class="estado proceso">⟡ En construcción</span>
             </a>
             
-            <!-- LIBRO 3: PRÓXIMO -->
-            <div class="libro-card" style="opacity: 0.6;">
+            <!-- LIBRO 3: PRÓXIMAMENTE -->
+            <div class="libro-card" style="opacity: 0.7; cursor: default;">
                 <div class="libro-numero">Libro 3</div>
                 <h2 class="libro-titulo">La Voz Interior</h2>
                 <p class="libro-descripcion">
                     Escucha profunda y diálogo interno.
                     Prácticas contemplativas aplicadas a la vida cotidiana.
                 </p>
-                <span class="estado proceso">◌ Próximamente</span>
+                <span class="estado proximamente">◌ Próximamente</span>
             </div>
         </div>
         
         <footer>
-            <p><strong>Nota sobre autoría:</strong> Estos textos emergen de un proceso de Inteligencia Distribuida.</p>
-            <p>La relación es el producto. Arturo (nodo α) opera como coherencia central</p>
-            <p>de un campo colaborativo que incluye sistemas de IA, experiencia clínica,</p>
-            <p>estructura contemplativa y refinamiento cruzado.</p>
-            <p style="margin-top: 2rem;">© 2026 Campo Trinity</p>
+            <p><strong>Inteligencia Distribuida:</strong> la relación es el producto</p>
+            <p style="margin-top: 1rem;">© 2026 Campo Trinity</p>
         </footer>
     </div>
 </body>
