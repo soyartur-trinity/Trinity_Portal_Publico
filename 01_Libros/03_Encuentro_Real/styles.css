@@ -1,0 +1,330 @@
+/* Encuentro Real - Estilos Específicos */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de color - Paleta fría/serena (azul pizarra) */
+:root {
+    --fondo: #E8E3D5;
+    --texto: #3E3E3E;
+    --primario: #7A8B9A;
+    --secundario: #8B9A7A;
+    --acento: #5D6B7A;
+    --borde: #D0C4B0;
+    --blanco: #E6DED5;
+}
+
+/* Tipografía base */
+body {
+    font-family: Georgia, serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.8;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Navegación */
+nav {
+    background: var(--blanco);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--secundario);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--acento);
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #F5E6D3 0%, var(--fondo) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--borde);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--acento);
+}
+
+.hero .subtitulo {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--texto);
+    font-style: italic;
+}
+
+.autoria {
+    font-size: 0.95rem;
+    color: var(--secundario);
+}
+
+/* Grid de territorios */
+.territorios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.territorio-card {
+    background: var(--blanco);
+    border: 3px solid var(--borde);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    color: var(--texto);
+}
+
+.territorio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(93,107,122,0.2);
+    border-color: var(--acento);
+}
+
+.territorio-numero {
+    font-size: 0.85rem;
+    color: var(--secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.territorio-titulo {
+    font-size: 1.5rem;
+    color: var(--acento);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.territorio-descripcion {
+    font-size: 0.95rem;
+    color: #6B6B6B;
+    line-height: 1.6;
+}
+
+/* Introducción */
+.introduccion {
+    max-width: 700px;
+    margin: 3rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+/* Nota de autoría distribuida */
+.nota-distribuida {
+    background: rgba(93,107,122,0.08);
+    border-left: 4px solid var(--acento);
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+}
+
+/* Separadores */
+.separador {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secundario);
+    margin: 3rem 0;
+    letter-spacing: 8px;
+}
+
+/* Títulos de sección */
+.titulo-seccion {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--acento);
+    margin-bottom: 2rem;
+}
+
+/* Info estructura */
+.info-estructura {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 0.95rem;
+    color: var(--secundario);
+}
+
+/* Footer */
+footer {
+    background: var(--texto);
+    color: var(--fondo);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: var(--acento);
+    text-decoration: none;
+}
+
+/* Estilos para páginas de contenido (prólogo, nodos, cierre) */
+.contenido-libro {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.prologo-header {
+    text-align: center;
+    padding: 2rem 0 3rem;
+    border-bottom: 3px solid var(--borde);
+    margin-bottom: 3rem;
+}
+
+.prologo-header h1 {
+    font-size: 2.2rem;
+    color: var(--acento);
+    margin-bottom: 0.5rem;
+}
+
+.prologo-header .subtitulo {
+    font-size: 1.1rem;
+    color: var(--secundario);
+    font-style: italic;
+}
+
+.prologo-texto p {
+    margin-bottom: 1.8rem;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+.prologo-texto .destacado {
+    border-left: 4px solid var(--acento);
+    padding-left: 1.5rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: var(--texto);
+}
+
+.prologo-texto .frase-central {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--acento);
+    margin: 3rem 0;
+    font-weight: 500;
+}
+
+.simbolo-separador {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secundario);
+    margin: 3rem 0;
+    letter-spacing: 8px;
+}
+
+.nav-inferior {
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem 0 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--borde);
+}
+
+.nav-inferior a {
+    color: var(--secundario);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--borde);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-inferior a:hover {
+    background: var(--acento);
+    color: var(--blanco);
+    border-color: var(--acento);
+}
+
+.nota-lectura {
+    background: rgba(93,107,122,0.08);
+    padding: 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--primario);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* Énfasis */
+strong {
+    color: var(--acento);
+    font-weight: 600;
+}
+
+em {
+    color: var(--secundario);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .territorios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nav-inferior {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
