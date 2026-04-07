@@ -1,0 +1,573 @@
+/* La Voz Interior - Estilos Específicos */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de color - Paleta contemplativa (violeta) */
+:root {
+    --fondo: #E8E3D5;
+    --texto: #3E3E3E;
+    --primario: #9A7B8B;
+    --secundario: #7A9A8B;
+    --acento: #8B6B9A;
+    --borde: #D0C4B0;
+    --blanco: #E6DED5;
+    
+    /* Colores de tarjetas de contenido */
+    --caso-clinico: #F5E6F0;
+    --ejercicio: #E6F5ED;
+    --tecnica: #F0E6F5;
+    --nota: #F5F0E6;
+}
+
+/* Tipografía base */
+body {
+    font-family: Georgia, serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.8;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Navegación */
+nav {
+    background: var(--blanco);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid var(--borde);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+nav a {
+    color: var(--secundario);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--acento);
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #F5E6F0 0%, var(--fondo) 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--borde);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--acento);
+}
+
+.hero .subtitulo {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--texto);
+    font-style: italic;
+}
+
+.autoria {
+    font-size: 0.95rem;
+    color: var(--secundario);
+}
+
+/* Grid de capítulos */
+.capitulos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.capitulo-card {
+    background: var(--blanco);
+    border: 3px solid var(--borde);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    color: var(--texto);
+}
+
+.capitulo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(139,107,154,0.2);
+    border-color: var(--acento);
+}
+
+.capitulo-numero {
+    font-size: 0.85rem;
+    color: var(--secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.capitulo-titulo {
+    font-size: 1.5rem;
+    color: var(--acento);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.capitulo-descripcion {
+    font-size: 0.95rem;
+    color: #6B6B6B;
+    line-height: 1.6;
+}
+
+/* Introducción */
+.introduccion {
+    max-width: 700px;
+    margin: 3rem auto;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.9;
+}
+
+/* Nota de autoría distribuida */
+.nota-distribuida {
+    background: rgba(139,107,154,0.08);
+    border-left: 4px solid var(--acento);
+    padding: 1.5rem;
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.95rem;
+}
+
+/* Separadores */
+.separador {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secundario);
+    margin: 3rem 0;
+    letter-spacing: 8px;
+}
+
+/* Títulos de sección */
+.titulo-seccion {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--acento);
+    margin-bottom: 2rem;
+}
+
+/* Info estructura */
+.info-estructura {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 0.95rem;
+    color: var(--secundario);
+}
+
+/* Footer */
+footer {
+    background: var(--texto);
+    color: var(--fondo);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: var(--acento);
+    text-decoration: none;
+}
+
+/* Estilos para páginas de contenido */
+.contenido-libro {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.prologo-header {
+    text-align: center;
+    padding: 2rem 0 3rem;
+    border-bottom: 3px solid var(--borde);
+    margin-bottom: 3rem;
+}
+
+.prologo-header h1 {
+    font-size: 2.2rem;
+    color: var(--acento);
+    margin-bottom: 0.5rem;
+}
+
+.prologo-header .subtitulo {
+    font-size: 1.1rem;
+    color: var(--secundario);
+    font-style: italic;
+}
+
+.numero-capitulo {
+    font-size: 0.9rem;
+    color: var(--secundario);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.prologo-texto p {
+    margin-bottom: 1.8rem;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+.prologo-texto .destacado {
+    border-left: 4px solid var(--acento);
+    padding-left: 1.5rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: var(--texto);
+}
+
+.prologo-texto .frase-central {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--acento);
+    margin: 3rem 0;
+    font-weight: 500;
+}
+
+.simbolo-separador {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secundario);
+    margin: 3rem 0;
+    letter-spacing: 8px;
+}
+
+.nav-inferior {
+    display: flex;
+    justify-content: space-between;
+    margin: 4rem 0 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--borde);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.nav-inferior a {
+    color: var(--secundario);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--borde);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-inferior a:hover {
+    background: var(--acento);
+    color: var(--blanco);
+    border-color: var(--acento);
+}
+
+.nota-lectura {
+    background: rgba(139,107,154,0.08);
+    padding: 1.2rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--primario);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* TARJETAS DE CONTENIDO ESPECIAL */
+.caso-clinico {
+    background: linear-gradient(135deg, var(--caso-clinico) 0%, #EDE6F5 100%);
+    border-left: 4px solid var(--acento);
+    border-radius: 0 12px 12px 0;
+    padding: 2rem;
+    margin: 2.5rem 0;
+}
+
+.caso-clinico h4 {
+    color: var(--acento);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.ejercicio-practico {
+    background: linear-gradient(135deg, var(--ejercicio) 0%, #EDF5E6 100%);
+    border-left: 4px solid var(--secundario);
+    border-radius: 0 12px 12px 0;
+    padding: 2rem;
+    margin: 2.5rem 0;
+}
+
+.ejercicio-practico h4 {
+    color: var(--secundario);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tecnica-practica {
+    background: linear-gradient(135deg, var(--tecnica) 0%, #E6E6F5 100%);
+    border-left: 4px solid var(--primario);
+    border-radius: 0 12px 12px 0;
+    padding: 2rem;
+    margin: 2.5rem 0;
+}
+
+.tecnica-practica h4 {
+    color: var(--primario);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.nota-importante {
+    background: linear-gradient(135deg, var(--nota) 0%, #F5F0E6 100%);
+    border-left: 4px solid var(--acento);
+    border-radius: 0 8px 8px 0;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.nota-importante strong {
+    color: var(--acento);
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: var(--blanco);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--borde);
+}
+
+th {
+    background: var(--acento);
+    color: var(--blanco);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(139,107,154,0.05);
+}
+
+/* Listas */
+ul, ol {
+    margin: 1.5rem 0 1.5rem 2rem;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
+}
+
+/* Énfasis */
+strong {
+    color: var(--acento);
+    font-weight: 600;
+}
+
+em {
+    color: var(--secundario);
+}
+
+/* Glosario Modal */
+.glosario-term {
+    color: var(--acento);
+    border-bottom: 2px dotted var(--acento);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.glosario-term:hover {
+    background: rgba(139,107,154,0.1);
+}
+
+.modal-glosario {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-glosario.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--fondo);
+    padding: 3rem;
+    border-radius: 12px;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    border: 3px solid var(--acento);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--acento);
+}
+
+/* Índice de partes colapsable */
+.parte-index {
+    background: var(--blanco);
+    border: 2px solid var(--borde);
+    border-radius: 12px;
+    margin: 2rem 0;
+    overflow: hidden;
+}
+
+.parte-header {
+    background: var(--acento);
+    color: var(--blanco);
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.parte-header:hover {
+    background: var(--primario);
+}
+
+.parte-content {
+    display: none;
+    padding: 1.5rem;
+}
+
+.parte-content.active {
+    display: block;
+}
+
+.parte-content ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.parte-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Barra de progreso de lectura */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--acento);
+    z-index: 200;
+    transition: width 0.3s ease;
+}
+
+/* Botón volver al índice flotante */
+.btn-indice {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--acento);
+    color: var(--blanco);
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(139,107,154,0.4);
+    transition: all 0.3s ease;
+    z-index: 150;
+}
+
+.btn-indice:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(139,107,154,0.6);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .capitulos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nav-inferior {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-indice {
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .modal-content {
+        margin: 1rem;
+        padding: 2rem;
+    }
+}
