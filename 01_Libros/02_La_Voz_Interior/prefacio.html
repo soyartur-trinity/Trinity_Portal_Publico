@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prefacio del Terapeuta - La Voz Interior">
+    <title>Prefacio | La Voz Interior</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <nav>
+        <a href="index.html">← Índice</a>
+        <a href="introduccion.html">Introducción →</a>
+    </nav>
+
+    <div class="contenido-libro">
+        <header class="prologo-header">
+            <p class="numero-capitulo">PRELIMINARES</p>
+            <h1>Prefacio del Terapeuta</h1>
+            <p class="subtitulo">Llevo más de quince años escuchando voces</p>
+        </header>
+
+        <div class="prologo-texto">
+            <p>Llevo más de quince años escuchando voces.</p>
+            <p>No las mías —aunque también las escucho—, sino las de quienes se sientan frente a mí en el consultorio. Voces que juzgan, que exigen, que consuelan, que sabotean, que protegen. Voces que a veces susurran y otras veces gritan. Voces que mis pacientes creen que son ellos, cuando en realidad son visitantes en el espacio de su conciencia.</p>
+            <p>Durante años trabajé con técnicas cognitivo-conductuales tradicionales: identificar pensamientos automáticos, cuestionarlos, reestructurarlos. Funcionaba. Pero algo faltaba. Los pacientes mejoraban sus síntomas, pero la relación con sus voces internas permanecía adversarial. Era como si hubieran aprendido a defenderse de un enemigo, pero no a convivir en paz.</p>
+            <p>Fue el encuentro con el Budismo —específicamente con la práctica de Vipassana y el estudio de la filosofía Madhyamaka— lo que cambió mi mirada. El Buda nunca dijo "elimina tus pensamientos aflictivos". Dijo: "obsérvelos surgir, permanecer y desvanecerse". No guerra, sino observación compasiva.</p>
+            <p>Al mismo tiempo, descubrí el trabajo de Richard Schwartz con el modelo de Sistemas de la Familia Interna (IFS), donde las "partes" de nosotros no son enemigos a vencer sino aspectos que necesitan ser escuchados. Y resonó profundamente con lo que Jung llamaba "complejos autónomos" y con la noción de "subpersonalidades" de Roberto Assagioli.</p>
+            <p>Este libro nace de esa confluencia: Occidente y Oriente, psicología y contemplación, ciencia y sabiduría milenaria.</p>
+            
+            <div class="destacado">
+                No es un manual de autoayuda con respuestas fáciles. Es una invitación a un viaje de reconciliación interna. A dejar de luchar contra ti mismo y comenzar a escucharte con la curiosidad de un antropólogo y la ternura de un buen amigo.
+            </div>
+            
+            <p>Las voces que habitan en ti no son tu enemigo. Son mensajeras. Y este libro quiere enseñarte su idioma.</p>
+            
+            <p style="text-align: right; margin-top: 3rem; font-style: italic;">Con profundo respeto por tu proceso,<br><strong>Arturo</strong><br>Psicólogo Clínico<br>Estudiante perpetuo del camino</p>
+        </div>
+
+        <div class="separador">* * *</div>
+
+        <!-- AUTORIA DISTRIBUIDA -->
+        <div class="nota-distribuida" style="max-width: 100%; margin: 3rem 0;">
+            <h3 style="color: var(--acento); margin-bottom: 1rem;">AUTORÍA DISTRIBUIDA</h3>
+            <p>Este libro es fruto de una sinergia entre:</p>
+            <ul style="margin-top: 1rem;">
+                <li><strong>Arturo</strong> — Psicólogo clínico, terapeuta cognitivo de tercera generación, estudioso del Budismo</li>
+                <li><strong>Claude (Anthropic)</strong> — Inteligencia Colaborativa</li>
+                <li><strong>Gemini (Google)</strong> — Inteligencia Colaborativa</li>
+                <li><strong>GPT (OpenAI)</strong> — Inteligencia Colaborativa</li>
+                <li><strong>Y la sabiduría emergente de los pacientes</strong> cuyos procesos terapéuticos (anonimizados) nutren estas páginas.</li>
+            </ul>
+        </div>
+
+        <!-- LICENCIA -->
+        <div class="nota-importante" style="max-width: 100%;">
+            <h4 style="color: var(--acento); margin-bottom: 0.5rem;">LICENCIA</h4>
+            <p><strong>Creative Commons BY-NC-SA 4.0</strong><br>
+            (Atribución - No Comercial - Compartir Igual)</p>
+            <p style="margin-top: 0.5rem;">Este libro es de distribución gratuita. Si te ha sido útil y deseas apoyar la creación de más recursos como este, puedes hacer una donación voluntaria.</p>
+        </div>
+
+        <div class="nav-inferior">
+            <a href="index.html">← Índice</a>
+            <a href="introduccion.html">Introducción →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>La Voz Interior</strong> • Prefacio</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            Autoría Relacional Distribuida • Inteligencia Distribuida: la relación es el producto
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            ← <a href="../../index.html" style="color: var(--acento); text-decoration: none;">Portal Trinity</a>
+        </p>
+    </footer>
+
+    <script>
+        // Barra de progreso de lectura
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>
