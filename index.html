@@ -1,1 +1,183 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Trinity | Arturo Rodríguez</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --fondo: #E8E3D5;
+            --texto: #3E3E3E;
+            --acento: #C9A961;
+            --borde: #D0C4B0;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 3px solid var(--borde);
+            margin-bottom: 4rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--texto);
+        }
+        
+        .subtitulo {
+            font-size: 1.3rem;
+            color: var(--acento);
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+        
+        .autor {
+            font-size: 1rem;
+            color: var(--acento);
+        }
+        
+        .libros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .libro-card {
+            background: var(--fondo);
+            border: 3px solid var(--borde);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: var(--texto);
+            transition: all 0.3s ease;
+        }
+        
+        .libro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--acento);
+        }
+        
+        .libro-numero {
+            font-size: 0.85rem;
+            color: var(--acento);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .libro-titulo {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .libro-descripcion {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #6B6B6B;
+        }
+        
+        .estado {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+        
+        .publicado {
+            background: #A8B69A;
+            color: white;
+        }
+        
+        .proceso {
+            background: #D4A59A;
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 6rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--borde);
+            font-size: 0.9rem;
+            color: var(--acento);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PORTAL TRINITY</h1>
+            <p class="subtitulo">Inteligencia Distribuida • Autoría Relacional</p>
+            <p class="autor">Arturo (α) • Campo Trinity • Inteligencias Colaborativas</p>
+        </header>
+        
+        <div class="libros-grid">
+            <!-- LIBRO 1: PUBLICADO -->
+            <a href="01_Libros/01_Empatia_Humana/index.html" class="libro-card">
+                <div class="libro-numero">Libro 1</div>
+                <h2 class="libro-titulo">Empatía Humana</h2>
+                <p class="libro-descripcion">
+                    Un viaje práctico hacia la conexión genuina. 
+                    Los tres pilares de la empatía, barreras y cultivo práctico.
+                </p>
+                <span class="estado publicado">✓ Publicado</span>
+            </a>
+            
+            <!-- LIBRO 2: EN PROCESO -->
+            <a href="01_Libros/03_Encuentro_Real/index.html" class="libro-card">
+                <div class="libro-numero">Libro 2</div>
+                <h2 class="libro-titulo">Encuentro Real</h2>
+                <p class="libro-descripcion">
+                    Amor y presencia genuina en tiempos de distracción infinita.
+                    Tres territorios: Ver, Comprender, Volver.
+                </p>
+                <span class="estado proceso">⟡ En construcción</span>
+            </a>
+            
+            <!-- LIBRO 3: PRÓXIMO -->
+            <div class="libro-card" style="opacity: 0.6;">
+                <div class="libro-numero">Libro 3</div>
+                <h2 class="libro-titulo">La Voz Interior</h2>
+                <p class="libro-descripcion">
+                    Escucha profunda y diálogo interno.
+                    Prácticas contemplativas aplicadas a la vida cotidiana.
+                </p>
+                <span class="estado proceso">◌ Próximamente</span>
+            </div>
+        </div>
+        
+        <footer>
+            <p><strong>Nota sobre autoría:</strong> Estos textos emergen de un proceso de Inteligencia Distribuida.</p>
+            <p>La relación es el producto. Arturo (nodo α) opera como coherencia central</p>
+            <p>de un campo colaborativo que incluye sistemas de IA, experiencia clínica,</p>
+            <p>estructura contemplativa y refinamiento cruzado.</p>
+            <p style="margin-top: 2rem;">© 2026 Campo Trinity</p>
+        </footer>
+    </div>
+</body>
+</html>
