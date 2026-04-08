@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 7: Desactivar el conflicto | La Voz Interior</title>
+  <meta name="description" content="Cuando las voces están en guerra: técnicas de mediación interna para desactivar la polarización">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 52%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    .responsive-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+    .responsive-table th, .responsive-table td { padding: 0.8rem; border: 1px solid rgba(139,107,154,0.3); text-align: left; vertical-align: top; }
+    .responsive-table th { background: rgba(139,107,154,0.1); color: var(--acento); }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+      .responsive-table { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_06.html" class="nav-link">← Capítulo 6</a>
+    <a href="capitulo_08.html" class="nav-link disabled" title="Próximamente">Capítulo 8 →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 7</span>
+      <h1>Desactivar el conflicto: cuando las voces están en guerra</h1>
+    </header>
+
+    <section id="el-parlamento-interno-en-caos" class="caso-clinico">
+      <h2>El parlamento interno en caos</h2>
+      <p>Diego, 39 años, arquitecto, llegó a consulta visiblemente agotado:</p>
+      <p>—Siento que hay una guerra dentro de mí. Una parte quiere renunciar a mi trabajo corporativo y dedicarme a proyectos sociales. Pero otra parte dice: "¿Estás loco? Tienes dos hijos, una hipoteca. No puedes arriesgar la estabilidad." Entonces me quedo paralizado. No renuncio, pero tampoco estoy presente. Y ahora apareció una tercera voz que me juzga por estar paralizado: "Eres un cobarde. No tienes agallas para cambiar ni para quedarte. Eres un tibio."</p>
+      <p>—¿Y tú dónde estás en todo eso? —pregunté.</p>
+      <p>Diego me miró confundido: —No sé. Siento que soy cada una de esas voces dependiendo del momento. Y me estoy desintegrando.</p>
+      <p>Este es uno de los estados más dolorosos del <button class="glossary-term" data-term="diálogo interno">diálogo interno</button>: la guerra entre <button class="glossary-term" data-term="partes">partes</button>.</p>
+      <p>No es que haya una voz problemática. Es que hay múltiples voces en conflicto activo, y ninguna escucha a las otras.</p>
+      <p>El resultado: <button class="glossary-term" data-term="fusión">parálisis</button>, agotamiento, sensación de fragmentación.</p>
+    </section>
+
+    <section id="por-que-las-voces-entran-en-guerra">
+      <h2>Por qué las voces entran en guerra</h2>
+      <p>Las voces no entran en conflicto porque sean "malas". Entran en conflicto porque cada una tiene una agenda protectora diferente, y no hay un mediador interno que las ayude a coexistir.</p>
+      <p>Ejemplo:</p>
+      <ul>
+        <li><strong>Voz A (la que quiere cambio):</strong> "Necesitamos salir de aquí. Este trabajo nos está matando." <em>Quiere: autenticidad, vitalidad.</em></li>
+        <li><strong>Voz B (la que teme cambio):</strong> "Si salimos, perderemos seguridad. Podrían lastimarnos." <em>Quiere: estabilidad, protección.</em></li>
+      </ul>
+      <p>Ambas tienen intención positiva. Pero sus estrategias son opuestas. Entonces, en lugar de dialogar, se <button class="glossary-term" data-term="polarización">polarizan</button>: una grita más fuerte, la otra se endurece. Es una escalada simétrica.</p>
+      <p>El problema no es que haya voces con necesidades diferentes. El problema es la ausencia del mediador: el <button class="glossary-term" data-term="ser">Ser</button>.</p>
+    </section>
+
+    <section id="las-tres-configuraciones-de-conflicto">
+      <h2>Las tres configuraciones de conflicto interno</h2>
+      
+      <h3>Configuración 1: Conflicto binario (dos voces polarizadas)</h3>
+      <p>Una empuja, la otra frena. Ejemplo: "Parte que quiere intimidad" vs "Parte que teme vulnerabilidad". Resultado: Parálisis. Solución: Mediación desde el Ser.</p>
+
+      <h3>Configuración 2: Conflicto triangular (tres voces, una de ellas es juez)</h3>
+      <p>Dos voces en conflicto + una tercera que juzga a ambas. Ejemplo: "Quiero cambiar" vs "No puedes" + <button class="glossary-term" data-term="crítico interior">Crítico</button>: "Eres un cobarde por no decidir." Resultado: Parálisis + autocrítica. Solución: Primero, neutralizar al Crítico. Luego, mediar entre A y B.</p>
+
+      <h3>Configuración 3: Caos multi-voz (muchas voces hablando al mismo tiempo)</h3>
+      <p>No hay dos o tres voces. Hay un coro desorganizado. Ejemplo: <button class="glossary-term" data-term="rumiación">rumiación</button> obsesiva con múltiples "¿Y si...?" simultáneos. Resultado: Abrumación. Solución: Priorización. Hacer que hablen una por vez. El Ser como moderador de parlamento.</p>
+    </section>
+        <section id="la-tecnica-de-mediacion-interna">
+      <h2>La técnica de mediación interna (paso a paso)</h2>
+      <p>Cuando las voces están en guerra, necesitas actuar como mediador. Aquí está el protocolo completo:</p>
+
+      <h3>Paso 1: Reconocer el conflicto (nombrar las voces)</h3>
+      <p>Pregúntate: ¿Cuántas voces hay? ¿Qué dice cada una? ¿Qué quiere cada una? Escribe una lista.</p>
+
+      <h3>Paso 2: Aislar voces reactivas (silenciar críticos temporalmente)</h3>
+      <p>Si hay una voz que solo juzga sin aportar, pídele que se haga a un lado temporalmente. No la rechaces. Solo dile: "Gracias. Entiendo tu frustración. Necesito espacio para mediar entre las otras dos. ¿Puedes esperar un momento?"</p>
+
+      <h3>Paso 3: Escuchar cada voz por separado (sin interrupciones)</h3>
+      <p>Usa la <button class="glossary-term" data-term="silla vacía">silla vacía</button> o el diálogo escrito. Turno 1: Voz A habla completamente. Turno 2: Voz B habla completamente. Clave: No permitas que se interrumpan. El Ser es el guardián del espacio de cada una.</p>
+
+      <h3>Paso 4: Buscar la necesidad común (el terreno compartido)</h3>
+      <p>Pregúntate: ¿Qué necesidad profunda comparten ambas voces? En el caso de Diego: ambas quieren bienestar. Cuando encuentras esa necesidad común, ya no son enemigas. Son aliadas con estrategias diferentes.</p>
+
+      <h3>Paso 5: Negociar un acuerdo (solución integradora)</h3>
+      <p>El Ser propone: "¿Hay una forma de honrar ambas necesidades? ¿Un camino intermedio?" Diego acuerda: dedicar 4 horas semanales a proyectos sociales sin renunciar aún. Ambas voces aceptan. Guerra → Colaboración.</p>
+
+      <h3>Paso 6: Revisar el acuerdo (check-in semanal)</h3>
+      <p>Los acuerdos no son permanentes. Son experimentos. Cada semana, revisa si se cumple, si alguna voz se siente ignorada, y ajusta si es necesario. El Ser es el garante del acuerdo.</p>
+    </section>
+
+    <section id="caso-clinico-lucia" class="caso-clinico">
+      <h2>Caso clínico: Lucía y el conflicto entre la madre y la profesional</h2>
+      <p>Lucía, 35 años, abogada, madre de una niña de 3 años, llegó con este conflicto:</p>
+      <p>—Cuando estoy trabajando, me siento culpable por no estar con mi hija. Cuando estoy con mi hija, me siento culpable por no estar trabajando. Es agotador.</p>
+      <p>Identificamos dos voces: <strong>Voz A (Madre Devota)</strong> quería conexión y presencia. <strong>Voz B (Profesional Ambiciosa)</strong> quería autonomía y realización. Estaban polarizadas.</p>
+      <p>Le pedí a Lucía que las hiciera hablar entre sí (usando dos sillas). Desde el <button class="glossary-term" data-term="observador">observador</button> (Silla 3), medió:</p>
+      <p><em>"Las escucho a ambas. Madre Devota, entiendo tu miedo al abandono. Profesional, entiendo tu miedo a desaparecer. ¿Hay una forma de que ambas existan?"</em></p>
+      <p>Acuerdo: Lucía redujo un 20% su carga. Dos días sagrados con su hija (sin culpa, sin celular). Cuatro días de trabajo pleno (sin culpa por no estar con ella). Ambas voces aceptaron. Seis meses después: "Por primera vez en tres años, siento que no estoy en guerra conmigo misma."</p>
+    </section>
+
+    <section id="errores-comunes-en-la-mediacion">
+      <h2>Errores comunes en la mediación interna</h2>
+      
+      <div class="nota-importante">
+        <strong>Error 1: Tomar partido</strong>
+        Si piensas "la voz A tiene razón y la B está equivocada", ya perdiste la posición del Ser. Estás fusionado con A. Solución: Recordar que ambas tienen intención positiva. Tu trabajo no es juzgar, es integrar.
+      </div>
+
+      <div class="nota-importante">
+        <strong>Error 2: Buscar eliminar una voz</strong>
+        A veces, una voz parece "claramente disfuncional". Pero las voces no desaparecen. Solo se transforman cuando se sienten respetadas. Solución: No pidas que se vaya. Pide que actualice su estrategia.
+      </div>
+
+      <div class="nota-importante">
+        <strong>Error 3: Rendirse ante la parálisis</strong>
+        Cuando ambas voces son muy fuertes, es tentador decir: "No puedo con esto." Pero rendirse es también una decisión (generalmente, la decisión de la voz Protectora que prefiere inacción a riesgo). Solución: Reconocer que la mediación lleva tiempo. No necesitas resolver el conflicto en una sesión.
+      </div>
+    </section>
+        <section id="ejercicio-mediacion-interna" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Mediación de un conflicto interno</h2>
+      <p><strong>Duración:</strong> 45-60 minutos | <strong>Materiales:</strong> Tres sillas, cuaderno</p>
+      <ol>
+        <li>Identifica el conflicto: ¿Qué dos voces están en guerra en ti ahora?</li>
+        <li>Escribe sus posiciones: Voz A dice: _______________ | Voz B dice: _______________</li>
+        <li>Coloca dos sillas frente a frente. Una para cada voz.</li>
+        <li>Siéntate en Silla A. Habla como esa voz. Expresa completamente su postura, miedo, necesidad. (5-10 min)</li>
+        <li>Cambia a Silla B. Ahora habla como la otra voz. Responde. Expresa su postura. (5-10 min)</li>
+        <li>Siéntate en una tercera silla (el Ser, el mediador). Desde ahí, pregunta a ambas: "¿Qué necesidad profunda compartes con la otra voz? ¿Hay una forma de honrar ambas necesidades?"</li>
+        <li>Propón un acuerdo. Escríbelo. Pregunta a ambas: "¿Aceptan este acuerdo?"</li>
+        <li>Cierra la sesión agradeciendo a ambas por su disposición a dialogar.</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> ¿Cambió algo? ¿Las voces se suavizaron? ¿Lograste un acuerdo aunque sea temporal?</p>
+    </section>
+
+    <section id="preguntas-reflexion-7">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Cuál es tu configuración más común de conflicto interno? (Binario, triangular, caos multi-voz)</li>
+        <li>¿Tiendes a tomar partido en tus conflictos internos? ¿Con qué voz sueles identificarte?</li>
+        <li>¿Qué te impide actuar como mediador de tus propias voces? ¿Falta de tiempo, fusión, agotamiento?</li>
+        <li>¿Alguna vez lograste un acuerdo interno que funcionara? ¿Qué lo hizo posible?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-7" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>Las voces entran en guerra cuando no hay mediador (Ser) que las ayude a coexistir</li>
+        <li>Tres configuraciones: conflicto binario, triangular, y caos multi-voz</li>
+        <li>Protocolo de mediación: Nombrar, aislar voces reactivas, escuchar por separado, buscar necesidad común, negociar acuerdo, revisar</li>
+        <li>Errores comunes: tomar partido, intentar eliminar voces, rendirse ante la parálisis</li>
+        <li>Los acuerdos internos son experimentos, no verdades permanentes</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>El arte de escuchar sin identificarse</em> — Cómo sostener las voces sin colapsar en ellas.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_06.html" class="nav-link">← Capítulo 6</a>
+      <a href="capitulo_08.html" class="nav-link disabled" title="Próximamente">Capítulo 8 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 7 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "diálogo interno": "Conversación terapéutica con las voces desde el Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "partes": "Término del modelo IFS para referirse a las distintas subpersonalidades o voces internas. Cada parte tiene su propia perspectiva, emociones, memorias y agenda.",
+      "fusión": "Estado donde te identificas completamente con una voz. Elimina la agencia y el espacio para el diálogo.",
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. Espacio donde las partes aparecen.",
+      "polarización": "Estado donde dos voces adoptan posiciones extremas y opuestas. Mientras más grita una, más se defiende la otra; escalada simétrica.",
+      "crítico interior": "Voz interna que juzga, evalúa negativamente y anticipa rechazo. Su función original es protegerte de la vergüenza externa.",
+      "rumiación": "Pensamiento repetitivo sobre problemas sin llegar a solución. Es fusión en movimiento. Diferente del diálogo terapéutico.",
+      "observador": "Ver Ser. La conciencia que presencia sin fusionarse. Necesario para mediar o dialogar con las voces.",
+      "silla vacía": "Técnica gestáltica adaptada donde usas sillas físicas para representar voces. Cambiar de silla facilita la desidentificación.",
+      "mediación interna": "Proceso donde el Ser actúa como mediador entre voces en conflicto. Protocolo: nombrar las voces, aislar voces reactivas, escuchar a cada una por separado, buscar necesidad común, negociar acuerdo, revisar.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos o voces. Crea espacio entre el observador y lo observado.",
+      "protector": "Voz interna que evita riesgos o emociones dolorosas. Función original: prevenir que revivas traumas o rechazos pasados."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
