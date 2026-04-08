@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 4: El observador | La Voz Interior</title>
+  <meta name="description" content="Descubrir quién escucha: el Ser, la conciencia testigo y las vías de acceso">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 23%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    .list-8c { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .list-8c div { background: rgba(139,107,154,0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(139,107,154,0.2); }
+    .list-8c strong { display: block; margin-bottom: 0.3rem; color: var(--acento); }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+      .list-8c { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_03.html" class="nav-link">← Capítulo 3</a>
+    <a href="interludio.html" class="nav-link disabled" title="Próximamente">Interludio →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 4</span>
+      <h1>El observador: descubrir quién escucha</h1>
+    </header>
+
+    <section id="el-silencio-entre-los-pensamientos" class="caso-clinico">
+      <h2>El silencio entre los pensamientos</h2>
+      <p>En una sesión de <button class="glossary-term" data-term="meditación">meditación</button> Vipassana que facilité hace años, una participante llamada Elena tuvo una experiencia que cambió su relación con su mente.</p>
+      <p>Después de 40 minutos de observar la respiración, reportó:</p>
+      <p>—Hubo un momento en que los pensamientos se detuvieron. No completamente, pero... había espacios entre ellos. Y en esos espacios, había algo... no sé cómo describirlo. No era vacío. Era como... una presencia quieta. Y me di cuenta de que eso había estado ahí todo el tiempo, pero nunca lo había notado porque estaba demasiado ocupada con el ruido.</p>
+      <p>Le pregunté qué descubrió en esa presencia quieta.</p>
+      <p>—Que no soy mis pensamientos. Hay algo observando los pensamientos. Y ese algo no tiene miedo, no juzga, no se agota. Solo... ve.</p>
+      <p>Elena acababa de tocar el <button class="glossary-term" data-term="ser">Ser</button>.</p>
+    </section>
+
+    <section id="el-ser-la-conciencia-que-presencia">
+      <h2>El Ser: la conciencia que presencia</h2>
+      <p>En el modelo de <button class="glossary-term" data-term="ifs">IFS</button>, Richard Schwartz usa el término <button class="glossary-term" data-term="self">Self</button> (con mayúscula en inglés) para referirse a esa dimensión de tu ser que no es una <button class="glossary-term" data-term="partes">parte</button>. En este libro utilizaremos <em>Ser</em> para referirnos a este mismo concepto.</p>
+      <p>Las "partes" (Crítico, Protector, Niño Herido) son formaciones psíquicas con contenido, historia, agenda. Vienen y van.</p>
+      <p>El Ser no viene ni va. Siempre está.</p>
+      <p>Es la <button class="glossary-term" data-term="conciencia testigo">conciencia testigo</button> que puede observar las partes sin <button class="glossary-term" data-term="fusión">fusionarse</button> con ellas. Es lo que en budismo se llama <em>Rigpa</em> (conciencia primordial) o la mente de Buda. En <button class="glossary-term" data-term="vipassana">Vipassana</button>, es el observador ecuánime.</p>
+      <p>No es algo que necesites crear. Ya está ahí. Solo está oscurecido por el ruido de las voces.</p>
+      <p>Tu trabajo es acceder a él. Y una vez que lo haces, todo cambia.</p>
+    </section>
+
+    <section id="las-cualidades-del-ser">
+      <h2>Las cualidades del Ser (Las 8 C)</h2>
+      <p>Schwartz identifica 8 cualidades que emergen naturalmente cuando accedes al Ser:</p>
+      <div class="list-8c">
+        <div><strong>Calma (Calm)</strong> Paz interna sin indiferencia</div>
+        <div><strong>Claridad (Clarity)</strong> Percepción limpia sin distorsión</div>
+        <div><strong>Curiosidad (Curiosity)</strong> Apertura genuina al presente</div>
+        <div><strong>Compasión (Compassion)</strong> Ternura activa hacia el sufrimiento</div>
+        <div><strong>Confianza (Confidence)</strong> Seguridad en el proceso vital</div>
+        <div><strong>Coraje (Courage)</strong> Valentía para enfrentar lo desconocido</div>
+        <div><strong>Creatividad (Creativity)</strong> Flujo espontáneo de respuestas</div>
+        <div><strong>Conectividad (Connectedness)</strong> Sensión de pertenencia y unidad</div>
+      </div>
+      <p>Estas cualidades no necesitas fabricarlas. Son tu estado natural cuando las voces se calman.</p>
+      <p>El Ser no es un ideal inalcanzable. Es lo que queda cuando las capas de protección, juicio y miedo se hacen a un lado.</p>
+    </section>
+        <section id="ejercicio-practico-acceder-al-ser" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Acceder al Ser a través de la respiración</h2>
+      <p><strong>Duración:</strong> 10-15 minutos</p>
+      <ol>
+        <li>Siéntate en una postura cómoda. Cierra los ojos.</li>
+        <li>Lleva tu atención a la respiración. No la fuerces, solo obsérvala.</li>
+        <li>Cada vez que aparezca un pensamiento, nómbralo mentalmente: <em>"Pensando", "Preocupándome", "Juzgando"</em>.</li>
+        <li>Suavemente, regresa a la respiración.</li>
+        <li>Después de unos minutos, pregúntate internamente: <em>"¿Quién está observando estos pensamientos?"</em></li>
+        <li>No busques una respuesta intelectual. Solo sostén la pregunta en el espacio de tu conciencia.</li>
+        <li>Quédate ahí, en el observar sin etiquetar, por unos minutos más.</li>
+        <li>Cuando estés listo, abre los ojos lentamente.</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> ¿Qué notaste? ¿Hubo momentos de "espacio" entre pensamientos? ¿Tocaste aunque sea brevemente una sensación de "presencia quieta"?</p>
+    </section>
+
+    <section id="caso-clinico-ricardo" class="caso-clinico">
+      <h2>Caso clínico: Ricardo y el descubrimiento del observador</h2>
+      <p>Ricardo, 52 años, empresario, vino a terapia después de un burnout severo. Había trabajado sin parar durante 30 años construyendo su empresa.</p>
+      <p>—Me siento vacío —me dijo—. Logré todo lo que me propuse. Pero no siento nada. Es como si hubiera estado en piloto automático toda mi vida.</p>
+      <p>Exploramos cuáles voces habían estado al mando: el Proveedor, el Perfeccionista y, más profundamente, el Niño Herido ("Si produzco, existo. Si paro, desaparezco").</p>
+      <p>Ricardo había vivido <button class="glossary-term" data-term="fusión">fusionado</button> con esas voces. Nunca había habido espacio para preguntarse: "¿Qué quiero yo, más allá de estas voces?"</p>
+      <p>En una sesión, le guié en una meditación similar al ejercicio anterior. Le pedí que observara su respiración, notara los pensamientos sin seguirlos, y preguntara: <em>"¿Quién está observando?"</em></p>
+      <p>Después de 15 minutos, abrió los ojos. Tenía lágrimas.</p>
+      <p>—Hay algo ahí —dijo—. Algo que no está agotado. Algo que no necesita probar nada. Algo que solo... está.</p>
+      <p>—¿Cómo se siente ese "algo"? —pregunté.</p>
+      <p>—Como... paz. Pero no la paz de "logré todo". Es la paz de "estoy completo, aunque no haga nada".</p>
+      <p>Ese fue el primer contacto de Ricardo con el Ser. No resolvió su burnout de inmediato, pero cambió la dirección de su vida. Porque por primera vez, había alguien observando las voces, no solo obedeciéndolas.</p>
+    </section>
+
+    <section id="las-tres-vias-para-acceder-al-ser">
+      <h2>Las tres vías para acceder al Ser</h2>
+      <p>Hay múltiples caminos, pero en mi experiencia clínica, tres son los más accesibles:</p>
+      
+      <h3>1. La vía de la meditación (cultivar el testigo)</h3>
+      <p>Cualquier práctica contemplativa que entrene la observación sin reacción te acerca al Ser:</p>
+      <ul>
+        <li><button class="glossary-term" data-term="vipassana">Vipassana</button> (observación ecuánime de sensaciones)</li>
+        <li>Zazen (solo sentarse, sin objeto)</li>
+        <li><button class="glossary-term" data-term="mindfulness">Mindfulness</button> (atención plena al momento presente)</li>
+      </ul>
+      <p>La práctica constante crea espacios entre los pensamientos. Y en esos espacios, el Ser se hace evidente.</p>
+
+      <h3>2. La vía del diálogo interno (IFS)</h3>
+      <p>Cuando aprendes a dialogar con tus <button class="glossary-term" data-term="partes">partes</button> (en lugar de fusionarte con ellas), automáticamente accedes al Ser.</p>
+      <p>Porque para dialogar con una parte, necesitas estar en otro lugar que no sea la parte misma.</p>
+      <p>Ejemplo:<br>
+      <em>Fusión:</em> "Soy un fracaso."<br>
+      <em>Diálogo desde el Ser:</em> "Hay una parte de mí que se siente fracasada. ¿Qué necesitas, parte fracasada?"<br>
+      El solo acto de preguntar ya te posiciona en el Ser.</p>
+
+      <h3>3. La vía de la experiencia cumbre</h3>
+      <p>A veces, el Ser se revela espontáneamente en momentos de:</p>
+      <ul>
+        <li>Naturaleza (caminar en el bosque, ver el mar)</li>
+        <li>Creatividad (fluir en arte, música, escritura)</li>
+        <li>Conexión profunda (mirar a un ser amado, abrazar a un hijo)</li>
+        <li>Presencia del dolor (en momentos de duelo profundo, a veces emerge una ecuanimidad que trasciende el dolor)</li>
+      </ul>
+      <p>No puedes forzar estas experiencias, pero puedes crear condiciones para que sucedan: silencio, soledad, belleza, vulnerabilidad.</p>
+    </section>
+
+    <section id="el-ser-no-es-el-ego" class="nota-importante">
+      <h2>El Ser no es el ego</h2>
+      <p>Es importante aclarar: el Ser no es el <em>ego</em>.</p>
+      <p>El ego es la identidad narrativa que construyes a lo largo de tu vida: "Soy psicólogo, soy padre, soy introvertido". Es la suma de roles, historias, creencias.</p>
+      <p>El Ser está antes de esas identificaciones. Es la conciencia que puede observar incluso el ego.</p>
+      <p>El ego dice: <em>"Yo soy esto"</em>.<br>
+      El Ser dice: <em>"Yo observo todo eso"</em>.</p>
+      <p>El ego no es malo. Es necesario para funcionar en el mundo. Pero cuando el ego es lo único que conoces, vives en una jaula de identidad. El Ser te libera de esa jaula. No elimina al ego, pero ya no estás atrapado en él.</p>
+    </section>
+        <section id="ejercicio-practico-mapa-identidades" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: El mapa de identidades</h2>
+      <p><strong>Materiales:</strong> Hoja grande de papel, colores</p>
+      <ol>
+        <li>Dibuja un círculo grande en el centro. Ese es el <button class="glossary-term" data-term="ser">Ser</button> (el observador).</li>
+        <li>Alrededor, dibuja círculos más pequeños con identidades que tienes: roles (madre, trabajador), rasgos (introvertido, perfeccionista), historias ("el que siempre cuida", "el que fracasó").</li>
+        <li>Para cada identidad, pregúntate: ¿Cuándo apareció? ¿Qué obtengo de ella? ¿Qué perdería si desapareciera? ¿Soy yo esta identidad, o es algo que atravieso?</li>
+        <li>Vuelve al círculo central. Respira. Nota que todas esas identidades están en ti, pero tú no eres ninguna de ellas.</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> ¿Qué identidad te da más miedo soltar? ¿Por qué?</p>
+    </section>
+
+    <section id="la-paradoja-del-ser">
+      <h2>La paradoja del Ser: está siempre, pero rara vez lo ves</h2>
+      <p>El Ser es lo más cercano a ti. Es tu naturaleza esencial. Pero es lo más difícil de ver porque estás demasiado cerca.</p>
+      <p>Es como el ojo: puede ver todo, pero no puede verse a sí mismo (salvo en un espejo). El Ser puede presenciar todas las voces, pero no puede ser "visto" como objeto. Solo puede ser reconocido como sujeto.</p>
+      <p>Por eso las tradiciones contemplativas usan preguntas en lugar de respuestas:</p>
+      <ul>
+        <li>Zen: <em>"¿Cuál era tu rostro original antes de que nacieras?"</em></li>
+        <li>Advaita: <em>"¿Quién soy yo?"</em> (Ramana Maharshi)</li>
+        <li>Budismo Dzogchen: <em>"¿Quién está observando?"</em></li>
+      </ul>
+      <p>No son preguntas para ser respondidas intelectualmente. Son señales que apuntan hacia el Ser.</p>
+    </section>
+
+    <section id="preguntas-reflexion-4">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Has tenido algún momento de "presencia quieta" donde las voces se detuvieron? ¿Cómo fue?</li>
+        <li>De las 8 cualidades del Ser, ¿cuál emerge más naturalmente en ti cuando no estás dominado por voces reactivas?</li>
+        <li>¿Qué te impide acceder al Ser más frecuentemente?</li>
+        <li>¿Hay alguna identidad (rol, rasgo, historia) con la que estés tan fusionado que te cueste distinguirte de ella?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-4" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>El Ser es la conciencia testigo que observa las voces sin fusionarse con ellas</li>
+        <li>No es algo que necesites crear: ya está ahí, solo necesita ser reconocido</li>
+        <li>Las 8 C (calma, claridad, curiosidad, compasión, confianza, coraje, creatividad, conectividad) emergen naturalmente cuando las voces se calman</li>
+        <li>El Ser no es el ego (identidad narrativa): es lo que puede observar incluso al ego</li>
+        <li>Tres vías para acceder: meditación, diálogo con partes (IFS), experiencias cumbre</li>
+        <li>El Ser es lo más cercano, pero lo más difícil de ver porque eres eso</li>
+      </ul>
+      <p><strong>Próximo paso:</strong> <em>Interludio: Cuando las voces gritan</em> — Técnicas de contención antes del diálogo.</p>
+    </section>
+
+    <!-- LINK_TRANSVERSAL: Este capítulo conecta con Encuentro Real - "Miedo a la soledad" -->
+    <!-- <a href="../../03_Encuentro_Real/capitulo_07.html#miedo-a-la-soledad" class="link-transversal">→ Ver: Miedo a la soledad en Encuentro Real</a> -->
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_03.html" class="nav-link">← Capítulo 3</a>
+      <a href="interludio.html" class="nav-link disabled" title="Próximamente">Interludio →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 4 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "ser": "Tu esencia, tu verdadero observador, la conciencia testigo que puede presenciar todas las voces sin fusionarse con ninguna. No tiene contenido, edad, ni agenda. Es el espacio donde las partes aparecen.",
+      "conciencia testigo": "Ver Ser. Aquello en ti que observa sin juzgar, presencia sin fusionarse y contiene sin colapsar.",
+      "ifs": "Internal Family Systems: modelo terapéutico creado por Richard Schwartz que conceptualiza la psique como un sistema de 'partes' (subpersonalidades) que interactúan entre sí.",
+      "self": "Concepto del modelo IFS de Richard Schwartz: la esencia no herida, compasiva, conectada que está más allá de las partes. En este libro usamos 'Ser' para referirnos al mismo concepto.",
+      "partes": "Término del modelo IFS para referirse a las distintas subpersonalidades o voces internas. Cada parte tiene su propia perspectiva, emociones, memorias y agenda.",
+      "fusión": "Estado donde te identificas completamente con una voz: crees que eres esa voz. No hay distancia entre observador y contenido. Ejemplo: 'Soy un fracaso' (fusión) vs 'Hay una voz que dice que soy un fracaso' (desidentificación).",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos, emociones o voces internas. Crea espacio entre el observador (Ser) y lo observado (voces), permitiendo elección consciente.",
+      "meditación": "Práctica de entrenar la atención y la conciencia. En este contexto, se refiere a técnicas que cultivan la observación ecuánime, creando espacios entre pensamientos donde el Ser se hace evidente.",
+      "vipassana": "Meditación budista de 'visión clara'. Consiste en observar ecuánimemente las sensaciones corporales, emociones y pensamientos sin reaccionar. Cultiva al observador (Ser).",
+      "mindfulness": "Práctica de prestar atención al momento presente con apertura, curiosidad y sin juicio. Base de la desidentificación: cuando observas algo con mindfulness, automáticamente no eres eso.",
+      "integración": "Proceso donde las voces encuentran su lugar natural y dejan de dominar la experiencia. Tiene tres etapas: funcional (colaboran), psicológica (disolución parcial) y transpersonal (Ser como fuente).",
+      "silla vacía": "Técnica gestáltica adaptada donde usas sillas físicas para representar voces. Cambias de silla para 'hablar desde' cada voz y desde el Ser. Lo corporal facilita la desidentificación.",
+      "ego": "Identidad narrativa construida a lo largo de la vida (roles, historias, creencias). Necesario para funcionar en el mundo, pero no es la esencia. El Ser observa incluso al ego."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
