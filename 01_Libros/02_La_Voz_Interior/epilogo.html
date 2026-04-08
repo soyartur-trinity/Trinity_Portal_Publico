@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epílogo | La Voz Interior</title>
+  <meta name="description" content="El viaje continúa: cierre del recorrido y apertura hacia la práctica continua">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 96%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    .final-quote { font-style: italic; font-size: 1.1rem; text-align: center; margin: 2rem 0; color: var(--acento); border-top: 1px dashed rgba(139,107,154,0.3); border-bottom: 1px dashed rgba(139,107,154,0.3); padding: 1.5rem; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del epílogo">
+    <a href="capitulo_12.html" class="nav-link">← Capítulo 12</a>
+    <a href="apendice.html" class="nav-link">Apéndice →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Epílogo</span>
+      <h1>El viaje continúa</h1>
+    </header>
+
+    <p>Has llegado al final de este libro. Pero no al final del viaje.</p>
+    <p>Porque el trabajo con las <button class="glossary-term" data-term="voz interna">voces internas</button> no tiene destino final. Es un camino que se camina. Cada día traerá nuevas voces. O viejas voces en nuevos disfraces. O momentos donde olvides todo lo que aprendiste y tengas que empezar de nuevo.</p>
+    <p>Y eso está bien.</p>
+
+    <section id="lo-que-has-aprendido">
+      <h2>Lo que has aprendido</h2>
+      <p>En estas páginas, hemos recorrido tres movimientos:</p>
+      <ul>
+        <li><strong>RECONOCER:</strong> Identificar las voces, comprender su origen, descubrir al observador.</li>
+        <li><strong>DIALOGAR:</strong> Cultivar la actitud correcta, usar técnicas de conversación, mediar conflictos, escuchar sin identificarse.</li>
+        <li><strong>TRANSFORMAR:</strong> Renegociar roles, integrar voces, conectar con la <button class="glossary-term" data-term="voz silenciosa">voz silenciosa</button>, vivir desde el centro.</li>
+      </ul>
+      <p>Pero todo esto es solo el mapa. El territorio es tu vida. Y en el territorio, nada es tan ordenado como en un libro.</p>
+    </section>
+
+    <section id="lo-que-nadie-te-dice" class="nota-importante">
+      <h2>Lo que nadie te dice sobre el camino interior</h2>
+      <p>Hay cosas sobre este viaje que solo se comprenden viviéndolas:</p>
+      <h3>1. No es lineal</h3>
+      <p>Algunos días sentirás que dominas el <button class="glossary-term" data-term="diálogo interno">diálogo interno</button>. Otros días, las voces te arrastrarán como si nunca hubieras leído este libro. No has retrocedido. Es la naturaleza del camino. Como las mareas: avanzan, retroceden, avanzan otra vez.</p>
+      <h3>2. No termina</h3>
+      <p>No hay un punto donde puedes decir: "Ya está. Ya no tengo voces problemáticas." Siempre habrá algo. Y eso no es fracaso. Es condición humana. La diferencia es que ahora tienes herramientas. Y cada vez que regresas al centro, el regreso es más rápido.</p>
+      <h3>3. La <button class="glossary-term" data-term="compasión">compasión</button> es lo único que importa</h3>
+      <p>Puedes aprender todas las técnicas. Pero si no cultivas compasión hacia tus voces (y hacia ti mismo cuando te <button class="glossary-term" data-term="fusión">fusionas</button> con ellas), nada cambia. La compasión no es debilidad. Es la fuerza que sostiene todo.</p>
+      <h3>4. No estás solo</h3>
+      <p>Aunque el camino es tuyo, millones de personas están haciendo este trabajo. Algunos con estas palabras. Otros con diferentes lenguajes (terapia, meditación, arte, relaciones conscientes). Pero todos estamos aprendiendo lo mismo: cómo ser humanos con menos sufrimiento y más presencia.</p>
+    </section>
+        <section id="una-invitacion-final">
+      <h2>Una invitación final</h2>
+      <p>Este libro termina aquí. Pero tu libro —el que escribes con tu vida— continúa.</p>
+      <p>Te invito a que no dejes que esto sea solo información. Hazlo práctica.</p>
+      <p>Elige una de las técnicas. Una sola. La que más resuene. Y hazla durante 30 días. Puede ser:</p>
+      <ul>
+        <li>El check-in matutino (3 minutos)</li>
+        <li>El diálogo escrito con una voz (10 minutos)</li>
+        <li>La <button class="glossary-term" data-term="meditación">meditación</button> del espacio entre pensamientos (20 minutos)</li>
+        <li>El retiro semanal (1 hora)</li>
+      </ul>
+      <p>Solo una. Consistentemente. Y observa qué cambia. No esperes milagros. Espera pequeños desplazamientos. Una voz que se suaviza. Un momento de silencio donde antes había ruido. Una decisión tomada desde el <button class="glossary-term" data-term="ser">Ser</button> en lugar de la reactividad.</p>
+      <p>Esos pequeños desplazamientos, acumulados, transforman vidas.</p>
+    </section>
+
+    <section id="palabras-finales" class="final-quote">
+      <h2>Palabras finales</h2>
+      <p>Quiero terminar con algo que aprendí de mis pacientes:</p>
+      <p>No necesitas estar "curado" para vivir una vida plena.</p>
+      <p>Las voces seguirán ahí. A veces serán ruidosas. Otras veces, casi imperceptibles.</p>
+      <p>Pero tú —el que escucha— puedes aprender a sostenerlas con cada vez más gracia.</p>
+      <p>Y en esa capacidad de sostener sin colapsar, de escuchar sin fusionarse, de vivir desde el centro incluso en medio del caos...</p>
+      <p>Ahí está la libertad.</p>
+      <p>No es la libertad de no tener voces. Es la libertad de no ser dominado por ellas.</p>
+      <p>Gracias por acompañarme en este viaje.</p>
+      <p>Que encuentres paz en el diálogo con tus voces.</p>
+      <p>Que encuentres sabiduría en el silencio entre ellas.</p>
+      <p>Y que vivas, cada vez más, desde ese centro inquebrantable que siempre has sido.</p>
+      <p>🌀<br>El camino continúa.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del epílogo">
+      <a href="capitulo_12.html" class="nav-link">← Capítulo 12</a>
+      <a href="apendice.html" class="nav-link">Apéndice →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Epílogo</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "voz interna": "Patrón recurrente de pensamiento con cualidad autónoma. No es alucinación; es narrativa interna con intención protectora.",
+      "voz silenciosa": "Sabiduría profunda que emerge del silencio entre las voces. No tiene contenido narrativo ni agenda. Es el Ser en su expresión más sutil.",
+      "diálogo interno": "Conversación terapéutica con las voces desde la posición del Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "fusión": "Estado donde te identificas completamente con una voz. Elimina la agencia y el espacio para el diálogo.",
+      "compasión": "Capacidad de tratarte con gentileza ante el sufrimiento. La voz silenciosa es compasión espontánea, no cultivada.",
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. Espacio donde las partes aparecen. No tiene contenido ni agenda.",
+      "meditación": "Práctica de entrenar la atención y la conciencia. Cultiva la observación ecuánime, creando espacios entre pensamientos donde el Ser se hace evidente.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos o voces. Crea espacio entre el observador y lo observado.",
+      "integración": "Proceso donde las voces encuentran su lugar natural y dejan de dominar. Tiene tres etapas: funcional, psicológica y transpersonal.",
+      "rumiación": "Pensamiento repetitivo sobre problemas sin llegar a solución. Es fusión en movimiento. Diferente del diálogo terapéutico.",
+      "trauma": "Experiencia abrumadora que supera la capacidad de procesamiento del sistema nervioso. Queda 'congelada' en el cuerpo y requiere acompañamiento profesional.",
+      "mindfulness": "Práctica de prestar atención al momento presente con apertura y sin juicio. Base de la desidentificación."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
