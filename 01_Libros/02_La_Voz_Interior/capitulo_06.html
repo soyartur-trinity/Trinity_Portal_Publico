@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 6: Técnicas de conversación interna | La Voz Interior</title>
+  <meta name="description" content="Herramientas concretas para dialogar con tus partes internas de manera terapéutica">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 45%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    .responsive-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+    .responsive-table th, .responsive-table td { padding: 0.8rem; border: 1px solid rgba(139,107,154,0.3); text-align: left; vertical-align: top; }
+    .responsive-table th { background: rgba(139,107,154,0.1); color: var(--acento); }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+      .responsive-table { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_05.html" class="nav-link">← Capítulo 5</a>
+    <a href="capitulo_07.html" class="nav-link disabled" title="Próximamente">Capítulo 7 →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 6</span>
+      <h1>Técnicas de conversación interna: cómo hablar con tus partes</h1>
+    </header>
+
+    <section id="el-mapa-no-es-el-territorio">
+      <h2>El mapa no es el territorio</h2>
+      <p>Antes de entrar en las técnicas, una advertencia: las técnicas son solo señales, no destinos. Puedes aprender las herramientas más sofisticadas de <button class="glossary-term" data-term="diálogo interno">diálogo interno</button>, pero si no tienes la actitud correcta (curiosidad, compasión, <button class="glossary-term" data-term="desidentificación">desidentificación</button>), las técnicas serán mecánicas, frías, inefectivas.</p>
+      <p>Por eso el capítulo anterior fue sobre la actitud. Este es sobre las herramientas. Pero recuerda: las herramientas sirven a la actitud, no al revés. Dicho esto, estas técnicas han sido probadas en miles de horas de trabajo clínico. Funcionan. Si las usas con presencia.</p>
+    </section>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 1: La <button class="glossary-term" data-term="personificación">personificación</button> (dar forma a la voz)</h3>
+      <p><strong>Para qué sirve:</strong> Hacer visible lo invisible. Convertir una sensación difusa en un personaje concreto con el que puedas dialogar.</p>
+      <p><strong>Cómo se hace:</strong> Identifica una voz activa. Cierra los ojos. Imagina que esa voz es una persona sentada frente a ti. Pregúntate: ¿Cómo se ve? (Edad, género, ropa, postura) ¿Qué expresión tiene? ¿Dónde está en relación a ti? No fuerces la imagen. Deja que surja espontáneamente.</p>
+      <p><strong>Ejemplo clínico:</strong> Martín, 45 años, describe su voz <button class="glossary-term" data-term="protector">Protectora</button>: "Es un hombre mayor, como de 60 años. Usa traje gris. Brazos cruzados. Parece un guardaespaldas." Esa imagen le permite relacionarse con la voz sin fusionarse.</p>
+    </div>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 2: El <button class="glossary-term" data-term="diálogo escrito">diálogo escrito</button> (<button class="glossary-term" data-term="externalización">externalización</button> en papel)</h3>
+      <p><strong>Para qué sirve:</strong> Sacar el diálogo de tu cabeza y ponerlo en el papel. Crea distancia y evita la <button class="glossary-term" data-term="fusión">fusión</button>.</p>
+      <p><strong>Cómo se hace:</strong> Divide la página en dos columnas. Izquierda: La voz. Derecha: El <button class="glossary-term" data-term="ser">Ser</button> (observador). Deja que la voz hable primero. Luego, responde desde el Ser. Continúa hasta que se sienta escuchada.</p>
+      <p class="nota-importante"><strong>Nota:</strong> Especialmente útil cuando las voces son muy intensas. Escribir crea un buffer que te impide fusionarte.</p>
+    </div>
+        <div class="tecnica-practica">
+      <h3>Técnica 3: La pregunta clave ("¿De qué me estás protegiendo?")</h3>
+      <p><strong>Para qué sirve:</strong> Ir directo al núcleo de la voz. Descubrir su <button class="glossary-term" data-term="intención positiva">intención protectora</button>.</p>
+      <p><strong>Cómo se hace:</strong> Identifica la voz. Pregúntale directamente. No busques respuesta intelectual. Sostén la pregunta. Si no es clara, pregunta: "¿Y de qué me protege eso?" (Ir más profundo).</p>
+      <p><strong>Ejemplo de cadena protectora:</strong> Perfeccionista: "Tienes que ser impecable." → Protege de: "Que te juzguen." → Protege de: "Sentir vergüenza." → Protege de: "Sentir que no mereces amor." Ahí está el núcleo.</p>
+    </div>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 4: La <button class="glossary-term" data-term="silla vacía">silla vacía</button> (diálogo gestáltico)</h3>
+      <p><strong>Para qué sirve:</strong> Hacer físico el diálogo interno. Cambiar de postura espacial ayuda a desidentificarte.</p>
+      <p><strong>Cómo se hace:</strong> Coloca dos sillas frente a frente. Silla 1: La voz. Silla 2: El Ser. Alterna entre ellas. Variante avanzada: Tres sillas si hay dos voces en conflicto (Voz A, Voz B, Ser mediador).</p>
+      <p class="nota-importante"><strong>Importante:</strong> Técnica muy potente pero puede ser intensa. Si te sientes abrumado, vuelve a la respiración o pide ayuda profesional.</p>
+    </div>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 5: El contrato interno (negociación con partes)</h3>
+      <p><strong>Para qué sirve:</strong> Establecer acuerdos con las voces. Pedirles que cambien su estrategia sin traicionar su intención.</p>
+      <p><strong>Cómo se hace:</strong> Reconoce y agradece su intención. Pregunta si estaría dispuesta a probar una estrategia diferente. Propón alternativa específica. Haz acuerdo explícito. Revisa después de una semana.</p>
+    </div>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 6: La carta a la voz (práctica de escritura terapéutica)</h3>
+      <p><strong>Para qué sirve:</strong> Expresar lo que sientes hacia una voz de manera contenida y reflexiva.</p>
+      <p><strong>Cómo se hace:</strong> Escribe carta a la voz (Reconocimiento, Comprensión, Límite, Petición). Luego, escribe respuesta desde la voz. Lee ambas en voz alta.</p>
+    </div>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 7: El diario de voces (práctica diaria)</h3>
+      <p><strong>Para qué sirve:</strong> Desarrollar conciencia continua de cuándo las voces están activas y qué dispara su aparición.</p>
+      <p><strong>Cómo se hace:</strong> Lleva cuaderno/celular. Anota: Qué voz, Qué dijo, Contexto, Emoción, Respuesta. Con el tiempo, muestra patrones.</p>
+    </div>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 8: La <button class="glossary-term" data-term="visualización">visualización</button> del encuentro seguro</h3>
+      <p><strong>Para qué sirve:</strong> Crear un espacio interno seguro donde dialogar con voces muy activadas o dolorosas (especialmente el <button class="glossary-term" data-term="niño herido">Niño Herido</button>).</p>
+      <p><strong>Cómo se hace:</strong> Imagina un lugar seguro. Invita a la voz. Desde el Ser, pregúntale qué necesita. Escucha. Si es el Niño Herido, imagínate sosteniéndolo. Agradece al final.</p>
+    </div>
+
+    <section id="cuando-usar-cada-tecnica">
+      <h2>¿Cuándo usar cada técnica?</h2>
+      <table class="responsive-table">
+        <thead><tr><th>Técnica</th><th>Mejor para</th></tr></thead>
+        <tbody>
+          <tr><td>Personificación</td><td>Hacer visible lo invisible. Primera vez trabajando con una voz.</td></tr>
+          <tr><td>Diálogo escrito</td><td>Voces muy intensas. Evitar fusión.</td></tr>
+          <tr><td>Pregunta clave</td><td>Ir al núcleo rápidamente. Descubrir intención protectora.</td></tr>
+          <tr><td>Silla vacía</td><td>Conflicto entre voces. Hacer físico el diálogo.</td></tr>
+          <tr><td>Contrato interno</td><td>Negociar cambio de estrategia. Voces colaborativas.</td></tr>
+          <tr><td>Carta a la voz</td><td>Relación crónica difícil con una voz. Expresión contenida.</td></tr>
+          <tr><td>Diario de voces</td><td>Conciencia diaria. Identificar patrones.</td></tr>
+          <tr><td>Visualización</td><td>Niño Herido, <button class="glossary-term" data-term="trauma">trauma</button>, voces muy vulnerables.</td></tr>
+        </tbody>
+      </table>
+    </section>
+        <section id="ejercicio-integrador" class="ejercicio-practico">
+      <h2>✍️ Ejercicio integrador: Primera conversación formal con una voz</h2>
+      <p><strong>Duración:</strong> 30-45 minutos | <strong>Materiales:</strong> Cuaderno, espacio tranquilo, dos sillas (opcional)</p>
+      <ol>
+        <li>Elige una voz con la que quieras dialogar hoy.</li>
+        <li>Personifícala: Cierra los ojos. Imagina cómo se ve, dónde está, qué expresión tiene.</li>
+        <li>Escríbele una pregunta inicial: "¿Por qué estás aquí?", "¿Qué necesitas de mí?", "¿De qué me estás protegiendo?"</li>
+        <li>Deja que responda. Escribe lo que surja sin filtrar.</li>
+        <li>Continúa el diálogo por escrito o usando las sillas.</li>
+        <li>Al final, pregúntale: "¿Hay algo más que necesites que yo sepa?"</li>
+        <li>Agradece a la voz. Cierra el encuentro conscientemente.</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> ¿Qué descubriste? ¿Cambió tu relación con esa voz?</p>
+    </section>
+
+    <section id="preguntas-reflexion-6">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Qué técnica te resuena más naturalmente? ¿Por qué?</li>
+        <li>¿Hay alguna voz con la que sientas resistencia a dialogar? ¿Qué temes descubrir?</li>
+        <li>Si ya intentaste dialogar con una voz, ¿cómo fue? ¿Se sintió artificial o genuino?</li>
+        <li>¿Qué necesitarías para hacer del diálogo interno una práctica regular?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-6" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>Las técnicas sirven a la actitud, no al revés</li>
+        <li>8 técnicas principales: Personificación, diálogo escrito, pregunta clave, silla vacía, contrato interno, carta, diario, visualización</li>
+        <li>Cada técnica es útil para contextos diferentes: elige según tu estilo y la necesidad del momento</li>
+        <li>El diálogo es una práctica: requiere repetición, paciencia, y voluntad de relacionarte de manera nueva con tus voces</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>Desactivar el conflicto: cuando las voces están en guerra</em> — Técnicas de mediación interna.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_05.html" class="nav-link">← Capítulo 5</a>
+      <a href="capitulo_07.html" class="nav-link disabled" title="Próximamente">Capítulo 7 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 6 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "diálogo interno": "Conversación terapéutica con las voces desde el Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos o voces. Crea espacio entre el observador y lo observado.",
+      "personificación": "Técnica de dar forma concreta a una voz: imaginarla como persona con edad, género, postura. Hace visible lo invisible.",
+      "protector": "Voz interna que evita riesgos o emociones dolorosas. Función original: prevenir que revivas traumas o rechazos pasados.",
+      "fusión": "Estado donde te identificas completamente con una voz. Elimina la agencia y el espacio para el diálogo.",
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. Espacio donde las partes aparecen.",
+      "externalización": "Acto de sacar una experiencia interna y colocarla 'afuera' como objeto observable (escritura, imaginación).",
+      "intención positiva": "Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional.",
+      "silla vacía": "Técnica gestáltica adaptada donde usas sillas físicas para representar voces. Cambiar de silla facilita la desidentificación.",
+      "niño herido": "Voz interna que porta dolor emocional de la infancia no procesado. Necesita contención física y emocional antes de dialogar.",
+      "visualización": "Práctica de crear escenarios mentales seguros para dialogar con voces vulnerables o procesar material emocional intenso.",
+      "trauma": "Experiencia abrumadora que supera la capacidad de procesamiento del sistema nervioso. Requiere contención y acompañamiento profesional.",
+      "rumiación": "Pensamiento repetitivo sin solución. Es fusión en movimiento. Diferente del diálogo terapéutico.",
+      "diálogo escrito": "Externalización en papel. Divide página en dos columnas (Voz vs Ser) para evitar fusión y crear distancia segura.",
+      "contrato interno": "Negociación explícita con una voz para actualizar su estrategia. Incluye reconocimiento, acuerdo y revisión semanal."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
