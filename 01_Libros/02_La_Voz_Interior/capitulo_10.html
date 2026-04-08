@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 10: Integración | La Voz Interior</title>
+  <meta name="description" content="Cuando las voces encuentran su lugar: armonización profunda, somática y transpersonal">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 75%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    .stage-card { background: rgba(255,255,255,0.5); padding: 1rem; margin: 1rem 0; border-radius: 8px; border-left: 3px solid var(--secundario); }
+    .stage-card h4 { margin: 0 0 0.5rem 0; color: var(--secundario); }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_09.html" class="nav-link">← Capítulo 9</a>
+    <a href="capitulo_11.html" class="nav-link disabled" title="Próximamente">Capítulo 11 →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 10</span>
+      <h1>Integración: cuando las voces encuentran su lugar</h1>
+    </header>
+
+    <section id="mas-alla-del-dialogo" class="caso-clinico">
+      <h2>Más allá del diálogo</h2>
+      <p>Gabriela, 51 años, profesora de literatura, después de dos años de trabajo con sus <button class="glossary-term" data-term="voz interna">voces internas</button>:</p>
+      <p>—Algo cambió. No sé explicarlo bien. Antes, dialogaba con mis voces constantemente: "¿Qué necesitas, Crítico?" "¿De qué me proteges, Protector?" Era agotador, pero útil. Pero ahora... ya no necesito hacerlo tanto. Es como si supieran su lugar. Como si hubiera una armonía interna que no requiere negociación constante.</p>
+      <p>—¿Desaparecieron las voces? —pregunté.</p>
+      <p>—No. Siguen ahí. Pero es como si... no sé... como si yo fuera más grande que todas ellas juntas. Como si las contuviera sin esfuerzo.</p>
+      <p>Eso es la <button class="glossary-term" data-term="integración">integración</button>.</p>
+      <p>No es la ausencia de voces. Es su armonización.</p>
+    </section>
+
+    <section id="que-es-la-integracion">
+      <h2>¿Qué es la integración?</h2>
+      <p>La integración es el estado donde:</p>
+      <ul>
+        <li>Las voces ya no dominan tu experiencia</li>
+        <li>Cada una tiene una función actualizada y la cumple sin tiranizar</li>
+        <li>Puedes acceder al <button class="glossary-term" data-term="ser">Ser</button> sin esfuerzo, incluso cuando las voces están activas</li>
+        <li>Hay una sensación de unidad interna, aunque la multiplicidad siga presente</li>
+      </ul>
+      <p>No es un estado permanente y fijo. Es un rango de funcionamiento. Habrá momentos de crisis donde las voces se activan intensamente. Eso es normal. Pero regresas al centro mucho más rápido. Y el centro es cada vez más espacioso.</p>
+    </section>
+
+    <section id="tres-etapas-integracion">
+      <h2>Las tres etapas de la integración</h2>
+      <p>La integración no sucede de golpe. Es un proceso con tres etapas:</p>
+      
+      <div class="stage-card">
+        <h4>Etapa 1: Integración funcional (las voces colaboran)</h4>
+        <p><strong>Características:</strong> Las voces han actualizado sus roles. Ya no entran en guerra. Responden cuando las llamas, pero no te asaltan.<br><strong>Ejemplo:</strong> El Crítico se convierte en Evaluador. Solo aparece cuando terminas un proyecto y pide permiso: "¿Quieres mi opinión?"<br><strong>Metáfora:</strong> Una orquesta donde cada músico conoce su parte y toca cuando corresponde.</p>
+      </div>
+      <div class="stage-card">
+        <h4>Etapa 2: Integración psicológica (disolución parcial)</h4>
+        <p><strong>Características:</strong> Algunas voces se vuelven tan transparentes que dejas de notarlas como separadas. Sus cualidades se integran en tu forma natural de ser.<br><strong>Ejemplo:</strong> Ya no piensas "mi Protector dice que esto es arriesgado". Simplemente tienes discernimiento.<br><strong>Metáfora:</strong> Los músicos improvisando juntos sin partitura. Hay individualidad, pero emerge algo más grande.</p>
+      </div>
+      <div class="stage-card">
+        <h4>Etapa 3: Integración transpersonal (el Ser como fuente)</h4>
+        <p><strong>Características:</strong> Accedes al Ser no solo como observador, sino como identidad primaria. Las voces son claramente manifestaciones del Ser, no entidades separadas. Hay una cualidad de <button class="glossary-term" data-term="vacuidad (śūnyatā)">vacuidad consciente</button>: nada se solidifica.<br><strong>Ejemplo:</strong> Cuando aparece autocrítica, no es "el Crítico hablando". Es simplemente energía crítica fluyendo. La ves, la reconoces, la dejas pasar.<br><strong>Metáfora:</strong> No hay orquesta. Solo música emergiendo del silencio.</p>
+      </div>
+      <p class="nota-importante"><strong>Nota importante:</strong> Esta etapa tiene cualidad contemplativa profunda. No es un logro psicológico, es una realización espiritual. No todos la alcanzan, y está bien. Las dos primeras etapas son suficientes para vivir con paz interna.</p>
+    </section>
+        <section id="senales-integracion">
+      <h2>Señales de que estás integrando</h2>
+      <p>¿Cómo sabes si estás avanzando hacia la integración?</p>
+      <ol>
+        <li><strong>Menos esfuerzo en el <button class="glossary-term" data-term="diálogo interno">diálogo interno</button>:</strong> Al principio es intenso. En la integración, se vuelve natural, casi automático. Como aprender a conducir: al principio es mental, luego es corporal.</li>
+        <li><strong>Espacios de silencio mental:</strong> Antes, siempre había ruido. En la integración, aparecen intervalos de silencio espontáneos. Como descansos entre notas musicales.</li>
+        <li><strong>Acceso inmediato al Ser en crisis:</strong> Antes, te fusionabas. Necesitabas tiempo para regresar. Ahora, incluso en crisis, hay una parte de ti que permanece en el Ser. Como un ancla en medio de la tormenta.</li>
+        <li><strong>Compasión automática hacia las voces:</strong> Antes sentías irritación. Ahora hay compasión instantánea: "Ah, está asustado. ¿Qué necesita?" Surge sin esfuerzo.</li>
+        <li><strong>Sentido de unidad interna:</strong> Antes, fragmentación. Ahora, aunque haya multiplicidad, hay una sensación de ser uno. Como un árbol con muchas ramas: diversidad, pero un solo tronco.</li>
+      </ol>
+    </section>
+
+    <section id="cuerpo-en-integracion" class="nota-importante">
+      <h2>El papel del cuerpo en la integración</h2>
+      <p>La integración no es solo mental. Es somática. Las voces no solo viven en tu cabeza. Viven en tu cuerpo.</p>
+      <p>El Crítico puede vivir en la tensión de tus hombros. El Protector en el nudo de tu estómago. El <button class="glossary-term" data-term="niño herido">Niño Herido</button> en la opresión de tu pecho. Integrar las voces implica liberar el cuerpo de sus patrones defensivos.</p>
+    </section>
+
+    <section id="practicas-somaticas">
+      <h2>Prácticas somáticas para la integración</h2>
+      
+      <div class="tecnica-practica">
+        <h3>Práctica 1: Escaneo corporal de voces</h3>
+        <p><strong>Duración:</strong> 10 minutos, 3 veces por semana</p>
+        <ol>
+          <li>Acuéstate o siéntate cómodamente. Cierra los ojos. Respira profundo tres veces.</li>
+          <li>Recorre tu cuerpo mentalmente de pies a cabeza.</li>
+          <li>En cada zona, pregúntate: "¿Hay alguna voz viviendo aquí?"</li>
+          <li>Si detectas tensión o contracción, pregúntale: "¿Qué voz eres? ¿Qué estás sosteniendo?"</li>
+          <li>Respira hacia esa zona. Imagina que con cada exhalación, la voz puede relajarse un poco.</li>
+          <li>Agradece a esa parte del cuerpo por sostener esa voz tanto tiempo.</li>
+        </ol>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>Práctica 2: Movimiento para liberar voces</h3>
+        <p><strong>Para qué sirve:</strong> Algunas voces están tan enraizadas somáticamente que el diálogo mental no es suficiente. Necesitas mover el cuerpo para liberarlas.</p>
+        <ol>
+          <li>Identifica una voz (Crítico, Protector, etc.)</li>
+          <li>Pregúntate: "Si esta voz fuera un movimiento corporal, ¿cuál sería?"</li>
+          <li>Deja que tu cuerpo se mueva espontáneamente expresando esa voz (brazos cruzados, encogerte, puños cerrados, etc.)</li>
+          <li>Exagera el movimiento. Hazlo más grande, más intenso.</li>
+          <li>Luego, invierte el movimiento. Si era contracción, expande. Si era rigidez, suaviza.</li>
+          <li>Respira. Siente cómo el cuerpo tiene nueva información.</li>
+        </ol>
+        <p class="nota-importante"><strong>Nota:</strong> Esto puede liberar emociones intensas. Si es abrumador, busca acompañamiento profesional (terapia somática, danza movimiento terapia).</p>
+      </div>
+    </section>
+
+    <section id="caso-elena" class="caso-clinico">
+      <h2>Caso clínico: Elena y la integración del Niño Herido</h2>
+      <p>Elena, 46 años, trabajadora social, había trabajado con su Niño Herido durante años. Sabía que estaba ahí (una parte de 7 años que se sintió abandonada emocionalmente). Podía dialogar con ella. Incluso había renegociado su rol.</p>
+      <p>Pero algo faltaba: —Es como si esa parte todavía estuviera separada de mí. La escucho, la cuido, pero no la siento integrada.</p>
+      <p>Le propuse trabajar somáticamente. —¿Dónde vive esa niña en tu cuerpo?</p>
+      <p>Elena llevó su mano al pecho: —Aquí. Siempre ha estado aquí. Como un nudo.</p>
+      <p>—¿Puedes respirar hacia ese nudo?</p>
+      <p>Elena cerró los ojos. Respiró profundo varias veces. Después de unos minutos, lágrimas comenzaron a caer.</p>
+      <p>—Está... soltándose. El nudo se está deshaciendo. Y la niña... ya no se siente como algo separado. Se siente como... parte de mí.</p>
+      <p>Permanecimos en silencio. Elena respiraba profundamente, con las manos en el pecho. Cuando abrió los ojos: —Por primera vez, no siento que tenga que "cuidar" a esa niña. Yo soy esa niña. Y también soy la adulta. Y ambas están aquí, juntas.</p>
+      <p>Eso es la integración somática. La voz no desapareció. Se disolvió en el todo.</p>
+    </section>
+        <section id="peligro-pseudointegracion" class="nota-importante">
+      <h2>El peligro de la <button class="glossary-term" data-term="pseudointegración">pseudointegración</button></h2>
+      <p>Hay una trampa común: creer que has integrado algo cuando en realidad lo reprimiste.</p>
+      <p><strong>Pseudointegración se ve así:</strong> "Ya no tengo Crítico" (pero la autocrítica sigue, solo que no la ves). "Superé mi Protector" (pero evitas riesgos sin darte cuenta).</p>
+      <p><strong>Verdadera integración se ve así:</strong> "El Crítico sigue ahí, pero ya no me domina. Emerge cuando es útil." "El Niño Herido sigue presente. Es mi vulnerabilidad consciente."</p>
+      <p><strong>Diferencia clave:</strong> Pseudointegración = Negar la voz. Verdadera integración = Transparencia de la voz.</p>
+    </section>
+
+    <section id="integracion-parcial">
+      <h2>La integración es parcial y progresiva</h2>
+      <p>Importante: No integras todas las voces al mismo tiempo. Algunas se integran rápidamente. Otras tardan años. Algunas nunca se integran completamente (y está bien).</p>
+      <p>Ejemplo: Puedes tener integración del Perfeccionista (ya no te paraliza), pero todavía estar en <button class="glossary-term" data-term="diálogo interno">diálogo activo</button> con el Protector. Puedes haber integrado al Niño Herido, pero el Crítico todavía requiere atención.</p>
+      <p>No te compares con un ideal. La integración es un proceso continuo, no un destino fijo.</p>
+    </section>
+
+    <section id="ejercicio-inventario-integracion" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Inventario de integración</h2>
+      <p><strong>Duración:</strong> 30 minutos</p>
+      <ol>
+        <li>Haz una lista de tus voces principales (las que has estado trabajando).</li>
+        <li>Para cada una, evalúa en qué etapa de integración está:
+          <ul>
+            <li><em>Colaboración funcional:</em> Ya no me paraliza, pero todavía lo noto como separado.</li>
+            <li><em>Integración psicológica:</em> Su función está integrada en mi discernimiento.</li>
+            <li><em>Diálogo activo:</em> Todavía requiero conversaciones frecuentes.</li>
+          </ul>
+        </li>
+        <li>Para las voces en etapas tempranas, pregúntate: "¿Qué necesitaría esta voz para avanzar?"</li>
+        <li>Para las voces integradas, celebra: "Esta voz encontró su lugar."</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> ¿Hay alguna voz que hayas integrado sin darte cuenta? ¿Alguna que resista integrarse?</p>
+    </section>
+
+    <section id="preguntas-reflexion-10">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Has experimentado momentos de integración (aunque sean breves)? ¿Cómo fue?</li>
+        <li>¿Qué voces sientes más cerca de la integración? ¿Cuáles todavía están en diálogo activo?</li>
+        <li>¿Hay alguna voz que estés pseudointegrando (negando en lugar de transparentar)?</li>
+        <li>¿Qué papel juega tu cuerpo en sostener o liberar las voces?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-10" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>La integración es armonización, no eliminación de voces</li>
+        <li>Tres etapas: funcional (colaboran), psicológica (disolución parcial), transpersonal (Ser como fuente)</li>
+        <li>Señales de integración: menos esfuerzo, silencio mental, acceso inmediato al Ser, compasión automática, unidad interna</li>
+        <li>La integración es somática: las voces viven en el cuerpo y necesitan liberarse ahí también</li>
+        <li>Cuidado con la <button class="glossary-term" data-term="pseudointegración">pseudointegración</button> (represión disfrazada)</li>
+        <li>La integración es parcial y progresiva, no un estado permanente para todas las voces</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>La voz silenciosa</em> — Conectar con la sabiduría profunda más allá del diálogo.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_09.html" class="nav-link">← Capítulo 9</a>
+      <a href="capitulo_11.html" class="nav-link disabled" title="Próximamente">Capítulo 11 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 10 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "integración": "Proceso donde las voces encuentran su lugar natural y dejan de dominar. Tiene tres etapas: funcional, psicológica y transpersonal. No es eliminación, sino armonización.",
+      "pseudointegración": "Falsa integración donde niegas una voz (represión) creyendo que la integraste. Verdadera integración no es negar la voz, sino volverla transparente: está ahí pero no domina.",
+      "niño herido": "Voz interna que porta dolor emocional de la infancia no procesado. Necesita ser sostenido por el Ser adulto para transformar su demanda en vulnerabilidad consciente.",
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. Espacio donde las partes aparecen. No tiene contenido ni agenda.",
+      "voz interna": "Patrón recurrente de pensamiento con cualidad autónoma. No es alucinación; es narrativa interna con intención protectora.",
+      "diálogo interno": "Conversación terapéutica con las voces desde la posición del Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "vacuidad (śūnyatā)": "Concepto budista: la ausencia de existencia inherente e independiente. Nada existe 'por sí mismo'; todo surge de causas y condiciones. Profundiza la desidentificación sin negar la utilidad terapéutica.",
+      "colaboración": "Estado evolutivo en la relación con las voces donde cada voz cumple su función actualizada sin dominar. Es el nivel 4 en los cinco niveles de relación.",
+      "fusión": "Estado donde te identificas completamente con una voz. Elimina la agencia y el espacio para el diálogo.",
+      "grounding (anclaje)": "Técnicas que te conectan con el presente a través del cuerpo y los sentidos. Útiles cuando estás fusionado o abrumado. Regresa al Ser, que siempre está en el ahora.",
+      "trauma": "Experiencia abrumadora que supera la capacidad de procesamiento del sistema nervioso. Queda 'congelada' en el cuerpo. Las voces protectoras a menudo intentan evitar que re-experimentes traumas no procesados.",
+      "no-self (anatta)": "Concepto budista que señala la ausencia de un yo permanente, independiente e inmutable. Muestra que es un proceso dinámico, no una entidad fija. Ayuda a ver que incluso el 'yo' es una construcción.",
+      "conciencia testigo": "Ver Ser. Aquello en ti que observa sin juzgar, presencia sin fusionarse y contiene sin colapsar.",
+      "meditación": "Práctica de entrenar la atención y la conciencia. Cultiva la observación ecuánime, creando espacios entre pensamientos donde el Ser se hace evidente."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
