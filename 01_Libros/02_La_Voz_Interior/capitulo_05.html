@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 5: La actitud del diálogo | La Voz Interior</title>
+  <meta name="description" content="Curiosidad, no combate: la postura correcta para relacionarte con tus voces internas">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 38%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    .list-5p { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+    .list-5p div { background: rgba(139,107,154,0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(139,107,154,0.2); }
+    .list-5p strong { display: block; margin-bottom: 0.3rem; color: var(--acento); }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+      .list-5p { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="interludio.html" class="nav-link">← Interludio</a>
+    <a href="capitulo_06.html" class="nav-link disabled" title="Próximamente">Capítulo 6 →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 5</span>
+      <h1>La actitud del diálogo: curiosidad, no combate</h1>
+    </header>
+
+    <section id="el-error-mas-comun" class="caso-clinico">
+      <h2>El error más común: la guerra interna</h2>
+      <p>Sofía, 36 años, profesora de yoga, vino a terapia con una paradoja:</p>
+      <p>—Enseño presencia, compasión, aceptación. Pero conmigo misma soy brutal. Tengo una <button class="glossary-term" data-term="voz interna">voz interna</button> crítica que me machaca todo el tiempo: "No eres suficientemente buena. Otros maestros son mejores. Estás engañando a la gente." Y lo que hago es... combatirla. Le digo: "Cállate. Eres tóxica. No voy a escucharte." Pero mientras más la rechazo, más fuerte grita.</p>
+      <p>—¿Y si en lugar de combatirla, la escucharas? —pregunté.</p>
+      <p>Sofía me miró confundida: —¿Escucharla? Pero si lo que dice es mentira. Me hace daño.</p>
+      <p>—Exacto. Pero ¿por qué crees que está ahí?</p>
+      <p>Silencio largo.</p>
+      <p>—No lo sé. Supongo que... para torturarme.</p>
+      <p>—¿Y si no fuera para torturarte? ¿Y si estuviera intentando protegerte de algo?</p>
+      <p>Sofía frunció el ceño: —¿Protegerme? ¿De qué?</p>
+      <p>—De la posibilidad de ser vista como un fraude. De que descubran que "no eres suficiente". Si ella te critica primero, el juicio externo duele menos. Es una estrategia.</p>
+      <p>Sofía se quedó en silencio. Luego, con lágrimas: —Nunca lo había visto así. Siempre pensé que era mi enemiga. Pero si está intentando protegerme... entonces quizás... necesita algo de mí.</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Ese es el cambio de actitud que hace posible el <button class="glossary-term" data-term="diálogo interno">diálogo interno</button>. Pasar de "esta voz es mi enemiga" a "esta voz tiene una <button class="glossary-term" data-term="intención positiva">intención positiva</button>, aunque su estrategia sea disfuncional".</p>
+    </section>
+
+    <section id="las-dos-posturas-ante-las-voces">
+      <h2>Las dos posturas ante las voces: combate vs curiosidad</h2>
+      <p>Cuando las personas descubren sus voces internas, suelen adoptar una de dos posturas:</p>
+
+      <h3>Postura 1: COMBATE</h3>
+      <p><strong>Actitud:</strong> "Esta voz es el problema. Tengo que eliminarla, silenciarla, ignorarla."</p>
+      <p><strong>Estrategias:</strong> Pensamiento positivo forzado, autocrítica sobre la autocrítica, supresión por ocupación.</p>
+      <p><strong>Resultado:</strong> La voz se vuelve más fuerte. Porque las voces son como niños: mientras más las ignoras, más gritan. Y mientras más combates algo, más poder le das.</p>
+
+      <h3>Postura 2: CURIOSIDAD</h3>
+      <p><strong>Actitud:</strong> "Esta voz está aquí por una razón. Aunque me incomode, tiene algo que decir. Voy a escucharla."</p>
+      <p><strong>Estrategias:</strong> Preguntar, validar la intención, negociar estrategias alternativas.</p>
+      <p><strong>Resultado:</strong> La voz se calma. Se siente escuchada. Y cuando una parte se siente escuchada, puede actualizar su estrategia.</p>
+      <p class="nota-importante"><strong>La curiosidad no es pasividad.</strong> Es presencia activa. No es decir "está bien que me tortures". Es decir: "Estoy dispuesto a entender por qué lo haces".</p>
+    </section>
+
+    <section id="los-principios-de-la-actitud-dialógica">
+      <h2>Los cinco principios de la actitud dialógica</h2>
+      <p>Para dialogar de manera terapéutica con tus voces, necesitas cultivar estas cinco actitudes:</p>
+      <div class="list-5p">
+        <div><strong>1. Curiosidad genuina</strong>No analítica, sino del corazón. "Cuéntame más. Quiero entender."</div>
+        <div><strong>2. Compasión</strong>No lástima, sino reconocimiento del esfuerzo. "¿Cuánto tiempo llevas sosteniendo esta carga?"</div>
+        <div><strong>3. No-juicio</strong>Incluso hacia las voces "malas". Todas tienen origen protector. "¿Qué dolor me estás evitando sentir?"</div>
+        <div><strong>4. Paciencia</strong>Las voces no cambian en una conversación. "No tengo prisa. Puedo volver a escucharte."</div>
+        <div><strong>5. <button class="glossary-term" data-term="desidentificación">Desidentificación</button></strong>Hablas CON la voz, no DESDE ella. Solo es posible desde el <button class="glossary-term" data-term="ser">Ser</button>.</div>
+      </div>
+    </section>
+        <section id="ejercicio-practico-cambiar-de-combate-a-curiosidad" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Cambiar de combate a curiosidad</h2>
+      <p>Piensa en una voz que habitualmente combates (el Crítico, el Protector, el Perfeccionista). Anota en tu cuaderno:</p>
+      <ol>
+        <li>¿Qué dice esta voz? (Frase exacta)</li>
+        <li>¿Cómo sueles responderle? (Combatirla, ignorarla, juzgarla)</li>
+        <li>¿Qué pasaría si en lugar de combatirla, le preguntaras: "¿De qué me estás protegiendo?"</li>
+      </ol>
+      <p><strong>Práctica interna:</strong> Imagina que esa voz es una persona sentada frente a ti. Cierra los ojos. Pregúntale:</p>
+      <ul>
+        <li>"¿Por qué dices eso?"</li>
+        <li>"¿Qué temes que pase si no dices eso?"</li>
+        <li>"¿Qué necesitas de mí?"</li>
+      </ul>
+      <p>No fuerces respuestas. Solo sostén las preguntas en el espacio de tu conciencia y observa qué surge.</p>
+      <p><strong>Reflexión:</strong> ¿Cambió algo en tu relación con esa voz? ¿Se sintió diferente escucharla en lugar de combatirla?</p>
+    </section>
+
+    <section id="caso-clinico-paula" class="caso-clinico">
+      <h2>Caso clínico: Paula y la voz del Perfeccionista</h2>
+      <p>Paula, 28 años, diseñadora gráfica freelance, vino porque estaba bloqueada creativamente.</p>
+      <p>—Empiezo un proyecto y la voz aparece: "Esto no es suficientemente original. Otros lo harían mejor. No lo publiques hasta que sea perfecto." Entonces rehago, rehago, rehago... y nunca termino.</p>
+      <p>—¿Cuánto tiempo llevas con esa voz? —pregunté.</p>
+      <p>—Desde siempre. Bueno, desde la universidad. Tuve un profesor que me destrozó un proyecto frente a toda la clase. Dijo que era "mediocre". Desde entonces, cada vez que creo algo, esa voz aparece.</p>
+      <p>—¿Y qué haces cuando aparece?</p>
+      <p>—La combato. Le digo: "Cállate, eres tóxica, no me dejas trabajar." A veces funciona por un rato, pero siempre regresa más fuerte.</p>
+      <p>Le propuse un experimento: en lugar de combatirla, escucharla. Le pedí que cerrara los ojos e imaginara al <button class="glossary-term" data-term="perfeccionista">Perfeccionista</button> como un personaje frente a ella.</p>
+      <p>—¿Cómo se ve? —pregunté.</p>
+      <p>—Es... una mujer mayor. Muy seria. Brazos cruzados. Me mira con desaprobación.</p>
+      <p>—Pregúntale: "¿Por qué eres tan dura conmigo?"</p>
+      <p>Paula permaneció en silencio. Luego: —Dice que... es porque el mundo es duro. Que si ella no me exige, el mundo me va a destrozar como lo hizo ese profesor. Que está intentando prepararme.</p>
+      <p>—¿Y qué edad tiene ella?</p>
+      <p>Paula abrió los ojos, sorprendida: —Tiene... 22 años. La edad que yo tenía cuando pasó eso.</p>
+      <p>—Entonces esa parte se congeló en ese momento. Sigue creyendo que el peligro es el mismo. ¿Qué le dirías ahora, desde tus 28 años, a esa parte de 22?</p>
+      <p>Paula cerró los ojos de nuevo. Habló suavemente: —Que ya pasó. Que ese profesor era solo una persona. Que no todos van a juzgarme así. Que puedo equivocarme y seguir siendo valiosa. Que... puede descansar un poco. Que yo la tengo.</p>
+      <p>Cuando abrió los ojos, había lágrimas: —Nunca la había visto así. Siempre pensé que me odiaba. Pero en realidad... tiene miedo. Y está cansada.</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Eso es lo que pasa cuando pasas de combatir a escuchar: las voces se vuelven aliadas. No desaparecen, pero ya no son tiranas. Son colaboradoras que pueden ser negociadas.</p>
+    </section>
+
+    <section id="los-obstaculos-para-la-curiosidad">
+      <h2>Los obstáculos para la curiosidad</h2>
+      <p>¿Por qué es tan difícil ser curioso con las voces internas? Hay tres obstáculos principales:</p>
+
+      <h3>Obstáculo 1: Identificación con el contenido</h3>
+      <p>Mientras creas que la voz dice la verdad, no puedes ser curioso con ella. Si el Crítico dice "eres un fracaso" y tú lo crees un hecho objetivo, no hay diálogo. Solo hay dolor.</p>
+      <p><strong>Solución:</strong> Recordar que las voces tienen intención, no verdad. Dicen lo que dicen por una razón protectora, no porque sea objetivamente cierto.</p>
+
+      <h3>Obstáculo 2: Miedo a validar algo destructivo</h3>
+      <p>Muchas personas temen que "escuchar" a una voz destructiva sea darle permiso para seguir destruyendo.</p>
+      <p><strong>Solución:</strong> Escuchar no es obedecer. Es entender. Puedes validar la intención ("Entiendo que quieres protegerme del rechazo") sin seguir la estrategia ("Pero aislarnos no es la única forma. Busquemos otra").</p>
+
+      <h3>Obstáculo 3: Agotamiento con el diálogo interno</h3>
+      <p>Después de años de <button class="glossary-term" data-term="rumiación">rumiación</button>, autocrítica y conflicto, es normal estar cansado. "Ya no quiero hablar más conmigo mismo. Solo quiero paz."</p>
+      <p><strong>Solución:</strong> Hay una diferencia entre rumiación (dar vueltas sin salida) y diálogo terapéutico (conversar con intención de transformación). La rumiación te agota porque estás <button class="glossary-term" data-term="fusión">fusionado</button>. El diálogo terapéutico descansa en el Ser, que no se agota.</p>
+    </section>
+        <section id="preguntas-reflexion-5">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Qué voces en ti has estado combatiendo en lugar de escuchar?</li>
+        <li>¿Qué te da miedo de ser curioso con ellas? ¿Temes que se vuelvan más fuertes?</li>
+        <li>¿Alguna vez escuchaste a una voz difícil y descubriste una intención protectora detrás? ¿Cómo fue?</li>
+        <li>¿Cuál de los cinco principios (curiosidad, compasión, no-juicio, paciencia, desidentificación) te resulta más difícil? ¿Por qué?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-5" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>El error más común con las voces internas es combatirlas en lugar de escucharlas</li>
+        <li>Cambiar de combate a curiosidad es el movimiento clave para el diálogo terapéutico</li>
+        <li>Las cinco actitudes del diálogo: curiosidad genuina, compasión, no-juicio, paciencia, desidentificación</li>
+        <li>Escuchar no es obedecer: puedes validar la intención sin seguir la estrategia</li>
+        <li>Las voces se calman cuando se sienten escuchadas y reconocidas en su esfuerzo</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>Técnicas de conversación interna</em> — Cómo hablar con tus partes de manera concreta y estructurada.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="interludio.html" class="nav-link">← Interludio</a>
+      <a href="capitulo_06.html" class="nav-link disabled" title="Próximamente">Capítulo 6 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 5 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "voz interna": "Patrón recurrente de pensamiento con cualidad autónoma. No es alucinación; es narrativa interna con intención protectora.",
+      "diálogo interno": "Conversación terapéutica con las voces desde el Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "intención positiva": "Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional. Clave para el diálogo compasivo.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos o voces. Crea espacio entre el observador (Ser) y lo observado.",
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. No tiene contenido, edad, ni agenda. Es el espacio donde aparecen.",
+      "perfeccionista": "Voz interna que exige impecabilidad y vincula tu valor al desempeño. Función original: obtener amor/reconocimiento a través del logro.",
+      "rumiación": "Pensamiento repetitivo sobre problemas sin llegar a solución. Es fusión en movimiento. Diferente del diálogo terapéutico (que tiene intención y dirección).",
+      "fusión": "Estado donde te identificas completamente con una voz: crees que eres esa voz. Elimina la agencia y el espacio para el diálogo.",
+      "compasión": "Capacidad de reconocer el esfuerzo y el dolor detrás de la estrategia de una voz, sin validar el daño que causa. Incluye autocompasión.",
+      "atención plena": "Ver Mindfulness. Práctica de prestar atención al momento presente con apertura y sin juicio. Base de la curiosidad terapéutica.",
+      "mindfulness": "Práctica de observar la experiencia sin reaccionar. Permite notar cuándo una voz se activa sin fusionarse con ella."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
