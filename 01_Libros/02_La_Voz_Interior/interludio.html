@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interludio: Cuando las voces gritan | La Voz Interior</title>
+  <meta name="description" content="Contención antes del diálogo: el puente necesario entre reconocer y transformar">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 30%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    .responsive-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+    .responsive-table th, .responsive-table td { padding: 0.8rem; border: 1px solid rgba(139,107,154,0.3); text-align: left; vertical-align: top; }
+    .responsive-table th { background: rgba(139,107,154,0.1); color: var(--acento); }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+      .responsive-table { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del interludio">
+    <a href="capitulo_04.html" class="nav-link">← Capítulo 4</a>
+    <a href="capitulo_05.html" class="nav-link disabled" title="Próximamente">Capítulo 5 →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Interludio</span>
+      <h1>Cuando las voces gritan: contención antes del diálogo</h1>
+      <p class="chapter-subtitle">El puente necesario entre reconocer y dialogar</p>
+    </header>
+
+    <p>Este capítulo se ubica entre la PARTE I (Reconocer) y la PARTE II (Dialogar). Es el puente que necesitas cuando las voces están demasiado activadas para el diálogo.</p>
+
+    <section id="el-error-de-dialogar-demasiado-pronto" class="caso-clinico">
+      <h2>El error de dialogar demasiado pronto</h2>
+      <p>Sara, 32 años, enfermera, después de leer sobre el trabajo con <button class="glossary-term" data-term="voz interna">voces internas</button>:</p>
+      <p>—Intenté dialogar con mi Crítico como aprendí. Cerré los ojos, lo imaginé frente a mí, le pregunté: "¿Qué necesitas?" Pero en lugar de calmarse, se volvió más intenso. Empezó a listar todos mis errores. Me sentí abrumada. Tuve que abrir los ojos y parar. ¿Hice algo mal?</p>
+      <p>—No hiciste nada mal. Pero es posible que el Crítico estuviera demasiado activado para dialogar en ese momento.</p>
+      <p>Sara me miró confundida: —¿Las voces pueden estar demasiado activadas?</p>
+      <p>—Absolutamente. Cuando una voz está en plena escalada emocional, intentar dialogar es como intentar razonar con alguien en medio de un ataque de pánico. Primero necesitas <button class="glossary-term" data-term="contención">contención</button>. Luego, diálogo.</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Este es uno de los errores más comunes en el trabajo con voces internas: intentar dialogar cuando lo que se necesita es regulación.</p>
+    </section>
+
+    <section id="que-es-la-contencion">
+      <h2>¿Qué es la contención?</h2>
+      <p>La <button class="glossary-term" data-term="contención">contención</button> es el conjunto de técnicas que te permiten:</p>
+      <ul>
+        <li>Regular la intensidad de una voz cuando está desbordada</li>
+        <li>Crear distancia sin rechazar</li>
+        <li>Estabilizar tu <button class="glossary-term" data-term="sistema nervioso">sistema nervioso</button> antes de conversar</li>
+        <li>Sostener la experiencia difícil sin colapsar en ella</li>
+      </ul>
+      <p>No es suprimir. No es ignorar. Es calmar antes de dialogar. Es como cuando un niño está en rabieta: primero lo sostienes hasta que se calma. Después, conversas sobre qué pasó.</p>
+    </section>
+
+    <section id="cuando-necesitas-contencion">
+      <h2>Cuándo necesitas contención (no diálogo)</h2>
+      <p>No siempre necesitas contención. Pero estas son las señales claras:</p>
+
+      <h3>Señal 1: La voz está gritando (intensidad emocional abrumadora)</h3>
+      <p><strong>Cómo se siente:</strong> Taquicardia, respiración agitada, sensación de opresión en pecho o garganta, impulso de huir o pelear, pensamientos en loop sin pausa.</p>
+      <p><strong>Ejemplo:</strong> El Crítico no dice "Cometiste un error". Grita: "ERES UN DESASTRE. TODO LO ARRUINAS. NUNCA VAS A CAMBIAR."</p>
+      <p><strong>Qué hacer:</strong> <button class="glossary-term" data-term="contención">Contención</button> primero. Diálogo después.</p>
+
+      <h3>Señal 2: Estás <button class="glossary-term" data-term="fusión">fusionado</button> completamente (pérdida del observador)</h3>
+      <p><strong>Cómo se siente:</strong> No hay distancia entre tú y el pensamiento, crees que lo que la voz dice es verdad absoluta, no puedes recordar que "es solo una voz", sientes que eres eso.</p>
+      <p><strong>Ejemplo:</strong> No piensas "Hay una parte ansiosa en mí". Piensas: "SOY ANSIEDAD. ESTO NUNCA VA A PARAR."</p>
+      <p><strong>Qué hacer:</strong> Contención para recuperar al <button class="glossary-term" data-term="observador">observador</button>. Sin observador, no hay diálogo posible.</p>
+
+      <h3>Señal 3: Múltiples voces activadas al mismo tiempo (caos interno)</h3>
+      <p><strong>Cómo se siente:</strong> Ruido mental ensordecedor, voces hablando simultáneamente, no puedes distinguir cuál es cuál, sensación de <button class="glossary-term" data-term="disociación">disociación</button> o fragmentación.</p>
+      <p><strong>Ejemplo:</strong> Crítico: "Eres un fracaso." Protector: "No salgas, te van a lastimar." Niño Herido: "Nadie me ve." Rebelde: "No voy a hacer lo que me digan." Todo al mismo tiempo. Caos.</p>
+      <p><strong>Qué hacer:</strong> Contención para bajar el volumen general. Luego, priorizar qué voz escuchar primero.</p>
+    </section>
+          <h3>Señal 4: Hay una crisis externa activa (momento inapropiado)</h3>
+      <p><strong>Cómo se siente:</strong> Estás en medio de una situación que requiere acción inmediata, no tienes espacio físico o temporal para procesar, necesitas funcionar AHORA, reflexionar después.</p>
+      <p><strong>Ejemplo:</strong> Estás en una reunión importante y el Crítico se activa intensamente. No puedes cerrar los ojos y dialogar ahí.</p>
+      <p><strong>Qué hacer:</strong> Contención de emergencia (técnicas rápidas). Diálogo cuando llegues a casa.</p>
+
+      <h3>Señal 5: La voz está conectada a <button class="glossary-term" data-term="trauma">trauma</button> sin procesar</h3>
+      <p><strong>Cómo se siente:</strong> Flashbacks, disociación (sentirte "fuera de tu cuerpo"), terror sin causa aparente en el presente, colapso emocional desproporcionado al disparador actual.</p>
+      <p><strong>Ejemplo:</strong> Una voz aparece y trae consigo sensaciones corporales intensas que parecen venir de otro tiempo.</p>
+      <p><strong>Qué hacer:</strong> Contención + buscar ayuda profesional especializada en trauma. No intentes procesar trauma complejo solo con diálogo.</p>
+    </section>
+
+    <section id="las-cinco-tecnicas-de-contencion">
+      <h2>Las cinco técnicas de contención</h2>
+      <p>Estas técnicas están ordenadas de más básica a más avanzada. Empieza por la primera. Si no es suficiente, sigue con las siguientes.</p>
+
+      <div class="tecnica-practica">
+        <h3>Técnica 1: Ancla somática de emergencia (30 segundos - 2 minutos)</h3>
+        <p><strong>Para qué sirve:</strong> Regresar al cuerpo cuando estás completamente en tu cabeza. Re-anclar en el presente (<button class="glossary-term" data-term="grounding (anclaje)">grounding</button>).</p>
+        <p><strong>Cómo se hace:</strong></p>
+        <ul>
+          <li><em>Versión A - Los cinco sentidos:</em> Nombra 5 cosas que ves, 4 que tocas, 3 que escuchas, 2 que hueles, 1 que saboreas.</li>
+          <li><em>Versión B - Contacto físico:</em> Presiona tus pies contra el suelo. Junta las palmas con fuerza. Pon una mano en el pecho, otra en el vientre. Mantén 1-2 minutos.</li>
+        </ul>
+        <p><strong>Por qué funciona:</strong> El cerebro no puede estar simultáneamente en modo amenaza y en modo exploración sensorial. Lo sacas del bucle.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>Técnica 2: Respiración reguladora (3-5 minutos)</h3>
+        <p><strong>Para qué sirve:</strong> Bajar la activación del <button class="glossary-term" data-term="sistema nervioso">sistema nervioso</button> simpático (modo pelea-huida).</p>
+        <p><strong>Cómo se hace:</strong></p>
+        <ul>
+          <li><em>4-7-8:</em> Inhala 4, sostén 7, exhala 8. Repite 4-6 ciclos.</li>
+          <li><em>Caja:</em> Inhala 4, sostén 4, exhala 4, sostén 4. Repite 5-10 ciclos.</li>
+          <li><em>Exhalar el doble:</em> Inhala 4, exhala 8. Sin retención. Repite 10 ciclos.</li>
+        </ul>
+        <p><strong>Por qué funciona:</strong> Las exhalaciones largas activan el nervio vago, que le dice al cerebro: "Estamos seguros. Puedes relajarte."</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>Técnica 3: <button class="glossary-term" data-term="externalización">Externalización</button> temporal - Escritura expulsiva (5-10 minutos)</h3>
+        <p><strong>Para qué sirve:</strong> Sacar la voz de tu cabeza y ponerla en papel SIN dialogar con ella. Solo expulsar.</p>
+        <p><strong>Cómo se hace:</strong> Toma papel y lápiz. Escribe TODO lo que la voz está diciendo. Sin filtro. Sin gramática. Sin que tenga sentido. No dialogues. Sigue hasta que se agote (3-10 min). Cierra el cuaderno.</p>
+        <p><strong>Por qué funciona:</strong> La voz necesita ser escuchada. Si la transcribes completamente, sin resistencia, se calma. Fue escuchada, aunque no haya habido diálogo.</p>
+      </div>
+    </section>
+        <section class="tecnica-practica">
+      <h3>Técnica 4: Distanciamiento imaginario - El cristal protector (5-10 minutos)</h3>
+      <p><strong>Para qué sirve:</strong> Crear espacio psicológico entre tú y la voz sin rechazarla.</p>
+      <p><strong>Cómo se hace:</strong> Imagina un cristal transparente e irrompible entre tú y la voz. Puedes verla y escucharla (amortiguado), pero no puede tocarte. Obsérvala desde el otro lado. Respira.</p>
+      <p><strong>Por qué funciona:</strong> Crea distancia sin negación. La voz sigue ahí, pero tú estás aquí. Hay separación.</p>
+    </section>
+
+    <div class="tecnica-practica">
+      <h3>Técnica 5: <button class="glossary-term" data-term="autocompasión">Autocompasión</button> somática - Sostén físico (5-15 minutos)</h3>
+      <p><strong>Para qué sirve:</strong> Cuando la voz está activada por dolor profundo (<button class="glossary-term" data-term="niño herido">Niño Herido</button>, trauma).</p>
+      <p><strong>Cómo se hace:</strong></p>
+      <ul>
+        <li><em>Abrazo de mariposa:</em> Cruza brazos sobre el pecho, alterna golpecitos suaves (derecha/izquierda) como un latido. Di: "Estoy aquí. Estás a salvo."</li>
+        <li><em>Mano en el corazón:</em> Siente el calor. Respira hacia ese lugar. "Es difícil ahora. Pero no estás solo."</li>
+        <li><em>Mecerse suavemente:</em> Balancéate adelante y atrás como una madre meciendo a un bebé. Tararea si quieres.</li>
+      </ul>
+      <p><strong>Por qué funciona:</strong> El contacto físico y el movimiento rítmico son reguladores naturales. Activan el sistema de apego.</p>
+    </div>
+
+    <section id="protocolo-completo">
+      <h2>Protocolo completo: De la contención al diálogo</h2>
+      <table class="responsive-table">
+        <thead>
+          <tr><th>Paso</th><th>Acción</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>1. RECONOCE</strong></td><td>¿Puedo dialogar ahora o está demasiado intensa? Si es intensa → Paso 2.</td></tr>
+          <tr><td><strong>2. ELIGE</strong></td><td>Selecciona la técnica según la señal (Ver tabla arriba).</td></tr>
+          <tr><td><strong>3. APLICA</strong></td><td>Hasta que baje la intensidad (respiración más lenta, bucle se detiene, sientes los pies).</td></tr>
+          <tr><td><strong>4. EVALÚA</strong></td><td>¿Puedo conversar desde el <button class="glossary-term" data-term="observador">observador</button>? SI → Diálogo (Cap. 5+). NO → Descansa.</td></tr>
+          <tr><td><strong>5. CIERRA CON COMPASIÓN</strong></td><td>"Te escucho. No puedo ahora, pero vuelvo mañana." Distracción sana.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="caso-martin" class="caso-clinico">
+      <h2>Caso clínico: Martín y el Crítico desbordado</h2>
+      <p>Martín, 38 años, profesor, tuvo una evaluación laboral negativa. Su Crítico gritó: "Eres un incompetente. Eres un fraude." Intentó dialogar: "¿Qué necesitas, Crítico?" Pero el Crítico solo gritó más. Martín se fusionó completamente.</p>
+      <p>En sesión, le enseñé la <button class="glossary-term" data-term="escritura expulsiva">escritura expulsiva</button>. Dos semanas después reportó: "El Crítico volvió. En lugar de intentar razonarlo, escribí. Tres páginas de insultos. Después de escribirlo... se calmó. Al día siguiente, desde la calma, le pregunté por su miedo. Respondió: el terror a repetir la pobreza de mi infancia."</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Primero contención, luego diálogo. No puedes conversar con alguien en plena crisis. Primero lo calmas. Después hablas.</p>
+    </section>
+
+    <section id="contencion-no-es-evitacion">
+      <h2>Contención no es evitación</h2>
+      <p><strong>CONTENCIÓN (saludable):</strong> "Esta voz está muy intensa ahora. Primero me regulo, luego dialogo." Reconoce la voz, crea espacio temporal, vuelve cuando hay calma.</p>
+      <p><strong>EVITACIÓN (no saludable):</strong> "No quiero sentir esto. Voy a distraerme para siempre." Niega la voz, huye permanentemente, nunca vuelve.</p>
+      <p>La diferencia está en la intención: Contención dice: "Ahora no puedo, pero volveré." Evitación dice: "Nunca quiero lidiar con esto."</p>
+    </section>
+
+    <section id="ayuda-profesional" class="nota-importante">
+      <h2>Cuándo buscar ayuda profesional</h2>
+      <p>Si a pesar de usar técnicas de contención: las voces siguen abrumadoramente intensas durante semanas, aparecen pensamientos de hacerte daño, hay <button class="glossary-term" data-term="disociación">disociación</button> frecuente, sospechas <button class="glossary-term" data-term="trauma">trauma</button> complejo, o no puedes funcionar en tu vida diaria. Por favor, busca ayuda de un profesional especializado (EMDR, IFS, Somatic Experiencing, terapia somática).</p>
+    </section>
+
+    <section id="ejercicio-kit-contencion" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Tu kit de contención personalizado</h2>
+      <p><strong>Duración:</strong> 30 minutos</p>
+      <ol>
+        <li>Revisa las 5 técnicas. Elige 2 o 3 que resuenen contigo.</li>
+        <li>Pruébalas AHORA (aunque no estés en crisis). Necesitas familiarizarte ANTES de necesitarlas.</li>
+        <li>Escribe tu kit en una tarjeta pequeña:</li>
+      </ol>
+      <p><strong>MI KIT DE CONTENCIÓN</strong><br>
+      Cuando una voz grite, ANTES de dialogar:<br>
+      1. [Técnica 1] Ej: "Respiración 4-7-8, 5 ciclos"<br>
+      2. [Técnica 2] Ej: "Escritura expulsiva, 10 min"<br>
+      3. [Técnica 3] Ej: "Mano en el corazón + 'Estoy aquí contigo'"<br>
+      Si nada funciona: Llamar a [persona de confianza]</p>
+      <p>Guárdala donde puedas verla. Úsala la próxima vez.</p>
+    </section>
+
+    <section id="preguntas-reflexion-interludio">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Alguna vez intentaste dialogar con una voz cuando estaba demasiado activada? ¿Qué pasó?</li>
+        <li>¿Cuál de las 5 técnicas resuena más contigo? ¿Por qué?</li>
+        <li>¿Tiendes más a la contención saludable o a la evitación? ¿Cómo lo sabes?</li>
+        <li>¿En qué situaciones específicas necesitarías contención de emergencia?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-interludio" class="nota-importante">
+      <h3>🔄 Resumen del interludio</h3>
+      <ul>
+        <li>No siempre puedes dialogar inmediatamente. A veces la voz está demasiado activada.</li>
+        <li>Señales: voz gritando, <button class="glossary-term" data-term="fusión">fusión</button> completa, caos multi-voz, crisis externa, <button class="glossary-term" data-term="trauma">trauma</button> sin procesar.</li>
+        <li>5 técnicas: ancla somática, respiración, escritura expulsiva, cristal protector, autocompasión somática.</li>
+        <li>Protocolo: Reconocer → Elegir → Aplicar → Evaluar → Dialogar O cerrar con compasión.</li>
+        <li>Contención no es evitación: volverás, solo que cuando haya calma.</li>
+      </ul>
+      <p><strong>Próximo paso:</strong> <em>Capítulo 5: La actitud del diálogo</em> — Curiosidad, no combate.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del interludio">
+      <a href="capitulo_04.html" class="nav-link">← Capítulo 4</a>
+      <a href="capitulo_05.html" class="nav-link disabled" title="Próximamente">Capítulo 5 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Interludio</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "voz interna": "Patrón recurrente de pensamiento con cualidad autónoma. No es alucinación; es narrativa interna.",
+      "contención": "Conjunto de técnicas para regular la intensidad emocional de una voz antes de dialogar. No es evitación; es regulación inteligente.",
+      "sistema nervioso": "Red biológica que procesa amenazas y seguridad. Base de la regulación emocional y las respuestas de lucha/huida/congelación.",
+      "grounding (anclaje)": "Técnicas que te conectan con el presente a través del cuerpo y los sentidos. Útiles cuando estás fusionado o abrumado.",
+      "externalización": "Acto de sacar una experiencia interna y colocarla 'afuera' como objeto observable (escritura, dibujo, imaginación).",
+      "escritura expulsiva": "Técnica de contención donde transcribes todo lo que una voz dice sin filtrar ni dialogar. Evacua el ruido mental.",
+      "autocompasión": "Capacidad de tratarte con gentileza y comprensión ante el sufrimiento. Incluye contacto físico regulador y validación emocional.",
+      "niño herido": "Voz interna que porta dolor emocional de la infancia no procesado. Necesita contención física y emocional antes de poder dialogar.",
+      "fusión": "Estado donde te identificas completamente con una voz: crees que eres esa voz. Elimina la agencia y el espacio para el diálogo.",
+      "observador": "Ver Ser. La conciencia que presencia sin fusionarse. Necesario para mediar o dialogar con las voces.",
+      "ser": "Tu esencia, el espacio donde las partes aparecen. Atmósfera de calma y claridad que emerge cuando las voces se regulan.",
+      "trauma": "Experiencia abrumadora que supera la capacidad de procesamiento del sistema nervioso. Requiere contención y acompañamiento profesional.",
+      "disociación": "Desconexión entre pensamientos, identidad y memoria. Señal de activación extrema que requiere contención inmediata y, a veces, ayuda profesional."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
