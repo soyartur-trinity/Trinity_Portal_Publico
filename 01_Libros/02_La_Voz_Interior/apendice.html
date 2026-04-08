@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apéndice | La Voz Interior</title>
+  <meta name="description" content="Recursos adicionales, referencias bibliográficas y guía para buscar ayuda profesional">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 100%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    .resource-list { list-style: none; padding: 0; }
+    .resource-list li { margin-bottom: 1rem; padding-left: 1rem; border-left: 2px solid var(--secundario); }
+    .resource-list strong { display: block; color: var(--acento); }
+    .final-notice { text-align: center; margin-top: 3rem; padding: 1.5rem; background: rgba(139,107,154,0.05); border-radius: 8px; border: 1px dashed rgba(139,107,154,0.3); }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del apéndice">
+    <a href="epilogo.html" class="nav-link">← Epílogo</a>
+    <a href="index.html" class="nav-link">Índice →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Apéndice</span>
+      <h1>Recursos adicionales</h1>
+    </header>
+
+    <section id="para-profundizar" class="tecnica-practica">
+      <h2>📚 Para profundizar</h2>
+      <p>Si este libro te ha resonado, aquí tienes referencias clave organizadas por enfoque:</p>
+      
+      <h3>Sobre Internal Family Systems (IFS)</h3>
+      <ul class="resource-list">
+        <li><strong>Richard Schwartz</strong> — <em>No Bad Parts: Healing Trauma and Restoring Wholeness with the Internal Family Systems Model</em></li>
+        <li><strong>Richard Schwartz</strong> — <em>Introduction to the Internal Family Systems Model</em></li>
+      </ul>
+
+      <h3>Sobre Budismo y Psicología</h3>
+      <ul class="resource-list">
+        <li><strong>Tara Brach</strong> — <em>Radical Acceptance: Embracing Your Life With the Heart of a Buddha</em></li>
+        <li><strong>Mark Epstein</strong> — <em>Thoughts Without a Thinker: Psychotherapy from a Buddhist Perspective</em></li>
+        <li><strong>Chögyam Trungpa</strong> — <em>Cutting Through Spiritual Materialism</em></li>
+      </ul>
+
+      <h3>Sobre Trauma y Cuerpo</h3>
+      <ul class="resource-list">
+        <li><strong>Bessel van der Kolk</strong> — <em>The Body Keeps the Score: Brain, Mind, and Body in the Healing of Trauma</em></li>
+        <li><strong>Peter Levine</strong> — <em>Waking the Tiger: Healing Trauma</em></li>
+      </ul>
+
+      <h3>Sobre Meditación y Presencia</h3>
+      <ul class="resource-list">
+        <li><strong>Jon Kabat-Zinn</strong> — <em>Wherever You Go, There You Are: Mindfulness Meditation in Everyday Life</em></li>
+        <li><strong>Adyashanti</strong> — <em>The Way of Liberation: A Practical Guide to Complete Enlightenment</em></li>
+      </ul>
+    </section>
+
+    <section id="buscar-ayuda-profesional" class="nota-importante">
+      <h2>🆘 Buscar ayuda profesional</h2>
+      <p>Si en algún momento del trabajo con tus <button class="glossary-term" data-term="voz interna">voces internas</button> sientes:</p>
+      <ul>
+        <li>Abrumación constante</li>
+        <li>Pensamientos de hacerte daño</li>
+        <li>Dificultad para funcionar en tu vida diaria</li>
+        <li>Que estás tocando <button class="glossary-term" data-term="trauma">traumas</button> que no puedes procesar solo</li>
+      </ul>
+      <p>Por favor, busca ayuda de un profesional especializado:</p>
+      <ul>
+        <li>Psicólogos en IFS, terapia cognitiva de tercera generación, o trauma</li>
+        <li>Terapeutas somáticos</li>
+        <li>Grupos de terapia o apoyo</li>
+      </ul>
+      <p>El trabajo interior es valiente. Pero no tiene que hacerse en soledad absoluta.</p>
+    </section>
+        <section class="final-notice">
+      <h2>🌀 Una última nota sobre la distribución de este libro</h2>
+      <p>Este libro es de distribución gratuita bajo licencia <strong>CC BY-NC-SA 4.0</strong>.</p>
+      <p>Si lo encontraste útil y deseas apoyar la creación de más recursos como este, puedes hacer una donación voluntaria a través de [información de contacto].</p>
+      <p>Pero más importante que la donación es que compartas este trabajo con quien creas que puede beneficiarse. El conocimiento sanador debe fluir libremente.</p>
+      <hr style="border: 0; border-top: 1px dashed rgba(139,107,154,0.3); margin: 2rem 0;">
+      <p style="font-size: 1.5rem; color: var(--acento);">🌀✨🌀</p>
+      <p style="font-weight: 600;">FIN DEL LIBRO</p>
+      <p style="font-size: 0.9rem; color: var(--texto-suave);">Gracias por caminar hasta aquí.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del apéndice">
+      <a href="epilogo.html" class="nav-link">← Epílogo</a>
+      <a href="index.html" class="nav-link">Índice →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Apéndice</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "voz interna": "Patrón recurrente de pensamiento con cualidad autónoma. No es alucinación; es narrativa interna con intención protectora.",
+      "trauma": "Experiencia abrumadora que supera la capacidad de procesamiento del sistema nervioso. Queda 'congelada' en el cuerpo y requiere acompañamiento profesional especializado.",
+      "compasión": "Capacidad de tratarte con gentileza ante el sufrimiento. Base de la escucha terapéutica y la sanación.",
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. Espacio donde las partes aparecen.",
+      "diálogo interno": "Conversación terapéutica con las voces desde la posición del Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "fusión": "Estado donde te identificas completamente con una voz. Elimina la agencia y el espacio para el diálogo.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos o voces. Crea espacio entre el observador y lo observado.",
+      "meditación": "Práctica de entrenar la atención y la conciencia. Cultiva la observación ecuánime, creando espacios entre pensamientos donde el Ser se hace evidente.",
+      "mindfulness": "Práctica de prestar atención al momento presente con apertura y sin juicio. Base de la desidentificación.",
+      "integración": "Proceso donde las voces encuentran su lugar natural y dejan de dominar. Tiene tres etapas: funcional, psicológica y transpersonal."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
