@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 12: Vivir desde el centro | La Voz Interior</title>
+  <meta name="description" content="Ser el director consciente de tu teatro interior: encarnar el trabajo en la vida cotidiana">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 92%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    .practice-card { background: rgba(255,255,255,0.5); padding: 1rem; margin: 1rem 0; border-radius: 8px; border-left: 3px solid var(--secundario); }
+    .practice-card h4 { margin: 0 0 0.5rem 0; color: var(--secundario); }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_11.html" class="nav-link">← Capítulo 11</a>
+    <a href="index.html" class="nav-link" title="Volver al índice">Índice →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 12</span>
+      <h1>Vivir desde el centro: ser el director de tu teatro interior</h1>
+    </header>
+
+    <section id="el-retorno">
+      <h2>El retorno</h2>
+      <p>Hemos recorrido un largo camino.</p>
+      <p>Comenzamos reconociendo las <button class="glossary-term" data-term="voz interna">voces internas</button>. Aprendimos a dialogar con ellas. Las renegociamos, las integramos. Descubrimos la voz silenciosa.</p>
+      <p>Pero todo esto tiene un propósito:</p>
+      <p><strong>Vivir.</strong></p>
+      <p>No vivir pensando en tus voces. Sino vivir desde tu centro, con las voces como parte natural de ti.</p>
+      <p>Este último capítulo es sobre la encarnación: cómo llevar todo este trabajo a tu vida cotidiana.</p>
+    </section>
+
+    <section id="que-significa-vivir-desde-el-centro">
+      <h2>¿Qué significa vivir desde el centro?</h2>
+      <p>Vivir desde el centro significa:</p>
+      <ul>
+        <li>Ya no eres reactivo a las voces. Ellas son, pero no te dominan.</li>
+        <li>Tomas decisiones desde el <button class="glossary-term" data-term="ser">Ser</button>, no desde la voz más fuerte del momento.</li>
+        <li>Respondes a la vida desde presencia, no desde patrones automáticos.</li>
+        <li>Habitas tu cuerpo plenamente, sin estar atrapado en tu cabeza.</li>
+        <li>Fluyes con lo que la vida trae, sin resistencia ni colapso.</li>
+      </ul>
+      <p>No es un estado permanente. Es un rango de funcionamiento al que regresas cada vez más naturalmente.</p>
+    </section>
+
+    <section id="las-cinco-practicas-del-centro">
+      <h2>Las cinco prácticas del centro</h2>
+      <p>Para vivir desde el centro, necesitas prácticas diarias que te anclen ahí.</p>
+      <p>No son técnicas ocasionales. Son formas de vida.</p>
+      
+      <div class="practice-card">
+        <h4>Práctica 1: El check-in matutino (3 minutos)</h4>
+        <p><strong>Cada mañana, antes de comenzar tu día:</strong></p>
+        <ol>
+          <li>Siéntate en silencio 3 minutos.</li>
+          <li>Pregúntate: "¿Qué voces están activas esta mañana?"</li>
+          <li>Nómbralas mentalmente sin juzgarlas: "El Crítico está preocupado por la reunión", "El Protector quiere que no me arriesgue".</li>
+          <li>Pregúntate: "¿Dónde estoy yo en relación a estas voces?"</li>
+          <li>Respira hacia el centro. Siente el Ser: la conciencia que sostiene todas las voces.</li>
+          <li>Desde ahí, comienza tu día.</li>
+        </ol>
+        <p><strong>Por qué funciona:</strong> Te posiciona en el Ser antes de que el día te arrastre. Es como sintonizar un instrumento antes de tocar.</p>
+      </div>
+
+      <div class="practice-card">
+        <h4>Práctica 2: La pausa ante decisiones (30 segundos)</h4>
+        <p><strong>Cada vez que tengas que tomar una decisión (grande o pequeña):</strong></p>
+        <ol>
+          <li>Pausa. Aunque sea 30 segundos.</li>
+          <li>Pregúntate: "¿Qué voz está impulsando esta decisión?"</li>
+          <li>¿Es el Protector que evita riesgo? ¿Es el Complaciente que busca aprobación? ¿O es el Ser que simplemente sabe?</li>
+          <li>Si es una voz, agradécela: "Gracias por tu opinión."</li>
+          <li>Luego pregúntate: "¿Qué sabe el Ser sobre esto?"</li>
+          <li>Actúa desde ahí.</li>
+        </ol>
+        <p><strong>Por qué funciona:</strong> Interrumpe la reactividad automática. Crea espacio para elección consciente.</p>
+      </div>
+            <div class="practice-card">
+        <h4>Práctica 3: El ancla somática (todo el día)</h4>
+        <p><strong>Tu cuerpo es el vehículo del Ser. Mientras más habitas tu cuerpo, más presente estás.</strong></p>
+        <ol>
+          <li>Varias veces al día (configura alarmas si es necesario):</li>
+          <li>Para lo que estás haciendo.</li>
+          <li>Siente tu cuerpo: pies en el suelo, respiración entrando y saliendo, peso de tu cuerpo en la silla.</li>
+          <li>Pregúntate: "¿Estoy aquí? ¿O estoy en mi cabeza?"</li>
+          <li>Si estás en tu cabeza, regresa al cuerpo respirando profundo tres veces.</li>
+        </ol>
+        <p><strong>Por qué funciona:</strong> El cuerpo siempre está en el presente. Las voces viven en pasado o futuro. Habitar el cuerpo te trae al ahora, donde el Ser reside.</p>
+      </div>
+
+      <div class="practice-card">
+        <h4>Práctica 4: El diálogo nocturno (5 minutos)</h4>
+        <p><strong>Cada noche, antes de dormir:</strong></p>
+        <ol>
+          <li>Repasa el día brevemente.</li>
+          <li>Pregúntate: "¿En qué momentos perdí el centro hoy?"</li>
+          <li>Identifica qué voz te arrastró: "En la reunión, el Crítico me paralizó."</li>
+          <li>Sin juicio, pregúntale a esa voz: "¿Qué necesitabas hoy que no recibiste?"</li>
+          <li>Escucha. Agradece: "Mañana intentaré verte más temprano."</li>
+          <li>Suelta el día. Duerme.</li>
+        </ol>
+        <p><strong>Por qué funciona:</strong> Cierra el ciclo. Evita acumulación. Mantiene el <button class="glossary-term" data-term="diálogo interno">diálogo</button> activo sin que se vuelva <button class="glossary-term" data-term="rumiación">rumiación</button>.</p>
+      </div>
+
+      <div class="practice-card">
+        <h4>Práctica 5: El retiro semanal (1-2 horas)</h4>
+        <p><strong>Una vez por semana, crea espacio sagrado para ti:</strong></p>
+        <ol>
+          <li>Elige un lugar tranquilo (tu casa, naturaleza, un café silencioso).</li>
+          <li>Sin celular. Sin agenda.</li>
+          <li><button class="glossary-term" data-term="meditación">Medita</button> 20-30 minutos. Simplemente estar.</li>
+          <li>Escribe en tu diario: ¿Qué voces fueron protagonistas esta semana? ¿Hubo momentos de voz silenciosa?</li>
+          <li>No hay respuestas "correctas". Solo observación honesta.</li>
+        </ol>
+        <p><strong>Por qué funciona:</strong> El ritmo semanal te mantiene conectado con el proceso. Sin esto, el trabajo interno se diluye en la vorágine del día a día.</p>
+      </div>
+    </section>
+
+    <section id="caso-beatriz" class="caso-clinico">
+      <h2>Caso clínico: Beatriz y la vida desde el centro</h2>
+      <p>Beatriz, 49 años, arquitecta, después de tres años de trabajo con sus voces:</p>
+      <p>—No sé cómo explicarlo. Antes, yo era mis voces. Vivía reaccionando a ellas. Si el Crítico hablaba, colapsaba en autocrítica. Si el Protector se activaba, me paralizaba. Ahora... siguen estando ahí. A veces muy intensas. Pero hay alguien más grande que las sostiene. Y desde ahí, puedo elegir.</p>
+      <p>—¿Puedes darme un ejemplo concreto? —pregunté.</p>
+      <p>—La semana pasada, presenté un proyecto importante. Antes de la presentación, el Crítico apareció con fuerza: "Van a encontrar todos los errores. No es suficientemente bueno." En el pasado, me habría fusionado con eso. Habría cancelado, o presentado desde el miedo. Pero esta vez... lo escuché. Le dije: "Gracias, Crítico. Sé que estás asustado. Pero yo estoy aquí." Y presenté desde el centro. Con nervios, sí. Pero sin colapsar.</p>
+      <p>—¿Y qué pasó?</p>
+      <p>—El proyecto fue bien recibido. Pero lo más importante no fue eso. Fue que yo estuve presente. No fue el Crítico presentando. Fui yo.</p>
+      <p>Esa es la vida desde el centro.</p>
+      <p>No es ausencia de voces. Es presencia en medio de las voces.</p>
+    </section>
+
+    <section id="obstaculos-para-vivir-desde-el-centro">
+      <h2>Los obstáculos para vivir desde el centro</h2>
+      <p>Incluso después de años de trabajo, hay obstáculos recurrentes:</p>
+
+      <div class="nota-importante">
+        <strong>Obstáculo 1: La ilusión de que "ya lo lograste"</strong>
+        A veces, después de <button class="glossary-term" data-term="integración">integrar</button> voces, aparece la creencia: "Ya terminé. Ya no necesito practicar."
+        Pero el trabajo con voces no es lineal. Es espiral. Viejos patrones regresan en nuevos contextos. Especialmente en momentos de crisis: duelo, pérdida, enfermedad, cambios vitales.
+        <strong>Solución:</strong> Aceptar que esto es práctica de por vida. No un problema a resolver de una vez.
+      </div>
+
+      <div class="nota-importante">
+        <strong>Obstáculo 2: Perfeccionismo espiritual</strong>
+        Algunas personas se critican por "no estar suficientemente presentes" o "fusionarse otra vez con voces". Es el Crítico disfrazado de maestro espiritual.
+        <strong>Solución:</strong> <button class="glossary-term" data-term="compasión">Compasión</button> radical. Está bien fusionarse a veces. Lo importante es regresar.
+      </div>
+
+      <div class="nota-importante">
+        <strong>Obstáculo 3: Aislamiento</strong>
+        El trabajo interno es solitario. Pero si no lo compartes con nadie (terapeuta, grupo, amigo de confianza), es fácil perderte en tu propia narrativa.
+        <strong>Solución:</strong> Comunidad. Aunque sea una persona que entienda este camino.
+      </div>
+    </section>
+
+    <section id="equilibrio-trabajo-vida">
+      <h2>El equilibrio entre trabajo interno y vida externa</h2>
+      <p>Una trampa común: volverse tan enfocado en tu mundo interno que te desconectas de la vida.</p>
+      <p>El trabajo con voces no es para huir del mundo. Es para habitar el mundo más plenamente.</p>
+      <p><strong>Señales de que estás en la trampa:</strong></p>
+      <ul>
+        <li>Pasas más tiempo analizando tus voces que viviendo</li>
+        <li>Evitas relaciones o experiencias porque "necesitas trabajar primero en ti mismo"</li>
+        <li>Usas el trabajo interno como excusa para no actuar</li>
+      </ul>
+      <p><strong>Solución:</strong> El Ser no está solo adentro. Está en la relación. Con otros. Con la vida. Con lo desconocido.</p>
+      <p>El centro no es un refugio. Es una base desde la cual te lanzas al mundo.</p>
+    </section>
+        <section id="integracion-final" class="nota-importante">
+      <h2>La integración final: el Ser en acción</h2>
+      <p>Hay un momento —a veces solo un destello— donde todo se unifica:</p>
+      <ul>
+        <li>No hay "yo" observando voces.</li>
+        <li>No hay "voces" separadas.</li>
+        <li>No hay "Ser" sosteniendo.</li>
+        <li>Solo hay vida fluyendo.</li>
+      </ul>
+      <p>Actúas sin deliberación. Sabes sin pensar. Amas sin esfuerzo.</p>
+      <p>Esto no es un logro. Es gracia.</p>
+      <p>No puedes forzarlo. Solo puedes crear condiciones:</p>
+      <ul>
+        <li>Práctica diaria</li>
+        <li>Honestidad brutal</li>
+        <li>Compasión implacable</li>
+        <li>Soltar la meta</li>
+      </ul>
+      <p>Y un día, sin buscarlo, emerge.</p>
+    </section>
+
+    <section id="ejercicio-final" class="ejercicio-practico">
+      <h2>✍️ Ejercicio final: El mapa de tu viaje</h2>
+      <p><strong>Duración:</strong> 60 minutos | <strong>Materiales:</strong> Hoja grande de papel, colores</p>
+      <ol>
+        <li>Dibuja un camino sinuoso que represente tu viaje con las voces internas.</li>
+        <li>Marca hitos:
+          <ul>
+            <li>¿Cuándo reconociste tu primera voz?</li>
+            <li>¿Cuándo lograste tu primer <button class="glossary-term" data-term="diálogo interno">diálogo</button> genuino?</li>
+            <li>¿Cuándo renegociaste un rol?</li>
+            <li>¿Cuándo experimentaste <button class="glossary-term" data-term="integración">integración</button>?</li>
+            <li>¿Cuándo tocaste la voz silenciosa?</li>
+          </ul>
+        </li>
+        <li>Para cada hito, escribe una frase breve que lo capture.</li>
+        <li>Nota dónde estás hoy en el camino.</li>
+        <li>Pregúntate: "¿Cuál es el siguiente paso en mi viaje?" No lo respondas intelectualmente. Escucha. La respuesta vendrá.</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> Este mapa no es para archivar. Es para recordar: el viaje continúa.</p>
+    </section>
+
+    <section id="mensaje-final">
+      <h2>Un mensaje final</h2>
+      <p>Si has llegado hasta aquí —no solo en el libro, sino en tu propio viaje— quiero decirte algo:</p>
+      <p><strong>El hecho de que estés haciendo este trabajo es extraordinario.</strong></p>
+      <p>La mayoría de las personas vive toda su vida sin cuestionar las voces que las habitan.</p>
+      <p>Tú elegiste diferente. Elegiste mirarte. Y eso requiere coraje.</p>
+      <p>Habrá días donde sientas que retrocedes. Donde las voces te dominen otra vez. Donde olvides todo lo que aprendiste y tengas que empezar de nuevo.</p>
+      <p>Está bien.</p>
+      <p>No se trata de nunca caer. Se trata de levantarse una vez más que la cantidad de veces que caes.</p>
+      <p>Y cada vez que regresas al centro, el camino de regreso es más corto.</p>
+      <p>Las voces no son tu enemigo. Nunca lo fueron.</p>
+      <p>Son compañeras en este extraño viaje de ser humano.</p>
+      <p>Escúchalas. Honra su esfuerzo. Actualiza sus roles. Intégralas cuando estén listas.</p>
+      <p>Y en los momentos de silencio entre sus palabras, encontrarás lo que siempre estuviste buscando:</p>
+      <p><strong>Tú mismo.</strong></p>
+    </section>
+
+    <section id="preguntas-reflexion-12">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Cuál de las cinco prácticas del centro resuena más contigo? ¿Estás dispuesto a hacerla tu práctica diaria?</li>
+        <li>¿En qué áreas de tu vida ya vives desde el centro? ¿En cuáles todavía eres reactivo?</li>
+        <li>¿Qué obstáculo es más fuerte para ti: la ilusión de "ya lo logré", el perfeccionismo espiritual, o el aislamiento?</li>
+        <li>Mirando tu viaje hasta ahora, ¿cuál ha sido tu mayor transformación?</li>
+        <li>¿Cuál es tu siguiente paso?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-12" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>Vivir desde el centro es encarnar el trabajo: llevarlo a la vida cotidiana</li>
+        <li>Cinco prácticas del centro: check-in matutino, pausa ante decisiones, ancla somática, diálogo nocturno, retiro semanal</li>
+        <li>Obstáculos: ilusión de "ya lo logré", perfeccionismo espiritual, aislamiento</li>
+        <li>El equilibrio entre trabajo interno y vida externa: el Ser está en la relación con el mundo, no solo adentro</li>
+        <li>La integración final: momentos donde no hay separación entre Ser y vida</li>
+        <li>Este es un camino de por vida, no un problema a resolver de una vez</li>
+      </ul>
+      <p><strong>¡Felicidades!</strong> Has completado "La Voz Interior". El viaje continúa en el Epílogo y más allá. 🌀✨</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_11.html" class="nav-link">← Capítulo 11</a>
+      <a href="index.html" class="nav-link">Índice →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 12 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. No tiene contenido ni agenda. Es el espacio donde las partes aparecen.",
+      "voz interna": "Patrón recurrente de pensamiento con cualidad autónoma. No es alucinación; es narrativa interna con intención protectora.",
+      "diálogo interno": "Conversación terapéutica con las voces desde la posición del Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "rumiación": "Pensamiento repetitivo sobre problemas sin llegar a solución. Es fusión en movimiento. Diferente del diálogo terapéutico.",
+      "integración": "Proceso donde las voces encuentran su lugar natural y dejan de dominar. Tiene tres etapas: funcional, psicológica y transpersonal.",
+      "compasión": "Capacidad de tratarte con gentileza ante el sufrimiento. La voz silenciosa es compasión espontánea, no cultivada.",
+      "meditación": "Práctica de entrenar la atención y la conciencia. Cultiva la observación ecuánime, creando espacios entre pensamientos donde el Ser se hace evidente.",
+      "grounding (anclaje)": "Técnicas que te conectan con el presente a través del cuerpo y los sentidos. Útiles cuando estás fusionado o abrumado.",
+      "mindfulness": "Práctica de prestar atención al momento presente con apertura y sin juicio. Base de la desidentificación.",
+      "fusión": "Estado donde te identificas completamente con una voz. Elimina la agencia y el espacio para el diálogo.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos o voces. Crea espacio entre el observador y lo observado.",
+      "observador": "Ver Ser. La conciencia que presencia sin fusionarse. Necesario para mediar o dialogar con las voces.",
+      "conciencia testigo": "Ver Ser. Aquello en ti que observa sin juzgar, presencia sin fusionarse y contiene sin colapsar.",
+      "ecuanimidad": "Mente estable que permanece en equilibrio ante experiencias placenteras y displacenteras. No es indiferencia, sino balance consciente."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
