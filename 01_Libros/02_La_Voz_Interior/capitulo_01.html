@@ -1,93 +1,433 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Capítulo 1: El coro interior - Anatomía de las voces internas">
-    <title>Capítulo 1 | La Voz Interior</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 1: El coro interior | La Voz Interior</title>
+  <meta name="description" content="Anatomía de las voces internas - Reconocer para transformar">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Paleta La Voz Interior */
+    :root {
+      --fondo: #E8E3D5;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    
+    /* Barra de progreso */
+    .progress-container {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--fondo); padding: 8px 0;
+      border-bottom: 1px solid rgba(139,107,154,0.2);
+    }
+    .progress-bar {
+      height: 4px; background: rgba(139,107,154,0.2);
+      border-radius: 2px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: var(--acento);
+      width: 8%; /* Capítulo 1 de 12 + preliminares */
+      transition: width 0.3s ease;
+    }
+    
+    /* Tarjetas de contenido especial */
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante {
+      border-left: 4px solid var(--acento);
+      padding: 1.2rem; margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    
+    /* Términos del glosario clickeables */
+    .glossary-term {
+      background: none; border: none;
+      color: var(--acento); font-weight: 600;
+      cursor: pointer; text-decoration: underline dotted;
+      padding: 0 2px; transition: all 0.2s;
+    }
+    .glossary-term:hover {
+      background: rgba(139,107,154,0.1);
+      border-radius: 3px;
+    }
+    
+    /* Modal del glosario */
+    .modal {
+      display: none; position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000; justify-content: center; align-items: center;
+    }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content {
+      background: var(--fondo); padding: 2rem;
+      border-radius: 12px; max-width: 600px; width: 90%;
+      max-height: 80vh; overflow-y: auto;
+      position: relative; border: 2px solid var(--acento);
+    }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 1.5rem; cursor: pointer;
+      color: var(--acento);
+    }
+    #glossary-search {
+      width: 100%; padding: 0.8rem;
+      margin-bottom: 1rem; border: 1px solid var(--acento);
+      border-radius: 6px; background: #fff;
+      font-size: 1rem;
+    }
+    .glossary-list dt {
+      font-weight: 700; color: var(--acento);
+      margin-top: 1rem; cursor: pointer;
+    }
+    .glossary-list dd {
+      margin-left: 0; margin-bottom: 1rem;
+      color: var(--texto-suave); line-height: 1.6;
+    }
+    
+    /* Navegación */
+    .chapter-nav {
+      display: flex; justify-content: space-between;
+      margin: 2rem 0; padding: 1rem;
+      border-top: 1px solid rgba(139,107,154,0.3);
+      border-bottom: 1px solid rgba(139,107,154,0.3);
+    }
+    .nav-link {
+      color: var(--acento); text-decoration: none;
+      font-weight: 600; padding: 0.5rem 1rem;
+      border: 1px solid var(--acento);
+      border-radius: 6px; transition: all 0.2s;
+    }
+    .nav-link:hover {
+      background: var(--acento); color: #fff;
+    }
+    .nav-link.disabled {
+      opacity: 0.5; cursor: not-allowed;
+      border-color: #ccc; color: #ccc;
+    }
+    
+    /* Footer */
+    footer {
+      margin-top: 3rem; padding: 2rem;
+      text-align: center; color: var(--texto-suave);
+      font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2);
+    }
+    footer a { color: var(--acento); text-decoration: none; }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+    }
+  </style>
 </head>
 <body>
-    <div class="progress-bar" id="progressBar"></div>
-    
-    <nav>
-        <a href="introduccion.html">← Introducción</a>
-        <a href="capitulo_02.html">Capítulo 2 →</a>
+  <!-- Barra de progreso -->
+  <div class="progress-container">
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+  </div>
+
+  <!-- Navegación superior -->
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="introduccion.html" class="nav-link">← Introducción</a>
+    <a href="capitulo_02.html" class="nav-link disabled" title="Próximamente">Capítulo 2 →</a>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 1</span>
+      <h1>El coro interior: anatomía de las voces internas</h1>
+      <p class="chapter-subtitle">Reconocer para transformar</p>
+    </header>
+        <section id="el-descubrimiento-de-marta" class="caso-clinico">
+      <h2>El descubrimiento de Marta</h2>
+      <p>Marta tiene 34 años. Es arquitecta, madre de dos niños, y vino a terapia porque "no podía más con la <button class="glossary-term" data-term="autocrítica">autocrítica</button>".</p>
+      <p>—Es como si hubiera alguien dentro de mí que nunca está satisfecho —me dijo en la primera sesión—. Termino un proyecto y en lugar de sentir alivio, inmediatamente aparece la voz: "Pudiste hacerlo mejor. Los demás habrían notado ese detalle que dejaste pasar. No eres suficientemente buena".</p>
+      <p>Le pedí que cerrara los ojos y prestara atención a esa voz cuando surgía.</p>
+      <p>—¿Qué tono tiene? ¿Es masculina, femenina? ¿Suena a alguien que conoces?</p>
+      <p>Marta se quedó en silencio un momento. Luego, con sorpresa:</p>
+      <p>—Suena... como mi madre. No exactamente su voz, pero el tono. Ese tono de decepción que usaba cuando yo traía una nota que no era 10.</p>
+      <p>—¿Y qué edad tiene esa voz? Imagina que es un personaje. ¿Cuántos años parece tener?</p>
+      <p>Marta abrió los ojos, desconcertada:</p>
+      <p>—Es raro, pero... tiene como 40 años. La edad que tenía mi madre cuando yo era adolescente.</p>
+      <p>—¿Y dónde está en tu cuerpo cuando habla?</p>
+      <p>—En el pecho. Como un peso.</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Lo que Marta acababa de hacer —sin saberlo— era el primer paso del trabajo con <button class="glossary-term" data-term="voz interna">voces internas</button>: <button class="glossary-term" data-term="personificación">personificarlas</button>. Darles forma, edad, ubicación. Dejar de ser una "sensación difusa de insuficiencia" para convertirse en una voz concreta con características identificables. Porque solo lo que tiene forma puede ser visto. Y solo lo que es visto puede ser transformado.</p>
+    </section>
+
+    <section id="que-son-las-voces-internas">
+      <h2>¿Qué son las voces internas?</h2>
+      <p>Llamamos "voces internas" a esos patrones recurrentes de pensamiento que parecen tener voluntad propia. No son <button class="glossary-term" data-term="alucinación auditiva">alucinaciones auditivas</button> (eso sería un síntoma psicótico que requiere atención psiquiátrica). Son narrativas internas que operan en segundo plano, influyendo en cómo te sientes, qué decides, cómo te relacionas.</p>
+      
+      <p>Algunos ejemplos comunes:</p>
+      <ul>
+        <li><strong>El Crítico:</strong> "No eres suficiente. Los demás lo harían mejor. Vas a fracasar."</li>
+        <li><strong>El Protector:</strong> "No te arriesgues. Es más seguro quedarse donde estás. Podrías salir lastimado."</li>
+        <li><strong>El Perfeccionista:</strong> "Tiene que ser impecable. Si no es perfecto, no vale la pena."</li>
+        <li><strong>El Niño Herido:</strong> "Nadie me ve. Nunca fui suficiente para ellos. Estoy solo."</li>
+        <li><strong>El Rebelde:</strong> "No me digas qué hacer. No me voy a someter."</li>
+        <li><strong>La Voz Sabia:</strong> "Esto también pasará. Confía en el proceso."</li>
+      </ul>
+
+      <p>Estas voces no son "inventos" del terapeuta. Son reales en el sentido de que operan con <button class="glossary-term" data-term="autonomía relativa">autonomía relativa</button>. Tienen su propia lógica, su propia agenda, su propia historia.</p>
+
+      <p>Carl Jung las llamó "<button class="glossary-term" data-term="complejo autónomo">complejos autónomos</button>": fragmentos de psique que operan como sub-yos. Roberto Assagioli las llamó "<button class="glossary-term" data-term="subpersonalidades">subpersonalidades</button>". Richard Schwartz, creador del modelo <button class="glossary-term" data-term="IFS">IFS</button>, las llama "<button class="glossary-term" data-term="partes">partes</button>".</p>
+
+      <p>Nosotros las llamamos <em>voces</em>. Porque eso es lo que hacen: hablar.</p>
+    </section>
+
+    <section id="las-voces-no-son-el-enemigo">
+      <h2>Las voces no son el enemigo</h2>
+      <p class="nota-importante"><strong>Primer gran malentendido:</strong> La mayoría de las personas cree que las voces críticas, ansiosas, protectoras, son el problema. Y entonces intentan silenciarlas. Reprimirlas. "Pensar positivo". Negarlas. Pero las voces son como niños: mientras más las ignoras, más fuerte gritan.</p>
+      
+      <p>¿Por qué? Porque cada voz tiene una <button class="glossary-term" data-term="intención positiva">intención positiva</button>, aunque su estrategia sea disfuncional.</p>
+
+      <ul>
+        <li>El Crítico no existe para torturarte. Existe porque en algún momento de tu vida aprendiste que anticipar el juicio externo te protegía de la vergüenza. Si tú mismo te criticabas primero, el rechazo de los demás dolía menos.</li>
+        <li>El Protector no quiere que vivas en una jaula. Quiere evitarte el dolor. En algún momento del pasado, arriesgarte significó lastimarte, y esa parte aprendió: "La seguridad está en lo conocido".</li>
+        <li>El Niño Herido no busca victimizarte. Llora porque nunca fue escuchado. Y seguirá llorando hasta que alguien —tú— finalmente lo vea.</li>
+      </ul>
+
+      <p><strong>Las voces son estrategias de supervivencia que se quedaron obsoletas.</strong></p>
+      <p>Fueron útiles una vez. Ya no lo son. Pero no lo saben. Siguen operando con el manual de instrucciones de hace 10, 20, 30 años.</p>
+      <p>Tu trabajo no es eliminarlas. Es <button class="glossary-term" data-term="renegociación de roles">actualizarlas</button>.</p>
+    </section>
+        <section id="la-multiplicidad-de-la-mente">
+      <h2>La multiplicidad de la mente</h2>
+      <p>La idea de que "somos uno" es una ficción reconfortante pero inexacta.</p>
+      <p>La investigación en neurociencia, psicología del desarrollo y estudios sobre <button class="glossary-term" data-term="disociación">disociación</button> confirma algo que las tradiciones contemplativas sabían hace milenios: la mente es múltiple por naturaleza.</p>
+      <p>No hay un "yo" monolítico. Hay una red de procesos que se coordinan —o no— bajo la ilusión de una identidad coherente.</p>
+      <p>El budismo Yogacara habla de los "ocho tipos de conciencia" operando simultáneamente. Jung habló de la "sombra" y los "complejos". La teoría polivagal de Stephen Porges muestra cómo el sistema nervioso tiene múltiples modos de respuesta (ventral, simpático, dorsal) que parecen "diferentes yoes".</p>
+      <p>Cuando estás en modo simpático (amenaza), tu "yo defensivo" toma el control. Cuando estás en ventral (conexión segura), tu "yo relacional" lidera. No son metáforas: son estados neurofisiológicos distintos con su propia lógica.</p>
+      <p><strong>Las voces internas son la expresión psicológica de esa multiplicidad.</strong></p>
+      <p>Reconocerlas no es "inventarlas". Es volverlas conscientes.</p>
+    </section>
+
+    <section id="ejercicio-practico-inventario" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: El inventario de voces</h2>
+      <p><strong>Materiales:</strong> Cuaderno, 20 minutos de tranquilidad</p>
+      
+      <ol>
+        <li>Siéntate en un lugar cómodo. Respira profundo tres veces.</li>
+        <li>Piensa en una situación reciente donde sentiste malestar emocional (ansiedad, tristeza, culpa, enojo). Cierra los ojos y revive la escena.</li>
+        <li>Pregúntate: <em>¿Qué estaba diciendo mi mente en ese momento?</em></li>
+        <li>Escribe las frases exactas. No las edites, no las hagas "bonitas". Escribe lo que realmente pensaste.
+          <br><small>Ejemplo: "Soy un desastre." / "¿Por qué siempre me pasa esto a mí?" / "Nadie me entiende."</small>
+        </li>
+        <li>Ahora, para cada frase, pregúntate:
+          <ul>
+            <li>¿Esta voz tiene un nombre? (El Crítico, El Niño Asustado, El Exigente, etc.)</li>
+            <li>¿Qué edad parece tener?</li>
+            <li>¿Suena como alguien que conocí? (Un padre, maestro, hermano, versión pasada de ti mismo)</li>
+            <li>¿Dónde la siento en mi cuerpo? (Pecho, garganta, estómago, cabeza)</li>
+            <li>¿Qué trata de protegerme de sentir o vivir?</li>
+          </ul>
+        </li>
+        <li>Anota tus respuestas. No las juzgues. Solo obsérvalas con curiosidad.</li>
+      </ol>
+
+      <p class="nota-importante"><strong>Reflexión:</strong> ¿Qué descubriste? ¿Alguna voz te sorprendió? ¿Notaste que algunas voces se parecen a personas de tu pasado?</p>
+    </section>
+        <section id="voces-mas-comunes">
+      <h2>Las voces más comunes (y por qué están ahí)</h2>
+      <p>Aunque cada persona tiene su propio elenco interior, hay arquetipos de voces que aparecen una y otra vez en distintas culturas y biografías:</p>
+
+      <div class="tecnica-practica">
+        <h3>1. El Crítico Interior</h3>
+        <p><strong>Frase típica:</strong> "No eres suficiente. Los demás lo harían mejor."</p>
+        <p><strong>Función original:</strong> Anticipar el juicio externo para evitar rechazo o vergüenza.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando ya no necesitas el nivel de vigilancia que necesitabas de niño, pero el Crítico sigue operando como si el peligro existiera.</p>
+        <p><strong>Origen común:</strong> Padres o cuidadores muy exigentes, entornos de alta competencia, experiencias de humillación temprana.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>2. El Protector</h3>
+        <p><strong>Frase típica:</strong> "No te arriesgues. Es más seguro aquí. Podrías salir lastimado."</p>
+        <p><strong>Función original:</strong> Evitar el dolor asociado a experiencias pasadas de rechazo, fracaso o abandono.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando la evitación te impide crecer, conectar, o vivir plenamente.</p>
+        <p><strong>Origen común:</strong> Trauma, duelos no procesados, entornos impredecibles en la infancia.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>3. El Perfeccionista</h3>
+        <p><strong>Frase típica:</strong> "Tiene que ser impecable. Si no es perfecto, no tiene valor."</p>
+        <p><strong>Función original:</strong> Obtener reconocimiento, sentirse valioso a través del logro.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando el miedo al error paraliza la acción, o cuando el autocuidado queda subordinado al rendimiento.</p>
+        <p><strong>Origen común:</strong> Amor condicionado al desempeño, ambientes donde el error era castigado.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>4. El Niño Herido</h3>
+        <p><strong>Frase típica:</strong> "Nadie me ve. Nunca fui suficiente. Estoy solo."</p>
+        <p><strong>Función original:</strong> Expresar una necesidad no satisfecha (de atención, validación, amor).</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando se convierte en una lente permanente a través de la cual interpretas todas tus relaciones.</p>
+        <p><strong>Origen común:</strong> Negligencia emocional, invalidación crónica, ausencia de sintonía empática en la infancia.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>5. El Rebelde</h3>
+        <p><strong>Frase típica:</strong> "No me digas qué hacer. No me voy a someter."</p>
+        <p><strong>Función original:</strong> Preservar autonomía, defenderse de intrusión o control.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando boicotea incluso aquello que tú mismo deseas hacer (autosabotaje).</p>
+        <p><strong>Origen común:</strong> Entornos autoritarios, sobre-control parental, experiencias de invasión de límites.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>6. La Voz Sabia (o el Ser)</h3>
+        <p><strong>Frase típica:</strong> "Esto también pasará. Confía en el proceso. Hay algo más grande aquí."</p>
+        <p><strong>Función:</strong> No es reactiva. Es la voz de la conciencia amplia, conectada con perspectiva, compasión, y verdad profunda.</p>
+        <p><strong>Origen:</strong> No tiene origen biográfico. Es lo que Richard Schwartz llama <button class="glossary-term" data-term="Self">Self</button> en IFS (lo que aquí llamamos <button class="glossary-term" data-term="Ser">Ser</button>): la esencia no herida, siempre presente, aunque a veces inaudible bajo el ruido de las otras voces.</p>
+      </div>
+
+      <!-- LINK_TRANSVERSAL: Este capítulo conecta con Empatía Humana - "Los tres pilares" -->
+      <!-- <a href="../../01_Empatia_Humana/capitulo_03.html#los-tres-pilares" class="link-transversal">→ Ver: Los tres pilares en Empatía Humana</a> -->
+    </section>
+
+    <section class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>Las voces internas no son patología: son estrategias de supervivencia que alguna vez fueron útiles</li>
+        <li>Cada voz tiene una intención positiva, aunque su método sea disfuncional</li>
+        <li>La mente es naturalmente múltiple: reconocer las voces es volverlas conscientes, no crearlas</li>
+        <li>El primer paso de la transformación es nombrarlas: darles forma, edad, ubicación, función</li>
+        <li>No se trata de eliminarlas, sino de actualizarlas</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>¿Quién está hablando?</em> — Aprenderás a distinguir con precisión cuándo una voz está hablando, y cómo diferenciarla de tu identidad esencial.</p>
+    </section>
+
+    <!-- Navegación inferior -->
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="introduccion.html" class="nav-link">← Introducción</a>
+      <a href="capitulo_02.html" class="nav-link disabled" title="Próximamente">Capítulo 2 →</a>
     </nav>
+  </main>
 
-    <div class="contenido-libro">
-        <header class="prologo-header">
-            <p class="numero-capitulo">PARTE I: RECONOCER</p>
-            <h1>Capítulo 1</h1>
-            <p class="subtitulo">El coro interior: Anatomía de las voces internas</p>
-        </header>
+  <!-- Footer con atribución -->
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 1 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="../index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
 
-        <div class="prologo-texto">
-            <h3 style="color: var(--acento);">El descubrimiento de Marta</h3>
-            
-            <p>Marta tiene 34 años. Es arquitecta, madre de dos niños, y vino a terapia porque "no podía más con la autocrítica".</p>
-            <p>—Es como si hubiera alguien dentro de mí que nunca está satisfecho —me dijo en la primera sesión—. Termino un proyecto y en lugar de sentir alivio, inmediatamente aparece la voz: "Pudiste hacerlo mejor. Los demás habrían notado ese detalle que dejaste pasar. No eres suficientemente buena".</p>
-            <p>Le pedí que cerrara los ojos y prestara atención a esa voz cuando surgía.</p>
-            <p>—¿Qué tono tiene? ¿Es masculina, femenina? ¿Suena a alguien que conoces?</p>
-            <p>Marta se quedó en silencio un momento. Luego, con sorpresa:</p>
-            <p>—Suena... como mi madre. No exactamente su voz, pero el tono. Ese tono de decepción que usaba cuando yo traía una nota que no era 10.</p>
-            <p>—¿Y qué edad tiene esa voz? Imagina que es un personaje. ¿Cuántos años parece tener?</p>
-            <p>Marta abrió los ojos, desconcertada:</p>
-            <p>—Es raro, pero... tiene como 40 años. La edad que tenía mi madre cuando yo era adolescente.</p>
-            <p>—¿Y dónde está en tu cuerpo cuando habla?</p>
-            <p>—En el pecho. Como un peso.</p>
-            
-            <div class="destacado">
-                Lo que Marta acababa de hacer —sin saberlo— era el primer paso del trabajo con voces internas: <strong>personificarlas</strong>. Darles forma, edad, ubicación. Dejar de ser una "sensación difusa de insuficiencia" para convertirse en una voz concreta con características identificables.
-            </div>
+  <!-- Modal del Glosario (reutilizable en todos los capítulos) -->
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list">
+        <!-- Se llena dinámicamente con JS -->
+      </dl>
+    </div>
+  </div>
 
-            <p>Porque solo lo que tiene forma puede ser visto. Y solo lo que es visto puede ser transformado.</p>
+  <!-- Script del glosario -->
+  <script>
+    // Datos del glosario (extraídos de glosario.md)
+    const glossaryData = {
+      "autocrítica": "Juicio negativo dirigido hacia uno mismo, generalmente desde una voz internalizada (Crítico Interior). No es patología per se, pero cuando es rígida y constante, interfiere con el bienestar.",
+      "voz interna": "Patrón recurrente de pensamiento que parece tener voluntad propia. No es alucinación auditiva; es narrativa interna con cualidad autónoma. Ejemplos: Crítico, Protector, Perfeccionista.",
+      "personificación": "Técnica de dar forma concreta a una voz: imaginarla como persona con edad, género, postura, expresión. La personificación hace visible lo invisible y permite relacionarte con la voz como 'alguien' con quien puedes dialogar.",
+      "alucinación auditiva": "Percepción sensorial de sonidos o voces sin estímulo externo real. Requiere evaluación psiquiátrica. Diferente de las voces internas, que son narrativas psicológicas normales.",
+      "autonomía relativa": "Capacidad de una voz interna para operar con cierta independencia del yo consciente, con su propia lógica y agenda. Concepto junguiano aplicado al trabajo con partes.",
+      "complejo autónomo": "Término de Carl Jung para referirse a fragmentos de la psique que operan con relativa independencia del yo consciente. Tienen su propia energía, lógica y agenda.",
+      "subpersonalidades": "Término de Roberto Assagioli (psicosíntesis) para referirse a aspectos semi-autónomos de la personalidad. Cada subpersonalidad tiene su propia forma de percibir, sentir y actuar.",
+      "IFS": "Internal Family Systems: modelo terapéutico creado por Richard Schwartz que conceptualiza la psique como un sistema de 'partes' (subpersonalidades) que interactúan entre sí.",
+      "partes": "Término del modelo IFS para referirse a las distintas subpersonalidades o voces internas. Cada parte tiene su propia perspectiva, emociones, memorias y agenda.",
+      "intención positiva": "Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional. Ejemplo: el Crítico no existe para torturarte; existe para protegerte del rechazo externo.",
+      "renegociación de roles": "Proceso de actualizar la función de una voz sin eliminarla. Protocolo: agradecer servicio pasado, nombrar limitación presente, proponer nuevo rol, pedir consentimiento, practicar, celebrar.",
+      "disociación": "Experiencia de desconexión entre pensamientos, identidad, conciencia y memoria. Puede ser adaptativa (en trauma) o patológica. En el trabajo con voces, la desidentificación saludable no es disociación.",
+      "Self": "Concepto del modelo IFS de Richard Schwartz: la esencia no herida, compasiva, conectada que está más allá de las partes. En este libro usamos 'Ser' para referirnos al mismo concepto.",
+      "Ser": "Tu esencia, tu verdadero observador, la conciencia testigo que puede presenciar todas las voces sin fusionarse con ninguna. No tiene contenido, edad, ni agenda. Es el espacio donde las partes aparecen."
+    };
 
-            <h3 style="color: var(--acento); margin-top: 2rem;">¿Qué son las voces internas?</h3>
-            
-            <p>Llamamos "voces internas" a esos patrones recurrentes de pensamiento que parecen tener voluntad propia. No son alucinaciones auditivas (eso sería un síntoma psicótico que requiere atención psiquiátrica). Son narrativas internas que operan en segundo plano, influyendo en cómo te sientes, qué decides, cómo te relacionas.</p>
-            <p>Algunos ejemplos comunes:</p>
-            
-            <ul>
-                <li><strong>El Crítico:</strong> "No eres suficiente. Los demás lo harían mejor. Vas a fracasar."</li>
-                <li><strong>El Protector:</strong> "No te arriesgues. Es más seguro quedarse donde estás. Podrías salir lastimado."</li>
-                <li><strong>El Perfeccionista:</strong> "Tiene que ser impecable. Si no es perfecto, no vale la pena."</li>
-                <li><strong>El Niño Herido:</strong> " Nadie me ve. Nunca fui suficiente para ellos. Estoy solo."</li>
-                <li><strong>El Rebelde:</strong> "No me digas qué hacer. No me voy a someter."</li>
-                <li><strong>La Voz Sabia:</strong> "Esto también pasará. Confía en el proceso."</li>
-            </ul>
+    // Funcionalidad del modal
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
 
-            <p>Estas voces no son "inventos" del terapeuta. Son reales en el sentido de que operan con autonomía relativa. Tienen su propia lógica, su propia agenda, su propia historia.</p>
-            <p>Carl Jung las llamó "complejos autónomos". Roberto Assagioli las llamó "subpersonalidades". Richard Schwartz, creador del modelo IFS, las llama "partes".</p>
-            <p>Nosotros las llamamos <strong>voces</strong>. Porque eso es lo que hacen: hablar.</p>
+    // Abrir modal al hacer clic en un término
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => {
+        e.preventDefault();
+        const termKey = term.dataset.term.toLowerCase();
+        openModal(termKey);
+      });
+    });
 
-            <div class="nota-importante">
-                <h4 style="color: var(--acento); margin-bottom: 0.5rem;">Las voces no son el enemigo</h4>
-                <p>Aquí está el primer gran malentendido que la mayoría de las personas tiene con su mundo interno:</p>
-                <p>Creen que las voces críticas, ansiosas, protectoras, son el problema. Y entonces intentan silenciarlas. Reprimirlas. "Pensar positivo". Negarlas.</p>
-                <p><strong>Pero las voces son como niños: mientras más las ignoras, más fuerte gritan.</strong></p>
-                <p>¿Por qué? Porque cada voz tiene una intención positiva, aunque su estrategia sea disfuncional.</p>
-                <ul style="margin-top: 0.5rem;">
-                    <li>El <strong>Crítico</strong> no existe para torturarte. Existe porque en algún momento aprendiste que anticipar el juicio externo te protegía de la vergüenza.</li>
-                    <li>El <strong>Protector</strong> no quiere que vivas en una jaula. Quiere evitarte el dolor.</li>
-                    <li>El <strong>Niño Herido</strong> no busca victimizarte. Llora porque nunca fue escuchado.</li>
-                </ul>
-                <p style="margin-top: 0.5rem;">Las voces son estrategias de supervivencia que se quedaron obsoletas. Fueron útiles una vez. Ya no lo son. Pero no lo saben.</p>
-            </div>
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // Evitar scroll del body
+      renderGlossary(searchTerm);
+      if (searchTerm) {
+        glossarySearch.value = searchTerm;
+        glossarySearch.focus();
+      }
+    }
 
-            <h3 style="color: var(--acento); margin-top: 2rem;">La multiplicidad de la mente</h3>
-            
-            <p>La idea de que "somos uno" es una ficción reconfortante pero inexacta.</p>
-            <p>La investigación en neurociencia, psicología del desarrollo y estudios sobre disociación confirma algo que las tradiciones contemplativas sabían hace milenios: <strong>la mente es múltiple por naturaleza</strong>.</p>
-            <p>No hay un "yo" monolítico. Hay una red de procesos que se coordinan —o no— bajo la ilusión de una identidad coherente.</p>
-            <p>El budismo Yogacara habla de los "ocho tipos de conciencia" operando simultáneamente. Jung habló de la "sombra" y los "complejos". La teoría polivagal de Stephen Porges muestra cómo el sistema nervioso tiene múltiples modos de respuesta que parecen "diferentes yoes".</p>
-            <p>Las voces internas son la expresión psicológica de esa multiplicidad.</p>
-            <p>Reconocerlas no es "inventarlas". Es volverlas conscientes.</p>
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
 
-            <div class="ejercicio-practico">
-                <h4>Ejercicio práctico: El inventario de voces</h4>
-                <p><strong>Materiales:</strong> Cuaderno, 20 minutos de tranquilidad</p>
-                <p><strong>Instrucciones:</strong></p>
-                <ol style="margin-left: 1.5rem;">
-                    <li>Siéntate en un lugar cómodo. Respira profundo tres veces.</li>
-                    <li>Piens
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+        closeModal();
+      }
+    });
+
+    // Renderizar resultados del glosario
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+
+      if (filtered.length === 0) {
+        glossaryResults.innerHTML = '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>';
+        return;
+      }
+
+      glossaryResults.innerHTML = filtered.map(([term, definition]) => `
+        <dt tabindex="0">${term}</dt>
+        <dd>${definition}</dd>
+      `).join('');
+    }
+
+    // Búsqueda en tiempo real
+    glossarySearch.addEventListener('input', (e) => {
+      renderGlossary(e.target.value);
+    });
+
+    // Accesibilidad: permitir abrir términos con Enter
+    glossaryTerms.forEach(term => {
+      term.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(term.dataset.term.toLowerCase());
+        }
+      });
+    });
+  </script>
+</body>
+</html>
