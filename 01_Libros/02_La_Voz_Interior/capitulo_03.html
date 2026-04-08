@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 3: El origen de las voces | La Voz Interior</title>
+  <meta name="description" content="De dónde vienen las voces internas y por qué persisten">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 20%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_02.html" class="nav-link">← Capítulo 2</a>
+    <a href="capitulo_04.html" class="nav-link disabled" title="Próximamente">Capítulo 4 →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 3</span>
+      <h1>El origen de las voces: de dónde vienen y por qué persisten</h1>
+    </header>
+
+    <section id="ana-y-la-voz-de-su-abuela" class="caso-clinico">
+      <h2>Ana y la voz de su abuela</h2>
+      <p>Ana tiene 29 años, trabaja en marketing digital, y vino a terapia porque "sentía que nunca hacía suficiente".</p>
+      <p>En una sesión, le pedí que identificara la voz que decía "Deberías trabajar más, descansar es para los flojos".</p>
+      <p>Cerró los ojos. Después de un momento:</p>
+      <p>—Es la voz de mi abuela. Ella crió a seis hijos sola después de que mi abuelo murió. Trabajaba en el campo, en la casa, nunca paraba. Nos decía: "El trabajo dignifica. Los ociosos no merecen respeto".</p>
+      <p>—¿Y tú qué sentías cuando te decía eso? —pregunté.</p>
+      <p>—Admiración. Pero también... miedo. Miedo a que si yo descansaba, no iba a ser digna de amor.</p>
+      <p>—¿Y ahora? ¿Sigues viviendo según ese mandato?</p>
+      <p>Ana abrió los ojos, con lágrimas:</p>
+      <p>—Sí. Pero mi abuela vivió en una época de escasez. Yo no. Trabajo 12 horas al día porque una parte de mí cree que si no lo hago, no valgo. Pero no es mi verdad. Es la verdad de ella.</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Este es uno de los descubrimientos más liberadores del trabajo con <button class="glossary-term" data-term="voz interna">voces internas</button>: muchas de las voces que habitan en ti no son tuyas originalmente. Son voces que <button class="glossary-term" data-term="internalización">internalizaste</button>.</p>
+    </section>
+
+    <section id="los-tres-origenes-de-las-voces-internas">
+      <h2>Los tres orígenes de las voces internas</h2>
+      <p>Las voces no aparecen de la nada. Tienen origen biográfico, cultural, y en algunos casos, transpersonal. Veamos cada uno:</p>
+
+      <h3>1. Origen biográfico: las voces de tus cuidadores</h3>
+      <p>La mayoría de las voces críticas, protectoras, exigentes, tienen su raíz en mensajes que recibiste en la infancia y adolescencia. No necesariamente mensajes explícitos. A veces son implícitos: el tono de decepción de un padre, el silencio de una madre cuando esperabas validación, la mirada de desaprobación de un maestro.</p>
+      <p>El niño internaliza esos mensajes porque necesita pertenecer. Su supervivencia depende del vínculo con sus cuidadores. Entonces, para preservar esa conexión, adopta las voces de ellos como propias.</p>
+      <p><strong>Ejemplos:</strong></p>
+      <ul>
+        <li>Un padre que repetía: "Los hombres no lloran" → Voz del Represor Emocional: "No muestres debilidad"</li>
+        <li>Una madre ansiosa que decía: "Ten cuidado, el mundo es peligroso" → Voz del Protector Hipervigilante: "No confíes, podrías salir lastimado"</li>
+        <li>Un entorno de alta exigencia académica → Voz del <button class="glossary-term" data-term="perfeccionista">Perfeccionista</button>: "Si no eres el mejor, no vales"</li>
+      </ul>
+      <p>Estas voces se instalan en el psiquismo como programas de software. Y siguen corriendo décadas después, incluso cuando los cuidadores ya no están presentes.</p>
+
+      <h3>2. Origen cultural: las voces del sistema social</h3>
+      <p>No solo internalizas las voces de tus cuidadores inmediatos. También internalizas las voces de tu cultura, religión, género, clase social.</p>
+      <ul>
+        <li><button class="glossary-term" data-term="mandato cultural">Mandato de género</button> (mujeres): "Tienes que ser buena, complacer, no molestar." → Voz del Complaciente</li>
+        <li>Mandato de género (hombres): "Tienes que ser fuerte, proveer, no mostrar vulnerabilidad." → Voz del Estoico Rígido</li>
+        <li>Mandato de productividad capitalista: "Tu valor está en tu rendimiento." → Voz del Trabajador Incansable</li>
+      </ul>
+      <p>Estas voces no son individuales. Son colectivas. Operan como "software cultural" que se instala sin tu consentimiento consciente. Y porque son invisibles (todos las tienen), es más difícil reconocerlas como voces y no como "la realidad".</p>
+
+      <h3>3. Origen transpersonal: las voces arquetípicas</h3>
+      <p>Carl Jung propuso que más allá de las voces personales y culturales, existen voces <button class="glossary-term" data-term="arquetipo">arquetípicas</button>: patrones universales que trascienden la biografía individual.</p>
+      <p>El <button class="glossary-term" data-term="crítico interior">Crítico Interior</button>, por ejemplo, tiene algo de la energía del arquetipo del Juez o el Tirano. El <button class="glossary-term" data-term="protector">Protector</button> conecta con el Guardián. El <button class="glossary-term" data-term="niño herido">Niño Herido</button> con el Huérfano.</p>
+      <p>Estas voces no son "inventos psicológicos". Son patrones recurrentes que aparecen en mitos, cuentos de hadas, sueños, y experiencias humanas a través de culturas. Reconocerlas como <button class="glossary-term" data-term="arquetipo">arquetipos</button> te ayuda a <button class="glossary-term" data-term="despersonalización">despersonalizar el sufrimiento</button>. No eres "raro" por tener un Crítico. Todos lo tienen.</p>
+    </section>
+        <section id="por-que-las-voces-persisten">
+      <h2>Por qué las voces persisten (incluso cuando ya no son útiles)</h2>
+      <p>Si las voces son estrategias que alguna vez fueron útiles, ¿por qué siguen operando cuando ya no las necesitas? Hay tres razones principales:</p>
+
+      <h3>1. <button class="glossary-term" data-term="refuerzo emocional">Refuerzo emocional</button> en el pasado</h3>
+      <p>Imagina que de niño, cada vez que anticipabas el juicio de tus padres y te autocriticabas primero, el castigo era menor. O al menos, sentías que lo era. Esa estrategia se reforzó emocionalmente. Tu <button class="glossary-term" data-term="sistema nervioso">sistema nervioso</button> aprendió: "Esto funciona. Reduce el dolor."</p>
+      <p>Aunque ahora ya no vivas con tus padres, el patrón sigue activándose porque fue cableado neurológicamente en un momento formativo. Es como un camino en el bosque que se volvió autopista por usarlo mil veces.</p>
+
+      <h3>2. <button class="glossary-term" data-term="intención positiva">Intención positiva</button> (aunque la estrategia sea obsoleta)</h3>
+      <p>Las voces no son "malas". Tienen una intención positiva: protegerte, mantenerte seguro, ayudarte a pertenecer.</p>
+      <p>El Crítico no quiere destruirte. Quiere evitar que seas rechazado. El Protector no quiere aislarte. Quiere evitar que te lastimen de nuevo. Como tienen intención positiva, no se van simplemente porque las ignores. Necesitan ser re-negociadas.</p>
+
+      <h3>3. Falta de <button class="glossary-term" data-term="conciencia">conciencia</button> (operan en automático)</h3>
+      <p>La mayoría de las personas nunca volvió consciente el diálogo interno. Las voces operan en segundo plano, como aplicaciones abiertas en tu computadora que consumen recursos sin que lo sepas.</p>
+      <p>Solo cuando las traes a la luz (las nombras, las personificas, las ubicas) puedes comenzar a intervenir. No puedes transformar lo que no puedes ver.</p>
+    </section>
+
+    <section id="ejercicio-practico-rastrear-el-origen" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Rastrear el origen de una voz</h2>
+      <p>Elige una voz que te resulte particularmente activa o problemática. Responde estas preguntas en tu cuaderno:</p>
+      <ol>
+        <li><strong>¿A quién se parece esta voz?</strong><br>¿Suena como alguien de tu infancia? ¿Usa frases que escuchaste de niño?</li>
+        <li><strong>¿Cuándo apareció por primera vez?</strong><br>¿Recuerdas un momento específico en que esta voz "se instaló"? ¿Qué estaba pasando en tu vida?</li>
+        <li><strong>¿Qué <button class="glossary-term" data-term="mandato cultural">mandato cultural</button> refuerza esta voz?</strong><br>¿Hay algún mandato de género, clase, religión, o productividad que alimenta esta voz?</li>
+        <li><strong>¿Qué trataba de protegerte de sentir o vivir?</strong><br>Si esta voz apareció en un contexto de dolor, ¿qué dolor intentaba evitar?</li>
+        <li><strong>¿Sigue siendo útil hoy?</strong><br>¿Esta voz te sirve ahora, o es un software obsoleto?</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> Rastrear el origen no es para culpar a tus padres o tu cultura. Es para despersonalizar la voz. No eres "defectuoso" por tenerla. Es una respuesta lógica a un contexto específico.</p>
+    </section>
+
+    <section id="caso-clinico-javier" class="caso-clinico">
+      <h2>Caso clínico: Javier y la voz del "hombre fuerte"</h2>
+      <p>Javier, 45 años, ingeniero civil, vino a terapia después de un ataque de pánico en una reunión de trabajo.</p>
+      <p>—Nunca me había pasado algo así. Estaba presentando un proyecto, y de pronto sentí que no podía respirar. Tuve que salir.</p>
+      <p>Exploramos qué estaba pasando internamente en ese momento.</p>
+      <p>—Había una voz que decía: "No muestres debilidad. Si te ven vulnerable, pierdes autoridad. Los hombres no se quiebran."</p>
+      <p>—¿De quién es esa voz? —pregunté.</p>
+      <p>Javier tardó en responder: —Es la voz de mi padre. Él era militar. Nos criaba con disciplina. Llorar era signo de debilidad. Una vez, cuando tenía 8 años, me caí de la bici y me hice un corte profundo en la rodilla. Lloré. Él me gritó: "Los hombres no lloran." Me tragué el llanto. Desde ese día, nunca más lloré frente a él.</p>
+      <p>—¿Y cómo se siente esa parte de ti que tuvo que reprimir?</p>
+      <p>Javier respiró hondo: —Agotada. Han sido 37 años sosteniendo una fachada. Por eso el cuerpo colapsó en esa reunión.</p>
+      <p>Le pedí que imaginara a ese niño de 8 años con la rodilla sangrando, tragándose las lágrimas. —¿Qué necesitaba ese niño en ese momento?</p>
+      <p>Javier se quebró: —Que alguien le dijera que estaba bien llorar. Que el dolor era real. Que no tenía que ser fuerte todo el tiempo.</p>
+      <p>—¿Y ahora, el adulto que eres, puedes decirle eso a ese niño?</p>
+      <p>Javier cerró los ojos y habló en voz baja: —Está bien llorar. No estás solo. Yo estoy aquí. Ya no tienes que cargar con eso.</p>
+      <p>Cuando abrió los ojos, algo había cambiado. La rigidez en sus hombros se había suavizado. Eso es lo que pasa cuando reconoces el origen de una voz: puedes elegir si seguir obedeciéndola o si actualizarla.</p>
+    </section>
+
+    <section id="la-trampa-de-la-culpa">
+      <h2>La trampa de la culpa y el camino de la comprensión</h2>
+      <p>Es común que al rastrear el origen de las voces, aparezca enojo hacia los cuidadores. Este enojo es válido. Es parte del proceso.</p>
+      <p>Pero si te quedas atrapado en la culpa (tuya o de otros), no avanzas. La propuesta del trabajo con voces internas no es culpar, sino comprender:</p>
+      <p>Tus padres también tenían voces. Tus abuelos también las tenían. Es una <button class="glossary-term" data-term="cadena intergeneracional">cadena intergeneracional</button> de patrones que se transmiten sin conciencia.</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Tu trabajo no es juzgar a quienes te precedieron. Es interrumpir la cadena. Que las voces que heredaste no se las transmitas (conscientemente) a la siguiente generación. Ese es el trabajo de liberación transgeneracional.</p>
+    </section>
+        <section id="preguntas-reflexion-3">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Cuál de tus voces internas se parece más a alguno de tus cuidadores?</li>
+        <li>¿Hay algún <button class="glossary-term" data-term="mandato cultural">mandato cultural</button> (género, religión, clase) que puedas identificar operando como voz interna?</li>
+        <li>¿Alguna de tus voces te protegió de algo doloroso en el pasado? ¿Sigue protegiéndote de eso, o el contexto cambió?</li>
+        <li>¿Hay enojo hacia alguien al rastrear el origen de tus voces? ¿Puedes sostener el enojo Y la comprensión al mismo tiempo?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-3" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>Las voces tienen origen biográfico (cuidadores), cultural (sistema social), y a veces arquetípico (patrones universales)</li>
+        <li>Persisten porque fueron reforzadas emocionalmente, tienen intención positiva, y operan en automático</li>
+        <li>Rastrear el origen despersonaliza el sufrimiento: no eres "defectuoso", es una respuesta lógica a un contexto</li>
+        <li>El trabajo no es culpar, sino comprender y actualizar</li>
+        <li>Interrumpir la cadena intergeneracional de voces es un acto de liberación</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>El observador: descubrir quién escucha</em> — Aprenderás a distinguir entre partes y Ser, y a acceder a la conciencia testigo.</p>
+    </section>
+
+    <!-- LINK_TRANSVERSAL: Este capítulo conecta con Encuentro Real - "Proyecciones cruzadas" -->
+    <!-- <a href="../../03_Encuentro_Real/capitulo_04.html#proyecciones-cruzadas" class="link-transversal">→ Ver: Proyecciones cruzadas en Encuentro Real</a> -->
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_02.html" class="nav-link">← Capítulo 2</a>
+      <a href="capitulo_04.html" class="nav-link disabled" title="Próximamente">Capítulo 4 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 3 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="../index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "voz interna": "Patrón recurrente de pensamiento que parece tener voluntad propia. No es alucinación auditiva; es narrativa interna con cualidad autónoma.",
+      "internalización": "Proceso de adoptar mensajes, normas o voces de cuidadores/cultura como propias. Ocurre principalmente en la infancia como mecanismo de supervivencia vincular.",
+      "perfeccionista": "Voz interna que exige impecabilidad y vincula tu valor a tu desempeño. Función original: obtener amor y reconocimiento a través del logro.",
+      "mandato cultural": "Norma social invisible que se internaliza como voz (género, productividad, religión). Opera como 'software cultural' instalado sin consentimiento consciente.",
+      "arquetipo": "Patrón universal de la psique (Jung). Ej: Crítico = Juez, Protector = Guardián, Niño Herido = Huérfano. Aparece en mitos y experiencias humanas transculturales.",
+      "crítico interior": "Voz interna que juzga, evalúa negativamente y anticipa rechazo. Su función original es protegerte de la vergüenza externa.",
+      "protector": "Voz interna que evita riesgos, experiencias o emociones dolorosas. Función original: prevenir que revivas traumas o rechazos pasados.",
+      "niño herido": "Voz interna que porta dolor emocional de la infancia no procesado. Generalmente tiene una edad emocional específica y expresa necesidades no satisfechas.",
+      "despersonalización": "En este contexto, acto de reconocer que el sufrimiento no es un defecto personal, sino una respuesta lógica a un contexto histórico y cultural. Ayuda a reducir la culpa y la identificación patológica.",
+      "refuerzo emocional": "Aprendizaje donde una estrategia mental se mantiene porque redujo el dolor o el castigo en el pasado. Cablea patrones en el sistema nervioso que persisten aunque el contexto cambie.",
+      "sistema nervioso": "Red biológica que procesa amenazas y seguridad. Base neurofisiológica de las voces: modos ventral (conexión), simpático (lucha/huida) y dorsal (congelación).",
+      "intención positiva": "Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional. Clave para el diálogo compasivo.",
+      "conciencia": "Estado de darse cuenta de los procesos internos. Base para transformar voces: solo lo que se trae a la luz puede ser observado, nombrado y actualizado.",
+      "cadena intergeneracional": "Transmisión inconsciente de patrones, creencias y voces de una generación a otra. Se interrumpe cuando un miembro la vuelve consciente y elige responder en lugar de reaccionar."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
