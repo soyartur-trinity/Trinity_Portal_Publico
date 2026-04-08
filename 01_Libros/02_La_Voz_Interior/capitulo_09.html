@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 9: De la lucha a la colaboración | La Voz Interior</title>
+  <meta name="description" content="Renegociar roles internos: el punto de inflexión entre el manejo y la transformación">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    .progress-container { position: sticky; top: 0; z-index: 100; background: var(--fondo); padding: 8px 0; border-bottom: 1px solid rgba(139,107,154,0.2); }
+    .progress-bar { height: 4px; background: rgba(139,107,154,0.2); border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--acento); width: 68%; transition: width 0.3s ease; }
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante { border-left: 4px solid var(--acento); padding: 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    .glossary-term { background: none; border: none; color: var(--acento); font-weight: 600; cursor: pointer; text-decoration: underline dotted; padding: 0 2px; transition: all 0.2s; }
+    .glossary-term:hover { background: rgba(139,107,154,0.1); border-radius: 3px; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; justify-content: center; align-items: center; }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content { background: var(--fondo); padding: 2rem; border-radius: 12px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative; border: 2px solid var(--acento); }
+    .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--acento); }
+    #glossary-search { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid var(--acento); border-radius: 6px; background: #fff; font-size: 1rem; }
+    .glossary-list dt { font-weight: 700; color: var(--acento); margin-top: 1rem; cursor: pointer; }
+    .glossary-list dd { margin-left: 0; margin-bottom: 1rem; color: var(--texto-suave); line-height: 1.6; }
+    .chapter-nav { display: flex; justify-content: space-between; margin: 2rem 0; padding: 1rem; border-top: 1px solid rgba(139,107,154,0.3); border-bottom: 1px solid rgba(139,107,154,0.3); }
+    .nav-link { color: var(--acento); text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid var(--acento); border-radius: 6px; transition: all 0.2s; }
+    .nav-link:hover { background: var(--acento); color: #fff; }
+    .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
+    .responsive-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    .responsive-table th, .responsive-table td { padding: 0.8rem; border: 1px solid rgba(139,107,154,0.3); text-align: left; vertical-align: top; }
+    .responsive-table th { background: rgba(139,107,154,0.1); color: var(--acento); }
+    .level-card { background: rgba(255,255,255,0.6); padding: 1rem; margin: 1rem 0; border-radius: 8px; border-left: 3px solid var(--acento); }
+    .level-card h4 { margin: 0 0 0.5rem 0; color: var(--acento); }
+    footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
+    footer a { color: var(--acento); text-decoration: none; }
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+      .responsive-table { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_08.html" class="nav-link">← Capítulo 8</a>
+    <a href="capitulo_10.html" class="nav-link disabled" title="Próximamente">Capítulo 10 →</a>
+  </nav>
+
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 9</span>
+      <h1>De la lucha a la <button class="glossary-term" data-term="colaboración">colaboración</button>: renegociar roles internos</h1>
+    </header>
+
+    <section id="el-punto-de-inflexion" class="caso-clinico">
+      <h2>El punto de inflexión</h2>
+      <p>Isabel, 44 años, psiquiatra, llegó a terapia después de un año de trabajo con sus voces internas:</p>
+      <p>—He aprendido a reconocerlas, a dialogar con ellas, incluso a mediar cuando están en conflicto. Pero siento que hay un siguiente nivel que no logro alcanzar. Todavía se sienten como fuerzas separadas que tengo que gestionar constantemente. ¿Cuándo dejan de ser "ellas" y se convierten en... no sé... partes de un todo armónico?</p>
+      <p>Esa pregunta marca el umbral entre manejo y <button class="glossary-term" data-term="transformación">transformación</button>.</p>
+      <p>El manejo es: "Puedo lidiar con mis voces."</p>
+      <p>La transformación es: "Mis voces <button class="glossary-term" data-term="colaboración">colaboran</button> conmigo."</p>
+      <p>La diferencia está en pasar de control externo a armonía interna.</p>
+    </section>
+
+    <section id="el-mito-del-control" class="nota-importante">
+      <h2>El mito del control</h2>
+      <p>Muchas personas creen que el objetivo del trabajo con voces internas es controlarlas. "Si puedo hacer que el Crítico se calle cuando quiero, habré ganado."</p>
+      <p>Pero eso no es transformación. Es represión consciente. Y la represión —consciente o inconsciente— siempre tiene el mismo resultado: la voz vuelve más fuerte.</p>
+      <p>La transformación no es control. Es <button class="glossary-term" data-term="colaboración">colaboración</button>.</p>
+      <p>Es cuando el Crítico ya no necesita gritar porque confía en que lo escucharás cuando tenga algo importante que decir. Es cuando el Protector puede relajarse porque sabe que no vas a ponerte en peligro real. Es cuando el <button class="glossary-term" data-term="niño herido">Niño Herido</button> se siente sostenido y ya no necesita llorar constantemente para ser visto.</p>
+    </section>
+
+    <section id="de-roles-fijos-a-roles-flexibles">
+      <h2>De roles fijos a roles flexibles</h2>
+      <p>Cada voz nació cumpliendo una función específica en un momento de tu vida. El Crítico: vigilar para evitar rechazo. El Protector: evitar el dolor. El <button class="glossary-term" data-term="perfeccionista">Perfeccionista</button>: garantizar valor a través del logro.</p>
+      <p>Pero esos roles se congelaron en el tiempo. Siguen operando con el manual de instrucciones de hace 10, 20, 30 años.</p>
+      <p>La transformación consiste en actualizar sus roles. No eliminarlos. No silenciarlos. <button class="glossary-term" data-term="renegociación de roles">Renegociarlos</button>.</p>
+    </section>
+        <section id="los-cinco-niveles">
+      <h2>Los cinco niveles de relación con las voces</h2>
+      <p>El trabajo con voces internas pasa por cinco niveles evolutivos:</p>
+      
+      <div class="level-card">
+        <h4>Nivel 1: Identificación inconsciente (fusión total)</h4>
+        <p><strong>Estado:</strong> No sabes que hay voces. Crees que tus pensamientos son tú. "Soy ansioso. Soy un fracaso."<br><strong>Sufrimiento:</strong> Máximo. Estás atrapado sin saberlo.</p>
+      </div>
+      <div class="level-card">
+        <h4>Nivel 2: Reconocimiento (des-identificación inicial)</h4>
+        <p><strong>Estado:</strong> Descubres que hay voces separadas de ti. "Hay una parte ansiosa en mí."<br><strong>Sufrimiento:</strong> Disminuye. Hay alivio en la comprensión. Limitación: Las voces todavía se sienten como enemigas.</p>
+      </div>
+      <div class="level-card">
+        <h4>Nivel 3: <button class="glossary-term" data-term="diálogo interno">Diálogo</button> (negociación activa)</h4>
+        <p><strong>Estado:</strong> Aprendes a conversar con las voces, entender su función, mediar conflictos.<br><strong>Sufrimiento:</strong> Menor. Hay momentos de paz. Limitación: Todavía requiere esfuerzo constante.</p>
+      </div>
+      <div class="level-card">
+        <h4>Nivel 4: <button class="glossary-term" data-term="colaboración">Colaboración</button> (roles actualizados)</h4>
+        <p><strong>Estado:</strong> Las voces entienden que su función puede cumplirse de nuevas formas. El Crítico → Evaluador Compasivo. El Protector → Guardián Sabio.<br><strong>Sufrimiento:</strong> Mínimo. Las voces son aliadas. Todavía hay voces, pero trabajan contigo, no contra ti.</p>
+      </div>
+      <div class="level-card">
+        <h4>Nivel 5: <button class="glossary-term" data-term="integración">Integración</button> (disolución en el <button class="glossary-term" data-term="ser">Ser</button>)</h4>
+        <p><strong>Estado:</strong> Las voces se vuelven tan transparentes que a veces ni siquiera las notas. Operan en segundo plano, emergiendo solo cuando son genuinamente necesarias.<br><strong>Sufrimiento:</strong> Ausente (en relación a ese tema). Unidad. Nota: No es permanente para todas las voces simultáneamente.</p>
+      </div>
+    </section>
+
+    <section id="protocolo-renegociacion" class="tecnica-practica">
+      <h2>Cómo <button class="glossary-term" data-term="renegociación de roles">renegociar roles</button>: el protocolo de actualización</h2>
+      <p>Cuando una voz está lista para actualizar su función, puedes usar este protocolo:</p>
+      <ol>
+        <li><strong>Reconocer el servicio pasado:</strong> "Crítico, has estado vigilando durante 30 años. Te agradezco ese servicio."</li>
+        <li><strong>Nombrar la limitación presente:</strong> "Pero ahora, tu forma de vigilar me paraliza. El contexto cambió."</li>
+        <li><strong>Proponer un nuevo rol:</strong> Ofrece una función actualizada que honre la intención original pero con nueva estrategia.</li>
+        <li><strong>Pedir consentimiento:</strong> "¿Estarías dispuesto a intentar este nuevo rol durante un mes? Si no funciona, lo revisamos."</li>
+        <li><strong>Practicar el nuevo rol (con seguimiento):</strong> Revisa semanalmente. Mantiene el diálogo abierto.</li>
+        <li><strong>Celebrar el cambio:</strong> "Vi que esta semana me diste feedback después de terminar. Gracias." La validación refuerza el nuevo patrón.</li>
+      </ol>
+    </section>
+
+    <section id="tabla-renegociacion">
+      <h2>Ejemplos de actualización de roles</h2>
+      <table class="responsive-table">
+        <thead><tr><th>Voz original</th><th>Rol viejo</th><th>Nuevo rol propuesto</th></tr></thead>
+        <tbody>
+          <tr><td><button class="glossary-term" data-term="crítico interior">Crítico Interior</button></td><td>Vigilante punitivo</td><td>Evaluador Compasivo</td></tr>
+          <tr><td><button class="glossary-term" data-term="protector">Protector</button></td><td>Evitador total de riesgos</td><td>Guardián Sabio</td></tr>
+          <tr><td><button class="glossary-term" data-term="perfeccionista">Perfeccionista</button></td><td>Exigente implacable</td><td>Garante de Excelencia</td></tr>
+          <tr><td><button class="glossary-term" data-term="niño herido">Niño Herido</button></td><td>Demandante de atención</td><td>Fuente de Vulnerabilidad Consciente</td></tr>
+          <tr><td><button class="glossary-term" data-term="rebelde">Rebelde</button></td><td>Saboteador de compromisos</td><td>Protector de Autonomía</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="caso-tomas" class="caso-clinico">
+      <h2>Caso clínico: Tomás y la transformación del Perfeccionista</h2>
+      <p>Tomás, 37 años, diseñador industrial, había trabajado con su Perfeccionista durante meses. Descubrió su intención: creía que si Tomás no era impecable, perdería el respeto de sus colegas (como había perdido el respeto de su padre perfeccionista). Pero a pesar de entenderlo, seguía bloqueando su creatividad.</p>
+      <p>En sesión le propuse la renegociación. Tomás cerró los ojos y dialogó:</p>
+      <p>—Le pregunté. Dice que... tiene miedo. Que si no vigila desde el principio, voy a crear algo mediocre.</p>
+      <p>—¿Y qué le dijiste?</p>
+      <p>—Que entiendo su miedo. Pero que me está ahogando. Que necesito espacio para explorar sin juicio. Que después, cuando tenga algo, él puede entrar y ayudarme a refinarlo. Pero no antes.</p>
+      <p>Tomás abrió los ojos, sorprendido: —Dice que puede intentarlo. Pero solo si prometo que voy a escucharlo después.</p>
+      <p>Escribieron el acuerdo: <em>"Perfeccionista, te doy permiso de opinar sobre mis diseños, pero solo después de la primera versión completa. A cambio, prometo escucharte y considerar tus sugerencias. Vamos a colaborar, no a combatir."</em></p>
+      <p>Tres meses después, Tomás reportó: <em>"Es increíble. Ya no me paraliza. Creo con libertad. Y cuando termino, él entra, revisa, me da feedback honesto. Nos volvimos... equipo."</em></p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Eso es la <button class="glossary-term" data-term="colaboración">colaboración</button>. No eliminación. Actualización.</p>
+    </section>
+
+    <section id="senales-y-obstaculos">
+      <h2>Señales y obstáculos</h2>
+      <p><strong>Señales de que una voz está lista para colaborar:</strong> 1. Ya no te resiste cuando dialogas. 2. Reconoce que su estrategia ya no funciona. 3. Confía en que no la vas a abandonar.</p>
+      <p><strong>Obstáculo 1: <button class="glossary-term" data-term="beneficio secundario">Beneficio secundario</button>.</strong> La voz obtiene algo valioso de su rol actual (ej: seguridad a costa de aislamiento). Solución: Identificar la necesidad y encontrar otra forma de satisfacerla.</p>
+      <p><strong>Obstáculo 2: Miedo a la <button class="glossary-term" data-term="integración">integración</button> (percibida como muerte).</strong> Algunas voces creen que integrarse significa desaparecer. Solución: Aclarar que es actualización de software, no borrado.</p>
+      <p><strong>Obstáculo 3: Falta de modelo.</strong> No saben cómo operar diferente. Solución: Modelar el nuevo rol. Hacer experimentos pequeños.</p>
+    </section>
+        <section id="ejercicio-renegociar" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Renegociar un rol interno</h2>
+      <p><strong>Duración:</strong> 60 minutos | <strong>Materiales:</strong> Cuaderno, espacio tranquilo</p>
+      <ol>
+        <li>Elige una voz que sientes lista para transformarse (señales: se suavizó, reconoce limitación, confía en ti).</li>
+        <li><strong>Paso 1 - Agradecer:</strong> Escribe una carta de gratitud por su servicio pasado.</li>
+        <li><strong>Paso 2 - Nombrar limitación:</strong> Describe (sin juicio) cómo su estrategia actual ya no sirve.</li>
+        <li><strong>Paso 3 - Proponer nuevo rol:</strong> ¿Qué función actualizada le ofrecerías?</li>
+        <li><strong>Paso 4 - Pedir consentimiento:</strong> Cierra los ojos. Pregúntale si estaría dispuesta a intentarlo. Escucha su respuesta.</li>
+        <li><strong>Paso 5 - Escribir el acuerdo:</strong> Redacta un contrato interno explícito (qué hará, qué prometes tú, duración del experimento).</li>
+        <li><strong>Paso 6 - Seguimiento semanal:</strong> Programa recordatorio para revisar cómo va el nuevo rol.</li>
+      </ol>
+      <p class="nota-importante"><strong>Reflexión:</strong> ¿La voz aceptó? Si no, ¿qué le impide? ¿Qué necesitaría para sentirse segura de cambiar?</p>
+    </section>
+
+    <section id="preguntas-reflexion-9">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿En qué nivel de relación estás con tus voces principales?</li>
+        <li>¿Hay alguna voz que sientas lista para <button class="glossary-term" data-term="renegociación de roles">renegociar</button> su rol?</li>
+        <li>¿Qué nuevo rol le propondrías a tu voz más problemática?</li>
+        <li>¿Qué te da miedo de que tus voces cambien? ¿Hay algún <button class="glossary-term" data-term="beneficio secundario">beneficio secundario</button> que no quieres perder?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-cap-9" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>La transformación no es control, es <button class="glossary-term" data-term="colaboración">colaboración</button></li>
+        <li>Cinco niveles de relación: identificación → reconocimiento → diálogo → colaboración → <button class="glossary-term" data-term="integración">integración</button></li>
+        <li>Protocolo de <button class="glossary-term" data-term="renegociación de roles">renegociación</button>: agradecer, nombrar limitación, proponer nuevo rol, pedir consentimiento, practicar, celebrar</li>
+        <li>Señales de readiness: no resiste diálogo, reconoce falla de estrategia, confía en no ser abandonada</li>
+        <li>Obstáculos: <button class="glossary-term" data-term="beneficio secundario">beneficio secundario</button>, miedo a desaparecer, falta de modelo</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>Integración: cuando las voces encuentran su lugar</em> — Armonización profunda, somática y transpersonal.</p>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_08.html" class="nav-link">← Capítulo 8</a>
+      <a href="capitulo_10.html" class="nav-link disabled" title="Próximamente">Capítulo 10 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 9 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const glossaryData = {
+      "colaboración": "Estado evolutivo en la relación con las voces donde cada voz cumple su función actualizada sin dominar. Es el nivel 4 en los cinco niveles de relación.",
+      "integración": "Proceso donde las voces encuentran su lugar natural y dejan de dominar. Tiene tres etapas: funcional, psicológica y transpersonal. No es eliminación, sino armonización.",
+      "renegociación de roles": "Proceso de actualizar la función de una voz sin eliminarla. Protocolo: agradecer, nombrar limitación, proponer nuevo rol, pedir consentimiento, practicar, celebrar.",
+      "beneficio secundario": "Ganancia oculta que una voz obtiene de mantener su rol actual (ej: seguridad, evitación de dolor). Debe identificarse y satisfacerse de otra forma para permitir el cambio.",
+      "crítico interior": "Voz interna que juzga y anticipa rechazo. Función original: proteger de la vergüenza externa. Puede actualizarse a Evaluador Compasivo.",
+      "protector": "Voz interna que evita riesgos o emociones dolorosas. Función original: prevenir que revivas traumas. Puede actualizarse a Guardián Sabio.",
+      "niño herido": "Voz interna que porta dolor emocional de la infancia no procesado. Necesita ser sostenido por el Ser adulto para transformar su demanda en vulnerabilidad consciente.",
+      "perfeccionista": "Voz interna que exige impecabilidad y vincula valor al desempeño. Función original: obtener amor a través del logro. Puede actualizarse a Garante de Excelencia.",
+      "rebelde": "Voz interna que rechaza autoridad o normas. Función original: preservar autonomía. Puede actualizarse a Protector de Autonomía.",
+      "ser": "Tu esencia, el observador ecuánime que puede presenciar voces sin fusionarse. Espacio donde las partes aparecen. No tiene contenido ni agenda.",
+      "diálogo interno": "Conversación terapéutica con las voces desde la posición del Ser. No es rumiación ni debate; es escucha curiosa y compasiva.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos o voces. Crea espacio entre el observador y lo observado, permitiendo elección consciente.",
+      "fusión": "Estado donde te identificas completamente con una voz. Elimina la agencia y el espacio para el diálogo o la renegociación."
+    };
+
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); });
+      term.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); } });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+  </script>
+</body>
+</html>
