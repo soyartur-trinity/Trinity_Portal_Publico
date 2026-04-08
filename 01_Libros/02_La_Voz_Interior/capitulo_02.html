@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 2: ¿Quién está hablando? | La Voz Interior</title>
+  <meta name="description" content="Aprender a distinguir las voces internas de tu identidad esencial">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* Paleta La Voz Interior (Fondo ligeramente más oscuro para mejor contraste) */
+    :root {
+      --fondo: #E2DCC8;
+      --acento: #8B6B9A;
+      --primario: #9A7B8B;
+      --secundario: #7A9A8B;
+      --texto: #2C2C2C;
+      --texto-suave: #5D5D5D;
+      --caso-clinico: #F5E6F0;
+      --ejercicio-practico: #E6F5ED;
+      --tecnica-practica: #F0E6F5;
+      --nota-importante: #F5F0E6;
+    }
+    
+    /* Barra de progreso */
+    .progress-container {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--fondo); padding: 8px 0;
+      border-bottom: 1px solid rgba(139,107,154,0.2);
+    }
+    .progress-bar {
+      height: 4px; background: rgba(139,107,154,0.2);
+      border-radius: 2px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: var(--acento);
+      width: 15%; /* Capítulo 2 */
+      transition: width 0.3s ease;
+    }
+    
+    /* Tarjetas de contenido especial */
+    .caso-clinico, .ejercicio-practico, .tecnica-practica, .nota-importante {
+      border-left: 4px solid var(--acento);
+      padding: 1.2rem; margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .caso-clinico { background: var(--caso-clinico); border-color: var(--primario); }
+    .ejercicio-practico { background: var(--ejercicio-practico); border-color: var(--secundario); }
+    .tecnica-practica { background: var(--tecnica-practica); border-color: var(--acento); }
+    .nota-importante { background: var(--nota-importante); border-color: #C9A961; }
+    
+    /* Términos del glosario clickeables */
+    .glossary-term {
+      background: none; border: none;
+      color: var(--acento); font-weight: 600;
+      cursor: pointer; text-decoration: underline dotted;
+      padding: 0 2px; transition: all 0.2s;
+    }
+    .glossary-term:hover {
+      background: rgba(139,107,154,0.1);
+      border-radius: 3px;
+    }
+    
+    /* Modal del glosario */
+    .modal {
+      display: none; position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000; justify-content: center; align-items: center;
+    }
+    .modal[aria-hidden="false"] { display: flex; }
+    .modal-content {
+      background: var(--fondo); padding: 2rem;
+      border-radius: 12px; max-width: 600px; width: 90%;
+      max-height: 80vh; overflow-y: auto;
+      position: relative; border: 2px solid var(--acento);
+    }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none;
+      font-size: 1.5rem; cursor: pointer;
+      color: var(--acento);
+    }
+    #glossary-search {
+      width: 100%; padding: 0.8rem;
+      margin-bottom: 1rem; border: 1px solid var(--acento);
+      border-radius: 6px; background: #fff;
+      font-size: 1rem;
+    }
+    .glossary-list dt {
+      font-weight: 700; color: var(--acento);
+      margin-top: 1rem; cursor: pointer;
+    }
+    .glossary-list dd {
+      margin-left: 0; margin-bottom: 1rem;
+      color: var(--texto-suave); line-height: 1.6;
+    }
+    
+    /* Navegación */
+    .chapter-nav {
+      display: flex; justify-content: space-between;
+      margin: 2rem 0; padding: 1rem;
+      border-top: 1px solid rgba(139,107,154,0.3);
+      border-bottom: 1px solid rgba(139,107,154,0.3);
+    }
+    .nav-link {
+      color: var(--acento); text-decoration: none;
+      font-weight: 600; padding: 0.5rem 1rem;
+      border: 1px solid var(--acento);
+      border-radius: 6px; transition: all 0.2s;
+    }
+    .nav-link:hover {
+      background: var(--acento); color: #fff;
+    }
+    .nav-link.disabled {
+      opacity: 0.5; cursor: not-allowed;
+      border-color: #ccc; color: #ccc;
+    }
+    
+    /* Footer */
+    footer {
+      margin-top: 3rem; padding: 2rem;
+      text-align: center; color: var(--texto-suave);
+      font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2);
+    }
+    footer a { color: var(--acento); text-decoration: none; }
+    
+    /* Tablas responsivas */
+    .responsive-table {
+      width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+    }
+    .responsive-table th, .responsive-table td {
+      padding: 0.8rem; border: 1px solid rgba(139,107,154,0.3);
+      text-align: left; vertical-align: top;
+    }
+    .responsive-table th { background: rgba(139,107,154,0.1); color: var(--acento); }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .modal-content { width: 95%; padding: 1.5rem; }
+      .chapter-nav { flex-direction: column; gap: 0.5rem; }
+      .nav-link { width: 100%; text-align: center; }
+      .responsive-table { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barra de progreso -->
+  <div class="progress-container">
+    <div class="progress-bar"><div class="progress-fill"></div></div>
+  </div>
+
+  <!-- Navegación superior -->
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="capitulo_01.html" class="nav-link">← Capítulo 1</a>
+    <a href="capitulo_03.html" class="nav-link disabled" title="Próximamente">Capítulo 3 →</a>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="chapter-content">
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 2</span>
+      <h1>¿Quién está hablando?: aprender a distinguir las voces</h1>
+    </header>
+
+    <section id="el-caso-de-carlos">
+      <h2>El caso de Carlos</h2>
+      <p>Carlos es ingeniero en sistemas, 41 años, divorciado hace dos años. Vino a terapia porque "sentía que estaba viviendo en piloto automático".</p>
+      <p>—No sé si soy yo el que vive mi vida o si estoy siguiendo un guion que alguien más escribió —me dijo.</p>
+      <p>Le pregunté qué quería decir con eso.</p>
+      <p>—Por ejemplo, estoy saliendo con alguien. Es una buena persona. Pero constantemente escucho una <button class="glossary-term" data-term="voz interna">voz interna</button> que dice: "No te involucres mucho. Ya sabes cómo termina esto. Te van a lastimar". Y me retiro. Cancelo planes. Pongo distancia. Después me siento solo, y ahí aparece otra voz: "Ves, eres incapaz de sostener una relación. Vas a terminar solo".</p>
+      <p>—¿Y cuál de esas dos voces eres tú? —le pregunté.</p>
+      <p>Carlos se quedó en silencio largo rato.</p>
+      <p>—Ninguna —dijo finalmente—. O... no lo sé. Siempre pensé que mis pensamientos eran yo. Pero ahora que lo dices así... no sé.</p>
+      <p>Ese momento —ese instante de desidentificación— es el umbral.</p>
+      <p>Es el momento en que dejas de ser el contenido de tus pensamientos y comienzas a ser el espacio donde los pensamientos ocurren.</p>
+    </section>
+
+    <section id="la-ilusion-de-la-identidad-fusionada">
+      <h2>La ilusión de la identidad fusionada</h2>
+      <p>La mayoría de las personas vive en un estado de <button class="glossary-term" data-term="fusión">fusión</button> con sus voces internas.</p>
+      <p>Cuando el Crítico habla, creen que ellos son esa voz. Se identifican completamente: "Soy un fracaso" en lugar de "Hay una parte de mí que se siente fracasada".</p>
+      <p>Cuando la voz ansiosa se activa, se convierten en la ansiedad: "Soy ansioso" en lugar de "Hay ansiedad presente".</p>
+      <p>Esta fusión es natural. Es el modo por defecto de operar de la mente. Pero tiene un costo: <strong>pierdes agencia.</strong></p>
+      <p>Si tú eres el Crítico, no puedes dialogar con él. No puedes cuestionarlo, negociar con él, entender su función. Estás atrapado en su narrativa.</p>
+      <p>Pero si hay un Crítico en ti, entonces tú eres otra cosa. Eres quien lo escucha. Eres el contexto, no el contenido.</p>
+      <p>Y desde ese lugar, todo cambia.</p>
+    </section>
+
+    <section id="el-arte-de-la-desidentificacion">
+      <h2>El arte de la desidentificación</h2>
+      <p><button class="glossary-term" data-term="desidentificación">Desidentificarse</button> no significa rechazar o negar la voz.</p>
+      <p>No es decir: "Esa voz no es real" o "Voy a ignorarla".</p>
+      <p>Es decir: "Esa voz es real, pero no soy yo".</p>
+      <p>Es un movimiento sutil pero radical. Es aprender a decir:</p>
+      <ul>
+        <li>No "Soy ansioso" → "Hay ansiedad en mí"</li>
+        <li>No "Soy un fracaso" → "Hay una parte que se siente fracasada"</li>
+        <li>No "No valgo nada" → "Hay una voz que dice que no valgo nada"</li>
+      </ul>
+      <p>Este cambio lingüístico no es cosmético. Reorganiza la relación con la experiencia. Crea espacio. Y en ese espacio, surge la posibilidad de elección.</p>
+    </section>
+        <section id="las-tres-senales-de-que-una-voz-esta-hablando">
+      <h2>Las tres señales de que una voz está hablando</h2>
+      <p>¿Cómo saber cuándo es "una voz" y no simplemente "tu verdad"? Hay tres señales claras:</p>
+      
+      <h3>1. Tiene cualidad repetitiva y rígida</h3>
+      <p>Las voces dicen lo mismo una y otra vez. Usan las mismas frases. Tienen un guion. El Crítico siempre dice: "No eres suficiente". No importa el contexto. Puedes haber tenido éxito, pero él encontrará la forma de invalidarlo. Si una narrativa es inflexible, es una voz. La conciencia amplia (el <button class="glossary-term" data-term="ser">Ser</button>) es flexible, contextual, creativa.</p>
+
+      <h3>2. Se siente como algo externo observándote</h3>
+      <p>Las voces a menudo tienen una posición espacial en la mente o el cuerpo. El Crítico puede sentirse "arriba", en la cabeza, mirándote desde un lugar de juicio. El Niño Herido puede sentirse "abajo", en el pecho o el vientre, pequeño y encogido. Si hay una sensación de observador interno, es una voz.</p>
+
+      <h3>3. Tiene una edad emocional diferente a tu edad cronológica</h3>
+      <p>Pregúntate: ¿Qué edad tiene esta voz? El Niño que dice "Nadie me quiere" no tiene 40 años. Tiene 5, 7, 10. Es la edad en que esa creencia se formó. Si la voz tiene una edad distinta a tu edad actual, es una parte congelada en el tiempo.</p>
+    </section>
+
+    <section id="ejercicio-practico-el-test-de-las-tres-preguntas" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: El test de las tres preguntas</h2>
+      <p>La próxima vez que te atrape un pensamiento difícil (autocrítica, ansiedad, desesperanza), hazte estas tres preguntas:</p>
+      <ol>
+        <li><strong>¿Este pensamiento es repetitivo?</strong><br>¿Lo he escuchado antes, muchas veces? ¿Usa las mismas palabras?</li>
+        <li><strong>¿Tiene una ubicación en mi cuerpo?</strong><br>¿Dónde lo siento? (cabeza, pecho, garganta, estómago) ¿Desde dónde parece "hablarme"?</li>
+        <li><strong>¿Qué edad emocional tiene?</strong><br>Si este pensamiento fuera una persona, ¿cuántos años tendría? ¿En qué momento de mi vida aprendí a pensar así?</li>
+      </ol>
+      <p>Si respondes "sí" a las tres preguntas, estás frente a una voz, no frente a una verdad objetiva. Y eso significa que puedes relacionarte con ella en lugar de ser ella.</p>
+    </section>
+
+    <section id="el-observador-quien-eres-cuando-no-eres-las-voces">
+      <h2>El observador: quién eres cuando no eres las voces</h2>
+      <p>Si no eres el Crítico, ni el Protector, ni el Niño Herido... ¿quién eres?</p>
+      <p>Esta es una de las preguntas más antiguas de la humanidad. Y tiene muchas respuestas según la tradición:</p>
+      <ul>
+        <li>En budismo: eres la <button class="glossary-term" data-term="conciencia testigo">conciencia testigo</button> (Rigpa en dzogchen, Vipassana en Theravada)</li>
+        <li>En <button class="glossary-term" data-term="ifs">IFS</button> (Richard Schwartz): eres el Self (que aquí llamamos <button class="glossary-term" data-term="ser">Ser</button>), la esencia no herida, compasiva, curiosa, conectada</li>
+        <li>En psicosíntesis (Roberto Assagioli): eres el Yo transpersonal, el centro de conciencia pura</li>
+        <li>En <button class="glossary-term" data-term="mindfulness">mindfulness</button> (Jon Kabat-Zinn): eres la conciencia que sostiene la experiencia, no la experiencia misma</li>
+      </ul>
+      <p>No importa el nombre. Lo importante es la experiencia: <strong>Hay algo en ti que observa sin juzgar.</strong> Que presencia sin fusionarse. Que contiene sin colapsar.</p>
+      <p>Ese algo no es una "parte". Es el espacio mismo donde las partes aparecen. Es como el cielo: las nubes (voces) van y vienen, pero el cielo permanece.</p>
+      <p>No puedes "crear" al observador. Ya está ahí. Siempre estuvo. Solo necesita ser reconocido.</p>
+    </section>
+
+    <section id="la-diferencia-entre-fusion-y-acceso">
+      <h2>La diferencia entre fusión y acceso</h2>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Desde el Ser (Acceso)</th>
+            <th>Desde la fusión</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"Hay una parte que se siente fracasada"</td>
+            <td>"Soy un fracaso"</td>
+          </tr>
+          <tr>
+            <td>"Noto ansiedad presente"</td>
+            <td>"Estoy ansioso y esto nunca va a parar"</td>
+          </tr>
+          <tr>
+            <td>"Una voz dice que no soy suficiente"</td>
+            <td>"No soy suficiente. Es la verdad"</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>La diferencia parece pequeña. Pero es todo. Cuando estás fusionado, no hay libertad. La voz dicta la realidad. Cuando tienes acceso (la escuchas desde el observador), hay elección. Puedes preguntarle: "¿Por qué dices eso? ¿Qué necesitas? ¿De qué me estás protegiendo?"</p>
+    </section>
+
+    <section id="caso-clinico-laura-y-las-dos-voces-en-conflicto" class="caso-clinico">
+      <h2>Caso clínico: Laura y las dos voces en conflicto</h2>
+      <p>Laura es abogada corporativa, 38 años. Vino porque estaba "paralizada entre dos fuerzas opuestas":</p>
+      <p>—Una parte de mí quiere renunciar. Estoy agotada. Quiero viajar, escribir, hacer algo que tenga sentido. Pero la otra parte dice: "¿Estás loca? Tienes un sueldo excelente. ¿Vas a tirar todo por la ventana? ¿Y si fracasas?". Y me quedo atrapada. No renuncio, pero tampoco estoy presente en mi trabajo. Estoy en el limbo.</p>
+      <p>Le pedí que imaginara que esas dos voces eran personajes sentados en sillas frente a ella.</p>
+      <p>—¿Cómo las describirías?</p>
+      <p>Laura cerró los ojos: —La parte que quiere renunciar es... como yo a los 20 años. Lleva ropa cómoda, tiene una mochila, está llena de vida. Pero parece asustada, como si no supiera si alguien la va a escuchar.</p>
+      <p>—¿Y la otra? —Es... mi madre. No literalmente, pero tiene su energía. Seria. Vestida formal. Mira a la otra parte con desaprobación.</p>
+      <p>—¿Dónde estás tú en esa escena? —Laura abrió los ojos, sorprendida: —No estaba. Estaba... fusionada con la voz de mi madre. Yo era esa voz.</p>
+      <p>—¿Y si te sentaras en otra silla, como observadora de ambas?</p>
+      <p>Laura volvió a cerrar los ojos. Esta vez, pasaron varios minutos. Cuando habló, su voz era distinta: más calmada, más clara.</p>
+      <p>—Desde aquí puedo ver que ambas están asustadas. La joven tiene miedo de no ser suficiente. La adulta tiene miedo de perder seguridad. Ninguna es "la mala". Ambas intentan cuidarme.</p>
+      <p class="nota-importante"><strong>Nota clave:</strong> Ese es el momento de la desidentificación. Cuando dejas de estar atrapada en el conflicto entre las voces y te conviertes en quien las escucha, la guerra interna se disuelve. No porque las voces desaparezcan, sino porque cambia tu posición.</p>
+    </section>
+        <section id="ejercicio-practico-la-tecnica-de-la-silla-del-observador" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: La técnica de la silla del observador</h2>
+      <p>Este es uno de los ejercicios más potentes para cultivar desidentificación.</p>
+      <p><strong>Materiales:</strong> Tres sillas (o tres cojines en el suelo)</p>
+      <ol>
+        <li>Identifica dos voces en conflicto en ti. Por ejemplo: una que quiere cambiar vs una que teme cambiar.</li>
+        <li>Coloca dos sillas frente a ti. Asigna una voz a cada silla.</li>
+        <li>Siéntate en la primera silla. Habla desde esa voz. Deja que se exprese completamente. ¿Qué dice? ¿Qué siente? ¿Qué necesita?</li>
+        <li>Cambia a la segunda silla. Ahora habla desde la otra voz. ¿Qué dice ella? ¿Cómo responde? ¿Qué necesita?</li>
+        <li>Siéntate en una tercera silla (la del observador) desde donde puedas ver ambas sillas. Desde aquí, pregúntate: ¿Qué veo? ¿Ambas voces están intentando protegerme de algo? ¿Qué necesitaría cada una para sentirse escuchada?</li>
+        <li>Anota lo que surge.</li>
+      </ol>
+      <p><strong>Reflexión:</strong> ¿Cómo se sintió observar las voces desde "afuera"? ¿Cambió tu relación con ellas?</p>
+    </section>
+
+    <section id="los-peligros-de-la-sobre-identificacion">
+      <h2>Los peligros de la sobre-identificación</h2>
+      <p>Cuando vives permanentemente fusionado con tus voces, no solo pierdes libertad. Pierdes salud.</p>
+      <p>La investigación en psicología clínica muestra que la fusión cognitiva (identificarse con pensamientos como si fueran hechos) está asociada con: ansiedad crónica, depresión recurrente, <button class="glossary-term" data-term="rumiación">rumiación</button> obsesiva, baja autoestima y dificultad para tomar decisiones.</p>
+      <p>¿Por qué? Porque cuando eres el pensamiento, no puedes cuestionarlo. Si tu mente dice "No vales nada", y tú eres esa mente, entonces "no vales nada" es un hecho. No hay apelación.</p>
+      <p>Pero si observas el pensamiento ("Hay una voz que dice que no valgo nada"), entonces puedes preguntarte: "¿Es eso cierto? ¿Desde cuándo creo eso? ¿A quién pertenece originalmente esa voz?"</p>
+      <p class="nota-importante"><strong>La desidentificación no es escapismo. Es precisión.</strong> Es ver con claridad qué es tuyo y qué es una voz heredada, internalizada, o construida en un momento de dolor.</p>
+    </section>
+
+    <section id="preguntas-para-la-reflexion-2">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ul>
+        <li>¿Con qué voz tiendes a fusionarte más frecuentemente?</li>
+        <li>¿Recuerdas algún momento en que lograste "salirte" de una voz y observarla? ¿Cómo fue?</li>
+        <li>¿Qué pasa cuando intentas imaginar que tus pensamientos más duros no son "tú" sino "una voz en ti"? ¿Se siente liberador, incómodo, ambas cosas?</li>
+        <li>¿Cuándo fue la última vez que actuaste desde el <button class="glossary-term" data-term="observador">observador</button> (Ser) y no desde una voz reactiva?</li>
+      </ul>
+    </section>
+
+    <section id="resumen-del-capitulo-2" class="nota-importante">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>Vivimos en fusión con nuestras voces: creemos que somos ellas</li>
+        <li>Desidentificarse no es negar las voces, es reconocer: "Están en mí, pero no son yo"</li>
+        <li>Las tres señales de que es una voz: repetitiva, tiene ubicación corporal, tiene edad emocional distinta</li>
+        <li>El observador (Ser) es la conciencia que presencia sin fusionarse</li>
+        <li>La desidentificación crea espacio: ahí surge la posibilidad de diálogo y transformación</li>
+      </ul>
+      <p><strong>Próximo capítulo:</strong> <em>El origen de las voces</em> — Exploraremos de dónde vienen las voces: su origen biográfico, cultural y transpersonal.</p>
+    </section>
+
+    <!-- Navegación inferior -->
+    <nav class="chapter-nav" aria-label="Navegación del capítulo">
+      <a href="capitulo_01.html" class="nav-link">← Capítulo 1</a>
+      <a href="capitulo_03.html" class="nav-link disabled" title="Próximamente">Capítulo 3 →</a>
+    </nav>
+  </main>
+
+  <!-- Footer con atribución -->
+  <footer>
+    <p><strong>La Voz Interior</strong> — Capítulo 2 de 12</p>
+    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
+    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
+    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
+    <p><small><a href="../index.html">← Volver al índice de La Voz Interior</a></small></p>
+  </footer>
+
+  <!-- Modal del Glosario (reutilizable en todos los capítulos) -->
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <h3 id="glossary-title" style="color: var(--acento); margin-bottom: 1rem;">Glosario Interactivo</h3>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario">
+      <dl id="glossary-results" class="glossary-list">
+        <!-- Se llena dinámicamente con JS -->
+      </dl>
+    </div>
+  </div>
+
+  <!-- Script del glosario -->
+  <script>
+    // Datos del glosario (extraídos de glosario.md)
+    const glossaryData = {
+      "autocrítica": "Juicio negativo dirigido hacia uno mismo, generalmente desde una voz internalizada (Crítico Interior). No es patología per se, pero cuando es rígida y constante, interfiere con el bienestar.",
+      "voz interna": "Patrón recurrente de pensamiento que parece tener voluntad propia. No es alucinación auditiva; es narrativa interna con cualidad autónoma. Ejemplos: Crítico, Protector, Perfeccionista.",
+      "personificación": "Técnica de dar forma concreta a una voz: imaginarla como persona con edad, género, postura, expresión. La personificación hace visible lo invisible y permite relacionarte con la voz como 'alguien' con quien puedes dialogar.",
+      "alucinación auditiva": "Percepción sensorial de sonidos o voces sin estímulo externo real. Requiere evaluación psiquiátrica. Diferente de las voces internas, que son narrativas psicológicas normales.",
+      "autonomía relativa": "Capacidad de una voz interna para operar con cierta independencia del yo consciente, con su propia lógica y agenda. Concepto junguiano aplicado al trabajo con partes.",
+      "complejo autónomo": "Término de Carl Jung para referirse a fragmentos de la psique que operan con relativa independencia del yo consciente. Tienen su propia energía, lógica y agenda.",
+      "subpersonalidades": "Término de Roberto Assagioli (psicosíntesis) para referirse a aspectos semi-autónomos de la personalidad. Cada subpersonalidad tiene su propia forma de percibir, sentir y actuar.",
+      "ifs": "Internal Family Systems: modelo terapéutico creado por Richard Schwartz que conceptualiza la psique como un sistema de 'partes' (subpersonalidades) que interactúan entre sí.",
+      "partes": "Término del modelo IFS para referirse a las distintas subpersonalidades o voces internas. Cada parte tiene su propia perspectiva, emociones, memorias y agenda.",
+      "intención positiva": "Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional. Ejemplo: el Crítico no existe para torturarte; existe para protegerte del rechazo externo.",
+      "renegociación de roles": "Proceso de actualizar la función de una voz sin eliminarla. Protocolo: agradecer servicio pasado, nombrar limitación presente, proponer nuevo rol, pedir consentimiento, practicar, celebrar.",
+      "disociación": "Experiencia de desconexión entre pensamientos, identidad, conciencia y memoria. Puede ser adaptativa (en trauma) o patológica. En el trabajo con voces, la desidentificación saludable no es disociación.",
+      "ser": "Tu esencia, tu verdadero observador, la conciencia testigo que puede presenciar todas las voces sin fusionarse con ninguna. No tiene contenido, edad, ni agenda. Es el espacio donde las partes aparecen.",
+      "self": "Concepto del modelo IFS de Richard Schwartz: la esencia no herida, compasiva, conectada que está más allá de las partes. En este libro usamos 'Ser' para referirnos al mismo concepto.",
+      "conciencia testigo": "Ver Ser.",
+      "observador": "Ver Ser.",
+      "mindfulness": "Práctica de prestar atención al momento presente con apertura, curiosidad y sin juicio. Base de la desidentificación: cuando observas algo con mindfulness, automáticamente no eres eso.",
+      "desidentificación": "Proceso de reconocer que no eres tus pensamientos, emociones o voces internas. Es el movimiento de 'Soy ansioso' a 'Hay ansiedad en mí'. La desidentificación crea espacio entre el observador (Ser) y lo observado (voces), permitiendo elección consciente en lugar de reactividad automática.",
+      "fusión": "Estado donde te identificas completamente con una voz: crees que eres esa voz. No hay distancia entre observador y contenido. Ejemplo: 'Soy un fracaso' (fusión) vs 'Hay una voz que dice que soy un fracaso' (desidentificación). La fusión elimina la agencia; estás atrapado en la narrativa de la voz.",
+      "rumiación": "Pensamiento repetitivo sobre problemas, causas o consecuencias del malestar sin llegar a solución ni comprensión nueva. Es fusión en movimiento: estar atrapado en el contenido de las voces sin observador presente. Diferente del diálogo terapéutico (que tiene dirección e intención).",
+      "contención": "Conjunto de técnicas para regular la intensidad emocional de una voz antes de intentar dialogar con ella. Incluye: ancla somática, respiración reguladora, escritura expulsiva, distanciamiento imaginario y autocompasión somática.",
+      "integración": "Proceso donde las voces encuentran su lugar natural y dejan de dominar la experiencia. Tiene tres etapas: funcional (colaboran), psicológica (disolución parcial) y transpersonal (Ser como fuente).",
+      "colaboración": "Estado evolutivo en la relación con las voces internas donde cada voz cumple su función actualizada sin dominar. Es el nivel 4 en los cinco niveles de relación con voces.",
+      "pseudointegración": "Falsa integración donde niegas una voz (represión) creyendo que la integraste. Verdadera integración no es negar la voz, sino volverla transparente: está ahí pero no domina.",
+      "trauma": "Experiencia abrumadora que supera la capacidad de procesamiento del sistema nervioso. Queda 'congelada' en el cuerpo y la psique, activándose por disparadores.",
+      "grounding (anclaje)": "Técnicas que te conectan con el presente a través del cuerpo y los sentidos. Útiles cuando estás fusionado con voces o abrumado emocionalmente. Ejemplos: sentir los pies en el suelo, nombrar 5 cosas que ves, respiración consciente.",
+      "escritura expulsiva": "Técnica de contención donde transcribes todo lo que una voz está diciendo sin filtrar, dialogar ni responder. El objetivo es evacuar el ruido mental al papel para que la voz se calme.",
+      "externalización": "Acto de sacar una experiencia interna (pensamiento, emoción, voz) y colocarla 'afuera' como objeto observable. Puede ser mediante escritura, dibujo, imaginación o conversación.",
+      "niño herido": "Voz interna que porta dolor emocional de la infancia no procesado. Generalmente tiene una edad emocional específica y expresa necesidades que no fueron satisfechas.",
+      "crítico interior": "Voz interna que juzga, evalúa negativamente y anticipa rechazo. Su función original es protegerte de la vergüenza externa.",
+      "protector": "Voz interna que evita riesgos, experiencias o emociones dolorosas. Función original: prevenir que revivas traumas o rechazos pasados.",
+      "perfeccionista": "Voz interna que exige impecabilidad y vincula tu valor a tu desempeño. Función original: obtener amor y reconocimiento a través del logro.",
+      "rebelde": "Voz interna que rechaza autoridad, normas o compromisos. Función original: preservar autonomía ante entornos invasivos o controladores.",
+      "polarización": "Estado donde dos voces adoptan posiciones extremas y opuestas. Mientras más grita una, más se defiende la otra; escalada simétrica.",
+      "mediación interna": "Proceso donde el Ser actúa como mediador entre voces en conflicto. Protocolo: nombrar las voces, aislar voces reactivas, escuchar a cada una por separado, buscar necesidad común, negociar acuerdo, revisar.",
+      "silla vacía": "Técnica gestáltica adaptada donde usas sillas físicas para representar voces. Cambias de silla para 'hablar desde' cada voz y desde el Ser. Lo corporal facilita la desidentificación.",
+      "vipassana": "Meditación budista de 'visión clara' o 'ver las cosas como son'. Consiste en observar ecuánimemente las sensaciones corporales, emociones y pensamientos sin reaccionar. Cultiva al observador (Ser).",
+      "voz silenciosa": "Sabiduría profunda que emerge del silencio entre las voces. No tiene contenido narrativo ni agenda. Es el Ser en su expresión más sutil.",
+      "no-self (anatta)": "Concepto budista que señala la ausencia de un yo permanente, independiente e inmutable. No niega la experiencia del yo, pero muestra que es un proceso dinámico, no una entidad fija.",
+      "vacuidad (śūnyatā)": "Concepto budista: la ausencia de existencia inherente e independiente. Nada existe 'por sí mismo'; todo surge de causas y condiciones.",
+      "acceso": "Reconocer que una voz está presente, pero no eres tú. Crea espacio para elegir cómo relacionarte con ella, en lugar de fusionarte automáticamente."
+    };
+
+    // Funcionalidad del modal (idéntica a Cap 1, lista para reutilizar)
+    const modal = document.getElementById('glossary-modal');
+    const modalClose = modal.querySelector('.modal-close');
+    const glossarySearch = document.getElementById('glossary-search');
+    const glossaryResults = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    glossaryTerms.forEach(term => {
+      term.addEventListener('click', (e) => {
+        e.preventDefault();
+        const termKey = term.dataset.term.toLowerCase();
+        openModal(termKey);
+      });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      if (searchTerm) glossarySearch.value = searchTerm;
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      glossarySearch.value = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+    function renderGlossary(filter = '') {
+      const filtered = Object.entries(glossaryData)
+        .filter(([term]) => term.toLowerCase().includes(filter.toLowerCase()))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+
+      glossaryResults.innerHTML = filtered.length === 0 
+        ? '<dt style="color: var(--texto-suave);">No se encontraron términos.</dt>'
+        : filtered.map(([term, def]) => `<dt tabindex="0">${term}</dt><dd>${def}</dd>`).join('');
+    }
+
+    glossarySearch.addEventListener('input', (e) => renderGlossary(e.target.value));
+    glossaryTerms.forEach(term => {
+      term.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(term.dataset.term.toLowerCase()); }
+      });
+    });
+  </script>
+</body>
+</html>
