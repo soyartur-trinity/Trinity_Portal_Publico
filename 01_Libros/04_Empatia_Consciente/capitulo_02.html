@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 2: El cuerpo como primer límite | Asertividad Consciente</title>
+  <style>
+    :root{--fondo:#E8E3D5;--texto:#3E3E3E;--texto-suave:#6A6A5A;--acento:#7A6B5A;--secundario:#8B9A7A;--terracota:#A0785A;--borde:#D0C4B0;--blanco:#EDE8DC;--sombra:rgba(122,107,90,0.12);--caso-clinico-bg:#F2EDE2;--ejercicio-bg:#EAF0E4;--tecnica-bg:#F0EAE2;--nota-bg:#F5F0E6}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Georgia,serif;background:var(--fondo);color:var(--texto);line-height:1.85;font-size:18px}
+    .progress-container{position:sticky;top:0;z-index:200;background:var(--fondo);padding:6px 0;border-bottom:1px solid rgba(160,120,90,0.15)}
+    .progress-bar{height:3px;background:rgba(160,120,90,0.15);border-radius:2px;overflow:hidden}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--secundario),var(--terracota));width:18%;border-radius:2px}
+    .chapter-nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem;background:var(--blanco);border-bottom:2px solid var(--borde)}
+    .nav-link{color:var(--acento);text-decoration:none;font-weight:600;font-size:.9rem;padding:.45rem 1rem;border:1.5px solid var(--borde);border-radius:6px;transition:all .2s}
+    .nav-link:hover{background:var(--acento);color:var(--blanco);border-color:var(--acento)}
+    .nav-centro{font-size:.8rem;color:var(--texto-suave);text-align:center}
+    .nav-centro a{color:var(--terracota);text-decoration:none;font-size:.78rem}
+    main{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+    .chapter-header{text-align:center;padding:2rem 0 3rem;border-bottom:3px solid var(--borde);margin-bottom:3rem}
+    .chapter-number{display:inline-block;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--terracota);margin-bottom:.8rem}
+    .chapter-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--acento);line-height:1.25;margin-bottom:.5rem}
+    .chapter-subtitle{font-size:1rem;color:var(--texto-suave);font-style:italic}
+    .parte-badge{display:inline-block;background:rgba(139,154,122,0.15);color:var(--secundario);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:.2rem .7rem;border-radius:20px;margin-top:1rem}
+    section{margin-bottom:2.5rem}
+    section h2{font-size:1.35rem;color:var(--acento);margin-bottom:1rem;padding-bottom:.35rem;border-bottom:1px solid rgba(208,196,176,0.6)}
+    section h3{font-size:1.1rem;color:var(--terracota);margin:1.2rem 0 .5rem}
+    p{margin-bottom:1.3rem;text-align:justify}
+    ul,ol{margin:.5rem 0 1.3rem 1.5rem;line-height:2}
+    li{margin-bottom:.3rem}
+    strong{color:var(--acento);font-weight:600}
+    em{color:var(--texto-suave)}
+    .caso-clinico,.ejercicio-practico,.tecnica-practica,.nota-importante{border-left:4px solid var(--acento);padding:1.4rem 1.5rem;margin:1.8rem 0;border-radius:0 8px 8px 0;font-size:.97rem}
+    .caso-clinico{background:var(--caso-clinico-bg);border-color:var(--terracota)}
+    .ejercicio-practico{background:var(--ejercicio-bg);border-color:var(--secundario)}
+    .tecnica-practica{background:var(--tecnica-bg);border-color:var(--acento)}
+    .nota-importante{background:var(--nota-bg);border-color:#C9A961}
+    .caso-clinico h2,.ejercicio-practico h2,.tecnica-practica h2,.nota-importante h2{border-bottom:none;margin-bottom:.7rem;padding-bottom:0}
+    .tabla-comparativa{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.92rem}
+    .tabla-comparativa th{background:var(--acento);color:var(--blanco);padding:.7rem 1rem;text-align:left;font-weight:600}
+    .tabla-comparativa td{padding:.65rem 1rem;border-bottom:1px solid var(--borde);vertical-align:top}
+    .tabla-comparativa tr:nth-child(even) td{background:rgba(208,196,176,0.2)}
+    .tabla-comparativa tr:hover td{background:rgba(139,154,122,0.1)}
+    .bloque-cruzado{background:rgba(139,154,122,0.08);border:1px solid rgba(139,154,122,0.3);border-radius:8px;padding:.9rem 1.2rem;margin:1.5rem 0;font-size:.88rem;display:flex;align-items:center;gap:.8rem}
+    .bloque-cruzado::before{content:'📖';font-size:1.1rem;flex-shrink:0}
+    .link-cruzado{display:inline-flex;align-items:center;gap:.4rem;color:var(--secundario);text-decoration:none;font-size:.85rem;font-style:italic;border-bottom:1px dotted var(--secundario);transition:color .2s}
+    .link-cruzado:hover{color:var(--acento)}
+    .link-cruzado::before{content:'↗';font-style:normal;font-size:.75rem}
+    .glossary-term{background:none;border:none;color:var(--terracota);font-weight:600;font-family:Georgia,serif;font-size:inherit;cursor:pointer;text-decoration:underline dotted var(--terracota);text-underline-offset:3px;padding:0 2px;transition:all .2s;border-radius:2px}
+    .glossary-term:hover{background:rgba(160,120,90,0.12);border-radius:3px}
+    .resumen-capitulo{background:var(--blanco);border:2px solid var(--borde);border-radius:10px;padding:1.8rem 2rem;margin:2.5rem 0}
+    .resumen-capitulo h3{color:var(--acento);font-size:1.1rem;margin-bottom:1rem;padding-bottom:.4rem;border-bottom:1px solid var(--borde)}
+    .resumen-capitulo ul{margin-left:1.2rem;line-height:2}
+    .resumen-capitulo .proximo{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--borde);font-size:.9rem;color:var(--texto-suave)}
+    .resumen-capitulo .proximo strong{color:var(--terracota)}
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(40,35,30,0.65);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(3px)}
+    .modal[aria-hidden="false"]{display:flex}
+    .modal-content{background:var(--fondo);border:2px solid var(--acento);border-radius:14px;padding:2rem;max-width:580px;width:92%;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(40,30,20,0.3)}
+    .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--acento);line-height:1;transition:color .2s}
+    .modal-close:hover{color:var(--terracota)}
+    .modal-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:2px solid var(--borde)}
+    .modal-header h3{font-size:1.1rem;color:var(--acento);border:none;margin:0}
+    #glossary-search{width:100%;padding:.7rem 1rem;margin-bottom:1.2rem;border:1.5px solid var(--borde);border-radius:8px;background:var(--blanco);font-size:.95rem;font-family:Georgia,serif;color:var(--texto);outline:none;transition:border-color .2s}
+    #glossary-search:focus{border-color:var(--acento)}
+    .glossary-list dt{font-weight:700;color:var(--terracota);margin-top:1.1rem;font-size:1rem}
+    .glossary-list dd{margin-left:0;margin-bottom:.3rem;color:var(--texto-suave);line-height:1.7;font-size:.93rem}
+    .glossary-list .link-voz-interior{display:inline-flex;align-items:center;gap:.3rem;font-size:.82rem;color:var(--secundario);text-decoration:none;font-style:italic;margin-top:.3rem}
+    .glossary-list .link-voz-interior::before{content:'↗ '}
+    .glossary-list .link-voz-interior:hover{text-decoration:underline}
+    footer{background:var(--texto);color:var(--blanco);text-align:center;padding:2.2rem 2rem;margin-top:2rem;font-size:.88rem}
+    footer p{margin:.35rem 0}
+    footer a{color:var(--terracota);text-decoration:none}
+    @media(max-width:768px){body{font-size:16px}main{padding:2rem 1.2rem 4rem}.chapter-nav{padding:.7rem 1rem}.tabla-comparativa{font-size:.82rem}.modal-content{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+
+  <nav class="chapter-nav" aria-label="Navegación">
+    <a href="capitulo_01.html" class="nav-link">← Capítulo 1</a>
+    <div class="nav-centro"><div>Asertividad Consciente</div><a href="index.html">Ver índice</a></div>
+    <a href="capitulo_03.html" class="nav-link">Capítulo 3 →</a>
+  </nav>
+
+  <main>
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 2</span>
+      <h1>El cuerpo como primer límite</h1>
+      <p class="chapter-subtitle">Las señales somáticas que avisan antes de que tu mente sepa que necesitas decir "no"</p>
+      <span class="parte-badge">Parte I · Reconocer</span>
+    </header>
+
+    <section id="cuerpo-sabe">
+      <h2>El cuerpo sabe antes que la mente</h2>
+      <p>Hay un momento —breve, casi imperceptible— entre que alguien te pide algo y tú respondes. En ese espacio, <strong>tu cuerpo ya sabe la respuesta.</strong></p>
+      <p>Tu mente todavía está calculando: "¿Debería? ¿Qué pasará si digo que no? ¿Qué esperan de mí?" Pero el cuerpo ya decidió.</p>
+      <p>El problema es que la mayoría de las personas no escucha al cuerpo. Escucha la mente. Y la mente está llena de voces: el <button class="glossary-term" data-term="complaciente">Complaciente</button> que quiere aprobar, el <button class="glossary-term" data-term="crítico">Crítico</button> que teme el juicio, el <button class="glossary-term" data-term="protector">Protector</button> que evita el conflicto.</p>
+      <p><strong>El cuerpo no miente. La mente sí.</strong></p>
+    </section>
+
+    <section id="caso-valeria" class="caso-clinico">
+      <h2>Caso clínico: Valeria y el nudo en la garganta</h2>
+      <p>Valeria, 31 años, diseñadora, vino a terapia porque "siempre terminaba haciendo cosas que no quería hacer".</p>
+      <p>—Mi hermana me pidió que la ayudara a mudarse el fin de semana. Yo ya tenía planes. Pero le dije que sí. Y después me quedé con rabia.</p>
+      <p>—¿Qué sentiste cuando te lo pidió? —pregunté.</p>
+      <p>—Sentí... un nudo aquí. —Se llevó la mano a la garganta—. Como si algo se cerrara. Pero no le hice caso. Pensé: "No seas egoísta. Es tu hermana."</p>
+      <p>El cuerpo de Valeria había dicho "no" antes de que su boca dijera "sí". El nudo en la garganta era información. Era un límite que se estaba violando antes incluso de ser expresado.</p>
+      <p class="nota-importante" style="background:none;border:none;padding:0;margin-top:1rem"><strong>Nota clave:</strong> Cuando ignoras la señal corporal, pagas un precio. En el caso de Valeria: rabia, resentimiento, pérdida de presencia.</p>
+    </section>
+
+    <section id="senales-somaticas">
+      <h2>Las señales somáticas de un límite violado</h2>
+      <p>El cuerpo habla en un lenguaje diferente al de las palabras. No dice "no quiero hacer esto". Dice:</p>
+      <table class="tabla-comparativa">
+        <thead>
+          <tr><th>Zona corporal</th><th>Señal</th><th>Significado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Garganta</strong></td><td>Nudo, opresión, sequedad</td><td>Algo no puede ser expresado</td></tr>
+          <tr><td><strong>Pecho</strong></td><td>Opresión, vacío, taquicardia</td><td>Algo no es auténtico</td></tr>
+          <tr><td><strong>Estómago</strong></td><td>Nudo, mariposas, náuseas</td><td>Algo no es digerible</td></tr>
+          <tr><td><strong>Hombros</strong></td><td>Tensión, peso, rigidez</td><td>Carga que no te corresponde</td></tr>
+          <tr><td><strong>Mandíbula</strong></td><td>Apretada, tensa</td><td>Rabia contenida</td></tr>
+          <tr><td><strong>Respiración</strong></td><td>Superficial, contenida</td><td>No puedes expandirte</td></tr>
+        </tbody>
+      </table>
+      <p>Estas señales no son "síntomas". Son <strong>información</strong>. Te están diciendo: "Aquí hay un límite. Algo no está alineado con tu verdad."</p>
+    </section>
+
+    <section id="senal-autentica">
+      <h2>Señal corporal auténtica vs. señal de una voz</h2>
+      <p>No toda sensación corporal es un límite auténtico. A veces es una voz disfrazada de sensación. Esta distinción es crucial:</p>
+      <div class="tecnica-practica">
+        <h3>Señal auténtica (del Ser)</h3>
+        <ul>
+          <li>Es inmediata (aparece en el momento de la petición)</li>
+          <li>Es clara (nudo, tensión, vacío específico)</li>
+          <li>No tiene narrativa mental asociada</li>
+          <li>Se siente como un "no" limpio, sin culpa</li>
+        </ul>
+      </div>
+      <div class="tecnica-practica">
+        <h3>Señal de una voz (Protector, Crítico, Complaciente)</h3>
+        <ul>
+          <li>Viene acompañada de pensamientos ("Si digo no, me van a rechazar")</li>
+          <li>Es difusa (ansiedad generalizada, no un lugar específico)</li>
+          <li>Tiene cualidad de urgencia o miedo</li>
+          <li>Se siente como un "no" contaminado de culpa o miedo</li>
+        </ul>
+      </div>
+      <p><em>Ejemplo:</em> Si sientes un nudo en el estómago <em>y</em> tu mente dice "Si digo que no, soy un mal amigo", probablemente es el Complaciente. Si sientes el nudo <em>sin</em> narrativa mental, es un límite auténtico.</p>
+      <div class="bloque-cruzado">
+        Para profundizar en el reconocimiento de voces y sus señales somáticas:
+        <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/capitulo_01.html" class="link-cruzado" target="_blank">Ver anatomía de voces en <em>La Voz Interior</em> · Cap. 1</a>
+      </div>
+    </section>
+
+    <section id="ejercicio-mapeo" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: Mapeo corporal de límites</h2>
+      <p><strong>Duración:</strong> 20 minutos · <strong>Materiales:</strong> Cuaderno, lápiz</p>
+      <ol>
+        <li>Dibuja una silueta humana simple (puede ser un contorno básico).</li>
+        <li>Recuerda 3 situaciones recientes donde dijiste "sí" queriendo decir "no".</li>
+        <li>Para cada situación, cierra los ojos y revive el momento exacto de la petición.</li>
+        <li>Nota qué sensación corporal apareció primero (antes de responder).</li>
+        <li>Marca esa sensación en la silueta (ej: nudo en garganta, tensión en hombros).</li>
+        <li>Al lado de cada marca, escribe: ¿Qué hubieras querido decir si hubieras escuchado esa sensación?</li>
+      </ol>
+      <p><strong>Reflexión:</strong> ¿Hay un patrón? ¿Siempre es la garganta? ¿Siempre es el estómago? Tu cuerpo tiene un lenguaje consistente. Apréndelo.</p>
+    </section>
+
+    <section id="caso-miguel" class="caso-clinico">
+      <h2>Caso clínico: Miguel y la rabia en las manos</h2>
+      <p>Miguel, 44 años, gerente de proyecto, tenía un problema recurrente: "Acepto demasiadas responsabilidades y después no puedo cumplir."</p>
+      <p>Un colega le había pedido cubrir un turno el fin de semana.</p>
+      <p>—¿Qué sentiste cuando te lo pidió? —pregunté.<br>—Calor en las manos. Como si quisiera... empujar algo. O cerrar los puños.<br>—¿Y qué hiciste con esa sensación?<br>—La ignoré. Dije que sí. Sonreí.</p>
+      <p>El calor en las manos era rabia contenida. Era el cuerpo diciendo: "Esto no me corresponde."</p>
+      <p>La próxima vez que un colega le pidió algo similar, Miguel sintió el mismo calor. Pero esta vez, lo escuchó. Respiró. Y dijo: <em>"Entiendo que lo necesitas. Pero este fin de semana no voy a poder. Lo siento."</em></p>
+      <p>—¿Cómo se sintió? —pregunté después.<br>—Las manos se enfriaron. Inmediatamente. Como si el cuerpo dijera: "Gracias. Me escuchaste."</p>
+      <p>Esa es la recompensa de escuchar al cuerpo: <strong>paz somática</strong>.</p>
+    </section>
+
+    <section id="pausa-somatica">
+      <h2>Práctica: La pausa somática antes de responder</h2>
+      <p>Cuando alguien te pide algo, crea este hábito:</p>
+      <div class="tecnica-practica">
+        <ol>
+          <li><strong>No respondas inmediatamente.</strong> Aunque sea un "déjame revisarlo y te aviso".</li>
+          <li><strong>Lleva la atención al cuerpo.</strong> ¿Qué sientes? ¿Dónde? ¿Con qué intensidad?</li>
+          <li><strong>Pregúntate:</strong> "¿Esta sensación es un límite auténtico o es una voz (miedo, culpa, obligación)?"</li>
+          <li><strong>Si es límite auténtico:</strong> Prepara una respuesta clara y respetuosa.</li>
+          <li><strong>Si es una voz:</strong> Trabaja primero el diálogo interno, luego responde.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="preguntas">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ol>
+        <li>¿En qué zona de tu cuerpo sueles sentir la primera señal cuando algo no está bien?</li>
+        <li>¿Cuándo fue la última vez que ignoraste esa señal? ¿Qué pasó después?</li>
+        <li>¿Puedes distinguir entre una señal auténtica del Ser y una señal de una voz (con narrativa)?</li>
+        <li>¿Qué te impide hacer la pausa somática? ¿Velocidad, costumbre, presión externa?</li>
+      </ol>
+    </section>
+
+    <div class="resumen-capitulo">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>El cuerpo registra un límite violado antes de que la mente lo procese</li>
+        <li>Cada zona corporal tiene un lenguaje de señales específico (garganta, pecho, estómago, manos...)</li>
+        <li>Señal auténtica: inmediata, clara, sin narrativa mental. Señal de una voz: con pensamientos, difusa, urgente</li>
+        <li>La pausa somática interrumpe la reactividad y abre el espacio para elegir</li>
+        <li>Escuchar al cuerpo produce paz somática: una recompensa inmediata y verificable</li>
+      </ul>
+      <p class="proximo"><strong>Próximo capítulo →</strong> El centro como base de operaciones. Qué es el <button class="glossary-term" data-term="centro">centro</button> y cómo acceder a él antes de hablar.</p>
+    </div>
+
+    <nav class="chapter-nav" style="background:transparent;border:none;padding:1rem 0;" aria-label="Navegación inferior">
+      <a href="capitulo_01.html" class="nav-link">← Capítulo 1</a>
+      <a href="index.html" class="nav-link" style="border-color:var(--secundario);color:var(--secundario);">Índice</a>
+      <a href="capitulo_03.html" class="nav-link">Capítulo 3 →</a>
+    </nav>
+  </main>
+
+  <footer>
+    <p><strong>Asertividad Consciente</strong> — Capítulo 2 de 9</p>
+    <p>Constelación Trinity · Arturo (α) · Qwen (ζ)</p>
+    <p style="margin-top:.6rem"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> · <a href="index.html">← Volver al índice</a></p>
+  </footer>
+
+  <!-- MODAL GLOSARIO -->
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <div class="modal-header"><span>📖</span><h3 id="glossary-title">Glosario — Asertividad Consciente</h3></div>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario" autocomplete="off">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+
+  <script>
+    const BASE_VI='https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/';
+    const glossaryData={
+      "asertividad consciente":{def:"Capacidad de expresar tu verdad desde el centro, sin agresión ni sumisión, honrando tus límites mientras mantienes la conexión con el otro. No es una técnica de comunicación; es presencia en acción.",link:null},
+      "autocompasión":{def:"Capacidad de tratarte a ti mismo con gentileza cuando fallas o sufres. Esencial para no caer en el perfeccionismo y para regresar al centro después de una fusión.",link:null},
+      "centro":{def:"El Ser como base de operaciones para la acción externa. No es un lugar físico, sino una cualidad de presencia enraizada, sin urgencia, conectada con la verdad propia.",link:null},
+      "complaciente":{def:"Voz interna que dice 'sí' automáticamente para mantener vínculos y evitar rechazo. Su función original es pertenecer.",link:BASE_VI+"capitulo_01.html"},
+      "crítico":{def:"Voz interna que juzga y anticipa rechazo. Su función original es protegerte de la vergüenza externa.",link:BASE_VI+"capitulo_01.html"},
+      "desidentificación":{def:"Proceso de reconocer que no eres tus pensamientos, emociones o voces internas. Crea espacio entre el observador (Ser) y lo observado (voces).",link:null},
+      "fusión":{def:"Estado donde te identificas completamente con una voz. No hay distancia entre observador y contenido. Elimina la agencia asertiva.",link:null},
+      "grounding":{def:"Técnicas que te conectan con el presente a través del cuerpo y los sentidos. El grounding regresa al Ser, que siempre está en el ahora.",link:null},
+      "intención positiva":{def:"Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional.",link:BASE_VI+"capitulo_01.html"},
+      "mindfulness":{def:"Práctica de prestar atención al momento presente con apertura y sin juicio. Base de la desidentificación.",link:null},
+      "niño herido":{def:"Voz interna que porta dolor emocional de la infancia no procesado. Expresa necesidades no satisfechas.",link:BASE_VI+"capitulo_01.html"},
+      "protector":{def:"Voz interna que evita riesgos o emociones dolorosas. Puede impedirte poner límites por miedo al conflicto.",link:BASE_VI+"capitulo_01.html"},
+      "rebelde":{def:"Voz interna que rechaza autoridad y compromisos. Puede confundir asertividad con agresividad.",link:BASE_VI+"capitulo_01.html"},
+      "ser":{def:"Tu esencia, el observador que puede presenciar todas las voces sin fusionarse con ninguna. En asertividad, es la base desde la cual comunicas.",link:BASE_VI+"capitulo_01.html"},
+      "voz interna":{def:"Patrón recurrente de pensamiento con cualidad autónoma. Cada voz tiene función protectora original, aunque su estrategia pueda ser obsoleta.",link:BASE_VI+"capitulo_01.html"}
+    };
+    const modal=document.getElementById('glossary-modal'),modalClose=modal.querySelector('.modal-close'),searchInput=document.getElementById('glossary-search'),resultsList=document.getElementById('glossary-results');
+    document.querySelectorAll('.glossary-term').forEach(btn=>{
+      btn.addEventListener('click',e=>{e.preventDefault();openModal(btn.dataset.term.toLowerCase())});
+      btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(btn.dataset.term.toLowerCase())}});
+    });
+    function openModal(t=''){modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';renderGlossary(t);searchInput.value=t}
+    function closeModal(){modal.setAttribute('aria-hidden','true');document.body.style.overflow='';searchInput.value=''}
+    modalClose.addEventListener('click',closeModal);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.getAttribute('aria-hidden')==='false')closeModal()});
+    searchInput.addEventListener('input',e=>renderGlossary(e.target.value));
+    function renderGlossary(filter=''){
+      const q=filter.toLowerCase().trim();
+      const entries=Object.entries(glossaryData).filter(([t])=>t.includes(q)).sort(([a],[b])=>a.localeCompare(b,'es'));
+      if(!entries.length){resultsList.innerHTML='<dt style="color:var(--texto-suave);font-weight:normal;margin-top:0;">No se encontraron términos.</dt>';return}
+      resultsList.innerHTML=entries.map(([term,data])=>`<dt tabindex="0">${term.charAt(0).toUpperCase()+term.slice(1)}</dt><dd>${data.def}${data.link?'<br><a href="'+data.link+'" class="link-voz-interior" target="_blank">Ver en La Voz Interior</a>':''}</dd>`).join('');
+    }
+  </script>
+</body>
+</html>

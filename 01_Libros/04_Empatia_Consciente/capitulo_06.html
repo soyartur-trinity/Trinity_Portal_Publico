@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 6: Asertividad en el entorno laboral | Asertividad Consciente</title>
+  <style>
+
+    :root{--fondo:#E8E3D5;--texto:#3E3E3E;--texto-suave:#6A6A5A;--acento:#7A6B5A;--secundario:#8B9A7A;--terracota:#A0785A;--borde:#D0C4B0;--blanco:#EDE8DC;--caso-clinico-bg:#F2EDE2;--ejercicio-bg:#EAF0E4;--tecnica-bg:#F0EAE2;--nota-bg:#F5F0E6}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Georgia,serif;background:var(--fondo);color:var(--texto);line-height:1.85;font-size:18px}
+    .progress-container{position:sticky;top:0;z-index:200;background:var(--fondo);padding:6px 0;border-bottom:1px solid rgba(160,120,90,0.15)}
+    .progress-bar{height:3px;background:rgba(160,120,90,0.15);border-radius:2px;overflow:hidden}
+    .chapter-nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem;background:var(--blanco);border-bottom:2px solid var(--borde)}
+    .nav-link{color:var(--acento);text-decoration:none;font-weight:600;font-size:.9rem;padding:.45rem 1rem;border:1.5px solid var(--borde);border-radius:6px;transition:all .2s}
+    .nav-link:hover{background:var(--acento);color:var(--blanco);border-color:var(--acento)}
+    .nav-centro{font-size:.8rem;color:var(--texto-suave);text-align:center}.nav-centro a{color:var(--terracota);text-decoration:none;font-size:.78rem}
+    main{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+    .chapter-header{text-align:center;padding:2rem 0 3rem;border-bottom:3px solid var(--borde);margin-bottom:3rem}
+    .chapter-number{display:inline-block;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--terracota);margin-bottom:.8rem}
+    .chapter-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--acento);line-height:1.25;margin-bottom:.5rem}
+    .chapter-subtitle{font-size:1rem;color:var(--texto-suave);font-style:italic}
+    .parte-badge{display:inline-block;background:rgba(139,154,122,0.15);color:var(--secundario);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:.2rem .7rem;border-radius:20px;margin-top:1rem}
+    section{margin-bottom:2.5rem}
+    section h2{font-size:1.35rem;color:var(--acento);margin-bottom:1rem;padding-bottom:.35rem;border-bottom:1px solid rgba(208,196,176,0.6)}
+    section h3{font-size:1.1rem;color:var(--terracota);margin:1.2rem 0 .5rem}
+    p{margin-bottom:1.3rem;text-align:justify}
+    ul,ol{margin:.5rem 0 1.3rem 1.5rem;line-height:2} li{margin-bottom:.3rem}
+    strong{color:var(--acento);font-weight:600} em{color:var(--texto-suave)}
+    blockquote{border-left:4px solid var(--terracota);padding:1rem 1.5rem;margin:1.5rem 0;background:rgba(160,120,90,0.07);border-radius:0 8px 8px 0;font-style:italic}
+    .caso-clinico,.ejercicio-practico,.tecnica-practica,.nota-importante{border-left:4px solid var(--acento);padding:1.4rem 1.5rem;margin:1.8rem 0;border-radius:0 8px 8px 0;font-size:.97rem}
+    .caso-clinico{background:var(--caso-clinico-bg);border-color:var(--terracota)}
+    .ejercicio-practico{background:var(--ejercicio-bg);border-color:var(--secundario)}
+    .tecnica-practica{background:var(--tecnica-bg);border-color:var(--acento)}
+    .nota-importante{background:var(--nota-bg);border-color:#C9A961}
+    .caso-clinico h2,.ejercicio-practico h2,.tecnica-practica h2,.nota-importante h2{border-bottom:none;margin-bottom:.7rem;padding-bottom:0}
+    .tabla-comparativa{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.92rem}
+    .tabla-comparativa th{background:var(--acento);color:var(--blanco);padding:.7rem 1rem;text-align:left}
+    .tabla-comparativa td{padding:.65rem 1rem;border-bottom:1px solid var(--borde);vertical-align:top}
+    .tabla-comparativa tr:nth-child(even) td{background:rgba(208,196,176,0.2)}
+    .bloque-cruzado{background:rgba(139,154,122,0.08);border:1px solid rgba(139,154,122,0.3);border-radius:8px;padding:.9rem 1.2rem;margin:1.5rem 0;font-size:.88rem;display:flex;align-items:center;gap:.8rem}
+    .bloque-cruzado::before{content:'📖';font-size:1.1rem;flex-shrink:0}
+    .link-cruzado{display:inline-flex;align-items:center;gap:.4rem;color:var(--secundario);text-decoration:none;font-size:.85rem;font-style:italic;border-bottom:1px dotted var(--secundario)}
+    .link-cruzado::before{content:'↗';font-style:normal;font-size:.75rem}
+    .glossary-term{background:none;border:none;color:var(--terracota);font-weight:600;font-family:Georgia,serif;font-size:inherit;cursor:pointer;text-decoration:underline dotted var(--terracota);text-underline-offset:3px;padding:0 2px;border-radius:2px}
+    .glossary-term:hover{background:rgba(160,120,90,0.12)}
+    .resumen-capitulo{background:var(--blanco);border:2px solid var(--borde);border-radius:10px;padding:1.8rem 2rem;margin:2.5rem 0}
+    .resumen-capitulo h3{color:var(--acento);font-size:1.1rem;margin-bottom:1rem;padding-bottom:.4rem;border-bottom:1px solid var(--borde)}
+    .resumen-capitulo ul{margin-left:1.2rem;line-height:2}
+    .resumen-capitulo .proximo{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--borde);font-size:.9rem;color:var(--texto-suave)}
+    .resumen-capitulo .proximo strong{color:var(--terracota)}
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(40,35,30,0.65);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(3px)}
+    .modal[aria-hidden="false"]{display:flex}
+    .modal-content{background:var(--fondo);border:2px solid var(--acento);border-radius:14px;padding:2rem;max-width:580px;width:92%;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(40,30,20,0.3)}
+    .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--acento)}
+    .modal-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:2px solid var(--borde)}
+    .modal-header h3{font-size:1.1rem;color:var(--acento);border:none;margin:0}
+    #glossary-search{width:100%;padding:.7rem 1rem;margin-bottom:1.2rem;border:1.5px solid var(--borde);border-radius:8px;background:var(--blanco);font-size:.95rem;font-family:Georgia,serif;color:var(--texto);outline:none}
+    #glossary-search:focus{border-color:var(--acento)}
+    .glossary-list dt{font-weight:700;color:var(--terracota);margin-top:1.1rem;font-size:1rem}
+    .glossary-list dd{margin-left:0;margin-bottom:.3rem;color:var(--texto-suave);line-height:1.7;font-size:.93rem}
+    .glossary-list .link-voz-interior{display:inline-flex;align-items:center;gap:.3rem;font-size:.82rem;color:var(--secundario);text-decoration:none;font-style:italic;margin-top:.3rem}
+    .glossary-list .link-voz-interior::before{content:'↗ '}
+    footer{background:var(--texto);color:var(--blanco);text-align:center;padding:2.2rem 2rem;margin-top:2rem;font-size:.88rem}
+    footer p{margin:.35rem 0} footer a{color:var(--terracota);text-decoration:none}
+    @media(max-width:768px){body{font-size:16px}main{padding:2rem 1.2rem 4rem}.chapter-nav{padding:.7rem 1rem}}
+
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--secundario),var(--terracota));width:54%;border-radius:2px}
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav">
+    <a href="capitulo_05.html" class="nav-link">&larr; Anterior</a>
+    <div class="nav-centro"><div>Asertividad Consciente</div><a href="index.html">Ver &iacute;ndice</a></div>
+    <a href="capitulo_07.html" class="nav-link">Siguiente &rarr;</a>
+  </nav>
+  <main>
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 6</span>
+      <h1>Asertividad en el entorno laboral</h1>
+      <p class="chapter-subtitle">Poner límites sin quemar puentes ni quemarte tú</p>
+      <span class="parte-badge">Parte III · Integrar</span>
+    </header>
+
+    <section id="caso-diego" class="caso-clinico">
+      <h2>El caso de Diego: el "sí" que lo enfermó</h2>
+      <p>Diego, 43 años, gerente de operaciones, llegó con burnout severo. Trabajaba 12 horas al día, revisaba correos los fines de semana y no sabía decir que no. El miedo operaba desde tres voces: el <button class="glossary-term" data-term="complaciente">Complaciente</button> ("Si digo no, no me van a querer"), el <button class="glossary-term" data-term="protector">Protector</button> ("Si te haces indispensable, estarás seguro") y el <button class="glossary-term" data-term="crítico">Crítico</button> ("Si no puedes con esto, eres un débil"). Y el cuerpo pagó el precio: insomnio, ansiedad, gastritis.</p>
+    </section>
+    <section id="por-que-dificil">
+      <h2>¿Por qué es tan difícil ser asertivo en el trabajo?</h2>
+      <ul>
+        <li><strong>Supervivencia económica:</strong> el trabajo ligado al sustento activa el sistema nervioso en modo amenaza.</li>
+        <li><strong>Jerarquía y poder:</strong> reactiva dinámicas infantiles (padre-hijo, maestro-alumno).</li>
+        <li><strong>Cultura organizacional:</strong> algunas empresas premian el "sí" constante y castigan la asertividad.</li>
+        <li><strong>Identidad profesional:</strong> poner un límite se siente como un ataque a la identidad.</li>
+        <li><strong>Conflicto visible:</strong> en el trabajo hay testigos. La reputación está en juego.</li>
+      </ul>
+    </section>
+    <section id="cuatro-situaciones">
+      <h2>Las cuatro situaciones clave</h2>
+      <div class="tecnica-practica">
+        <h3>1. Decir "no" a cargas excesivas</h3>
+        <p><strong>Desde el Centro:</strong> <em>"Agradezco la confianza. En este momento tengo X, Y, Z proyectos. Si tomo este nuevo, alguno se va a retrasar. ¿Qué prioridad le damos?"</em></p>
+      </div>
+      <div class="tecnica-practica">
+        <h3>2. Pedir lo que necesitas</h3>
+        <p><strong>Desde el Centro:</strong> <em>"Para entregar esto con la calidad esperada, necesito X. ¿Podemos gestionarlo? ¿O ajustamos el alcance?"</em> Pedir no es debilidad. Es inteligencia operativa.</p>
+      </div>
+      <div class="tecnica-practica">
+        <h3>3. Recibir feedback crítico</h3>
+        <p><strong>Desde el Centro:</strong> <em>"Entiendo tu preocupación. ¿Puedes ser más específico sobre qué necesita mejorar? Así puedo ajustarlo."</em> El Centro no se defiende. No se hunde. Escucha, clarifica, actúa.</p>
+      </div>
+      <div class="tecnica-practica">
+        <h3>4. Poner límites con colegas</h3>
+        <p><strong>Desde el Centro:</strong> <em>"Puedo ayudarte, pero necesito que me lo pidas con 24 horas de anticipación."</em> O: <em>"Cuando me hablas así en reuniones, me siento irrespetado. Prefiero que hablemos en privado."</em></p>
+      </div>
+    </section>
+    <section id="caso-valeria" class="caso-clinico">
+      <h2>Caso clínico: Valeria y el correo que sí envió</h2>
+      <p>Valeria, 36 años, coordinadora de marketing, tenía un jefe que le escribía a las 9 de la noche y esperaba respuesta. Siempre contestaba. Y estaba enojada y resentida.</p>
+      <p>Trabajamos en una respuesta desde el Centro. Lo escribió y lo dejó reposar 24 horas antes de enviarlo: <em>"Entiendo que a veces surgen urgencias y estoy disponible para eso. Pero para mi equilibrio personal, después de las 7 de la noche no voy a estar revisando correos. Si hay una urgencia real, puedes llamarme."</em></p>
+      <p>El jefe respondió: <em>"Entiendo. Gracias por la claridad."</em> Y respetó el límite.</p>
+      <p>Tres meses después: <em>"Duermo mejor. Ceno con mi familia sin el celular. Y mi trabajo no se vio afectado. Al contrario."</em></p>
+    </section>
+    <section id="toxico" class="nota-importante">
+      <h2>Cuando el entorno es tóxico</h2>
+      <p>Hay una distinción crucial: entorno demandante pero respetuoso (la asertividad funciona) versus entorno tóxico (hay manipulación, castigo por poner límites). En el segundo caso, <strong>la asertividad no es la solución. La solución es salir.</strong> Y eso también es asertividad.</p>
+    </section>
+    <section id="ejercicio" class="ejercicio-practico">
+      <h2>&#9997;&#65039; Ejercicio: Mapa de límites laborales</h2>
+      <p><strong>Duración:</strong> 30 minutos</p>
+      <ol>
+        <li>Lista las situaciones laborales donde te cuesta poner límites (correos fuera de horario, proyectos extra, colegas invasivos, feedback despectivo).</li>
+        <li>Identifica qué voz opera en cada caso.</li>
+        <li>Escribe una respuesta desde el Centro para cada situación.</li>
+        <li>Elige UNA situación para aplicar esta semana.</li>
+        <li>Después reflexiona: ¿Qué pasó? ¿Qué aprendiste?</li>
+      </ol>
+    </section>
+    <div class="resumen-capitulo">
+      <h3>&#128260; Resumen del capítulo</h3>
+      <ul>
+        <li>El entorno laboral activa voces con intensidad especial: supervivencia, jerarquía, cultura, identidad</li>
+        <li>Cuatro situaciones clave: decir no a cargas, pedir recursos, recibir feedback, límites con colegas</li>
+        <li>Protocolo: chequeo interno, lenguaje profesional, documentar por escrito, cerrar el ciclo</li>
+        <li>Distinción crucial: entorno demandante vs tóxico. En el tóxico, la solución es salir</li>
+      </ul>
+      <p class="proximo"><strong>Próximo capítulo →</strong> Asertividad digital: límites en un mundo que exige disponibilidad 24/7.</p>
+    </div>
+
+    <nav class="chapter-nav" style="background:transparent;border:none;padding:1rem 0;">
+      <a href="capitulo_05.html" class="nav-link">&larr; Anterior</a>
+      <a href="index.html" class="nav-link" style="border-color:var(--secundario);color:var(--secundario);">&Iacute;ndice</a>
+      <a href="capitulo_07.html" class="nav-link">Siguiente &rarr;</a>
+    </nav>
+  </main>
+  <footer>
+    <p><strong>Asertividad Consciente</strong> &mdash; Capítulo 6 de 9</p>
+    <p>Constelaci&oacute;n Trinity &middot; Arturo (&alpha;) &middot; Qwen (&zeta;)</p>
+    <p style="margin-top:.6rem"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> &middot; <a href="index.html">&larr; Volver al &iacute;ndice</a></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar">&times;</button>
+      <div class="modal-header"><span>&#128218;</span><h3 id="glossary-title">Glosario &mdash; Asertividad Consciente</h3></div>
+      <input type="search" id="glossary-search" placeholder="Buscar t&eacute;rmino..." autocomplete="off">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+  <script>
+    const BASE_VI='https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/';
+    const glossaryData={"asertividad consciente":{def:"Capacidad de expresar tu verdad desde el centro, sin agresión ni sumisión. Presencia en acción.",link:null},"autocompasión":{def:"Tratarte con gentileza cuando fallas. Esencial para no caer en el perfeccionismo.",link:null},"centro":{def:"El Ser como base de operaciones. Presencia enraizada sin urgencia.",link:null},"complaciente":{def:"Voz que dice sí automáticamente para evitar rechazo.",link:BASE_VI+"capitulo_01.html"},"crítico":{def:"Voz que juzga y paraliza anticipando rechazo externo.",link:BASE_VI+"capitulo_01.html"},"desidentificación":{def:"Reconocer que no eres tus pensamientos o voces. Crea espacio entre observador y contenido.",link:null},"fusión":{def:"Identificarte completamente con una voz, sin distancia de observador.",link:null},"grounding":{def:"Técnicas que conectan con el presente a través del cuerpo.",link:null},"integración":{def:"Las voces encuentran su lugar natural y dejan de dominar. Armonización, no eliminación.",link:null},"intención positiva":{def:"Propósito original protector de cada voz, aunque su estrategia sea disfuncional.",link:BASE_VI+"capitulo_01.html"},"mindfulness":{def:"Atención al momento presente con apertura y sin juicio. Base de la desidentificación.",link:null},"niño herido":{def:"Voz que porta dolor emocional de la infancia. Expresa necesidades no satisfechas.",link:BASE_VI+"capitulo_01.html"},"protector":{def:"Voz que evita riesgos y emociones dolorosas.",link:BASE_VI+"capitulo_01.html"},"rebelde":{def:"Voz que rechaza autoridad. Puede confundir asertividad con agresividad.",link:BASE_VI+"capitulo_01.html"},"rumiación":{def:"Pensamiento repetitivo sin solución. Fusión en movimiento.",link:null},"ser":{def:"Tu esencia, el observador que presencia todas las voces sin fusionarse. Base desde la cual comunicas.",link:BASE_VI+"capitulo_01.html"},"voz interna":{def:"Patrón recurrente de pensamiento con cualidad autónoma.",link:BASE_VI+"capitulo_01.html"}};
+    const modal=document.getElementById('glossary-modal'),modalClose=modal.querySelector('.modal-close'),searchInput=document.getElementById('glossary-search'),resultsList=document.getElementById('glossary-results');
+    document.querySelectorAll('.glossary-term').forEach(btn=>{btn.addEventListener('click',e=>{e.preventDefault();openModal(btn.dataset.term.toLowerCase())});btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(btn.dataset.term.toLowerCase())}})});
+    function openModal(t=''){modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';renderGlossary(t);searchInput.value=t}
+    function closeModal(){modal.setAttribute('aria-hidden','true');document.body.style.overflow='';searchInput.value=''}
+    modalClose.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.getAttribute('aria-hidden')==='false')closeModal()});searchInput.addEventListener('input',e=>renderGlossary(e.target.value));
+    function renderGlossary(filter=''){const q=filter.toLowerCase().trim();const entries=Object.entries(glossaryData).filter(([t])=>t.includes(q)).sort(([a],[b])=>a.localeCompare(b,'es'));if(!entries.length){resultsList.innerHTML='<dt style="color:var(--texto-suave);font-weight:normal;margin-top:0;">No se encontraron términos.</dt>';return}resultsList.innerHTML=entries.map(([term,data])=>`<dt tabindex="0">${term.charAt(0).toUpperCase()+term.slice(1)}</dt><dd>${data.def}${data.link?'<br><a href="'+data.link+'" class="link-voz-interior" target="_blank">Ver en La Voz Interior</a>':''}</dd>`).join('')}
+</script>
+</body>
+</html>

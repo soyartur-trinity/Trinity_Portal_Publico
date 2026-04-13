@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 5: Asertividad en la pareja | Asertividad Consciente</title>
+  <style>
+
+    :root{--fondo:#E8E3D5;--texto:#3E3E3E;--texto-suave:#6A6A5A;--acento:#7A6B5A;--secundario:#8B9A7A;--terracota:#A0785A;--borde:#D0C4B0;--blanco:#EDE8DC;--caso-clinico-bg:#F2EDE2;--ejercicio-bg:#EAF0E4;--tecnica-bg:#F0EAE2;--nota-bg:#F5F0E6}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Georgia,serif;background:var(--fondo);color:var(--texto);line-height:1.85;font-size:18px}
+    .progress-container{position:sticky;top:0;z-index:200;background:var(--fondo);padding:6px 0;border-bottom:1px solid rgba(160,120,90,0.15)}
+    .progress-bar{height:3px;background:rgba(160,120,90,0.15);border-radius:2px;overflow:hidden}
+    .chapter-nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem;background:var(--blanco);border-bottom:2px solid var(--borde)}
+    .nav-link{color:var(--acento);text-decoration:none;font-weight:600;font-size:.9rem;padding:.45rem 1rem;border:1.5px solid var(--borde);border-radius:6px;transition:all .2s}
+    .nav-link:hover{background:var(--acento);color:var(--blanco);border-color:var(--acento)}
+    .nav-centro{font-size:.8rem;color:var(--texto-suave);text-align:center}.nav-centro a{color:var(--terracota);text-decoration:none;font-size:.78rem}
+    main{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+    .chapter-header{text-align:center;padding:2rem 0 3rem;border-bottom:3px solid var(--borde);margin-bottom:3rem}
+    .chapter-number{display:inline-block;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--terracota);margin-bottom:.8rem}
+    .chapter-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--acento);line-height:1.25;margin-bottom:.5rem}
+    .chapter-subtitle{font-size:1rem;color:var(--texto-suave);font-style:italic}
+    .parte-badge{display:inline-block;background:rgba(139,154,122,0.15);color:var(--secundario);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:.2rem .7rem;border-radius:20px;margin-top:1rem}
+    section{margin-bottom:2.5rem}
+    section h2{font-size:1.35rem;color:var(--acento);margin-bottom:1rem;padding-bottom:.35rem;border-bottom:1px solid rgba(208,196,176,0.6)}
+    section h3{font-size:1.1rem;color:var(--terracota);margin:1.2rem 0 .5rem}
+    p{margin-bottom:1.3rem;text-align:justify}
+    ul,ol{margin:.5rem 0 1.3rem 1.5rem;line-height:2} li{margin-bottom:.3rem}
+    strong{color:var(--acento);font-weight:600} em{color:var(--texto-suave)}
+    blockquote{border-left:4px solid var(--terracota);padding:1rem 1.5rem;margin:1.5rem 0;background:rgba(160,120,90,0.07);border-radius:0 8px 8px 0;font-style:italic}
+    .caso-clinico,.ejercicio-practico,.tecnica-practica,.nota-importante{border-left:4px solid var(--acento);padding:1.4rem 1.5rem;margin:1.8rem 0;border-radius:0 8px 8px 0;font-size:.97rem}
+    .caso-clinico{background:var(--caso-clinico-bg);border-color:var(--terracota)}
+    .ejercicio-practico{background:var(--ejercicio-bg);border-color:var(--secundario)}
+    .tecnica-practica{background:var(--tecnica-bg);border-color:var(--acento)}
+    .nota-importante{background:var(--nota-bg);border-color:#C9A961}
+    .caso-clinico h2,.ejercicio-practico h2,.tecnica-practica h2,.nota-importante h2{border-bottom:none;margin-bottom:.7rem;padding-bottom:0}
+    .tabla-comparativa{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.92rem}
+    .tabla-comparativa th{background:var(--acento);color:var(--blanco);padding:.7rem 1rem;text-align:left}
+    .tabla-comparativa td{padding:.65rem 1rem;border-bottom:1px solid var(--borde);vertical-align:top}
+    .tabla-comparativa tr:nth-child(even) td{background:rgba(208,196,176,0.2)}
+    .bloque-cruzado{background:rgba(139,154,122,0.08);border:1px solid rgba(139,154,122,0.3);border-radius:8px;padding:.9rem 1.2rem;margin:1.5rem 0;font-size:.88rem;display:flex;align-items:center;gap:.8rem}
+    .bloque-cruzado::before{content:'📖';font-size:1.1rem;flex-shrink:0}
+    .link-cruzado{display:inline-flex;align-items:center;gap:.4rem;color:var(--secundario);text-decoration:none;font-size:.85rem;font-style:italic;border-bottom:1px dotted var(--secundario)}
+    .link-cruzado::before{content:'↗';font-style:normal;font-size:.75rem}
+    .glossary-term{background:none;border:none;color:var(--terracota);font-weight:600;font-family:Georgia,serif;font-size:inherit;cursor:pointer;text-decoration:underline dotted var(--terracota);text-underline-offset:3px;padding:0 2px;border-radius:2px}
+    .glossary-term:hover{background:rgba(160,120,90,0.12)}
+    .resumen-capitulo{background:var(--blanco);border:2px solid var(--borde);border-radius:10px;padding:1.8rem 2rem;margin:2.5rem 0}
+    .resumen-capitulo h3{color:var(--acento);font-size:1.1rem;margin-bottom:1rem;padding-bottom:.4rem;border-bottom:1px solid var(--borde)}
+    .resumen-capitulo ul{margin-left:1.2rem;line-height:2}
+    .resumen-capitulo .proximo{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--borde);font-size:.9rem;color:var(--texto-suave)}
+    .resumen-capitulo .proximo strong{color:var(--terracota)}
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(40,35,30,0.65);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(3px)}
+    .modal[aria-hidden="false"]{display:flex}
+    .modal-content{background:var(--fondo);border:2px solid var(--acento);border-radius:14px;padding:2rem;max-width:580px;width:92%;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(40,30,20,0.3)}
+    .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--acento)}
+    .modal-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:2px solid var(--borde)}
+    .modal-header h3{font-size:1.1rem;color:var(--acento);border:none;margin:0}
+    #glossary-search{width:100%;padding:.7rem 1rem;margin-bottom:1.2rem;border:1.5px solid var(--borde);border-radius:8px;background:var(--blanco);font-size:.95rem;font-family:Georgia,serif;color:var(--texto);outline:none}
+    #glossary-search:focus{border-color:var(--acento)}
+    .glossary-list dt{font-weight:700;color:var(--terracota);margin-top:1.1rem;font-size:1rem}
+    .glossary-list dd{margin-left:0;margin-bottom:.3rem;color:var(--texto-suave);line-height:1.7;font-size:.93rem}
+    .glossary-list .link-voz-interior{display:inline-flex;align-items:center;gap:.3rem;font-size:.82rem;color:var(--secundario);text-decoration:none;font-style:italic;margin-top:.3rem}
+    .glossary-list .link-voz-interior::before{content:'↗ '}
+    footer{background:var(--texto);color:var(--blanco);text-align:center;padding:2.2rem 2rem;margin-top:2rem;font-size:.88rem}
+    footer p{margin:.35rem 0} footer a{color:var(--terracota);text-decoration:none}
+    @media(max-width:768px){body{font-size:16px}main{padding:2rem 1.2rem 4rem}.chapter-nav{padding:.7rem 1rem}}
+
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--secundario),var(--terracota));width:45%;border-radius:2px}
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav">
+    <a href="capitulo_04.html" class="nav-link">&larr; Anterior</a>
+    <div class="nav-centro"><div>Asertividad Consciente</div><a href="index.html">Ver &iacute;ndice</a></div>
+    <a href="capitulo_06.html" class="nav-link">Siguiente &rarr;</a>
+  </nav>
+  <main>
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 5</span>
+      <h1>Asertividad en la pareja</h1>
+      <p class="chapter-subtitle">Poner límites sin abandonar, pedir necesidades sin exigir</p>
+      <span class="parte-badge">Parte II · Dialogar</span>
+    </header>
+
+    <section id="caso" class="caso-clinico">
+      <h2>El caso de Sofía y Martín: el baile del resentimiento</h2>
+      <p>Sofía y Martín llegaron a terapia de pareja con una queja recurrente. Se amaban, pero siempre terminaban enojados. Ella pedía que él hiciera más en casa. Él lo escuchaba como crítica. Él pedía más cariño. Ella lo sentía como exigencia.</p>
+      <p>Exploramos qué pasaba internamente. Sofía reconoció: <em>"Cuando le pido que lave los platos, en realidad estoy diciendo: Necesito sentir que te importo."</em> Martín reconoció: <em>"Cuando le pido más cariño, estoy diciendo: Tengo miedo de que no me quieras."</em></p>
+      <p>Las peticiones no eran asertivas. Eran <strong>demandas disfrazadas</strong>. Una demanda dice: "Tienes que cambiar para que yo esté bien." Una petición asertiva dice: "Necesito esto. Si puedes dármelo, bien. Si no, buscaré otra forma."</p>
+    </section>
+    <section id="peticion-vs-demanda">
+      <h2>La diferencia entre petición y demanda</h2>
+      <table class="tabla-comparativa">
+        <thead><tr><th>Petición asertiva</th><th>Demanda encubierta</th></tr></thead>
+        <tbody>
+          <tr><td>Energía abierta, vulnerable</td><td>Energía cerrada, defensiva</td></tr>
+          <tr><td>"Me gustaría...", "¿Podrías...?"</td><td>"Tienes que...", "Siempre...", "Nunca..."</td></tr>
+          <tr><td>Si la respuesta es no: tristeza, pero sin colapso</td><td>Si la respuesta es no: rabia, resentimiento, castigo</td></tr>
+          <tr><td>El otro tiene derecho a decir no</td><td>El otro <em>debe</em> decir sí</td></tr>
+          <tr><td>Origen: necesidad auténtica</td><td>Origen: <button class="glossary-term" data-term="niño herido">Niño Herido</button> o <button class="glossary-term" data-term="crítico">Crítico</button></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="protocolo" class="tecnica-practica">
+      <h2>Protocolo de petición asertiva en pareja</h2>
+      <p><strong>Paso 1: Chequeo interno antes de hablar.</strong> ¿Desde qué voz estoy hablando? ¿Puedo sostener un "no" sin colapsar?</p>
+      <p><strong>Paso 2: Formula la petición en lenguaje del Ser.</strong> Específica, sobre el presente, sobre ti, negociable. Ejemplo: <em>"Cuando llegas tarde sin avisar, me siento ansiosa. Necesito que me avises. ¿Podemos acordar eso?"</em></p>
+      <p><strong>Paso 3: Espera la respuesta sin fusionarte.</strong> Sí, no, o negociación — las tres son válidas. Si dice "no" y tú colapsas, no fue una petición. Fue una demanda.</p>
+      <p><strong>Paso 4: Cierra el ciclo.</strong> <em>"Gracias por escucharme."</em> Independientemente del resultado.</p>
+    </section>
+    <section id="caso-clara" class="caso-clinico">
+      <h2>Caso clínico: Clara y el resentimiento acumulado</h2>
+      <p>Clara, 41 años, llevaba tres años en pareja sintiendo que hacía todo en la casa. Cuando pedía, lo hacía desde el <button class="glossary-term" data-term="complaciente">Complaciente</button>. El <button class="glossary-term" data-term="crítico">Crítico</button> se activaba cuando él no respondía como esperaba. Y el <button class="glossary-term" data-term="protector">Protector</button> evitaba el conflicto. Resultado: resentimiento acumulado.</p>
+      <p>Trabajamos en transformar sus peticiones. En lugar de <em>"¿Puedes lavar los platos?"</em>, dijo: <em>"Necesito que los platos se laven hoy. ¿Puedes hacerlo tú o prefieres que lo haga yo y tú haces otra cosa?"</em></p>
+      <p>Tres meses después: <em>"La rabia disminuyó. Porque ya no estoy esperando que él adivine."</em></p>
+    </section>
+    <section id="ejercicio" class="ejercicio-practico">
+      <h2>&#9997;&#65039; Ejercicio: Peticiones conscientes en pareja</h2>
+      <p><strong>Duración:</strong> 30 minutos (individual o en pareja)</p>
+      <ol>
+        <li>Piensa en una necesidad en tu pareja que no has expresado (o que has expresado mal).</li>
+        <li>Chequeo interno: ¿Desde qué voz estoy hablando? ¿Puedo sostener un "no"?</li>
+        <li>Escribe la petición en lenguaje del Ser: específica, sobre ti, negociable.</li>
+        <li>Si es en pareja, compártela. Escucha la respuesta sin fusionarte.</li>
+        <li>Cierra el ciclo: agradece, independientemente del resultado.</li>
+      </ol>
+    </section>
+    <div class="resumen-capitulo">
+      <h3>&#128260; Resumen del capítulo</h3>
+      <ul>
+        <li>Las peticiones de pareja suelen ser demandas disfrazadas de voces internas</li>
+        <li>Petición asertiva: abierta, específica, negociable, sin colapso ante el "no"</li>
+        <li>Protocolo: chequeo interno → lenguaje del Ser → esperar respuesta sin fusión → cerrar ciclo</li>
+        <li>La asertividad de uno transforma la dinámica de ambos</li>
+      </ul>
+      <p class="proximo"><strong>Próximo capítulo →</strong> Asertividad en el entorno laboral: poner límites sin quemar puentes ni quemarte tú.</p>
+    </div>
+
+    <nav class="chapter-nav" style="background:transparent;border:none;padding:1rem 0;">
+      <a href="capitulo_04.html" class="nav-link">&larr; Anterior</a>
+      <a href="index.html" class="nav-link" style="border-color:var(--secundario);color:var(--secundario);">&Iacute;ndice</a>
+      <a href="capitulo_06.html" class="nav-link">Siguiente &rarr;</a>
+    </nav>
+  </main>
+  <footer>
+    <p><strong>Asertividad Consciente</strong> &mdash; Capítulo 5 de 9</p>
+    <p>Constelaci&oacute;n Trinity &middot; Arturo (&alpha;) &middot; Qwen (&zeta;)</p>
+    <p style="margin-top:.6rem"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> &middot; <a href="index.html">&larr; Volver al &iacute;ndice</a></p>
+  </footer>
+
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar">&times;</button>
+      <div class="modal-header"><span>&#128218;</span><h3 id="glossary-title">Glosario &mdash; Asertividad Consciente</h3></div>
+      <input type="search" id="glossary-search" placeholder="Buscar t&eacute;rmino..." autocomplete="off">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+  <script>
+    const BASE_VI='https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/';
+    const glossaryData={"asertividad consciente":{def:"Capacidad de expresar tu verdad desde el centro, sin agresión ni sumisión. Presencia en acción.",link:null},"autocompasión":{def:"Tratarte con gentileza cuando fallas. Esencial para no caer en el perfeccionismo.",link:null},"centro":{def:"El Ser como base de operaciones. Presencia enraizada sin urgencia.",link:null},"complaciente":{def:"Voz que dice sí automáticamente para evitar rechazo.",link:BASE_VI+"capitulo_01.html"},"crítico":{def:"Voz que juzga y paraliza anticipando rechazo externo.",link:BASE_VI+"capitulo_01.html"},"desidentificación":{def:"Reconocer que no eres tus pensamientos o voces. Crea espacio entre observador y contenido.",link:null},"fusión":{def:"Identificarte completamente con una voz, sin distancia de observador.",link:null},"grounding":{def:"Técnicas que conectan con el presente a través del cuerpo.",link:null},"integración":{def:"Las voces encuentran su lugar natural y dejan de dominar. Armonización, no eliminación.",link:null},"intención positiva":{def:"Propósito original protector de cada voz, aunque su estrategia sea disfuncional.",link:BASE_VI+"capitulo_01.html"},"mindfulness":{def:"Atención al momento presente con apertura y sin juicio. Base de la desidentificación.",link:null},"niño herido":{def:"Voz que porta dolor emocional de la infancia. Expresa necesidades no satisfechas.",link:BASE_VI+"capitulo_01.html"},"protector":{def:"Voz que evita riesgos y emociones dolorosas.",link:BASE_VI+"capitulo_01.html"},"rebelde":{def:"Voz que rechaza autoridad. Puede confundir asertividad con agresividad.",link:BASE_VI+"capitulo_01.html"},"rumiación":{def:"Pensamiento repetitivo sin solución. Fusión en movimiento.",link:null},"ser":{def:"Tu esencia, el observador que presencia todas las voces sin fusionarse. Base desde la cual comunicas.",link:BASE_VI+"capitulo_01.html"},"voz interna":{def:"Patrón recurrente de pensamiento con cualidad autónoma.",link:BASE_VI+"capitulo_01.html"}};
+    const modal=document.getElementById('glossary-modal'),modalClose=modal.querySelector('.modal-close'),searchInput=document.getElementById('glossary-search'),resultsList=document.getElementById('glossary-results');
+    document.querySelectorAll('.glossary-term').forEach(btn=>{btn.addEventListener('click',e=>{e.preventDefault();openModal(btn.dataset.term.toLowerCase())});btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(btn.dataset.term.toLowerCase())}})});
+    function openModal(t=''){modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';renderGlossary(t);searchInput.value=t}
+    function closeModal(){modal.setAttribute('aria-hidden','true');document.body.style.overflow='';searchInput.value=''}
+    modalClose.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.getAttribute('aria-hidden')==='false')closeModal()});searchInput.addEventListener('input',e=>renderGlossary(e.target.value));
+    function renderGlossary(filter=''){const q=filter.toLowerCase().trim();const entries=Object.entries(glossaryData).filter(([t])=>t.includes(q)).sort(([a],[b])=>a.localeCompare(b,'es'));if(!entries.length){resultsList.innerHTML='<dt style="color:var(--texto-suave);font-weight:normal;margin-top:0;">No se encontraron términos.</dt>';return}resultsList.innerHTML=entries.map(([term,data])=>`<dt tabindex="0">${term.charAt(0).toUpperCase()+term.slice(1)}</dt><dd>${data.def}${data.link?'<br><a href="'+data.link+'" class="link-voz-interior" target="_blank">Ver en La Voz Interior</a>':''}</dd>`).join('')}
+</script>
+</body>
+</html>

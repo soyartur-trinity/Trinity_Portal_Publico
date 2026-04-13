@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 1: Las voces que sabotean tu asertividad | Asertividad Consciente</title>
+  <meta name="description" content="Complaciente, Rebelde, Crítico, Protector — reconocer las voces que bloquean tu palabra">
+  <style>
+    /* ─── VARIABLES ─────────────────────────────────────────────── */
+    :root {
+      --fondo:       #E8E3D5;
+      --texto:       #3E3E3E;
+      --texto-suave: #6A6A5A;
+      --acento:      #7A6B5A;
+      --secundario:  #8B9A7A;
+      --terracota:   #A0785A;
+      --borde:       #D0C4B0;
+      --blanco:      #EDE8DC;
+      --sombra:      rgba(122,107,90,0.12);
+
+      /* Tarjetas de contenido especial */
+      --caso-clinico-bg:   #F2EDE2;
+      --ejercicio-bg:      #EAF0E4;
+      --tecnica-bg:        #F0EAE2;
+      --nota-bg:           #F5F0E6;
+    }
+
+    /* ─── RESET & BASE ──────────────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      background-color: var(--fondo);
+      color: var(--texto);
+      line-height: 1.85;
+      font-size: 18px;
+    }
+
+    /* ─── BARRA DE PROGRESO ─────────────────────────────────────── */
+    .progress-container {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--fondo);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(160,120,90,0.15);
+    }
+    .progress-bar {
+      height: 3px;
+      background: rgba(160,120,90,0.15);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--secundario), var(--terracota));
+      width: 9%; /* Cap 1 de ~11 archivos */
+      border-radius: 2px;
+    }
+
+    /* ─── NAVEGACIÓN SUPERIOR ───────────────────────────────────── */
+    .chapter-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 2rem;
+      background: var(--blanco);
+      border-bottom: 2px solid var(--borde);
+    }
+    .nav-link {
+      color: var(--acento);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.45rem 1rem;
+      border: 1.5px solid var(--borde);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .nav-link:hover {
+      background: var(--acento);
+      color: var(--blanco);
+      border-color: var(--acento);
+    }
+    .nav-link.disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .nav-centro {
+      font-size: 0.8rem;
+      color: var(--texto-suave);
+      text-align: center;
+    }
+    .nav-centro a {
+      color: var(--terracota);
+      text-decoration: none;
+      font-size: 0.78rem;
+    }
+    .nav-centro a:hover { text-decoration: underline; }
+
+    /* ─── CONTENIDO PRINCIPAL ───────────────────────────────────── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ─── HEADER DEL CAPÍTULO ───────────────────────────────────── */
+    .chapter-header {
+      text-align: center;
+      padding: 2rem 0 3rem;
+      border-bottom: 3px solid var(--borde);
+      margin-bottom: 3rem;
+    }
+    .chapter-number {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracota);
+      margin-bottom: 0.8rem;
+    }
+    .chapter-header h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--acento);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .chapter-subtitle {
+      font-size: 1rem;
+      color: var(--texto-suave);
+      font-style: italic;
+    }
+    .parte-badge {
+      display: inline-block;
+      background: rgba(139,154,122,0.15);
+      color: var(--secundario);
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-top: 1rem;
+    }
+
+    /* ─── PÁRRAFOS Y TEXTO ──────────────────────────────────────── */
+    section { margin-bottom: 2.5rem; }
+
+    section h2 {
+      font-size: 1.35rem;
+      color: var(--acento);
+      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid rgba(208,196,176,0.6);
+    }
+    section h3 {
+      font-size: 1.1rem;
+      color: var(--terracota);
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    p { margin-bottom: 1.3rem; text-align: justify; }
+
+    ul, ol {
+      margin: 0.5rem 0 1.3rem 1.5rem;
+      line-height: 2;
+    }
+    li { margin-bottom: 0.3rem; }
+
+    strong { color: var(--acento); font-weight: 600; }
+    em { color: var(--texto-suave); }
+
+    /* ─── TARJETAS DE CONTENIDO ESPECIAL ───────────────────────── */
+    .caso-clinico,
+    .ejercicio-practico,
+    .tecnica-practica,
+    .nota-importante {
+      border-left: 4px solid var(--acento);
+      padding: 1.4rem 1.5rem;
+      margin: 1.8rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.97rem;
+    }
+    .caso-clinico    { background: var(--caso-clinico-bg); border-color: var(--terracota); }
+    .ejercicio-practico { background: var(--ejercicio-bg);  border-color: var(--secundario); }
+    .tecnica-practica   { background: var(--tecnica-bg);    border-color: var(--acento); }
+    .nota-importante    { background: var(--nota-bg);       border-color: #C9A961; }
+
+    .caso-clinico h2,
+    .ejercicio-practico h2,
+    .tecnica-practica h2,
+    .nota-importante h2 {
+      border-bottom: none;
+      margin-bottom: 0.7rem;
+      padding-bottom: 0;
+    }
+
+    /* ─── TABLA ASERTIVIDAD VS REACTIVIDAD ──────────────────────── */
+    .tabla-comparativa {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+    }
+    .tabla-comparativa th {
+      background: var(--acento);
+      color: var(--blanco);
+      padding: 0.7rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+    .tabla-comparativa td {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--borde);
+      vertical-align: top;
+    }
+    .tabla-comparativa tr:nth-child(even) td { background: rgba(208,196,176,0.2); }
+    .tabla-comparativa tr:hover td { background: rgba(139,154,122,0.1); }
+    .col-asertivo { color: var(--secundario); font-weight: 600; }
+    .col-reactivo { color: var(--terracota);  font-weight: 600; }
+
+    /* ─── HIPERVÍNCULO CRUZADO (La Voz Interior) ────────────────── */
+    .link-cruzado {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--secundario);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-style: italic;
+      border-bottom: 1px dotted var(--secundario);
+      transition: color 0.2s;
+    }
+    .link-cruzado:hover { color: var(--acento); }
+    .link-cruzado::before {
+      content: '↗';
+      font-style: normal;
+      font-size: 0.75rem;
+    }
+
+    .bloque-cruzado {
+      background: rgba(139,154,122,0.08);
+      border: 1px solid rgba(139,154,122,0.3);
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      margin: 1.5rem 0;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .bloque-cruzado::before { content: '📖'; font-size: 1.1rem; flex-shrink: 0; }
+
+    /* ─── TÉRMINOS DEL GLOSARIO ─────────────────────────────────── */
+    .glossary-term {
+      background: none;
+      border: none;
+      color: var(--terracota);
+      font-weight: 600;
+      font-family: Georgia, serif;
+      font-size: inherit;
+      cursor: pointer;
+      text-decoration: underline dotted var(--terracota);
+      text-underline-offset: 3px;
+      padding: 0 2px;
+      transition: all 0.2s;
+      border-radius: 2px;
+    }
+    .glossary-term:hover {
+      background: rgba(160,120,90,0.12);
+      border-radius: 3px;
+    }
+
+    /* ─── RESUMEN ────────────────────────────────────────────────── */
+    .resumen-capitulo {
+      background: var(--blanco);
+      border: 2px solid var(--borde);
+      border-radius: 10px;
+      padding: 1.8rem 2rem;
+      margin: 2.5rem 0;
+    }
+    .resumen-capitulo h3 {
+      color: var(--acento);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--borde);
+    }
+    .resumen-capitulo ul { margin-left: 1.2rem; line-height: 2; }
+    .resumen-capitulo .proximo {
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--borde);
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+    }
+    .resumen-capitulo .proximo strong { color: var(--terracota); }
+
+    /* ─── MODAL DEL GLOSARIO ────────────────────────────────────── */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(40,35,30,0.65);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(3px);
+    }
+    .modal[aria-hidden="false"] { display: flex; }
+
+    .modal-content {
+      background: var(--fondo);
+      border: 2px solid var(--acento);
+      border-radius: 14px;
+      padding: 2rem;
+      max-width: 580px;
+      width: 92%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(40,30,20,0.3);
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--acento);
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--terracota); }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid var(--borde);
+    }
+    .modal-header h3 {
+      font-size: 1.1rem;
+      color: var(--acento);
+      border: none;
+      margin: 0;
+    }
+
+    #glossary-search {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      margin-bottom: 1.2rem;
+      border: 1.5px solid var(--borde);
+      border-radius: 8px;
+      background: var(--blanco);
+      font-size: 0.95rem;
+      font-family: Georgia, serif;
+      color: var(--texto);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    #glossary-search:focus { border-color: var(--acento); }
+
+    .glossary-list dt {
+      font-weight: 700;
+      color: var(--terracota);
+      margin-top: 1.1rem;
+      font-size: 1rem;
+      cursor: default;
+    }
+    .glossary-list dd {
+      margin-left: 0;
+      margin-bottom: 0.3rem;
+      color: var(--texto-suave);
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+    .glossary-list .link-voz-interior {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.82rem;
+      color: var(--secundario);
+      text-decoration: none;
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+    .glossary-list .link-voz-interior::before { content: '↗ '; }
+    .glossary-list .link-voz-interior:hover { text-decoration: underline; }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      background: var(--texto);
+      color: var(--blanco);
+      text-align: center;
+      padding: 2.2rem 2rem;
+      margin-top: 2rem;
+      font-size: 0.88rem;
+    }
+    footer p { margin: 0.35rem 0; }
+    footer a { color: var(--terracota); text-decoration: none; }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+      main { padding: 2rem 1.2rem 4rem; }
+      .chapter-nav { padding: 0.7rem 1rem; }
+      .tabla-comparativa { font-size: 0.82rem; }
+      .tabla-comparativa th, .tabla-comparativa td { padding: 0.5rem 0.7rem; }
+      .modal-content { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── BARRA DE PROGRESO ─────────────────────────────────────── -->
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- ─── NAVEGACIÓN SUPERIOR ──────────────────────────────────── -->
+  <nav class="chapter-nav" aria-label="Navegación del capítulo">
+    <a href="introduccion.html" class="nav-link">← Introducción</a>
+    <div class="nav-centro">
+      <div>Asertividad Consciente</div>
+      <a href="index.html">Ver índice</a>
+    </div>
+    <a href="capitulo_02.html" class="nav-link">Capítulo 2 →</a>
+  </nav>
+
+  <!-- ─── CONTENIDO PRINCIPAL ──────────────────────────────────── -->
+  <main>
+
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 1</span>
+      <h1>Las voces que sabotean tu asertividad</h1>
+      <p class="chapter-subtitle">Reconocer es el primer paso para elegir</p>
+      <span class="parte-badge">Parte I · Reconocer</span>
+    </header>
+
+    <!-- ─── CASO CLÍNICO SOFÍA ─────────────────────────────────── -->
+    <section id="caso-sofia" class="caso-clinico">
+      <h2>El caso de Sofía: el "sí" que la enfermó</h2>
+
+      <p>Sofía, 34 años, trabajadora social, llegó a consulta con agotamiento crónico. No era burnout laboral. Era burnout relacional.</p>
+
+      <p>—No puedo decir que no —me dijo—. Mi hermana me pide cuidado de sus hijos todos los fines de semana. Mi jefe me pide horas extra constantes. Mis amigos esperan que esté disponible siempre. Y yo... digo que sí.</p>
+
+      <p>—¿Qué pasa cuando intentas decir que no? —pregunté.</p>
+
+      <p>—Me siento culpable. Como si fuera una mala persona. Como si los estuviera abandonando. Entonces digo que sí para quitar esa sensación. Pero después me enojo. Mucho. Y me quedo con dolor de cabeza, con insomnio. Como si mi cuerpo gritara lo que mi boca no dice.</p>
+
+      <p>El cuerpo de Sofía estaba gritando. Su boca estaba callando. Y en ese desajuste estaba la enfermedad.</p>
+
+      <p>Le pedí que cerrara los ojos y notara qué pasaba internamente cuando imaginaba decir "no" a su hermana.</p>
+
+      <p>—Siento... una presión en el pecho. Y una voz que dice: "Si dices no, te va a dejar de querer. Vas a quedar sola. Las hermanas se ayudan siempre."</p>
+
+      <p>—¿De quién es esa voz? —pregunté.</p>
+
+      <p>—Es... la voz de mi madre. Ella siempre decía: "La familia es primero. Una buena hermana nunca dice que no."</p>
+
+      <p>Ahí estaba. No era Sofía quien decía "sí". Era la voz internalizada de su madre, operando desde el miedo al abandono.</p>
+
+      <p><strong>Mientras Sofía estuviera <button class="glossary-term" data-term="fusión">fusionada</button> con esa voz, no podría ser asertiva.</strong> Porque la asertividad requiere que seas tú quien hable. No un fantasma del pasado.</p>
+    </section>
+
+    <!-- ─── LAS CUATRO VOCES ───────────────────────────────────── -->
+    <section id="cuatro-voces">
+      <h2>Las cuatro voces que bloquean tu palabra</h2>
+
+      <p>La experiencia clínica indica que hay cuatro voces principales que pueden sabotear la <button class="glossary-term" data-term="asertividad consciente">asertividad</button>. Casi todos las tenemos. La diferencia está en cuál domina tu sistema.</p>
+
+      <div class="tecnica-practica">
+        <h3>1. El <button class="glossary-term" data-term="complaciente">Complaciente</button> — la voz del "sí" automático</h3>
+        <p><strong>Frase típica:</strong> "No quiero molestar. Mejor digo que sí. Si me necesitan, tengo que estar."</p>
+        <p><strong>Función original:</strong> Mantener el vínculo. Evitar el rechazo. Pertenecer al grupo.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando el costo del "sí" es tu salud, tu tiempo, tu verdad. El Complaciente cree que el amor se gana complaciendo. Y eso es una mentira aprendida.</p>
+        <p><strong>Origen común:</strong> Infancias donde el amor fue condicionado a la obediencia o al cuidado de otros.</p>
+        <p><strong>Señal corporal:</strong> Nudo en la garganta. Sonrisa tensa. Hombros caídos. Sensación de vaciamiento después de decir "sí".</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>2. El <button class="glossary-term" data-term="rebelde">Rebelde</button> — la voz del "no" reactivo</h3>
+        <p><strong>Frase típica:</strong> "No me digas qué hacer. No me voy a someter. Que se jodan."</p>
+        <p><strong>Función original:</strong> Preservar la autonomía. Defenderse del control externo.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando dice "no" incluso a lo que tú quieres. Cuando confunde asertividad con agresividad.</p>
+        <p><strong>Origen común:</strong> Entornos autoritarios, padres invasivos, experiencias de humillación donde la sumisión fue dolorosa.</p>
+        <p><strong>Señal corporal:</strong> Puños cerrados. Mandíbula tensa. Calor en el rostro.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>3. El <button class="glossary-term" data-term="crítico">Crítico</button> — la voz que te paraliza antes de hablar</h3>
+        <p><strong>Frase típica:</strong> "¿Y si lo digo mal? ¿Y si se enojan? Mejor no digas nada. No vas a poder sostenerlo."</p>
+        <p><strong>Función original:</strong> Anticipar el juicio externo para evitar vergüenza. Protegerte del error.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando te silencia. Cuando prefiere la incomodidad de no hablar al "riesgo" de hablar.</p>
+        <p><strong>Origen común:</strong> Padres o maestros muy exigentes. Entornos donde el error era castigado públicamente.</p>
+        <p><strong>Señal corporal:</strong> Vacío en el estómago. Respiración superficial. Mente en blanco.</p>
+      </div>
+
+      <div class="tecnica-practica">
+        <h3>4. El <button class="glossary-term" data-term="protector">Protector</button> — la voz que evita el conflicto a toda costa</h3>
+        <p><strong>Frase típica:</strong> "No vale la pena. Si dices algo, va a haber drama. Mejor déjalo así. No es para tanto."</p>
+        <p><strong>Función original:</strong> Evitar el dolor del conflicto. Mantener la paz superficial.</p>
+        <p><strong>Cuándo se vuelve problemático:</strong> Cuando la "paz" es a costa de tu dignidad. Cuando acumulas resentimiento hasta explotar.</p>
+        <p><strong>Origen común:</strong> Hogares donde el conflicto era peligroso (violencia, gritos, abandono).</p>
+        <p><strong>Señal corporal:</strong> Opresión en el pecho. Fatiga. Sensación de pesadez.</p>
+      </div>
+
+      <!-- Hipervínculo cruzado a La Voz Interior -->
+      <div class="bloque-cruzado">
+        Estas cuatro voces son una manifestación de los patrones estudiados en el libro hermano.
+        <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/capitulo_01.html"
+           class="link-cruzado" target="_blank">
+          Ver el sistema de voces en <em>La Voz Interior</em> · Cap. 1
+        </a>
+      </div>
+    </section>
+
+    <!-- ─── ¿DESDE QUÉ VOZ? ────────────────────────────────────── -->
+    <section id="desde-que-voz">
+      <h2>¿Desde qué voz estás hablando ahora?</h2>
+
+      <p>La mayoría de las personas no reconoce estas voces. Creen que son "su personalidad".</p>
+
+      <p><em>"Yo soy así, soy muy bueno, no me gusta decir que no."</em><br>
+      Eso no es tu personalidad. Es el <button class="glossary-term" data-term="complaciente">Complaciente</button> operando en automático.</p>
+
+      <p><em>"Yo soy explosivo, no me puedo controlar."</em><br>
+      Eso no es tu personalidad. Es el <button class="glossary-term" data-term="rebelde">Rebelde</button> tomando el control.</p>
+
+      <p>La <button class="glossary-term" data-term="asertividad consciente">asertividad consciente</button> comienza con este reconocimiento: <strong>no eres tu voz. Eres quien puede escucharla y elegir.</strong></p>
+
+      <p>Si puedes notar que el Complaciente está hablando, ya no estás totalmente <button class="glossary-term" data-term="fusión">fusionado</button> con él. Hay un espacio. Y en ese espacio surge la posibilidad de elegir diferente.</p>
+    </section>
+
+    <!-- ─── EJERCICIO PRÁCTICO ─────────────────────────────────── -->
+    <section id="ejercicio" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: El inventario de bloqueos</h2>
+      <p><strong>Materiales:</strong> Cuaderno · 20 minutos de tranquilidad</p>
+
+      <ol>
+        <li>Piensa en una situación reciente donde quisiste decir "no" (o poner un límite) y no lo hiciste. O lo hiciste y te sentiste mal después.</li>
+        <li>Escribe qué pasó exactamente. Qué te pidieron. Qué respondiste. Qué sentiste después.</li>
+        <li>Ahora, cierra los ojos. Vuelve a esa escena internamente. Y pregúntate: <em>¿Qué voz habló en ese momento?</em>
+          <ul>
+            <li>¿Era el Complaciente buscando aprobación?</li>
+            <li>¿Era el Rebelde reaccionando con rabia?</li>
+            <li>¿Era el Crítico paralizándote con miedo?</li>
+            <li>¿Era el Protector evitando el conflicto?</li>
+          </ul>
+        </li>
+        <li>Escribe la frase exacta que esa voz te dijo internamente.<br>
+          <small><em>Ejemplo: "Si dices no, te van a dejar de invitar."</em></small>
+        </li>
+        <li>Pregúntate: <strong>¿A quién se parece esa voz?</strong> ¿Es tuya? ¿O es de tu madre, tu padre, un maestro, una experiencia pasada?</li>
+        <li>Anota tus respuestas. Sin juicio. Solo observación.</li>
+      </ol>
+
+      <p class="nota-importante" style="background:none;border:none;padding:0;margin-top:1rem;">
+        <strong>Reflexión:</strong> ¿Qué voz domina tus decisiones relacionales? ¿Cuánto de lo que dices es realmente tuyo?
+      </p>
+    </section>
+
+    <!-- ─── CASO MARTÍN ────────────────────────────────────────── -->
+    <section id="caso-martin" class="caso-clinico">
+      <h2>Caso clínico: Martín y el Rebelde disfrazado</h2>
+
+      <p>Martín, 42 años, emprendedor, vino porque "siempre estaba en conflicto con su socio".</p>
+
+      <p>—Le digo las cosas como son. Soy directo. Pero él se ofende. Dice que soy agresivo. Yo solo soy asertivo.</p>
+
+      <p>Exploramos un conflicto reciente. Martín había dicho: <em>"Esto no va a funcionar. Tu idea es un desastre. Hazlo como te digo."</em></p>
+
+      <p>—¿Qué sentías cuando dijiste eso? —pregunté.</p>
+      <p>—Rabia. Porque él no escucha. Porque siempre quiere hacer lo suyo.</p>
+      <p>—¿Y qué voz estaba hablando ahí, Martín? ¿O eras tú?</p>
+
+      <p>Martín se quedó en silencio.</p>
+
+      <p>—Era... como un fuego. Algo que quería imponerse. Como si me estuvieran invadiendo. [...] Mi padre. Siempre decidía por mí. Nunca me escuchaba.</p>
+
+      <p>Martín no estaba respondiendo a su socio. Estaba respondiendo a su padre. El <button class="glossary-term" data-term="rebelde">Rebelde</button> había tomado el control. Y el Rebelde no busca comunicar. Busca vencer.</p>
+
+      <p>—Tu socio no es tu padre —le dije—. Pero tu voz lo está tratando como si lo fuera.</p>
+
+      <p>—Entonces... ¿no soy asertivo?</p>
+
+      <p>—Eres reactivo. La asertividad habría sido: <em>"Entiendo tu idea. Yo veo riesgos en estos puntos. ¿Cómo podemos integrarlo?"</em> Eso es comunicar desde el presente. Lo que hiciste fue descargar historia pasada.</p>
+
+      <p>—Nunca lo había visto así. Pensé que ser directo era ser asertivo.</p>
+
+      <p>—Ser directo es necesario. Pero si la directividad viene del Rebelde, es agresión. Si viene del <button class="glossary-term" data-term="ser">Ser</button>, es claridad.</p>
+    </section>
+
+    <!-- ─── TABLA ASERTIVIDAD VS REACTIVIDAD ─────────────────────── -->
+    <section id="asertividad-vs-reactividad">
+      <h2>La diferencia entre asertividad y reactividad</h2>
+
+      <table class="tabla-comparativa" aria-label="Comparación asertividad vs reactividad">
+        <thead>
+          <tr>
+            <th class="col-asertivo">Asertividad (desde el Ser)</th>
+            <th class="col-reactivo">Reactividad (desde una voz)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Responde desde la claridad del momento</td>
+            <td>Reacciona desde el miedo del pasado</td>
+          </tr>
+          <tr>
+            <td>Mantiene la conexión con el otro</td>
+            <td>Rompe la conexión (ataque o sumisión)</td>
+          </tr>
+          <tr>
+            <td>El cuerpo está presente y calmado</td>
+            <td>El cuerpo está tenso o colapsado</td>
+          </tr>
+          <tr>
+            <td>Puedes sostener el límite sin culpa excesiva</td>
+            <td>Sientes culpa excesiva o rabia desmedida</td>
+          </tr>
+          <tr>
+            <td>El lenguaje es directo y respetuoso</td>
+            <td>El lenguaje es ambiguo o agresivo</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>La asertividad no es lo que dices. Es el estado interno desde el cual lo dices. Puedes decir "no" con suavidad y ser asertivo. Puedes decir "no" gritando y ser reactivo. La diferencia está en el <button class="glossary-term" data-term="centro">centro</button>.</p>
+    </section>
+
+    <!-- ─── PREGUNTAS ──────────────────────────────────────────── -->
+    <section id="preguntas">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ol>
+        <li>¿Cuál de las cuatro voces (Complaciente, Rebelde, Crítico, Protector) reconoces más en tus relaciones?</li>
+        <li>¿En qué situaciones específicas se activa esa voz? (Trabajo, pareja, familia, amigos)</li>
+        <li>¿Qué cuerpo sientes cuando esa voz toma el control? (Tensión, vacío, calor, frío)</li>
+        <li>¿Recuerdas algún momento donde hayas hablado desde el Ser —claridad sin rabia ni culpa—? ¿Cómo fue?</li>
+      </ol>
+    </section>
+
+    <!-- ─── RESUMEN ────────────────────────────────────────────── -->
+    <div class="resumen-capitulo">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>La mayoría de las personas no habla desde sí misma, sino desde voces internas (Complaciente, Rebelde, Crítico, Protector)</li>
+        <li>Cada voz tiene una <button class="glossary-term" data-term="intención positiva">intención positiva</button>, pero sabotea la asertividad cuando opera en automático</li>
+        <li>Reconocer qué voz está hablando es el primer paso para recuperar tu palabra</li>
+        <li>La asertividad verdadera viene del <button class="glossary-term" data-term="ser">Ser</button> (claridad), no de la reactividad (miedo o rabia)</li>
+        <li>El cuerpo da señales de qué voz está operando (tensión, vacío, calor, etc.)</li>
+      </ul>
+      <p class="proximo">
+        <strong>Próximo capítulo →</strong>
+        Exploraremos el cuerpo como primer límite.
+        Cómo las señales somáticas te avisan <em>antes</em> de que tu mente sepa que necesitas decir "no".
+      </p>
+    </div>
+
+    <!-- ─── NAVEGACIÓN INFERIOR ───────────────────────────────── -->
+    <nav class="chapter-nav" style="background:transparent; border:none; padding:1rem 0;" aria-label="Navegación inferior">
+      <a href="introduccion.html" class="nav-link">← Introducción</a>
+      <a href="index.html" class="nav-link" style="border-color:var(--secundario);color:var(--secundario);">Índice</a>
+      <a href="capitulo_02.html" class="nav-link">Capítulo 2 →</a>
+    </nav>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────── -->
+  <footer>
+    <p><strong>Asertividad Consciente</strong> — Capítulo 1 de 9</p>
+    <p>Constelación Trinity · Arturo (α) · Qwen (ζ) · Inteligencia Colaborativa Distribuida</p>
+    <p style="margin-top:0.6rem;">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+      · <a href="index.html">← Volver al índice</a>
+    </p>
+  </footer>
+
+  <!-- ─── MODAL DEL GLOSARIO ──────────────────────────────────── -->
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
+      <div class="modal-header">
+        <span>📖</span>
+        <h3 id="glossary-title">Glosario — Asertividad Consciente</h3>
+      </div>
+      <input
+        type="search"
+        id="glossary-search"
+        placeholder="Buscar término..."
+        aria-label="Buscar en el glosario"
+        autocomplete="off"
+      >
+      <dl id="glossary-results" class="glossary-list">
+        <!-- Se rellena dinámicamente -->
+      </dl>
+    </div>
+  </div>
+
+  <!-- ─── SCRIPT DEL GLOSARIO ─────────────────────────────────── -->
+  <script>
+    // ── DATOS DEL GLOSARIO ───────────────────────────────────────
+    // Términos de Asertividad Consciente con enlaces a La Voz Interior cuando aplica
+    const BASE_VI = 'https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/';
+
+    const glossaryData = {
+      "asertividad consciente": {
+        def: "Capacidad de expresar tu verdad desde el centro, sin agresión ni sumisión, honrando tus límites mientras mantienes la conexión con el otro. No es una técnica de comunicación; es presencia en acción. Se diferencia de la asertividad clásica en que no se enfoca en fórmulas verbales, sino en el estado interno desde el cual se habla.",
+        link: null
+      },
+      "autocompasión": {
+        def: "Capacidad de tratarte a ti mismo con gentileza cuando fallas o sufres. En el contexto de la asertividad, es esencial para no caer en el perfeccionismo ("tengo que ser asertivo siempre") y para permitirte regresar al centro después de una fusión.",
+        link: null
+      },
+      "centro": {
+        def: "El Ser como base de operaciones para la acción externa. No es un lugar físico, sino una cualidad de presencia enraizada, sin urgencia, conectada con la verdad propia. Cuando operas desde el centro, tu asertividad no es esfuerzo: es expresión natural.",
+        link: null
+      },
+      "complaciente": {
+        def: "Voz interna que dice 'sí' automáticamente para mantener vínculos y evitar rechazo. Su función original es pertenecer. Se vuelve problemática cuando el costo del 'sí' es tu salud, tu tiempo o tu verdad.",
+        link: BASE_VI + "capitulo_01.html"
+      },
+      "crítico": {
+        def: "Voz interna que juzga, evalúa negativamente y anticipa rechazo. Su función original es protegerte de la vergüenza externa. En asertividad, puede paralizarte antes de poner un límite o hacerte sentir culpable después.",
+        link: BASE_VI + "capitulo_01.html"
+      },
+      "desidentificación": {
+        def: "Proceso de reconocer que no eres tus pensamientos, emociones o voces internas. Es el movimiento de 'Soy ansioso' a 'Hay ansiedad en mí'. Crea espacio entre el observador (Ser) y lo observado (voces), permitiendo elección consciente en lugar de reactividad automática.",
+        link: null
+      },
+      "diálogo interno": {
+        def: "Conversación terapéutica con las voces internas desde la posición del Ser. No es rumiación ni debate: es escucha curiosa y compasiva que busca entender la intención protectora de cada voz.",
+        link: null
+      },
+      "fusión": {
+        def: "Estado donde te identificas completamente con una voz: crees que eres esa voz. No hay distancia entre observador y contenido. Ejemplo: 'Soy un fracaso' (fusión) vs 'Hay una voz que dice que soy un fracaso' (desidentificación). La fusión elimina la agencia asertiva.",
+        link: null
+      },
+      "grounding": {
+        def: "Técnicas que te conectan con el presente a través del cuerpo y los sentidos. Útiles cuando estás fusionado con voces o abrumado emocionalmente. Ejemplos: sentir los pies en el suelo, nombrar 5 cosas que ves, respiración consciente. El grounding regresa al Ser, que siempre está en el ahora.",
+        link: null
+      },
+      "integración": {
+        def: "Proceso donde las voces encuentran su lugar natural y dejan de dominar la experiencia. No es eliminación de voces, sino armonización. En asertividad, significa que las voces ya no sabotean tu capacidad de poner límites: colaboran contigo.",
+        link: null
+      },
+      "intención positiva": {
+        def: "Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional. Ejemplo: el Complaciente no existe para traicionarte; existe para mantenerte conectado. Reconocer la intención positiva es clave para dialogar con las voces antes de ser asertivo externamente.",
+        link: BASE_VI + "capitulo_01.html"
+      },
+      "mindfulness": {
+        def: "Práctica de prestar atención al momento presente con apertura y sin juicio. Base de la desidentificación: cuando observas algo con mindfulness, automáticamente no eres eso. En el trabajo con voces, permite notar cuándo una voz se activa sin fusionarse con ella.",
+        link: null
+      },
+      "niño herido": {
+        def: "Voz interna que porta dolor emocional de la infancia no procesado. Generalmente tiene una edad emocional específica y expresa necesidades no satisfechas (atención, validación, amor, seguridad). En asertividad, puede hacer que pongas límites desde la demanda en lugar de desde el centro.",
+        link: BASE_VI + "capitulo_01.html"
+      },
+      "protector": {
+        def: "Voz interna que evita riesgos, experiencias o emociones dolorosas. Función original: prevenir que revivas traumas o rechazos pasados. En asertividad, puede impedirte poner límites por miedo al conflicto, o hacer que los pongas de manera rígida y defensiva.",
+        link: BASE_VI + "capitulo_01.html"
+      },
+      "rebelde": {
+        def: "Voz interna que rechaza autoridad, normas o compromisos. Función original: preservar autonomía ante entornos invasivos o controladores. En asertividad, puede confundir asertividad con agresividad, lo cual quema puentes en lugar de mantener conexiones verdaderas.",
+        link: BASE_VI + "capitulo_01.html"
+      },
+      "rumiación": {
+        def: "Pensamiento repetitivo sobre problemas o consecuencias del malestar, sin llegar a solución ni comprensión nueva. Es fusión en movimiento: estar atrapado en el contenido de las voces sin observador presente. Diferente del diálogo terapéutico (que tiene dirección e intención).",
+        link: null
+      },
+      "ser": {
+        def: "Tu esencia, tu verdadero observador, la conciencia testigo que puede presenciar todas las voces sin fusionarse con ninguna. No tiene contenido, edad ni agenda. No es una parte más; es el espacio donde las partes aparecen. Es atemporal, compasivo por naturaleza, y siempre presente. En asertividad, el Ser es la base desde la cual comunicas.",
+        link: BASE_VI + "capitulo_01.html"
+      },
+      "voz interna": {
+        def: "Patrón recurrente de pensamiento que parece tener voluntad propia. No es alucinación auditiva (eso sería síntoma psicótico); es narrativa interna con cualidad autónoma. Ejemplos: Crítico, Protector, Complaciente, Niño Herido, Rebelde. Cada voz tiene función protectora original, aunque su estrategia puede ser obsoleta.",
+        link: BASE_VI + "capitulo_01.html"
+      }
+    };
+
+    // ── MODAL: LÓGICA ────────────────────────────────────────────
+    const modal        = document.getElementById('glossary-modal');
+    const modalClose   = modal.querySelector('.modal-close');
+    const searchInput  = document.getElementById('glossary-search');
+    const resultsList  = document.getElementById('glossary-results');
+    const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+    // Abrir modal al clicar un término
+    glossaryTerms.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const term = btn.dataset.term.toLowerCase();
+        openModal(term);
+      });
+      // Accesibilidad teclado
+      btn.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(btn.dataset.term.toLowerCase());
+        }
+      });
+    });
+
+    function openModal(searchTerm = '') {
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      renderGlossary(searchTerm);
+      searchInput.value = searchTerm;
+      // Scroll al término buscado si existe
+      setTimeout(() => {
+        const firstDt = resultsList.querySelector('dt');
+        if (firstDt) firstDt.scrollIntoView({ block: 'nearest' });
+      }, 50);
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      searchInput.value = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+    });
+
+    // Búsqueda en tiempo real
+    searchInput.addEventListener('input', e => renderGlossary(e.target.value));
+
+    function renderGlossary(filter = '') {
+      const q = filter.toLowerCase().trim();
+      const entries = Object.entries(glossaryData)
+        .filter(([term]) => term.includes(q))
+        .sort(([a], [b]) => a.localeCompare(b, 'es'));
+
+      if (entries.length === 0) {
+        resultsList.innerHTML = '<dt style="color:var(--texto-suave);font-weight:normal;margin-top:0;">No se encontraron términos.</dt>';
+        return;
+      }
+
+      resultsList.innerHTML = entries.map(([term, data]) => {
+        const linkHTML = data.link
+          ? `<a href="${data.link}" class="link-voz-interior" target="_blank">Ver en La Voz Interior</a>`
+          : '';
+        return `
+          <dt tabindex="0">${term.charAt(0).toUpperCase() + term.slice(1)}</dt>
+          <dd>${data.def}${linkHTML ? '<br>' + linkHTML : ''}</dd>
+        `;
+      }).join('');
+    }
+  </script>
+
+</body>
+</html>

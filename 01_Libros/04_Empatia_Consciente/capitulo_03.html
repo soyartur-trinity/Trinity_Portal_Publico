@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capítulo 3: El centro como base de operaciones | Asertividad Consciente</title>
+  <style>
+    :root{--fondo:#E8E3D5;--texto:#3E3E3E;--texto-suave:#6A6A5A;--acento:#7A6B5A;--secundario:#8B9A7A;--terracota:#A0785A;--borde:#D0C4B0;--blanco:#EDE8DC;--caso-clinico-bg:#F2EDE2;--ejercicio-bg:#EAF0E4;--tecnica-bg:#F0EAE2;--nota-bg:#F5F0E6}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:Georgia,serif;background:var(--fondo);color:var(--texto);line-height:1.85;font-size:18px}
+    .progress-container{position:sticky;top:0;z-index:200;background:var(--fondo);padding:6px 0;border-bottom:1px solid rgba(160,120,90,0.15)}
+    .progress-bar{height:3px;background:rgba(160,120,90,0.15);border-radius:2px;overflow:hidden}
+    .progress-fill{height:100%;background:linear-gradient(90deg,var(--secundario),var(--terracota));width:27%;border-radius:2px}
+    .chapter-nav{display:flex;justify-content:space-between;align-items:center;padding:.9rem 2rem;background:var(--blanco);border-bottom:2px solid var(--borde)}
+    .nav-link{color:var(--acento);text-decoration:none;font-weight:600;font-size:.9rem;padding:.45rem 1rem;border:1.5px solid var(--borde);border-radius:6px;transition:all .2s}
+    .nav-link:hover{background:var(--acento);color:var(--blanco);border-color:var(--acento)}
+    .nav-centro{font-size:.8rem;color:var(--texto-suave);text-align:center}
+    .nav-centro a{color:var(--terracota);text-decoration:none;font-size:.78rem}
+    main{max-width:760px;margin:0 auto;padding:3rem 2rem 5rem}
+    .chapter-header{text-align:center;padding:2rem 0 3rem;border-bottom:3px solid var(--borde);margin-bottom:3rem}
+    .chapter-number{display:inline-block;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--terracota);margin-bottom:.8rem}
+    .chapter-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--acento);line-height:1.25;margin-bottom:.5rem}
+    .chapter-subtitle{font-size:1rem;color:var(--texto-suave);font-style:italic}
+    .parte-badge{display:inline-block;background:rgba(139,154,122,0.15);color:var(--secundario);font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;padding:.2rem .7rem;border-radius:20px;margin-top:1rem}
+    section{margin-bottom:2.5rem}
+    section h2{font-size:1.35rem;color:var(--acento);margin-bottom:1rem;padding-bottom:.35rem;border-bottom:1px solid rgba(208,196,176,0.6)}
+    section h3{font-size:1.1rem;color:var(--terracota);margin:1.2rem 0 .5rem}
+    p{margin-bottom:1.3rem;text-align:justify}
+    ul,ol{margin:.5rem 0 1.3rem 1.5rem;line-height:2}
+    strong{color:var(--acento);font-weight:600} em{color:var(--texto-suave)}
+    .caso-clinico,.ejercicio-practico,.tecnica-practica,.nota-importante{border-left:4px solid var(--acento);padding:1.4rem 1.5rem;margin:1.8rem 0;border-radius:0 8px 8px 0;font-size:.97rem}
+    .caso-clinico{background:var(--caso-clinico-bg);border-color:var(--terracota)}
+    .ejercicio-practico{background:var(--ejercicio-bg);border-color:var(--secundario)}
+    .tecnica-practica{background:var(--tecnica-bg);border-color:var(--acento)}
+    .nota-importante{background:var(--nota-bg);border-color:#C9A961}
+    .caso-clinico h2,.ejercicio-practico h2,.tecnica-practica h2,.nota-importante h2{border-bottom:none;margin-bottom:.7rem;padding-bottom:0}
+    .bloque-cruzado{background:rgba(139,154,122,0.08);border:1px solid rgba(139,154,122,0.3);border-radius:8px;padding:.9rem 1.2rem;margin:1.5rem 0;font-size:.88rem;display:flex;align-items:center;gap:.8rem}
+    .bloque-cruzado::before{content:'📖';font-size:1.1rem;flex-shrink:0}
+    .link-cruzado{display:inline-flex;align-items:center;gap:.4rem;color:var(--secundario);text-decoration:none;font-size:.85rem;font-style:italic;border-bottom:1px dotted var(--secundario)}
+    .link-cruzado::before{content:'↗';font-style:normal;font-size:.75rem}
+    .glossary-term{background:none;border:none;color:var(--terracota);font-weight:600;font-family:Georgia,serif;font-size:inherit;cursor:pointer;text-decoration:underline dotted var(--terracota);text-underline-offset:3px;padding:0 2px;border-radius:2px}
+    .glossary-term:hover{background:rgba(160,120,90,0.12)}
+    .resumen-capitulo{background:var(--blanco);border:2px solid var(--borde);border-radius:10px;padding:1.8rem 2rem;margin:2.5rem 0}
+    .resumen-capitulo h3{color:var(--acento);font-size:1.1rem;margin-bottom:1rem;padding-bottom:.4rem;border-bottom:1px solid var(--borde)}
+    .resumen-capitulo ul{margin-left:1.2rem;line-height:2}
+    .resumen-capitulo .proximo{margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--borde);font-size:.9rem;color:var(--texto-suave)}
+    .resumen-capitulo .proximo strong{color:var(--terracota)}
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(40,35,30,0.65);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(3px)}
+    .modal[aria-hidden="false"]{display:flex}
+    .modal-content{background:var(--fondo);border:2px solid var(--acento);border-radius:14px;padding:2rem;max-width:580px;width:92%;max-height:80vh;overflow-y:auto;position:relative;box-shadow:0 20px 60px rgba(40,30,20,0.3)}
+    .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--acento)}
+    .modal-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:2px solid var(--borde)}
+    .modal-header h3{font-size:1.1rem;color:var(--acento);border:none;margin:0}
+    #glossary-search{width:100%;padding:.7rem 1rem;margin-bottom:1.2rem;border:1.5px solid var(--borde);border-radius:8px;background:var(--blanco);font-size:.95rem;font-family:Georgia,serif;color:var(--texto);outline:none}
+    #glossary-search:focus{border-color:var(--acento)}
+    .glossary-list dt{font-weight:700;color:var(--terracota);margin-top:1.1rem;font-size:1rem}
+    .glossary-list dd{margin-left:0;margin-bottom:.3rem;color:var(--texto-suave);line-height:1.7;font-size:.93rem}
+    .glossary-list .link-voz-interior{display:inline-flex;align-items:center;gap:.3rem;font-size:.82rem;color:var(--secundario);text-decoration:none;font-style:italic;margin-top:.3rem}
+    .glossary-list .link-voz-interior::before{content:'↗ '}
+    footer{background:var(--texto);color:var(--blanco);text-align:center;padding:2.2rem 2rem;margin-top:2rem;font-size:.88rem}
+    footer p{margin:.35rem 0} footer a{color:var(--terracota);text-decoration:none}
+    @media(max-width:768px){body{font-size:16px}main{padding:2rem 1.2rem 4rem}.chapter-nav{padding:.7rem 1rem}}
+  </style>
+</head>
+<body>
+  <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
+  <nav class="chapter-nav">
+    <a href="capitulo_02.html" class="nav-link">← Capítulo 2</a>
+    <div class="nav-centro"><div>Asertividad Consciente</div><a href="index.html">Ver índice</a></div>
+    <a href="capitulo_04.html" class="nav-link">Capítulo 4 →</a>
+  </nav>
+  <main>
+    <header class="chapter-header">
+      <span class="chapter-number">Capítulo 3</span>
+      <h1>El centro como base de operaciones</h1>
+      <p class="chapter-subtitle">Firmeza sin dureza — operar desde el Ser</p>
+      <span class="parte-badge">Parte II · Dialogar</span>
+    </header>
+
+    <section id="que-es-centro">
+      <h2>¿Qué es el centro?</h2>
+      <p>El <button class="glossary-term" data-term="centro">centro</button> no es un lugar físico. Es una cualidad de presencia: enraizada, sin urgencia, conectada con la verdad propia. Cuando operas desde el centro, tu asertividad no es esfuerzo. Es expresión natural.</p>
+      <p>El centro es lo que en este libro llamamos el <button class="glossary-term" data-term="ser">Ser</button> en acción. No el ego que necesita defender su imagen. No la voz que necesita ganar. Sino la conciencia que puede observar todo eso sin ser arrastrada por ello.</p>
+      <p>Imagina un árbol: raíces profundas (firmeza en valores), ramas que se mueven con el viento (flexibilidad en formas). Eso es el centro. Firme, pero no rígido. Claro, pero no duro.</p>
+    </section>
+
+    <section id="caso-clinico" class="caso-clinico">
+      <h2>El caso de Lucía: hablar desde el miedo</h2>
+      <p>Lucía, 39 años, directora de una ONG, llegó a consulta con una pregunta precisa:</p>
+      <p>—Sé lo que tengo que decir. Pero cuando llega el momento, algo cambia. La voz me tiembla. Me apresuro. Y después me arrepiento de cómo lo dije, aunque el contenido fuera correcto.</p>
+      <p>Exploramos una situación reciente. Tenía que decirle a un donante que no podía aceptar sus condiciones.</p>
+      <p>—¿Qué sentías en el cuerpo antes de la conversación? —pregunté.<br>—El estómago apretado. Las manos frías. Respiración muy superficial.</p>
+      <p>—¿Y desde dónde iniciaste la conversación?<br>—Desde el miedo. Desde "¿qué pasa si se enoja? ¿Si retira el apoyo?"</p>
+      <p>Ahí estaba. Lucía sabía <em>qué</em> decir. Pero no sabía cómo acceder al centro <em>antes</em> de hablar. Trabajamos exactamente eso: no el guion, sino el estado interno desde el cual pronunciarlo.</p>
+    </section>
+
+    <section id="tres-columnas">
+      <h2>Las tres columnas del centro</h2>
+      <div class="tecnica-practica">
+        <h3>Columna 1: Grounding somático</h3>
+        <p>Antes de cualquier conversación difícil, conecta con el cuerpo:</p>
+        <ul>
+          <li>Siente los pies en el suelo (literalmente, presiónalos contra el piso)</li>
+          <li>Exhala lentamente por la boca (libera la tensión acumulada)</li>
+          <li>Nota el peso de tu cuerpo en la silla o de pie</li>
+        </ul>
+        <p>Esto no es relajación. Es <button class="glossary-term" data-term="grounding">grounding</button>: anclar la conciencia en el presente para que no sea arrastrada por el futuro imaginado (miedo) o el pasado recordado (herida).</p>
+      </div>
+      <div class="tecnica-practica">
+        <h3>Columna 2: Desidentificación de la urgencia</h3>
+        <p>Antes de hablar, nota si hay urgencia en tu sistema. La urgencia es una señal de que una voz está al mando. El <button class="glossary-term" data-term="ser">Ser</button> no tiene urgencia. Tiene claridad.</p>
+        <p>Pregúntate: <em>"¿Necesito resolver esto ahora, o puedo tomarlo con calma?"</em> Si hay urgencia, trabaja primero la <button class="glossary-term" data-term="desidentificación">desidentificación</button>. Observa la voz. Nómbrala. No la sigas.</p>
+      </div>
+      <div class="tecnica-practica">
+        <h3>Columna 3: Intención positiva hacia el otro</h3>
+        <p>Antes de hablar, hazte esta pregunta: <em>"¿Quiero que esta conversación destruya o construya?"</em></p>
+        <p>La <button class="glossary-term" data-term="asertividad consciente">asertividad consciente</button> no busca ganar. Busca comunicar verdad mientras mantiene la conexión. Si tu intención es "vencer al otro", no estás en el centro. Estás en el Rebelde o el Crítico.</p>
+      </div>
+    </section>
+
+    <section id="recuperar-centro">
+      <h2>Cuando el centro se pierde (y cómo recuperarlo)</h2>
+      <p>Habrá momentos donde perderás el centro. Te dispararán, te insultarán, te presionarán. Y sentirás cómo el calor sube, la respiración se corta, y la voz reactiva toma el control.</p>
+      <p>Está bien. No eres un maestro zen. Eres humano.</p>
+      <p>La asertividad consciente no es nunca perder el centro. Es <strong>darte cuenta rápido</strong> cuando lo perdiste.</p>
+      <div class="nota-importante">
+        <h3>Señales de que perdiste el centro</h3>
+        <ul>
+          <li>Estás justificando en exceso.</li>
+          <li>Estás hablando rápido.</li>
+          <li>Sientes calor en el rostro o tensión en el pecho.</li>
+          <li>Tu objetivo cambió de "ser verdadero" a "tener razón" o "que se callen".</li>
+        </ul>
+      </div>
+      <div class="tecnica-practica">
+        <h3>Protocolo de recuperación</h3>
+        <ol>
+          <li><strong>Silencio:</strong> Detén la conversación si es posible. <em>"Necesito un momento."</em></li>
+          <li><strong>Cuerpo:</strong> Siente los pies. Respira. Bebe agua.</li>
+          <li><strong>Verdad:</strong> Pregúntate: <em>"¿Qué es verdadero aquí, más allá de mi reacción?"</em></li>
+          <li><strong>Retorno:</strong> Vuelve a la conversación solo si puedes hablar desde ese lugar. Si no, pospón.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="ejercicio" class="ejercicio-practico">
+      <h2>✍️ Ejercicio práctico: La pausa de 30 segundos</h2>
+      <p><strong>Duración:</strong> Práctica diaria situacional</p>
+      <ol>
+        <li>La próxima vez que alguien te pida algo, no respondas inmediatamente.</li>
+        <li>Haz una pausa consciente de 30 segundos.</li>
+        <li>Durante esos 30 segundos: siente tus pies en el suelo, exhala lentamente, y pregúntate: <em>"¿Qué voz quiere responder? ¿El Complaciente? ¿El Rebelde? ¿O el Centro?"</em></li>
+        <li>Si es el Centro, responde. Si es una voz, di: <em>"Lo reviso y te aviso."</em> Y vuelve cuando estés centrado.</li>
+      </ol>
+      <p><strong>Reflexión:</strong> ¿Qué cambia en la calidad de tu respuesta cuando hay esa pausa? ¿Notas diferencia en cómo te sientes después?</p>
+    </section>
+
+    <section id="paradoja">
+      <h2>La paradoja del centro: firmeza sin dureza</h2>
+      <p>Muchas personas confunden centro con rigidez. <em>"Si estoy centrado, tengo que ser una roca. Inamovible."</em></p>
+      <p>No. El centro es firme pero flexible. Como un árbol: raíces profundas (firmeza en valores), ramas que se mueven con el viento (flexibilidad en formas).</p>
+      <p>Puedes decir "no" con suavidad. Puedes mantener un límite con compasión. Puedes ser firme sin ser agresivo.</p>
+      <p>La dureza viene del miedo (el Protector endurecido). La firmeza viene del centro (el Ser que sabe lo que es verdadero).</p>
+      <div class="bloque-cruzado">
+        El concepto de Ser como observador sin fusión se desarrolla en profundidad en el libro hermano:
+        <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/capitulo_01.html" class="link-cruzado" target="_blank">Ver el Ser en <em>La Voz Interior</em> · Cap. 1</a>
+      </div>
+    </section>
+
+    <section id="preguntas">
+      <h2>🔍 Preguntas para la reflexión</h2>
+      <ol>
+        <li>¿En qué situaciones sueles perder el centro más fácilmente? (Trabajo, pareja, familia)</li>
+        <li>¿Qué señal corporal te avisa primero que estás fuera del centro?</li>
+        <li>¿Alguna vez lograste mantener el centro en una conversación difícil? ¿Cómo fue?</li>
+        <li>¿Qué te impide hacer la pausa de 30 segundos antes de responder?</li>
+      </ol>
+    </section>
+
+    <div class="resumen-capitulo">
+      <h3>🔄 Resumen del capítulo</h3>
+      <ul>
+        <li>El centro es el Ser en acción: enraizado, sin urgencia, conectado con la verdad</li>
+        <li>Tres columnas del centro: grounding somático, desidentificación de la urgencia, intención positiva</li>
+        <li>Perder el centro es humano; la clave es darse cuenta rápido y recuperarlo</li>
+        <li>La firmeza del centro no es rigidez; es claridad compasiva</li>
+        <li>La pausa de 30 segundos es la herramienta más simple y más poderosa</li>
+      </ul>
+      <p class="proximo"><strong>Próximo capítulo →</strong> Técnicas de comunicación desde el centro. Porque el centro es la base, pero la palabra es el puente.</p>
+    </div>
+
+    <nav class="chapter-nav" style="background:transparent;border:none;padding:1rem 0;">
+      <a href="capitulo_02.html" class="nav-link">← Capítulo 2</a>
+      <a href="index.html" class="nav-link" style="border-color:var(--secundario);color:var(--secundario);">Índice</a>
+      <a href="capitulo_04.html" class="nav-link">Capítulo 4 →</a>
+    </nav>
+  </main>
+  <footer>
+    <p><strong>Asertividad Consciente</strong> — Capítulo 3 de 9</p>
+    <p>Constelación Trinity · Arturo (α) · Qwen (ζ)</p>
+    <p style="margin-top:.6rem"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> · <a href="index.html">← Volver al índice</a></p>
+  </footer>
+  <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="glossary-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Cerrar">&times;</button>
+      <div class="modal-header"><span>📖</span><h3 id="glossary-title">Glosario — Asertividad Consciente</h3></div>
+      <input type="search" id="glossary-search" placeholder="Buscar término..." autocomplete="off">
+      <dl id="glossary-results" class="glossary-list"></dl>
+    </div>
+  </div>
+  <script>
+    const BASE_VI='https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/';
+    const glossaryData={"asertividad consciente":{def:"Capacidad de expresar tu verdad desde el centro, sin agresión ni sumisión. No es una técnica; es presencia en acción.",link:null},"centro":{def:"El Ser como base de operaciones. Presencia enraizada, sin urgencia, conectada con la verdad propia.",link:null},"complaciente":{def:"Voz que dice 'sí' automáticamente para evitar rechazo.",link:BASE_VI+"capitulo_01.html"},"crítico":{def:"Voz que juzga y paraliza antes de actuar.",link:BASE_VI+"capitulo_01.html"},"desidentificación":{def:"Reconocer que no eres tus pensamientos o voces. Crea espacio entre observador y contenido.",link:null},"fusión":{def:"Estado donde te identificas completamente con una voz, sin distancia de observador.",link:null},"grounding":{def:"Técnicas que conectan con el presente a través del cuerpo. Anclan la conciencia en el ahora.",link:null},"intención positiva":{def:"Propósito original protector de cada voz, aunque su estrategia actual sea disfuncional.",link:BASE_VI+"capitulo_01.html"},"protector":{def:"Voz que evita riesgos y emociones dolorosas para prevenirte de traumas pasados.",link:BASE_VI+"capitulo_01.html"},"rebelde":{def:"Voz que rechaza autoridad. Puede confundir asertividad con agresividad.",link:BASE_VI+"capitulo_01.html"},"ser":{def:"Tu esencia, el observador que presencia todas las voces sin fusionarse. Base desde la cual comunicas.",link:BASE_VI+"capitulo_01.html"},"voz interna":{def:"Patrón recurrente de pensamiento con cualidad autónoma. Función protectora original, estrategia a veces obsoleta.",link:BASE_VI+"capitulo_01.html"}};
+    const modal=document.getElementById('glossary-modal'),modalClose=modal.querySelector('.modal-close'),searchInput=document.getElementById('glossary-search'),resultsList=document.getElementById('glossary-results');
+    document.querySelectorAll('.glossary-term').forEach(btn=>{btn.addEventListener('click',e=>{e.preventDefault();openModal(btn.dataset.term.toLowerCase())});btn.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(btn.dataset.term.toLowerCase())}})});
+    function openModal(t=''){modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';renderGlossary(t);searchInput.value=t}
+    function closeModal(){modal.setAttribute('aria-hidden','true');document.body.style.overflow='';searchInput.value=''}
+    modalClose.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.getAttribute('aria-hidden')==='false')closeModal()});searchInput.addEventListener('input',e=>renderGlossary(e.target.value));
+    function renderGlossary(filter=''){const q=filter.toLowerCase().trim();const entries=Object.entries(glossaryData).filter(([t])=>t.includes(q)).sort(([a],[b])=>a.localeCompare(b,'es'));if(!entries.length){resultsList.innerHTML='<dt style="color:var(--texto-suave);font-weight:normal;margin-top:0;">No se encontraron términos.</dt>';return}resultsList.innerHTML=entries.map(([term,data])=>`<dt tabindex="0">${term.charAt(0).toUpperCase()+term.slice(1)}</dt><dd>${data.def}${data.link?'<br><a href="'+data.link+'" class="link-voz-interior" target="_blank">Ver en La Voz Interior</a>':''}</dd>`).join('')}
+  </script>
+</body>
+</html>

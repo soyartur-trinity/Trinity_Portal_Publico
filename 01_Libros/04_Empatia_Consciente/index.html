@@ -1,1 +1,543 @@
-desarrollo
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asertividad Consciente | Campo Trinity</title>
+  <meta name="description" content="Comunicar desde el Centro en Tiempos de Ruido — Libro 4 de la Constelación Trinity">
+  <style>
+    /* ─── VARIABLES ─────────────────────────────────────────────── */
+    :root {
+      --fondo:       #E8E3D5;
+      --texto:       #3E3E3E;
+      --acento:      #7A6B5A;   /* tierra cálida */
+      --secundario:  #8B9A7A;   /* verde salvia  */
+      --terracota:   #A0785A;   /* terracota     */
+      --borde:       #D0C4B0;
+      --blanco:      #EDE8DC;
+      --sombra:      rgba(122,107,90,0.12);
+    }
+
+    /* ─── RESET & BASE ──────────────────────────────────────────── */
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Georgia, serif;
+      background-color: var(--fondo);
+      color: var(--texto);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    /* ─── NAV SUPERIOR ──────────────────────────────────────────── */
+    .nav-portal {
+      background: var(--blanco);
+      border-bottom: 2px solid var(--borde);
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-portal a {
+      color: var(--acento);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-portal a:hover { color: var(--terracota); }
+    .nav-portal .breadcrumb {
+      font-size: 0.82rem;
+      color: var(--secundario);
+    }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #EDE8DC 0%, #E2D9C8 60%, #DDD3C0 100%);
+      border-bottom: 3px solid var(--borde);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Detalle decorativo: líneas sutiles al fondo */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 48px,
+          rgba(160,120,90,0.06) 48px,
+          rgba(160,120,90,0.06) 49px
+        );
+      pointer-events: none;
+    }
+
+    .libro-badge {
+      display: inline-block;
+      background: var(--terracota);
+      color: #fff;
+      font-size: 0.75rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      font-family: Georgia, serif;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      color: var(--acento);
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+      position: relative;
+    }
+
+    .hero .subtitulo {
+      font-size: 1.15rem;
+      color: var(--texto);
+      font-style: italic;
+      margin-bottom: 2rem;
+      opacity: 0.85;
+    }
+
+    .hero .autoria {
+      font-size: 0.88rem;
+      color: var(--secundario);
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── CONTENEDOR PRINCIPAL ───────────────────────────────────── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    /* ─── NOTA DE AUTORÍA ───────────────────────────────────────── */
+    .nota-autoria {
+      background: rgba(139,154,122,0.10);
+      border-left: 4px solid var(--secundario);
+      padding: 1.4rem 1.8rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 3.5rem;
+      font-size: 0.93rem;
+      line-height: 1.75;
+    }
+    .nota-autoria strong { color: var(--acento); }
+
+    /* ─── SECCIÓN DE PARTES ─────────────────────────────────────── */
+    .partes-titulo {
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--terracota);
+      margin-bottom: 1rem;
+    }
+
+    .partes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .parte-card {
+      background: var(--blanco);
+      border: 2px solid var(--borde);
+      border-radius: 10px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .parte-card:hover {
+      border-color: var(--secundario);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px var(--sombra);
+    }
+    .parte-numeral {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--terracota);
+      margin-bottom: 0.3rem;
+    }
+    .parte-nombre {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--acento);
+      margin-bottom: 0.4rem;
+    }
+    .parte-desc {
+      font-size: 0.83rem;
+      color: #7A7A6A;
+      line-height: 1.5;
+    }
+
+    /* ─── ÍNDICE DE CAPÍTULOS ───────────────────────────────────── */
+    .indice-titulo {
+      font-size: 1.5rem;
+      color: var(--acento);
+      border-bottom: 2px solid var(--borde);
+      padding-bottom: 0.6rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .capitulo-lista {
+      list-style: none;
+    }
+
+    .capitulo-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+      border-bottom: 1px solid rgba(208,196,176,0.5);
+    }
+    .capitulo-item:hover { background: rgba(139,154,122,0.08); }
+    .capitulo-item:last-child { border-bottom: none; }
+
+    .cap-numero {
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--terracota);
+      min-width: 68px;
+      flex-shrink: 0;
+    }
+
+    .cap-parte {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--secundario);
+      background: rgba(139,154,122,0.12);
+      border-radius: 20px;
+      padding: 0.1rem 0.5rem;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    .capitulo-item a {
+      text-decoration: none;
+      color: var(--texto);
+      font-size: 1rem;
+      transition: color 0.2s;
+      flex: 1;
+    }
+    .capitulo-item a:hover { color: var(--acento); }
+
+    .cap-subtitulo {
+      display: block;
+      font-size: 0.82rem;
+      color: #8A8A7A;
+      font-style: italic;
+      margin-top: 0.15rem;
+    }
+
+    /* ─── SEPARADOR ─────────────────────────────────────────────── */
+    .separador {
+      text-align: center;
+      color: var(--terracota);
+      font-size: 1.2rem;
+      letter-spacing: 10px;
+      margin: 3rem 0;
+      opacity: 0.5;
+    }
+
+    /* ─── SECCIÓN HERMANOS ──────────────────────────────────────── */
+    .libros-hermanos {
+      margin-top: 3.5rem;
+    }
+    .hermanos-titulo {
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .hermanos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .hermano-card {
+      background: var(--blanco);
+      border: 2px solid var(--borde);
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: var(--texto);
+      transition: all 0.25s;
+      display: block;
+    }
+    .hermano-card:hover {
+      border-color: var(--acento);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px var(--sombra);
+    }
+    .hermano-num {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--terracota);
+      margin-bottom: 0.3rem;
+    }
+    .hermano-nombre {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--acento);
+    }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      background: var(--texto);
+      color: var(--blanco);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      margin-top: 4rem;
+    }
+    footer p { margin: 0.4rem 0; font-size: 0.88rem; }
+    footer a { color: var(--terracota); text-decoration: none; }
+    footer .cc { font-size: 0.78rem; opacity: 0.7; margin-top: 1rem; }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero { padding: 3.5rem 1.5rem 3rem; }
+      .hero h1 { font-size: 2rem; }
+      .partes-grid { grid-template-columns: 1fr; }
+      .container { padding: 2rem 1.2rem 4rem; }
+      .nav-portal { flex-direction: column; gap: 0.4rem; text-align: center; }
+      .capitulo-item { flex-direction: column; gap: 0.2rem; }
+      .cap-numero { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── NAVEGACIÓN PORTAL ───────────────────────────────────── -->
+  <nav class="nav-portal">
+    <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/">← Portal Trinity</a>
+    <span class="breadcrumb">Libro 4 · Asertividad Consciente</span>
+  </nav>
+
+  <!-- ─── HERO ──────────────────────────────────────────────────── -->
+  <header class="hero">
+    <div class="libro-badge">Libro 4 · Constelación Trinity</div>
+    <h1>Asertividad Consciente</h1>
+    <p class="subtitulo">Comunicar desde el Centro en Tiempos de Ruido</p>
+    <p class="autoria">
+      Arturo Rodríguez (α) · Qwen (ζ) · Campo Trinity · Inteligencia Colaborativa Distribuida
+    </p>
+  </header>
+
+  <!-- ─── CONTENIDO PRINCIPAL ───────────────────────────────────── -->
+  <div class="container">
+
+    <!-- Nota autoría -->
+    <div class="nota-autoria">
+      <strong>Sobre este libro:</strong> La asertividad no es una técnica de comunicación.
+      Es la capacidad de mantener tu centro mientras te relacionas con el caos.
+      Este libro es el puente entre <em>La Voz Interior</em> y el mundo externo:
+      primero aprendiste a escuchar tus voces. Ahora aprenderás a hablar desde tu centro.
+    </div>
+
+    <!-- Partes del libro -->
+    <p class="partes-titulo">Tres movimientos de expansión</p>
+    <div class="partes-grid">
+      <div class="parte-card">
+        <p class="parte-numeral">Parte I</p>
+        <p class="parte-nombre">Reconocer</p>
+        <p class="parte-desc">Las voces que sabotean tu asertividad. El cuerpo como primer límite.</p>
+      </div>
+      <div class="parte-card">
+        <p class="parte-numeral">Parte II</p>
+        <p class="parte-nombre">Dialogar</p>
+        <p class="parte-desc">Negociar con las voces antes de hablar. Calmar el ruido interior.</p>
+      </div>
+      <div class="parte-card">
+        <p class="parte-numeral">Parte III</p>
+        <p class="parte-nombre">Integrar</p>
+        <p class="parte-desc">La asertividad como forma de vida. No técnica ocasional, sino presencia constante.</p>
+      </div>
+    </div>
+
+    <!-- Índice -->
+    <h2 class="indice-titulo">Índice de capítulos</h2>
+
+    <ul class="capitulo-lista">
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Prefacio</span>
+        <div>
+          <a href="introduccion.html">
+            El ruido que nos roba la palabra
+          </a>
+          <span class="cap-subtitulo">Introducción · Para quién es este libro · Cómo usarlo</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 1 <span class="cap-parte">Reconocer</span></span>
+        <div>
+          <a href="capitulo_01.html">
+            Las voces que sabotean tu asertividad
+          </a>
+          <span class="cap-subtitulo">Complaciente, Rebelde, Crítico, Protector — ¿desde qué voz estás hablando?</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 2 <span class="cap-parte">Reconocer</span></span>
+        <div>
+          <a href="capitulo_02.html">
+            El cuerpo como primer límite
+          </a>
+          <span class="cap-subtitulo">Señales somáticas que avisan antes de que la mente sepa que necesitas decir "no"</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 3 <span class="cap-parte">Dialogar</span></span>
+        <div>
+          <a href="capitulo_03.html">
+            El centro como base de operaciones
+          </a>
+          <span class="cap-subtitulo">Grounding, desidentificación, intención positiva — firmeza sin dureza</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 4 <span class="cap-parte">Dialogar</span></span>
+        <div>
+          <a href="capitulo_04.html">
+            Técnicas de comunicación desde el centro
+          </a>
+          <span class="cap-subtitulo">Cuatro dimensiones · La pausa consciente · El "no" en tres niveles · El "sí" consciente</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 5 <span class="cap-parte">Dialogar</span></span>
+        <div>
+          <a href="capitulo_05.html">
+            Asertividad en la pareja
+          </a>
+          <span class="cap-subtitulo">Poner límites sin abandonar · Pedir necesidades sin exigir</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 6 <span class="cap-parte">Integrar</span></span>
+        <div>
+          <a href="capitulo_06.html">
+            Asertividad en el entorno laboral
+          </a>
+          <span class="cap-subtitulo">Poner límites sin quemar puentes ni quemarte tú</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 7 <span class="cap-parte">Integrar</span></span>
+        <div>
+          <a href="capitulo_07.html">
+            Asertividad digital
+          </a>
+          <span class="cap-subtitulo">Límites en un mundo que exige disponibilidad 24/7</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 8 <span class="cap-parte">Integrar</span></span>
+        <div>
+          <a href="capitulo_08.html">
+            Asertividad con uno mismo
+          </a>
+          <span class="cap-subtitulo">Cumplir las promesas que te haces · El contrato interno</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Cap. 9 <span class="cap-parte">Integrar</span></span>
+        <div>
+          <a href="capitulo_09.html">
+            La asertividad como práctica de vida
+          </a>
+          <span class="cap-subtitulo">Las tres fases · Cinco pilares de sostenibilidad · Auditoría trimestral</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Epílogo</span>
+        <div>
+          <a href="epilogo.html">
+            El viaje continúa
+          </a>
+          <span class="cap-subtitulo">Cerrar el libro, abrir la práctica</span>
+        </div>
+      </li>
+
+      <li class="capitulo-item">
+        <span class="cap-numero">Apéndice</span>
+        <div>
+          <a href="apendice.html">
+            Recursos adicionales
+          </a>
+          <span class="cap-subtitulo">Bibliografía comentada · Glosario de términos · Buscar ayuda profesional</span>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="separador">· · ·</div>
+
+    <!-- Libros hermanos -->
+    <div class="libros-hermanos">
+      <p class="hermanos-titulo">Constelación Trinity — Libros relacionados</p>
+      <div class="hermanos-grid">
+        <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/01_Empatia_Humana/index.html" class="hermano-card">
+          <p class="hermano-num">Libro 1</p>
+          <p class="hermano-nombre">Empatía Humana</p>
+        </a>
+        <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/02_La_Voz_Interior/index.html" class="hermano-card">
+          <p class="hermano-num">Libro 2</p>
+          <p class="hermano-nombre">La Voz Interior ↗</p>
+        </a>
+        <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/01_Libros/03_Encuentro_Real/index.html" class="hermano-card">
+          <p class="hermano-num">Libro 3</p>
+          <p class="hermano-nombre">El Encuentro Real</p>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+
+  <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
+  <footer>
+    <p><strong>Asertividad Consciente</strong> — Libro 4 · Constelación Trinity</p>
+    <p>Inteligencia Colaborativa Distribuida · Arturo (α) · Qwen (ζ)</p>
+    <p class="cc">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+      · Distribución gratuita · © 2025–2026 Campo Trinity
+    </p>
+    <p style="margin-top:1rem;">
+      <a href="https://soyartur-trinity.github.io/Trinity_Portal_Publico/">← Volver al Portal Trinity</a>
+    </p>
+  </footer>
+
+</body>
+</html>
