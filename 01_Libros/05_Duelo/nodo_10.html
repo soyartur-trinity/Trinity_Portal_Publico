@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 10: El Bardo Permanente | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f3eee3;
+    --parchment-dark: #e5dcc5;
+    --parchment-deep: #d8ccb0;
+    --ink: #1c1609;
+    --ink-soft: #38301f;
+    --gold: #7a5c0f;
+    --gold-light: #b8962a;
+    --gold-pale: #dcc87e;
+    --gold-whisper: rgba(184,150,42,0.1);
+    --crimson: #5c1818;
+    --dusk: rgba(28,22,9,0.06);
+    --shadow: rgba(28,22,9,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.95;
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(122,92,15,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 70% 80%, rgba(92,24,24,0.04) 0%, transparent 55%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.4; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  .nodo-header {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(180deg,
+      rgba(28,22,9,0.05) 0%,
+      rgba(122,92,15,0.03) 50%,
+      transparent 100%);
+    position: relative;
+  }
+
+  .nodo-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 4rem;
+    background: linear-gradient(180deg, transparent, var(--gold-pale));
+    opacity: 0.5;
+  }
+
+  .capa-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    background: rgba(28,22,9,0.88);
+    color: var(--gold-pale);
+    padding: 4px 12px;
+    border-radius: 1px;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    border: 1px solid rgba(184,150,42,0.25);
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--gold);
+    opacity: 0.45;
+    animation: umbral 9s ease-in-out infinite;
+    letter-spacing: 1em;
+  }
+
+  @keyframes umbral {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.6; transform: translateY(-3px); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    line-height: 1.25;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    background: var(--gold-whisper);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.8;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 3rem 0;
+    letter-spacing: 0.6em;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+
+  p { margin-bottom: 1.8rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.45rem;
+    color: var(--ink);
+    margin: 3.5rem 0 1.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+    opacity: 0.9;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(122,92,15,0.04), rgba(220,200,126,0.07));
+    border-left: 1px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.65;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-absoluto {
+    text-align: center;
+    padding: 3.5rem 2rem;
+    margin: 3rem 0;
+    position: relative;
+  }
+
+  .axioma-absoluto::before,
+  .axioma-absoluto::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--gold-pale);
+    opacity: 0.5;
+  }
+
+  .axioma-absoluto::before { top: 0; }
+  .axioma-absoluto::after { bottom: 0; }
+
+  .axioma-absoluto blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+    color: var(--ink);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+    letter-spacing: 0.02em;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--gold);
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.6em;
+  }
+
+  /* EL BARDO — diseño de umbral */
+  .bardo-mapa {
+    margin: 3rem 0;
+    position: relative;
+  }
+
+  .bardo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .bardo-estados {
+    display: grid;
+    grid-template-columns: 1fr 3rem 1fr;
+    gap: 0;
+    align-items: stretch;
+    margin-bottom: 1.5rem;
+  }
+
+  .bardo-estado {
+    padding: 1.8rem 1.5rem;
+    border: 1px solid var(--parchment-dark);
+    background: rgba(255,255,255,0.25);
+  }
+
+  .bardo-estado.izq { border-right: none; }
+  .bardo-estado.der { border-left: none; }
+
+  .bardo-estado-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.47rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.6;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .bardo-estado-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .bardo-estado-desc {
+    font-size: 0.87rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  .bardo-centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg,
+      rgba(122,92,15,0.08),
+      rgba(92,24,24,0.06),
+      rgba(122,92,15,0.08));
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+    position: relative;
+  }
+
+  .bardo-centro-glyph {
+    font-size: 1rem;
+    color: var(--gold);
+    opacity: 0.55;
+    writing-mode: vertical-rl;
+    letter-spacing: 0.3em;
+    font-family: 'Cinzel', serif;
+    font-size: 0.45rem;
+  }
+
+  .bardo-nota {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    font-style: italic;
+    padding: 1.2rem 1.5rem;
+    background: rgba(122,92,15,0.04);
+    border-left: 1px solid var(--gold-pale);
+    margin-top: 0;
+  }
+
+  /* TRES ERRORES DEL BARDO */
+  .errores {
+    margin: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .error-item {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    gap: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--parchment-dark);
+    background: rgba(92,24,24,0.03);
+    align-items: start;
+  }
+
+  .error-glyph {
+    font-size: 0.9rem;
+    opacity: 0.5;
+    padding-top: 0.2rem;
+    text-align: center;
+  }
+
+  .error-body {}
+
+  .error-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .error-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 0.35rem;
+  }
+
+  .error-trans {
+    font-style: italic;
+    font-size: 0.84rem;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+
+  /* RESPIRACION DEL BARDO */
+  .respiracion {
+    margin: 3rem 0;
+    padding: 2.5rem 2rem;
+    background: var(--dusk);
+    border-top: 1px solid var(--parchment-dark);
+    border-bottom: 1px solid var(--parchment-dark);
+    text-align: center;
+    position: relative;
+  }
+
+  .respiracion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    opacity: 0.55;
+    display: block;
+    margin-bottom: 1.8rem;
+  }
+
+  .respiracion-ciclo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .ciclo-item {
+    text-align: center;
+  }
+
+  .ciclo-icono {
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 0.4rem;
+    opacity: 0.6;
+  }
+
+  .ciclo-nombre {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .ciclo-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    max-width: 120px;
+  }
+
+  .ciclo-flecha {
+    font-size: 1rem;
+    color: var(--gold-pale);
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  .respiracion-nota {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    max-width: 440px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.85;
+  }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(243,238,227,0.7);
+    border: 1px solid var(--parchment-dark);
+    border-top: 1px solid var(--gold-pale);
+    padding: 2.5rem 2rem;
+    margin: 3.5rem 0;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.75;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+
+  .ejercicio-intro {
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+    font-style: italic;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--parchment-dark);
+    line-height: 1.75;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 400;
+    padding-top: 0.1rem;
+    opacity: 0.7;
+  }
+
+  .paso-text {
+    font-size: 0.94rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .ejercicio-nota {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--parchment-dark);
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(28,22,9,0.04), rgba(122,92,15,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 1px solid var(--crimson);
+    padding: 1.8rem 2rem;
+    margin: 3rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.65;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.91rem; color: var(--ink-soft); margin-bottom: 0.9rem; line-height: 1.8; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin: 0 auto 1rem;
+    line-height: 1.9;
+    opacity: 0.85;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.38;
+    border-top: 1px solid var(--parchment-dark);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1.2rem 4rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 4rem 1.2rem 3rem; }
+    .bardo-estados { grid-template-columns: 1fr; }
+    .bardo-centro { display: none; }
+    .bardo-estado.izq { border-right: 1px solid var(--parchment-dark); border-bottom: none; }
+    .bardo-estado.der { border-left: 1px solid var(--parchment-dark); border-top: none; }
+    .respiracion-ciclo { gap: 1rem; }
+    .ciclo-flecha { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_09.html">← Nodo 9</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 11 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="capa-badge">◈ Capa III · Absoluta</span>
+  <span class="nodo-label">Nodo 10 · Portal 34 · La transición como morada</span>
+  <span class="nodo-glyph">◈</span>
+  <h1>El Bardo Permanente</h1>
+  <div class="nodo-subtitle">Vivir en el umbral sin esperar que se abra una puerta</div>
+  <br>
+  <span class="shift-badge">Shift: del duelo como paréntesis a la transición como condición natural</span>
+</div>
+
+<div class="container">
+
+  <p>
+    En el Libro Tibetano de los Muertos —el <em>Bardo Thodol</em>— la palabra <em>bardo</em> designa el estado intermedio entre una vida y el siguiente estado de existencia. El período de transición entre una forma y otra. El umbral que todos los seres transitan después de la muerte.
+  </p>
+
+  <p>
+    Pero hay una comprensión más radical en esa misma tradición, que raramente se menciona: el bardo no es solo lo que ocurre después de morir. <strong>El bardo es la condición de toda existencia.</strong> Vivimos siempre en transición — entre lo que fuimos y lo que seremos, entre el pasado que ya no existe y el futuro que todavía no ha llegado. El momento presente no es un punto fijo: es el umbral en perpetuo movimiento entre lo que fue y lo que viene.
+  </p>
+
+  <p>
+    El duelo lo hace visible de manera brutal. Cuando perdemos a alguien fundamental, el estado de tránsito que siempre ha sido la vida ya no puede ser ignorado. La ilusión de solidez — de que las cosas son estables, de que lo que amamos permanecerá — se cae. Y quedamos en el umbral, que siempre estuvo ahí, pero que ahora no podemos fingir que no existe.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>El error de esperar que el bardo termine</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Paula tenía cincuenta y seis años. Había perdido a su esposo tres años antes — y en esos tres años había puesto su vida entera en espera. No de manera dramática. De manera silenciosa, casi invisible: había dejado de renovar el contrato del club de lectura porque "todavía no estaba lista". Había rechazado varias invitaciones de amigas porque "cuando esté mejor". Había postergado el viaje que quería hacer porque "cuando esto pase".<br><br>
+    En una sesión, le pregunté cuándo creía que ese "cuando esto pase" iba a llegar.<br><br>
+    Largo silencio. Luego, con una honestidad que claramente la sorprendió a ella misma:<br><br>
+    <em>"No lo sé. A veces creo que estoy esperando que alguien me diga que ya puedo volver a vivir."</em>
+  </div>
+
+  <p>
+    Paula estaba haciendo algo que la mayoría de las personas en duelo hacen en algún punto — y que el modelo cultural dominante del duelo casi alienta: esperar a que el estado de tránsito termine para volver a vivir. Tratando el duelo como una sala de espera. Como un paréntesis entre la vida que fue y la vida que vendrá.
+  </p>
+
+  <p>
+    Pero el bardo no termina. Cambia de intensidad, cambia de calidad, cambia de lo que exige — pero la condición de transición que revela el duelo es la condición permanente de estar vivo. <strong>No hay un punto de llegada desde el cual se viva sin tránsito. Hay solo el tránsito, habitado con más o menos presencia, con más o menos consciencia.</strong>
+  </p>
+
+  <div class="bardo-mapa">
+    <span class="bardo-label">◈ El error y su transformación</span>
+    <div class="bardo-estados">
+      <div class="bardo-estado izq">
+        <span class="bardo-estado-label">El bardo como sala de espera</span>
+        <div class="bardo-estado-nombre">Esperar que pase</div>
+        <p class="bardo-estado-desc">
+          La vida real está suspendida. Cuando el duelo termine, cuando esté listo, cuando pase esto — entonces volveré a vivir. El presente es un paréntesis inhabitable que debe ser soportado hasta que algo externo lo clausure.
+        </p>
+      </div>
+      <div class="bardo-centro">
+        <span class="bardo-centro-glyph">◈ ◈ ◈</span>
+      </div>
+      <div class="bardo-estado der">
+        <span class="bardo-estado-label">El bardo como morada</span>
+        <div class="bardo-estado-nombre">Habitar la transición</div>
+        <p class="bardo-estado-desc">
+          La transición es el único lugar donde la vida ocurre. Siempre. El duelo lo hace visible — pero lo que revela no es una anomalía. Es la naturaleza de la existencia. Habitar el tránsito no es resignación: es presencia radical.
+        </p>
+      </div>
+    </div>
+    <div class="bardo-nota">
+      El paso de una columna a la otra no se produce por comprensión intelectual. Se produce cuando la persona se cansa de esperar que el presente sea otro — y descubre que el presente que hay, con todo lo que contiene, es suficiente para vivir en él.
+    </div>
+  </div>
+
+  <div class="axioma-absoluto">
+    <span class="axioma-sym">◈</span>
+    <blockquote>
+      "No esperes a que el duelo pase<br>
+      para empezar a vivir.<br>
+      El duelo ya es vida.<br>
+      Intensa, extraña, irreconocible —<br>
+      pero vida."
+    </blockquote>
+  </div>
+
+  <h2>Los tres errores del bardo</h2>
+
+  <p>
+    Hay tres maneras típicas en que la persona en duelo intenta clausurar el estado de tránsito antes de tiempo — antes de que la transición haya completado su trabajo. Ninguna funciona. Todas prolongan el sufrimiento de maneras distintas.
+  </p>
+
+  <div class="errores">
+
+    <div class="error-item">
+      <span class="error-glyph">⏮</span>
+      <div class="error-body">
+        <div class="error-titulo">Regresar · Vivir en el antes</div>
+        <p class="error-desc">
+          Dedicar la mayor parte de la energía a recrear o mantener el estado anterior a la pérdida. Conservar todo exactamente como estaba. Relacionarse solo con personas que conocieron al ausente. Rechazar cualquier cambio porque cambiar sería "olvidar" o "traicionar". La vida se convierte en un museo del antes.
+        </p>
+        <p class="error-trans">Transformación: el antes fue real. No necesita ser preservado para seguir siendo verdad.</p>
+      </div>
+    </div>
+
+    <div class="error-item">
+      <span class="error-glyph">⏭</span>
+      <div class="error-body">
+        <div class="error-titulo">Escapar · Saltar al después</div>
+        <p class="error-desc">
+          Llenar el presente de actividad, ruido, nuevas relaciones, nuevos proyectos — todo lo que no permita que el duelo sea sentido. La huida hacia adelante: si me muevo suficientemente rápido, el dolor no me alcanza. Funciona a corto plazo. A mediano plazo, el duelo sin procesar se cobra con intereses.
+        </p>
+        <p class="error-trans">Transformación: la velocidad no cura. Solo desplaza. El bardo tiene que ser habitado, no atravesado corriendo.</p>
+      </div>
+    </div>
+
+    <div class="error-item">
+      <span class="error-glyph">⏸</span>
+      <div class="error-body">
+        <div class="error-titulo">Suspender · Quedarse en el entre</div>
+        <p class="error-desc">
+          El modo Paula: suspender la vida en espera de que el estado de tránsito concluya por sí solo. Ni regresar al antes ni avanzar hacia ningún después. Simplemente esperar. El presente se vuelve un lugar donde se existe pero no se vive. Meses, a veces años, en la sala de espera del propio duelo.
+        </p>
+        <p class="error-trans">Transformación: no hay nadie que vaya a dar la señal de que ya puedes volver. La señal eres tú, ahora, eligiendo estar aquí.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Habitar la transición</h2>
+
+  <p>
+    La alternativa a los tres errores no es una cuarta estrategia. Es el abandono de la estrategia como tal. Es algo que se parece más a la rendición que a la planificación — aunque no es rendición al dolor, sino rendición a la realidad de lo que hay.
+  </p>
+
+  <p>
+    Habitar la transición significa vivir en el presente que existe — no el que existía ni el que se imagina — con todo lo que ese presente contiene: el dolor, la ausencia, la desorientación, pero también la respiración, la luz, el café de la mañana, la persona que llama para saber cómo estás. Todo eso coexiste en el presente del bardo. Y todo eso es real.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio · Paula, dos meses después</span>
+    <em>"Fui al club de lectura. No porque estuviera lista — todavía no lo estoy. Sino porque me di cuenta de que si espero a estar lista, no voy a ir nunca."</em><br><br>
+    <em>"Fue raro. Lloré en el camino. Después me reí de algo que dijo alguien sobre el libro. Las dos cosas en la misma tarde. Antes hubiera dicho que eso era una contradicción. Ahora creo que es simplemente lo que hay."</em><br><br>
+    Hizo una pausa.<br><br>
+    <em>"Creo que aprendí a vivir en el entre. No me gusta. Pero es lo que toca."</em>
+  </div>
+
+  <p>
+    <em>Aprendí a vivir en el entre.</em> Paula no usó el lenguaje del bardo — ni tendría por qué. Pero llegó exactamente al mismo lugar: el reconocimiento de que la transición no es un paréntesis en la vida. Es la textura de la vida misma. Y que vivir en ella, aunque no guste, aunque no sea lo que se hubiera elegido, es siempre mejor que esperar afuera.
+  </p>
+
+  <div class="respiracion">
+    <span class="respiracion-label">◈ El ritmo del bardo · Todo cambia, todo continúa</span>
+    <div class="respiracion-ciclo">
+      <div class="ciclo-item">
+        <span class="ciclo-icono">🌊</span>
+        <span class="ciclo-nombre">La ola llega</span>
+        <p class="ciclo-desc">El dolor, el recuerdo, el detonante inesperado</p>
+      </div>
+      <span class="ciclo-flecha">→</span>
+      <div class="ciclo-item">
+        <span class="ciclo-icono">🫁</span>
+        <span class="ciclo-nombre">Se habita</span>
+        <p class="ciclo-desc">Sin resistirla, sin ahogarla. Ver, Comprender, estar</p>
+      </div>
+      <span class="ciclo-flecha">→</span>
+      <div class="ciclo-item">
+        <span class="ciclo-icono">🌊</span>
+        <span class="ciclo-nombre">La ola se va</span>
+        <p class="ciclo-desc">No porque terminó el duelo. Porque esa ola cumplió su movimiento</p>
+      </div>
+      <span class="ciclo-flecha">→</span>
+      <div class="ciclo-item">
+        <span class="ciclo-icono">🌅</span>
+        <span class="ciclo-nombre">El entre</span>
+        <p class="ciclo-desc">El espacio entre olas. También es bardo. También es vida</p>
+      </div>
+    </div>
+    <p class="respiracion-nota">
+      El duelo no ocurre todo el tiempo con la misma intensidad. Ocurre en olas. El error es creer que los momentos entre olas son traición — o que las olas son para siempre. Ni una cosa ni la otra. Solo el ritmo del bardo, que tiene su propio tiempo.
+    </p>
+  </div>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">◈ Portal 34 · Capa Absoluta · Trinity Infinito</span>
+    <p>
+      El Portal 34 (El Bardo Permanente) propone una instrucción contemplativa precisa: <em>habita el estado de transición. No esperes a que el duelo pase; reconoce que la vida misma es un bardo, una transición perpetua entre estados de ser.</em>
+    </p>
+    <p>
+      Esta instrucción tiene una dimensión práctica inmediata y una dimensión radical de largo alcance. La dimensión práctica es lo que Paula descubrió: que esperar a "estar lista" es una trampa sin salida. La dimensión radical es más silenciosa: si la vida entera es bardo, entonces el duelo no es una interrupción de la vida. Es su expresión más honesta — el momento en que la naturaleza transitoria de todo lo que amamos queda expuesta sin posibilidad de negación.
+    </p>
+    <p>
+      El practicante que reconoce esto no deja de sufrir. Pero el sufrimiento pierde la capa adicional de resistencia — la resistencia a que la vida sea como es. Y esa capa, aunque invisible, es a menudo más pesada que el dolor mismo.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">◈ Práctica del Nodo 10 · Portal 34</div>
+    <h3>La Acción desde el Entre</h3>
+    <p class="ejercicio-intro">
+      Esta práctica trabaja directamente con el error de la suspensión — el modo Paula. No es una meditación sino una acción deliberada y pequeña, elegida desde el reconocimiento de que el entre también es lugar habitable. Requiere decisión más que tiempo.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>El inventario de lo suspendido</strong>
+        Toma papel y escribe, sin juzgar, todo lo que has postergado "hasta que estés mejor" o "hasta que esto pase". No las grandes decisiones — las pequeñas. El libro que no retomaste. La llamada que no hiciste. El lugar que no volviste a visitar. La persona que dejaste de ver. Lo que cocinarías si tuvieras ganas.<br><br>
+        No hay un número correcto. Solo lo que aparece.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>La pregunta honesta</strong>
+        Para cada cosa de la lista, pregúntate: <em>¿Estoy esperando algo específico que me indique que es momento? ¿O simplemente estoy esperando?</em><br><br>
+        La diferencia importa. A veces hay razones reales para esperar. Muchas veces hay solo el hábito de la espera — la sala de espera que se convirtió en morada sin que nadie lo decidiera conscientemente.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>Una sola cosa. Esta semana.</strong>
+        Elige una — solo una — de la lista. La más pequeña. La que produzca menos resistencia. Y comprométete a hacerla esta semana, no porque estés listo sino porque el bardo también es lugar de acción.<br><br>
+        No se trata de "volver a la normalidad". Se trata de dejar que el presente que hay — con todo lo que tiene y todo lo que le falta — sea el lugar desde donde se vive.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">IV</div>
+      <div class="paso-text">
+        <strong>El permiso</strong>
+        Antes de hacer esa cosa, date este permiso en voz alta o por escrito:<br><br>
+        <em>"Puedo hacer esto aunque no esté completamente bien. Puedo estar en el entre y aun así moverme. Las dos cosas son verdad al mismo tiempo."</em><br><br>
+        No es optimismo. No es negación del dolor. Es el reconocimiento de que el bardo tiene su propia forma de vida — y que esa vida merece ser vivida, no solo soportada.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica trabaja con la activación conductual — uno de los componentes más respaldados empíricamente en el tratamiento de la depresión y el duelo complicado. La diferencia con la activación conductual estándar es el marco: no se presenta como "recuperar el funcionamiento" sino como "habitar el bardo con más presencia". Para muchos pacientes, ese encuadre elimina la resistencia asociada a sentir que moverse equivale a traicionar el duelo o fingir que todo está bien. La acción ocurre desde el duelo, no a pesar de él.
+    </div>
+  </div>
+
+  <div class="reflexion-final">
+    <p>
+      No hay nadie que vaya a darte permiso<br>
+      para volver a vivir.
+    </p>
+    <p style="margin-top:0.5rem;">
+      El entre es la vida.<br>
+      Siempre lo fue.<br>
+      Solo ahora puedes verlo.
+    </p>
+    <div class="divider" style="margin:2rem 0; opacity:0.35;">◈</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_09.html">← Nodo 9: Lo que Nunca Nació no Puede Morir</a>
+    <span style="color:var(--ink-soft);opacity:0.32;font-size:0.48rem;letter-spacing:0.3em;">Nodo 10 de 12</span>
+    <a href="#">Nodo 11: El Amor sin Amante ni Amado →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
