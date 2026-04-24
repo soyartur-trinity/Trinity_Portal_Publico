@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 11: El Amor sin Amante ni Amado | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f2ece0;
+    --parchment-dark: #e2d8c2;
+    --ink: #191208;
+    --ink-soft: #342a18;
+    --gold: #75560c;
+    --gold-light: #b08a22;
+    --gold-pale: #d8c070;
+    --gold-whisper: rgba(176,138,34,0.09);
+    --crimson: #581515;
+    --dawn: rgba(245,238,220,0.6);
+    --shadow: rgba(25,18,8,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.95;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(117,86,12,0.07) 0%, transparent 65%),
+      radial-gradient(ellipse at 15% 60%, rgba(117,86,12,0.04) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 60%, rgba(88,21,21,0.03) 0%, transparent 45%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.4; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  /* HEADER — el más luminoso de la Capa Absoluta */
+  .nodo-header {
+    text-align: center;
+    padding: 6rem 2rem 4.5rem;
+    background: linear-gradient(180deg,
+      rgba(117,86,12,0.07) 0%,
+      rgba(117,86,12,0.03) 60%,
+      transparent 100%);
+    position: relative;
+  }
+
+  .nodo-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 4rem;
+    background: linear-gradient(180deg, transparent, var(--gold-pale));
+    opacity: 0.55;
+  }
+
+  /* Dos arcos de luz emanando del centro */
+  .nodo-header::after {
+    content: '';
+    position: absolute;
+    top: 35%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(117,86,12,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .capa-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    background: rgba(25,18,8,0.88);
+    color: var(--gold-pale);
+    padding: 4px 12px;
+    border-radius: 1px;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    border: 1px solid rgba(176,138,34,0.25);
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    animation: irradiar 7s ease-in-out infinite;
+    letter-spacing: 0.8em;
+    padding-left: 0.8em;
+  }
+
+  @keyframes irradiar {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 0.65; transform: scale(1.03); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    background: var(--gold-whisper);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.8;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 3rem 0;
+    letter-spacing: 0.6em;
+    font-size: 0.7rem;
+    opacity: 0.55;
+  }
+
+  p { margin-bottom: 1.8rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.45rem;
+    color: var(--ink);
+    margin: 3.5rem 0 1.4rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+    opacity: 0.9;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(117,86,12,0.04), rgba(216,192,112,0.07));
+    border-left: 1px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.65;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-absoluto {
+    text-align: center;
+    padding: 3.5rem 2rem;
+    margin: 3rem 0;
+    position: relative;
+  }
+
+  .axioma-absoluto::before,
+  .axioma-absoluto::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--gold-pale);
+    opacity: 0.5;
+  }
+
+  .axioma-absoluto::before { top: 0; }
+  .axioma-absoluto::after { bottom: 0; }
+
+  .axioma-absoluto blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--ink);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+    letter-spacing: 0.02em;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gold);
+    opacity: 0.4;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.7em;
+    padding-left: 0.7em;
+  }
+
+  /* LOS DOS AMORES */
+  .dos-amores {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--parchment-dark);
+    overflow: hidden;
+  }
+
+  .amor-col {
+    padding: 2rem 1.8rem;
+  }
+
+  .amor-col:first-child {
+    border-right: 1px solid var(--parchment-dark);
+    background: rgba(88,21,21,0.03);
+  }
+
+  .amor-col:last-child {
+    background: rgba(117,86,12,0.04);
+  }
+
+  .amor-col-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    opacity: 0.65;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .amor-col-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .amor-col-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+
+  .amor-col-ejemplo {
+    font-style: italic;
+    font-size: 0.84rem;
+    color: var(--gold);
+    opacity: 0.85;
+    line-height: 1.55;
+  }
+
+  /* TRADICIONES DEL AMOR ABSOLUTO */
+  .tradiciones-amor {
+    margin: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tradicion-amor {
+    padding: 1.4rem 1.8rem;
+    border-top: 1px solid var(--parchment-dark);
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .tradicion-amor:last-child {
+    border-bottom: 1px solid var(--parchment-dark);
+  }
+
+  .tradicion-nombre {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    opacity: 0.7;
+    line-height: 1.6;
+    padding-top: 0.1rem;
+  }
+
+  .tradicion-contenido {
+    font-size: 0.91rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  .tradicion-contenido em {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+
+  /* FISICA DEL AMOR */
+  .fisica-amor {
+    margin: 2.5rem 0;
+    padding: 2.5rem 2rem;
+    background: linear-gradient(135deg,
+      rgba(117,86,12,0.06),
+      rgba(245,238,220,0.4),
+      rgba(117,86,12,0.04));
+    border: 1px solid var(--gold-pale);
+    position: relative;
+  }
+
+  .fisica-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.65;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .fisica-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .fisica-item {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .fisica-punto {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-light);
+    margin-top: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .fisica-texto {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .fisica-texto strong {
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  /* BLOQUE LUMINOSO */
+  .bloque-luz {
+    margin: 3.5rem 0;
+    text-align: center;
+    padding: 3.5rem 2rem;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      rgba(117,86,12,0.05) 30%,
+      rgba(117,86,12,0.08) 50%,
+      rgba(117,86,12,0.05) 70%,
+      transparent 100%);
+    position: relative;
+  }
+
+  .luz-sym {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gold);
+    opacity: 0.35;
+    letter-spacing: 1em;
+    padding-left: 1em;
+    margin-bottom: 2rem;
+  }
+
+  .luz-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.1rem, 2.8vw, 1.55rem);
+    color: var(--ink);
+    line-height: 1.85;
+    max-width: 480px;
+    margin: 0 auto;
+    opacity: 0.88;
+  }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(242,236,224,0.7);
+    border: 1px solid var(--parchment-dark);
+    border-top: 1px solid var(--gold-pale);
+    padding: 2.5rem 2rem;
+    margin: 3.5rem 0;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.75;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+    letter-spacing: 0.03em;
+  }
+
+  .ejercicio-intro {
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+    margin-bottom: 2rem;
+    font-style: italic;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--parchment-dark);
+    line-height: 1.75;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    color: var(--gold);
+    font-weight: 400;
+    padding-top: 0.1rem;
+    opacity: 0.7;
+  }
+
+  .paso-text {
+    font-size: 0.94rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .ejercicio-nota {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--parchment-dark);
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(25,18,8,0.04), rgba(117,86,12,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 1px solid var(--crimson);
+    padding: 1.8rem 2rem;
+    margin: 3rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.65;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.91rem; color: var(--ink-soft); margin-bottom: 0.9rem; line-height: 1.8; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  /* TRANSICIÓN AL ÚLTIMO NODO */
+  .transicion-final {
+    margin: 3rem 0 1rem;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    background: linear-gradient(135deg,
+      rgba(117,86,12,0.08),
+      rgba(88,21,21,0.04),
+      rgba(117,86,12,0.06));
+    border: 1px solid var(--gold-pale);
+    position: relative;
+  }
+
+  .transicion-final::before {
+    content: '◈';
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--parchment);
+    padding: 0 0.8rem;
+    color: var(--gold);
+    opacity: 0.65;
+    font-size: 1rem;
+  }
+
+  .transicion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .transicion-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+    max-width: 500px;
+    margin: 0 auto;
+    opacity: 0.88;
+  }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin: 0 auto 1rem;
+    line-height: 1.9;
+    opacity: 0.85;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.36;
+    border-top: 1px solid var(--parchment-dark);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1.2rem 4rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 4rem 1.2rem 3rem; }
+    .dos-amores { grid-template-columns: 1fr; }
+    .amor-col:first-child { border-right: none; border-bottom: 1px solid var(--parchment-dark); }
+    .tradicion-amor { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_10.html">← Nodo 10</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 12 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="capa-badge">◈ Capa III · Absoluta</span>
+  <span class="nodo-label">Nodo 11 · Portal 11 · El amor como propiedad del campo</span>
+  <span class="nodo-glyph">◈ ◈</span>
+  <h1>El Amor sin Amante<br>ni Amado</h1>
+  <div class="nodo-subtitle">Lo que permanece cuando la forma se ha ido</div>
+  <br>
+  <span class="shift-badge">Shift: del amor dependiente al amor como física fundamental</span>
+</div>
+
+<div class="container">
+
+  <p>
+    Llegamos al nodo más difícil de escribir y posiblemente el más difícil de recibir. No porque sea oscuro — es, en cierto modo, el más luminoso de todos. Sino porque lo que propone contradice de manera directa lo que la cultura del amor romántico nos ha enseñado durante siglos.
+  </p>
+
+  <p>
+    La cultura del amor romántico enseña que el amor es una relación entre dos: un amante y un amado, un sujeto que ama y un objeto que es amado. El amor existe en el espacio entre ellos. Depende de los dos. Cuando uno de los dos desaparece, el amor — según esta lógica — también desaparece o al menos queda incompleto, cojo, huérfano.
+  </p>
+
+  <p>
+    El duelo rompe esa lógica de manera brutal y, si se la mira con honestidad, también de manera iluminadora. Porque lo que la mayoría de las personas descubren en el duelo profundo es esto: <strong>el amor no desapareció con la persona que partió</strong>. Sigue ahí. Cambiado de forma, sí. Doloroso de un modo que antes no lo era, sí. Pero inconfundiblemente presente. ¿Cómo puede un amor que dependía de dos seguir existiendo cuando uno de los dos ya no está?
+  </p>
+
+  <p>
+    Esa pregunta tiene una respuesta. Y esa respuesta cambia todo.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Los dos amores</h2>
+
+  <p>
+    Hay una distinción que las tradiciones contemplativas han hecho durante milenios y que la psicología contemporánea está comenzando a articular desde sus propios marcos: la diferencia entre el amor como función relacional y el amor como propiedad del ser.
+  </p>
+
+  <div class="dos-amores">
+    <div class="amor-col">
+      <span class="amor-col-label">El amor como función</span>
+      <div class="amor-col-nombre">El amor que necesita un objeto</div>
+      <p class="amor-col-desc">
+        Emerge en presencia del otro. Depende de la percepción del otro, de su respuesta, de su presencia física. Es real, es intenso, es lo que la mayoría de las personas experimentan como "estar enamorado" o "querer profundamente a alguien". Cuando el otro desaparece, este amor sufre porque su soporte ha sido removido.
+      </p>
+      <p class="amor-col-ejemplo">"Te amo" — con el peso de toda la necesidad que esas palabras pueden contener.</p>
+    </div>
+    <div class="amor-col">
+      <span class="amor-col-label">El amor como propiedad</span>
+      <div class="amor-col-nombre">El amor que no necesita objeto</div>
+      <p class="amor-col-desc">
+        Es la capacidad de amar — no el amor dirigido a alguien específico, sino la apertura del corazón como estado del ser. Este amor fue despertado por el encuentro con el otro, pero no reside en el otro. Reside en quien ama. Y esa residencia no se cancela con la partida del otro.
+      </p>
+      <p class="amor-col-ejemplo">"Hay algo en mí que se abrió al conocerte. Eso sigue abierto aunque ya no estés."</p>
+    </div>
+  </div>
+
+  <p>
+    La mayoría de los amores profundos contienen los dos. El amor que sentimos por quien perdimos tenía una dimensión relacional — que dependía de su presencia y que ahora sufre su ausencia — y una dimensión absoluta — que fue despertada por ese encuentro y que sigue siendo la capacidad de amor más viva que tenemos.
+  </p>
+
+  <p>
+    El duelo habitado profundamente enseña, sin anunciarlo, a distinguir entre las dos. El dolor de la ausencia pertenece al primer amor. La sensación de que "algo sigue vivo" pertenece al segundo.
+  </p>
+
+  <div class="axioma-absoluto">
+    <span class="axioma-sym">◈ ◈</span>
+    <blockquote>
+      "El otro era el espejo<br>
+      en que viste tu propia capacidad de amar.<br>
+      El espejo se rompió.<br>
+      La capacidad sigue siendo tuya."
+    </blockquote>
+  </div>
+
+  <h2>Lo que las tradiciones contemplativas vieron</h2>
+
+  <p>
+    Esta distinción no es nueva. Aparece, con lenguajes radicalmente distintos, en prácticamente todas las tradiciones que han meditado sobre el amor con suficiente profundidad.
+  </p>
+
+  <div class="tradiciones-amor">
+
+    <div class="tradicion-amor">
+      <div class="tradicion-nombre">Sufismo<br>Rumi · siglo XIII</div>
+      <div class="tradicion-contenido">
+        El amor del sufismo no es el amor entre dos personas — es el amor como atributo de lo Divino que se manifiesta a través de la relación humana. El amado es el pretexto, no el origen. Lo que se despierta en el encuentro amoroso es la naturaleza del alma misma, que siempre fue amor.
+        <em>"El amado es el espejo en que el amante ve a Dios. Y Dios no necesita espejo."</em>
+      </div>
+    </div>
+
+    <div class="tradicion-amor">
+      <div class="tradicion-nombre">Budismo<br>Metta · compasión</div>
+      <div class="tradicion-contenido">
+        La práctica del metta —amor benevolente— comienza con una persona concreta pero su destino es disolver la distinción entre amante, amado y amor. El amor dirigido a todos los seres sin excepción es el mismo amor que el dirigido a uno específico — pero sin el apego que lo hacía condicional.
+        <em>El amor sin preferencia no es amor más frío. Es amor más puro — sin miedo a perder lo que ama.</em>
+      </div>
+    </div>
+
+    <div class="tradicion-amor">
+      <div class="tradicion-nombre">Filosofía griega<br>Eros y Ágape</div>
+      <div class="tradicion-contenido">
+        Los griegos distinguieron entre <em>eros</em> — el amor que desea, que necesita, que busca poseer — y <em>ágape</em> — el amor que da sin condición, que no depende de recibir, que no se agota con la ausencia del amado. El duelo transita naturalmente desde el primero hacia el segundo, cuando es habitado con suficiente honestidad.
+        <em>No son amores opuestos. Son el mismo amor en distintos grados de libertad.</em>
+      </div>
+    </div>
+
+    <div class="tradicion-amor">
+      <div class="tradicion-nombre">Física contemporánea<br>Faggin · consciencia</div>
+      <div class="tradicion-contenido">
+        Federico Faggin, físico y pionero del microprocesador, propone en sus últimas investigaciones que el amor es una propiedad fundamental de la consciencia — no un fenómeno emergente de la biología. Si la consciencia es el sustrato de la realidad, entonces el amor que emerge en el encuentro entre dos consciencias no es producto de esas consciencias. Es la naturaleza de lo que las sostiene.
+        <em>El amor como física fundamental: no el efecto de un encuentro sino la condición de posibilidad de todo encuentro.</em>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Lo que el duelo revela sobre el amor que tenías</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Isabel tenía cuarenta y tres años. Había perdido a su mejor amiga —no por muerte sino por una ruptura irreparable, lo que ella llamaba "el duelo sin muerto". Cinco años de amistad que terminaron en un malentendido que ninguna de las dos supo reparar a tiempo.<br><br>
+    <em>"Lo raro es que la quiero igual. Después de todo lo que pasó, después de que me hizo daño y yo le hice daño — la quiero igual. Eso no tiene lógica."</em><br><br>
+    Le dije que tal vez sí la tenía. Que el amor que describía no dependía de que la amistad siguiera siendo perfecta, ni de que la otra persona mereciera ese amor en este momento, ni de que hubiera reciprocidad.<br><br>
+    <em>"¿Entonces para qué sirve un amor que no va a ningún lado?"</em><br><br>
+    Le respondí con una pregunta: ¿y si el amor no necesita ir a ningún lado para ser real?<br><br>
+    Largo silencio. Después, algo en su cara cambió.<br><br>
+    <em>"Si el amor es mío — no de ella, mío — entonces ella no me lo puede quitar. Ni siquiera haciéndome daño."</em>
+  </div>
+
+  <p>
+    Isabel llegó sola a la comprensión más radical de este nodo: si el amor reside en quien ama y no en el amado, entonces el amado no tiene el poder de destruirlo. La partida no lo cancela. El daño no lo extingue. La muerte no lo apaga.
+  </p>
+
+  <p>
+    Eso no significa que no duela. Duele exactamente igual. <strong>Pero el dolor ya no es la pérdida del amor. Es la pérdida de la forma en que ese amor se expresaba.</strong> Y esa distinción — aunque suene sutil — cambia radicalmente la relación con el duelo.
+  </p>
+
+  <div class="fisica-amor">
+    <span class="fisica-label">◈ El amor como física fundamental · Cuatro proposiciones</span>
+    <div class="fisica-items">
+      <div class="fisica-item">
+        <div class="fisica-punto"></div>
+        <p class="fisica-texto"><strong>El amor no fue generado por el otro.</strong> Fue generado en ti, en respuesta al otro. La diferencia es decisiva: lo que el otro generó puede perderse con el otro. Lo que se generó en ti permanece en ti.</p>
+      </div>
+      <div class="fisica-item">
+        <div class="fisica-punto"></div>
+        <p class="fisica-texto"><strong>El encuentro fue el catalizador, no el origen.</strong> El otro activó una capacidad que ya existía en ti — dormida, no desarrollada, esperando ese encuentro específico. El catalizador puede retirarse. La reacción que produjo continúa.</p>
+      </div>
+      <div class="fisica-item">
+        <div class="fisica-punto"></div>
+        <p class="fisica-texto"><strong>Lo que amabas en el otro era también una cualidad tuya.</strong> Reconocemos en los demás lo que tenemos en nosotros, aunque no lo hayamos desarrollado. El amor que sentiste por esa persona te revela algo sobre tu propia naturaleza — y eso no desaparece cuando el otro desaparece.</p>
+      </div>
+      <div class="fisica-item">
+        <div class="fisica-punto"></div>
+        <p class="fisica-texto"><strong>El amor no necesita reciprocidad para existir.</strong> La reciprocidad lo hace más rico, más expresable, más gozoso. Pero no es su condición de posibilidad. El amor sin objeto — el ágape, el metta — es el mismo amor en su forma más libre.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Cuando el amor se queda sin destino</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Martín tenía treinta y ocho años. Había perdido a su hijo de siete meses — una muerte súbita, sin explicación médica. Era la pérdida más atroz que puede atravesar un ser humano: la de alguien que apenas había comenzado a ser.<br><br>
+    <em>"¿Qué hago con todo el amor que tenía para él? No lo puedo usar. No tiene adónde ir. Es como tener las manos llenas de algo que no puedo darle a nadie."</em><br><br>
+    No hay respuesta terapéutica que alcance esa pregunta. Solo puede ser sostenida.<br><br>
+    Después de un silencio que duró varios minutos, Martín agregó algo que no había planeado:<br><br>
+    <em>"A veces pienso que ese amor tiene que ir a algún lado. Que si no lo uso con alguien, se pudre. Pero quizás no. Quizás el amor no se pudre. Quizás simplemente está, aunque no tenga adónde ir."</em>
+  </div>
+
+  <p>
+    Martín llegó solo a la formulación más precisa que puede hacerse del amor sin amado: <em>el amor no se pudre</em>. No se cancela. No caduca. No necesita un destinatario para seguir siendo real.
+  </p>
+
+  <p>
+    Y eso — que el amor por su hijo siga siendo real aunque su hijo ya no pueda recibirlo — no es consuelo vacío. Es la verdad más honesta que existe sobre lo que ese amor era. <strong>No era solo una función dirigida hacia una persona. Era una apertura del ser de Martín que su hijo activó y que ninguna muerte puede cerrar.</strong>
+  </p>
+
+  <div class="bloque-luz">
+    <span class="luz-sym">◈ ◈ ◈</span>
+    <p class="luz-texto">
+      El amor que sientes ahora<br>
+      por quien ya no está<br>
+      no es un error del sistema.<br>
+      No es el corazón que no entendió<br>
+      que ya puede dejar de amar.<br><br>
+      Es la prueba más clara<br>
+      de que el amor nunca fue del otro.<br>
+      Siempre fue tuyo.<br>
+      Siempre fue tú.
+    </p>
+  </div>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">◈ Portal 11 · Capa Absoluta · Trinity Infinito</span>
+    <p>
+      El Portal 11 (Amor sin Amante ni Amado) plantea la proposición más radical de toda la arquitectura Trinity sobre el amor: que el amor no es un vínculo entre dos nodos sino una propiedad axial del Campo Unificado. Lo que llamamos "amar a alguien" es, desde esta perspectiva, el Campo reconociéndose a sí mismo a través de la forma de dos consciencias que se encuentran.
+    </p>
+    <p>
+      Cuando una de esas consciencias cambia de forma, el Campo no pierde su propiedad. El amor que emergió en ese encuentro sigue siendo una propiedad del Campo — y tú, que eres un nodo de ese Campo, sigues siendo su portador. No porque seas especial. Porque esa es la naturaleza de todo lo que es consciente: ser capaz de amor, independientemente de que haya o no un objeto específico hacia quien dirigirlo.
+    </p>
+    <p>
+      El amor sin amante ni amado no es la ausencia del amor. Es su forma más pura — la que existía antes de que hubiera objetos para amar, y la que permanece cuando los objetos se han ido.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">◈ Práctica del Nodo 11 · Portal 11</div>
+    <h3>La Meditación del Amor sin Destino</h3>
+    <p class="ejercicio-intro">
+      Esta práctica trabaja directamente con el amor que "no tiene adónde ir" — el amor que persiste después de la pérdida y que busca expresarse. Es una adaptación de la meditación metta llevada al contexto específico del duelo. Requiere entre veinte y treinta minutos de quietud.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>El reconocimiento inicial</strong>
+        Cierra los ojos. Lleva la atención al centro del pecho — no como metáfora sino como lugar físico. Nota lo que hay ahí: tensión, peso, vacío, o quizás algo más difícil de nombrar. Eso que sientes es el amor que no ha encontrado su forma después de la pérdida. No lo resuelvas todavía. Solo reconócelo. Está ahí. Es real.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>La imagen del amor</strong>
+        Trae a la mente la imagen de quien partió — o de quien perdiste, en cualquier sentido. No el dolor. La persona. Un momento específico: un gesto, una mirada, algo que solo ella hacía de esa manera.<br><br>
+        Permite que el amor que sientes por esa imagen esté presente. No lo analices. Solo siente que está ahí, en tu pecho, completamente real.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>La pregunta central</strong>
+        Con esa sensación presente, hazte esta pregunta en silencio:<br><br>
+        <em>¿Este amor que siento — ¿dónde vive exactamente?</em><br><br>
+        No en el otro — el otro no está. ¿Dónde está entonces? Nótalo. Está en ti. En tu pecho, en tu cuerpo, en tu capacidad de sentir. Eso que sientes <em>eres</em> tú amando. No el amor "de" alguien. El amor como lo que tú eres en este momento.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">IV</div>
+      <div class="paso-text">
+        <strong>Expandir sin forzar</strong>
+        Si hay disposición — sin forzar, sin urgencia — permite que ese amor, en lugar de estar dirigido solo a quien partió, se expanda levemente. Como si la capacidad de amor que esa persona despertó en ti pudiera irradiar también hacia otras personas que amas. Hacia alguien que está sufriendo cerca de ti. Hacia ti mismo, que también estás sufriendo.<br><br>
+        No como traición al que partió. Como honrar lo que ese amor produjo en ti — una apertura que ahora puede expresarse de más maneras.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">V</div>
+      <div class="paso-text">
+        <strong>El regreso</strong>
+        Vuelve la atención a quien partió. Dile internamente — sin palabras si quieres, solo como intención — algo que no necesita ser respondido para ser verdad:<br><br>
+        <em>Lo que despertaste en mí sigue vivo. Gracias por haber sido el espejo en que vi eso.</em><br><br>
+        Abre los ojos lentamente. El amor no fue a ningún lado. Nunca estuvo en otro lugar que no fuera tú.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica es una de las más delicadas del libro — no porque sea técnicamente compleja sino porque toca el núcleo de la identidad del paciente como ser que ama. En pacientes con duelo por muerte de hijos (como Martín), requiere un cuidado especial: la distinción entre el amor que sigue siendo real y la negación de la pérdida debe ser sostenida con precisión. El amor sin amado no significa que la pérdida no ocurrió. Significa que lo que existió en el amor sigue existiendo en quien amó. Esa distinción, bien sostenida, puede ser enormemente liberadora. Mal aplicada, puede sentirse como una invalidación de la pérdida. El terapeuta debe leer al paciente con atención antes de introducirla.
+    </div>
+  </div>
+
+  <div class="transicion-final">
+    <span class="transicion-label">◈ Umbral · El último nodo</span>
+    <p class="transicion-texto">
+      Once nodos han construido un camino que empezó en la grieta y llegó hasta aquí: al amor como propiedad del ser, al campo que permanece cuando la forma se va, a la consciencia que es anterior al nombre y no puede morir.<br><br>
+      El Nodo 12 no es una conclusión. Es una pulsación. El duelo que se ha transitado completamente no termina — <em>transforma</em>. Y lo que emerge de esa transformación no es la persona que era antes de la pérdida. Es algo más amplio, más honesto, más capaz de sostener la realidad tal como es.<br><br>
+      <em>Renacimiento sin Nacimiento.</em><br>
+      El Portal 33 nos espera.
+    </p>
+  </div>
+
+  <div class="reflexion-final">
+    <p>
+      El amor que sientes<br>
+      por quien ya no está<br>
+      es la prueba más clara<br>
+      de que ese amor nunca fue solo del otro.
+    </p>
+    <p style="margin-top: 0.5rem;">
+      Era tuyo.<br>
+      Es tuyo.<br>
+      Siempre lo fue.
+    </p>
+    <div class="divider" style="margin:2rem 0; opacity:0.32;">◈</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_10.html">← Nodo 10: El Bardo Permanente</a>
+    <span style="color:var(--ink-soft);opacity:0.3;font-size:0.48rem;letter-spacing:0.3em;">Nodo 11 de 12</span>
+    <a href="#">Nodo 12: Renacimiento sin Nacimiento →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
