@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 7: La Impermanencia no es el Enemigo | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --shadow: rgba(44, 36, 22, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(139,105,20,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 100%, rgba(44,36,22,0.04) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.5; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  .nodo-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    background: linear-gradient(180deg, rgba(44,36,22,0.04) 0%, transparent 100%);
+  }
+
+  .capa-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    background: var(--crimson);
+    color: var(--parchment);
+    padding: 3px 10px;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.55;
+    animation: breathe 8s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 0.65; transform: scale(1.04); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p { margin-bottom: 1.6rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.65rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  /* TEXTO BUDISTA */
+  .tradicion-bloque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 2.5rem 0;
+  }
+
+  .tradicion-item {
+    padding: 1.5rem;
+    border: 1px solid var(--parchment-dark);
+    background: rgba(255,255,255,0.3);
+  }
+
+  .tradicion-origen {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .tradicion-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 0.6rem;
+  }
+
+  .tradicion-nota {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    opacity: 0.75;
+    line-height: 1.5;
+  }
+
+  /* LAS DOS RESISTENCIAS */
+  .resistencias {
+    margin: 2.5rem 0;
+  }
+
+  .resistencia-item {
+    border-left: 2px solid var(--gold-pale);
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.25);
+    transition: border-color 0.3s;
+  }
+
+  .resistencia-item:hover { border-color: var(--gold-light); }
+
+  .resistencia-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .resistencia-desc {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .resistencia-transformacion {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--gold);
+    opacity: 0.9;
+  }
+
+  /* ESTACIONES */
+  .estaciones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 2.5rem 0;
+    border: 1px solid var(--parchment-dark);
+    overflow: hidden;
+  }
+
+  .estacion {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-right: 1px solid var(--parchment-dark);
+    background: rgba(255,255,255,0.2);
+  }
+
+  .estacion:last-child { border-right: none; }
+
+  .estacion-icono {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.6rem;
+    opacity: 0.7;
+  }
+
+  .estacion-nombre {
+    font-family: 'Cinzel', serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .estacion-desc {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(245,240,232,0.8);
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold);
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .ejercicio-intro {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 0.1rem;
+    opacity: 0.8;
+  }
+
+  .paso-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  /* TRANSICION FINAL DE CAPA */
+  .transicion-capa {
+    background: linear-gradient(135deg, rgba(139,105,20,0.08), rgba(122,32,32,0.05));
+    border: 1px solid var(--gold-pale);
+    padding: 2rem 2.5rem;
+    margin: 3rem 0 1rem;
+    text-align: center;
+  }
+
+  .transicion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .transicion-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+    .tradicion-bloque { grid-template-columns: 1fr; }
+    .estaciones { grid-template-columns: 1fr 1fr; }
+    .estacion:nth-child(2) { border-right: none; }
+    .estacion:nth-child(3) { border-top: 1px solid var(--parchment-dark); }
+    .estacion:nth-child(4) { border-top: 1px solid var(--parchment-dark); border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_06.html">← Nodo 6</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 8 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="capa-badge">Capa II · Alquímica</span>
+  <span class="nodo-label">Nodo 7 · El desapego radical como acto de amor</span>
+  <span class="nodo-glyph">🌀</span>
+  <h1>La Impermanencia no es el Enemigo</h1>
+  <div class="nodo-subtitle">Lo que se va también fue. Y eso es suficiente.</div>
+  <br>
+  <span class="shift-badge">Shift: de la resistencia a la impermanencia como pedagogía</span>
+</div>
+
+<div class="container">
+
+  <p>
+    Hay una palabra en sánscrito que lleva más de dos mil quinientos años intentando decir algo que el español no puede decir en una sola palabra: <em>anicca</em>. Impermanencia. La naturaleza transitoria de todas las cosas compuestas. El hecho —no la opinión, no la filosofía, sino el hecho observable— de que nada que existe en el tiempo permanece igual de un momento al siguiente.
+  </p>
+
+  <p>
+    El budismo convirtió este hecho en el primer pilar de su diagnóstico del sufrimiento humano. No porque la impermanencia sea mala. Sino porque nuestra relación con ella suele serlo.
+  </p>
+
+  <p>
+    Resistimos lo que se va. Nos aferramos a lo que tenemos. Pretendemos que lo estable durará para siempre, y nos sorprendemos —una y otra vez, con renovada incredulidad— cuando no es así. Esa brecha entre cómo son las cosas y cómo queremos que sean es, según la tradición contemplativa, la raíz del sufrimiento no necesario. No del dolor —el dolor es inevitable— sino del sufrimiento que añadimos sobre el dolor con nuestra resistencia.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Lo que dos tradiciones dicen al mismo tiempo</h2>
+
+  <p>
+    Esta comprensión no es exclusiva del budismo. Aparece, con lenguajes distintos y énfasis diferentes, en casi todas las tradiciones contemplativas que han reflexionado sobre la muerte y el duelo con suficiente seriedad.
+  </p>
+
+  <div class="tradicion-bloque">
+    <div class="tradicion-item">
+      <span class="tradicion-origen">Tradición Budista · Anicca</span>
+      <p class="tradicion-texto">
+        "Todo lo compuesto es impermanente. Cuando uno ve esto con sabiduría, se aparta del sufrimiento. Este es el camino hacia la pureza."
+      </p>
+      <p class="tradicion-nota">
+        El sufrimiento no proviene de la pérdida sino de la resistencia a reconocer que la pérdida es la naturaleza de todo lo que amamos en forma.
+      </p>
+    </div>
+    <div class="tradicion-item">
+      <span class="tradicion-origen">Tradición Estoica · Marco Aurelio</span>
+      <p class="tradicion-texto">
+        "Pierde algo y deja que se vaya. Mira las cosas como si fuera la primera —y la última— vez que las ves. Así las verás verdaderamente."
+      </p>
+      <p class="tradicion-nota">
+        Ver cada momento como si fuera único —porque lo es— transforma la impermanencia de amenaza en instrucción sobre el valor real de las cosas.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    Que estas dos tradiciones —separadas por siglos y continentes— lleguen a formulaciones tan similares no es coincidencia. Es que están observando el mismo territorio: la naturaleza humana frente a la pérdida, y lo que ocurre cuando esa naturaleza deja de resistir lo inevitable y empieza a recibirlo.
+  </p>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">🌀</span>
+    <blockquote>
+      "La impermanencia no roba lo que amaste.<br>
+      Confirma que fue real.<br>
+      Solo lo real puede perderse."
+    </blockquote>
+  </div>
+
+  <h2>Las dos resistencias que prolongan el duelo</h2>
+
+  <p>
+    En la práctica clínica, la resistencia a la impermanencia en el duelo toma formas reconocibles. No es una sola cosa — es un repertorio. Y comprender qué forma específica toma en cada persona es el primer paso para trabajar con ella.
+  </p>
+
+  <div class="resistencias">
+
+    <div class="resistencia-item">
+      <div class="resistencia-titulo">La resistencia hacia atrás · "No debería haber pasado"</div>
+      <p class="resistencia-desc">
+        Es la forma más común y más agotadora. La mente regresa una y otra vez al momento en que todo cambió, buscando el punto exacto donde pudo haber sido diferente. El pasado se convierte en un texto que la mente sigue intentando reescribir, aunque sabe — en algún nivel más profundo — que no puede.
+      </p>
+      <p class="resistencia-transformacion">
+        Transformación posible: de "no debería haber pasado" a "pasó. Y yo estaba ahí. Y el amor también."
+      </p>
+    </div>
+
+    <div class="resistencia-item">
+      <div class="resistencia-titulo">La resistencia hacia adelante · "No puedo vivir con esto"</div>
+      <p class="resistencia-desc">
+        Es la proyección del duelo hacia un futuro que se imagina insoportable. La mente genera escenas de todos los momentos que vendrán sin esa persona — cumpleaños, navidades, logros que no podrán ser compartidos — y se derrumba ante esa acumulación imaginada de ausencias.
+      </p>
+      <p class="resistencia-transformacion">
+        Transformación posible: de anticipar todos los futuros sin esa persona a habitar solo este momento, que siempre es manejable.
+      </p>
+    </div>
+
+    <div class="resistencia-item">
+      <div class="resistencia-titulo">La resistencia a sentir · "Si lo siento completamente, me destruye"</div>
+      <p class="resistencia-desc">
+        La más sutil y a veces la más costosa. El miedo al dolor total lleva a la persona a mantenerse en un estado de duelo parcial — sintiendo lo suficiente para no negar, pero no lo suficiente para atravesar. Un equilibrio inestable que agota sin resolver.
+      </p>
+      <p class="resistencia-transformacion">
+        Transformación posible: el dolor sentido completamente, incluso el más intenso, tiene una duración. Lo que no se siente se queda. Lo que se siente puede moverse.
+      </p>
+    </div>
+
+  </div>
+
+  <h2>Impermanencia no significa indiferencia</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Sofía tenía cincuenta y un años. Había perdido a su esposo de manera repentina — un infarto sin aviso, sin despedidas, sin tiempo para prepararse para nada. Cuando llegó a consulta, cuatro meses después, traía una rabia particular dirigida no a las circunstancias sino a una idea:<br><br>
+    <em>"Mi cuñada me dijo que según el budismo hay que 'desapegarse'. Que el sufrimiento viene del apego. Que si yo lo amaba de verdad, debería poder soltarlo."</em><br><br>
+    Hizo una pausa larga. Sus ojos eran dos brasas.<br><br>
+    <em>"Treinta años juntos. ¿Eso se 'suelta'?"</em>
+  </div>
+
+  <p>
+    La rabia de Sofía era completamente legítima. Y señalaba algo importante: la comprensión superficial de la impermanencia puede volverse una forma de violencia. Una excusa para pedirle a alguien que sufre que deje de sufrir antes de tiempo, envuelta en vocabulario espiritual.
+  </p>
+
+  <p>
+    La tradición budista —leída con cuidado, no con prisa— no dice eso. El desapego que propone no es indiferencia. No es la supresión del amor. No es la eliminación del dolor. Es algo más preciso y más difícil: <strong>la capacidad de amar plenamente sin exigir que lo amado permanezca para siempre en la misma forma.</strong>
+  </p>
+
+  <p>
+    Sofía amó a su esposo con todo lo que tenía. Ese amor fue real. El dolor que siente es la medida exacta de ese amor. Y la impermanencia no niega ninguna de esas dos cosas. Las confirma: <em>algo tan real que duele cuando se va</em> es, por definición, algo que verdaderamente existió.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio · Tres meses después</span>
+    Sofía llegó a una sesión con algo diferente en la cara. No paz —todavía no. Pero sí algo que se parecía a la apertura.<br><br>
+    <em>"Estuve pensando en lo que dijiste sobre que la impermanencia confirma que fue real. Y me di cuenta de algo: si él hubiera durado para siempre, yo no habría prestado tanta atención. Habría dado por sentado que siempre estaría. Lo que me duele ahora es que sé exactamente lo que tuve. Y eso —saber exactamente lo que tuve— no lo cambiaría por nada."</em>
+  </div>
+
+  <p>
+    Sofía no llegó a esa comprensión porque alguien se la explicó. Llegó porque la habitó. Porque transitó el duelo con suficiente presencia como para que la impermanencia dejara de ser el enemigo y se convirtiera en el maestro que nadie elige pero que —cuando se lo recibe— enseña lo que ninguna otra experiencia puede enseñar.
+  </p>
+
+  <h2>Lo que la naturaleza sabe y nosotros olvidamos</h2>
+
+  <p>
+    Hay algo que contemplar en las estaciones — no como metáfora sentimental, sino como hecho observable. El invierno no es el fracaso del otoño. La muerte de las hojas no es una catástrofe que debe ser evitada. Es la condición necesaria para que la primavera pueda ocurrir. El árbol no resiste. No llora sus hojas. Las suelta en el momento exacto en que el campo lo pide, y dedica su energía a lo que viene.
+  </p>
+
+  <div class="estaciones">
+    <div class="estacion">
+      <span class="estacion-icono">🌱</span>
+      <span class="estacion-nombre">Primavera</span>
+      <p class="estacion-desc">El surgimiento. Lo nuevo que emerge exactamente donde antes hubo vacío.</p>
+    </div>
+    <div class="estacion">
+      <span class="estacion-icono">☀️</span>
+      <span class="estacion-nombre">Verano</span>
+      <p class="estacion-desc">La plenitud. El momento de máxima presencia. El amor en su forma más visible.</p>
+    </div>
+    <div class="estacion">
+      <span class="estacion-icono">🍂</span>
+      <span class="estacion-nombre">Otoño</span>
+      <p class="estacion-desc">La transición. Lo que se suelta no como fracaso sino como completud. La forma cumplida.</p>
+    </div>
+    <div class="estacion">
+      <span class="estacion-icono">❄️</span>
+      <span class="estacion-nombre">Invierno</span>
+      <p class="estacion-desc">El reposo fértil. La ausencia que prepara. El silencio que no es vacío sino gestación.</p>
+    </div>
+  </div>
+
+  <p>
+    El duelo ocurre en el invierno. Y el invierno —esto es lo que la naturaleza sabe y nosotros olvidamos con tanta facilidad— <strong>no es el final del ciclo. Es su parte más esencial.</strong> Sin invierno, no hay suelo preparado para la primavera. Sin el reposo de la pérdida, sin el silencio que deja la ausencia, algo que necesitaba espacio para emerger no puede hacerlo.
+  </p>
+
+  <p>
+    Esto no significa que el invierno no duela. Significa que el invierno tiene una función que el verano no puede cumplir.
+  </p>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">🌀 Para quien quiera ir más profundo · Capa Alquímica</span>
+    <p>
+      En el Libro VII de Trinity Origen (La Muerte Como Maestra), la impermanencia se describe no como defecto del universo sino como su mecanismo de renovación más fundamental. Lo que en física se llama entropía —la tendencia de los sistemas a la disolución— es también la condición de posibilidad de toda nueva organización. Sin disolución, no hay emergencia. Sin muerte de la forma, no hay liberación de la energía que esa forma contenía.
+    </p>
+    <p>
+      El desapego radical que propone la tradición contemplativa no es, desde esta perspectiva, una práctica de supresión emocional. Es el reconocimiento de que la forma amada era un nodo temporal en un campo permanente. Soltar la forma no es soltar el amor — es permitir que el amor encuentre su expresión más amplia, más allá de los límites de la forma que lo contuvo.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">🔱 Práctica del Nodo 7</div>
+    <h3>La Contemplación de lo que Fue</h3>
+    <p class="ejercicio-intro">
+      Esta práctica trabaja directamente con la resistencia a la impermanencia, no para eliminarla sino para transformarla. Es una meditación breve —entre quince y veinte minutos— que puede hacerse sentado, con los ojos cerrados o semicerrados.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>El anclaje inicial</strong>
+        Comienza con tres respiraciones completas — largas, conscientes. En cada exhalación, nota que algo sale de ti. El aire que entra no es el mismo que sale. Ese intercambio constante — recibir y soltar, recibir y soltar — es el ritmo más fundamental de estar vivo. Tu cuerpo practica la impermanencia sin interrupción, desde el primer aliento hasta el último.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>Traer la imagen</strong>
+        Con suavidad, trae a la mente la imagen de quien partió. No el dolor —la imagen. El rostro, una postura característica, un gesto específico. Permite que la imagen esté presente sin hacer nada con ella todavía.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>La frase de reconocimiento</strong>
+        Internamente, di estas palabras — lentamente, sin prisa:<br><br>
+        <em>"Exististe. Fuiste real. Lo que hubo entre nosotros fue real. La impermanencia no borra eso — lo confirma."</em><br><br>
+        Repítela una vez más si sientes que algo en ti necesita escucharla de nuevo. No es un consuelo — es un hecho.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">IV</div>
+      <div class="paso-text">
+        <strong>La pregunta del desapego</strong>
+        Con la imagen todavía presente, hazte esta pregunta sin intentar responderla con la mente:<br><br>
+        <em>¿Qué parte de mi amor por ti no depende de que sigas aquí en la forma en que estabas?</em><br><br>
+        Quédate en silencio. Espera. La respuesta no llega como pensamiento — llega como sensación, como apertura, como algo que se afloja levemente en el pecho o en los hombros.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">V</div>
+      <div class="paso-text">
+        <strong>El cierre con gratitud real</strong>
+        Antes de abrir los ojos, toma un momento para reconocer — sin sentimentalismo — que esa persona existió en tu vida. No que fue perfecta. No que todo fue bueno. Sino que existió, y que esa existencia te modificó de maneras que todavía están activas en ti.<br><br>
+        Eso — solo eso — ya es suficiente para ser honrado.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica integra elementos de la meditación de metta (amor benevolente) con técnicas de procesamiento cognitivo adaptadas al duelo. La frase de reconocimiento del paso III puede usarse como ancla fuera de sesión — especialmente en momentos de resistencia aguda o cuando la persona reporta sentirse "atrapada en el pasado". Se recomienda no usar esta práctica en las primeras semanas de duelo agudo, donde la prioridad es la regulación del sistema nervioso (Nodo 3) antes que la contemplación de la impermanencia.
+    </div>
+  </div>
+
+  <h2>Lo que Sofía eligió recordar</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio · Última sesión</span>
+    En nuestra sesión final, Sofía trajo una fotografía. Su esposo y ella, en un viaje que habían hecho hacía muchos años. Los dos jóvenes, los dos riendo, ninguno sabiendo todavía lo que venía.<br><br>
+    <em>"Antes no podía mirar fotos. Ahora puedo. Y lo que pienso cuando la miro no es 'lo perdí'. Pienso: 'lo tuve'. Y lo tuve completamente. Y eso nadie me lo quita."</em><br><br>
+    Hizo una pausa larga.<br><br>
+    <em>"La impermanencia me enseñó que nada es para siempre. Pero también me enseñó que treinta años de amor real es más de lo que mucha gente tiene en toda una vida. No sé si eso es resignación o gratitud. Quizás son la misma cosa."</em>
+  </div>
+
+  <p>
+    Resignación y gratitud. Sofía puso el dedo en algo que pocas veces se nombra: que en el duelo bien habitado, llega un momento en que la aceptación y el agradecimiento se vuelven indistinguibles. No porque el dolor haya desaparecido. Sino porque la persona ha expandido lo suficiente su capacidad de sostener la realidad como para que el dolor y la gratitud puedan coexistir en el mismo espacio.
+  </p>
+
+  <p>
+    Eso no es el final del duelo. Es la señal de que el trabajo alquímico ha comenzado a dar fruto.
+  </p>
+
+  <div class="transicion-capa">
+    <span class="transicion-label">◈ Umbral · Hacia el Maestro Interno</span>
+    <p class="transicion-texto">
+      Tres nodos de la Capa Alquímica han hecho su trabajo. La herida se convirtió en lugar de visión. El vínculo se reveló como campo que permanece. La impermanencia dejó de ser el enemigo y se volvió pedagogía.<br><br>
+      El Nodo 8 es el que cierra esta capa y abre la tercera. No hacia afuera — hacia adentro. Hacia algo que el duelo despertó sin pedirlo y que, una vez despierto, no puede volver a dormirse.<br><br>
+      <em>El Maestro Interno.</em>
+    </p>
+  </div>
+
+  <div class="reflexion-final">
+    <p>
+      La impermanencia no es el enemigo.<br>
+      Es la condición<br>
+      de que algo haya sido real.<br><br>
+      Y lo que fue real<br>
+      no necesita durar para siempre<br>
+      para haber importado completamente.
+    </p>
+    <div class="divider" style="margin:1.5rem 0;">🌀</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_06.html">← Nodo 6: El Vínculo no era un Cable</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 7 de 12</span>
+    <a href="#">Nodo 8: El Maestro Interno Despierta →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
