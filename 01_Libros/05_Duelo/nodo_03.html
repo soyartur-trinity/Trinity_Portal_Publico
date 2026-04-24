@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 3: El Cuerpo Recuerda | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --shadow: rgba(44, 36, 22, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 25% 10%, rgba(196,168,79,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 75% 90%, rgba(122,32,32,0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.5; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  .nodo-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.55;
+    animation: breathe 6s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.65; transform: scale(1.04); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p { margin-bottom: 1.6rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  /* MAPA CORPORAL */
+  .mapa-corporal {
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold-pale);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    background: rgba(255,255,255,0.3);
+  }
+
+  .mapa-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .zona {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1.2rem;
+    align-items: start;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .zona:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .zona-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--gold);
+    padding-top: 0.1rem;
+  }
+
+  .zona-desc {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .zona-desc em {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.82rem;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(245,240,232,0.8);
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold);
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .ejercicio-intro {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 0.1rem;
+    opacity: 0.8;
+  }
+
+  .paso-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+    .zona { grid-template-columns: 1fr; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_02.html">← Nodo 2</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 4 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="nodo-label">Nodo 3 · Capa Humana</span>
+  <span class="nodo-glyph">⟡</span>
+  <h1>El Cuerpo Recuerda</h1>
+  <div class="nodo-subtitle">Lo que la mente no puede procesar, el cuerpo lo sostiene</div>
+  <br>
+  <span class="shift-badge">Shift: del control mental al anclaje corporal</span>
+</div>
+
+<div class="container">
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Elena tenía cuarenta y ocho años. Había perdido a su pareja dieciocho meses antes. Funcionaba bien, decía ella misma: trabajaba, cuidaba a sus hijos, sostenía la casa. En nuestra primera sesión llegó impecable, articulada, con las palabras justas para describir cada cosa.<br><br>
+    En la tercera sesión, algo cambió. Estaba contando algo sin mayor carga emocional aparente —una anécdota sobre el supermercado— cuando de pronto dejó de hablar. Llevó la mano al pecho. Sus ojos se llenaron de agua.<br><br>
+    <em>"No sé qué me pasa. Estaba comprando aceite de oliva. Él siempre elegía el aceite."</em><br><br>
+    El cuerpo no había olvidado nada.
+  </div>
+
+  <p>
+    Hay una idea muy extendida sobre el duelo: que es, fundamentalmente, un proceso mental y emocional. Que ocurre en la mente, en los pensamientos, en los sentimientos que se nombran y elaboran en conversación o en silencio. Y que cuando la mente "lo procesa", el duelo termina.
+  </p>
+
+  <p>
+    Esta idea es incompleta. Y su incompletitud tiene consecuencias.
+  </p>
+
+  <p>
+    Porque el duelo también vive en el cuerpo. En la tensión de los hombros que no baja desde aquella noche. En el insomnio que nadie termina de entender. En la náusea que aparece sin razón aparente. En las piernas que se niegan a moverse ciertos días. En el olor del aceite de oliva en un supermercado.
+  </p>
+
+  <p>
+    El cuerpo no interpreta la pérdida. La registra. Y lo hace con una fidelidad que ningún relato puede igualar.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Lo que la neurociencia confirma</h2>
+
+  <p>
+    El sistema nervioso no distingue entre una amenaza física y una pérdida emocional profunda. Ante ambas, activa los mismos circuitos de respuesta al estrés: el eje hipotálamo-hipófisis-suprarrenal se dispara, el cortisol aumenta, el sistema nervioso simpático entra en alerta.
+  </p>
+
+  <p>
+    En el duelo agudo, el cuerpo vive literalmente en estado de emergencia. Y cuando esa emergencia se prolonga semanas, meses, a veces años, el sistema nervioso aprende a normalizar ese estado. <strong>El cuerpo se adapta al dolor como si fuera el clima.</strong> Deja de sentirlo como alarma y empieza a sentirlo como fondo. Siempre presente, apenas notado, pero gobernando desde abajo.
+  </p>
+
+  <p>
+    Esto explica muchas cosas que las personas en duelo describen con confusión: el agotamiento sin causa aparente, la dificultad para concentrarse, la sensación de moverse en cámara lenta, la irritabilidad desproporcionada, el sistema inmune que falla. No son debilidades del carácter. Son las consecuencias fisiológicas de un sistema nervioso que ha estado demasiado tiempo sosteniendo demasiado.
+  </p>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">⟡</span>
+    <blockquote>
+      "El cuerpo no miente sobre lo que vivió.<br>
+      Tampoco exagera.<br>
+      Solo registra."
+    </blockquote>
+  </div>
+
+  <h2>El mapa del duelo en el cuerpo</h2>
+
+  <p>
+    Cada persona carga el duelo en lugares diferentes. Pero hay zonas que aparecen con notable frecuencia en la experiencia clínica y en la investigación somática del duelo. No como diagnóstico, sino como mapa de reconocimiento.
+  </p>
+
+  <div class="mapa-corporal">
+    <span class="mapa-label">◈ Zonas frecuentes del duelo somático</span>
+
+    <div class="zona">
+      <div class="zona-nombre">El pecho</div>
+      <div class="zona-desc">
+        La opresión, el peso, la sensación de que algo falta en el centro. En muchas tradiciones contemplativas, el corazón es considerado el órgano del vínculo. El cuerpo parece saberlo antes que la mente.
+        <em>Señal: "Siento que me falta aire sin razón."</em>
+      </div>
+    </div>
+
+    <div class="zona">
+      <div class="zona-nombre">La garganta</div>
+      <div class="zona-desc">
+        El nudo que impide hablar o tragar. El lugar donde el llanto se detiene cuando no se permite salir. La garganta guarda lo que no se dijo y también lo que no puede decirse todavía.
+        <em>Señal: "Tengo algo atravesado que no puedo nombrar."</em>
+      </div>
+    </div>
+
+    <div class="zona">
+      <div class="zona-nombre">El estómago</div>
+      <div class="zona-desc">
+        El vacío. La ausencia de apetito o, en su opuesto, el comer compulsivo como intento de llenar algo que la comida no puede llenar. El sistema digestivo es enormemente sensible al estado emocional.
+        <em>Señal: "No tengo hambre, o como sin sentir nada."</em>
+      </div>
+    </div>
+
+    <div class="zona">
+      <div class="zona-nombre">Los hombros</div>
+      <div class="zona-desc">
+        La carga que se sostiene. La tensión crónica de quien ha asumido que debe seguir funcionando sin derrumbarse. Los hombros suben en el duelo como si intentaran proteger el cuello y la cabeza de un golpe que ya ocurrió.
+        <em>Señal: "Estoy siempre tenso sin saber por qué."</em>
+      </div>
+    </div>
+
+    <div class="zona">
+      <div class="zona-nombre">Las piernas</div>
+      <div class="zona-desc">
+        La pesadez. La dificultad para moverse, para iniciar. Las piernas son el órgano del movimiento hacia adelante, y en el duelo a veces simplemente no saben hacia dónde ir. El cuerpo paralizado en la encrucijada.
+        <em>Señal: "Me cuesta empezar cualquier cosa."</em>
+      </div>
+    </div>
+
+    <div class="zona">
+      <div class="zona-nombre">La piel</div>
+      <div class="zona-desc">
+        El hambre de contacto. La piel recuerda el tacto del ausente — su temperatura, la textura específica de su presencia física. El aislamiento en el duelo a veces tiene una dimensión literal y táctil que raramente se nombra.
+        <em>Señal: "Extraño de una manera que no puedo explicar con palabras."</em>
+      </div>
+    </div>
+
+  </div>
+
+  <p>
+    Reconocer estas zonas no es diagnóstico ni tratamiento. Es simplemente el primer acto de honestidad con el cuerpo: <strong>admitir que también él está de duelo</strong>, que también él necesita atención, y que ignorarlo no acelera el proceso — lo complica.
+  </p>
+
+  <h2>Lo que el cuerpo necesita</h2>
+
+  <p>
+    El cuerpo en duelo no necesita que lo convenzan de nada. No necesita argumentos ni perspectivas filosóficas, al menos no en primer lugar. Necesita cosas más simples y más difíciles a la vez: ser movido, ser tocado, ser calentado, ser respirado conscientemente.
+  </p>
+
+  <p>
+    Necesita que alguien — o uno mismo — le preste atención sin urgencia de cambiar lo que encuentra. Esa atención sin agenda es lo que en la tradición contemplativa se llama presencia, y lo que en la clínica somática se llama regulación desde abajo hacia arriba: no desde la mente que interpreta, sino desde el cuerpo que siente.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Varias semanas después de la sesión del aceite de oliva, Elena llegó diferente. Había empezado a caminar cada mañana — no como ejercicio, sino, según sus palabras, <em>"para recordarle a mis piernas que saben moverse"</em>.<br><br>
+    <em>"Al principio lloraba mientras caminaba. Después dejé de llorar y empecé a notar cosas: el frío, los árboles, los perros. Mi cuerpo se acordaba de que seguía vivo. Eso me pareció importante."</em>
+  </div>
+
+  <p>
+    Lo que Elena descubrió sola, caminando, es algo que la investigación en trauma somático confirma: el movimiento rítmico y voluntario activa el sistema nervioso parasimpático, ayuda a regular el cortisol, y le envía al sistema nervioso una señal fundamental — <em>no estás en peligro ahora mismo</em>.
+  </p>
+
+  <p>
+    El cuerpo no necesita que el duelo haya terminado para poder empezar a regularse. Solo necesita momentos — breves, repetidos, consistentes — en que se le recuerde que también él merece atención.
+  </p>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">🌀 Para quien quiera ir más profundo · Capa Alquímica</span>
+    <p>
+      En la visión Trinity, el cuerpo físico no es el nivel más denso de la realidad — es su expresión más visible. Lo que llamamos "duelo somático" es la actualización que el campo energético del cuerpo realiza ante la reorganización del campo relacional. La persona que amábamos no era solo una presencia mental o emocional: era también una frecuencia que resonaba con la nuestra a nivel físico. Su ausencia deja un patrón de resonancia sin destino — y ese patrón busca expresarse a través del cuerpo mientras el campo se reorganiza.
+    </p>
+    <p>
+      Desde esta perspectiva, los síntomas somáticos del duelo no son disfunciones. Son el cuerpo procesando una reorganización de campo que la mente todavía no puede contener completamente. Honrar esos síntomas — no suprimirlos, no acelerarlos — es permitir que la actualización ocurra en su propio tiempo.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">🔱 Práctica del Nodo 3</div>
+    <h3>El Inventario Corporal Compasivo</h3>
+    <p class="ejercicio-intro">
+      Esta práctica es un escaneo corporal adaptado al duelo. No busca relajar ni sanar — busca escuchar. Requiere entre diez y veinte minutos, en un lugar donde puedas estar sin interrupciones. Puede hacerse sentado o acostado.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>Llega al cuerpo</strong>
+        Cierra los ojos. Siente el contacto de tu cuerpo con la superficie que lo sostiene. No hagas nada especial con la respiración — solo nota que estás respirando. Ese movimiento automático, ese ir y venir del aire, ocurre sin que lo ordenes. El cuerpo sabe vivir incluso cuando tú no sabes qué hacer.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>Recorre sin juzgar</strong>
+        Lentamente, lleva la atención desde los pies hacia la cabeza. No busques nada en particular. Solo pregunta a cada zona: <em>¿qué hay aquí?</em> No: ¿está bien o mal? Solo: ¿qué hay?<br><br>
+        Si encuentras tensión, nótala. Si encuentras vacío, nótalo. Si encuentras dolor, nótalo. No intentes cambiarlo todavía.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>Detente donde el cuerpo te detiene</strong>
+        Habrá una zona que reclame más atención. Quizás el pecho. Quizás la garganta. Quizás un lugar que no esperabas. Detente ahí.<br><br>
+        Coloca suavemente una mano sobre esa zona, si puedes. Y di internamente — sin dramatismo, con la misma calma con que le hablarías a un niño asustado:<br><br>
+        <em>"Te escucho. No tienes que resolverse ahora."</em>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">IV</div>
+      <div class="paso-text">
+        <strong>Una respiración para esa zona</strong>
+        Imagina que puedes dirigir el aire directamente hacia esa zona. No para curarla — solo para llevarle oxígeno y atención. Tres respiraciones lentas, dirigidas. Como si el cuerpo supiera, en ese lugar específico, que alguien está prestando atención.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">V</div>
+      <div class="paso-text">
+        <strong>El cierre</strong>
+        Antes de abrir los ojos, agradece a tu cuerpo — sin sentimentalismo, con genuina seriedad — por haber sostenido todo lo que ha sostenido. Él ha seguido funcionando mientras tú no sabías cómo. Eso merece reconocimiento.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Este ejercicio es compatible con protocolos de reducción de estrés basada en mindfulness (MBSR) y con aproximaciones somáticas como Somatic Experiencing. En pacientes con trauma complejo o disociación, se recomienda comenzar solo con pies y piernas antes de trabajar el tronco. El contacto físico de la mano sobre el cuerpo puede ser muy activador — ajustar según el caso. Se puede realizar como apertura o cierre de sesión.
+    </div>
+  </div>
+
+  <h2>El cuerpo como aliado, no como obstáculo</h2>
+
+  <p>
+    Hay una tendencia cultural profunda a tratar el cuerpo en duelo como un problema que interfiere con el proceso "real" — el cognitivo, el emocional, el espiritual. Se medica el insomnio para poder funcionar. Se suprime el llanto para no desestabilizarse. Se ignoran las señales físicas porque "hay cosas más importantes".
+  </p>
+
+  <p>
+    Pero el cuerpo no interfiere con el duelo. <strong>El cuerpo es uno de los canales por los que el duelo puede moverse.</strong> Y cuando ese canal se bloquea, el proceso se estanca — a veces durante años.
+  </p>
+
+  <p>
+    Elena, meses después, lo dijo con la precisión que solo da la experiencia directa: <em>"Empecé a sanar cuando dejé de intentar entender lo que me pasaba con la cabeza y empecé a escuchar lo que me pasaba con el cuerpo. El cuerpo ya sabía. Solo necesitaba que yo prestara atención."</em>
+  </p>
+
+  <p>
+    El cuerpo recuerda. Pero también — y esto es lo que este nodo quiere dejar — <strong>el cuerpo sana</strong>. No de golpe, no de forma lineal, no de un modo que la mente pueda planificar. Pero sana. Porque sanar es lo que los cuerpos vivos hacen cuando se les permite hacerlo.
+  </p>
+
+  <div class="reflexion-final">
+    <p>
+      Tu cuerpo ha estado sosteniendo esto<br>
+      desde antes de que supieras cómo nombrarlo.<br><br>
+      Ya es hora de que alguien<br>
+      se lo agradezca.
+    </p>
+    <div class="divider" style="margin:1.5rem 0;">⟡</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_02.html">← Nodo 2: El Narrador que Sufre</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 3 de 12</span>
+    <a href="#">Nodo 4: Ver, Comprender, Volver →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
