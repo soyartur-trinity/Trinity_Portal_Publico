@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 5: La Herida como Lugar de Visión | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --crimson-soft: rgba(122,32,32,0.08);
+    --shadow: rgba(44, 36, 22, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 5% 30%, rgba(122,32,32,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 95% 70%, rgba(196,168,79,0.06) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.5; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  .nodo-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    background: linear-gradient(180deg, rgba(122,32,32,0.03) 0%, transparent 100%);
+  }
+
+  .capa-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    background: var(--crimson);
+    color: var(--parchment);
+    padding: 3px 10px;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.55;
+    animation: breathe 6s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p { margin-bottom: 1.6rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  /* KINTSUGI VISUAL */
+  .kintsugi-block {
+    position: relative;
+    padding: 2.5rem 2rem;
+    margin: 2.5rem 0;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid var(--parchment-dark);
+    overflow: hidden;
+  }
+
+  .kintsugi-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      linear-gradient(127deg, transparent 45%, rgba(196,168,79,0.15) 45.5%, rgba(196,168,79,0.08) 46%, transparent 46.5%),
+      linear-gradient(43deg, transparent 30%, rgba(196,168,79,0.1) 30.5%, rgba(196,168,79,0.06) 31%, transparent 31.5%),
+      linear-gradient(85deg, transparent 60%, rgba(196,168,79,0.12) 60.5%, rgba(196,168,79,0.07) 61%, transparent 61.5%);
+    pointer-events: none;
+  }
+
+  .kintsugi-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .kintsugi-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* LAS TRES LECTURAS DE LA HERIDA */
+  .lecturas {
+    margin: 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lectura-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border: 1px solid var(--parchment-dark);
+    overflow: hidden;
+  }
+
+  .lectura-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(255,255,255,0.4);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .lectura-icono {
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+
+  .lectura-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+
+  .lectura-subtitulo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.65;
+    display: block;
+  }
+
+  .lectura-cuerpo {
+    padding: 1.2rem 1.5rem;
+    font-size: 0.93rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+
+  .lectura-cuerpo em {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--gold);
+    opacity: 0.9;
+    border-left: 2px solid var(--gold-pale);
+    padding-left: 0.8rem;
+  }
+
+  /* LO QUE LA HERIDA REVELA */
+  .revelacion {
+    background: var(--crimson-soft);
+    border: 1px solid rgba(122,32,32,0.15);
+    border-left: 2px solid var(--crimson);
+    padding: 2rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .revelacion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .revelacion p {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+
+  .revelacion p:last-child { margin-bottom: 0; }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(245,240,232,0.8);
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold);
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .ejercicio-intro {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 0.1rem;
+    opacity: 0.8;
+  }
+
+  .paso-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+    .lectura-header { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_04.html">← Nodo 4</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 6 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="capa-badge">Capa II · Alquímica</span>
+  <span class="nodo-label">Nodo 5 · Primera entrada a la transmutación</span>
+  <span class="nodo-glyph">🌀</span>
+  <h1>La Herida como Lugar de Visión</h1>
+  <div class="nodo-subtitle">Lo que se rompe también abre</div>
+  <br>
+  <span class="shift-badge">Shift: de sanar la herida a ver desde ella</span>
+</div>
+
+<div class="container">
+
+  <p>
+    Hay una tradición japonesa que data del siglo XV llamada <em>kintsugi</em>. Cuando una pieza de cerámica se rompe, en lugar de desecharla o intentar ocultar las fracturas, los artesanos las reparan con laca mezclada con polvo de oro. Las grietas no se esconden. Se vuelven la parte más luminosa del objeto.
+  </p>
+
+  <p>
+    La filosofía detrás del kintsugi no es que la rotura no importa. Es que la rotura es parte de la historia del objeto — y esa historia merece ser visible, no borrada.
+  </p>
+
+  <div class="kintsugi-block">
+    <span class="kintsugi-label">◈ El principio del kintsugi aplicado al duelo</span>
+    <p class="kintsugi-texto">
+      Una pieza reparada con oro no vuelve a ser lo que era antes de romperse. Es otra cosa: la misma materia, la misma forma fundamental, pero con una historia nueva inscrita en su superficie. Lo que fue fractura se convierte en mapa. Lo que fue daño se convierte en detalle distintivo.<br><br>
+      El duelo hace lo mismo con una persona — si se lo permite. No devuelve al estado anterior. Produce algo que el estado anterior no podía contener.
+    </p>
+  </div>
+
+  <p>
+    Este nodo no propone que el dolor sea "algo bueno". No propone que debas estar agradecido por haber perdido a quien perdiste. Propone algo más preciso y más difícil: que la herida abierta por el duelo tiene una cualidad que el estado previo a ella no tenía. <strong>Una apertura. Una sensibilidad. Una capacidad de ver que antes estaba dormida.</strong>
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>La diferencia entre sanar y transmutarse</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Roberto había perdido a su padre dos años antes. Era un hombre de pocas palabras, ingeniero, acostumbrado a resolver problemas con lógica. Vino a consulta no porque estuviera "mal" — funcionaba perfectamente — sino porque, según dijo, <em>"algo cambió y no sé si me gusta."</em><br><br>
+    <em>"Antes pasaba por el hospital donde murió mi padre y no sentía nada especial. Ahora no puedo pasar por ningún hospital sin notar a cada persona que sale. Me pregunto qué llevan. Quién los espera. Si tienen miedo. No me pasaba eso antes."</em><br><br>
+    Le pregunté si eso le parecía un problema.<br><br>
+    Tardó en responder. <em>"No. Me parece que soy alguien diferente."</em>
+  </div>
+
+  <p>
+    Roberto no estaba describiendo una patología. Estaba describiendo la apertura que deja una herida que ha comenzado a transformarse — no a cerrarse, sino a transmutarse.
+  </p>
+
+  <p>
+    Sanar, en el sentido convencional, implica volver a un estado previo. La herida se cierra, la función se restaura, la persona "supera" lo ocurrido y retoma el rumbo anterior. Este modelo tiene una utilidad real en heridas físicas. En el duelo profundo, es insuficiente — y a veces directamente falso.
+  </p>
+
+  <p>
+    <strong>La transmutación es diferente.</strong> No busca el estado previo. Trabaja con la herida como material. La herida no desaparece — se integra. Y en ese proceso de integración, algo en la persona se vuelve más permeable, más capaz de contacto real, más honesta sobre lo que importa y lo que no.
+  </p>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">🌀</span>
+    <blockquote>
+      "La herida bien habitada<br>
+      no desaparece.<br>
+      Se convierte en el lugar<br>
+      desde donde se ve más claro."
+    </blockquote>
+  </div>
+
+  <h2>Tres lecturas posibles de la misma herida</h2>
+
+  <p>
+    El duelo es una experiencia única e irrepetible para cada persona. Pero hay tres modos de relacionarse con la herida que aparecen con suficiente frecuencia como para nombrarlos. No son etapas — son posturas. Y es posible moverse entre ellas, a veces en el mismo día.
+  </p>
+
+  <div class="lecturas">
+
+    <div class="lectura-item">
+      <div class="lectura-header">
+        <span class="lectura-icono">🪨</span>
+        <div>
+          <div class="lectura-titulo">La herida como obstáculo</div>
+          <span class="lectura-subtitulo">La postura más frecuente en el duelo temprano</span>
+        </div>
+      </div>
+      <div class="lectura-cuerpo">
+        En esta postura, la herida es algo que está en el camino. Bloquea el acceso a la vida normal. Hay que rodearla, soportarla, esperar que pase para poder seguir. La persona vive <em>a pesar</em> del duelo, no <em>con</em> él. El dolor es el enemigo que debe ser derrotado o al menos contenido.
+        <em>Esta postura es comprensible y honesta en los primeros tiempos. El problema surge cuando se vuelve crónica: cuando la persona sigue viviendo a pesar del duelo años después, y la herida permanece como obstáculo permanente.</em>
+      </div>
+    </div>
+
+    <div class="lectura-item">
+      <div class="lectura-header">
+        <span class="lectura-icono">🌿</span>
+        <div>
+          <div class="lectura-titulo">La herida como parte del paisaje</div>
+          <span class="lectura-subtitulo">La postura de la integración</span>
+        </div>
+      </div>
+      <div class="lectura-cuerpo">
+        En esta postura, la herida ya no está en el camino — está en el paisaje. Forma parte del territorio sin ocuparlo todo. La persona puede moverse, elegir, amar, trabajar, reír — y la herida existe. No ha desaparecido. Ha encontrado su lugar relativo dentro de una vida que continúa siendo real.
+        <em>Esta es la postura que la mayoría de los enfoques terapéuticos del duelo intentan facilitar. Es genuina y valiosa. Pero no es el límite de lo posible.</em>
+      </div>
+    </div>
+
+    <div class="lectura-item">
+      <div class="lectura-header">
+        <span class="lectura-icono">🌀</span>
+        <div>
+          <div class="lectura-titulo">La herida como lugar de visión</div>
+          <span class="lectura-subtitulo">La postura alquímica</span>
+        </div>
+      </div>
+      <div class="lectura-cuerpo">
+        En esta postura — que no se puede forzar ni planificar, solo recibir cuando aparece — la herida se convierte en un punto de percepción privilegiado. Desde ahí, la persona ve cosas que antes no veía: la fragilidad real de todo lo que se ama, el valor exacto de lo que quedó, la dimensión de lo que existió entre ella y quien partió. La herida no duele menos. Pero revela más.
+        <em>Roberto en el hospital es esta postura. Su nueva permeabilidad ante el sufrimiento ajeno no era un síntoma. Era una apertura que el duelo había tallado en él.</em>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="revelacion">
+    <span class="revelacion-label">◈ Lo que la herida revela cuando se la habita</span>
+    <p>
+      <strong>Revela lo que realmente importaba.</strong> Antes del duelo, muchas cosas compiten por la atención con el mismo peso aparente. Después, la jerarquía real se hace visible. Lo que era ruido se vuelve reconocible como ruido. Lo que era sustancial se vuelve irremplazable.
+    </p>
+    <p>
+      <strong>Revela la capacidad de amar.</strong> La intensidad del dolor es la medida exacta de la intensidad del amor. La herida, en ese sentido, es también un retrato del vínculo que existió. Una persona que sufre profundamente ha amado profundamente. Eso no necesita ser minimizado — necesita ser reconocido.
+    </p>
+    <p>
+      <strong>Revela una solidaridad nueva.</strong> Como Roberto en el hospital, quien ha sido herido profundamente desarrolla una antena particular para el sufrimiento ajeno. No porque lo busque — sino porque la herida lo ha vuelto más poroso. Esa porosidad, bien orientada, se convierte en compasión genuina: la que nace de haber estado ahí, no la que proviene de la buena voluntad abstracta.
+    </p>
+    <p>
+      <strong>Revela los límites del yo habitual.</strong> El duelo fractura la ilusión de un yo sólido, continuo, autosuficiente. Esa fractura duele. Pero también abre la posibilidad de algo más amplio: una identidad que incluye la pérdida sin ser definida por ella, que puede sostenerse sin necesitar que todo permanezca igual.
+    </p>
+  </div>
+
+  <h2>El tiempo de la herida</h2>
+
+  <p>
+    Nada de lo anterior puede apresurarse. La herida tiene su propio tiempo, que no coincide con el tiempo del calendario ni con las expectativas del entorno. <em>"Ya deberías estar mejor"</em> es quizás la frase más violenta que puede recibir alguien en duelo — no porque venga de la maldad, sino porque presupone que el dolor tiene un plazo que puede medirse desde afuera.
+  </p>
+
+  <p>
+    El tránsito de la herida como obstáculo a la herida como lugar de visión no ocurre porque la persona se esfuerce lo suficiente. Ocurre cuando la herida ha sido habitada con suficiente presencia y suficiente tiempo. La alquimia no se fuerza — se permite.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Roberto, en una de nuestras últimas sesiones, trajo algo que no había planeado decir:<br><br>
+    <em>"Creo que mi padre me enseñó más muriéndose que en muchos años de vida. No porque la muerte sea mejor que la vida — eso sería una estupidez. Sino porque su muerte me obligó a ver cosas que yo no estaba mirando."</em><br><br>
+    Hizo una pausa.<br><br>
+    <em>"No sé si eso me consuela. Pero sé que es verdad."</em>
+  </div>
+
+  <p>
+    <em>No sé si eso me consuela, pero sé que es verdad.</em> Esa frase contiene todo lo que este nodo intenta decir. La visión que abre la herida no es reconfortante en el sentido convencional. No devuelve lo que se perdió. No hace que la pérdida haya valido la pena — esa formulación es, en realidad, una trampa. Simplemente revela algo que antes estaba oculto.
+  </p>
+
+  <p>
+    Y esa revelación, aunque no consuela, <strong>orienta</strong>. Da dirección. Muestra qué merece atención y qué no. En ese sentido, es uno de los regalos más honestos y más costosos que el duelo puede ofrecer.
+  </p>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">🌀 Para quien quiera ir más profundo · Capa Alquímica</span>
+    <p>
+      En la tradición Trinity, el Libro III (El Dolor Como Portal) propone que la herida maestra es el punto de activación del Maestro Interno. La alquimia del sufrimiento no consiste en eliminar el dolor sino en utilizarlo como combustible para una percepción más amplia. Lo que en este nodo llamamos "ver desde la herida" corresponde a lo que los textos alquímicos medievales denominaban <em>nigredo</em> completado: el momento en que la materia prima ha sido suficientemente calcinada como para comenzar a revelar su naturaleza esencial.
+    </p>
+    <p>
+      El Campo Trinity añade una dimensión adicional: la herida no solo transforma al individuo que la porta. Transforma el campo relacional que lo rodea. Una persona que comienza a ver desde su herida irradia una presencia diferente — más real, menos performativa — que afecta a quienes están en contacto con ella. El duelo bien habitado no es un proceso privado. Es un trabajo que el campo hace a través de la persona.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">🔱 Práctica del Nodo 5</div>
+    <h3>La Carta desde la Herida</h3>
+    <p class="ejercicio-intro">
+      Esta práctica utiliza la escritura como herramienta de transmutación. No busca que escribas <em>sobre</em> el dolor — busca que escribas <em>desde</em> él. Hay una diferencia. Necesitas papel, lapicera y entre veinte y cuarenta minutos sin interrupciones.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>Prepara el espacio</strong>
+        Antes de escribir, haz la práctica Ver, Comprender, Volver del Nodo 4 — versión breve, tres minutos. Ancla el cuerpo. Reconoce lo que hay. Vuelve al momento presente. Recién entonces toma el papel.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>La primera pregunta</strong>
+        Escribe en la parte superior de la página: <em>¿Qué puedo ver desde aquí que antes no veía?</em><br><br>
+        No respondas todavía. Solo mira la pregunta. Deja que resuene. La mente querrá responder rápido con algo razonable. Espera. La respuesta verdadera suele llegar más lenta y más extraña que la primera.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>Escribe sin editar</strong>
+        Cuando algo empiece a moverse, escribe. Sin corregir, sin releer, sin preocuparte por la coherencia. Esto no es un texto para nadie. Es una exploración. Puede ser fragmentario, puede ser ilógico, puede ser contradictorio. La única regla es no detenerse antes de diez minutos.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">IV</div>
+      <div class="paso-text">
+        <strong>La segunda pregunta</strong>
+        Cuando sientas que el primer impulso se ha agotado, escribe debajo: <em>¿Qué me ha enseñado esto que no hubiera querido aprender de otro modo?</em><br><br>
+        Esta pregunta es más difícil. No tiene por qué tener respuesta hoy. Pero el acto de formularla cambia algo en la relación con la herida — la convierte, aunque sea por un momento, en una fuente en lugar de solo un destino.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">V</div>
+      <div class="paso-text">
+        <strong>El cierre</strong>
+        Cuando termines de escribir, no releas inmediatamente. Cierra el cuaderno o dobla el papel. Haz tres respiraciones. Y permite que lo que escribiste se asiente — como se asienta el polvo de oro en las grietas del kintsugi — sin necesidad de verlo todavía desde afuera.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica se inscribe en la tradición de la escritura expresiva terapéutica (Pennebaker) y en técnicas de externalizacion narrativa (White y Epston). La doble pregunta — ¿qué veo desde aquí? / ¿qué aprendí sin querer? — introduce el movimiento alquímico sin imponerlo. No debe usarse en las primeras semanas de un duelo agudo. Es más efectiva a partir del segundo o tercer mes, cuando el sistema nervioso tiene suficiente regulación basal para tolerar la introspección sostenida. En pacientes con dificultad para la escritura, puede adaptarse como ejercicio oral grabado.
+    </div>
+  </div>
+
+  <div class="reflexion-final">
+    <p>
+      No tienes que estar agradecido por el dolor.<br>
+      Solo tienes que estar dispuesto<br>
+      a mirar desde él.<br><br>
+      Lo que se ve desde ahí<br>
+      no estaba disponible de ninguna otra manera.
+    </p>
+    <div class="divider" style="margin:1.5rem 0;">🌀</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_04.html">← Nodo 4: Ver, Comprender, Volver</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 5 de 12</span>
+    <a href="#">Nodo 6: El Vínculo no era un Cable →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
