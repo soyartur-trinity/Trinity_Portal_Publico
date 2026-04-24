@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 2: El Narrador que Sufre | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --shadow: rgba(44, 36, 22, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 20% 15%, rgba(196,168,79,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 85%, rgba(122,32,32,0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.5; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  .nodo-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.55;
+    animation: breathe 5s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.65; transform: scale(1.04); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p { margin-bottom: 1.6rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin: 2rem 0 0.8rem;
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  /* MAPA VISUAL del narrador */
+  .mapa-narrador {
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold-pale);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    background: rgba(255,255,255,0.35);
+  }
+
+  .mapa-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .voz-item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .voz-narrador {
+    font-style: italic;
+    color: var(--crimson);
+    opacity: 0.8;
+    padding: 0.6rem 1rem;
+    background: rgba(122,32,32,0.04);
+    border-left: 2px solid rgba(122,32,32,0.2);
+    line-height: 1.5;
+  }
+
+  .voz-flecha {
+    text-align: center;
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 1rem;
+  }
+
+  .voz-observador {
+    font-style: italic;
+    color: var(--ink-soft);
+    padding: 0.6rem 1rem;
+    background: rgba(139,105,20,0.04);
+    border-right: 2px solid var(--gold-pale);
+    line-height: 1.5;
+  }
+
+  .voz-headers {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .voz-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    opacity: 0.6;
+    color: var(--gold);
+  }
+
+  .voz-header:last-child { text-align: right; }
+
+  .ejercicio {
+    background: rgba(245,240,232,0.8);
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold);
+    padding: 2rem;
+    margin: 3rem 0;
+    border-radius: 0 0 2px 2px;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+    border: none;
+    padding: 0;
+  }
+
+  .ejercicio-intro {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 0.1rem;
+    opacity: 0.8;
+  }
+
+  .paso-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0; }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+    .voz-item { grid-template-columns: 1fr; }
+    .voz-flecha { transform: rotate(90deg); }
+    .voz-headers { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_01.html">← Nodo 1</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 3 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="nodo-label">Nodo 2 · Capa Humana</span>
+  <span class="nodo-glyph">⟡</span>
+  <h1>El Narrador que Sufre</h1>
+  <div class="nodo-subtitle">La voz que repite la historia que nos mantiene atrapados</div>
+  <br>
+  <span class="shift-badge">Shift: de identificarse con el relato a observar al narrador</span>
+</div>
+
+<div class="container">
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Jorge tenía sesenta y dos años y había perdido a su hermano mayor hacía siete meses. Cuando llegó a la consulta, no era la primera vez que buscaba ayuda. Había estado con otro profesional durante los primeros meses, pero lo dejó porque, según sus palabras: <em>"siempre terminaba contando lo mismo."</em><br><br>
+    En nuestra primera sesión entendí a qué se refería. La historia de su hermano — su enfermedad, los últimos días, la llamada telefónica que no llegó a tiempo — la relataba con una precisión casi fotográfica. Cada detalle en su lugar. Cada culpa bien ubicada. Cada arrepentimiento numerado.<br><br>
+    Era una historia perfectamente construida. Y esa perfección era exactamente el problema.
+  </div>
+
+  <p>
+    Todos los seres humanos somos, entre otras cosas, narradores. Construimos relatos sobre lo que nos ocurre para darle coherencia, sentido, orden. Es una función cognitiva fundamental: sin ella, la experiencia sería un caos de sensaciones sin estructura.
+  </p>
+
+  <p>
+    Pero en el duelo, esa función narradora puede convertirse en una trampa. <strong>El relato que construimos sobre la pérdida puede volverse más real que la pérdida misma.</strong> Y entonces ya no estamos procesando el dolor — estamos habitando la historia del dolor, que es una cosa completamente diferente.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>¿Qué hace exactamente el narrador?</h2>
+
+  <p>
+    El narrador en duelo tiene características muy reconocibles. Trabaja sin descanso. Opera principalmente en dos tiempos: el pasado que se revisa sin fin, y el futuro que ya no ocurrirá. Y tiene un repertorio limitado pero poderoso de movimientos.
+  </p>
+
+  <p>
+    <strong>Revisa el pasado buscando el momento exacto en que todo pudo ser diferente.</strong> Si hubiera llamado antes. Si no hubiera dicho aquello. Si hubiera prestado más atención a esa señal. El narrador convierte el pasado en un texto editable — uno que nunca termina de corregir, porque sabe, en algún nivel, que la corrección es imposible.
+  </p>
+
+  <p>
+    <strong>Ensaya el futuro que ya no existe.</strong> Proyecta todos los momentos que ahora no ocurrirán: el cumpleaños sin esa persona, la llamada que ya no vendrá, el sillón que seguirá vacío en navidad. Es una forma de duelo anticipatorio invertido — no por algo que teme perder, sino por algo que ya perdió y sigue perdiendo en cada proyección.
+  </p>
+
+  <p>
+    <strong>Construye una identidad alrededor de la pérdida.</strong> El narrador, cuando lleva suficiente tiempo operando, puede transformar "perdí a alguien que amaba" en "soy alguien que perdió". Esa diferencia parece sutil. No lo es. La primera describe una experiencia. La segunda define una identidad.
+  </p>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">⟡</span>
+    <blockquote>
+      "No somos el relato que contamos sobre lo que nos ocurrió.<br>
+      Somos la consciencia capaz de notar<br>
+      que hay un relato siendo contado."
+    </blockquote>
+  </div>
+
+  <h2>El narrador no es el enemigo</h2>
+
+  <p>
+    Aquí es importante hacer una pausa. Porque hay una tentación — especialmente en enfoques que trabajan con "desidentificación" — de tratar al narrador como algo que debe ser eliminado, silenciado o trascendido cuanto antes.
+  </p>
+
+  <p>
+    Eso sería un error.
+  </p>
+
+  <p>
+    El narrador que construye el relato del duelo está haciendo lo único que sabe hacer: intentar que la experiencia tenga sentido. Es un esfuerzo de amor, aunque sea torpe. Un intento de mantener vivo al ausente a través del recuerdo compulsivo. <strong>Criticar al narrador es criticar al ser humano que intenta sobrevivir.</strong>
+  </p>
+
+  <p>
+    Lo que buscamos no es silenciarlo. Es aprender a escucharlo desde una distancia suficiente como para no confundirse con él. Hay una diferencia enorme entre <em>ser</em> el narrador y <em>tener</em> un narrador.
+  </p>
+
+  <div class="mapa-narrador">
+    <span class="mapa-label">◈ Anatomía del narrador en duelo · Ejemplos de fusión y observación</span>
+    <div class="voz-headers">
+      <div class="voz-header">El narrador dice (fusión)</div>
+      <div class="voz-header"></div>
+      <div class="voz-header" style="text-align:right;">El observador nota (distancia)</div>
+    </div>
+    <div class="voz-item">
+      <div class="voz-narrador">"Nunca voy a poder superarlo."</div>
+      <div class="voz-flecha">→</div>
+      <div class="voz-observador">"Hay una voz que dice que nunca podré. La noto."</div>
+    </div>
+    <div class="voz-item">
+      <div class="voz-narrador">"Tendría que haber estado ahí."</div>
+      <div class="voz-flecha">→</div>
+      <div class="voz-observador">"El narrador vuelve a ese momento. Otra vez."</div>
+    </div>
+    <div class="voz-item">
+      <div class="voz-narrador">"Ya nada tiene sentido sin él."</div>
+      <div class="voz-flecha">→</div>
+      <div class="voz-observador">"Siento que el sentido se fue. Eso es lo que hay ahora."</div>
+    </div>
+    <div class="voz-item">
+      <div class="voz-narrador">"Soy una persona rota."</div>
+      <div class="voz-flecha">→</div>
+      <div class="voz-observador">"Estoy sufriendo. Hay una diferencia entre eso y estar roto."</div>
+    </div>
+  </div>
+
+  <p>
+    La columna de la derecha no niega el dolor. No lo minimiza. No dice "en realidad no es para tanto". <strong>Simplemente introduce un milímetro de espacio entre la experiencia y quien la experimenta.</strong> Y ese milímetro, con el tiempo, se vuelve habitable.
+  </p>
+
+  <h2>Cómo el narrador sostiene la identidad perdida</h2>
+
+  <p>
+    Hay algo que pocas veces se dice sobre el duelo: que parte de lo que perdemos cuando perdemos a alguien es también una versión de nosotros mismos. La persona que éramos en relación con ese alguien. El rol que ocupábamos en su vida. El sentido que esa relación le daba a ciertos aspectos de nuestra existencia.
+  </p>
+
+  <p>
+    Jorge no solo había perdido a su hermano. Había perdido al hermano menor que alguien llamaba todavía por su apodo de infancia. Había perdido la única persona que recordaba los mismos veranos, la misma cocina, el mismo olor de la casa de sus padres. Con la muerte de su hermano, una parte de su historia personal quedó sin testigo.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    En una sesión, Jorge dijo algo que nunca olvidé:<br><br>
+    <em>"Cuando él vivía, yo sabía quién era. Él me recordaba. Ahora a veces me pregunto si esos años realmente ocurrieron."</em><br><br>
+    No era una afirmación irracional. Era la descripción precisa de algo real: perdemos no solo al otro, sino también al testigo de nuestra propia existencia.
+  </div>
+
+  <p>
+    El narrador, en este contexto, intenta compensar esa pérdida de testigo volviéndose él mismo el archivista compulsivo. Repite la historia una y otra vez porque teme que si deja de contarla, algo de lo que existió desaparecerá definitivamente.
+  </p>
+
+  <p>
+    Comprender esto — sin juzgarlo — es el primer paso para relacionarse con el narrador de una manera diferente.
+  </p>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">🌀 Para quien quiera ir más profundo · Capa Alquímica</span>
+    <p>
+      En la tradición contemplativa y en la psicología de tercera generación, lo que aquí llamamos "el narrador" corresponde a lo que ACT denomina <em>conceptualización del yo</em> — la historia que la mente construye sobre quiénes somos. La práctica de defusión cognitiva busca exactamente este desplazamiento: no destruir el relato, sino encontrar al observador que puede sostenerlo sin confundirse con él. En el lenguaje Trinity, esto es el primer reconocimiento del Observador de Campo — la dimensión del ser que registra la perturbación sin ser la perturbación. El narrador es el eco. El campo que lo contiene es lo que permanece.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">🔱 Práctica del Nodo 2</div>
+    <h3>La Silla del Observador</h3>
+    <p class="ejercicio-intro">
+      Esta práctica trabaja con la capacidad de tomar distancia del relato sin abandonar la experiencia. Requiere unos diez minutos y un lugar donde no seas interrumpido.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>Prepara el espacio</strong>
+        Siéntate cómodamente. Cierra los ojos si lo deseas. Respira tres veces profundamente — no para relajarte, sino para llegar. Nota el peso de tu cuerpo en la silla. La temperatura del aire. Los sonidos del entorno.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>Invita al narrador</strong>
+        Permite que aparezca el relato que más frecuentemente repites sobre tu pérdida. No lo busques — ya sabes cuál es. Déjalo llegar. Escucha las palabras exactas que usa. El tono. La velocidad. Las culpas que incluye. Los arrepentimientos que nunca cambian.
+        <br><br>
+        No intervengas todavía. Solo escucha.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>Desplázate a la silla del observador</strong>
+        Imagina que hay otra silla en la habitación, ligeramente alejada. Desde ahí — sin juicio, sin urgencia de cambiar nada — puedes ver al narrador contando su historia. Puedes notar: <em>hay una voz que dice esto. Hay una mente que vuelve siempre a este punto. Hay un ser humano que está sufriendo y que intenta darle sentido a lo que ocurrió.</em>
+        <br><br>
+        Desde la silla del observador, el narrador no desaparece. Pero ya no lo eres por completo.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">IV</div>
+      <div class="paso-text">
+        <strong>Una pregunta, no una respuesta</strong>
+        Desde la silla del observador, hazte esta pregunta — sin necesidad de responderla hoy:<br><br>
+        <em>"¿Qué hay en mí que está escuchando este relato sin ser arrastrado por él?"</em><br><br>
+        Quédate con la pregunta. No la respondas. Ella sola ya desplaza algo.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica puede realizarse en sesión con acompañamiento del terapeuta. La silla vacía como objeto físico —no solo imaginado— amplifica el efecto de externalización del narrador. Se recomienda no combinarla con la práctica del Nodo 1 en la misma sesión hasta que el paciente haya trabajado cada una por separado.
+    </div>
+  </div>
+
+  <h2>Lo que Jorge encontró</h2>
+
+  <p>
+    Varios meses después de comenzar nuestro trabajo, Jorge llegó a una sesión diferente. No traía la historia perfectamente construida. Llegó en silencio — pero era un silencio distinto al de las primeras sesiones. No era el silencio del que no sabe qué decir. Era el silencio de alguien que por fin podía sentarse con lo que había.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    <em>"Esta semana pensé en él diferente. No empecé por la llamada que no llegué a hacer. Empecé por el olor de su ropa. Por cómo reía cuando algo le parecía genuinamente gracioso. Tardé en darme cuenta de que había pasado media hora pensando en él sin que me ahogara."</em><br><br>
+    Hizo una pausa larga.<br><br>
+    <em>"Creo que él sigue siendo mi hermano. No necesito la historia de culpa para que eso sea verdad."</em>
+  </div>
+
+  <p>
+    Eso — lo que Jorge describió — no es superar el duelo. Es algo diferente y más verdadero: <strong>aprender a recordar sin que el recuerdo sea únicamente dolor</strong>. Aprender que el amor no necesita del relato de la pérdida para seguir existiendo.
+  </p>
+
+  <p>
+    El narrador no desapareció. Sigue ahí, a veces. Pero Jorge ya no es solo el narrador. También es el que escucha. Y entre esas dos posiciones hay un espacio que, con el tiempo, se vuelve cada vez más habitable.
+  </p>
+
+  <div class="reflexion-final">
+    <p>
+      No tienes que dejar de contar la historia.<br>
+      Solo necesitas descubrir quién eres<br>
+      cuando no la estás contando.
+    </p>
+    <div class="divider" style="margin:1.5rem 0;">⟡</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_01.html">← Nodo 1: La Primera Grieta</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 2 de 12</span>
+    <a href="#">Nodo 3: El Cuerpo Recuerda →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
