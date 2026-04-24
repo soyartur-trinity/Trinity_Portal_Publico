@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 6: El Vínculo no era un Cable | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --crimson-soft: rgba(122,32,32,0.06);
+    --shadow: rgba(44, 36, 22, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 0% 50%, rgba(139,105,20,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 100% 50%, rgba(139,105,20,0.06) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.5; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  .nodo-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    background: linear-gradient(180deg, rgba(139,105,20,0.04) 0%, transparent 100%);
+  }
+
+  .capa-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    background: var(--crimson);
+    color: var(--parchment);
+    padding: 3px 10px;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.55;
+    animation: breathe 7s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p { margin-bottom: 1.6rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.65rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  /* DIAGRAMA DEL CAMPO */
+  .campo-diagrama {
+    margin: 2.5rem 0;
+    padding: 2.5rem 2rem;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid var(--parchment-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .campo-diagrama::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 1px dashed var(--gold-pale);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .campo-diagrama::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 1px dashed var(--gold-pale);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .campo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .campo-modelos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .modelo {
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--parchment-dark);
+    background: rgba(245,240,232,0.8);
+  }
+
+  .modelo-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.75;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .modelo h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+
+  .modelo p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  .modelo.activo {
+    background: linear-gradient(135deg, rgba(139,105,20,0.08), rgba(232,216,154,0.12));
+    border-color: var(--gold-light);
+  }
+
+  /* RESONANCIA VISUAL */
+  .resonancia {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin: 2.5rem 0;
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), transparent);
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+    position: relative;
+  }
+
+  .resonancia-ondas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 1.2rem;
+  }
+
+  .onda {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-pale);
+    animation: expandir 3s ease-out infinite;
+    position: absolute;
+  }
+
+  .onda:nth-child(2) { animation-delay: 1s; }
+  .onda:nth-child(3) { animation-delay: 2s; }
+
+  @keyframes expandir {
+    0% { transform: scale(0.5); opacity: 0.6; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+
+  .resonancia-centro {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(139,105,20,0.1);
+    border: 1px solid var(--gold-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin: 0 auto 1.2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .resonancia p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(245,240,232,0.8);
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold);
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .ejercicio-intro {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 0.1rem;
+    opacity: 0.8;
+  }
+
+  .paso-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+    .campo-modelos { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_05.html">← Nodo 5</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 7 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="capa-badge">Capa II · Alquímica</span>
+  <span class="nodo-label">Nodo 6 · El campo que permanece</span>
+  <span class="nodo-glyph">🌀</span>
+  <h1>El Vínculo no era un Cable</h1>
+  <div class="nodo-subtitle">Lo que conectaba no dependía del cuerpo</div>
+  <br>
+  <span class="shift-badge">Shift: del apego al ausente al reconocimiento del campo vivo</span>
+</div>
+
+<div class="container">
+
+  <div class="cita-clinica">
+    <span class="cita-label">Regreso a Jorge · Nodo 2, seis meses después</span>
+    Jorge volvió a sesión después de un tiempo sin vernos. Entró diferente — no con la historia perfectamente construida, sino con algo en la cara que todavía no sabía cómo nombrar.<br><br>
+    <em>"Tuve un sueño la semana pasada. Mi hermano estaba ahí, completamente normal, como si nada. No había muerto. Hablamos de cosas sin importancia — el fútbol, creo, o el trabajo. Cuando desperté lo primero que sentí fue que él había estado ahí. Realmente ahí. Y entonces me pregunté algo que no me había preguntado nunca: ¿dónde está exactamente lo que éramos juntos?"</em><br><br>
+    Esa pregunta — formulada en la penumbra de un sueño y el filo de un despertar — es precisamente lo que este nodo intenta responder.
+  </div>
+
+  <p>
+    Cuando alguien que amamos muere, la creencia más inmediata y más devastadora es esta: <em>la conexión se cortó</em>. El vínculo existía entre dos personas. Una de esas personas ya no está. Por lo tanto, el vínculo ya no existe.
+  </p>
+
+  <p>
+    Esta lógica es comprensible. Y en un nivel descriptivo, tiene su verdad: ya no hay conversaciones, ya no hay abrazos, ya no hay presencia física compartida. Esas formas concretas del vínculo han desaparecido.
+  </p>
+
+  <p>
+    Pero hay algo que esa lógica no considera: <strong>qué era exactamente el vínculo antes de que se rompiera</strong>. Si lo que conectaba era solo el cuerpo, entonces sí — el vínculo se cortó. Pero si lo que conectaba era algo más amplio, algo que usaba los cuerpos como soporte pero no era reducible a ellos, entonces la pregunta cambia completamente.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Dos modelos del vínculo</h2>
+
+  <p>
+    Hay dos modos fundamentalmente diferentes de entender qué era lo que unía a dos personas que se amaban. No son modelos abstractos — tienen consecuencias directas y prácticas en cómo se vive el duelo.
+  </p>
+
+  <div class="campo-diagrama">
+    <span class="campo-label">◈ Modelos del vínculo · Una comparación</span>
+    <div class="campo-modelos">
+      <div class="modelo">
+        <span class="modelo-titulo">Modelo convencional</span>
+        <h4>El vínculo como cable</h4>
+        <p>
+          Dos personas separadas, conectadas por un cable de comunicación, afecto y presencia física. Cuando una de ellas muere, el cable se corta. La conexión cesa. Lo que queda es la memoria de lo que existió — un archivo, no una realidad viva.
+        </p>
+      </div>
+      <div class="modelo activo">
+        <span class="modelo-titulo">Modelo del campo</span>
+        <h4>El vínculo como resonancia</h4>
+        <p>
+          Dos personas que, al encontrarse, generaron un campo de resonancia compartido. Ese campo no estaba <em>entre</em> ellas como un cable — estaba <em>en</em> ellas, tejido en su modo de percibir, sentir y moverse por el mundo. Cuando una muere, el campo no se cancela. Se reorganiza.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    La diferencia entre estos dos modelos no es solo filosófica. Es clínicamente relevante. Una persona que opera desde el modelo del cable vive la pérdida como amputación: algo que la completaba ha sido removido, y lo que queda es una función ausente, un miembro fantasma. Una persona que puede acceder al modelo del campo vive la pérdida de modo diferente: algo se reorganizó profundamente, el sufrimiento es real e intenso, pero hay una continuidad que el modelo del cable no puede explicar.
+  </p>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">🌀</span>
+    <blockquote>
+      "Lo que amabas en esa persona<br>
+      ya vivía en ti antes de conocerla.<br>
+      Lo que dejó en ti<br>
+      sigue vivo después de que partió."
+    </blockquote>
+  </div>
+
+  <h2>Lo que el vínculo tejió y no se deshace</h2>
+
+  <p>
+    Piensa en cualquier persona que hayas amado profundamente — y que todavía ames, aunque ya no esté. Ahora considera esto: ¿en qué parte de ti vive esa persona ahora mismo?
+  </p>
+
+  <p>
+    No en el recuerdo abstracto. En algo más concreto. En el modo en que pronuncias ciertas palabras que aprendiste de ella. En el tipo de humor que reconoces como propio y que, si lo miraras de cerca, lleva su impronta. En los valores que defiendes con más fuerza porque ella los defendió primero. En la canción que escuchas de cierto modo porque así la escuchabas juntos.
+  </p>
+
+  <p>
+    Esa persona te modificó. No como un accidente externo — como una fuerza que te reorganizó desde adentro. Y esa reorganización no se deshace con la muerte física. <strong>Lo que el amor teje entre dos seres permanece tejido aunque uno de ellos cambie de forma.</strong>
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Carolina había perdido a su abuela — la persona que, según sus propias palabras, la había "formado como ser humano". Ocho meses después de su muerte, llegó a sesión con algo que la perturbaba:<br><br>
+    <em>"Esta mañana estaba cocinando y de repente noté que estaba haciendo exactamente lo que hacía ella — la forma de cortar la cebolla, el orden en que agrego las cosas. Lo aprendí de verla, sin darme cuenta. Y pensé: ella sigue cocinando. A través de mí. Eso me pareció al mismo tiempo hermoso y muy raro."</em><br><br>
+    Le pregunté por qué raro.<br><br>
+    <em>"Porque si ella sigue estando en mí de esa manera, ¿qué significa que murió?"</em>
+  </div>
+
+  <p>
+    La pregunta de Carolina es una de las más importantes que puede hacerse alguien en duelo. Y no tiene una respuesta simple. Lo que sí tiene es una dirección: la muerte física modifica la forma del vínculo, pero no extingue lo que ese vínculo inscribió en la persona que queda.
+  </p>
+
+  <p>
+    La abuela de Carolina no murió por completo en el momento en que su corazón se detuvo. Murió en el sentido en que dejó de poder ser tocada, escuchada, vista. Pero continúa — con toda la extrañeza que eso implica — en el modo en que Carolina corta una cebolla, en los valores que sostiene, en la mirada que tiene sobre ciertas cosas. Esa continuidad no es metáfora. Es literal.
+  </p>
+
+  <div class="resonancia">
+    <div class="resonancia-ondas">
+      <div class="onda"></div>
+      <div class="onda"></div>
+      <div class="onda"></div>
+    </div>
+    <div class="resonancia-centro">🌀</div>
+    <p>
+      El vínculo no era el cable que los unía.<br>
+      Era la frecuencia que ambos aprendieron a emitir juntos.<br>
+      Esa frecuencia no necesita dos cuerpos para seguir resonando.
+    </p>
+  </div>
+
+  <h2>El apego y el amor — una distinción necesaria</h2>
+
+  <p>
+    Hay algo que el duelo revela con brutal claridad si se lo observa con honestidad: la diferencia entre apego y amor.
+  </p>
+
+  <p>
+    El apego es la necesidad de que el otro esté presente en una forma específica — su cuerpo, su voz, su disponibilidad física. El apego sufre la muerte como amputación porque lo que necesitaba era precisamente esa forma, y esa forma ya no está.
+  </p>
+
+  <p>
+    El amor es diferente. El amor no es una necesidad — es una capacidad que se desplegó en presencia del otro pero que no depende de su presencia para seguir existiendo. El amor que sentiste por quien partió <strong>no se extingue con su partida porque nunca residió solo en él</strong>. Residía también — sobre todo — en tu propia capacidad de amar. Y esa capacidad sigue intacta.
+  </p>
+
+  <p>
+    Esta distinción no minimiza el dolor del apego. El apego duele con una intensidad legítima y real. Pero conocer la diferencia permite algo importante: saber que lo que más duele — el apego, la necesidad de la forma específica — no es lo mismo que el amor. Y que el amor, aunque el apego duela, no ha desaparecido.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Jorge, en esa misma sesión en que trajo el sueño, llegó eventualmente a algo que no había dicho antes:<br><br>
+    <em>"Lo que más me cuesta no es que se haya muerto. Es que ya no puedo llamarlo. Que si pasa algo, no puedo avisarle. Que su teléfono sigue en mis contactos y a veces casi lo marco."</em><br><br>
+    Eso es el apego. Preciso, concreto, irreemplazable en su forma específica.<br><br>
+    Después de un silencio largo, agregó algo más:<br><br>
+    <em>"Pero lo que éramos juntos — eso no lo perdí. Eso todavía está, aunque no sepa bien dónde."</em><br><br>
+    Eso es el amor. Y Jorge lo sabía, aunque no tuviera el lenguaje para nombrarlo todavía.
+  </div>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">🌀 Para quien quiera ir más profundo · Capa Alquímica</span>
+    <p>
+      En el Libro V de Trinity Origen (Los Vínculos Sagrados), el vínculo se describe como una resonancia en un campo compartido que permanece activo más allá de la presencia física de sus nodos. Esta no es solo una metáfora poética — tiene correlatos en la física de campos y en la investigación sobre memorias implícitas relacionales (Stern, Siegel): los patrones de interacción que construimos con quienes amamos quedan inscritos en el sistema nervioso y continúan operando como modelos internos de relación mucho después de que la relación ha cambiado de forma.
+    </p>
+    <p>
+      El Portal 11 de Trinity Infinito (Amor sin Amante ni Amado) lleva esta comprensión a su expresión más radical: el amor que experimentamos en presencia del otro no era generado <em>por</em> el otro — era generado <em>en</em> nosotros, en respuesta al otro, y esa generatividad es una propiedad del campo, no de la persona específica. La persona fue el espejo que permitió ver esa capacidad. El espejo puede romperse. La capacidad no.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">🔱 Práctica del Nodo 6</div>
+    <h3>El Mapa del Campo Compartido</h3>
+    <p class="ejercicio-intro">
+      Esta práctica es un ejercicio de reconocimiento: identificar lo que el vínculo dejó inscrito en ti — no como memoria abstracta, sino como presencia concreta y activa. Necesitas papel y entre veinte y treinta minutos.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>El inventario de lo que permanece</strong>
+        En el centro de una página, escribe el nombre de quien partió. Luego, sin pensar demasiado — dejando que salga lo que sale — escribe alrededor todo lo que esa persona dejó en ti. No recuerdos. Presencias activas:<br><br>
+        ¿Qué haces tú hoy que aprendiste de ella? ¿Qué valores defiendes que ella encarnó primero? ¿Qué capacidad tuya se despertó en contacto con ella? ¿Qué ves diferente en el mundo porque ella estuvo en él?
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>La distinción apego / amor</strong>
+        En otra hoja, traza una línea vertical al centro. A la izquierda escribe: <em>"Lo que extraño de su forma"</em> — todo lo concreto que ya no está: su voz, su risa, sus gestos, sus llamadas, su presencia física.<br><br>
+        A la derecha: <em>"Lo que permanece del campo que construimos"</em> — todo lo que sigue vivo en ti aunque él o ella ya no esté.<br><br>
+        Ambas columnas merecen ser honradas. La izquierda es el apego — real y legítimo. La derecha es el amor — también real, también legítimo, y todavía vivo.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>Una acción que honra el campo</strong>
+        Elige una cosa de la columna derecha — algo que esa persona dejó en ti — y exprésala hoy de algún modo concreto. Cocina algo que cocinaba ella. Usa una palabra que usaba él. Defiende algo que defendía. Escucha algo que escuchaban juntos.<br><br>
+        No como ritual de nostalgia. Como reconocimiento de que el campo sigue activo, y que tú eres uno de los lugares donde vive.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica trabaja con el concepto de "vínculo continuo" (Continuing Bonds, Klass, Silverman y Nickman, 1996) — una de las revisiones más significativas del modelo clásico del duelo, que propone que mantener una conexión interna con el fallecido no es patología sino parte sana del proceso. La distinción entre apego y amor puede usarse como herramienta psicoeducativa en sesión antes de la práctica escrita. Especialmente útil en pacientes con duelos prolongados donde el "soltar" se experimenta como traición.
+    </div>
+  </div>
+
+  <h2>Lo que Jorge encontró, finalmente</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio · Sesión final</span>
+    En nuestra última sesión, Jorge trajo algo que había escrito en casa — algo que nunca antes había hecho, porque no era "de los que escriben".<br><br>
+    <em>"Lo que éramos juntos no cabe en ningún lugar ahora. No cabe en la tumba, no cabe en las fotos, no cabe en los que nos conocieron a los dos. Cabe en mí. Eso me parece demasiado — que yo sea el único lugar donde eso existe. Pero también me parece que es exactamente lo que toca. Ser el lugar donde eso sigue."</em><br><br>
+    Hubo un silencio que ninguno de los dos interrumpió.<br><br>
+    Después dijo, casi en voz baja:<br><br>
+    <em>"Creo que eso es lo que significa querer a alguien. Que se queden en vos aunque no estén."</em>
+  </div>
+
+  <p>
+    Jorge llegó a ese lugar sin que nadie se lo explicara. Lo encontró caminando por dentro de su propio duelo, con más honestidad de la que creía tener. Y lo que encontró — ese reconocimiento de ser el lugar donde el campo compartido continúa — es exactamente lo que este nodo intenta iluminar.
+  </p>
+
+  <p>
+    No como consuelo fácil. Como verdad difícil y luminosa a la vez.
+  </p>
+
+  <div class="reflexion-final">
+    <p>
+      El vínculo no se cortó.<br>
+      Cambió de forma.<br><br>
+      Y tú eres, ahora,<br>
+      uno de los lugares<br>
+      donde sigue siendo real.
+    </p>
+    <div class="divider" style="margin:1.5rem 0;">🌀</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_05.html">← Nodo 5: La Herida como Lugar de Visión</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 6 de 12</span>
+    <a href="#">Nodo 7: La Impermanencia no es el Enemigo →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
