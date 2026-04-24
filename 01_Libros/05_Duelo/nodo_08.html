@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 8: El Maestro Interno Despierta | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --deep: #1a1408;
+    --shadow: rgba(44, 36, 22, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(139,105,20,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 20% 80%, rgba(122,32,32,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(139,105,20,0.04) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.5; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  /* HEADER — más ceremonial que los anteriores */
+  .nodo-header {
+    text-align: center;
+    padding: 5rem 2rem 3.5rem;
+    background: linear-gradient(180deg,
+      rgba(139,105,20,0.07) 0%,
+      rgba(139,105,20,0.03) 50%,
+      transparent 100%);
+    position: relative;
+  }
+
+  .nodo-header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 3rem;
+    background: linear-gradient(180deg, transparent, var(--gold-pale));
+  }
+
+  .capa-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    background: var(--crimson);
+    color: var(--parchment);
+    padding: 3px 10px;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .bisagra-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    background: var(--gold);
+    color: var(--parchment);
+    padding: 3px 10px;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
+    margin-left: 0.5rem;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.6;
+    animation: despertar 6s ease-in-out infinite;
+  }
+
+  @keyframes despertar {
+    0%, 100% { opacity: 0.45; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.75; transform: scale(1.06) rotate(2deg); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p { margin-bottom: 1.6rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.65rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--gold);
+    opacity: 0.55;
+    margin-bottom: 1rem;
+  }
+
+  /* LAS CUATRO VOCES */
+  .cuatro-voces {
+    margin: 2.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .voz-card {
+    padding: 1.4rem 1.5rem;
+    border: 1px solid var(--parchment-dark);
+    background: rgba(255,255,255,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .voz-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--gold-pale);
+    transition: background 0.3s;
+  }
+
+  .voz-card:hover::before { background: var(--gold-light); }
+
+  .voz-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .voz-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .voz-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .voz-senal {
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+
+  /* EL UMBRAL VISUAL */
+  .umbral {
+    margin: 3rem 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .umbral-linea {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .umbral-linea::before,
+  .umbral-linea::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-pale);
+  }
+
+  .umbral-glyph {
+    font-size: 1.5rem;
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
+  .umbral-antes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--parchment-dark);
+    border: 1px solid var(--parchment-dark);
+    margin-bottom: 1px;
+  }
+
+  .umbral-celda {
+    padding: 1.2rem 1.5rem;
+    background: rgba(255,255,255,0.35);
+  }
+
+  .umbral-celda.antes { background: rgba(122,32,32,0.04); }
+  .umbral-celda.despues { background: rgba(139,105,20,0.06); }
+
+  .umbral-celda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.47rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.65;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .umbral-celda p {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-style: italic;
+  }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(245,240,232,0.8);
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold);
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+
+  .ejercicio-intro {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 0.1rem;
+    opacity: 0.8;
+  }
+
+  .paso-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  /* TRANSICION HACIA CAPA ABSOLUTA */
+  .transicion-absoluta {
+    background: linear-gradient(135deg,
+      rgba(139,105,20,0.1),
+      rgba(122,32,32,0.06),
+      rgba(139,105,20,0.08));
+    border: 1px solid var(--gold-light);
+    border-top: 2px solid var(--gold);
+    padding: 2.5rem 2.5rem;
+    margin: 3rem 0 1rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .transicion-absoluta::before {
+    content: '◈';
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--parchment);
+    padding: 0 0.8rem;
+    color: var(--gold);
+    font-size: 1.1rem;
+    opacity: 0.7;
+  }
+
+  .transicion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .transicion-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+    .cuatro-voces { grid-template-columns: 1fr; }
+    .umbral-antes { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_07.html">← Nodo 7</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 9 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="capa-badge">Capa II · Alquímica</span>
+  <span class="bisagra-badge">Nodo Bisagra</span>
+  <span class="nodo-label">Nodo 8 · Cierre Alquímico · Apertura Absoluta</span>
+  <span class="nodo-glyph">🌀</span>
+  <h1>El Maestro Interno Despierta</h1>
+  <div class="nodo-subtitle">Lo que el duelo encontró que siempre estuvo ahí</div>
+  <br>
+  <span class="shift-badge">Shift: del yo fracturado al observador que permanece</span>
+</div>
+
+<div class="container">
+
+  <p>
+    Hay algo que nadie anuncia cuando comienza el duelo. Nadie dice: <em>atención, esto que se está rompiendo en ti va a liberar algo que estaba dormido.</em> Nadie lo dice porque en el momento de la pérdida esa información no sirve de nada — es demasiado pronto, el dolor es demasiado inmediato, el futuro demasiado inimaginable.
+  </p>
+
+  <p>
+    Pero ocurre. En muchas personas, no en todas, y no de manera automática: el duelo profundamente habitado despierta algo que el yo habitual mantenía dormido con su propio peso. Una presencia interior que no es el narrador del Nodo 2, no es el cuerpo del Nodo 3, no es la herida del Nodo 5. Es algo más silencioso y más estable que todo eso. Algo que estuvo mirando todo el proceso desde un lugar que el dolor no pudo alcanzar por completo.
+  </p>
+
+  <p>
+    A eso lo llamamos el Maestro Interno.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Qué no es el Maestro Interno</h2>
+
+  <p>
+    Antes de decir qué es, conviene decir qué no es. Porque el término tiene el peligro de sonar a espiritualidad decorativa, a algo que se convoca con incienso y buenas intenciones. No es eso.
+  </p>
+
+  <p>
+    El Maestro Interno no es una voz de sabiduría que da respuestas. No es una parte "superior" del yo que juzga a las partes "inferiores". No es serenidad permanente, ni ecuanimidad performativa, ni la persona que ya no llora porque "ha trabajado mucho su proceso".
+  </p>
+
+  <p>
+    El Maestro Interno es, de manera más precisa, <strong>la dimensión de la consciencia que puede sostener la experiencia sin ser destruida por ella.</strong> El que mira sin ser lo mirado. El que siente sin confundirse con lo sentido. No está por encima del dolor — está presente en él, con él, sin disolverse en él.
+  </p>
+
+  <p>
+    En los Nodos anteriores ya lo hemos encontrado, aunque no lo hayamos llamado así. Era el observador que en el Nodo 2 podía escuchar al narrador sin ser el narrador. Era la presencia en el Nodo 3 que podía notar el dolor corporal sin ser solo ese dolor. Era la consciencia en el Nodo 4 que completaba el ciclo Ver, Comprender, Volver sin perderse en ninguna de las tres fases. Estaba ahí desde el principio. El duelo solo lo hizo más visible.
+  </p>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">◈</span>
+    <blockquote>
+      "El duelo no crea al Maestro Interno.<br>
+      Lo desentierra.<br>
+      Estaba ahí bajo todo lo que creíamos ser."
+    </blockquote>
+  </div>
+
+  <h2>Cómo el duelo lo despierta</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Andrés tenía cuarenta y cuatro años. Empresario, práctico, poco dado a lo que él llamaba "la psicología del llanto". Vino a consulta no porque quisiera sino porque su médico de cabecera le dijo que lo que estaba experimentando —insomnio, taquicardia, pérdida de concentración— necesitaba atención. Había perdido a su socio y mejor amigo seis meses antes. Un accidente.<br><br>
+    En la cuarta sesión, sin anunciarlo, dijo algo que no encajaba con el perfil que había traído:<br><br>
+    <em>"Tuve una experiencia rara. Estaba en una reunión de trabajo muy tensa. Todos gritando, yo en el centro. Y de repente fue como si me corriera dos pasos hacia atrás dentro de mí mismo. Seguía ahí, seguía siendo parte de la reunión. Pero algo en mí estaba mirando todo desde afuera. Mirándome a mí también. Fue raro. No desagradable. Raro."</em><br><br>
+    Le pregunté si eso había pasado antes del accidente de su amigo.<br><br>
+    Pensó largo. <em>"No. Nunca."</em>
+  </div>
+
+  <p>
+    Lo que Andrés describió tiene varios nombres en distintas tradiciones: desidentificación, presencia testigo, metacognición, el observador. Todos apuntan al mismo fenómeno: la aparición de una dimensión de la consciencia que puede sostener la experiencia desde una distancia que no es indiferencia sino perspectiva.
+  </p>
+
+  <p>
+    El duelo lo activó en Andrés de manera inesperada. Porque el duelo, cuando se lo habita con suficiente presencia, hace algo que pocas experiencias hacen: <strong>rompe la identificación total con el yo habitual</strong>. Ese yo que organiza la vida, toma decisiones, sostiene la imagen de sí mismo, planifica el futuro — ese yo fue sacudido hasta sus fundamentos. Y en esa sacudida, algo que estaba detrás de él quedó expuesto.
+  </p>
+
+  <h2>Las cuatro señales del Maestro Interno despertando</h2>
+
+  <p>
+    No aparece de golpe, con fanfarria. Aparece en detalles que, si no se los conoce, pueden parecer irrelevantes o simplemente "raros", como decía Andrés. Hay cuatro señales que aparecen con más frecuencia.
+  </p>
+
+  <div class="cuatro-voces">
+
+    <div class="voz-card">
+      <span class="voz-num">Señal I</span>
+      <div class="voz-nombre">El observador que no es observado</div>
+      <p class="voz-desc">La experiencia de Andrés en la reunión. De repente, en medio de una situación intensa, algo en la persona da un paso atrás y mira — incluyendo mirarse a sí misma. No es disociación. Es perspectiva espontánea.</p>
+      <p class="voz-senal">"Algo en mí estaba mirando todo, incluyendo mi propio dolor."</p>
+    </div>
+
+    <div class="voz-card">
+      <span class="voz-num">Señal II</span>
+      <div class="voz-nombre">El silencio que no vacía</div>
+      <p class="voz-desc">Momentos de quietud que ya no aterran. Donde antes el silencio era solo ausencia y amplificaba el dolor, empieza a haber instantes en que el silencio simplemente es — sin exigir que sea llenado, sin producir angustia.</p>
+      <p class="voz-senal">"Pude estar quieto sin que me destruyera."</p>
+    </div>
+
+    <div class="voz-card">
+      <span class="voz-num">Señal III</span>
+      <div class="voz-nombre">La sabiduría que llega sin ser pedida</div>
+      <p class="voz-desc">En conversaciones, en sueños, mientras se camina — surge algo que la persona reconoce como verdadero sin saber exactamente de dónde viene. No es el narrador construyendo argumentos. Es algo más directo, más limpio, más inesperado.</p>
+      <p class="voz-senal">"Supe algo que no sabía que sabía."</p>
+    </div>
+
+    <div class="voz-card">
+      <span class="voz-num">Señal IV</span>
+      <div class="voz-nombre">La compasión sin esfuerzo</div>
+      <p class="voz-desc">Como Roberto en el hospital del Nodo 5: una permeabilidad nueva ante el sufrimiento ajeno que no requiere voluntad ni técnica. Emerge sola, desde la experiencia directa de haber sido herido y haber sobrevivido a esa herida.</p>
+      <p class="voz-senal">"Me importa el dolor de otros de un modo que antes no tenía."</p>
+    </div>
+
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Antes y después del umbral</h2>
+
+  <p>
+    El despertar del Maestro Interno no ocurre de una vez. Es un proceso gradual, a veces imperceptible, que solo se reconoce mirando hacia atrás. Pero hay una diferencia que puede describirse entre el modo de habitar el mundo antes de ese despertar y después de él.
+  </p>
+
+  <div class="umbral">
+    <div class="umbral-linea">
+      <span class="umbral-glyph">◈</span>
+    </div>
+    <div class="umbral-antes">
+      <div class="umbral-celda antes">
+        <span class="umbral-celda-label">Antes del umbral</span>
+        <p>El yo se confunde con sus contenidos: sus pensamientos son "yo pienso", sus emociones son "yo siento", su dolor es "yo sufro". Sin distancia entre la experiencia y quien la experimenta.</p>
+      </div>
+      <div class="umbral-celda despues">
+        <span class="umbral-celda-label">Después del umbral</span>
+        <p>Hay pensamientos siendo pensados, emociones siendo sentidas, dolor siendo sostenido. Y hay también algo que nota todo eso sin ser exactamente ninguna de esas cosas. Una presencia que contiene sin confundirse.</p>
+      </div>
+      <div class="umbral-celda antes">
+        <span class="umbral-celda-label">Antes</span>
+        <p>La identidad depende de la continuidad: de que el mapa del mundo funcione, de que las personas que lo habitan sigan en su lugar, de que el futuro imaginado sea alcanzable.</p>
+      </div>
+      <div class="umbral-celda despues">
+        <span class="umbral-celda-label">Después</span>
+        <p>Hay una dimensión de identidad que no depende de que nada permanezca igual. Que sobrevivió al colapso del mapa y descubrió, en ese colapso, que seguía siendo.</p>
+      </div>
+      <div class="umbral-celda antes">
+        <span class="umbral-celda-label">Antes</span>
+        <p>El presente es solo el tránsito entre el pasado recordado y el futuro deseado. La atención rara vez está completamente aquí.</p>
+      </div>
+      <div class="umbral-celda despues">
+        <span class="umbral-celda-label">Después</span>
+        <p>El presente adquiere un peso y una presencia que antes no tenía. No como técnica de mindfulness. Como resultado directo de haber aprendido que lo que se tiene puede no estar mañana.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio · Andrés, nueve meses después</span>
+    <em>"¿Sabes qué es lo más raro? Que extraño a Miguel tanto como el primer día. Eso no cambió. Pero yo sí cambié. Soy otra persona que extraña a Miguel. Y esa otra persona — no sé cómo explicarlo — es más real. Como si antes yo fuera una versión más delgada de mí mismo y ahora hay más de mí presente en cada cosa."</em><br><br>
+    Hizo una pausa.<br><br>
+    <em>"Creo que él habría querido conocer a esta versión. Creo que le habría gustado más."</em>
+  </div>
+
+  <p>
+    <em>Soy otra persona que extraña a Miguel.</em> Esa frase contiene en pocas palabras todo lo que este nodo intenta decir. El dolor no disminuyó. La persona que lo sostiene se expandió. Y en esa expansión —en ese "más de mí presente en cada cosa"— está la señal más clara de que el Maestro Interno ha despertado y ha tomado su lugar.
+  </p>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">🌀 Para quien quiera ir más profundo · Umbral hacia la Capa Absoluta</span>
+    <p>
+      En la arquitectura Trinity, el Maestro Interno corresponde al Observador de Campo: la dimensión de la consciencia que registra la perturbación sin ser la perturbación. El Libro XIII de Trinity Origen (El Retorno a Casa) describe este despertar como el "shift de disolución": el reconocimiento de que el yo que creía ser el centro de la experiencia es también una función del campo, no su origen.
+    </p>
+    <p>
+      Desde esta perspectiva, el duelo profundo es uno de los iniciadores más eficaces de este reconocimiento — no porque el sufrimiento sea deseable, sino porque el colapso del yo habitual crea las condiciones exactas en que la dimensión más amplia de la consciencia puede hacerse perceptible. Lo que la meditación busca durante años, el duelo a veces lo entrega en meses. El precio es alto. El territorio que abre es el mismo.
+    </p>
+    <p>
+      La Capa Absoluta que comienza en el Nodo 9 trabaja directamente desde ese territorio: la consciencia que es anterior al nombre, al cuerpo, al relato. Lo que nunca nació no puede morir. Y lo que el Maestro Interno descubre — cuando está suficientemente despierto — es que él mismo es, en alguna dimensión, eso.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">🔱 Práctica del Nodo 8</div>
+    <h3>El Diálogo con el Observador</h3>
+    <p class="ejercicio-intro">
+      Esta práctica trabaja con la dimensión observadora de la consciencia de manera directa — no para analizarla sino para reconocerla. Requiere entre veinte y treinta minutos, silencio, y papel para la segunda parte.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>El anclaje en el cuerpo</strong>
+        Comienza con la práctica breve del Nodo 3: el inventario corporal compasivo, versión de cinco minutos. Llega al cuerpo antes de ir a cualquier otra parte. El Maestro Interno no es una abstracción — se encuentra siempre encarnado, nunca flotando sobre la experiencia.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>La pregunta central</strong>
+        Con los ojos cerrados, deja que surja el dolor o la dificultad más presente en este momento. No la busques — ya sabe llegar. Cuando esté presente, hazte esta pregunta sin urgencia de responderla:<br><br>
+        <em>¿Quién está notando esto?</em><br><br>
+        No: ¿por qué me duele? No: ¿cuándo va a pasar? Solo: ¿quién está notando esto que está ocurriendo?<br><br>
+        Quédate con la pregunta. Nota que la pregunta misma crea un milímetro de espacio entre tú y lo que estás sintiendo. Ese milímetro es el Maestro Interno.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>El reconocimiento</strong>
+        Desde ese espacio — sin salir de él, sin abandonar el dolor — nota que hay algo en ti que ha estado presente durante todo el duelo. Durante los peores momentos y los mejores. Durante el Nodo 1 y el Nodo 7. Algo que no se fue, aunque todo lo demás cambiara.<br><br>
+        No necesita un nombre. Solo necesita ser reconocido. <em>Estás ahí.</em> Eso es suficiente.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">IV</div>
+      <div class="paso-text">
+        <strong>La escritura desde el observador</strong>
+        Abre los ojos y toma el papel. Escribe desde esa dimensión — no desde el narrador, no desde el dolor, sino desde el que los sostuvo a ambos. La consigna es simple:<br><br>
+        <em>Escribe lo que el observador ha visto durante este duelo. No lo que has sufrido — lo que has visto desde dentro del sufrimiento.</em><br><br>
+        Sin editar. Sin estructurar. Lo que salga.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">V</div>
+      <div class="paso-text">
+        <strong>El cierre</strong>
+        Lee lo que escribiste una sola vez, en voz baja. Sin juzgar. Y luego guarda el papel. No es un texto para nadie más — es el Maestro Interno dejando registro de que estuvo ahí. Siempre estuvo ahí.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica integra técnicas de meditación de presencia testigo con escritura expresiva orientada a la metacognición. La pregunta <em>¿quién está notando esto?</em> es una adaptación de la indagación directa (Advaita, Ramana Maharshi) llevada al contexto clínico — sin carga doctrinaria, como herramienta de desidentificación. Especialmente útil en pacientes que han completado trabajo somático y narrativo (Nodos 2 y 3) y están listos para un nivel de introspección más sutil. No recomendada como primera práctica en duelo agudo.
+    </div>
+  </div>
+
+  <div class="transicion-absoluta">
+    <span class="transicion-label">◈ Umbral · Hacia la Capa Absoluta</span>
+    <p class="transicion-texto">
+      Ocho nodos han construido un camino. Desde la Primera Grieta hasta el Maestro Interno que despertó en ella. Desde el cuerpo que recuerda hasta la consciencia que observa sin ser destruida.<br><br>
+      Lo que viene ahora es diferente en naturaleza — no en accesibilidad. La Capa Absoluta no requiere erudición ni preparación especial. Solo requiere lo que el viaje hasta aquí ya ha cultivado: la disposición a mirar más lejos de lo que el yo habitual cree posible.<br><br>
+      <em>Lo que nunca nació no puede morir.</em><br>
+      Esa frase espera en el Nodo 9.<br>
+      Y ahora hay suelo suficiente para recibirla.
+    </p>
+  </div>
+
+  <div class="reflexion-final">
+    <p>
+      El duelo no te rompió.<br>
+      Te partió.<br>
+      Y en esa partición<br>
+      encontraste algo<br>
+      que el entero no podía contener.
+    </p>
+    <div class="divider" style="margin:1.5rem 0;">◈</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_07.html">← Nodo 7: La Impermanencia no es el Enemigo</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 8 de 12</span>
+    <a href="#">Nodo 9: Lo que Nunca Nació no Puede Morir →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
