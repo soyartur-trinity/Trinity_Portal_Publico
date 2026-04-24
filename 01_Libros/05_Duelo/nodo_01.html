@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 1: La Primera Grieta | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --shadow: rgba(44, 36, 22, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 15% 10%, rgba(196,168,79,0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 90%, rgba(122,32,32,0.03) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+
+  .nav a:hover { border-color: var(--gold); }
+
+  .nav-center {
+    color: var(--ink-soft);
+    opacity: 0.5;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* HEADER DEL NODO */
+  .nodo-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    position: relative;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.55;
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.45; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  /* CONTENIDO */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p {
+    margin-bottom: 1.6rem;
+    color: var(--ink);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+    margin: 2rem 0 0.8rem;
+  }
+
+  strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  em {
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* CITA */
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  /* AXIOMA */
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  /* EJERCICIO */
+  .ejercicio {
+    background: rgba(245,240,232,0.8);
+    border: 1px solid var(--parchment-dark);
+    border-top: 2px solid var(--gold);
+    padding: 2rem 2rem 2rem;
+    margin: 3rem 0;
+    border-radius: 0 0 2px 2px;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .ejercicio h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+    border: none;
+    padding: 0;
+  }
+
+  .ejercicio-intro {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .paso {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: start;
+  }
+
+  .paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--gold);
+    font-weight: 600;
+    padding-top: 0.1rem;
+    opacity: 0.8;
+  }
+
+  .paso-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .paso-text strong {
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* CAPA PROFUNDA */
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-bottom: 0;
+  }
+
+  /* REFLEXION FINAL */
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  /* NAVEGACIÓN INFERIOR */
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    transition: border-color 0.2s;
+  }
+
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_index.html">← Índice</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 2 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="nodo-label">Nodo 1 · Capa Humana</span>
+  <span class="nodo-glyph">⟡</span>
+  <h1>La Primera Grieta</h1>
+  <div class="nodo-subtitle">El umbral que nadie elige cruzar</div>
+  <br>
+  <span class="shift-badge">Shift: de la fractura como catástrofe a la grieta como umbral</span>
+</div>
+
+<div class="container">
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Marcela llegó en silencio. No lloró. No habló durante los primeros diez minutos. Miraba sus manos como si fueran el objeto más extraño del mundo. Cuando finalmente levantó la vista, lo que dijo fue esto:<br><br>
+    <em>"Sigo funcionando. Voy al trabajo, como, duermo. Pero yo no estoy ahí. Es como si el mundo siguiera girando y yo me hubiera quedado quieta."</em><br><br>
+    Habían pasado tres semanas desde la muerte de su madre.
+  </div>
+
+  <p>
+    Lo que Marcela describía no es disfunción. Es la respuesta más honesta que puede dar un ser humano ante la pérdida de alguien fundamental. El mundo sigue girando porque el mundo no sabe lo que acaba de ocurrir. Pero <strong>algo en nosotros sí lo sabe</strong>, y ese algo se detiene.
+  </p>
+
+  <p>
+    A ese momento — el instante en que la realidad habitual se quiebra — lo llamamos la Primera Grieta.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>El mundo que existía hace un momento</h2>
+
+  <p>
+    Antes de que ocurriera lo que ocurrió, teníamos un mapa mental del mundo. Un mapa que incluía a ciertas personas en ciertos lugares. Un mapa que asumía, sin cuestionarlo, que algunas presencias seguirían estando.
+  </p>
+
+  <p>
+    La pérdida no es solo la ausencia de alguien. Es la <strong>invalidación súbita de ese mapa</strong>. El GPS emocional que usábamos para orientarnos deja de funcionar de golpe. Y sin él, aunque el cuerpo siga moviéndose, la persona experimenta lo que Marcela describió con tanta precisión: estar ahí sin estar.
+  </p>
+
+  <p>
+    Esto tiene un nombre en psicología: desorientación del self. Pero los nombres técnicos no consuelan. Lo que sí ayuda es saber que esa desorientación no es una señal de que algo está roto en nosotros. Es la señal de que algo real acaba de ocurrir. <strong>El dolor confirma que el vínculo fue genuino.</strong>
+  </p>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">⟡</span>
+    <blockquote>
+      "La grieta no es el final del edificio.<br>
+      Es el lugar por donde entra la luz<br>
+      que el edificio entero no podía contener."
+    </blockquote>
+  </div>
+
+  <h2>Lo que el duelo no es</h2>
+
+  <p>
+    Durante décadas, la psicología popular enseñó que el duelo es un proceso lineal: hay etapas, hay un orden, hay un destino llamado "superación". Esta idea, aunque bienintencionada, ha hecho más daño del que ha aliviado.
+  </p>
+
+  <p>
+    Porque el duelo real no es lineal. No tiene etapas ordenadas. No culmina en un cierre. <strong>El duelo es más parecido al océano que a una carretera</strong>: tiene mareas, tiene profundidades distintas según el día, tiene momentos de aparente calma y olas que llegan sin avisar meses o años después.
+  </p>
+
+  <p>
+    Tampoco es una enfermedad que debe curarse. Ni una crisis que debe resolverse. Ni una debilidad que debe superarse. El duelo es una respuesta completamente proporcionada al amor que existió.
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Una perspectiva que cambia todo</span>
+    <em>"La intensidad del dolor es la medida del amor."</em><br><br>
+    Esta frase, que suena casi a consuelo vacío, tiene una implicación radical: si el dolor es tan profundo, es porque lo que existió entre esas dos consciencias fue real. Profundamente, irreductiblemente real. Y eso — la realidad del amor que existió — es algo que ninguna pérdida puede eliminar.
+  </div>
+
+  <h2>La grieta como arquitectura</h2>
+
+  <p>
+    Hay una imagen que usamos en este libro y que conviene presentar desde el principio: la grieta.
+  </p>
+
+  <p>
+    Cuando algo se quiebra — una pared, un hueso, un corazón — nuestra primera reacción instintiva es querer repararlo, cerrarlo, volver al estado anterior. Es comprensible. Lo conocido se siente seguro, aunque el conocido ya no exista.
+  </p>
+
+  <p>
+    Pero hay otro modo de mirar la grieta. <strong>La grieta es el único lugar donde el interior y el exterior se comunican directamente.</strong> Es la apertura que el material sólido nunca tuvo. Y en ese sentido, la grieta que abre el duelo no es solo destrucción: es también la primera apertura real hacia algo que estaba bloqueado.
+  </p>
+
+  <p>
+    No decimos esto para consolar prematuramente. La grieta duele. Duele con una intensidad que puede parecer insoportable. Pero la grieta también es el lugar desde donde se empieza a ver de un modo diferente — no mejor, al principio, sino más verdadero.
+  </p>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">◈ Para quien quiera ir más profundo</span>
+    <p>
+      En la tradición contemplativa, la experiencia que Marcela describió — seguir funcionando mientras "uno no está ahí" — tiene un nombre: el reconocimiento de que el yo habitual no es la totalidad de lo que somos. La conciencia que observa al cuerpo moviéndose en piloto automático es también conciencia. Y esa conciencia — la que mira — no está rota. En el lenguaje del Campo Trinity: la perturbación ocurre en la superficie del campo. El campo mismo permanece intacto.
+    </p>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <div class="ejercicio">
+    <div class="ejercicio-header">🔱 Práctica del Nodo 1</div>
+    <h3>Ver, Comprender, Volver · Primera aplicación</h3>
+    <p class="ejercicio-intro">
+      Este ejercicio no busca aliviar el dolor. Busca ayudarte a estar presente con él sin que te arrastre. Es una práctica breve que puede hacerse en cualquier momento, en cualquier lugar.
+    </p>
+
+    <div class="paso">
+      <div class="paso-num">I</div>
+      <div class="paso-text">
+        <strong>Ver</strong>
+        Detente donde estás. Respira tres veces, lentamente. Ahora mira a tu alrededor: nombra mentalmente cinco cosas que puedas ver en este momento. No las juzgues. Solo obsérvalas. Una silla. Una ventana. Luz. Tus manos.
+        <br><br>
+        Este paso ancla la conciencia en el presente sensorial. No para escapar del dolor, sino para no ahogarse en él.
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">II</div>
+      <div class="paso-text">
+        <strong>Comprender</strong>
+        Lleva la atención al interior. Nota lo que hay: ¿dónde está el dolor en tu cuerpo? ¿Es una opresión en el pecho? ¿Un peso en los hombros? ¿Una ausencia en el estómago? No intentes cambiarlo. Solo ubícalo.
+        <br><br>
+        Luego, en silencio, reconoce: <em>"Esto que siento es una respuesta a algo real. No es una falla. Es la forma en que el amor toma cuando no encuentra a donde ir."</em>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-num">III</div>
+      <div class="paso-text">
+        <strong>Volver</strong>
+        Desde ese lugar — con el dolor reconocido pero sin ser absorbido por él — toma una acción pequeña y concreta: beber un vaso de agua. Caminar hasta otra habitación. Llamar a alguien. Escribir una palabra.
+        <br><br>
+        El retorno no significa que el dolor desapareció. Significa que todavía eres capaz de moverse mientras lo cargas. Eso, en los primeros días del duelo, es extraordinario.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Nota clínica:</strong> Este ejercicio está inspirado en los fundamentos de la Terapia de Aceptación y Compromiso (ACT) y en las prácticas de atención plena de tercera generación. No reemplaza el acompañamiento profesional. Si el dolor se vuelve abrumador o persistente, buscar apoyo es un acto de valentía, no de debilidad.
+    </div>
+  </div>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Lo que permanece</h2>
+
+  <p>
+    En uno de los momentos más difíciles de nuestra sesión, Marcela hizo una pregunta que muchas personas en duelo hacen, aunque con palabras distintas:
+  </p>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    <em>"¿Esto algún día va a tener sentido? No te pido que me digas que va a pasar. Te pregunto si alguna vez voy a poder entender para qué."</em>
+  </div>
+
+  <p>
+    No respondí de inmediato. Porque la respuesta honesta no es rápida, ni simple, ni universal. Pero sí existe.
+  </p>
+
+  <p>
+    Lo que puedo decir — y lo que este libro intenta mostrar, nodo por nodo — es que el sentido no se encuentra: <strong>se construye</strong>. No antes de la pérdida ni inmediatamente después. Sino en el proceso mismo de atravesarla sin cerrarse, sin anestesiarse, sin pretender que el mapa roto era el único mapa posible.
+  </p>
+
+  <p>
+    La Primera Grieta es el comienzo de ese proceso. No lo anuncia ni lo promete. Solo lo hace posible.
+  </p>
+
+  <p>
+    Y en la grieta — justo en ese borde irregular donde lo que era se encuentra con lo que todavía no tiene nombre — <strong>algo empieza a entrar.</strong>
+  </p>
+
+  <div class="reflexion-final">
+    <p>No te pedimos que veas la luz en la grieta todavía.<br>
+    Solo que no la cierres antes de tiempo.</p>
+    <div class="divider" style="margin:1.5rem 0;">⟡</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_index.html">← Índice</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 1 de 12</span>
+    <a href="#">Nodo 2: El Narrador que Sufre →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
