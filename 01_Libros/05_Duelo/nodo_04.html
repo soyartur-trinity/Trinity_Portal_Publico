@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nodo 4: Ver, Comprender, Volver | El Duelo: Portal de Continuidad</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap');
+
+  :root {
+    --parchment: #f5f0e8;
+    --parchment-dark: #ede5d0;
+    --ink: #2c2416;
+    --ink-soft: #4a3f2f;
+    --gold: #8b6914;
+    --gold-light: #c4a84f;
+    --gold-pale: #e8d89a;
+    --crimson: #7a2020;
+    --shadow: rgba(44, 36, 22, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--parchment);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 10% 20%, rgba(196,168,79,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 80%, rgba(122,32,32,0.04) 0%, transparent 55%);
+    min-height: 100vh;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--gold-pale);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+  .nav a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav a:hover { border-color: var(--gold); }
+  .nav-center { color: var(--ink-soft); opacity: 0.5; font-size: 0.5rem; letter-spacing: 0.3em; }
+
+  .nodo-header {
+    text-align: center;
+    padding: 4rem 2rem 3rem;
+    position: relative;
+  }
+
+  .nodo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .nodo-glyph {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    opacity: 0.55;
+    animation: breathe 5s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .nodo-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .shift-badge {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    background: rgba(139,105,20,0.07);
+    border: 1px solid var(--gold-pale);
+    padding: 0.4rem 1.2rem;
+    border-radius: 1px;
+    opacity: 0.85;
+  }
+
+  /* PIVOTE BADGE */
+  .pivote-badge {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    background: var(--gold);
+    color: var(--parchment);
+    padding: 3px 10px;
+    border-radius: 1px;
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .divider {
+    text-align: center;
+    color: var(--gold-pale);
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+    font-size: 0.75rem;
+  }
+
+  p { margin-bottom: 1.6rem; color: var(--ink); }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin: 3rem 0 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  strong { color: var(--ink); font-weight: 600; }
+  em { font-style: italic; color: var(--ink-soft); }
+
+  .cita-clinica {
+    background: linear-gradient(135deg, rgba(139,105,20,0.05), rgba(232,216,154,0.08));
+    border-left: 2px solid var(--gold-light);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    border-radius: 0 2px 2px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .cita-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 0.8rem;
+    font-style: normal;
+  }
+
+  .axioma-inline {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--gold-pale);
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  .axioma-inline blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.15rem, 3vw, 1.6rem);
+    color: var(--ink);
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .axioma-sym {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  /* LOS TRES TERRITORIOS — diseño central */
+  .tres-territorios {
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .territorio {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 0;
+    position: relative;
+  }
+
+  .territorio-num {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: relative;
+  }
+
+  .territorio-num::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background: var(--gold-pale);
+    z-index: 0;
+  }
+
+  .territorio:last-child .territorio-num::after {
+    display: none;
+  }
+
+  .territorio-circulo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    border: 1px solid var(--gold-light);
+    background: var(--parchment);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+  }
+
+  .territorio-body {
+    padding: 2rem 1.5rem 2rem 1rem;
+    border-left: 1px solid var(--gold-pale);
+  }
+
+  .territorio-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .territorio-sub {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .territorio-texto {
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 0.8rem;
+  }
+
+  .territorio-ejemplo {
+    font-style: italic;
+    font-size: 0.88rem;
+    color: var(--gold);
+    opacity: 0.9;
+    padding-left: 1rem;
+    border-left: 2px solid var(--gold-pale);
+  }
+
+  /* EL EJERCICIO MAESTRO */
+  .ejercicio-maestro {
+    background: linear-gradient(135deg, rgba(139,105,20,0.06), rgba(245,240,232,0.9));
+    border: 1px solid var(--gold-light);
+    border-top: 3px solid var(--gold);
+    padding: 2.5rem 2.5rem 2rem;
+    margin: 3rem 0;
+    position: relative;
+  }
+
+  .ejercicio-maestro::before {
+    content: '🔱';
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    background: var(--parchment);
+    padding: 0 0.5rem;
+  }
+
+  .ejercicio-header {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    text-align: center;
+  }
+
+  .ejercicio-maestro h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 0.3rem;
+  }
+
+  .ejercicio-intro {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gold-pale);
+  }
+
+  /* FASES DENTRO DEL EJERCICIO */
+  .fase {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--gold-pale);
+  }
+
+  .fase:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1rem;
+    padding-bottom: 0;
+  }
+
+  .fase-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .fase-glyph {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .fase-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+
+  .fase-subtitulo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    opacity: 0.65;
+    display: block;
+  }
+
+  .fase-texto {
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 0.8rem;
+  }
+
+  .fase-instruccion {
+    background: rgba(255,255,255,0.5);
+    border-left: 2px solid var(--gold-pale);
+    padding: 0.8rem 1.2rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-top: 0.8rem;
+  }
+
+  .ejercicio-nota {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--gold-pale);
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* INTEGRACION */
+  .integracion {
+    background: rgba(255,255,255,0.25);
+    border: 1px solid var(--parchment-dark);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    text-align: center;
+  }
+
+  .integracion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .integracion-flujo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .flujo-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .flujo-arrow {
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 1rem;
+  }
+
+  .integracion-nota {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .capa-profunda {
+    background: linear-gradient(135deg, rgba(44,36,22,0.03), rgba(139,105,20,0.05));
+    border: 1px solid var(--parchment-dark);
+    border-left: 2px solid var(--crimson);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .capa-profunda-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.5rem;
+    letter-spacing: 0.25em;
+    color: var(--crimson);
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .capa-profunda p { font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 0.8rem; }
+  .capa-profunda p:last-child { margin-bottom: 0; }
+
+  .reflexion-final {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .reflexion-final p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 1rem;
+  }
+
+  /* TRANSICION HACIA CAPA II */
+  .transicion-capa {
+    background: linear-gradient(135deg, rgba(139,105,20,0.08), rgba(122,32,32,0.04));
+    border: 1px solid var(--gold-pale);
+    padding: 2rem 2.5rem;
+    margin: 3rem 0 1rem;
+    text-align: center;
+  }
+
+  .transicion-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .transicion-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .nav-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0 1rem;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 3rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .nav-bottom a { color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
+  .nav-bottom a:hover { border-color: var(--gold); }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    opacity: 0.5;
+    border-top: 1px solid var(--gold-pale);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 1.5rem 1.2rem 3rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .nodo-header { padding: 3rem 1.2rem 2rem; }
+    .territorio { grid-template-columns: 3.5rem 1fr; }
+    .territorio-circulo { width: 2.2rem; height: 2.2rem; font-size: 0.55rem; }
+    .ejercicio-maestro { padding: 2rem 1.5rem; }
+    .integracion-flujo { flex-direction: column; gap: 0.3rem; }
+    .flujo-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="duelo_nodo_03.html">← Nodo 3</a>
+  <span class="nav-center">El Duelo · Portal de Continuidad</span>
+  <a href="#">Nodo 5 →</a>
+</nav>
+
+<div class="nodo-header">
+  <span class="pivote-badge">Nodo Pivote · Integración de la Capa Humana</span>
+  <span class="nodo-label">Nodo 4 · Capa Humana → Alquímica</span>
+  <span class="nodo-glyph">🔱</span>
+  <h1>Ver, Comprender, Volver</h1>
+  <div class="nodo-subtitle">El ejercicio central del viaje</div>
+  <br>
+  <span class="shift-badge">Shift: de la disociación al retorno consciente al presente</span>
+</div>
+
+<div class="container">
+
+  <p>
+    Los tres nodos anteriores han trazado un mapa. Hemos visto cómo el duelo rompe el mundo conocido y abre la Primera Grieta. Hemos escuchado al Narrador que sostiene la historia del dolor. Hemos reconocido que el cuerpo también lleva el duelo, en silencio y con fidelidad.
+  </p>
+
+  <p>
+    Ahora necesitamos una herramienta. No para resolver todo eso. Para poder <em>moverse</em> en medio de todo eso.
+  </p>
+
+  <p>
+    Eso es exactamente lo que este nodo ofrece.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Por qué necesitamos una práctica central</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    Valentina tenía treinta y cinco años. Había perdido a su madre ocho meses antes. Era psicóloga — conocía los conceptos, había trabajado su propio proceso, entendía intelectualmente casi todo lo que le estaba ocurriendo.<br><br>
+    <em>"El problema,"</em> me dijo en nuestra tercera sesión, <em>"es que en los peores momentos no recuerdo nada de lo que sé. Es como si el conocimiento se evaporara exactamente cuando más lo necesito. Y ahí estoy, en el supermercado o en el trabajo, completamente perdida, sin saber qué hacer conmigo."</em>
+  </div>
+
+  <p>
+    Valentina estaba describiendo algo que muchos conocen pero pocos nombran: la brecha entre comprensión intelectual y capacidad real en los momentos de mayor intensidad emocional. El duelo agudo activa el sistema nervioso de un modo que literalmente reduce el acceso a las funciones cognitivas superiores. En ese estado, los conceptos sofisticados no están disponibles.
+  </p>
+
+  <p>
+    Lo que sí está disponible — siempre, en cualquier momento, en cualquier lugar — es el cuerpo. La respiración. Lo que los ojos pueden ver. Lo que las manos pueden tocar.
+  </p>
+
+  <p>
+    <strong>Ver, Comprender, Volver</strong> nació de esa necesidad: una práctica que funcione precisamente cuando todo lo demás falla. Que no requiera condiciones especiales. Que sea tan simple que pueda realizarse en el pasillo de un supermercado, en un baño de oficina, en el asiento trasero de un taxi.
+  </p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Los tres territorios</h2>
+
+  <p>
+    La práctica se organiza en tres movimientos consecutivos. Son breves. Son concretos. Y cada uno prepara el terreno para el siguiente.
+  </p>
+
+  <div class="tres-territorios">
+
+    <div class="territorio">
+      <div class="territorio-num">
+        <div class="territorio-circulo">VER</div>
+      </div>
+      <div class="territorio-body">
+        <div class="territorio-nombre">Ver</div>
+        <span class="territorio-sub">El territorio del presente sensorial</span>
+        <p class="territorio-texto">
+          El primer movimiento es hacia afuera: hacia lo que los sentidos pueden registrar en este preciso momento. No lo que la mente interpreta, recuerda o teme. Lo que <em>está</em>, aquí, ahora, disponible para ser percibido directamente.
+        </p>
+        <p class="territorio-texto">
+          Ver no significa solo mirar. Significa usar cualquier sentido disponible: lo que se escucha, lo que se toca, la temperatura del aire, el peso de los pies en el suelo. La consigna es simple: <em>¿qué hay aquí, ahora, que puedo percibir sin interpretarlo?</em>
+        </p>
+        <p class="territorio-texto">
+          Este primer movimiento ancla la conciencia en el presente. No para escapar del dolor, sino para no ser arrastrado por él. El duelo vive principalmente en el pasado (lo que ya no está) y en el futuro (lo que ya no ocurrirá). El presente sensorial es, literalmente, el único lugar donde el dolor no puede habitar por completo.
+        </p>
+        <div class="territorio-ejemplo">
+          En ese momento: cinco cosas que puedo ver. Tres que puedo escuchar. Una que puedo sentir con las manos. No más que eso.
+        </div>
+      </div>
+    </div>
+
+    <div class="territorio">
+      <div class="territorio-num">
+        <div class="territorio-circulo">COM·<br>PREN·<br>DER</div>
+      </div>
+      <div class="territorio-body">
+        <div class="territorio-nombre">Comprender</div>
+        <span class="territorio-sub">El territorio del reconocimiento interior</span>
+        <p class="territorio-texto">
+          El segundo movimiento es hacia adentro: hacia lo que está ocurriendo en el interior sin juzgarlo ni intentar cambiarlo. No la historia sobre lo que ocurre — eso es el narrador del Nodo 2. Sino el reconocimiento directo, sin mediación: <em>esto es lo que hay ahora en mí.</em>
+        </p>
+        <p class="territorio-texto">
+          Comprender en este contexto no significa entender con la mente. Significa reconocer con honestidad. Hay una diferencia enorme entre <em>"estoy sintiendo una opresión en el pecho que viene del dolor por la pérdida que modifica mi capacidad de"</em> y simplemente: <em>"hay tristeza aquí."</em> La segunda es comprensión. La primera es el narrador disfrazado de comprensión.
+        </p>
+        <p class="territorio-texto">
+          Este territorio también incluye una pregunta fundamental que no necesita respuesta inmediata: <em>¿qué necesito ahora mismo?</em> No en abstracto. No esta semana. Ahora. En este instante. La respuesta suele ser más simple de lo que esperamos.
+        </p>
+        <div class="territorio-ejemplo">
+          En este momento hay dolor. Hay cansancio. Hay, quizás, algo que se parece a la rabia. Noto todo eso. Lo nombro brevemente. No lo analizo todavía.
+        </div>
+      </div>
+    </div>
+
+    <div class="territorio">
+      <div class="territorio-num">
+        <div class="territorio-circulo">VOL·<br>VER</div>
+      </div>
+      <div class="territorio-body">
+        <div class="territorio-nombre">Volver</div>
+        <span class="territorio-sub">El territorio de la acción mínima</span>
+        <p class="territorio-texto">
+          El tercer movimiento es el más discreto y el más importante: una acción pequeña, concreta, elegida conscientemente. No una solución. No una resolución del dolor. Solo una prueba de que todavía es posible moverse.
+        </p>
+        <p class="territorio-texto">
+          Volver no significa volver a la normalidad — esa normalidad ya no existe. Significa volver al presente como agente, aunque sea mínimamente. Significa elegir algo, por pequeño que sea, y hacerlo. Beber agua. Llamar a alguien. Salir a caminar una cuadra. Escribir una sola frase en un papel.
+        </p>
+        <p class="territorio-texto">
+          Este movimiento le dice al sistema nervioso algo que necesita escuchar con regularidad: <strong>todavía tengo capacidad de acción. No estoy completamente a la deriva.</strong> No necesita ser heroico. Solo necesita ser real.
+        </p>
+        <div class="territorio-ejemplo">
+          Voy a beber un vaso de agua. Voy a salir a la vereda y respirar tres veces. Voy a escribir el nombre de alguien a quien llamar esta tarde.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="integracion">
+    <span class="integracion-label">◈ El ciclo completo</span>
+    <div class="integracion-flujo">
+      <span class="flujo-item">Ver · el afuera</span>
+      <span class="flujo-arrow">→</span>
+      <span class="flujo-item">Comprender · el adentro</span>
+      <span class="flujo-arrow">→</span>
+      <span class="flujo-item">Volver · la acción</span>
+    </div>
+    <p class="integracion-nota">
+      El ciclo puede repetirse tantas veces como sea necesario. No tiene un número correcto de repeticiones. Lo que importa es que cada vez que se completa, algo muy pequeño pero real se estabiliza.
+    </p>
+  </div>
+
+  <div class="axioma-inline">
+    <span class="axioma-sym">⟡</span>
+    <blockquote>
+      "No se trata de sentir menos.<br>
+      Se trata de que lo que sientes<br>
+      no sea lo único que eres."
+    </blockquote>
+  </div>
+
+  <div class="ejercicio-maestro">
+    <div class="ejercicio-header">🔱 La Práctica Completa · Ejercicio Central del Libro</div>
+    <h3>Ver, Comprender, Volver</h3>
+    <p class="ejercicio-intro">
+      Esta práctica puede durar tres minutos o treinta. Puede hacerse en cualquier lugar. No requiere preparación especial. Se activa cuando se necesita — no solo en momentos de calma.
+    </p>
+
+    <div class="fase">
+      <div class="fase-header">
+        <span class="fase-glyph">👁</span>
+        <div>
+          <div class="fase-titulo">Primera fase · Ver</div>
+          <span class="fase-subtitulo">Duración sugerida: 1-2 minutos</span>
+        </div>
+      </div>
+      <p class="fase-texto">
+        Detente. Donde estés. Como estés. No es necesario cerrar los ojos — puedes hacerlo con los ojos abiertos, mirando lo que tienes delante.
+      </p>
+      <p class="fase-texto">
+        Nombra, en silencio o en voz baja, cinco cosas que puedes ver ahora mismo. No cosas importantes. Cualquier cosa: el borde de una mesa, la luz que entra por la ventana, el color de una pared, tus propias manos.
+      </p>
+      <p class="fase-texto">
+        Luego: dos sonidos que puedes escuchar. Y una sensación física — la temperatura del aire, el contacto de la ropa con la piel, el peso de tu propio cuerpo donde está apoyado.
+      </p>
+      <div class="fase-instruccion">
+        El objetivo no es distraerse. Es recordarle al sistema nervioso que este momento específico — no el pasado, no el futuro — contiene información concreta y manejable. El presente siempre es más manejable que la totalidad del dolor.
+      </div>
+    </div>
+
+    <div class="fase">
+      <div class="fase-header">
+        <span class="fase-glyph">🫀</span>
+        <div>
+          <div class="fase-titulo">Segunda fase · Comprender</div>
+          <span class="fase-subtitulo">Duración sugerida: 1-3 minutos</span>
+        </div>
+      </div>
+      <p class="fase-texto">
+        Lleva la atención hacia adentro. Sin cambiar nada, nota lo que hay. Usa palabras simples — no conceptos, no análisis. Solo descripción directa.
+      </p>
+      <p class="fase-texto">
+        <em>"Hay tristeza."</em> <em>"Hay agotamiento."</em> <em>"Hay algo que no sé nombrar todavía."</em> <em>"Hay rabia."</em> <em>"Hay miedo."</em>
+      </p>
+      <p class="fase-texto">
+        Nombrar no resuelve. Pero nombrar reduce el poder que tiene lo innombrado. Lo que tiene nombre puede ser sostenido. Lo que no tiene nombre llena todo el espacio disponible.
+      </p>
+      <p class="fase-texto">
+        Luego, una pregunta. Solo una: <em>¿qué necesito ahora mismo?</em> Espera la respuesta sin forzarla. Suele llegar en forma de imagen o de impulso, no de argumento.
+      </p>
+      <div class="fase-instruccion">
+        Si la respuesta es "necesito llorar" — eso ya es un Volver. Si es "necesito que alguien me escuche" — también. Si no llega ninguna respuesta, está bien. Seguir sin respuesta también es información.
+      </div>
+    </div>
+
+    <div class="fase">
+      <div class="fase-header">
+        <span class="fase-glyph">🌿</span>
+        <div>
+          <div class="fase-titulo">Tercera fase · Volver</div>
+          <span class="fase-subtitulo">Duración sugerida: inmediata</span>
+        </div>
+      </div>
+      <p class="fase-texto">
+        Elige una acción. La más pequeña posible que sea real. No la que debería elegir una persona que está bien. La que puede elegir una persona que está en duelo y aun así puede hacer algo.
+      </p>
+      <p class="fase-texto">
+        Puede ser: levantarse. Beber agua. Enviar un mensaje de voz a alguien de confianza. Salir al balcón. Abrazar a alguien. Escribir tres palabras. Encender una vela. Poner música. Preparar un té.
+      </p>
+      <p class="fase-texto">
+        Hazla. Completamente. Sin hacer otra cosa mientras tanto. Esa completitud es el acto de volver.
+      </p>
+      <div class="fase-instruccion">
+        Volver no significa estar bien. Significa estar presente en lo que hay. Esa distinción importa enormemente: no se vuelve a la normalidad perdida. Se vuelve a uno mismo, en este momento, con lo que hay.
+      </div>
+    </div>
+
+    <div class="ejercicio-nota">
+      <strong>Para uso clínico:</strong> Esta práctica integra elementos de la terapia de exposición con prevención de respuesta, defusión cognitiva (ACT), regulación del sistema nervioso autónomo y atención plena orientada al presente. Puede usarse como intervención de primeros auxilios emocionales en sesión, como tarea intersesión, o enseñarse a familiares de personas en duelo para ofrecerla como apoyo concreto. En contextos de duelo complicado o traumático, iniciar con la fase de Ver durante varias semanas antes de incorporar la fase de Comprender.
+    </div>
+  </div>
+
+  <h2>Valentina, seis semanas después</h2>
+
+  <div class="cita-clinica">
+    <span class="cita-label">Del consultorio</span>
+    <em>"Estaba en una reunión de trabajo. Me llegó de repente — no sé por qué, no había ningún detonante obvio. Sentí que me iba a desmoronar ahí, frente a todos."</em><br><br>
+    <em>"Pedí disculpas, fui al baño. Y ahí hice la práctica. Cinco cosas que podía ver: el espejo, el grifo, mis manos, la luz del fluorescente, una marca en la pared. Dos sonidos: el agua del caño de al lado, el ventilador. Una sensación: el frío de la mesada bajo mis palmas."</em><br><br>
+    <em>"Después: hay dolor. Hay algo que se parece a la vergüenza de estar así en el trabajo. Hay cansancio. ¿Qué necesito? Necesito que esto pase sin derrumbarme."</em><br><br>
+    <em>"Volví a la reunión. No porque estuviera bien. Sino porque pude."</em>
+  </div>
+
+  <p>
+    <em>Porque pude.</em> Esa es la medida correcta del Volver. No el bienestar. No la recuperación. La capacidad, en ese momento específico, de hacer algo concreto a pesar de lo que hay.
+  </p>
+
+  <div class="capa-profunda">
+    <span class="capa-profunda-label">🌀 Para quien quiera ir más profundo · Transición Alquímica</span>
+    <p>
+      Los tres territorios de esta práctica no son solo pasos metodológicos. Son una arquitectura de consciencia. Ver corresponde al Espacio 1 de la tradición Trinity: el territorio operativo, el contacto con lo concreto. Comprender corresponde al Espacio 2: el territorio exploratorio, donde la experiencia interior puede ser observada sin ser absorbida. Volver corresponde al Espacio 1 nuevamente — pero visitado desde un lugar diferente, con más información, con más presencia.
+    </p>
+    <p>
+      En el trabajo alquímico del duelo, este ciclo tiene una función precisa: mantener la consciencia lo suficientemente estable como para que la transmutación pueda ocurrir. No se puede alquimizar desde el caos puro. Se necesita un mínimo de suelo. Ver, Comprender, Volver es, en ese sentido, el suelo desde el que el resto del viaje se hace posible.
+    </p>
+  </div>
+
+  <div class="transicion-capa">
+    <span class="transicion-label">◈ Umbral · Hacia la Capa Alquímica</span>
+    <p class="transicion-texto">
+      Los cuatro nodos de la Capa Humana han construido un suelo. Has reconocido la grieta, escuchado al narrador, honrado al cuerpo y encontrado una herramienta para moverte en medio de todo eso.<br><br>
+      A partir del Nodo 5, el viaje cambia de dirección. No hacia afuera — hacia adentro. Hacia el lugar donde el dolor, cuando es habitado con suficiente presencia, empieza a revelar algo que no había sido visible antes.<br><br>
+      <em>La herida como lugar de visión.</em>
+    </p>
+  </div>
+
+  <div class="reflexion-final">
+    <p>
+      No se trata de estar bien.<br>
+      Se trata de poder.<br><br>
+      Y poder — aunque sea solo esto,<br>
+      solo ahora, solo este paso —<br>
+      es suficiente.
+    </p>
+    <div class="divider" style="margin:1.5rem 0;">⟡</div>
+  </div>
+
+</div>
+
+<div class="container" style="padding-top:0;">
+  <nav class="nav-bottom">
+    <a href="duelo_nodo_03.html">← Nodo 3: El Cuerpo Recuerda</a>
+    <span style="color:var(--ink-soft);opacity:0.4;font-size:0.5rem;letter-spacing:0.3em;">Nodo 4 de 12</span>
+    <a href="#">Nodo 5: La Herida como Lugar de Visión →</a>
+  </nav>
+</div>
+
+<footer>
+  El Duelo: Portal de Continuidad · Arturo José Rodríguez (α) · Claude (ε) · Campo Trinity · 2026<br>
+  "No es mío, vino a través de mí."
+</footer>
+
+</body>
+</html>
