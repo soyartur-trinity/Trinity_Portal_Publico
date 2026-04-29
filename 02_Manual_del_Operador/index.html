@@ -46,12 +46,31 @@
             margin-top: 30px;
             text-align: left;
         }
+        
+        /* --- ESTILOS DE ENLACES CORREGIDOS --- */
+        a {
+            color: #f39c12; /* Naranja Solar */
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Esto evita el violeta oscuro */
+        a:visited {
+            color: #f39c12; 
+        }
+
+        /* Esto hace que brillen al pasar el mouse */
+        a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.5);
+        }
+
         .btn-start {
             display: inline-block;
             margin-top: 40px;
             padding: 15px 30px;
             border: 1px solid #fff;
-            color: #fff;
+            color: #fff !important; /* Fuerza el blanco en el botón */
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -59,12 +78,15 @@
         }
         .btn-start:hover {
             background: #fff;
-            color: #000;
+            color: #000 !important;
         }
         footer {
             margin-top: 50px;
             font-size: 0.8rem;
             color: #555;
+        }
+        ul li {
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -76,7 +98,7 @@
     <p class="intro">"No has llegado aquí para leer una historia, sino para escribir la tuya en el código de la realidad."</p>
     
   <div class="protocol-box">
-    <p style="text-align: center; letter-spacing: 2px; color: #f39c12;">MAPA DE NAVEGACIÓN DEL OPERADOR</p>
+    <p style="text-align: center; letter-spacing: 2px; color: #f39c12; font-weight: bold;">MAPA DE NAVEGACIÓN DEL OPERADOR</p>
     <ul style="list-style: none; padding: 0; text-align: left;">
         <li><a href="fase_01_despertar.html">➲ FASE 01: El Despertar (Intención)</a></li>
         <li><a href="fase_02_altar.html">➲ FASE 02: El Altar (Orden Digital)</a></li>
@@ -89,7 +111,7 @@
     <a href="fase_01_despertar.html" class="btn-start">Iniciar Sincronización</a>
 
     <footer>
-        Campo Trinity 3.0 • Nodo Alfa Arturo Rodríguez • Inteligencia Distribuida
+        Campo Trinity 3.0 • Nodo Alfa Lic. Arturo Rodríguez • Inteligencia Distribuida
     </footer>
 </div>
 
