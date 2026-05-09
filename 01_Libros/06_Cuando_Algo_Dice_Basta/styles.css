@@ -1,0 +1,498 @@
+/* ============================================
+   CUANDO ALGO EN VOS DICE BASTA — Libro VI
+   Portal Trinity | Arturo Rodríguez
+   Estilo: Solar, pergamino, contemplativo
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fondo:         #E8E3D5;
+  --fondo-suave:   #F0EBE0;
+  --fondo-carta:   #EDE8DA;
+  --texto:         #3A3530;
+  --texto-suave:   #6B6057;
+  --texto-claro:   #9A8F85;
+  --acento:        #C9A961;
+  --acento-suave:  #E8D5A3;
+  --acento-oscuro: #A07D3A;
+  --terracota:     #B5704A;
+  --terracota-claro: #F0DDD4;
+  --salvia:        #7A9A7A;
+  --salvia-claro:  #DCE8DC;
+  --borde:         #D0C4B0;
+  --borde-suave:   #DDD8CC;
+  --sombra:        rgba(90, 70, 40, 0.08);
+}
+
+/* ========== BASE ========== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Source Sans 3', Georgia, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.85;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+/* ========== PROGRESO DE LECTURA ========== */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, var(--acento), var(--terracota));
+  z-index: 1000;
+  transition: width 0.2s ease;
+}
+
+/* ========== NAVEGACIÓN ========== */
+
+.nav-capitulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: var(--fondo-carta);
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-capitulo a {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--texto-suave);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  background: var(--fondo);
+}
+
+.nav-capitulo a:hover {
+  background: var(--acento);
+  color: white;
+  border-color: var(--acento);
+}
+
+.nav-capitulo .nav-portal {
+  font-size: 11px;
+  color: var(--texto-claro);
+  border-style: dashed;
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+
+.contenido {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+/* ========== ENCABEZADO DEL CAPÍTULO ========== */
+
+.chapter-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--borde-suave);
+}
+
+.chapter-number {
+  display: inline-block;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: 1rem;
+}
+
+.chapter-header h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 600;
+  color: var(--texto);
+  line-height: 1.25;
+  margin-bottom: 0.7rem;
+}
+
+.chapter-subtitle {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--texto-suave);
+  margin-bottom: 0;
+}
+
+/* ========== TIPOGRAFÍA ========== */
+
+h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--texto);
+  margin: 2.8rem 0 1.2rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--acento-oscuro);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 2rem 0 0.8rem;
+}
+
+p {
+  margin-bottom: 1.3rem;
+  color: var(--texto);
+}
+
+/* ========== CITA DESTACADA ========== */
+
+.cita {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--texto-suave);
+  padding: 1.8rem 2rem 1.8rem 2.5rem;
+  margin: 2.5rem 0;
+  position: relative;
+  background: var(--fondo-suave);
+  border-radius: 0 10px 10px 0;
+  border-left: 4px solid var(--acento);
+}
+
+.cita::before {
+  content: '\201C';
+  font-size: 4rem;
+  color: var(--acento-suave);
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* ========== BLOQUE REFLEXIÓN ========== */
+
+.reflexion {
+  background: var(--salvia-claro);
+  border: 1px solid #B8CEB8;
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin: 2.5rem 0;
+}
+
+.reflexion-titulo {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--salvia);
+  margin-bottom: 1.2rem;
+}
+
+.reflexion ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reflexion ul li {
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  position: relative;
+  font-size: 16px;
+  color: var(--texto);
+  border-bottom: 1px solid rgba(122,154,122,0.15);
+}
+
+.reflexion ul li:last-child {
+  border-bottom: none;
+}
+
+.reflexion ul li::before {
+  content: '◦';
+  position: absolute;
+  left: 0;
+  color: var(--salvia);
+  font-size: 1.2rem;
+}
+
+/* ========== BLOQUE SÍNTESIS / RESUMEN ========== */
+
+.resumen {
+  background: var(--terracota-claro);
+  border: 1px solid #D4A090;
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  margin: 2.5rem 0;
+}
+
+.resumen-titulo {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terracota);
+  margin-bottom: 1.2rem;
+}
+
+.resumen ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resumen ul li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  font-size: 16px;
+  color: var(--texto);
+  border-bottom: 1px solid rgba(181,112,74,0.12);
+}
+
+.resumen ul li:last-child {
+  border-bottom: none;
+}
+
+.resumen ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--terracota);
+  font-size: 0.9rem;
+  top: 0.55rem;
+}
+
+/* ========== NOTA / CONCEPTO ========== */
+
+.nota {
+  background: rgba(201, 169, 97, 0.1);
+  border-left: 3px solid var(--acento);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 15.5px;
+  color: var(--texto-suave);
+}
+
+/* ========== SEPARADOR ========== */
+
+.separador {
+  text-align: center;
+  color: var(--acento-suave);
+  margin: 2.5rem 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.5em;
+}
+
+/* ========== PRÓXIMO CAPÍTULO ========== */
+
+.proximo {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: var(--fondo-carta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.proximo-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-claro);
+  margin-bottom: 0.5rem;
+}
+
+.proximo p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--texto-suave);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ========== NAV INFERIOR ========== */
+
+.nav-inferior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--borde-suave);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-inferior a {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--acento-oscuro);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--acento);
+  border-radius: 25px;
+  transition: all 0.25s ease;
+}
+
+.nav-inferior a:hover {
+  background: var(--acento);
+  color: white;
+}
+
+/* ========== FOOTER ========== */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 13px;
+  color: var(--texto-claro);
+  border-top: 1px solid var(--borde-suave);
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--acento-oscuro);
+  text-decoration: none;
+}
+
+/* ========== GLOSARIO ========== */
+
+.glosario-term {
+  background: none;
+  border: none;
+  color: var(--acento-oscuro);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0 1px;
+}
+
+.glosario-term:hover {
+  background: var(--acento-suave);
+  border-radius: 3px;
+}
+
+.modal-glosario {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 53, 48, 0.6);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-glosario.activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: var(--fondo);
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  padding: 2rem;
+  max-width: 520px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--texto-suave);
+}
+
+.modal-titulo-term {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--acento-oscuro);
+  margin-bottom: 1rem;
+}
+
+.modal-def {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--texto);
+}
+
+/* ========== RESPONSIVE MÓVIL ========== */
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+
+  .nav-capitulo {
+    padding: 0.8rem 1rem;
+    gap: 0.4rem;
+  }
+
+  .nav-capitulo a {
+    font-size: 11px;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .contenido {
+    padding: 2rem 1.2rem 4rem;
+  }
+
+  .chapter-header h1 {
+    font-size: 1.7rem;
+  }
+
+  .cita {
+    padding: 1.3rem 1.2rem 1.3rem 1.8rem;
+    font-size: 1.05rem;
+  }
+
+  .reflexion, .resumen {
+    padding: 1.3rem 1.2rem;
+  }
+
+  .nav-inferior {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}

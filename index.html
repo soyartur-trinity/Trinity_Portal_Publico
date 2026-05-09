@@ -80,6 +80,15 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-color: var(--acento);
         }
+
+        .libro-card.destacado {
+            border-color: var(--acento);
+            background: #EDE5D0;
+        }
+
+        .libro-card.destacado:hover {
+            box-shadow: 0 10px 30px rgba(201,169,97,0.2);
+        }
         
         .libro-numero {
             font-size: 0.85rem;
@@ -124,6 +133,11 @@
             background: #D4A59A;
             color: white;
         }
+
+        .nuevo {
+            background: var(--acento);
+            color: white;
+        }
         
         .nota-autoria {
             background: rgba(201, 169, 97, 0.1);
@@ -166,7 +180,7 @@
         
         <div class="libros-grid">
 
-            <!-- LIBRO 1: PUBLICADO -->
+            <!-- LIBRO 1 -->
             <a href="01_Libros/01_Empatia_Humana/index.html" class="libro-card">
                 <div class="libro-numero">Libro 1</div>
                 <h2 class="libro-titulo">Empatía Humana</h2>
@@ -177,7 +191,7 @@
                 <span class="estado publicado">✓ Publicado</span>
             </a>
 
-            <!-- LIBRO 2: PUBLICADO -->
+            <!-- LIBRO 2 -->
             <a href="01_Libros/02_La_Voz_Interior/index.html" class="libro-card">
                 <div class="libro-numero">Libro 2</div>
                 <h2 class="libro-titulo">La Voz Interior</h2>
@@ -188,7 +202,7 @@
                 <span class="estado publicado">◌ Publicado</span>
             </a>
 
-            <!-- LIBRO 3: PUBLICADO -->
+            <!-- LIBRO 3 -->
             <a href="01_Libros/03_Encuentro_Real/index.html" class="libro-card">
                 <div class="libro-numero">Libro 3</div>
                 <h2 class="libro-titulo">Encuentro Real</h2>
@@ -199,7 +213,7 @@
                 <span class="estado publicado">⟡ Publicado</span>
             </a>
 
-            <!-- LIBRO 4: PUBLICADO -->
+            <!-- LIBRO 4 -->
             <a href="01_Libros/04_Asertividad_Consciente/index.html" class="libro-card">
                 <div class="libro-numero">Libro 4</div>
                 <h2 class="libro-titulo">Asertividad Consciente</h2>
@@ -210,7 +224,7 @@
                 <span class="estado publicado">◈ Publicado</span>
             </a>
 
-            <!-- LIBRO 5: NUEVO -->
+            <!-- LIBRO 5 -->
             <a href="01_Libros/05_Duelo/index.html" class="libro-card">
                 <div class="libro-numero">Libro 5</div>
                 <h2 class="libro-titulo">El Duelo</h2>
@@ -219,6 +233,17 @@
                     hasta el reconocimiento de lo que permanece cuando la forma se ha ido.
                 </p>
                 <span class="estado publicado">🔱 Publicado</span>
+            </a>
+
+            <!-- LIBRO 6 — NUEVO -->
+            <a href="01_Libros/06_Cuando_Algo_Dice_Basta/index.html" class="libro-card destacado">
+                <div class="libro-numero">Libro 6</div>
+                <h2 class="libro-titulo">Cuando algo en vos dice basta</h2>
+                <p class="libro-descripcion">
+                    El destino no se construye. Se libera. Un recorrido por los bucles, 
+                    el umbral del cambio genuino y la presencia que siempre estuvo.
+                </p>
+                <span class="estado nuevo">✦ Nuevo</span>
             </a>
 
         </div>

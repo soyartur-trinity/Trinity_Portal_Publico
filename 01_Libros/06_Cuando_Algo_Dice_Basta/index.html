@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuando algo en vos dice basta | Portal Trinity</title>
+  <meta name="description" content="El destino no se construye. Se libera. — Libro VI del Portal Trinity">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .portada {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      border-bottom: 1px solid var(--borde);
+      margin-bottom: 3rem;
+    }
+
+    .portada .libro-numero {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .portada h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      font-weight: 600;
+      color: var(--texto);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .portada .subtitulo-portada {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--texto-suave);
+      margin-bottom: 2rem;
+    }
+
+    .portada .tesis {
+      display: inline-block;
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--acento-oscuro);
+      border-top: 1px solid var(--acento-suave);
+      border-bottom: 1px solid var(--acento-suave);
+      padding: 0.8rem 2rem;
+      margin: 1rem 0 2rem;
+    }
+
+    .portada .autoria {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13px;
+      color: var(--texto-claro);
+      letter-spacing: 0.04em;
+    }
+
+    .ornamento {
+      font-size: 1.8rem;
+      color: var(--acento-suave);
+      margin: 1.5rem 0;
+      letter-spacing: 0.3em;
+    }
+
+    .indice-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .indice-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--borde-suave);
+    }
+
+    .capitulo-card {
+      display: block;
+      text-decoration: none;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 0.8rem;
+      background: var(--fondo-carta);
+      border: 1px solid var(--borde-suave);
+      border-radius: 10px;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .capitulo-card:hover {
+      border-color: var(--acento);
+      background: var(--fondo-suave);
+      transform: translateX(4px);
+    }
+
+    .capitulo-card:hover .cap-numero {
+      color: var(--acento-oscuro);
+    }
+
+    .cap-numero {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--texto-claro);
+      margin-bottom: 0.3rem;
+      display: block;
+      transition: color 0.25s ease;
+    }
+
+    .cap-titulo {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--texto);
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .cap-subtitulo {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 14px;
+      color: var(--texto-suave);
+      font-style: italic;
+      display: block;
+    }
+
+    .cap-arrow {
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--acento-suave);
+      font-size: 1.2rem;
+      transition: all 0.25s ease;
+    }
+
+    .capitulo-card:hover .cap-arrow {
+      color: var(--acento);
+      right: 1.2rem;
+    }
+
+    .card-especial {
+      background: rgba(201, 169, 97, 0.07);
+      border-color: var(--acento-suave);
+    }
+
+    .nota-autoria {
+      background: rgba(201, 169, 97, 0.08);
+      border-left: 3px solid var(--acento);
+      padding: 1.2rem 1.5rem;
+      margin: 2.5rem 0;
+      border-radius: 0 8px 8px 0;
+      font-size: 14.5px;
+      color: var(--texto-suave);
+      line-height: 1.7;
+    }
+
+    .serie-footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--fondo-carta);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+    }
+
+    .serie-footer p {
+      font-size: 13px;
+      color: var(--texto-claro);
+      margin-bottom: 0.4rem;
+    }
+
+    .serie-footer .serie-titulo {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 1rem;
+    }
+
+    .serie-footer a {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-size: 13px;
+      color: var(--acento-oscuro);
+      text-decoration: none;
+      border-bottom: 1px solid var(--acento-suave);
+      padding-bottom: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .portada {
+        padding: 2.5rem 0.5rem 2rem;
+      }
+      .cap-arrow {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-capitulo" aria-label="Navegación principal">
+    <a href="../../../index.html">← Portal Trinity</a>
+    <span style="font-size: 12px; color: var(--texto-claro);">Libro VI</span>
+    <a href="introduccion.html">Introducción →</a>
+  </nav>
+
+  <main class="contenido">
+
+    <!-- Portada -->
+    <div class="portada">
+      <span class="libro-numero">Portal Trinity · Libro VI</span>
+      <h1>Cuando algo<br>en vos dice basta</h1>
+      <p class="subtitulo-portada">El destino no se construye. Se libera.</p>
+      <div class="ornamento">⟐ ✦ ⟐</div>
+      <p class="tesis">Cuando el peso de continuar igual supera al miedo de cambiar,<br>algo en vos dice basta.</p>
+      <p class="autoria">Arturo (α) · Campo Trinity · Inteligencias Colaborativas</p>
+    </div>
+
+    <!-- Nota introductoria -->
+    <p style="font-size: 16px; line-height: 1.85; color: var(--texto-suave); margin-bottom: 2rem;">
+      Este libro explora una pregunta que tarde o temprano aparece en cualquier persona que se detiene a observar su propia vida con honestidad: ¿por qué me pasa siempre lo mismo? Y más importante aún: ¿qué hace posible que algo cambie de verdad?
+    </p>
+
+    <div class="nota-autoria">
+      <strong>Nota sobre autoría:</strong> Este texto emerge de un proceso de Inteligencia Distribuida. Arturo (nodo α) opera como coherencia central de un campo colaborativo que incluye experiencia clínica de tres décadas, práctica contemplativa sostenida, y sistemas de inteligencia artificial. La relación es el producto.
+    </div>
+
+    <!-- Índice -->
+    <div class="indice-section">
+      <p class="indice-label">Preliminares</p>
+
+      <a href="introduccion.html" class="capitulo-card card-especial">
+        <span class="cap-numero">Introducción</span>
+        <span class="cap-titulo">Una pregunta que no cierra</span>
+        <span class="cap-subtitulo">Por qué este libro existe y para quién</span>
+        <span class="cap-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="indice-section">
+      <p class="indice-label">El bucle</p>
+
+      <a href="capitulo_01.html" class="capitulo-card">
+        <span class="cap-numero">Capítulo 1</span>
+        <span class="cap-titulo">La gramática invisible</span>
+        <span class="cap-subtitulo">Por qué nos pasan siempre cosas parecidas</span>
+        <span class="cap-arrow">→</span>
+      </a>
+
+      <a href="capitulo_02.html" class="capitulo-card">
+        <span class="cap-numero">Capítulo 2</span>
+        <span class="cap-titulo">La cárcel conocida</span>
+        <span class="cap-subtitulo">Por qué elegimos lo predecible aunque duela</span>
+        <span class="cap-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="indice-section">
+      <p class="indice-label">El umbral</p>
+
+      <a href="capitulo_03.html" class="capitulo-card">
+        <span class="cap-numero">Capítulo 3</span>
+        <span class="cap-titulo">Cuando algo en vos dice basta</span>
+        <span class="cap-subtitulo">El hastío como agente de cambio</span>
+        <span class="cap-arrow">→</span>
+      </a>
+
+      <a href="capitulo_04.html" class="capitulo-card">
+        <span class="cap-numero">Capítulo 4</span>
+        <span class="cap-titulo">El que observa no está preso</span>
+        <span class="cap-subtitulo">La presencia que permaneció durante todos los bucles</span>
+        <span class="cap-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="indice-section">
+      <p class="indice-label">La liberación</p>
+
+      <a href="capitulo_05.html" class="capitulo-card">
+        <span class="cap-numero">Capítulo 5</span>
+        <span class="cap-titulo">El destino no se construye. Se libera.</span>
+        <span class="cap-subtitulo">Qué ocurre después del umbral</span>
+        <span class="cap-arrow">→</span>
+      </a>
+
+      <a href="capitulo_06.html" class="capitulo-card">
+        <span class="cap-numero">Capítulo 6</span>
+        <span class="cap-titulo">Vivir despierto</span>
+        <span class="cap-subtitulo">La presencia como práctica cotidiana</span>
+        <span class="cap-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="indice-section">
+      <p class="indice-label">Cierre</p>
+
+      <a href="epilogo.html" class="capitulo-card card-especial">
+        <span class="cap-numero">Epílogo</span>
+        <span class="cap-titulo">Lo que queda</span>
+        <span class="cap-subtitulo">Cuando algo en vos dijo basta</span>
+        <span class="cap-arrow">→</span>
+      </a>
+    </div>
+
+    <!-- Serie completa -->
+    <div class="serie-footer">
+      <p class="serie-titulo">La serie completa · Portal Trinity</p>
+      <p>Libro 1 — Empatía Humana</p>
+      <p>Libro 2 — La Voz Interior</p>
+      <p>Libro 3 — El Encuentro Real</p>
+      <p>Libro 4 — Asertividad Consciente</p>
+      <p>Libro 5 — El Duelo</p>
+      <p><strong style="color: var(--acento-oscuro);">Libro 6 — Cuando algo en vos dice basta</strong></p>
+      <a href="../../../index.html">← Volver al Portal Trinity</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p><strong>Cuando algo en vos dice basta</strong></p>
+    <p style="margin-top: 0.5rem;">Arturo (α) · Campo Trinity · Inteligencias Colaborativas</p>
+    <p style="margin-top: 0.5rem; font-size: 12px;">Licencia: CC BY-NC-SA 4.0 · Distribución gratuita</p>
+    <p style="margin-top: 1rem;"><a href="../../../index.html">← Portal Trinity</a></p>
+  </footer>
+
+</body>
+</html>
