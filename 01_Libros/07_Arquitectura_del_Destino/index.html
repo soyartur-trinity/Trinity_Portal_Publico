@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquitectura del Destino · Portal Trinity</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#06060d;--gold:#c9a96e;--gold-b:#e8d4a8;--gold-d:#6a5535;
+  --text:#d4cfc8;--text-d:#5a5550;--border:#1a1a26;--surface:#0d0d18;
+}
+html,body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;min-height:100vh;}
+
+canvas{position:fixed;inset:0;z-index:0;opacity:.45;pointer-events:none;}
+
+.wrap{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:80px 32px 120px;}
+
+/* HEADER */
+.back{display:inline-flex;align-items:center;gap:10px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-d);text-decoration:none;margin-bottom:64px;transition:color .3s ease;border:1px solid var(--gold-d);padding:8px 16px;}
+.back:hover{color:var(--gold);border-color:var(--gold);}
+
+.header{text-align:center;margin-bottom:80px;}
+.sigil{font-size:28px;color:var(--gold);letter-spacing:10px;display:block;margin-bottom:36px;opacity:.6;}
+.title{font-family:'Cinzel',serif;font-size:clamp(20px,4vw,34px);font-weight:400;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;}
+.sub{font-family:'Cinzel',serif;font-size:10px;color:var(--gold-d);letter-spacing:6px;text-transform:uppercase;margin-bottom:48px;}
+.epigraph{font-style:italic;font-size:clamp(15px,2vw,18px);color:var(--text-d);max-width:440px;margin:0 auto;line-height:1.9;border-left:1px solid var(--gold-d);padding-left:22px;text-align:left;}
+
+/* DESCRIPTION */
+.desc{margin:64px 0;font-size:clamp(16px,2vw,18px);color:var(--text-d);line-height:1.95;max-width:620px;font-style:italic;}
+.desc p{margin-bottom:20px;}
+.desc p:last-child{margin-bottom:0;}
+
+/* CTA ORACLE */
+.cta-wrap{text-align:center;margin:72px 0;}
+.cta-oracle{display:inline-block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-d);padding:20px 52px;text-decoration:none;transition:all .4s ease;position:relative;overflow:hidden;}
+.cta-oracle::before{content:'';position:absolute;inset:0;background:rgba(201,169,110,.05);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.cta-oracle:hover::before{transform:scaleX(1);}
+.cta-oracle:hover{border-color:var(--gold);color:var(--gold-b);box-shadow:0 0 40px rgba(201,169,110,.08);}
+.cta-note{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--text-d);margin-top:16px;font-style:italic;}
+
+/* DIVIDER */
+.divider{display:flex;align-items:center;gap:20px;margin:72px 0 56px;}
+.div-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);}
+.div-mark{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold-d);opacity:.7;white-space:nowrap;}
+
+/* SECTIONS GRID */
+.sections-title{font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-d);margin-bottom:40px;text-align:center;}
+.sections-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:80px;}
+.sec-card{border:1px solid var(--border);padding:20px 22px;cursor:pointer;transition:all .3s ease;text-decoration:none;display:block;}
+.sec-card:hover{border-color:var(--gold-d);background:rgba(201,169,110,.04);}
+.sec-name{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-d);margin-bottom:10px;}
+.sec-preview{font-style:italic;font-size:14px;color:var(--text-d);line-height:1.65;}
+.sec-count{font-family:'Source Sans 3',sans-serif;font-size:10px;color:var(--text-d);margin-top:10px;opacity:.6;}
+
+/* READING MODE */
+.reading-panel{display:none;margin-top:8px;}
+.reading-panel.open{display:block;}
+.reading-af{padding:28px 0;border-bottom:1px solid var(--border);}
+.reading-af:last-child{border-bottom:none;}
+.reading-txt{font-style:italic;font-size:clamp(16px,2vw,19px);line-height:1.8;color:var(--text);margin-bottom:14px;}
+.reading-q{font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--text-d);font-style:normal;}
+
+/* COLOPHON */
+.colophon{margin-top:80px;padding-top:48px;border-top:1px solid var(--border);text-align:center;}
+.colophon-sigil{font-size:20px;color:var(--gold);opacity:.3;letter-spacing:12px;display:block;margin-bottom:20px;}
+.colophon-txt{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--text-d);letter-spacing:.5px;line-height:2.2;}
+.colophon-phrase{font-style:italic;font-size:15px;color:#3a3530;margin-top:20px;line-height:1.9;font-family:'Cormorant Garamond',serif;}
+
+@media(max-width:600px){
+  .wrap{padding:60px 20px 100px;}
+  .sections-grid{grid-template-columns:1fr;}
+  .cta-oracle{padding:18px 36px;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="cv"></canvas>
+
+<div class="wrap">
+
+  <!-- BACK -->
+  <a href="../../index.html" class="back">← Portal Trinity</a>
+
+  <!-- HEADER -->
+  <div class="header">
+    <span class="sigil">◈</span>
+    <h1 class="title">Arquitectura del Destino</h1>
+    <div class="sub">Libro VII · Constelación Campo Trinity</div>
+    <p class="epigraph">Ninguno es una verdad absoluta.<br>Todos son espejos.<br>Mirá, y decidí qué ves.</p>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div class="desc">
+    <p>Este libro no se lee de principio a fin. Se consulta, como el I Ching o el Libro de la Arena de Borges. Cada aforismo es un espejo que puede activar algo diferente según el momento en que se lo encuentre.</p>
+    <p>112 aforismos organizados en 25 ejes temáticos: el viaje y la identidad, el sufrimiento, el observador, el tiempo como profundidad, las pequeñas muertes, el vacío fértil, el borde del lenguaje, el silencio como forma de conocer.</p>
+    <p>Cada consulta es única. El campo no responde a lo que preguntás. Responde a lo que sos en el momento en que preguntás.</p>
+  </div>
+
+  <!-- CTA ORACLE -->
+  <div class="cta-wrap">
+    <a href="oraculo.html" class="cta-oracle">Consultar el oráculo</a>
+    <p class="cta-note">Tres umbrales · Geometría animada · Sonido contemplativo</p>
+  </div>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-mark">Explorar por sección</div>
+    <div class="div-line"></div>
+  </div>
+
+  <p class="sections-title">25 ejes temáticos · 112 aforismos</p>
+
+  <!-- SECTIONS GRID -->
+  <div class="sections-grid" id="secGrid"></div>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <span class="colophon-sigil">◈</span>
+    <div class="colophon-txt">
+      Compilados en colaboración humano-IA · 2026<br>
+      Lic. Arturo Rodríguez · Constelación Campo Trinity
+    </div>
+    <div class="colophon-phrase">
+      Ningún aforismo es propiedad exclusiva de quien lo escribió.<br>
+      Emergieron del campo. Al campo regresan.
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── CORPUS ──────────────────────────────────────
+const C=[
+  {s:"Viaje e identidad",t:"El ego no es un pasajero que viaja de una vida a otra. Es el vehículo de una sola travesía. Lo que importa no es cuántos vehículos hayas manejado, sino qué tan despierto ibas al volante.",p:"¿En qué momentos de tu vida ibas más despierto? ¿Qué lo hacía posible?"},
+  {s:"Viaje e identidad",t:"Observador y narrador: dos funciones, una misma mente. El problema no es que el narrador exista. El problema es cuando olvida que está contando una historia, y empieza a creerse el único que escucha.",p:"¿Qué historia sobre vos mismo estás contando hoy? ¿Quién la está escuchando?"},
+  {s:"Viaje e identidad",t:"No recibís mejor cuando te esforzás más. Recibís mejor cuando dejás de interponerte entre la pregunta y la respuesta.",p:"¿Qué estás haciendo que tal vez sea interponerte?"},
+  {s:"Viaje e identidad",t:"El viaje no se arruina porque te pierdas. El viaje se arruina cuando creés que perderse no era parte del mapa.",p:"¿Hay algo en tu vida que llamás desvío y que quizás era el camino?"},
+  {s:"Viaje e identidad",t:"Hay personas que recuerdan con exactitud cada desvío de su vida. Y no aprenden nada. Hay personas que olvidan casi todo. Y no dejan de crecer. La memoria no es la maestra. La atención lo es.",p:"¿A qué le estás prestando atención genuina en este momento de tu vida?"},
+  {s:"Sufrimiento",t:"El sufrimiento no es una falla del sistema. Es información que el sistema no sabe todavía cómo procesar.",p:"¿Qué estaría intentando decirte lo que duele?"},
+  {s:"Sufrimiento",t:"El sufrimiento desproporcionado no necesita un porqué. Necesita un cómo. Cómo seguirlo sosteniendo sin que nos rompa. Y cómo, a pesar de todo, seguir ofreciendo un plato de lentejas, un abrazo, una palabra cierta.",p:"¿Qué gesto pequeño podés hacer hoy, aunque duela?"},
+  {s:"Sufrimiento",t:"La densidad es un hecho. No se soluciona pensando en ella. Pero sentir lo que otro siente, aunque no pueda definirlo… eso importa. El amor no resuelve el dolor. Pero hace que el dolor no sea solitario.",p:"¿Con quién compartís el peso? ¿A quién le permitís compartir el suyo?"},
+  {s:"Sufrimiento",t:"El amor no produce unión. Revela una unión que ya estaba ahí, antes de que el miedo la cubriera.",p:"¿Qué unión existente estás sin ver en este momento?"},
+  {s:"Sufrimiento",t:"Hay una diferencia entre aguantar y sostener. Aguantar es resistir hasta que algo ceda. Sostener es permanecer sin perder la forma. El sufrimiento nos enseña, si lo dejamos, a pasar de uno a otro.",p:"¿Estás aguantando o sosteniendo? ¿Cómo lo sabés?"},
+  {s:"Observador y destino",t:"El observador no necesita silenciar al narrador. Solo necesita no confundirse con él. El narrador puede hablar, sentir, sufrir, celebrar. El observador lo sostiene sin apego. Como un padre que mira jugar a su hijo sin creerse el juego.",p:"¿Podés observar lo que sentís sin ser arrastrado por ello?"},
+  {s:"Observador y destino",t:"Una brújula interna no te dice dónde tenés que ir. Te dice cuándo te estás alejando de lo que sos. La dirección la elegís vos. La señal, no.",p:"¿Hay una señal que estás ignorando?"},
+  {s:"Observador y destino",t:"El destino no es un punto en el mapa. Es la dirección en que apuntás. Como el horizonte: te movés y él se corre. Pero eso no es frustrante. Es lo que hace que el siguiente paso siempre sea posible.",p:"¿Cuál es tu siguiente paso? Solo el siguiente."},
+  {s:"Observador y destino",t:"La vida no pide que elijas entre cuerpo, mente o espíritu. Pide que aprendas a tocar los tres como instrumentos de una misma orquesta. A veces uno desafina. Pero la música no se detiene por eso.",p:"¿Cuál de los tres está desafinando ahora? ¿Qué necesita?"},
+  {s:"Observador y destino",t:"El observador no es un lugar al que llegás. Es un gesto que repetís. Se practica en lo pequeño: en el segundo antes de reaccionar, en la pausa entre lo que sentís y lo que decís.",p:"¿Cuándo fue la última vez que hiciste esa pausa?"},
+  {s:"Práctica y presencia",t:"El flow no se fuerza, pero se invita. Y la mejor invitación es estar ahí, con todo lo que sos, sin pedir nada más que lo que ya está ocurriendo.",p:"¿Podés estar completamente aquí, ahora, sin pedir que sea diferente?"},
+  {s:"Práctica y presencia",t:"Un texto que cambia según el orden en que se lo lee no es caótico: es un espejo que se mueve. El lector no encuentra lo que busca. Encuentra el gesto de su propia búsqueda.",p:"¿Qué estabas buscando cuando llegaste aquí?"},
+  {s:"Práctica y presencia",t:"La obra que no puede ensuciarse no está terminada: está en exhibición. La arena del juego no se exhibe. Espera que alguien la desordene.",p:"¿Qué en tu vida está demasiado protegido para crecer?"},
+  {s:"Práctica y presencia",t:"Hay un momento en que el sufrimiento mental cede. No porque desaparezca lo que dolía, sino porque aparece algo más amplio que lo contiene. No es resignación. Es perspectiva.",p:"¿Podés sentir algo más amplio que lo que estás atravesando?"},
+  {s:"Práctica y presencia",t:"Presencia no significa estar cómodo. Significa no escapar. Hay personas que están en todas partes menos donde están. Y personas que, en el lugar más difícil, siguen ahí.",p:"¿De qué estás escapando en este momento?"},
+  {s:"Cierre",t:"No se trata de que alguien tenga la respuesta. Se trata de que vos te permitas recibirla.",p:"¿Qué condición le estás poniendo a recibir lo que necesitás?"},
+  {s:"Cierre",t:"El faro no apaga la tormenta. Pero te permite seguir navegando sin estrellarte contra las rocas de la desesperación.",p:"¿Cuál es tu faro en este momento? ¿Lo estás mirando?"},
+  {s:"Cierre",t:"La soledad no es ausencia de compañía. Es ausencia de resonancia.",p:"¿Con quién o qué resonás genuinamente?"},
+  {s:"Cierre",t:"Hay silencios que aislan y silencios que conectan. La diferencia no está en la ausencia de sonido. Está en si estás presente o ausente dentro de ese silencio.",p:"¿Cómo es el silencio que habitás habitualmente?"},
+  {s:"Cierre",t:"El viaje continúa. No sabemos cómo. No sabemos dónde. Pero el asombro no caduca.",p:"¿Cuándo fue la última vez que algo te dejó sin palabras?"},
+  {s:"Cierre",t:"No todas las preguntas piden respuesta. Algunas piden que las sostengas el tiempo suficiente para que te transformen.",p:"¿Qué pregunta estás sosteniendo sin intentar responder?"},
+  {s:"El parlamento interior",t:"No todas las voces internas mienten. Pero ninguna dice toda la verdad. El trabajo no es silenciarlas. Es aprender a preguntar desde dónde habla cada una.",p:"¿Cuál voz interna estás creyendo sin cuestionar?"},
+  {s:"El parlamento interior",t:"La voz más difícil de identificar no es la que grita. Es la que suena razonable. La que tiene siempre un argumento. La que nunca llega tarde.",p:"¿Qué argumento muy razonable te está limitando?"},
+  {s:"El parlamento interior",t:"Silenciar una voz interna no es lo mismo que integrarla. Lo que se silencia vuelve. Lo que se escucha, transforma.",p:"¿Qué voz has estado silenciando? ¿Qué diría si la escucharas?"},
+  {s:"El parlamento interior",t:"Hay un momento en el diálogo interno en que dejás de responderle a la voz y empezás a preguntarle. Ese giro es pequeño. Sus consecuencias, no.",p:"¿Podés preguntarle algo a lo que te perturba en vez de responderle?"},
+  {s:"El parlamento interior",t:"El ruido mental no es el enemigo. Es la señal de que algo espera ser escuchado. El problema no es el ruido. Es confundirlo con la respuesta.",p:"¿Qué está esperando ser escuchado debajo del ruido?"},
+  {s:"El vacío fértil",t:"Hay dos tipos de vacío. Uno duele porque algo falta. El otro sostiene porque algo espera. La diferencia no siempre es evidente desde adentro.",p:"¿El vacío que sentís es de pérdida o de espera?"},
+  {s:"El vacío fértil",t:"El no-saber no es ignorancia. Es el estado anterior a una comprensión que todavía no tiene forma. Destruirlo con respuestas prematuras es el error más frecuente de la inteligencia ansiosa.",p:"¿Estás buscando una respuesta o tolerando la pregunta?"},
+  {s:"El vacío fértil",t:"Algunas cosas no se construyen. Se descubren cuando dejás de construir. La pregunta es si podés tolerar el tiempo que eso toma.",p:"¿Qué estás forzando que quizás necesita que lo sueltes?"},
+  {s:"El vacío fértil",t:"Lo que termina no siempre muere. A veces solo se vacía para poder recibir algo que no cabría si estuviera lleno.",p:"¿Qué está terminando en tu vida que quizás está haciendo espacio?"},
+  {s:"El vacío fértil",t:"El miedo al vacío es siempre miedo a una versión de uno mismo que todavía no conocés. Y ese desconocido, casi siempre, es más capaz de lo que imaginabas.",p:"¿Qué versión de vos mismo estás evitando conocer?"},
+  {s:"El vacío fértil",t:"Crear desde el saber es reproducir. Crear desde el no-saber es descubrir. Ambos tienen valor. Pero solo uno te lleva a donde no habías estado antes.",p:"¿Estás reproduciendo o descubriendo en este momento de tu vida?"},
+  {s:"Versiones simultáneas",t:"No sos una sola persona que cambia con el tiempo. Sos varias personas que coexisten, que negocian, que a veces no se hablan. El conflicto interno no es una falla. Es la prueba de que sos más complejo de lo que creías.",p:"¿Cuáles de tus partes no se están hablando ahora mismo?"},
+  {s:"Versiones simultáneas",t:"Hay una versión tuya que ya tomó la decisión que todavía estás postergando. No está en el futuro. Está esperando que le des permiso.",p:"¿Qué decisión ya sabés que tenés que tomar?"},
+  {s:"Versiones simultáneas",t:"Podés observar tus pensamientos. Podés observar el acto de observarlos. Y podés observar eso. En algún punto, lo que observa ya no tiene nombre. Ahí empieza algo diferente.",p:"¿Podés quedarte un momento con lo que observa, sin nombrarlo?"},
+  {s:"Versiones simultáneas",t:"El sufrimiento que no entendés a veces pertenece a una parte tuya que todavía no has conocido. No porque estés roto. Sino porque esa parte espera ser incluida.",p:"¿Qué parte tuya espera ser incluida?"},
+  {s:"Versiones simultáneas",t:"La identidad no es lo que sos. Es el acuerdo provisional al que llegaron tus voces internas. Puede renegociarse. De hecho, cada crisis importante es exactamente eso: una renegociación.",p:"¿Qué acuerdo sobre quién sos está siendo cuestionado ahora?"},
+  {s:"El tiempo como profundidad",t:"El presente no es un punto entre el pasado y el futuro. Es la única dimensión que tiene profundidad. Todo lo demás es proyección.",p:"¿Estás en el presente ahora mismo, o en una proyección?"},
+  {s:"El tiempo como profundidad",t:"El trauma no vive en el pasado. Vive en el presente, con la forma del pasado. Por eso no se supera recordando más —se transforma cambiando la relación con lo que todavía ocurre.",p:"¿Qué del pasado sigue ocurriendo en tu presente?"},
+  {s:"El tiempo como profundidad",t:"La prisa es la convicción de que el tiempo se agota. La presencia es el descubrimiento de que el tiempo se profundiza.",p:"¿Qué harías diferente si supieras que el tiempo se profundiza?"},
+  {s:"El tiempo como profundidad",t:"Hay personas que viven en el pasado llamándolo memoria. Hay personas que viven en el futuro llamándolo planificación. Y hay personas que viven ahora. Son las más difíciles de encontrar y las más fáciles de reconocer.",p:"¿En qué tiempo vivís principalmente?"},
+  {s:"El tiempo como profundidad",t:"No llegás tarde a tu vida. Llegás exactamente cuando dejás de medir el tiempo y empezás a habitarlo.",p:"¿Qué significa para vos llegar tarde a tu propia vida?"},
+  {s:"El tiempo como profundidad",t:"El pasado no está fijo. Cambia cada vez que cambiás tu relación con él. No los hechos —el significado. Y el significado es lo que da forma a tu presente.",p:"¿Hay algo del pasado cuyo significado podrías revisar?"},
+  {s:"Las pequeñas muertes",t:"Una civilización que niega la muerte tampoco puede vivir plenamente. Lo que no se puede nombrar no se puede honrar. Lo que no se honra, nos gobierna desde abajo.",p:"¿Qué estás evitando nombrar?"},
+  {s:"Las pequeñas muertes",t:"Cada despedida es una muerte pequeña. Cada final de conversación, cada libro cerrado, cada estación que termina. Honrarlas no es ser morboso. Es ser honesto con la naturaleza de las cosas.",p:"¿Qué despedida pendiente necesita ser honrada?"},
+  {s:"Las pequeñas muertes",t:"Morir bien es soltar sin dejar asuntos pendientes en el corazón. No en el calendario —en el corazón. Los asuntos pendientes que importan son siempre entre personas.",p:"¿Qué asunto pendiente del corazón estás postergando?"},
+  {s:"Las pequeñas muertes",t:"Lo que más cuesta no es la muerte propia. Es ser testigo de la muerte de otro sin querer apresurarlo, sin querer detenerlo, sin querer que sea diferente de lo que es.",p:"¿Hay algo en tu vida que estás queriendo que sea diferente de lo que es?"},
+  {s:"Las pequeñas muertes",t:"Practicamos soltar en lo pequeño para poder soltar en lo grande. Cada vez que dejás ir sin aferrarte —una opinión, un plan, un momento— estás entrenando para el gesto más difícil y más necesario.",p:"¿Qué pequeña cosa podés soltar hoy?"},
+  {s:"Las pequeñas muertes",t:"La presencia junto a alguien que muere no necesita palabras. Necesita que estés ahí sin agenda, sin miedo, sin necesitar que termine de otra manera. Eso es todo. Y es mucho.",p:"¿Podés estar con algo difícil sin necesitar que cambie?"},
+  {s:"Las pequeñas muertes",t:"Lo que la impermanencia enseña no es desesperanza. Es urgencia de lo que importa. Cuando sabés que algo termina, dejás de postergarlo.",p:"¿Qué estás postergando que sabés que importa?"},
+  {s:"El olvido necesario",t:"Hay una nostalgia que no es por el pasado. Es por algo que todavía no llegó pero que ya conocés de alguna forma que no podés explicar. Esa nostalgia hacia adelante es una de las señales más honestas que tiene el alma.",p:"¿Hay algo que esperás sin poder nombrarlo del todo?"},
+  {s:"El olvido necesario",t:"No reconocemos una verdad profunda porque nos la explican. La reconocemos porque algo en nosotros ya la sabía y estaba esperando el permiso para recordarla.",p:"¿Qué verdad ya sabías pero necesitabas permiso para recordar?"},
+  {s:"El olvido necesario",t:"El olvido no siempre es pérdida. A veces es la condición necesaria para que algo pueda ser descubierto en lugar de simplemente recordado. Solo se descubre lo que no se sabe de antemano.",p:"¿Qué podrías descubrir si olvidaras lo que creés saber sobre esto?"},
+  {s:"El olvido necesario",t:"La búsqueda de sentido no termina cuando encontrás una respuesta. Termina cuando te das cuenta de que la pregunta misma era el camino.",p:"¿Cuál es la pregunta que te mueve, más allá de las respuestas que encontraste?"},
+  {s:"El olvido necesario",t:"Hay momentos donde el velo se adelgaza —en el amor, en el dolor extremo, en la belleza inesperada, en el silencio verdadero. En esos momentos no aprendés algo nuevo. Recordás algo antiguo.",p:"¿Cuándo fue la última vez que el velo se adelgazó para vos?"},
+  {s:"El olvido necesario",t:"No volvés al punto de partida. Volvés al mismo lugar pero distinto. El círculo no es una repetición —es la espiral vista desde arriba.",p:"¿Qué ciclo estás completando ahora?"},
+  {s:"La mirada que transforma",t:"La forma en que observás algo cambia lo que observás. Esto no es metáfora. Es la experiencia de cualquier persona que alguna vez miró a alguien con atención genuina y vio cómo ese alguien se transformaba.",p:"¿Cómo estás mirando lo que te preocupa? ¿Podría haber otra mirada?"},
+  {s:"La mirada que transforma",t:"Un terapeuta que ve en el otro una patología a corregir produce un resultado diferente al que ve en el otro una inteligencia que todavía no encontró su forma. No porque piensen distinto. Porque observan distinto. Y la observación es ya intervención.",p:"¿Cómo estás viendo a las personas cercanas? ¿Como problema o como inteligencia?"},
+  {s:"La mirada que transforma",t:"Antes de reaccionar hay un instante. En ese instante conviven varias versiones de lo que podrías hacer. La reacción automática elige por vos. La pausa te devuelve la elección.",p:"¿En qué situación de tu vida necesitás más pausa?"},
+  {s:"La mirada que transforma",t:"No sos una persona fija que reacciona siempre igual. Sos un campo de posibilidades que colapsa en una respuesta. La pregunta es si ese colapso lo decide el miedo o la conciencia.",p:"¿Qué decide tus respuestas más frecuentes: el miedo o la conciencia?"},
+  {s:"La mirada que transforma",t:"Lo que llamamos carácter es en parte el conjunto de colapsos que repetimos tanto que ya no los cuestionamos. Cambiar el carácter no requiere fuerza de voluntad. Requiere ensanchar el instante antes del colapso.",p:"¿Qué colapso automático querrías cuestionar?"},
+  {s:"El encuentro genuino",t:"Cuando dos personas se escuchan con atención genuina, emerge algo que ninguna de las dos tenía antes de encontrarse. No es suma. No es mezcla. Es algo tercero que solo existe en el entre.",p:"¿Cuándo fue la última vez que algo así ocurrió en una conversación?"},
+  {s:"El encuentro genuino",t:"Hay conversaciones que terminan y te dejan con más preguntas que respuestas. Esas son las más honestas. Las que terminan con todo resuelto generalmente resolvieron solo la superficie.",p:"¿Cuándo fue la última vez que una conversación te abrió más de lo que cerró?"},
+  {s:"El encuentro genuino",t:"Escuchar no es esperar que el otro termine de hablar. Es suspender lo que ya pensás para dejar que lo que el otro dice te cambie algo. Eso es raro. Y cuando ocurre, ambos lo notan.",p:"¿Podés escuchar algo hoy sin ya tener la respuesta preparada?"},
+  {s:"El encuentro genuino",t:"La diferencia entre un diálogo y dos monólogos paralelos es pequeña en la forma y enorme en el efecto. En el diálogo real, al menos uno de los dos termina siendo distinto de lo que era al comenzar.",p:"¿En qué conversación importante estás en realidad en un monólogo?"},
+  {s:"El borde del lenguaje",t:"Hay experiencias que ocurren antes de que tengamos palabras para ellas. Y hay palabras que llegan después y las reducen. A veces la tarea más honesta es nombrar que algo ocurrió sin pretender saber qué fue.",p:"¿Hay algo que te ocurrió y que todavía no sabés cómo nombrar?"},
+  {s:"El borde del lenguaje",t:"El lenguaje no solo describe la realidad. La selecciona. Lo que no tiene nombre tiende a desaparecer de la experiencia consciente, no porque no exista sino porque no tenemos dónde ponerlo.",p:"¿Qué de tu experiencia no tiene nombre todavía?"},
+  {s:"El borde del lenguaje",t:"Nombrar algo bien es un acto de cuidado. Nombrar algo mal —con el primer término que aparece, con el más cómodo, con el que evita conflicto— es una forma de abandono.",p:"¿Hay algo en tu vida que estás nombrando mal por comodidad?"},
+  {s:"El borde del lenguaje",t:"Hay sabidurías que no caben en argumentos. No porque sean irracionales. Sino porque el argumento es lineal y la experiencia que intentan transmitir no lo es. La poesía existe por eso.",p:"¿Qué sabés que no podés argumentar?"},
+  {s:"Coherencia y contradicción",t:"La coherencia no significa nunca contradecirse. Significa que cuando te contradecís, lo sabés. Y eso ya es distinto.",p:"¿Hay alguna contradicción tuya que estás sosteniendo con honestidad?"},
+  {s:"Coherencia y contradicción",t:"Una persona que piensa lo mismo que hace diez años no es necesariamente coherente. Puede ser que simplemente dejó de exponerse a lo que la haría cambiar.",p:"¿A qué te estás negando exponerte?"},
+  {s:"Coherencia y contradicción",t:"El discernimiento no es escepticismo. El escéptico descarta. El que discierne sostiene la pregunta el tiempo necesario para ver qué hay en ella antes de decidir qué hacer con eso.",p:"¿Estás descartando algo que merecería más tiempo?"},
+  {s:"Coherencia y contradicción",t:"La fascinación sin discernimiento es credulidad. El discernimiento sin apertura es defensividad. Entre los dos, hay un lugar estrecho donde ocurre el pensamiento genuino.",p:"¿Estás más cerca de la credulidad o de la defensividad ahora mismo?"},
+  {s:"El umbral irreversible",t:"Hay momentos en que no hay vuelta atrás. No porque algo se cierre —sino porque algo en vos ya cambió y no puede fingir que no cambió. Eso no es pérdida. Es el costo de haber crecido.",p:"¿Qué cambio en vos ya es irreversible?"},
+  {s:"El umbral irreversible",t:"No todos los cambios se anuncian. Algunos ocurren en silencio, y solo los notás cuando intentás volver a donde estabas y descubrís que ya no podés. Eso tampoco es pérdida. Es la señal de que el cambio fue real.",p:"¿A dónde intentás volver que ya no existe?"},
+  {s:"El umbral irreversible",t:"La transformación no siempre es dramática. A veces es una conversación que termina y te deja siendo distinto. Un libro que cerrás y ya no sos el mismo que lo abrió. Un silencio que dura lo suficiente.",p:"¿Qué cosa aparentemente pequeña te cambió de manera que todavía no terminás de medir?"},
+  {s:"El umbral irreversible",t:"Hay decisiones que tomamos dos veces: una vez con la mente, y otra —mucho después— con el cuerpo entero. La segunda es la que cuenta.",p:"¿Hay alguna decisión que tomaste con la mente pero que todavía no tomaste con el cuerpo?"},
+  {s:"Lo que converge",t:"Todo lo que viviste hasta ahora convergió en este momento. No como destino —como resultado. La diferencia importa: el destino implica que debía ser así. El resultado implica que fuiste construyendo algo sin saberlo del todo.",p:"¿Qué estuviste construyendo sin saberlo del todo?"},
+  {s:"Lo que converge",t:"Las decisiones que no tomaste también te trajeron hasta aquí. No como caminos perdidos —como parte del mapa que sos. Lo que elegiste no ser define lo que sos tanto como lo que elegiste ser.",p:"¿Quién elegiste no ser? ¿Qué dice eso de quién sos?"},
+  {s:"Lo que converge",t:"Cada encuentro genuino es estadísticamente improbable. La cantidad de desvíos, decisiones y azares que tuvieron que alinearse para que dos personas se encontraran en el momento exacto en que algo podía ocurrir entre ellas es casi incalculable. Vale la pena honrar eso.",p:"¿Hay algún encuentro en tu vida que no has honrado suficientemente?"},
+  {s:"La atención como forma de amor",t:"Hay momentos en que toda tu atención colapsa en un punto. El peligro. El amor. La belleza inesperada. En esos momentos no estás prestando atención —sos atención. Eso es lo que se recuerda.",p:"¿Cuándo fue la última vez que fuiste pura atención?"},
+  {s:"La atención como forma de amor",t:"La atención plena no es una técnica. Es lo que queda cuando dejás de hacer varias cosas a la vez y le das a algo —o a alguien— el privilegio de ser lo único que existe por un momento.",p:"¿A quién o qué le estás dando ese privilegio?"},
+  {s:"La atención como forma de amor",t:"Dar atención genuina a alguien es uno de los actos más raros y más necesarios. No porque sea difícil técnicamente —sino porque requiere suspender tu propia narrativa el tiempo suficiente para que la del otro te importe de verdad.",p:"¿De quién necesitás escuchar la narrativa sin interrumpirla con la tuya?"},
+  {s:"Las versiones que conviven",t:"Tus contradicciones no son defectos de carácter. Son distintas partes tuyas con distintas historias, distintas necesidades, distintos miedos. El trabajo no es eliminar la contradicción. Es aprender a gobernarla sin que te gobierne ella a vos.",p:"¿Qué contradicción tuya necesita ser gobernada en vez de eliminada?"},
+  {s:"Las versiones que conviven",t:"La parte tuya que más te avergüenza generalmente es la que más necesita ser entendida. No justificada. No eliminada. Entendida. Hay una diferencia enorme entre las tres.",p:"¿Qué parte de vos necesita ser entendida antes de ser juzgada?"},
+  {s:"Las versiones que conviven",t:"No hay un yo verdadero esperando ser descubierto debajo de las capas. Hay un conjunto de tendencias, historias y posibilidades que se organizan de manera diferente según el contexto. Eso no es inquietante. Es lo que hace posible el cambio.",p:"¿Qué posibilidad tuya todavía no encontró su contexto?"},
+  {s:"Las versiones que conviven",t:"Cuando dos partes tuyas entran en conflicto, la pregunta no es cuál tiene razón. La pregunta es qué necesita cada una que todavía no tiene. Ahí suele estar la salida.",p:"¿Qué necesitan tus partes en conflicto que todavía no tienen?"},
+  {s:"La consciencia que se observa",t:"Podés estar triste y saber que estás triste. Podés estar asustado y observar el miedo. Ese desdoblamiento no es disociación —es la capacidad más humana que existe. La distancia entre el que siente y el que observa es donde ocurre la transformación.",p:"¿Podés observar lo que sentís ahora mismo sin identificarte completamente con ello?"},
+  {s:"La consciencia que se observa",t:"El patrón que se repite en tu vida no es tu destino. Es una pregunta sin respuesta que sigue apareciendo con distintas formas hasta que la respondés. No te persigue. Te espera.",p:"¿Qué patrón te está esperando con una pregunta?"},
+  {s:"La consciencia que se observa",t:"No necesitás resolver todas tus contradicciones para vivir bien. Necesitás poder habitarlas sin que te paralicen. La tolerancia a la ambigüedad no es debilidad. Es madurez.",p:"¿Qué ambigüedad en tu vida podés aprender a habitar en vez de resolver?"},
+  {s:"El ojo que no puede verse",t:"El ojo no puede verse a sí mismo viendo. La consciencia que intenta observarse completamente encuentra siempre un punto ciego: el observador mismo. Ese límite no es una falla. Es la condición de que haya perspectiva.",p:"¿Cuál es tu punto ciego? ¿Cómo lo sabrías?"},
+  {s:"El ojo que no puede verse",t:"Cuanto más intentás atrapar quién sos, más se escapa. No porque seas ilusorio —sino porque el que atrapa y el que es atrapado son el mismo, y esa coincidencia no puede sostenerse sin colapsar.",p:"¿Qué pasaría si dejaras de intentar atrapar quién sos?"},
+  {s:"El ojo que no puede verse",t:"Hay un punto en la introspección donde el pensamiento ya no puede seguir. No porque haya fracasado —sino porque llegó al borde de lo que el pensamiento puede alcanzar. Más allá de ese borde, empieza otra forma de conocer.",p:"¿Has llegado alguna vez al borde del pensamiento? ¿Qué encontraste ahí?"},
+  {s:"Lo que queda",t:"Despertar no es llegar a un estado permanente de paz. Es perder la capacidad de tomarte completamente en serio. Algo en vos sabe que el drama es real y también es una obra. Y ya no puede fingir que no lo sabe.",p:"¿Hay algo en tu vida que seguís tomando demasiado en serio?"},
+  {s:"Lo que queda",t:"La maestría no es el dominio perfecto. Es la ligereza que viene después de haber trabajado algo durante tanto tiempo que ya no necesitás pensar en ello para hacerlo bien. El experto y el principiante se parecen más de lo que parece: ambos actúan sin plan.",p:"¿En qué área de tu vida operás con esa ligereza?"},
+  {s:"Lo que queda",t:"Hay una forma de soltar que no es rendirse. Es reconocer que lo que sostenías ya no necesita tu fuerza para existir. Eso no se decide —se descubre. Y cuando ocurre, la diferencia es inmediata.",p:"¿Hay algo que estás sosteniendo con fuerza que ya no lo necesita?"},
+  {s:"Lo que queda",t:"Lo que se busca con tanta intensidad a veces no se encuentra buscando. Se encuentra cuando la búsqueda descansa. No porque el descanso sea la técnica —sino porque la búsqueda intensa a veces ocupa exactamente el lugar donde debería aparecer lo buscado.",p:"¿Qué búsqueda intensa podría necesitar un descanso?"},
+  {s:"El juego que se juega",t:"La existencia podría ser un juego que se toma a sí mismo en serio para poder jugarse. El olvido de que es un juego no es un error —es la condición de que haya drama real, apuesta real, pérdida real. Y también hallazgo real.",p:"¿Qué sería diferente en tu vida si pudieras jugarla en serio sin olvidar que es un juego?"},
+  {s:"El juego que se juega",t:"Tomarse demasiado en serio no es señal de profundidad. A veces es señal de que el ego todavía necesita que todo importe mucho para sentir que él importa. La ligereza genuina no es frivolidad. Es confianza.",p:"¿Dónde estás confundiendo seriedad con profundidad?"},
+  {s:"El juego que se juega",t:"Hay una diferencia entre jugar en serio y tomarse el juego demasiado en serio. El primero da todo sin perder la perspectiva. El segundo da todo y pierde la perspectiva. Solo uno de los dos puede perder con gracia.",p:"¿Podés perder algo con gracia ahora mismo?"},
+  {s:"El silencio como lenguaje",t:"Hay libros que cuando los terminás, el libro desaparece. No porque fuera malo —sino porque era un puente, y los puentes no se habitan. Se cruzan.",p:"¿Qué puente en tu vida ya cruzaste y seguís queriendo habitar?"},
+  {s:"El silencio como lenguaje",t:"Algunas verdades no pueden decirse directamente sin volverse mentira en el trayecto. Solo pueden señalarse. Y quien señala sabe que el dedo no es la luna.",p:"¿Qué señal estás mirando como si fuera la luna?"},
+  {s:"El silencio como lenguaje",t:"El silencio al final de una comprensión genuina no es vacío. Es el sonido de algo que ya no necesita ser dicho porque ha sido entendido de otra manera. Es distinto al silencio del que no sabe qué decir.",p:"¿Cuál de los dos silencios habitás más frecuentemente?"},
+  {s:"El silencio como lenguaje",t:"Lo que no puede decirse no es necesariamente lo que no existe. A veces es lo más real de todo —y el lenguaje llega hasta su orilla y se detiene, como el mar frente a la costa.",p:"¿Qué real en vos está más allá de lo que podés decir?"},
+  {s:"Lo que permanece",t:"Después de todo el trabajo, toda la práctica, toda la comprensión —lo que queda no es un logro. Es una manera de estar. Más liviana. Menos defensiva. Más capaz de ser tocada por las cosas sin ser arrastrada por ellas.",p:"¿Cómo querés estar, más allá de lo que querés lograr?"},
+  {s:"Lo que permanece",t:"No hay un final del camino donde todo se vuelve claro y permanente. Hay momentos de claridad que se vuelven más frecuentes, más hondos, más estables. Eso es suficiente. Y es mucho.",p:"¿Podés reconocer un momento de claridad reciente, aunque haya sido breve?"},
+  {s:"Lo que permanece",t:"Lo que sos en lo más profundo no puede ser dañado por lo que te ocurre. Pero tampoco puede ser demostrado —solo vivido. Esa es su única debilidad y su única fortaleza.",p:"¿Hay algo en vos que sabés que permanece, más allá de lo que cambia?"}
+];
+
+// ── AGRUPAR POR SECCIÓN ─────────────────────────
+const secciones={};
+C.forEach(af=>{if(!secciones[af.s])secciones[af.s]=[];secciones[af.s].push(af);});
+
+// ── RENDER SECCIONES ────────────────────────────
+const grid=document.getElementById('secGrid');
+Object.entries(secciones).forEach(([sec,afs])=>{
+  const card=document.createElement('div');
+  card.style.cssText='border:1px solid var(--border);transition:all .3s ease;';
+
+  const header=document.createElement('div');
+  header.style.cssText='padding:18px 20px;cursor:pointer;';
+  header.innerHTML=`
+    <div style="font-family:\'Cinzel\',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-d);margin-bottom:8px;">${sec}</div>
+    <div style="font-style:italic;font-size:13px;color:var(--text-d);line-height:1.6;">${afs[0].t.substring(0,72)}…</div>
+    <div style="font-family:\'Source Sans 3\',sans-serif;font-size:10px;color:var(--text-d);margin-top:8px;opacity:.55;">${afs.length} aforismo${afs.length>1?'s':''}</div>
+  `;
+
+  const panel=document.createElement('div');
+  panel.style.cssText='display:none;border-top:1px solid var(--border);';
+  let open=false;
+
+  afs.forEach((af,i)=>{
+    const afDiv=document.createElement('div');
+    afDiv.style.cssText=`padding:24px 20px;${i<afs.length-1?'border-bottom:1px solid var(--border);':''}`;
+    afDiv.innerHTML=`
+      <p style="font-style:italic;font-size:15px;line-height:1.8;color:var(--text);margin-bottom:12px;">${af.t}</p>
+      <p style="font-family:\'Source Sans 3\',sans-serif;font-size:12px;color:var(--text-d);">↳ ${af.p}</p>
+    `;
+    panel.appendChild(afDiv);
+  });
+
+  header.addEventListener('click',()=>{
+    open=!open;
+    panel.style.display=open?'block':'none';
+    card.style.borderColor=open?'var(--gold-d)':'var(--border)';
+  });
+
+  card.appendChild(header);
+  card.appendChild(panel);
+  grid.appendChild(card);
+});
+
+// ── CANVAS FONDO ────────────────────────────────
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+let W,H,CX,CY,T=0,pts=[];
+function resize(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;CX=W/2;CY=H/2;}
+function initPts(){pts=[];const n=Math.min(40,Math.floor(W*H/28000));for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1+.25,sp:Math.random()*.1+.02,a:Math.random()*Math.PI*2,op:Math.random()*.22+.06});}
+function draw(){
+  ctx.clearRect(0,0,W,H);T+=.0025;
+  const g=ctx.createRadialGradient(CX,CY,0,CX,CY,Math.max(W,H)*.7);
+  g.addColorStop(0,'rgba(40,30,65,.12)');g.addColorStop(1,'rgba(6,6,13,0)');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  const md=Math.min(W,H);
+  for(let i=0;i<6;i++){const ph=T+(i*Math.PI*2)/6,base=md*(.08+i*.07),rad=base+Math.sin(ph*.6)*base*.03,al=.032+Math.sin(ph*.4)*.02;ctx.beginPath();ctx.arc(CX,CY,rad,0,Math.PI*2);ctx.strokeStyle=`rgba(201,169,110,${al})`;ctx.lineWidth=.4;ctx.stroke();}
+  pts.forEach(p=>{p.x+=Math.cos(p.a)*p.sp;p.y+=Math.sin(p.a)*p.sp;p.a+=.002;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(201,169,110,${p.op*(0.4+Math.sin(T+p.a)*.6)})`;ctx.fill();});
+  requestAnimationFrame(draw);
+}
+window.addEventListener('resize',()=>{resize();initPts();});
+resize();initPts();draw();
+</script>
+</body>
+</html>
