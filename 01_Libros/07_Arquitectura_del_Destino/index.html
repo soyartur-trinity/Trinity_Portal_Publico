@@ -275,8 +275,8 @@ Object.entries(secciones).forEach(([sec,afs])=>{
     const afDiv=document.createElement('div');
     afDiv.style.cssText=`padding:24px 20px;${i<afs.length-1?'border-bottom:1px solid var(--border);':''}`;
     afDiv.innerHTML=`
-      <p style="font-style:italic;font-size:15px;line-height:1.8;color:var(--text);margin-bottom:12px;">${af.t}</p>
-      <p style="font-family:\'Source Sans 3\',sans-serif;font-size:12px;color:var(--text-d);">↳ ${af.p}</p>
+      <p style="font-style:italic;font-size:17px;line-height:1.8;color:var(--text);margin-bottom:12px;">${af.t}</p>
+      <p style="font-family:\'Source Sans 3\',sans-serif;font-size:14px;color:var(--text-d);">↳ ${af.p}</p>
     `;
     panel.appendChild(afDiv);
   });
