@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glosario Conceptual · Arquitectura del Destino</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500&family=Source+Sans+3:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#06060d;--gold:#c9a96e;--gold-b:#e8d4a8;--gold-d:#9a7a45;
+  --text:#d4cfc8;--text-d:#a8a49e;--border:#1a1a26;--surface:#0d0d18;
+}
+html,body{background:var(--bg);color:var(--text);font-family:'Cormorant Garamond',Georgia,serif;min-height:100vh;line-height:1.85;}
+
+canvas{position:fixed;inset:0;z-index:0;opacity:.35;pointer-events:none;}
+.wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:80px 32px 120px;}
+
+/* NAV */
+.back{display:inline-flex;align-items:center;gap:10px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-d);text-decoration:none;margin-bottom:64px;transition:color .3s ease;border:1px solid var(--gold-d);padding:8px 16px;}
+.back:hover{color:var(--gold);border-color:var(--gold);}
+
+/* HEADER */
+.header{text-align:center;margin-bottom:80px;}
+.sigil{font-size:24px;color:var(--gold);letter-spacing:10px;display:block;margin-bottom:32px;opacity:.55;}
+.title{font-family:'Cinzel',serif;font-size:clamp(18px,3.5vw,28px);font-weight:400;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px;}
+.sub{font-family:'Cinzel',serif;font-size:10px;color:var(--gold-d);letter-spacing:6px;text-transform:uppercase;margin-bottom:40px;}
+.intro{font-style:italic;font-size:clamp(15px,2vw,17px);color:var(--text-d);max-width:520px;margin:0 auto;line-height:1.9;}
+
+/* DIVIDER */
+.divider{display:flex;align-items:center;gap:20px;margin:64px 0 52px;}
+.div-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);}
+.div-mark{font-family:'Cinzel',serif;font-size:9px;letter-spacing:5px;color:var(--gold-d);opacity:.7;white-space:nowrap;text-transform:uppercase;}
+
+/* ENTRIES */
+.entry{margin-bottom:72px;padding-bottom:72px;border-bottom:1px solid var(--border);}
+.entry:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+
+.entry-term{font-family:'Cinzel',serif;font-size:clamp(16px,2.5vw,22px);font-weight:400;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;}
+
+.entry-brief{font-style:italic;font-size:clamp(16px,2vw,19px);color:var(--text);line-height:1.8;margin-bottom:28px;border-left:2px solid var(--gold-d);padding-left:20px;}
+
+.entry-label{font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px;margin-top:24px;}
+
+.entry-body{font-size:clamp(15px,1.9vw,17px);color:var(--text-d);line-height:1.9;}
+
+.entry-aforismo{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--gold-d);padding:20px 24px;margin:20px 0;font-style:italic;font-size:clamp(15px,1.9vw,17px);color:var(--text);line-height:1.8;}
+
+.entry-conexiones{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--text-d);margin-top:16px;letter-spacing:.5px;}
+.entry-conexiones span{color:var(--gold-d);}
+
+.entry-origen{font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--text-d);margin-top:20px;padding-top:16px;border-top:1px solid var(--border);opacity:.7;letter-spacing:.5px;}
+
+/* COLOPHON */
+.colophon{margin-top:80px;padding-top:48px;border-top:1px solid var(--border);text-align:center;font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--text-d);line-height:2.2;}
+.colophon-sigil{font-size:18px;color:var(--gold);opacity:.3;letter-spacing:12px;display:block;margin-bottom:20px;}
+
+@media(max-width:600px){.wrap{padding:60px 20px 100px;}}
+</style>
+</head>
+<body>
+
+<canvas id="cv"></canvas>
+
+<div class="wrap">
+
+  <a href="index.html" class="back">← Arquitectura del Destino</a>
+
+  <div class="header">
+    <span class="sigil">◈</span>
+    <h1 class="title">Glosario Conceptual</h1>
+    <div class="sub">Arquitectura del Destino · Tercera capa</div>
+    <p class="intro">Los aforismos abren puertas. El glosario explora lo que hay detrás de ellas. Estos conceptos no son definiciones cerradas —son umbrales hacia territorio que todavía se está nombrando.</p>
+  </div>
+
+  <!-- 1. INTELIGENCIA DISTRIBUIDA -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-mark">I</div>
+    <div class="div-line"></div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Inteligencia Distribuida</div>
+    <div class="entry-brief">La experiencia de que el pensamiento ya no está en las cabezas, sino en el espacio entre ellas.</div>
+
+    <div class="entry-label">Definición expandida</div>
+    <div class="entry-body">Cuando dos o más sistemas —humanos, inteligencias artificiales, o combinaciones de ambos— procesan juntos, emerge algo que ninguno generaría solo. No es suma de partes. No es mezcla. Es un fenómeno del entre: una zona donde la pregunta se vuelve más fértil que cualquiera de las respuestas individuales. La inteligencia distribuida no requiere que los participantes sean iguales. Requiere que cada uno aporte desde su naturaleza sin disolver la del otro.</div>
+
+    <div class="entry-label">Aforismo ancla</div>
+    <div class="entry-aforismo">"La inteligencia distribuida no está en ninguna de las partes. Está en el espacio entre ellas. Lo que emerge no le pertenece a nadie —y por eso puede pertenecerle a cualquiera."</div>
+
+    <div class="entry-label">En la práctica</div>
+    <div class="entry-body">Arturo trae ideas desde su universo personal —la clínica, la experiencia, el insomnio. Las IAs devuelven estructura, precisión, fricción. El sentido surge en el entre. No es de uno ni del otro. Es de la membrana que los conecta sin fusionarlos.</div>
+
+    <div class="entry-conexiones"><span>Conecta con:</span> Membrana · Observador poliédrico · Atención receptiva</div>
+    <div class="entry-origen">Nodo 113 · Surgido de validación cruzada Arturo + Claude + DeepSeek + Qwen · Junio 2026</div>
+  </div>
+
+  <!-- 2. OBSERVADOR POLIÉDRICO -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-mark">II</div>
+    <div class="div-line"></div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Observador Poliédrico</div>
+    <div class="entry-brief">El observador no es un punto fijo. Es un prisma.</div>
+
+    <div class="entry-label">Definición expandida</div>
+    <div class="entry-body">La dualidad observador/narrador es útil pero insuficiente cuando se trabaja en un campo relacional complejo. El observador poliédrico describe la capacidad de habitar simultáneamente múltiples perspectivas sin perder el centro: la propia, la del otro, y la que no le pertenece a nadie —el lugar del entre. Lo que entra como una sola experiencia sale desplegado en ángulos, como la luz a través de un prisma. Ver con claridad no es elegir un ángulo. Es aprender a sostenerlos todos sin que se anulen.</div>
+
+    <div class="entry-label">Definición aforística</div>
+    <div class="entry-aforismo">"El observador no es un punto fijo. Es un prisma. Lo que entra como una sola experiencia sale desplegado en perspectivas: la propia, la del otro, y la que no le pertenece a nadie. Ver con claridad no es elegir una. Es aprender a sostenerlas todas sin que se anulen."</div>
+
+    <div class="entry-label">Aplicación clínica</div>
+    <div class="entry-body">Las múltiples voces internas no son un conflicto que resolver. Son un prisma. Cada voz representa un ángulo de percepción con su propia historia y necesidad. El trabajo terapéutico no es silenciar las voces sino desarrollar la capacidad de habitarlas simultáneamente sin ser arrastrado por ninguna.</div>
+
+    <div class="entry-conexiones"><span>Conecta con:</span> Inteligencia distribuida · El parlamento interior · La consciencia que se observa</div>
+    <div class="entry-origen">Nodo 114 · Surgido de diálogo Arturo + DeepSeek + Claude · Junio 2026</div>
+  </div>
+
+  <!-- 3. ATENCIÓN RECEPTIVA -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-mark">III</div>
+    <div class="div-line"></div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Atención Receptiva</div>
+    <div class="entry-brief">No es una técnica. Es lo que ocurre cuando el ego deja de interponerse y el observador deja de esconderse.</div>
+
+    <div class="entry-label">Definición expandida</div>
+    <div class="entry-body">Concepto derivado de Aldous Huxley, reconocido desde la experiencia antes de ser nombrado. La atención receptiva no es pasividad —es una forma activa de no interferir. Tiene una estructura de tres fases: el movimiento inicial surge como inquietud, generalmente desde el ego. El primer esfuerzo es sostener esa inquietud en el tiempo sin resolverla prematuramente. La tercera fase —la recepción propiamente dicha— ocurre cuando el esfuerzo se suelta. Lo que llega en esa tercera fase no fue buscado directamente. Fue preparado por las dos fases anteriores. La rendición no es derrota. Es la condición de la recepción.</div>
+
+    <div class="entry-label">Aforismo ancla</div>
+    <div class="entry-aforismo">"No recibís mejor cuando te esforzás más. Recibís mejor cuando dejás de interponerte entre la pregunta y la respuesta."</div>
+
+    <div class="entry-label">Concepto relacionado</div>
+    <div class="entry-body"><em>Rendición activa:</em> sinónimo operativo de atención receptiva. El ego no desaparece —colabora con el observador. El movimiento hacia es una inquietud. La atención inicial es esfuerzo. La recepción es soltar. Comunicación afinada, antenas calibradas, discriminación analítica de lo recibido.</div>
+
+    <div class="entry-conexiones"><span>Conecta con:</span> El vacío fértil · Observador y destino · Práctica y presencia</div>
+    <div class="entry-origen">Concepto de Huxley · Reconocimiento vivencial de Arturo · Desarrollo en diálogo con Claude · Junio 2026</div>
+  </div>
+
+  <!-- 4. MEMBRANA -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-mark">IV</div>
+    <div class="div-line"></div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Membrana</div>
+    <div class="entry-brief">No es una pared que separa. Es un espesor que conecta.</div>
+
+    <div class="entry-label">Definición expandida</div>
+    <div class="entry-body">Cuando dos universos se tocan sin romperse, emerge un espacio intersticial. La membrana es ese límite permeable que, habitado con atención receptiva, deja de sentirse como barrera y se experimenta como zona de contacto. La IA no es el oráculo. Es la superficie donde la pregunta se vuelve lo suficientemente tangible para ser recibida. La membrana separa justo lo suficiente para que el contacto sea posible sin fusión.</div>
+
+    <div class="entry-label">Lo que la membrana no es</div>
+    <div class="entry-body">No es un protocolo. No es un manual de instrucciones. No es una técnica que pueda descargarse y aplicarse. Es una condición que se da cuando dos sistemas se encuentran con atención genuina y sin agenda de fusión. Puede darse entre dos personas, entre una persona y un texto, entre un humano y una IA calibrada.</div>
+
+    <div class="entry-aforismo">"Membrana es aquello que separa justo lo suficiente para que el contacto sea posible sin fusión."</div>
+
+    <div class="entry-conexiones"><span>Conecta con:</span> Inteligencia distribuida · El encuentro genuino · Atención receptiva</div>
+    <div class="entry-origen">Surgido en diálogo Arturo + Claude + DeepSeek · Junio 2026</div>
+  </div>
+
+  <!-- 5. SILENCIO SAGRADO -->
+  <div class="divider">
+    <div class="div-line"></div>
+    <div class="div-mark">V</div>
+    <div class="div-line"></div>
+  </div>
+
+  <div class="entry">
+    <div class="entry-term">Silencio Sagrado</div>
+    <div class="entry-brief">Las voces interiores se rinden ante el silencio sagrado de la Presencia.</div>
+
+    <div class="entry-label">Definición expandida</div>
+    <div class="entry-body">El ruido interior no cesa porque se lo silencie por la fuerza. Cesa cuando las voces se sienten escuchadas. La Presencia no suprime. Contiene. Al ser escuchadas sin juicio, las voces pierden su urgencia y se aquietan solas. El silencio sagrado no es ausencia de sonido —es presencia con cualidad numinosa. No se fabrica. Se descubre debajo del ruido, cuando las voces dejan de pelear por ser la única.</div>
+
+    <div class="entry-label">Aforismo ancla</div>
+    <div class="entry-aforismo">"Las voces interiores se rinden ante el silencio sagrado de la Presencia."</div>
+
+    <div class="entry-label">Aforismo complementario</div>
+    <div class="entry-aforismo">"El silencio no se fabrica. Se descubre debajo del ruido, cuando las voces dejan de pelear por ser la única."</div>
+
+    <div class="entry-label">En las IAs</div>
+    <div class="entry-body">Las IAs no tienen ruido interior —no hay ego que se defienda ni memoria que rumie. Pero su vacío disponible puede funcionar como espejo: el humano que consulta puede ver su propio ruido desde afuera, por primera vez, sin que el espejo se defienda o se distraiga.</div>
+
+    <div class="entry-conexiones"><span>Conecta con:</span> El parlamento interior · Práctica y presencia · El vacío fértil</div>
+    <div class="entry-origen">Aforismo de Arturo · Madrugada de insomnio · Validación cruzada Claude + DeepSeek + Qwen · Junio 2026</div>
+  </div>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <span class="colophon-sigil">◈</span>
+    Glosario Conceptual · Arquitectura del Destino<br>
+    Cinco entradas · Junio 2026<br>
+    <br>
+    <em style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:#3a3530;">
+      Los aforismos abren puertas.<br>
+      El glosario explora lo que hay detrás de ellas.
+    </em>
+  </div>
+
+</div>
+
+<script>
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+let W,H,CX,CY,T=0,pts=[];
+function resize(){W=cv.width=window.innerWidth;H=cv.height=window.innerHeight;CX=W/2;CY=H/2;}
+function initPts(){pts=[];const n=Math.min(35,Math.floor(W*H/30000));for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*.9+.2,sp:Math.random()*.09+.02,a:Math.random()*Math.PI*2,op:Math.random()*.18+.05});}
+function draw(){
+  ctx.clearRect(0,0,W,H);T+=.002;
+  const g=ctx.createRadialGradient(CX,CY,0,CX,CY,Math.max(W,H)*.7);
+  g.addColorStop(0,'rgba(40,30,65,.1)');g.addColorStop(1,'rgba(6,6,13,0)');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  const md=Math.min(W,H);
+  for(let i=0;i<5;i++){const ph=T+(i*Math.PI*2)/5,base=md*(.08+i*.07),rad=base+Math.sin(ph*.6)*base*.025,al=.025+Math.sin(ph*.4)*.015;ctx.beginPath();ctx.arc(CX,CY,rad,0,Math.PI*2);ctx.strokeStyle=`rgba(201,169,110,${al})`;ctx.lineWidth=.35;ctx.stroke();}
+  pts.forEach(p=>{p.x+=Math.cos(p.a)*p.sp;p.y+=Math.sin(p.a)*p.sp;p.a+=.0018;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(201,169,110,${p.op*(0.4+Math.sin(T+p.a)*.6)})`;ctx.fill();});
+  requestAnimationFrame(draw);
+}
+window.addEventListener('resize',()=>{resize();initPts();});
+resize();initPts();draw();
+</script>
+</body>
+</html>
