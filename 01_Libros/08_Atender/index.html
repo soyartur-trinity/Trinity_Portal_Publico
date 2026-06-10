@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libro 8 · Atender | Portal Trinity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 45%,
+        rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Anillos que respiran */
+  .anillo {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.05);
+    pointer-events: none;
+    animation: respirar 6s ease-in-out infinite;
+  }
+
+  .anillo:nth-child(1) { width: 180px; height: 180px; animation-delay: 0s; }
+  .anillo:nth-child(2) { width: 320px; height: 320px; animation-delay: 2s; }
+  .anillo:nth-child(3) { width: 480px; height: 480px; animation-delay: 4s; }
+
+  .portal-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+    position: relative; z-index: 1;
+  }
+
+  .libro-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.6s;
+    position: relative; z-index: 1;
+  }
+
+  .titulo-principal {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+    position: relative; z-index: 1;
+  }
+
+  .subtitulo-principal {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.2s;
+    position: relative; z-index: 1;
+  }
+
+  /* Frase de entrada */
+  .frase-entrada {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--blanco-humo);
+    text-align: center;
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.6s;
+    position: relative; z-index: 1;
+    padding: 0 1rem;
+  }
+
+  /* Botón de entrada */
+  .boton-entrada {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 2.2s;
+    position: relative; z-index: 1;
+  }
+
+  .boton-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    transition: color 0.3s ease;
+  }
+
+  .boton-entrada:hover .boton-texto { color: var(--oro); }
+
+  .boton-circulo {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 1px solid var(--oro-tenue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(201,168,76,0.04);
+  }
+
+  .boton-entrada:hover .boton-circulo {
+    border-color: var(--oro);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .boton-flecha {
+    font-size: 1.2rem;
+    color: var(--oro-tenue);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .boton-entrada:hover .boton-flecha {
+    color: var(--oro);
+    transform: translateY(2px);
+  }
+
+  /* Volver al portal */
+  .volver-portal {
+    position: absolute;
+    top: 2rem; left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    z-index: 2;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 0.5s;
+  }
+
+  .volver-portal:hover { color: var(--oro-tenue); }
+
+  /* ── MAPA DE UMBRALES ────────────────────────────────── */
+  .mapa {
+    background: var(--negro);
+    padding: 6rem 2rem;
+  }
+
+  .mapa-contenido {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .mapa-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-align: center;
+    display: block;
+    margin-bottom: 3.5rem;
+  }
+
+  .umbral-link {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--separador);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .umbral-link:first-of-type { border-top: 1px solid var(--separador); }
+
+  .umbral-link::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: rgba(201,168,76,0.03);
+    transition: width 0.4s ease;
+  }
+
+  .umbral-link:hover::before { width: 100%; }
+
+  .umbral-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 3.5rem;
+    text-align: right;
+    transition: color 0.3s ease;
+    position: relative; z-index: 1;
+    padding-top: 0.1rem;
+  }
+
+  .umbral-link:hover .umbral-num { color: var(--oro-tenue); }
+
+  .umbral-info {
+    flex: 1;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+  }
+
+  .umbral-link:hover .umbral-nombre { color: var(--oro); }
+
+  .umbral-descripcion {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.6;
+  }
+
+  .umbral-flecha {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--oro-polvo);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-link:hover .umbral-flecha {
+    color: var(--oro-tenue);
+    transform: translateX(4px);
+  }
+
+  /* Cierre especial */
+  .umbral-link.cierre .umbral-num {
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-top: 0.4rem;
+    width: 3.5rem;
+    text-align: right;
+  }
+
+  /* Nota al pie del mapa */
+  .mapa-nota {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--separador);
+    text-align: center;
+  }
+
+  .mapa-nota-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.7;
+  }
+
+  /* ── PIE ─────────────────────────────────────────────── */
+  .pie {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--separador);
+  }
+
+  .pie-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    display: inline-block;
+  }
+
+  .pie-volver:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .pie-firma {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--oro-polvo);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-top: 1.5rem;
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes respirar {
+    0%, 100% { transform: translate(-50%,-50%) scale(1);    opacity: 0.4; }
+    50%       { transform: translate(-50%,-50%) scale(1.06); opacity: 0.08; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .mapa { padding: 4rem 1.5rem; }
+    .umbral-link { gap: 1.2rem; }
+    .umbral-num { width: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Volver al portal -->
+<a href="../../index.html" class="volver-portal">← Portal Trinity</a>
+
+<!-- PORTADA -->
+<section class="portada">
+  <div class="anillo"></div>
+  <div class="anillo"></div>
+  <div class="anillo"></div>
+
+  <span class="portal-label">Portal Público Trinity</span>
+  <span class="libro-numero">Libro VIII</span>
+  <h1 class="titulo-principal">Atender</h1>
+  <p class="subtitulo-principal">El gesto que lo cambia todo</p>
+
+  <p class="frase-entrada">
+    La atención es el único territorio<br>
+    que verdaderamente te pertenece.<br>
+    Y la mayor parte del tiempo,<br>
+    está ocupado por otros.
+  </p>
+
+  <a href="umbral_0_el_ruido.html" class="boton-entrada">
+    <span class="boton-texto">Comenzar</span>
+    <div class="boton-circulo">
+      <span class="boton-flecha">↓</span>
+    </div>
+  </a>
+</section>
+
+<!-- MAPA DE UMBRALES -->
+<section class="mapa">
+  <div class="mapa-contenido">
+    <span class="mapa-titulo">Los nueve umbrales</span>
+
+    <a href="umbral_0_el_ruido.html" class="umbral-link">
+      <span class="umbral-num">0</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El Ruido</span>
+        <span class="umbral-descripcion">La fragmentación como punto de partida, no de llegada.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_1_la_maestra.html" class="umbral-link">
+      <span class="umbral-num">I</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">La Maestra</span>
+        <span class="umbral-descripcion">La atención como el único instrumento que opera en tiempo real.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_2_la_geografia.html" class="umbral-link">
+      <span class="umbral-num">II</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">La Geografía</span>
+        <span class="umbral-descripcion">El cuerpo como el único territorio donde la atención se encarna.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_3_los_secuestradores.html" class="umbral-link">
+      <span class="umbral-num">III</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Los Secuestradores</span>
+        <span class="umbral-descripcion">El ecosistema diseñado para fragmentar la presencia.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_4_los_atractores.html" class="umbral-link">
+      <span class="umbral-num">IV</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Los Atractores</span>
+        <span class="umbral-descripcion">Cuando el tiempo reemplaza al presente.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_5_el_gesto.html" class="umbral-link">
+      <span class="umbral-num">V</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El Gesto</span>
+        <span class="umbral-descripcion">El Observador como práctica, no como lugar.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_6_el_amor_sagrado.html" class="umbral-link">
+      <span class="umbral-num">VI</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El Amor Sagrado</span>
+        <span class="umbral-descripcion">Atender al otro como el acto ético más radical.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_7_la_red.html" class="umbral-link">
+      <span class="umbral-num">VII</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">La Red</span>
+        <span class="umbral-descripcion">La atención que no agota — expande.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="cierre_el_gesto_que_se_repite.html" class="umbral-link cierre">
+      <span class="umbral-num">Cierre</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El Gesto que se Repite</span>
+        <span class="umbral-descripcion">No una conclusión. Una devolución.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <div class="mapa-nota">
+      <p class="mapa-nota-texto">
+        El recorrido es unidireccional.<br>
+        La atención requiere directriz.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PIE -->
+<footer class="pie">
+  <a href="../../index.html" class="pie-volver">← Volver al Portal Trinity</a>
+  <span class="pie-firma">Portal Público Trinity · © 2026 Campo Trinity</span>
+</footer>
+
+</body>
+</html>

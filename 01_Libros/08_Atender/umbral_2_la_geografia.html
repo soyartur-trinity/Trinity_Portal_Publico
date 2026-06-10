@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral II — La Geografía · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --negro-suave: #131210;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 60% at 50% 55%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 30% 20% at 75% 20%, rgba(201,168,76,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+  }
+
+  .divisor-portada {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: aparecer 1.6s ease forwards 1.0s;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.4s;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.7s;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3s;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .contenido {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible { animation-play-state: running; }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.7;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible { opacity: 1; transform: translateY(0); }
+
+  p { margin-bottom: 1.6rem; color: var(--blanco-humo); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Aforismo */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1px;
+    width: 1px; height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before { height: 100%; }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.65;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .aforismo-fuente {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* ── FIGURA CORPORAL INTERACTIVA ─────────────────────── */
+  .cuerpo-figura {
+    margin: 4.5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .cuerpo-figura.visible { opacity: 1; transform: translateY(0); }
+
+  .cuerpo-wrap {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+
+  /* Silueta SVG del cuerpo */
+  .cuerpo-svg-wrap {
+    flex-shrink: 0;
+    width: 130px;
+    position: relative;
+  }
+
+  .cuerpo-svg-wrap svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Zonas activas */
+  .zona-activa {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+
+  .zona-activa:hover { opacity: 0.8; }
+  .zona-activa.activa { opacity: 1; }
+
+  /* Panel de descripción */
+  .cuerpo-descripcion {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .zona-panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .zona-panel.activo {
+    display: block;
+    opacity: 1;
+  }
+
+  .zona-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .zona-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .zona-texto {
+    font-size: 0.9rem;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    opacity: 0.9;
+  }
+
+  .zona-instruccion {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--separador);
+    display: block;
+    line-height: 1.6;
+  }
+
+  /* Indicador de selección */
+  .cuerpo-hint {
+    text-align: center;
+    margin-top: 1.2rem;
+  }
+
+  .cuerpo-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* Descenso animado */
+  .descenso {
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--separador);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .descenso.visible { opacity: 1; transform: translateY(0); }
+
+  .descenso::before {
+    content: 'EL DESCENSO';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .descenso-pasos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .descenso-paso {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--separador);
+    position: relative;
+  }
+
+  .descenso-paso:last-child { border-bottom: none; }
+
+  .descenso-linea-vertical {
+    position: absolute;
+    left: 19px;
+    top: 3rem;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+  }
+
+  .descenso-paso:last-child .descenso-linea-vertical { display: none; }
+
+  .descenso-circulo {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid var(--oro-tenue);
+    background: transparent;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .descenso-paso.iluminado .descenso-circulo {
+    background: var(--oro);
+    box-shadow: 0 0 10px rgba(201,168,76,0.4);
+  }
+
+  .descenso-contenido { flex: 1; }
+
+  .descenso-zona {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .descenso-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .descenso-texto {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    line-height: 1.7;
+  }
+
+  /* Nota sobre estados alterados */
+  .nota-margen {
+    border: 1px solid var(--separador);
+    border-left: 3px solid var(--oro-tenue);
+    padding: 1.8rem 2rem;
+    margin: 3.5rem 0;
+    background: rgba(201,168,76,0.02);
+    position: relative;
+  }
+
+  .nota-margen::before {
+    content: 'UNA NOTA AL MARGEN';
+    position: absolute;
+    top: -0.6rem; left: 1.5rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--oro-tenue);
+  }
+
+  .nota-margen p {
+    font-size: 0.9rem;
+    color: var(--gris-calido);
+    line-height: 1.75;
+    font-style: italic;
+  }
+
+  .nota-margen p strong {
+    color: var(--blanco-humo);
+    font-style: normal;
+  }
+
+  /* Práctica */
+  .practica {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    padding: 2.5rem;
+    margin: 4rem 0;
+    position: relative;
+  }
+
+  .practica::before {
+    content: 'PRÁCTICA';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .practica p {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .practica p:last-child { margin-bottom: 0; }
+
+  .practica-paso {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+    align-items: flex-start;
+  }
+
+  .practica-paso:last-child { margin-bottom: 0; }
+
+  .paso-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--oro-tenue);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    letter-spacing: 0.1em;
+  }
+
+  .paso-texto {
+    font-size: 0.93rem;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    opacity: 0.9;
+  }
+
+  /* Pregunta */
+  .pregunta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 4rem 0;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .pregunta-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.6;
+  }
+
+  /* Separador */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea { flex: 1; height: 1px; background: var(--separador); }
+  .separador-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  /* Navegación */
+  .navegacion {
+    text-align: center;
+    padding-top: 5rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 6rem;
+  }
+
+  .nav-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .nav-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-flecha:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .cuerpo-wrap { flex-direction: column; align-items: center; }
+    .cuerpo-svg-wrap { width: 100px; }
+    .aforismo { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .practica { padding: 2rem 1.5rem; }
+    .descenso { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+  <div class="divisor-portada"></div>
+  <div class="umbral-numero">II</div>
+  <h2 class="umbral-titulo">La Geografía</h2>
+  <p class="umbral-subtitulo">el cuerpo como el único territorio donde la atención se encarna</p>
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO -->
+<main class="contenido">
+
+  <!-- Apertura -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      Antes de seguir leyendo,<br>
+      notá dónde están tus hombros.<br><br>
+      ¿Están buscando las orejas?
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      Esa pregunta no es retórica. Es un diagnóstico instantáneo 
+      de dónde está tu atención en este momento. Cuando la atención 
+      vive en la cabeza — en el análisis, en la planificación, 
+      en la rumiación — el cuerpo lo registra: hombros elevados, 
+      mandíbula tensa, respiración que no baja del pecho. 
+      El cuerpo no miente sobre dónde está la mente.
+    </p>
+    <p>
+      Solemos pensar la atención como un fenómeno mental. 
+      Algo que ocurre en el cerebro, entre neuronas, 
+      invisible y sin peso. Pero la atención tiene geografía. 
+      Tiene lugar. Y ese lugar es siempre el cuerpo.
+    </p>
+  </div>
+
+  <!-- Aforismo -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      La atención consciente no ocurre solo en la mente.<br>
+      Es una sensación física que se aloja en el cuerpo.<br>
+      La pregunta no es en qué pensás.<br>
+      Es dónde estás.
+    </span>
+  </blockquote>
+
+  <!-- Sección 2 -->
+  <div class="seccion" id="s2">
+    <p>
+      El cuerpo tiene tres territorios atencionales. 
+      No son compartimentos estancos — son zonas de resonancia, 
+      cada una con su cualidad, su riesgo y su don. 
+      La mayoría de las personas viven casi exclusivamente 
+      en la primera. La presencia genuina requiere aprender 
+      a habitar las tres.
+    </p>
+  </div>
+
+  <!-- Figura corporal interactiva -->
+  <div class="cuerpo-figura seccion" id="figura">
+    <div class="cuerpo-wrap">
+
+      <!-- SVG simplificado del cuerpo humano -->
+      <div class="cuerpo-svg-wrap">
+        <svg viewBox="0 0 100 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cabeza -->
+          <g class="zona-activa activa" id="zona-cabeza" onclick="activarZona('cabeza')">
+            <circle cx="50" cy="22" r="18" fill="#1a1710" stroke="#8a6f35" stroke-width="1"/>
+            <circle cx="50" cy="22" r="18" fill="rgba(201,168,76,0.08)"/>
+            <!-- punto luminoso cabeza -->
+            <circle cx="50" cy="22" r="4" fill="#c9a84c" opacity="0.7" id="punto-cabeza"/>
+          </g>
+
+          <!-- Cuello -->
+          <rect x="44" y="40" width="12" height="12" fill="#131210" stroke="#2a2418" stroke-width="0.5"/>
+
+          <!-- Torso superior / pecho -->
+          <g class="zona-activa" id="zona-pecho" onclick="activarZona('pecho')">
+            <path d="M25 52 Q50 48 75 52 L78 110 Q50 115 22 110 Z"
+                  fill="#1a1710" stroke="#2a2418" stroke-width="1"/>
+            <path d="M25 52 Q50 48 75 52 L78 110 Q50 115 22 110 Z"
+                  fill="rgba(201,168,76,0.04)"/>
+            <!-- punto luminoso pecho -->
+            <circle cx="50" cy="78" r="4" fill="#8a6f35" opacity="0.5" id="punto-pecho"/>
+          </g>
+
+          <!-- Torso inferior / vientre -->
+          <g class="zona-activa" id="zona-vientre" onclick="activarZona('vientre')">
+            <path d="M22 110 Q50 115 78 110 L76 158 Q50 162 24 158 Z"
+                  fill="#1a1710" stroke="#2a2418" stroke-width="1"/>
+            <path d="M22 110 Q50 115 78 110 L76 158 Q50 162 24 158 Z"
+                  fill="rgba(201,168,76,0.04)"/>
+            <!-- punto luminoso vientre -->
+            <circle cx="50" cy="132" r="4" fill="#8a6f35" opacity="0.5" id="punto-vientre"/>
+          </g>
+
+          <!-- Brazos -->
+          <path d="M25 55 L10 115" stroke="#2a2418" stroke-width="8" stroke-linecap="round"/>
+          <path d="M75 55 L90 115" stroke="#2a2418" stroke-width="8" stroke-linecap="round"/>
+
+          <!-- Manos -->
+          <circle cx="10" cy="120" r="6" fill="#1a1710" stroke="#2a2418" stroke-width="1"/>
+          <circle cx="90" cy="120" r="6" fill="#1a1710" stroke="#2a2418" stroke-width="1"/>
+
+          <!-- Piernas -->
+          <path d="M35 158 L30 230" stroke="#2a2418" stroke-width="10" stroke-linecap="round"/>
+          <path d="M65 158 L70 230" stroke="#2a2418" stroke-width="10" stroke-linecap="round"/>
+
+          <!-- Pies -->
+          <ellipse cx="27" cy="235" rx="10" ry="5" fill="#1a1710" stroke="#2a2418" stroke-width="1"/>
+          <ellipse cx="73" cy="235" rx="10" ry="5" fill="#1a1710" stroke="#2a2418" stroke-width="1"/>
+
+          <!-- Flecha de descenso -->
+          <line x1="50" y1="250" x2="50" y2="270" stroke="#3a2e18" stroke-width="1" stroke-dasharray="3,3"/>
+          <polygon points="46,268 54,268 50,275" fill="#3a2e18"/>
+        </svg>
+
+        <div class="cuerpo-hint">
+          <span>tocá cada zona</span>
+        </div>
+      </div>
+
+      <!-- Panel de descripción -->
+      <div class="cuerpo-descripcion">
+
+        <div class="zona-panel activo" id="panel-cabeza">
+          <span class="zona-nombre">zona I</span>
+          <span class="zona-titulo">La Cabeza<br>Atención mental</span>
+          <p class="zona-texto">
+            El territorio del análisis, la planificación y la rumiación. 
+            Útil para resolver problemas. Agotador como lugar permanente. 
+            Cuando la atención vive solo aquí, el cuerpo avisa: 
+            tensión cervical, mandíbula apretada, respiración superficial.
+          </p>
+          <span class="zona-instruccion">
+            Notá si tu frente está tensa mientras leés esto. 
+            Ese es el registro de la cabeza como único territorio.
+          </span>
+        </div>
+
+        <div class="zona-panel" id="panel-pecho">
+          <span class="zona-nombre">zona II</span>
+          <span class="zona-titulo">El Pecho<br>Atención relacional</span>
+          <p class="zona-texto">
+            El territorio de la resonancia afectiva. Donde se siente 
+            con el otro — y donde se siente el propio estado emocional. 
+            La apertura o el cierre del pecho dice más sobre lo que 
+            sentís que cualquier análisis mental.
+          </p>
+          <span class="zona-instruccion">
+            Llevá la atención al centro del pecho ahora. 
+            ¿Hay expansión o contracción? No juzgues — solo notá.
+          </span>
+        </div>
+
+        <div class="zona-panel" id="panel-vientre">
+          <span class="zona-nombre">zona III</span>
+          <span class="zona-titulo">El Vientre<br>Atención de raíz</span>
+          <p class="zona-texto">
+            El territorio del enraizamiento. Tres dedos debajo del ombligo. 
+            Cuando la atención llega aquí, algo se asienta. 
+            No es relajación — es estabilidad. La presencia que no se agota 
+            porque no depende del esfuerzo.
+          </p>
+          <span class="zona-instruccion">
+            Respirá hacia el vientre. Sentí cómo se expande. 
+            Ese movimiento es la atención encontrando su base.
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección 3: el descenso -->
+  <div class="seccion" id="s3">
+    <p>
+      La dirección de la presencia genuina siempre es hacia abajo. 
+      No como metáfora — como instrucción física. La atención que vive 
+      permanentemente en la cabeza es una atención de control, vigilante, 
+      que consume energía sin descanso. La atención que aprende a descender 
+      al pecho y al vientre encuentra algo que la cabeza no puede producir: 
+      estabilidad sin esfuerzo.
+    </p>
+    <p>
+      Esto no requiere años de práctica contemplativa para empezar a sentirlo. 
+      Basta con soltar los hombros ahora mismo. Con permitir que la respiración 
+      baje al abdomen. Con sentir el peso del cuerpo en la silla o en el suelo. 
+      Eso ya es el descenso.
+    </p>
+  </div>
+
+  <!-- El descenso: pasos visuales -->
+  <div class="descenso seccion" id="descenso">
+    <div class="descenso-pasos">
+
+      <div class="descenso-paso" id="paso-1">
+        <div class="descenso-circulo"></div>
+        <div class="descenso-linea-vertical"></div>
+        <div class="descenso-contenido">
+          <span class="descenso-zona">cabeza</span>
+          <span class="descenso-titulo">Observar el ruido</span>
+          <p class="descenso-texto">
+            Notá el flujo de pensamientos sin intentar detenerlo. 
+            No sos el ruido — sos quien lo nota. 
+            Esa distinción ya es el primer movimiento.
+          </p>
+        </div>
+      </div>
+
+      <div class="descenso-paso" id="paso-2">
+        <div class="descenso-circulo"></div>
+        <div class="descenso-linea-vertical"></div>
+        <div class="descenso-contenido">
+          <span class="descenso-zona">pecho</span>
+          <span class="descenso-titulo">Sentir la resonancia</span>
+          <p class="descenso-texto">
+            Llevá la atención al centro del pecho. 
+            ¿Hay algo ahí — presión, apertura, tristeza, calma? 
+            El observador no juzga la emoción. Solo le dice: te veo.
+          </p>
+        </div>
+      </div>
+
+      <div class="descenso-paso" id="paso-3">
+        <div class="descenso-circulo"></div>
+        <div class="descenso-contenido">
+          <span class="descenso-zona">vientre</span>
+          <span class="descenso-titulo">Encontrar el ancla</span>
+          <p class="descenso-texto">
+            Descendé hasta tres dedos debajo del ombligo. 
+            Respirá hacia ese punto tres veces. 
+            Sentí el peso del cuerpo. Eso es estar donde estás.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 4: estados alterados — nota al margen -->
+  <div class="seccion" id="s4">
+    <p>
+      Hay algo que vale la pena mencionar aquí, aunque sea al margen: 
+      la geografía corporal de la atención no desaparece en los estados 
+      alterados de consciencia. Se transforma.
+    </p>
+  </div>
+
+  <div class="nota-margen seccion" id="nota1">
+    <p>
+      En el sueño lúcido, bajo hipnosis, en estados de meditación profunda 
+      o en experiencias con sustancias que modifican la percepción, 
+      la atención no se ausenta — <strong>se desancla del filtro habitual.</strong> 
+      El yo que normalmente organiza y controla la experiencia se vuelve 
+      más poroso, y la atención puede moverse con una libertad que en estado 
+      ordinario no se conoce.
+    </p>
+    <p>
+      Eso dice algo interesante sobre la geografía que estamos describiendo: 
+      el anclaje en el cuerpo no es una prisión. Es un punto de retorno. 
+      La presencia que sabe dónde está su base puede aventurarse 
+      sin perderse. La que no tiene base, en cualquier estado, 
+      simplemente se fragmenta.
+    </p>
+  </div>
+
+  <!-- Práctica del ancla de tres centros -->
+  <div class="practica seccion" id="p1">
+    <p style="margin-bottom:1.6rem; font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--oro-tenue);">
+      El ancla de tres centros
+    </p>
+
+    <div class="practica-paso">
+      <span class="paso-num">I</span>
+      <span class="paso-texto">
+        <strong>Cabeza.</strong> Cerrá los ojos o suavizá la mirada. 
+        Notá el flujo de pensamientos como si fueran sonidos de una radio lejana. 
+        No intentes apagarla. Solo notá que hay ruido 
+        y que vos no sos el ruido.
+      </span>
+    </div>
+
+    <div class="practica-paso">
+      <span class="paso-num">II</span>
+      <span class="paso-texto">
+        <strong>Pecho.</strong> Llevá la atención al centro del pecho. 
+        Sentí el latido. Reconocé cualquier resonancia afectiva presente 
+        — presión, apertura, tristeza, calma. 
+        No juzgues la emoción. Solo decile internamente: te veo.
+      </span>
+    </div>
+
+    <div class="practica-paso">
+      <span class="paso-num">III</span>
+      <span class="paso-texto">
+        <strong>Vientre.</strong> Descendé la atención hasta tres dedos 
+        debajo del ombligo. Respirá hacia ese punto tres veces. 
+        Sentí cómo el abdomen se expande y se contrae. 
+        Ese movimiento es tu ancla. Cuando algo te saque del centro, 
+        este es el camino de regreso.
+      </span>
+    </div>
+
+    <p style="margin-top:1.4rem; font-size:0.85rem; color:var(--gris-calido); font-style:italic;">
+      No buscás un estado especial. Buscás el gesto de volver. 
+      Eso ya es suficiente.
+    </p>
+  </div>
+
+  <!-- Aforismo final del umbral -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      Estar presente no es un logro mental.<br>
+      Es un descenso físico.<br>
+      La presencia empieza cuando la atención<br>
+      deja de vivir solo en la cabeza<br>
+      y encuentra su peso en el cuerpo.
+    </span>
+  </blockquote>
+
+  <!-- Pregunta de cierre -->
+  <div class="pregunta seccion" id="q1">
+    <p class="pregunta-texto">
+      ¿Desde dónde estás leyendo esto?<br>
+      ¿Desde la cabeza que analiza<br>
+      o desde el cuerpo que habita?
+    </p>
+  </div>
+
+  <!-- Navegación -->
+  <nav class="navegacion seccion" id="nav">
+    <span class="nav-label">Siguiente umbral</span>
+    <span class="nav-titulo">III — Los Secuestradores</span>
+    <span class="nav-subtitulo">El ecosistema diseñado para fragmentar la presencia</span>
+    <br>
+    <a class="nav-flecha" href="#">continuar &rarr;</a>
+  </nav>
+
+</main>
+
+<script>
+  // ── Intersection Observer ───────────────────────────────
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.seccion, .aforismo, .cuerpo-figura, .descenso, .apertura'
+  ).forEach(el => observador.observe(el));
+
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) apertura.style.animationPlayState = 'running';
+  }, 200);
+
+  // ── Figura corporal interactiva ─────────────────────────
+  function activarZona(zona) {
+    // Desactivar todo
+    document.querySelectorAll('.zona-activa').forEach(z => z.classList.remove('activa'));
+    document.querySelectorAll('.zona-panel').forEach(p => {
+      p.classList.remove('activo');
+    });
+
+    // Activar zona seleccionada
+    document.getElementById('zona-' + zona).classList.add('activa');
+    document.getElementById('panel-' + zona).classList.add('activo');
+
+    // Animar puntos
+    const puntos = {
+      cabeza:  document.getElementById('punto-cabeza'),
+      pecho:   document.getElementById('punto-pecho'),
+      vientre: document.getElementById('punto-vientre')
+    };
+
+    Object.keys(puntos).forEach(k => {
+      if (puntos[k]) {
+        puntos[k].style.fill = k === zona ? '#c9a84c' : '#8a6f35';
+        puntos[k].style.opacity = k === zona ? '0.9' : '0.4';
+        puntos[k].setAttribute('r', k === zona ? '6' : '4');
+      }
+    });
+  }
+
+  // ── Iluminar pasos del descenso al hacer scroll ─────────
+  const pasos = document.querySelectorAll('.descenso-paso');
+
+  const observadorPasos = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        const idx = Array.from(pasos).indexOf(entrada.target);
+        setTimeout(() => {
+          entrada.target.classList.add('iluminado');
+        }, idx * 300);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  pasos.forEach(p => observadorPasos.observe(p));
+</script>
+
+</body>
+</html>

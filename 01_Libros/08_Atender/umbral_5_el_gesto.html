@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral V — El Gesto · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 50%,
+        rgba(201,168,76,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Anillo que pulsa en portada */
+  .portada-anillo {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.06);
+    animation: anillo-expand 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .portada-anillo:nth-child(2) { animation-delay: 2s; }
+  .portada-anillo:nth-child(3) { animation-delay: 4s; }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+    position: relative; z-index: 1;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+    position: relative; z-index: 1;
+  }
+
+  .divisor-portada {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    animation: aparecer 1.6s ease forwards 1.0s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.4s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.7s;
+    position: relative; z-index: 1;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3s;
+    z-index: 1;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .contenido {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible { animation-play-state: running; }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible { opacity: 1; transform: translateY(0); }
+
+  p { margin-bottom: 1.6rem; color: var(--blanco-humo); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Aforismo */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1px;
+    width: 1px; height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before { height: 100%; }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.75;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .aforismo-fuente {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* ── LA PAUSA INTERACTIVA ────────────────────────────── */
+  .pausa-interactiva {
+    margin: 4.5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .pausa-interactiva.visible { opacity: 1; transform: translateY(0); }
+
+  .pausa-contenedor {
+    border: 1px solid var(--separador);
+    padding: 3rem 2.5rem;
+    text-align: center;
+    position: relative;
+    background: rgba(201,168,76,0.02);
+  }
+
+  .pausa-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .pausa-circulo-wrap {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    cursor: pointer;
+  }
+
+  .pausa-circulo-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+
+  .pausa-track {
+    fill: none;
+    stroke: var(--separador);
+    stroke-width: 1.5;
+  }
+
+  .pausa-progress {
+    fill: none;
+    stroke: var(--oro);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    transition: stroke-dashoffset 0.1s linear;
+  }
+
+  .pausa-centro {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  .pausa-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--oro);
+    line-height: 1;
+    min-width: 2ch;
+  }
+
+  .pausa-segundos {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .pausa-instruccion {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    min-height: 2.4em;
+    transition: opacity 0.5s ease;
+  }
+
+  .pausa-boton {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    background: none;
+    border: 1px solid var(--separador);
+    padding: 0.7rem 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .pausa-boton:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .pausa-boton.activo {
+    border-color: var(--oro);
+    color: var(--oro);
+  }
+
+  /* ── EL OBSERVADOR vs EL NARRADOR ────────────────────── */
+  .observador-diagrama {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .observador-diagrama.visible { opacity: 1; transform: translateY(0); }
+
+  .od-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-align: center;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .od-par {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .od-lado {
+    padding: 2rem 1.6rem;
+    border: 1px solid var(--separador);
+  }
+
+  .od-lado-obs {
+    border-right: none;
+    background: rgba(201,168,76,0.04);
+  }
+
+  .od-lado-nar {
+    background: rgba(0,0,0,0.2);
+  }
+
+  .od-divider {
+    width: 1px;
+    background: var(--separador);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .od-vs {
+    position: absolute;
+    background: var(--negro);
+    padding: 0.4rem 0.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--separador);
+    writing-mode: horizontal-tb;
+    font-style: italic;
+  }
+
+  .od-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .od-lado-obs .od-label { color: var(--oro-tenue); }
+  .od-lado-nar .od-label { color: var(--gris-calido); }
+
+  .od-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .od-item {
+    font-size: 0.85rem;
+    color: var(--gris-calido);
+    line-height: 1.7;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .od-item:last-child { border-bottom: none; }
+  .od-lado-obs .od-item { color: var(--blanco-humo); opacity: 0.85; }
+
+  /* ── AGUANTAR vs SOSTENER ────────────────────────────── */
+  .aguantar-sostener {
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--separador);
+    border-top: 2px solid var(--oro-tenue);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .aguantar-sostener.visible { opacity: 1; transform: translateY(0); }
+
+  .as-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1.8rem;
+  }
+
+  .as-par {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .as-lado-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 400;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .as-aguantar .as-lado-titulo { color: var(--gris-calido); }
+  .as-sostener .as-lado-titulo { color: var(--oro); }
+
+  .as-texto {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    line-height: 1.75;
+  }
+
+  .as-sostener .as-texto { color: var(--blanco-humo); opacity: 0.9; }
+
+  /* ── QUIÉN ESTÁ DETRÁS ───────────────────────────────── */
+  .quien-detras {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .quien-detras.visible { opacity: 1; transform: translateY(0); }
+
+  .qd-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 1.4rem;
+    line-height: 1.3;
+  }
+
+  /* Capas concéntricas SVG */
+  .capas-svg {
+    display: block;
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 380px;
+  }
+
+  /* Práctica */
+  .practica {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    padding: 2.5rem;
+    margin: 4rem 0;
+    position: relative;
+  }
+
+  .practica::before {
+    content: 'PRÁCTICA';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .practica p {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .practica p:last-child { margin-bottom: 0; }
+
+  /* Separador */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea { flex: 1; height: 1px; background: var(--separador); }
+  .separador-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  /* Pregunta */
+  .pregunta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 4rem 0;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .pregunta-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.7;
+  }
+
+  /* Navegación */
+  .navegacion {
+    text-align: center;
+    padding-top: 5rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 6rem;
+  }
+
+  .nav-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .nav-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-flecha:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+  @keyframes anillo-expand {
+    0%   { transform: translate(-50%,-50%) scale(0.8); opacity: 0.3; }
+    50%  { opacity: 0.06; }
+    100% { transform: translate(-50%,-50%) scale(1.4); opacity: 0; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .od-par { grid-template-columns: 1fr; }
+    .od-divider { display: none; }
+    .od-lado { border: 1px solid var(--separador); margin-bottom: 0.5rem; }
+    .od-lado-obs { border-right: 1px solid var(--separador); }
+    .as-par { grid-template-columns: 1fr; gap: 1.5rem; }
+    .pausa-contenedor { padding: 2rem 1.5rem; }
+    .aforismo { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .practica { padding: 2rem 1.5rem; }
+    .aguantar-sostener { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <div class="portada-anillo"></div>
+  <div class="portada-anillo"></div>
+  <div class="portada-anillo"></div>
+
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+  <div class="divisor-portada"></div>
+  <div class="umbral-numero">V</div>
+  <h2 class="umbral-titulo">El Gesto</h2>
+  <p class="umbral-subtitulo">el observador como práctica, no como lugar</p>
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO -->
+<main class="contenido">
+
+  <!-- Apertura -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      Hay un instante<br>
+      entre lo que sentís<br>
+      y lo que hacés.<br><br>
+      Ese instante<br>
+      es toda la libertad<br>
+      que existe.
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      La mayoría de nuestras respuestas no son elecciones. 
+      Son reacciones: el estímulo llega y la respuesta ocurre 
+      antes de que haya habido tiempo para decidir. 
+      El comentario hiriente que dispara la defensa. 
+      La situación amenazante que activa el repliegue. 
+      El impulso que se ejecuta sin pausa.
+    </p>
+    <p>
+      Ese automatismo no es una falla — es la arquitectura 
+      de un sistema nervioso que aprendió a sobrevivir 
+      con la menor cantidad de energía posible. 
+      El problema no es que el automatismo exista. 
+      El problema es cuando el automatismo 
+      es la única respuesta disponible.
+    </p>
+  </div>
+
+  <!-- Aforismo 1 -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      El observador no es un lugar al que llegás.<br>
+      Es un gesto que repetís.<br>
+      Se practica en lo pequeño:<br>
+      en el segundo antes de reaccionar,<br>
+      en la pausa entre lo que sentís<br>
+      y lo que decís.
+    </span>
+    <cite class="aforismo-fuente">Arquitectura del Destino · Aforismo VIII</cite>
+  </blockquote>
+
+  <!-- La pausa interactiva -->
+  <div class="pausa-interactiva seccion" id="pausa">
+    <div class="pausa-contenedor">
+      <span class="pausa-label">La pausa · practicala ahora</span>
+
+      <div class="pausa-circulo-wrap" id="pausaWrap" onclick="iniciarPausa()">
+        <svg class="pausa-circulo-svg" viewBox="0 0 100 100">
+          <circle class="pausa-track" cx="50" cy="50" r="45"/>
+          <circle class="pausa-progress" id="pausaProgress" cx="50" cy="50" r="45"/>
+        </svg>
+        <div class="pausa-centro">
+          <span class="pausa-numero" id="pausaNum">—</span>
+          <span class="pausa-segundos" id="pausaSeg"></span>
+        </div>
+      </div>
+
+      <p class="pausa-instruccion" id="pausaInstruccion">
+        Tocá el círculo para abrir la pausa
+      </p>
+
+      <button class="pausa-boton" id="pausaBoton" onclick="iniciarPausa()">
+        iniciar
+      </button>
+    </div>
+  </div>
+
+  <!-- Sección 2 -->
+  <div class="seccion" id="s2">
+    <p>
+      Eso que acabas de hacer — o no hacer — ya es información. 
+      Si iniciaste la pausa: notaste algo en el cuerpo, 
+      en la respiración, en la resistencia o la facilidad. 
+      Si no la iniciaste: eso también dice algo 
+      sobre la relación que tenemos con el detenerse.
+    </p>
+    <p>
+      La pausa no es un técnica de relajación. 
+      Es el espacio donde la elección existe. 
+      Sin pausa, solo hay reacción. 
+      Con pausa, hay la posibilidad — 
+      solo la posibilidad, no la garantía — 
+      de responder desde un lugar diferente.
+    </p>
+  </div>
+
+  <!-- El Observador vs el Narrador -->
+  <div class="observador-diagrama seccion" id="od">
+    <span class="od-titulo">Las dos funciones que conviven</span>
+    <div class="od-par">
+      <div class="od-lado od-lado-obs">
+        <span class="od-label">presencia</span>
+        <span class="od-nombre">El Observador</span>
+        <div class="od-item">Sostiene la experiencia sin identificarse con ella</div>
+        <div class="od-item">Ve el drama sin volverse el drama</div>
+        <div class="od-item">Puede estar con el dolor sin ser destruido por él</div>
+        <div class="od-item">No juzga — nota</div>
+        <div class="od-item">Es el gesto que se repite, no un estado permanente</div>
+      </div>
+
+      <div class="od-divider">
+        <span class="od-vs">vs</span>
+      </div>
+
+      <div class="od-lado od-lado-nar">
+        <span class="od-label">automatismo</span>
+        <span class="od-nombre">El Narrador</span>
+        <div class="od-item">Cuenta la historia de lo que ocurre mientras ocurre</div>
+        <div class="od-item">Se identifica con el drama y lo amplifica</div>
+        <div class="od-item">Interpreta, juzga, concluye sin pausa</div>
+        <div class="od-item">Confunde el mapa con el territorio</div>
+        <div class="od-item">Opera en modo automático las 24 horas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección 3 -->
+  <div class="seccion" id="s3">
+    <p>
+      El Narrador no es el enemigo. Es necesario — 
+      construye identidad, da coherencia a la experiencia, 
+      permite funcionar en el mundo. 
+      El problema no es que exista sino que 
+      suele ser la única voz que se escucha. 
+      El Observador no lo reemplaza: 
+      lo contiene. Lo escucha sin obedecerle ciegamente.
+    </p>
+  </div>
+
+  <!-- Aguantar vs Sostener -->
+  <div class="aguantar-sostener seccion" id="as">
+    <span class="as-titulo">La distinción que lo cambia todo</span>
+    <div class="as-par">
+      <div class="as-aguantar">
+        <span class="as-lado-titulo">Aguantar</span>
+        <p class="as-texto">
+          Resistir la incomodidad hasta que algo ceda o se rompa. 
+          Apretar los dientes. Esperar que pase. 
+          La tensión acumulada sin procesar 
+          que eventualmente encuentra una salida 
+          que nadie eligió.
+        </p>
+      </div>
+      <div class="as-sostener">
+        <span class="as-lado-titulo">Sostener</span>
+        <p class="as-texto">
+          Permanecer en el campo sin perder la forma. 
+          Habitar la incomodidad sin ser deformado por ella. 
+          La presencia que no escapa 
+          y tampoco se deshace. 
+          El Observador en acción.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aforismo 2 -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      Aguantar es resistir el peso<br>
+      esperando que alguien lo retire.<br>
+      Sostener es aprender a cargar<br>
+      sin que el peso te defina.
+    </span>
+  </blockquote>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Quién está detrás -->
+  <div class="quien-detras seccion" id="qd">
+    <span class="qd-titulo">¿Quién está detrás del que observa?</span>
+    <p>
+      Hay una pregunta que la práctica del Observador 
+      eventualmente produce en quien la habita con honestidad: 
+      si puedo observar mis pensamientos, 
+      mis emociones, mis reacciones — 
+      ¿quién es el que observa?
+    </p>
+    <p>
+      No hay una respuesta que pueda pensarse. 
+      Solo puede experimentarse. 
+      Y lo que la experiencia suele revelar, 
+      cuando la práctica se profundiza, 
+      es que el observador no es una entidad separada 
+      que mira desde afuera. 
+      Es la cualidad misma de la atención 
+      cuando se vuelve total y transparente.
+    </p>
+
+    <!-- Capas concéntricas -->
+    <svg class="capas-svg" viewBox="0 0 380 200"
+         fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Capa exterior: reacciones automáticas -->
+      <ellipse cx="190" cy="100" rx="175" ry="88"
+               fill="rgba(42,36,24,0.3)" stroke="#2a2418" stroke-width="1"/>
+      <text x="190" y="22" font-family="Georgia,serif" font-size="7.5"
+            fill="#4a4030" text-anchor="middle" letter-spacing="1"
+            font-style="italic">reacciones automáticas</text>
+
+      <!-- Capa media: el narrador -->
+      <ellipse cx="190" cy="100" rx="130" ry="65"
+               fill="rgba(42,36,24,0.3)" stroke="#3a3020" stroke-width="1"/>
+      <text x="190" y="47" font-family="Georgia,serif" font-size="7.5"
+            fill="#6a5a3a" text-anchor="middle" letter-spacing="1"
+            font-style="italic">el narrador</text>
+
+      <!-- Capa interior: el observador -->
+      <ellipse cx="190" cy="100" rx="82" ry="42"
+               fill="rgba(42,36,24,0.4)" stroke="#5a4a28" stroke-width="1"/>
+      <text x="190" y="70" font-family="Georgia,serif" font-size="7.5"
+            fill="#8a6f35" text-anchor="middle" letter-spacing="1"
+            font-style="italic">el observador</text>
+
+      <!-- Centro: la atención pura -->
+      <ellipse cx="190" cy="100" rx="38" ry="20"
+               fill="rgba(201,168,76,0.08)" stroke="#8a6f35" stroke-width="1"/>
+      <circle cx="190" cy="100" r="5" fill="#c9a84c" opacity="0.8">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="190" y="118" font-family="Georgia,serif" font-size="7"
+            fill="#c9a84c" text-anchor="middle" letter-spacing="0.5"
+            font-style="italic">atención pura</text>
+
+    </svg>
+
+    <p>
+      En el Observador genuino no hay un yo que observa 
+      como espectador separado del espectáculo. 
+      Hay atención sin dueño. Presencia sin agenda. 
+      La conciencia que no necesita definirse 
+      para estar completamente presente.
+    </p>
+    <p>
+      Esto no requiere vocabulario espiritual 
+      ni décadas de práctica para empezar a entenderse. 
+      Basta con notar, en un momento de pausa real, 
+      que hay algo más amplio que el pensamiento 
+      que está pensando. Eso — solo eso — 
+      ya es el umbral de esa experiencia.
+    </p>
+  </div>
+
+  <!-- Aforismo 3 -->
+  <blockquote class="aforismo seccion" id="a3">
+    <span class="aforismo-texto">
+      La atención total no tiene observador separado.<br>
+      Cuando la presencia es completa,<br>
+      el que mira y lo mirado<br>
+      son la misma cualidad de estar.
+    </span>
+  </blockquote>
+
+  <!-- La jerarquía de la atención fragmentada -->
+  <div class="seccion" id="s4">
+    <p>
+      Antes de llegar a esa plenitud — 
+      que ocurre en destellos, no como estado permanente — 
+      vale reconocer que la atención tiene una jerarquía 
+      en su fragmentación. No toda atención dividida es igual.
+    </p>
+    <p>
+      Conducir mientras escuchás música no es lo mismo 
+      que conducir mientras respondés mensajes. 
+      Cocinar con el pensamiento puesto en una conversación 
+      difícil no es lo mismo que cocinar 
+      mientras revisás el teléfono. 
+      El automatismo saludable — el que libera recursos 
+      para tareas más exigentes — existe y es necesario. 
+      Lo que erosiona no es la atención dividida 
+      en sí misma: es la incapacidad de elegir 
+      cuándo dividirla y cuándo concentrarla.
+    </p>
+  </div>
+
+  <!-- Práctica -->
+  <div class="practica seccion" id="p1">
+    <p>
+      Elegí una sola acción cotidiana de hoy 
+      — tomar el mate, caminar una cuadra, lavar los platos — 
+      y dásela completa. Sin música, sin pantalla, 
+      sin conversación interna sobre otra cosa.
+    </p>
+    <p>
+      No porque esa acción sea importante. 
+      Sino para practicar el gesto de estar 
+      donde se está. La acción es el pretexto. 
+      El gesto es lo que se entrena.
+    </p>
+    <p>
+      Cuando la mente se vaya — y se va a ir — 
+      notalo sin juicio y volvé. 
+      Esa vuelta es el gesto. 
+      No importa cuántas veces se repita. 
+      Cada vuelta es la práctica completa.
+    </p>
+  </div>
+
+  <!-- Aforismo de cierre -->
+  <blockquote class="aforismo seccion" id="a4">
+    <span class="aforismo-texto">
+      No se trata de no distraerse.<br>
+      Se trata de notar que te distrajiste<br>
+      y volver.<br>
+      Ese gesto — repetido, sin drama —<br>
+      es toda la práctica.
+    </span>
+  </blockquote>
+
+  <!-- Pregunta de cierre -->
+  <div class="pregunta seccion" id="q1">
+    <p class="pregunta-texto">
+      ¿Podés observar lo que sentís<br>
+      en este momento<br>
+      sin ser arrastrado por ello?<br><br>
+      ¿Y quién es el que nota<br>
+      que fue arrastrado?
+    </p>
+  </div>
+
+  <!-- Navegación -->
+  <nav class="navegacion seccion" id="nav">
+    <span class="nav-label">Siguiente umbral</span>
+    <span class="nav-titulo">VI — El Amor Sagrado</span>
+    <span class="nav-subtitulo">Atender al otro como el acto ético más radical</span>
+    <br>
+    <a class="nav-flecha" href="#">continuar &rarr;</a>
+  </nav>
+
+</main>
+
+<script>
+  // ── Intersection Observer ───────────────────────────────
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.seccion, .aforismo, .pausa-interactiva, .observador-diagrama, ' +
+    '.aguantar-sostener, .quien-detras, .apertura'
+  ).forEach(el => observador.observe(el));
+
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) apertura.style.animationPlayState = 'running';
+  }, 200);
+
+  // ── Pausa interactiva ───────────────────────────────────
+  let pausaActiva = false;
+  let pausaTimer = null;
+  let segundosRestantes = 0;
+  const DURACION_PAUSA = 30;
+
+  const fases = [
+    { hasta: 25, texto: "Cerrá los ojos o suavizá la mirada..." },
+    { hasta: 18, texto: "Notá dónde está la tensión en el cuerpo..." },
+    { hasta: 10, texto: "Bajá la atención al vientre. Respirá..." },
+    { hasta: 3,  texto: "Quedáte aquí un momento más..." },
+    { hasta: 0,  texto: "Abrí los ojos cuando estés listo." }
+  ];
+
+  function getFase(seg) {
+    for (const f of fases) {
+      if (seg > f.hasta) return f.texto;
+    }
+    return fases[fases.length - 1].texto;
+  }
+
+  function iniciarPausa() {
+    if (pausaActiva) return;
+
+    pausaActiva = true;
+    segundosRestantes = DURACION_PAUSA;
+
+    const boton = document.getElementById('pausaBoton');
+    const num = document.getElementById('pausaNum');
+    const seg = document.getElementById('pausaSeg');
+    const instruccion = document.getElementById('pausaInstruccion');
+    const progress = document.getElementById('pausaProgress');
+
+    boton.classList.add('activo');
+    boton.textContent = 'en pausa...';
+    boton.onclick = null;
+
+    function tick() {
+      num.textContent = segundosRestantes;
+      seg.textContent = segundosRestantes === 1 ? 'seg' : 'seg';
+      instruccion.textContent = getFase(segundosRestantes);
+
+      // Actualizar progreso circular
+      const circunferencia = 283;
+      const progreso = (DURACION_PAUSA - segundosRestantes) / DURACION_PAUSA;
+      progress.style.strokeDashoffset = circunferencia * (1 - progreso);
+
+      if (segundosRestantes <= 0) {
+        // Fin de la pausa
+        clearInterval(pausaTimer);
+        pausaActiva = false;
+        num.textContent = '✓';
+        seg.textContent = '';
+        instruccion.textContent = 'La pausa terminó. Notá cómo estás.';
+        boton.textContent = 'repetir';
+        boton.classList.remove('activo');
+        boton.onclick = resetPausa;
+        progress.style.strokeDashoffset = 0;
+        return;
+      }
+
+      segundosRestantes--;
+    }
+
+    tick();
+    pausaTimer = setInterval(tick, 1000);
+  }
+
+  function resetPausa() {
+    const boton = document.getElementById('pausaBoton');
+    const num = document.getElementById('pausaNum');
+    const seg = document.getElementById('pausaSeg');
+    const instruccion = document.getElementById('pausaInstruccion');
+    const progress = document.getElementById('pausaProgress');
+
+    pausaActiva = false;
+    if (pausaTimer) clearInterval(pausaTimer);
+
+    num.textContent = '—';
+    seg.textContent = '';
+    instruccion.textContent = 'Tocá el círculo para abrir la pausa';
+    boton.textContent = 'iniciar';
+    boton.classList.remove('activo');
+    boton.onclick = iniciarPausa;
+    progress.style.strokeDashoffset = 283;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral III — Los Secuestradores · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --negro-suave: #131210;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+    --rojo-tenue:  #6b2e2e;
+    --rojo-suave:  #8a3a3a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 55% 45% at 50% 45%, rgba(107,46,46,0.08) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 25% at 20% 75%, rgba(201,168,76,0.02) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+  }
+
+  .divisor-portada {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    animation: aparecer 1.6s ease forwards 1.0s;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.4s;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.7s;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3s;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .contenido {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible { animation-play-state: running; }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.7;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible { opacity: 1; transform: translateY(0); }
+
+  p { margin-bottom: 1.6rem; color: var(--blanco-humo); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Aforismo */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1px;
+    width: 1px; height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before { height: 100%; }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.65;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .aforismo-fuente {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* ── LOS CUATRO SECUESTRADORES ───────────────────────── */
+  .secuestradores {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .secuestradores.visible { opacity: 1; transform: translateY(0); }
+
+  .secuestrador {
+    border: 1px solid var(--separador);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .secuestrador:hover { border-color: var(--oro-tenue); }
+  .secuestrador.abierto { border-color: var(--rojo-suave); }
+
+  .secuestrador-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.8rem;
+    gap: 1rem;
+  }
+
+  .secuestrador-izq {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .secuestrador-icono {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--rojo-tenue);
+    background: rgba(107,46,46,0.15);
+  }
+
+  .secuestrador-icono svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--rojo-suave);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .secuestrador-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    line-height: 1.2;
+  }
+
+  .secuestrador-flecha {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--oro-tenue);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .secuestrador.abierto .secuestrador-flecha {
+    transform: rotate(180deg);
+    color: var(--oro);
+  }
+
+  .secuestrador-cuerpo {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+  }
+
+  .secuestrador.abierto .secuestrador-cuerpo {
+    max-height: 400px;
+  }
+
+  .secuestrador-inner {
+    padding: 0 1.8rem 1.8rem;
+    border-top: 1px solid var(--separador);
+  }
+
+  .secuestrador-mecanismo {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    line-height: 1.75;
+    padding-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .secuestrador-antidoto {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+    background: rgba(201,168,76,0.04);
+    border-left: 2px solid var(--oro-tenue);
+  }
+
+  .antidoto-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .antidoto-texto {
+    font-size: 0.88rem;
+    color: var(--blanco-humo);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ── EMBUDO DEL SECUESTRO ────────────────────────────── */
+  .embudo {
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--separador);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .embudo.visible { opacity: 1; transform: translateY(0); }
+
+  .embudo::before {
+    content: 'EL EMBUDO';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .embudo-svg {
+    display: block;
+    margin: 0 auto 1.5rem;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .embudo-caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    line-height: 1.65;
+  }
+
+  /* ── ACTO VOLITIVO ───────────────────────────────────── */
+  .acto-volitivo {
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    border-top: 2px solid var(--oro-tenue);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .acto-volitivo.visible { opacity: 1; transform: translateY(0); }
+
+  .acto-volitivo-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .acto-volitivo p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--blanco-humo);
+    opacity: 0.9;
+  }
+
+  /* Práctica */
+  .practica {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    padding: 2.5rem;
+    margin: 4rem 0;
+    position: relative;
+  }
+
+  .practica::before {
+    content: 'PRÁCTICA';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .practica p {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .practica p:last-child { margin-bottom: 0; }
+
+  /* Registro interactivo */
+  .registro {
+    margin: 4rem 0;
+    border: 1px solid var(--separador);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .registro.visible { opacity: 1; transform: translateY(0); }
+
+  .registro-header {
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid var(--separador);
+    background: rgba(201,168,76,0.03);
+  }
+
+  .registro-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .registro-fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .registro-fila:last-child { border-bottom: none; }
+
+  .registro-celda {
+    padding: 1.1rem 1.4rem;
+    border-right: 1px solid var(--separador);
+    font-size: 0.85rem;
+  }
+
+  .registro-celda:last-child { border-right: none; }
+
+  .registro-celda.header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gris-calido);
+    background: rgba(201,168,76,0.02);
+  }
+
+  .registro-celda.ejemplo {
+    color: var(--gris-calido);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* Separador */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea { flex: 1; height: 1px; background: var(--separador); }
+  .separador-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  /* Pregunta */
+  .pregunta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 4rem 0;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .pregunta-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.6;
+  }
+
+  /* Navegación */
+  .navegacion {
+    text-align: center;
+    padding-top: 5rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 6rem;
+  }
+
+  .nav-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .nav-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-flecha:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .aforismo { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .practica { padding: 2rem 1.5rem; }
+    .secuestrador-header { padding: 1.2rem 1.2rem; }
+    .secuestrador-inner { padding: 0 1.2rem 1.4rem; }
+    .registro-fila { grid-template-columns: 1fr; }
+    .registro-celda { border-right: none; border-bottom: 1px solid var(--separador); }
+    .registro-celda:last-child { border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+  <div class="divisor-portada"></div>
+  <div class="umbral-numero">III</div>
+  <h2 class="umbral-titulo">Los Secuestradores</h2>
+  <p class="umbral-subtitulo">el ecosistema diseñado para fragmentar la presencia</p>
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO -->
+<main class="contenido">
+
+  <!-- Apertura -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      Cuántas veces abriste una aplicación<br>
+      sin recordar por qué.<br><br>
+      Eso no es distracción.<br>
+      Es el sistema funcionando exactamente<br>
+      como fue diseñado.
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      La fragmentación de la atención no es una falla personal. 
+      No es falta de disciplina ni debilidad de carácter. 
+      Es el resultado predecible de vivir dentro de un sistema 
+      que fue construido, con precisión de ingeniería, 
+      para que tu presencia no te pertenezca.
+    </p>
+    <p>
+      Cada notificación, cada scroll que no termina, 
+      cada recompensa variable que llega sin aviso — 
+      todos operan sobre el mismo mecanismo neurológico 
+      que hace girar las máquinas tragamonedas. 
+      No es casualidad. Es diseño.
+    </p>
+  </div>
+
+  <!-- Aforismo -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      La fragmentación no es tu culpa.<br>
+      Pero recuperar la atención<br>
+      sí es tu responsabilidad.
+    </span>
+  </blockquote>
+
+  <!-- Sección 2 -->
+  <div class="seccion" id="s2">
+    <p>
+      Para recuperar algo, primero hay que saber quién lo tiene. 
+      Hay cuatro secuestradores que operan con mayor frecuencia 
+      y mayor eficacia. No son abstractos — los reconocerás 
+      porque ya los viviste hoy.
+    </p>
+  </div>
+
+  <!-- Los cuatro secuestradores — acordeón -->
+  <div class="secuestradores seccion" id="secuestradores">
+
+    <!-- 1. Diseño tecnológico -->
+    <div class="secuestrador" id="s-tech" onclick="toggleSecuestrador('tech')">
+      <div class="secuestrador-header">
+        <div class="secuestrador-izq">
+          <div class="secuestrador-icono">
+            <svg viewBox="0 0 24 24">
+              <rect x="5" y="2" width="14" height="20" rx="2"/>
+              <line x1="12" y1="18" x2="12" y2="18.5"/>
+              <line x1="9" y1="6" x2="15" y2="6"/>
+              <line x1="9" y1="9" x2="15" y2="9"/>
+              <line x1="9" y1="12" x2="13" y2="12"/>
+            </svg>
+          </div>
+          <span class="secuestrador-nombre">El diseño tecnológico</span>
+        </div>
+        <span class="secuestrador-flecha">▾</span>
+      </div>
+      <div class="secuestrador-cuerpo">
+        <div class="secuestrador-inner">
+          <p class="secuestrador-mecanismo">
+            El scroll infinito no termina porque fue diseñado para no terminar. 
+            Las notificaciones llegan en intervalos variables — 
+            a veces hay algo importante, a veces no — 
+            exactamente como las máquinas tragamonedas. 
+            La incertidumbre de la recompensa es más adictiva 
+            que la recompensa segura. Tu sistema nervioso 
+            no puede resistir eso sin un protocolo consciente. 
+            No está diseñado para resistirlo.
+          </p>
+          <div class="secuestrador-antidoto">
+            <span class="antidoto-label">antídoto</span>
+            <span class="antidoto-texto">
+              Antes de abrir cualquier dispositivo, una pregunta: 
+              ¿para qué entro aquí? Tres segundos de pausa 
+              entre el impulso y la acción devuelven la elección.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Productividad tóxica -->
+    <div class="secuestrador" id="s-prod" onclick="toggleSecuestrador('prod')">
+      <div class="secuestrador-header">
+        <div class="secuestrador-izq">
+          <div class="secuestrador-icono">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"/>
+              <polyline points="12 7 12 12 15 15"/>
+              <line x1="3" y1="3" x2="6" y2="6"/>
+              <line x1="21" y1="3" x2="18" y2="6"/>
+            </svg>
+          </div>
+          <span class="secuestrador-nombre">La productividad tóxica</span>
+        </div>
+        <span class="secuestrador-flecha">▾</span>
+      </div>
+      <div class="secuestrador-cuerpo">
+        <div class="secuestrador-inner">
+          <p class="secuestrador-mecanismo">
+            El mito de la atención múltiple — hacer varias cosas a la vez 
+            como señal de eficiencia — es una de las mentiras más costosas 
+            de la cultura contemporánea. El cerebro no hace multitarea: 
+            alterna entre tareas con una velocidad que simula simultaneidad. 
+            Ese switcheo constante agota la corteza prefrontal, 
+            genera una sensación permanente de urgencia 
+            y erosiona la capacidad de profundidad. 
+            Se hace más, pero nada se hace bien. 
+            Y nada se experimenta de verdad.
+          </p>
+          <div class="secuestrador-antidoto">
+            <span class="antidoto-label">antídoto</span>
+            <span class="antidoto-texto">
+              Atención única: una sola cosa tiene el privilegio 
+              de existir por este momento. No es menos eficiente — 
+              es la única eficiencia que no vacía.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Miedo al vacío -->
+    <div class="secuestrador" id="s-vacio" onclick="toggleSecuestrador('vacio')">
+      <div class="secuestrador-header">
+        <div class="secuestrador-izq">
+          <div class="secuestrador-icono">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" stroke-dasharray="3 2"/>
+              <line x1="12" y1="8" x2="12" y2="12"/>
+              <circle cx="12" cy="15" r="0.8" fill="#8a3a3a"/>
+            </svg>
+          </div>
+          <span class="secuestrador-nombre">El miedo al vacío</span>
+        </div>
+        <span class="secuestrador-flecha">▾</span>
+      </div>
+      <div class="secuestrador-cuerpo">
+        <div class="secuestrador-inner">
+          <p class="secuestrador-mecanismo">
+            Hay personas que no pueden estar dos minutos sin un estímulo. 
+            La sala de espera, el ascensor, el minuto antes de dormir — 
+            todos requieren una pantalla, un podcast, algo que llene. 
+            Ese impulso no es curiosidad intelectual. 
+            Es la evitación del encuentro con uno mismo. 
+            El silencio asusta porque en el silencio 
+            aparece lo que se ha estado postergando: 
+            la pregunta sin respuesta, la emoción sin nombre, 
+            la versión de uno mismo que no se ha querido ver.
+          </p>
+          <div class="secuestrador-antidoto">
+            <span class="antidoto-label">antídoto</span>
+            <span class="antidoto-texto">
+              El vacío no es ausencia. Es el estado anterior 
+              a una comprensión que todavía no tiene forma. 
+              Tolerar el silencio es la práctica más radical 
+              que existe en este siglo.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Rumiación -->
+    <div class="secuestrador" id="s-rum" onclick="toggleSecuestrador('rum')">
+      <div class="secuestrador-header">
+        <div class="secuestrador-izq">
+          <div class="secuestrador-icono">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 12 C3 6 9 3 12 3 C15 3 21 6 21 12"/>
+              <path d="M21 12 C21 18 15 21 12 21 C9 21 3 18 3 12"/>
+              <polyline points="3 8 3 12 7 12"/>
+              <polyline points="21 16 21 12 17 12"/>
+            </svg>
+          </div>
+          <span class="secuestrador-nombre">La rumiación</span>
+        </div>
+        <span class="secuestrador-flecha">▾</span>
+      </div>
+      <div class="secuestrador-cuerpo">
+        <div class="secuestrador-inner">
+          <p class="secuestrador-mecanismo">
+            La rumiación no es pensamiento profundo. 
+            Es pensamiento en bucle: la misma preocupación 
+            recorriendo el mismo circuito, generando la ilusión 
+            de que pensar en algo es lo mismo que resolverlo. 
+            No lo es. La rumiación ocupa la atención disponible 
+            sin producir ningún avance real. 
+            Es el secuestrador más silencioso porque parece 
+            actividad mental legítima. Y porque viene desde adentro, 
+            no hay pantalla que apagar.
+          </p>
+          <div class="secuestrador-antidoto">
+            <span class="antidoto-label">antídoto</span>
+            <span class="antidoto-texto">
+              El anclaje somático interrumpe el bucle 
+              porque el cuerpo no puede rumiar. 
+              Bajar la atención al vientre es salir 
+              del circuito por la única puerta que existe: 
+              el presente físico.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- El embudo del secuestro -->
+  <div class="embudo seccion" id="embudo">
+    <svg class="embudo-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Ruido externo — izquierda -->
+      <text x="8" y="45" font-family="Georgia,serif" font-size="9" fill="#8a6f35" letter-spacing="1">RUIDO EXTERNO</text>
+      <text x="8" y="58" font-family="Georgia,serif" font-size="7.5" fill="#6b6050" font-style="italic">notificaciones · scroll · urgencia</text>
+      <!-- Flechas externas entrando -->
+      <line x1="10" y1="80" x2="110" y2="100" stroke="#6b2e2e" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+      <line x1="10" y1="100" x2="110" y2="100" stroke="#6b2e2e" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+      <line x1="10" y1="120" x2="110" y2="100" stroke="#6b2e2e" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+
+      <!-- Ruido interno — izquierda abajo -->
+      <text x="8" y="148" font-family="Georgia,serif" font-size="9" fill="#8a6f35" letter-spacing="1">RUIDO INTERNO</text>
+      <text x="8" y="161" font-family="Georgia,serif" font-size="7.5" fill="#6b6050" font-style="italic">rumiación · miedo · voces</text>
+      <line x1="10" y1="130" x2="110" y2="100" stroke="#6b2e2e" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+
+      <!-- Embudo / cuello de botella -->
+      <path d="M110 70 L110 130 L185 115 L185 85 Z" fill="rgba(107,46,46,0.12)" stroke="#6b2e2e" stroke-width="1"/>
+
+      <!-- Filtro — la pausa -->
+      <rect x="185" y="82" width="30" height="36" fill="rgba(201,168,76,0.08)" stroke="#8a6f35" stroke-width="1"/>
+      <text x="200" y="97" font-family="Georgia,serif" font-size="7" fill="#8a6f35" text-anchor="middle">PAUSA</text>
+      <text x="200" y="109" font-family="Georgia,serif" font-size="6.5" fill="#6b6050" text-anchor="middle" font-style="italic">el umbral</text>
+
+      <!-- Salida — flecha dorada -->
+      <line x1="215" y1="100" x2="310" y2="100" stroke="#c9a84c" stroke-width="1.5"/>
+      <polygon points="307,95 315,100 307,105" fill="#c9a84c"/>
+
+      <!-- Texto salida -->
+      <text x="320" y="93" font-family="Georgia,serif" font-size="9" fill="#c9a84c" letter-spacing="1">PRESENCIA</text>
+      <text x="320" y="107" font-family="Georgia,serif" font-size="7.5" fill="#8a6f35" font-style="italic">recuperada</text>
+
+      <!-- Nota inferior -->
+      <text x="200" y="185" font-family="Georgia,serif" font-size="7.5" fill="#4a4030" text-anchor="middle" font-style="italic">
+        La pausa no es un descanso. Es un filtro restaurador.
+      </text>
+    </svg>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Acto volitivo -->
+  <div class="acto-volitivo seccion" id="volitivo">
+    <span class="acto-volitivo-titulo">
+      Elegir dónde ponés la atención<br>es el único acto de libertad<br>que nadie puede quitarte.
+    </span>
+    <p>
+      En un ecosistema diseñado para el secuestro, 
+      elegir conscientemente el objeto de la atención 
+      no es un lujo ni una práctica espiritual de élite. 
+      Es el acto político más básico que existe: 
+      reclamar la soberanía sobre el único territorio 
+      que genuinamente te pertenece.
+    </p>
+    <p>
+      Esto no requiere desconectarse del mundo ni rechazar la tecnología. 
+      Requiere algo más sutil y más difícil: 
+      usar el mundo sin que el mundo te use a vos. 
+      La diferencia entre los dos modos no está en lo que hacés 
+      — está en si lo elegís o si simplemente ocurre.
+    </p>
+  </div>
+
+  <!-- Registro de secuestros -->
+  <div class="registro seccion" id="registro">
+    <div class="registro-header">
+      <span class="registro-titulo">Registro de secuestros · herramienta de observación</span>
+    </div>
+    <div class="registro-fila">
+      <div class="registro-celda header">¿Qué me robó la atención?</div>
+      <div class="registro-celda header">¿Dónde lo sentí en el cuerpo?</div>
+      <div class="registro-celda header">¿Cómo volví al centro?</div>
+    </div>
+    <div class="registro-fila">
+      <div class="registro-celda ejemplo">Una notificación que no esperaba</div>
+      <div class="registro-celda ejemplo">Tensión en el cuello, pulso acelerado</div>
+      <div class="registro-celda ejemplo">Tres respiraciones al vientre</div>
+    </div>
+    <div class="registro-fila">
+      <div class="registro-celda ejemplo">Un pensamiento rumiante sobre ayer</div>
+      <div class="registro-celda ejemplo">Mandíbula apretada, respiración corta</div>
+      <div class="registro-celda ejemplo">Nombrar la voz: "el narrador habla"</div>
+    </div>
+    <div class="registro-fila">
+      <div class="registro-celda ejemplo">El impulso de llenar un silencio</div>
+      <div class="registro-celda ejemplo">Inquietud en el pecho, manos activas</div>
+      <div class="registro-celda ejemplo">Quedarme en el vacío un momento más</div>
+    </div>
+  </div>
+
+  <!-- Práctica -->
+  <div class="practica seccion" id="p1">
+    <p>
+      Durante las próximas 48 horas, no busques eliminar 
+      los secuestros — solo nombralos en el momento en que ocurren. 
+    </p>
+    <p>
+      Cuando notes que tu atención fue tomada sin permiso, 
+      decí internamente: <em>"me secuestraron."</em> 
+      No con juicio. Solo con registro. 
+      El solo hecho de nombrarlo ya interrumpe el automatismo.
+    </p>
+    <p>
+      Después, si podés, bajá la atención al vientre 
+      antes de seguir. Eso es todo. 
+      El objetivo no es la atención perfecta — 
+      es ver con precisión cuándo y cómo se va.
+    </p>
+  </div>
+
+  <!-- Aforismo de cierre -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      No buscamos una paz sin interrupciones.<br>
+      Buscamos la capacidad de volver<br>
+      cada vez que algo nos saca del centro.<br>
+      Eso — solo eso — es la soberanía atencional.
+    </span>
+  </blockquote>
+
+  <!-- Pregunta -->
+  <div class="pregunta seccion" id="q1">
+    <p class="pregunta-texto">
+      ¿A qué le estás prestando atención genuina<br>
+      en este momento de tu vida?<br>
+      ¿Y a qué le estás prestando atención<br>
+      sin haberlo elegido?
+    </p>
+  </div>
+
+  <!-- Navegación -->
+  <nav class="navegacion seccion" id="nav">
+    <span class="nav-label">Siguiente umbral</span>
+    <span class="nav-titulo">IV — Los Atractores</span>
+    <span class="nav-subtitulo">Cuando el tiempo reemplaza al presente</span>
+    <br>
+    <a class="nav-flecha" href="#">continuar &rarr;</a>
+  </nav>
+
+</main>
+
+<script>
+  // ── Intersection Observer ───────────────────────────────
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.seccion, .aforismo, .secuestradores, .embudo, .acto-volitivo, .registro, .apertura'
+  ).forEach(el => observador.observe(el));
+
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) apertura.style.animationPlayState = 'running';
+  }, 200);
+
+  // ── Acordeón de secuestradores ──────────────────────────
+  function toggleSecuestrador(id) {
+    const el = document.getElementById('s-' + id);
+    const estaAbierto = el.classList.contains('abierto');
+
+    // Cerrar todos
+    document.querySelectorAll('.secuestrador').forEach(s => {
+      s.classList.remove('abierto');
+    });
+
+    // Abrir el seleccionado si estaba cerrado
+    if (!estaAbierto) {
+      el.classList.add('abierto');
+    }
+  }
+
+  // Abrir el primero por defecto
+  setTimeout(() => {
+    document.getElementById('s-tech').classList.add('abierto');
+  }, 1200);
+</script>
+
+</body>
+</html>

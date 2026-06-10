@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral VI — El Amor Sagrado · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+    --cobre:       #a0622a;
+    --cobre-tenue: #3a2010;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 65% 55% at 50% 50%,
+        rgba(160,98,42,0.07) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 30% at 50% 50%,
+        rgba(201,168,76,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Dos puntos que se acercan — animación portada */
+  .portada-punto {
+    position: absolute;
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: var(--oro-tenue);
+    opacity: 0.4;
+    top: 50%;
+  }
+
+  .portada-punto-izq {
+    animation: punto-acercar-izq 8s ease-in-out infinite;
+  }
+
+  .portada-punto-der {
+    animation: punto-acercar-der 8s ease-in-out infinite;
+  }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+    position: relative; z-index: 1;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+    position: relative; z-index: 1;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+    position: relative; z-index: 1;
+  }
+
+  .divisor-portada {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    animation: aparecer 1.6s ease forwards 1.0s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.4s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.7s;
+    position: relative; z-index: 1;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3s;
+    z-index: 1;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .contenido {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible { animation-play-state: running; }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible { opacity: 1; transform: translateY(0); }
+
+  p { margin-bottom: 1.6rem; color: var(--blanco-humo); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Aforismo */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1px;
+    width: 1px; height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before { height: 100%; }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.75;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .aforismo-fuente {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* ── EL ANIMAL ANTES DE SALTAR ───────────────────────── */
+  .animal-apertura {
+    margin: 4rem 0;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .animal-apertura.visible { opacity: 1; transform: translateY(0); }
+
+  .animal-svg-wrap {
+    flex-shrink: 0;
+    width: 110px;
+  }
+
+  .animal-texto {
+    flex: 1;
+  }
+
+  .animal-texto p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--gris-calido);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  /* ── DECLARACIÓN CENTRAL ─────────────────────────────── */
+  .declaracion {
+    margin: 4.5rem 0;
+    padding: 4rem 3rem;
+    text-align: center;
+    border: 1px solid var(--separador);
+    border-top: 2px solid var(--cobre);
+    background: rgba(160,98,42,0.04);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .declaracion.visible { opacity: 1; transform: translateY(0); }
+
+  .declaracion-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.6;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .declaracion-texto em {
+    color: var(--oro);
+    font-style: normal;
+  }
+
+  /* ── LOS TRES NIVELES ────────────────────────────────── */
+  .tres-niveles {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .tres-niveles.visible { opacity: 1; transform: translateY(0); }
+
+  .nivel {
+    display: flex;
+    gap: 1.8rem;
+    align-items: flex-start;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--separador);
+    position: relative;
+  }
+
+  .nivel:last-child { border-bottom: none; }
+
+  .nivel-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 2rem;
+    text-align: right;
+    transition: color 0.4s ease;
+  }
+
+  .nivel.activo .nivel-num { color: var(--oro-tenue); }
+
+  .nivel-contenido { flex: 1; }
+
+  .nivel-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 2.3vw, 1.25rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .nivel-descripcion {
+    font-size: 0.9rem;
+    color: var(--gris-calido);
+    line-height: 1.75;
+  }
+
+  /* ── LA INVISIBILIDAD ────────────────────────────────── */
+  .invisibilidad {
+    margin: 4rem 0;
+    padding: 2.8rem 2.5rem;
+    border: 1px solid var(--separador);
+    border-left: 3px solid var(--cobre);
+    background: rgba(160,98,42,0.04);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .invisibilidad.visible { opacity: 1; transform: translateY(0); }
+
+  .invisibilidad::before {
+    content: 'LA REPARACIÓN';
+    position: absolute;
+    top: -0.6rem; left: 1.5rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--cobre);
+  }
+
+  .invisibilidad p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+  }
+
+  /* ── DOS TIPOS DE AMOR ───────────────────────────────── */
+  .dos-amores {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .dos-amores.visible { opacity: 1; transform: translateY(0); }
+
+  .dos-amores-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-align: center;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .dos-amores-par {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--separador);
+  }
+
+  .amor-lado {
+    padding: 2rem 1.8rem;
+  }
+
+  .amor-convencional {
+    border-right: 1px solid var(--separador);
+    background: rgba(0,0,0,0.15);
+  }
+
+  .amor-sagrado-lado {
+    background: rgba(201,168,76,0.04);
+  }
+
+  .amor-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .amor-convencional .amor-label { color: var(--gris-calido); }
+  .amor-sagrado-lado .amor-label { color: var(--oro-tenue); }
+
+  .amor-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .amor-item {
+    font-size: 0.85rem;
+    color: var(--gris-calido);
+    line-height: 1.7;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .amor-item:last-child { border-bottom: none; }
+  .amor-sagrado-lado .amor-item { color: var(--blanco-humo); opacity: 0.85; }
+
+  /* ── ESCUCHAR SIN NARRATIVA ──────────────────────────── */
+  .escuchar {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .escuchar.visible { opacity: 1; transform: translateY(0); }
+
+  .escuchar-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  /* SVG de las dos escuchas */
+  .escucha-svg {
+    display: block;
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* Práctica */
+  .practica {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    padding: 2.5rem;
+    margin: 4rem 0;
+    position: relative;
+  }
+
+  .practica::before {
+    content: 'PRÁCTICA';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .practica-paso {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+    align-items: flex-start;
+  }
+
+  .practica-paso:last-child { margin-bottom: 0; }
+
+  .paso-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--oro-tenue);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    letter-spacing: 0.1em;
+  }
+
+  .paso-texto {
+    font-size: 0.93rem;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    opacity: 0.9;
+  }
+
+  /* La seguridad relacional */
+  .seguridad-relacional {
+    margin: 4rem 0;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    border-bottom: 2px solid var(--oro-tenue);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seguridad-relacional.visible { opacity: 1; transform: translateY(0); }
+
+  .sr-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro);
+    line-height: 1.7;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .sr-desarrollo {
+    font-size: 0.92rem;
+    color: var(--gris-calido);
+    line-height: 1.85;
+    text-align: left;
+  }
+
+  /* Separador */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea { flex: 1; height: 1px; background: var(--separador); }
+  .separador-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  /* Pregunta */
+  .pregunta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 4rem 0;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .pregunta-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.7;
+  }
+
+  /* Navegación */
+  .navegacion {
+    text-align: center;
+    padding-top: 5rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 6rem;
+  }
+
+  .nav-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .nav-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-flecha:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+  @keyframes punto-acercar-izq {
+    0%   { left: 15%; opacity: 0; }
+    20%  { opacity: 0.4; }
+    50%  { left: 48%; opacity: 0.6; }
+    80%  { opacity: 0.2; }
+    100% { left: 15%; opacity: 0; }
+  }
+  @keyframes punto-acercar-der {
+    0%   { left: 85%; opacity: 0; }
+    20%  { opacity: 0.4; }
+    50%  { left: 52%; opacity: 0.6; }
+    80%  { opacity: 0.2; }
+    100% { left: 85%; opacity: 0; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .animal-apertura { flex-direction: column; align-items: flex-start; }
+    .animal-svg-wrap { width: 80px; }
+    .dos-amores-par { grid-template-columns: 1fr; }
+    .amor-convencional { border-right: none; border-bottom: 1px solid var(--separador); }
+    .aforismo { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .practica { padding: 2rem 1.5rem; }
+    .declaracion { padding: 2.5rem 1.5rem; }
+    .seguridad-relacional { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <div class="portada-punto portada-punto-izq"></div>
+  <div class="portada-punto portada-punto-der"></div>
+
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+  <div class="divisor-portada"></div>
+  <div class="umbral-numero">VI</div>
+  <h2 class="umbral-titulo">El Amor Sagrado</h2>
+  <p class="umbral-subtitulo">atender al otro como el acto ético más radical</p>
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO -->
+<main class="contenido">
+
+  <!-- Apertura: el animal -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      Antes de que la filosofía nombrara la atención,<br>
+      el ciervo ya la practicaba.<br><br>
+      La pausa completa antes del salto.<br>
+      El cuerpo entero orientado<br>
+      hacia lo que importa.<br>
+      Sin dividirse.
+    </p>
+  </div>
+
+  <!-- El animal como imagen -->
+  <div class="animal-apertura seccion" id="animal">
+    <div class="animal-svg-wrap">
+      <svg viewBox="0 0 110 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ciervo simplificado, en pausa, orientado -->
+        <!-- Cuerpo -->
+        <ellipse cx="55" cy="80" rx="30" ry="18"
+                 fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <!-- Cuello -->
+        <path d="M68 68 Q75 58 72 50" stroke="#3a2e18" stroke-width="7"
+              stroke-linecap="round" fill="none"/>
+        <!-- Cabeza -->
+        <ellipse cx="71" cy="46" rx="9" ry="7"
+                 fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <!-- Ojo — el punto de atención -->
+        <circle cx="74" cy="44" r="2" fill="#c9a84c" opacity="0.8">
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Cuernas -->
+        <path d="M68 40 Q65 28 60 22" stroke="#3a2e18" stroke-width="1.2"
+              stroke-linecap="round" fill="none"/>
+        <path d="M60 22 Q55 18 52 14" stroke="#3a2e18" stroke-width="1"
+              stroke-linecap="round" fill="none"/>
+        <path d="M60 22 Q58 17 62 13" stroke="#3a2e18" stroke-width="1"
+              stroke-linecap="round" fill="none"/>
+        <path d="M71 40 Q73 28 76 23" stroke="#3a2e18" stroke-width="1.2"
+              stroke-linecap="round" fill="none"/>
+        <path d="M76 23 Q79 18 77 13" stroke="#3a2e18" stroke-width="1"
+              stroke-linecap="round" fill="none"/>
+        <!-- Patas — quietas, en pausa -->
+        <line x1="38" y1="95" x2="35" y2="118" stroke="#2a2418" stroke-width="4"
+              stroke-linecap="round"/>
+        <line x1="48" y1="97" x2="46" y2="120" stroke="#2a2418" stroke-width="4"
+              stroke-linecap="round"/>
+        <line x1="62" y1="97" x2="64" y2="120" stroke="#2a2418" stroke-width="4"
+              stroke-linecap="round"/>
+        <line x1="72" y1="95" x2="75" y2="118" stroke="#2a2418" stroke-width="4"
+              stroke-linecap="round"/>
+        <!-- Cola -->
+        <ellipse cx="26" cy="76" rx="5" ry="4"
+                 fill="#1a1710" stroke="#2a2418" stroke-width="0.8"/>
+        <!-- Línea de atención — hacia dónde mira -->
+        <line x1="80" y1="44" x2="108" y2="44"
+              stroke="#8a6f35" stroke-width="0.5"
+              stroke-dasharray="2,3" opacity="0.6"/>
+        <polygon points="106,41 110,44 106,47" fill="#8a6f35" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="animal-texto">
+      <p>
+        En el animal, la atención es instinto de autoconservación — 
+        pura, total, sin narrativa. En el ser humano, cuando se dirige 
+        hacia otro con esa misma calidad de presencia, 
+        se convierte en algo diferente: 
+        en el acto de reconocer que el otro existe.
+      </p>
+    </div>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      Hay una diferencia entre mirar a alguien y verlo. 
+      Entre escuchar lo que dice y escuchar lo que es. 
+      Entre estar presente físicamente y estar presente de verdad. 
+      Esa diferencia no es sutil para quien la recibe — 
+      es radical. Cambia la calidad de toda la experiencia.
+    </p>
+    <p>
+      Cuando alguien nos atiende con presencia genuina, 
+      algo ocurre que no tiene nombre exacto en el lenguaje cotidiano. 
+      Se siente reconocido. No evaluado, no diagnosticado, 
+      no tolerado — reconocido. 
+      Y ese reconocimiento, para muchas personas, 
+      es una experiencia que han tenido muy pocas veces en la vida.
+    </p>
+  </div>
+
+  <!-- Declaración central -->
+  <div class="declaracion seccion" id="declaracion">
+    <span class="declaracion-texto">
+      <em>Existís para mí.</em><br>
+      <em>Importás.</em><br>
+      <em>Te veo.</em>
+    </span>
+  </div>
+
+  <!-- Sección 2 -->
+  <div class="seccion" id="s2">
+    <p>
+      Esas tres frases no son una técnica terapéutica. 
+      Son la estructura de lo que ocurre cuando la atención 
+      se dirige hacia otro sin agenda, sin filtro, 
+      sin la necesidad de que el otro sea diferente 
+      a lo que es. Es la forma más pura de amor 
+      que existe — no el amor romántico que depende del objeto, 
+      sino la presencia que valida la existencia del otro 
+      solo por el hecho de estar.
+    </p>
+  </div>
+
+  <!-- Los tres niveles del reconocimiento -->
+  <div class="tres-niveles seccion" id="niveles">
+
+    <div class="nivel" id="nivel-1">
+      <span class="nivel-num">I</span>
+      <div class="nivel-contenido">
+        <span class="nivel-titulo">Reconocimiento de la presencia</span>
+        <p class="nivel-descripcion">
+          El cese de la inercia interna para notar que hay alguien ahí. 
+          El primer movimiento: salir del propio monólogo 
+          para que otro pueda existir en el campo. 
+          Parece obvio — y sin embargo, 
+          cuántas conversaciones ocurren sin que esto suceda.
+        </p>
+      </div>
+    </div>
+
+    <div class="nivel" id="nivel-2">
+      <span class="nivel-num">II</span>
+      <div class="nivel-contenido">
+        <span class="nivel-titulo">Validación del ser</span>
+        <p class="nivel-descripcion">
+          La renuncia activa a la proyección. 
+          No buscar que el otro encaje en un diagnóstico, 
+          en una expectativa, en la narrativa que ya tenemos sobre él. 
+          Permitirle ocupar su espacio con su propia cualidad de ser, 
+          sin corregirlo ni completarlo.
+        </p>
+      </div>
+    </div>
+
+    <div class="nivel" id="nivel-3">
+      <span class="nivel-num">III</span>
+      <div class="nivel-contenido">
+        <span class="nivel-titulo">Testimonio de la existencia</span>
+        <p class="nivel-descripcion">
+          El nivel más profundo. Al ser visto con presencia pura, 
+          el otro confirma su lugar en la trama de lo real. 
+          La atención actúa aquí como un registro sagrado: 
+          rescata al ser de la nada, 
+          de la invisibilidad que es el trauma más silencioso 
+          y el más persistente.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- La reparación de la invisibilidad -->
+  <div class="invisibilidad seccion" id="invisibilidad">
+    <p>
+      En treinta años de práctica clínica, 
+      el trauma que más se repite no es el de la agresión 
+      sino el de la omisión. Personas que crecieron 
+      siendo <em>miradas</em> sin ser <em>atendidas</em>. 
+      Presentes físicamente en el campo visual de sus adultos, 
+      pero ausentes del campo de su atención real.
+    </p>
+    <p>
+      Esa invisibilidad genera una herida particular: 
+      la duda sobre la propia existencia. 
+      Si nadie me atendió de verdad, 
+      ¿existo de verdad? 
+      El ruido mental, la necesidad compulsiva de aprobación, 
+      la dificultad para estar quieto — 
+      mucho de eso es la búsqueda de alguien 
+      que finalmente diga: te veo.
+    </p>
+    <p>
+      Ofrecer atención genuina es reparar esa herida. 
+      No con técnica — con presencia.
+    </p>
+  </div>
+
+  <!-- Aforismo -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      Atender no es una habilidad.<br>
+      Es una forma de amor<br>
+      que no requiere ningún vínculo previo.<br>
+      Solo requiere estar<br>
+      completamente donde se está.
+    </span>
+  </blockquote>
+
+  <!-- Los dos tipos de amor -->
+  <div class="dos-amores seccion" id="dos-amores">
+    <span class="dos-amores-titulo">La distinción que clarifica</span>
+    <div class="dos-amores-par">
+      <div class="amor-lado amor-convencional">
+        <span class="amor-label">amor ordinario</span>
+        <span class="amor-nombre">Amor que depende<br>del objeto</span>
+        <div class="amor-item">Vinculado a la necesidad del otro</div>
+        <div class="amor-item">Condicional: si el otro es como espero</div>
+        <div class="amor-item">Se agota cuando el objeto desaparece</div>
+        <div class="amor-item">Opera desde la carencia propia</div>
+      </div>
+      <div class="amor-lado amor-sagrado-lado">
+        <span class="amor-label">amor sagrado</span>
+        <span class="amor-nombre">Amor como<br>presencia pura</span>
+        <div class="amor-item">Propiedad del campo compartido</div>
+        <div class="amor-item">Incondicional: el otro puede ser como es</div>
+        <div class="amor-item">No depende de la forma física ni del tiempo</div>
+        <div class="amor-item">Opera desde la plenitud del estar</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Escuchar sin narrativa -->
+  <div class="escuchar seccion" id="escuchar">
+    <span class="escuchar-titulo">Escuchar no es esperar que el otro termine</span>
+    <p>
+      Hay una escucha que parece atención y no lo es: 
+      la escucha del que ya sabe lo que va a responder 
+      mientras el otro habla. El que está construyendo su argumento, 
+      evaluando lo que escucha, decidiendo si está de acuerdo 
+      o preparando su defensa. Esa escucha usa al otro 
+      como material para el propio monólogo.
+    </p>
+    <p>
+      La escucha genuina es diferente. 
+      Requiere suspender temporalmente la propia narrativa — 
+      no apagarla, sino hacerla a un lado — 
+      para que lo que el otro dice pueda llegar de verdad. 
+      Cambiar algo. Mover algo. 
+      Que la existencia del otro te afecte.
+    </p>
+
+    <!-- SVG de las dos escuchas -->
+    <svg class="escucha-svg" viewBox="0 0 500 160"
+         fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Escucha falsa — izquierda -->
+      <text x="110" y="18" font-family="Georgia,serif" font-size="8.5"
+            fill="#6b6050" text-anchor="middle" letter-spacing="1">ESCUCHA REACTIVA</text>
+
+      <!-- Hablante izq -->
+      <circle cx="30" cy="80" r="14" fill="#131210" stroke="#2a2418" stroke-width="1"/>
+      <text x="30" y="84" font-family="Georgia,serif" font-size="7"
+            fill="#6b6050" text-anchor="middle">A</text>
+
+      <!-- Burbujas de voz -->
+      <path d="M44 72 Q70 55 90 68" stroke="#3a3020" stroke-width="1"
+            stroke-dasharray="3,2" fill="none"/>
+      <path d="M44 80 Q75 80 95 80" stroke="#3a3020" stroke-width="0.7"
+            stroke-dasharray="3,2" fill="none" opacity="0.5"/>
+      <path d="M44 88 Q70 100 90 92" stroke="#3a3020" stroke-width="1"
+            stroke-dasharray="3,2" fill="none"/>
+
+      <!-- Oyente izq — con burbuja de pensamiento propio -->
+      <circle cx="190" cy="80" r="14" fill="#131210" stroke="#2a2418" stroke-width="1"/>
+      <text x="190" y="84" font-family="Georgia,serif" font-size="7"
+            fill="#6b6050" text-anchor="middle">B</text>
+
+      <!-- Burbuja de pensamiento propia en B -->
+      <ellipse cx="175" cy="42" rx="28" ry="16"
+               fill="rgba(42,36,24,0.4)" stroke="#3a3020" stroke-width="0.8"/>
+      <circle cx="180" cy="58" r="2.5" fill="none" stroke="#3a3020" stroke-width="0.8"/>
+      <circle cx="177" cy="62" r="1.5" fill="none" stroke="#3a3020" stroke-width="0.8"/>
+      <text x="175" y="40" font-family="Georgia,serif" font-size="6.5"
+            fill="#4a4030" text-anchor="middle" font-style="italic">mi respuesta...</text>
+      <text x="175" y="50" font-family="Georgia,serif" font-size="6.5"
+            fill="#4a4030" text-anchor="middle" font-style="italic">no estoy de acuerdo</text>
+
+      <!-- Señal que no penetra -->
+      <text x="110" y="140" font-family="Georgia,serif" font-size="7.5"
+            fill="#4a4030" text-anchor="middle" font-style="italic">
+        La señal llega pero no entra.
+      </text>
+
+      <!-- Divisor vertical -->
+      <line x1="250" y1="10" x2="250" y2="150"
+            stroke="#2a2418" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+      <!-- Escucha genuina — derecha -->
+      <text x="390" y="18" font-family="Georgia,serif" font-size="8.5"
+            fill="#8a6f35" text-anchor="middle" letter-spacing="1">ESCUCHA RECEPTIVA</text>
+
+      <!-- Hablante der -->
+      <circle cx="310" cy="80" r="14" fill="#131210" stroke="#2a2418" stroke-width="1"/>
+      <text x="310" y="84" font-family="Georgia,serif" font-size="7"
+            fill="#8a6f35" text-anchor="middle">A</text>
+
+      <!-- Olas que llegan con más vida -->
+      <path d="M324 72 Q350 58 370 70" stroke="#8a6f35" stroke-width="1.2"
+            fill="none"/>
+      <path d="M324 80 Q355 80 375 80" stroke="#8a6f35" stroke-width="1"
+            fill="none"/>
+      <path d="M324 88 Q350 100 370 90" stroke="#8a6f35" stroke-width="1.2"
+            fill="none"/>
+
+      <!-- Oyente der — abierto, sin burbuja propia -->
+      <circle cx="470" cy="80" r="14" fill="#131210" stroke="#8a6f35" stroke-width="1"/>
+      <!-- Punto dorado en B — presencia -->
+      <circle cx="470" cy="80" r="4" fill="#c9a84c" opacity="0.4">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="470" y="84" font-family="Georgia,serif" font-size="7"
+            fill="#c9a84c" text-anchor="middle">B</text>
+
+      <text x="390" y="140" font-family="Georgia,serif" font-size="7.5"
+            fill="#8a6f35" text-anchor="middle" font-style="italic">
+        La señal entra y mueve algo.
+      </text>
+
+    </svg>
+  </div>
+
+  <!-- Aforismo 2 -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      Escuchar no es esperar que el otro termine de hablar.<br>
+      Es suspender lo que ya pensás<br>
+      para dejar que lo que el otro dice<br>
+      te cambie algo.
+    </span>
+  </blockquote>
+
+  <!-- La seguridad relacional — cierre del umbral IV retomado -->
+  <div class="seguridad-relacional seccion" id="sr">
+    <span class="sr-texto">
+      La única seguridad que sostiene de verdad<br>
+      no viene de lo predecible.<br>
+      Viene de la calidad del vínculo<br>
+      con lo que está presente.
+    </span>
+    <p class="sr-desarrollo">
+      Buscamos certeza en el control — en el plan que no falla, 
+      en el futuro asegurado. Pero esa certeza es frágil 
+      porque depende de variables que no manejamos. 
+      La seguridad que no se rompe cuando la vida cambia 
+      no está en lo que tenemos sino en la calidad 
+      de cómo estamos con lo que tenemos. 
+      En la presencia que damos y recibimos. 
+      En el vínculo que sobrevive a la incertidumbre 
+      no porque la elimina sino porque la habita junto a otro.
+    </p>
+  </div>
+
+  <!-- Práctica -->
+  <div class="practica seccion" id="p1">
+    <div class="practica-paso">
+      <span class="paso-num">I</span>
+      <span class="paso-texto">
+        <strong>Suspensión.</strong> Antes de la próxima conversación importante, 
+        notá qué voces internas están activas — el que ya sabe la respuesta, 
+        el que evalúa, el que defiende. No las apagás — 
+        las reconocés y las hacés a un lado voluntariamente.
+      </span>
+    </div>
+    <div class="practica-paso">
+      <span class="paso-num">II</span>
+      <span class="paso-texto">
+        <strong>Apertura somática.</strong> Bajá la atención al eje pecho-vientre. 
+        Sentí el peso del cuerpo. Que tu sistema nervioso 
+        sea un espacio seguro — no un filtro reactivo.
+      </span>
+    </div>
+    <div class="practica-paso">
+      <span class="paso-num">III</span>
+      <span class="paso-texto">
+        <strong>Recepción.</strong> Escuchá lo que subyace a las palabras. 
+        Los silencios. Lo que el lenguaje señala sin poder decir. 
+        Recibí la esencia antes que el argumento.
+      </span>
+    </div>
+    <div class="practica-paso">
+      <span class="paso-num">IV</span>
+      <span class="paso-texto">
+        <strong>Devolución.</strong> No des consejos ni interpretaciones. 
+        Solo reflejá que lo escuchaste de verdad. 
+        A veces el silencio compartido 
+        es la devolución más completa que existe.
+      </span>
+    </div>
+  </div>
+
+  <!-- Aforismo de cierre -->
+  <blockquote class="aforismo seccion" id="a3">
+    <span class="aforismo-texto">
+      Al atender genuinamente,<br>
+      no solo ayudás a quien atendés.<br>
+      Recordás que vos también existís<br>
+      en esa misma red invisible<br>
+      que sostiene a todos.
+    </span>
+  </blockquote>
+
+  <!-- Pregunta de cierre -->
+  <div class="pregunta seccion" id="q1">
+    <p class="pregunta-texto">
+      ¿A quién estás mirando<br>
+      sin estar viendo?<br><br>
+      ¿Y quién te está mirando a vos<br>
+      sin verte todavía?
+    </p>
+  </div>
+
+  <!-- Navegación -->
+  <nav class="navegacion seccion" id="nav">
+    <span class="nav-label">Siguiente umbral</span>
+    <span class="nav-titulo">VII — La Red</span>
+    <span class="nav-subtitulo">La atención que no agota — expande</span>
+    <br>
+    <a class="nav-flecha" href="#">continuar &rarr;</a>
+  </nav>
+
+</main>
+
+<script>
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+        // Iluminar niveles secuencialmente
+        if (entrada.target.id === 'niveles') {
+          const niveles = document.querySelectorAll('.nivel');
+          niveles.forEach((n, i) => {
+            setTimeout(() => n.classList.add('activo'), i * 400);
+          });
+        }
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.seccion, .aforismo, .animal-apertura, .declaracion, .tres-niveles, ' +
+    '.invisibilidad, .dos-amores, .escuchar, .seguridad-relacional, .apertura'
+  ).forEach(el => observador.observe(el));
+
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) apertura.style.animationPlayState = 'running';
+  }, 200);
+</script>
+
+</body>
+</html>

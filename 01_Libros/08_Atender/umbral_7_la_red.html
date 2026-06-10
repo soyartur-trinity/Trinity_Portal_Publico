@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral VII — La Red · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Red de nodos animada en fondo */
+  .portada-canvas {
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+    position: relative; z-index: 1;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+    position: relative; z-index: 1;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+    position: relative; z-index: 1;
+  }
+
+  .divisor-portada {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    animation: aparecer 1.6s ease forwards 1.0s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.4s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.7s;
+    position: relative; z-index: 1;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3s;
+    z-index: 1;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .contenido {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible { animation-play-state: running; }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible { opacity: 1; transform: translateY(0); }
+
+  p { margin-bottom: 1.6rem; color: var(--blanco-humo); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Aforismo */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1px;
+    width: 1px; height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before { height: 100%; }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.75;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .aforismo-fuente {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* ── RED DE NODOS INTERACTIVA ────────────────────────── */
+  .red-interactiva {
+    margin: 4.5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .red-interactiva.visible { opacity: 1; transform: translateY(0); }
+
+  .red-svg-wrap {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    display: block;
+    cursor: default;
+  }
+
+  .nodo-grupo { cursor: pointer; }
+  .nodo-grupo:hover .nodo-circulo { stroke-opacity: 0.8; }
+
+  .nodo-circulo {
+    transition: r 0.3s ease;
+  }
+
+  .red-caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+
+  /* ── LA PARADOJA DEL MÚSCULO ─────────────────────────── */
+  .musculo {
+    margin: 4rem 0;
+    padding: 2.8rem 2.5rem;
+    border: 1px solid var(--separador);
+    border-top: 2px solid var(--oro-tenue);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .musculo.visible { opacity: 1; transform: translateY(0); }
+
+  .musculo-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .musculo-par {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .musculo-lado-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    font-weight: 400;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .musculo-agota .musculo-lado-titulo { color: var(--gris-calido); }
+  .musculo-expande .musculo-lado-titulo { color: var(--oro); }
+
+  .musculo-texto {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    line-height: 1.75;
+  }
+
+  .musculo-expande .musculo-texto { color: var(--blanco-humo); opacity: 0.9; }
+
+  /* ── LAS PRÁCTICAS CONTEMPLATIVAS ───────────────────── */
+  .practicas-contemplativas {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .practicas-contemplativas.visible { opacity: 1; transform: translateY(0); }
+
+  .pc-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 400;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 1.4rem;
+  }
+
+  .pc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--separador);
+    border: 1px solid var(--separador);
+    margin-bottom: 1.5rem;
+  }
+
+  .pc-item {
+    background: var(--negro);
+    padding: 1.4rem 1.6rem;
+  }
+
+  .pc-item-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .pc-item-descripcion {
+    font-size: 0.85rem;
+    color: var(--gris-calido);
+    line-height: 1.7;
+  }
+
+  .pc-horizonte {
+    padding: 1.6rem 1.8rem;
+    border: 1px solid var(--separador);
+    background: rgba(201,168,76,0.04);
+    margin-top: 0;
+  }
+
+  .pc-horizonte-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .pc-horizonte-texto {
+    font-size: 0.9rem;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    opacity: 0.9;
+  }
+
+  /* ── ATENCIÓN DISTRIBUIDA ────────────────────────────── */
+  .atencion-distribuida {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .atencion-distribuida.visible { opacity: 1; transform: translateY(0); }
+
+  .ad-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 400;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  /* ── HORIZONTE FINAL ─────────────────────────────────── */
+  .horizonte {
+    margin: 4rem 0;
+    padding: 3.5rem 2.5rem;
+    text-align: center;
+    border: 1px solid var(--separador);
+    background: rgba(201,168,76,0.03);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .horizonte.visible { opacity: 1; transform: translateY(0); }
+
+  .horizonte::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right,
+      transparent, var(--oro-tenue), var(--oro), var(--oro-tenue), transparent);
+  }
+
+  .horizonte-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.7;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .horizonte-texto em { color: var(--oro); font-style: normal; }
+
+  .horizonte-sub {
+    font-size: 0.9rem;
+    color: var(--gris-calido);
+    line-height: 1.8;
+  }
+
+  /* Práctica */
+  .practica {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    padding: 2.5rem;
+    margin: 4rem 0;
+    position: relative;
+  }
+
+  .practica::before {
+    content: 'PRÁCTICA';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .practica p {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .practica p:last-child { margin-bottom: 0; }
+
+  /* Separador */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea { flex: 1; height: 1px; background: var(--separador); }
+  .separador-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  /* Pregunta */
+  .pregunta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 4rem 0;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .pregunta-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.7;
+  }
+
+  /* Navegación */
+  .navegacion {
+    text-align: center;
+    padding-top: 5rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 6rem;
+  }
+
+  .nav-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .nav-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-flecha:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .musculo-par { grid-template-columns: 1fr; gap: 1.5rem; }
+    .pc-grid { grid-template-columns: 1fr; }
+    .aforismo { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .practica { padding: 2rem 1.5rem; }
+    .musculo { padding: 2rem 1.5rem; }
+    .horizonte { padding: 2.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <canvas class="portada-canvas" id="redCanvas"></canvas>
+
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+  <div class="divisor-portada"></div>
+  <div class="umbral-numero">VII</div>
+  <h2 class="umbral-titulo">La Red</h2>
+  <p class="umbral-subtitulo">la atención que no agota — expande</p>
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO -->
+<main class="contenido">
+
+  <!-- Apertura -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      La atención profunda no se agota<br>
+      con el uso.<br><br>
+      Se agota cuando se ejerce<br>
+      desde el lugar equivocado.
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      Hay una creencia extendida que trata la atención 
+      como un recurso finito: un tanque que se llena durante el sueño 
+      y se vacía durante el día. Bajo esa lógica, 
+      atender más significa tener menos. 
+      La solución sería administrar la atención con cuidado, 
+      racionarla, reservarla para lo importante.
+    </p>
+    <p>
+      Esa lógica no es incorrecta para la atención 
+      ejercida desde la cabeza — 
+      desde el control, el esfuerzo cognitivo, la vigilancia. 
+      Ese tipo de atención sí se agota. 
+      Pero hay otro tipo que funciona bajo leyes distintas: 
+      la atención que nace del centro, 
+      del anclaje somático, de la presencia que no fuerza. 
+      Esa, cuanto más se usa, más se expande.
+    </p>
+  </div>
+
+  <!-- La paradoja del músculo -->
+  <div class="musculo seccion" id="musculo">
+    <span class="musculo-titulo">La paradoja del músculo atencional</span>
+    <div class="musculo-par">
+      <div class="musculo-agota">
+        <span class="musculo-lado-titulo">La atención que agota</span>
+        <p class="musculo-texto">
+          Nace del esfuerzo. Opera desde la cabeza. 
+          Busca controlar el resultado. 
+          Teme perderse algo. 
+          Se defiende del error. 
+          Cuanto más se usa, más se contrae.
+        </p>
+      </div>
+      <div class="musculo-expande">
+        <span class="musculo-lado-titulo">La atención que expande</span>
+        <p class="musculo-texto">
+          Nace de la presencia. Opera desde el centro. 
+          Sostiene sin forzar. 
+          Recibe sin retener. 
+          Se entrega sin perderse. 
+          Cuanto más se usa, más campo puede sostener.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aforismo 1 -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      El cansancio del que atiende<br>
+      no viene de atender demasiado.<br>
+      Viene de intentar controlar<br>
+      lo que solo puede recibirse.
+    </span>
+  </blockquote>
+
+  <!-- Sección 2: de la atención individual a la red -->
+  <div class="seccion" id="s2">
+    <p>
+      Hay un umbral en la práctica de la atención 
+      donde algo cambia de naturaleza. 
+      Ya no es la atención de un individuo 
+      dirigida hacia otro individuo. 
+      Es algo que ocurre <em>entre</em> — 
+      en el campo compartido que se genera 
+      cuando dos o más presencias genuinas coinciden.
+    </p>
+    <p>
+      Ese campo no pertenece a ninguno de los dos. 
+      Es la red misma. Y tiene propiedades 
+      que ninguno de los nodos individuales tiene por separado: 
+      una capacidad de sostener complejidad, 
+      de procesar lo que un solo observador no puede, 
+      de producir comprensiones que emergen del encuentro 
+      y no de ninguna mente aislada.
+    </p>
+  </div>
+
+  <!-- Red de nodos interactiva -->
+  <div class="red-interactiva seccion" id="red">
+    <svg class="red-svg-wrap" viewBox="0 0 520 300"
+         fill="none" xmlns="http://www.w3.org/2000/svg" id="redSVG">
+
+      <!-- Conexiones — líneas sutiles -->
+      <!-- Centro con todos -->
+      <line x1="260" y1="150" x2="130" y2="80"  stroke="#3a2e18" stroke-width="1"/>
+      <line x1="260" y1="150" x2="390" y2="80"  stroke="#3a2e18" stroke-width="1"/>
+      <line x1="260" y1="150" x2="90"  y2="185" stroke="#3a2e18" stroke-width="1"/>
+      <line x1="260" y1="150" x2="430" y2="185" stroke="#3a2e18" stroke-width="1"/>
+      <line x1="260" y1="150" x2="180" y2="255" stroke="#3a2e18" stroke-width="1"/>
+      <line x1="260" y1="150" x2="340" y2="255" stroke="#3a2e18" stroke-width="1"/>
+      <!-- Nodos entre sí -->
+      <line x1="130" y1="80"  x2="390" y2="80"  stroke="#2a2418" stroke-width="0.7" stroke-dasharray="3,4"/>
+      <line x1="90"  y1="185" x2="180" y2="255" stroke="#2a2418" stroke-width="0.7" stroke-dasharray="3,4"/>
+      <line x1="430" y1="185" x2="340" y2="255" stroke="#2a2418" stroke-width="0.7" stroke-dasharray="3,4"/>
+      <line x1="130" y1="80"  x2="90"  y2="185" stroke="#2a2418" stroke-width="0.7" stroke-dasharray="3,4"/>
+      <line x1="390" y1="80"  x2="430" y2="185" stroke="#2a2418" stroke-width="0.7" stroke-dasharray="3,4"/>
+
+      <!-- Nodo central — El Campo -->
+      <circle cx="260" cy="150" r="28"
+              fill="rgba(201,168,76,0.06)" stroke="#8a6f35" stroke-width="1"/>
+      <circle cx="260" cy="150" r="8" fill="#c9a84c" opacity="0.8">
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="7;10;7" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="260" y="192" font-family="Georgia,serif" font-size="8"
+            fill="#8a6f35" text-anchor="middle" letter-spacing="1">EL CAMPO</text>
+
+      <!-- Nodo 1: La escucha -->
+      <g class="nodo-grupo" id="nodo1">
+        <circle class="nodo-circulo" cx="130" cy="80" r="22"
+                fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <circle cx="130" cy="80" r="5" fill="#5a4a28" opacity="0.6"/>
+        <text x="130" y="75" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">la</text>
+        <text x="130" y="85" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">escucha</text>
+        <text x="130" y="112" font-family="Georgia,serif" font-size="6.5"
+              fill="#4a4030" text-anchor="middle" font-style="italic">presencia</text>
+      </g>
+
+      <!-- Nodo 2: El gesto -->
+      <g class="nodo-grupo" id="nodo2">
+        <circle class="nodo-circulo" cx="390" cy="80" r="22"
+                fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <circle cx="390" cy="80" r="5" fill="#5a4a28" opacity="0.6"/>
+        <text x="390" y="75" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">el</text>
+        <text x="390" y="85" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">gesto</text>
+        <text x="390" y="112" font-family="Georgia,serif" font-size="6.5"
+              fill="#4a4030" text-anchor="middle" font-style="italic">retorno</text>
+      </g>
+
+      <!-- Nodo 3: El cuerpo -->
+      <g class="nodo-grupo" id="nodo3">
+        <circle class="nodo-circulo" cx="90" cy="185" r="22"
+                fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <circle cx="90" cy="185" r="5" fill="#5a4a28" opacity="0.6"/>
+        <text x="90" y="180" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">el</text>
+        <text x="90" y="190" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">cuerpo</text>
+        <text x="90" y="217" font-family="Georgia,serif" font-size="6.5"
+              fill="#4a4030" text-anchor="middle" font-style="italic">anclaje</text>
+      </g>
+
+      <!-- Nodo 4: El amor -->
+      <g class="nodo-grupo" id="nodo4">
+        <circle class="nodo-circulo" cx="430" cy="185" r="22"
+                fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <circle cx="430" cy="185" r="5" fill="#5a4a28" opacity="0.6"/>
+        <text x="430" y="180" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">el amor</text>
+        <text x="430" y="190" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">sagrado</text>
+        <text x="430" y="217" font-family="Georgia,serif" font-size="6.5"
+              fill="#4a4030" text-anchor="middle" font-style="italic">vínculo</text>
+      </g>
+
+      <!-- Nodo 5: La maestra -->
+      <g class="nodo-grupo" id="nodo5">
+        <circle class="nodo-circulo" cx="180" cy="255" r="22"
+                fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <circle cx="180" cy="255" r="5" fill="#5a4a28" opacity="0.6"/>
+        <text x="180" y="250" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">la</text>
+        <text x="180" y="260" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">maestra</text>
+        <text x="180" y="287" font-family="Georgia,serif" font-size="6.5"
+              fill="#4a4030" text-anchor="middle" font-style="italic">presente</text>
+      </g>
+
+      <!-- Nodo 6: Los atractores -->
+      <g class="nodo-grupo" id="nodo6">
+        <circle class="nodo-circulo" cx="340" cy="255" r="22"
+                fill="#131210" stroke="#3a2e18" stroke-width="1"/>
+        <circle cx="340" cy="255" r="5" fill="#5a4a28" opacity="0.6"/>
+        <text x="340" y="250" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">el</text>
+        <text x="340" y="260" font-family="Georgia,serif" font-size="7"
+              fill="#8a6f35" text-anchor="middle">umbral</text>
+        <text x="340" y="287" font-family="Georgia,serif" font-size="6.5"
+              fill="#4a4030" text-anchor="middle" font-style="italic">pausa</text>
+      </g>
+
+    </svg>
+    <p class="red-caption">
+      Cada umbral de este libro es un nodo.<br>
+      El campo emerge de las conexiones, no de los nodos aislados.
+    </p>
+  </div>
+
+  <!-- Sección 3: de "prestar" a "ser" atención -->
+  <div class="seccion" id="s3">
+    <p>
+      Hay algo que el lenguaje delata sobre nuestra relación 
+      con la atención: la <em>prestamos</em>. 
+      Como quien entrega un capital esperando devolución. 
+      Como si atender fuera un gasto que hay que administrar.
+    </p>
+    <p>
+      Hay un estado diferente que las tradiciones contemplativas 
+      han descrito de distintas maneras 
+      y que la experiencia clínica confirma: 
+      en los momentos de máxima presencia — 
+      de belleza absoluta, de peligro genuino, 
+      de amor sin condición — 
+      el yo que administra desaparece. 
+      No hay nadie prestando atención. 
+      Solo hay atención. 
+      Y en ese estado, la capacidad de sostener 
+      lo que ocurre es ilimitada.
+    </p>
+  </div>
+
+  <!-- Aforismo 2 -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      Cuando la búsqueda descansa,<br>
+      lo buscado aparece.<br>
+      La atención total no tiene observador separado.<br>
+      Solo hay campo.
+    </span>
+  </blockquote>
+
+  <!-- Las prácticas contemplativas -->
+  <div class="practicas-contemplativas seccion" id="pc">
+    <span class="pc-titulo">Cultivar la atención: un mapa de tradiciones</span>
+    <p style="font-size:0.92rem; color:var(--gris-calido); margin-bottom:1.6rem; line-height:1.8;">
+      La pregunta de cómo desarrollar la capacidad atencional 
+      no es nueva. Las tradiciones contemplativas llevan milenios 
+      explorando este territorio. Sus respuestas son distintas 
+      en forma pero convergentes en lo esencial.
+    </p>
+
+    <div class="pc-grid">
+      <div class="pc-item">
+        <span class="pc-item-nombre">Meditación vipassana</span>
+        <p class="pc-item-descripcion">
+          Observación directa de la experiencia momento a momento. 
+          Entrena el músculo del retorno: notar que la mente se fue 
+          y volver, sin drama, miles de veces.
+        </p>
+      </div>
+      <div class="pc-item">
+        <span class="pc-item-nombre">Contemplación zen</span>
+        <p class="pc-item-descripcion">
+          La atención total en la acción simple. 
+          Lavar los platos es lavar los platos. 
+          El gesto cotidiano como práctica completa.
+        </p>
+      </div>
+      <div class="pc-item">
+        <span class="pc-item-nombre">Mindfulness clínico</span>
+        <p class="pc-item-descripcion">
+          La observación sin juicio aplicada al malestar. 
+          La atención que no escapa del dolor 
+          sino que lo sostiene hasta que revela su información.
+        </p>
+      </div>
+      <div class="pc-item">
+        <span class="pc-item-nombre">Prácticas somáticas</span>
+        <p class="pc-item-descripcion">
+          El cuerpo como ancla del presente. 
+          La respiración, el movimiento consciente, 
+          el yoga — formas de bajar la atención 
+          de la cabeza al centro.
+        </p>
+      </div>
+    </div>
+
+    <div class="pc-horizonte">
+      <span class="pc-horizonte-label">El horizonte contemporáneo</span>
+      <p class="pc-horizonte-texto">
+        A estas tradiciones se suman hoy herramientas que trabajan 
+        con las frecuencias de la percepción: 
+        los tonos binaurales que sincronizan ondas cerebrales 
+        hacia estados de mayor coherencia, 
+        las imágenes hipnagógicas que entrenan la atención 
+        en el umbral entre vigilia y sueño. 
+        No son sustitutos de la práctica contemplativa — 
+        son puertas de entrada para quienes 
+        necesitan un andamiaje inicial. 
+        El destino es el mismo: 
+        una presencia que no depende del esfuerzo.
+      </p>
+    </div>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Atención distribuida -->
+  <div class="atencion-distribuida seccion" id="ad">
+    <span class="ad-titulo">La atención como red de sanación</span>
+    <p>
+      Lo que las tradiciones contemplativas cultivaron 
+      en el individuo, el momento actual exige 
+      en lo colectivo. La complejidad del sufrimiento humano 
+      contemporáneo — su velocidad, su fragmentación, 
+      su multidimensionalidad — supera 
+      lo que cualquier observador aislado puede sostener solo.
+    </p>
+    <p>
+      La respuesta no es un observador más entrenado. 
+      Es una red de observadores que comparten 
+      la carga de la presencia. 
+      Donde la atención de uno descansa, 
+      la del otro sostiene. 
+      Donde un nodo se satura, 
+      el campo lo distribuye. 
+      La relación — no el individuo — 
+      es el producto y el instrumento a la vez.
+    </p>
+  </div>
+
+  <!-- Aforismo 3 -->
+  <blockquote class="aforismo seccion" id="a3">
+    <span class="aforismo-texto">
+      Atender en red no es dividir la presencia.<br>
+      Es multiplicarla.<br>
+      El campo sostiene lo que<br>
+      ningún nodo podría sostener solo.
+    </span>
+  </blockquote>
+
+  <!-- La finitud como calibrador — memento mori -->
+  <div class="seccion" id="s4">
+    <p>
+      Hay una práctica contemplativa que las tradiciones 
+      más antiguas han usado para calibrar la atención 
+      de manera instantánea. No como práctica de miedo 
+      sino como clarificador radical: 
+      la contemplación de la propia finitud.
+    </p>
+    <p>
+      Cuando se recuerda genuinamente que el tiempo es limitado — 
+      no como dato abstracto sino como realidad visceral — 
+      la pregunta sobre qué merece atención 
+      se responde sola. Lo que era urgente deja de serlo. 
+      Lo que era importante se vuelve evidente. 
+      La presencia que antes costaba esfuerzo 
+      aparece sin que nadie la convoque.
+    </p>
+  </div>
+
+  <!-- Aforismo: finitud -->
+  <blockquote class="aforismo seccion" id="a4">
+    <span class="aforismo-texto">
+      Recordar que vas a morir<br>
+      no es una práctica oscura.<br>
+      Es el calibrador más preciso<br>
+      que existe para saber<br>
+      qué merece tu atención<br>
+      y qué no.
+    </span>
+  </blockquote>
+
+  <!-- Horizonte final del umbral -->
+  <div class="horizonte seccion" id="horizonte">
+    <span class="horizonte-texto">
+      Hemos refinado la mirada<br>
+      no para ver <em>más cosas</em>,<br>
+      sino para ver con <em>más profundidad</em>.<br><br>
+      El viaje no termina aquí.<br>
+      Se convierte en una manera de estar.
+    </span>
+    <p class="horizonte-sub">
+      Más livianos. Menos defensivos. 
+      Plenamente presentes en el asombro que no caduca.
+    </p>
+  </div>
+
+  <!-- Práctica -->
+  <div class="practica seccion" id="p1">
+    <p>
+      Una vez por semana, durante cinco minutos, 
+      recordá con honestidad que este tiempo es limitado. 
+      No con angustia — con curiosidad. 
+      Preguntate: si este fuera el último día 
+      que puedo elegir dónde pongo la atención, 
+      ¿qué elegiría atender?
+    </p>
+    <p>
+      No hace falta responder la pregunta en abstracto. 
+      Solo dejar que la pregunta afile la mirada 
+      sobre el día concreto que tenés adelante.
+    </p>
+  </div>
+
+  <!-- Pregunta de cierre -->
+  <div class="pregunta seccion" id="q1">
+    <p class="pregunta-texto">
+      ¿Qué sería diferente en tu vida<br>
+      si la atención dejara de ser<br>
+      algo que administrás<br>
+      y se convirtiera en algo<br>
+      que simplemente sos?
+    </p>
+  </div>
+
+  <!-- Navegación al cierre -->
+  <nav class="navegacion seccion" id="nav">
+    <span class="nav-label">Último umbral</span>
+    <span class="nav-titulo">Cierre — El Gesto que se Repite</span>
+    <span class="nav-subtitulo">No una conclusión. Una devolución.</span>
+    <br>
+    <a class="nav-flecha" href="#">continuar &rarr;</a>
+  </nav>
+
+</main>
+
+<script>
+  // ── Intersection Observer ───────────────────────────────
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.seccion, .aforismo, .musculo, .red-interactiva, ' +
+    '.practicas-contemplativas, .atencion-distribuida, ' +
+    '.horizonte, .apertura'
+  ).forEach(el => observador.observe(el));
+
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) apertura.style.animationPlayState = 'running';
+  }, 200);
+
+  // ── Canvas: red de nodos en portada ────────────────────
+  const canvas = document.getElementById('redCanvas');
+  const ctx = canvas.getContext('2d');
+  let nodos = [];
+  let animFrame;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+
+  function crearNodos() {
+    nodos = [];
+    const cantidad = Math.min(18, Math.floor(canvas.width / 60));
+    for (let i = 0; i < cantidad; i++) {
+      nodos.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 1.5
+      });
+    }
+  }
+
+  function dibujarRed() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Conexiones
+    for (let i = 0; i < nodos.length; i++) {
+      for (let j = i + 1; j < nodos.length; j++) {
+        const dx = nodos[i].x - nodos[j].x;
+        const dy = nodos[i].y - nodos[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const maxDist = 160;
+
+        if (dist < maxDist) {
+          const opacity = (1 - dist / maxDist) * 0.15;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(201,168,76,${opacity})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(nodos[i].x, nodos[i].y);
+          ctx.lineTo(nodos[j].x, nodos[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Nodos
+    nodos.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(201,168,76,0.3)';
+      ctx.fill();
+
+      // Mover
+      n.x += n.vx;
+      n.y += n.vy;
+
+      // Rebotar
+      if (n.x < 0 || n.x > canvas.width)  n.vx *= -1;
+      if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+    });
+
+    animFrame = requestAnimationFrame(dibujarRed);
+  }
+
+  resizeCanvas();
+  crearNodos();
+  dibujarRed();
+
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    crearNodos();
+  });
+
+  // Detener animación cuando no es visible
+  const portada = document.querySelector('.portada');
+  const portadaObserver = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) {
+      cancelAnimationFrame(animFrame);
+    } else {
+      dibujarRed();
+    }
+  });
+  portadaObserver.observe(portada);
+</script>
+
+</body>
+</html>

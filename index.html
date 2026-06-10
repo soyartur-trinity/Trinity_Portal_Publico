@@ -29,6 +29,31 @@
         .libro-card.oraculo .libro-titulo { color: #e8d4a8; }
         .libro-card.oraculo .libro-descripcion { color: #7a7570; }
         .libro-card.oraculo:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(201,169,110,0.15); border-color: #c9a96e; }
+
+        /* Tarjeta especial Libro 8 — oscura como el 7 pero con su propia temperatura */
+        .libro-card.atender {
+            border-color: #6a5535;
+            background: #0d0c0b;
+            color: #e8e0d0;
+            position: relative;
+            overflow: hidden;
+        }
+        .libro-card.atender::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .libro-card.atender .libro-numero { color: #8a6f35; }
+        .libro-card.atender .libro-titulo { color: #c9a84c; }
+        .libro-card.atender .libro-descripcion { color: #6a6050; }
+        .libro-card.atender:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(201,168,76,0.12);
+            border-color: #8a6f35;
+        }
+
         .libro-numero { font-size: 0.85rem; color: var(--acento); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
         .libro-titulo { font-size: 1.8rem; margin-bottom: 1rem; font-weight: 600; }
         .libro-descripcion { font-size: 1rem; line-height: 1.7; color: #6B6B6B; }
@@ -38,6 +63,8 @@
         .proximamente { background: #D4A59A; color: white; }
         .nuevo { background: var(--acento); color: white; }
         .oraculo-badge { background: #2a2018; color: #c9a96e; border: 1px solid #6a5535; }
+        .atender-badge { background: #1a1510; color: #c9a84c; border: 1px solid #5a4528; letter-spacing: 0.05em; }
+
         .nota-autoria { background: rgba(201, 169, 97, 0.1); border-left: 4px solid var(--acento); padding: 1.5rem; margin: 3rem 0; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
         footer { text-align: center; margin-top: 6rem; padding-top: 2rem; border-top: 2px solid var(--borde); font-size: 0.9rem; color: var(--acento); }
         @media (max-width: 768px) { h1 { font-size: 2.2rem; } .container { padding: 2rem 1.5rem; } .libros-grid { grid-template-columns: 1fr; } }
@@ -107,6 +134,14 @@
             <h2 class="libro-titulo">Arquitectura del Destino</h2>
             <p class="libro-descripcion">Un oráculo de 112 aforismos sobre destino, consciencia, tiempo y presencia. No da respuestas. Activa la búsqueda genuina.</p>
             <span class="estado oraculo-badge">◈ Oráculo interactivo</span>
+        </a>
+
+        <!-- LIBRO 8 — ATENDER -->
+        <a href="01_Libros/08_Atender/index.html" class="libro-card atender">
+            <div class="libro-numero">Libro 8</div>
+            <h2 class="libro-titulo">Atender</h2>
+            <p class="libro-descripcion">El gesto que lo cambia todo. Nueve umbrales sobre la atención consciente: el cimiento que permite que todo lo demás funcione.</p>
+            <span class="estado atender-badge">◉ Nuevo · Umbrales interactivos</span>
         </a>
 
     </div>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral 0 — El Ruido · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --negro-suave: #131210;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ───────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 80% 80%, rgba(201,168,76,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+  }
+
+  .divisor-portada {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    text-align: center;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: aparecer 1.6s ease forwards 1.0s;
+    position: relative;
+  }
+
+  .umbral-numero::after {
+    content: '0';
+    position: absolute;
+    inset: 0;
+    color: var(--oro);
+    opacity: 0;
+    animation: pulso-numero 3s ease-in-out infinite 2.5s;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.4s;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.7s;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3s;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO DEL TEXTO ──────────────────────────────────── */
+  .contenido {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  /* Bloque de apertura — el espejo */
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible {
+    animation-play-state: running;
+  }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.7;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  /* Secciones de texto */
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  p {
+    margin-bottom: 1.6rem;
+    color: var(--blanco-humo);
+    font-weight: 400;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Aforismo destacado */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 1px;
+    height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before {
+    height: 100%;
+  }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.65;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .aforismo-fuente {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* Pregunta de reflexión */
+  .pregunta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 4rem 0;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .pregunta-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.6;
+  }
+
+  /* Práctica */
+  .practica {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    padding: 2.5rem;
+    margin: 4rem 0;
+    position: relative;
+  }
+
+  .practica::before {
+    content: 'PRÁCTICA';
+    position: absolute;
+    top: -0.6rem;
+    left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .practica p {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--blanco-humo);
+    opacity: 0.9;
+  }
+
+  .practica p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Separador decorativo */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea {
+    flex: 1;
+    height: 1px;
+    background: var(--separador);
+  }
+
+  .separador-rombo {
+    width: 5px;
+    height: 5px;
+    background: var(--oro-tenue);
+    transform: rotate(45deg);
+  }
+
+  /* Navegación al siguiente umbral */
+  .navegacion {
+    text-align: center;
+    padding-top: 5rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 6rem;
+  }
+
+  .nav-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .nav-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-flecha:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* ── ANIMACIONES ───────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulso-numero {
+    0%, 100% { opacity: 0; }
+    50%       { opacity: 0.08; }
+  }
+
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50%       { opacity: 1;   transform: scaleY(1.1); }
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .aforismo  { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .practica  { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA DEL UMBRAL -->
+<section class="portada">
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+
+  <div class="divisor-portada"></div>
+
+  <div class="umbral-numero">0</div>
+  <h2 class="umbral-titulo">El Ruido</h2>
+  <p class="umbral-subtitulo">entrada</p>
+
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO DEL UMBRAL -->
+<main class="contenido">
+
+  <!-- Apertura: el espejo -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      Hay algo que ocurre antes de que empieces a leer esto.<br>
+      Estabas en otro lugar.<br>
+      O en varios lugares a la vez.<br>
+      O en ninguno.
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      No hace falta hacer un diagnóstico de esto. Lo reconocés porque lo conocés 
+      desde adentro: esa sensación de estar leyendo mientras pensás en otra cosa, 
+      de escuchar mientras formulás tu respuesta, de mirar a alguien mientras 
+      calculás qué viene después. El cuerpo en un lugar. La atención, en otro.
+    </p>
+    <p>
+      A eso lo llamamos estar. Pero no es estar. Es una simulación tan 
+      habitual que ya no notamos la diferencia.
+    </p>
+  </div>
+
+  <!-- Aforismo 1 -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      Lo que importa no es cuántos vehículos hayas manejado.<br>
+      Sino qué tan despierto ibas al volante.
+    </span>
+    <cite class="aforismo-fuente">Arquitectura del Destino</cite>
+  </blockquote>
+
+  <!-- Sección 2 -->
+  <div class="seccion" id="s2">
+    <p>
+      Vivimos en una época que ha perfeccionado el arte de robarnos el presente. 
+      No por descuido — por diseño. Cada notificación, cada scroll que no termina, 
+      cada alarma de urgencia fabricada está construida con un solo propósito: 
+      que tu atención no te pertenezca. Que siempre esté disponible para otro destino 
+      que no es el tuyo.
+    </p>
+    <p>
+      El resultado no es solo distracción. Es algo más profundo y más difícil de 
+      nombrar: la sensación de que la vida ocurre en otro lugar. De que llegás tarde 
+      a tu propia experiencia. De que hay un ruido de fondo que nunca termina, 
+      incluso cuando todo está en silencio.
+    </p>
+  </div>
+
+  <!-- Sección 3 — el otro secuestro, el interno -->
+  <div class="seccion" id="s3">
+    <p>
+      Pero el ruido externo no es el único. Hay otro que no viene de la pantalla 
+      sino del interior: el parlamento de voces que no cesa, la mente que reencuadra 
+      el pasado y proyecta el futuro con igual dedicación, el pensamiento que aparece 
+      en el momento menos indicado para recordarte lo que no hiciste, lo que podrías 
+      perder, lo que todavía no está resuelto.
+    </p>
+    <p>
+      Ese ruido también nos saca del único lugar donde algo puede ocurrir.
+    </p>
+  </div>
+
+  <!-- Aforismo 2 — el aforismo central del umbral -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      Hay dos maneras de no estar aquí.<br>
+      Una mira hacia atrás y la llaman nostalgia.<br>
+      La otra mira hacia adelante y la llaman previsión.<br>
+      Las dos producen el mismo resultado:<br>
+      ausentarse del único lugar donde algo puede cambiar.<br>
+      Las dos venden lo mismo:<br>
+      continuidad como refugio contra la incertidumbre.
+    </span>
+  </blockquote>
+
+  <!-- Sección 4 — lo que no es este libro -->
+  <div class="seccion" id="s4">
+    <p>
+      Este libro no es una colección de técnicas para concentrarse mejor. 
+      No es un manual de productividad disfrazado de espiritualidad. 
+      No propone alcanzar ningún estado especial ni sostener la atención como 
+      si fuera una hazaña de voluntad.
+    </p>
+    <p>
+      Propone algo más sencillo y más radical al mismo tiempo: 
+      reconocer que la atención es el único territorio que verdaderamente 
+      te pertenece. Y que la mayor parte del tiempo, ese territorio está 
+      ocupado por otros.
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 5 — la promesa del libro -->
+  <div class="seccion" id="s5">
+    <p>
+      Atender no se aprende de una vez. Es un gesto que se repite. 
+      Se practica en lo pequeño: en el segundo antes de reaccionar, 
+      en la pausa entre lo que sentís y lo que decís, en el instante 
+      en que elegís mirar lo que tenés adelante en lugar de lo que 
+      dejaste atrás o lo que todavía no llegó.
+    </p>
+    <p>
+      Ese gesto, repetido, lo cambia todo. No porque produzca un resultado espectacular 
+      — sino porque devuelve algo que se había perdido sin que lo notaras: 
+      la sensación de estar donde estás.
+    </p>
+  </div>
+
+  <!-- Práctica inicial -->
+  <div class="practica seccion" id="p1">
+    <p>
+      Antes de seguir, un momento.
+    </p>
+    <p>
+      Notá dónde está tu atención ahora mismo. No la muevas todavía — solo notala. 
+      ¿Está en estas palabras? ¿En algo que quedó pendiente? ¿En el ruido de fondo 
+      de tu mente o del lugar donde estás?
+    </p>
+    <p>
+      No hay respuesta correcta. Solo hay honestidad sobre dónde estás 
+      en este momento. Eso ya es el comienzo.
+    </p>
+  </div>
+
+  <!-- Pregunta de cierre del umbral -->
+  <div class="pregunta seccion" id="q1">
+    <p class="pregunta-texto">
+      ¿Cuándo fue la última vez que estuviste completamente<br>
+      donde estabas?
+    </p>
+  </div>
+
+  <!-- Navegación al siguiente umbral -->
+  <nav class="navegacion seccion" id="nav">
+    <span class="nav-label">Siguiente umbral</span>
+    <span class="nav-titulo">I — La Maestra</span>
+    <span class="nav-subtitulo">La atención como el único instrumento que opera en tiempo real</span>
+    <br>
+    <a class="nav-flecha" href="#">
+      continuar &rarr;
+    </a>
+  </nav>
+
+</main>
+
+
+<script>
+  // Intersection Observer para animar secciones al hacer scroll
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  // Observar todos los elementos animables
+  document.querySelectorAll('.seccion, .aforismo, .apertura').forEach(el => {
+    observador.observe(el);
+  });
+
+  // Activar apertura con pequeño delay para que la portada tenga tiempo
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) {
+      apertura.style.animationPlayState = 'running';
+    }
+  }, 200);
+</script>
+
+</body>
+</html>

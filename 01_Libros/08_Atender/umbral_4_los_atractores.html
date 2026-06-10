@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral IV — Los Atractores · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+    --azul-tenue:  #1e2a3a;
+    --azul-medio:  #2a3f5a;
+    --ambar-tenue: #3a2a1a;
+    --ambar-medio: #5a3f20;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 40% 50% at 20% 50%, rgba(30,42,58,0.4) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 50% at 80% 50%, rgba(90,63,32,0.3) 0%, transparent 65%),
+      radial-gradient(ellipse 30% 20% at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+  }
+
+  .divisor-portada {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 10rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    text-align: center;
+    opacity: 0;
+    animation: aparecer 1.6s ease forwards 1.0s;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.4s;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 1.8vw, 1rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.15em;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.7s;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3s;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .contenido {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible { animation-play-state: running; }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible { opacity: 1; transform: translateY(0); }
+
+  p { margin-bottom: 1.6rem; color: var(--blanco-humo); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Aforismo */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1px;
+    width: 1px; height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before { height: 100%; }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.75;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .aforismo-fuente {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  /* ── CAMPO GRAVITACIONAL ─────────────────────────────── */
+  .campo-gravitacional {
+    margin: 4.5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .campo-gravitacional.visible { opacity: 1; transform: translateY(0); }
+
+  .campo-svg-wrap {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* ── LOS DOS ATRACTORES ──────────────────────────────── */
+  .atractores-par {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .atractores-par.visible { opacity: 1; transform: translateY(0); }
+
+  .atractor {
+    padding: 2rem 1.6rem;
+    border: 1px solid var(--separador);
+    position: relative;
+    transition: border-color 0.3s ease;
+  }
+
+  .atractor-pasado {
+    border-top: 2px solid #3a4a6a;
+    background: rgba(30,42,58,0.2);
+  }
+
+  .atractor-futuro {
+    border-top: 2px solid #6a4a2a;
+    background: rgba(90,63,32,0.2);
+  }
+
+  .atractor-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .atractor-pasado .atractor-label { color: #5a7aaa; }
+  .atractor-futuro .atractor-label { color: #aa7a4a; }
+
+  .atractor-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .atractor-descripcion {
+    font-size: 0.88rem;
+    color: var(--gris-calido);
+    line-height: 1.75;
+  }
+
+  .atractor-trampa {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--separador);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    opacity: 0.8;
+  }
+
+  /* ── LA INDUSTRIA DE LA CERTEZA ──────────────────────── */
+  .industria {
+    margin: 4rem 0;
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--separador);
+    border-left: 3px solid var(--ambar-medio);
+    background: rgba(90,63,32,0.08);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    position: relative;
+  }
+
+  .industria.visible { opacity: 1; transform: translateY(0); }
+
+  .industria::before {
+    content: 'LA INDUSTRIA DE LA CERTEZA';
+    position: absolute;
+    top: -0.6rem; left: 1.5rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--oro-tenue);
+  }
+
+  .industria p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  /* Ejemplos de la industria */
+  .ejemplos-industria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.4rem;
+  }
+
+  .ejemplo-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--separador);
+    background: rgba(201,168,76,0.03);
+  }
+
+  /* ── EL GPS DE LA INTUICIÓN ──────────────────────────── */
+  .gps {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .gps.visible { opacity: 1; transform: translateY(0); }
+
+  .gps-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    font-weight: 400;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── LA PARADOJA DE LA SEGURIDAD ─────────────────────── */
+  .paradoja {
+    margin: 4rem 0;
+    padding: 3rem 2.5rem;
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    border-top: 2px solid var(--oro-tenue);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .paradoja.visible { opacity: 1; transform: translateY(0); }
+
+  .paradoja-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.55rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro);
+    line-height: 1.7;
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .paradoja-desarrollo {
+    font-size: 0.92rem;
+    color: var(--gris-calido);
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  /* Melancolía — nota breve -->*/
+  .nota-melancolia {
+    border: 1px solid var(--separador);
+    border-left: 3px solid #3a4a6a;
+    padding: 1.8rem 2rem;
+    margin: 3.5rem 0;
+    background: rgba(30,42,58,0.1);
+    position: relative;
+  }
+
+  .nota-melancolia::before {
+    content: 'UNA NOTA SOBRE EL PASADO';
+    position: absolute;
+    top: -0.6rem; left: 1.5rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: #5a7aaa;
+  }
+
+  .nota-melancolia p {
+    font-size: 0.9rem;
+    color: var(--gris-calido);
+    line-height: 1.75;
+    font-style: italic;
+  }
+
+  .nota-melancolia p strong {
+    color: var(--blanco-humo);
+    font-style: normal;
+  }
+
+  /* Práctica */
+  .practica {
+    background: rgba(201,168,76,0.04);
+    border: 1px solid var(--separador);
+    padding: 2.5rem;
+    margin: 4rem 0;
+    position: relative;
+  }
+
+  .practica::before {
+    content: 'PRÁCTICA';
+    position: absolute;
+    top: -0.6rem; left: 2rem;
+    background: var(--negro);
+    padding: 0 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    color: var(--oro-tenue);
+  }
+
+  .practica p {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+
+  .practica p:last-child { margin-bottom: 0; }
+
+  /* Separador */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea { flex: 1; height: 1px; background: var(--separador); }
+  .separador-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  /* Pregunta */
+  .pregunta {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin: 4rem 0;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .pregunta-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.7;
+  }
+
+  /* Navegación */
+  .navegacion {
+    text-align: center;
+    padding-top: 5rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 6rem;
+  }
+
+  .nav-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .nav-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .nav-flecha {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .nav-flecha:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+  @keyframes pulso-presente {
+    0%, 100% { r: 8; opacity: 0.9; }
+    50%       { r: 11; opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .atractores-par { grid-template-columns: 1fr; }
+    .aforismo { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .practica { padding: 2rem 1.5rem; }
+    .industria { padding: 2rem 1.5rem; }
+    .paradoja { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+  <div class="divisor-portada"></div>
+  <div class="umbral-numero">IV</div>
+  <h2 class="umbral-titulo">Los Atractores</h2>
+  <p class="umbral-subtitulo">cuando el tiempo reemplaza al presente</p>
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO -->
+<main class="contenido">
+
+  <!-- Apertura — el aforismo que escribimos juntos -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      Hay dos maneras de no estar aquí.<br><br>
+      Una mira hacia atrás<br>
+      y la llaman nostalgia.<br><br>
+      La otra mira hacia adelante<br>
+      y la llaman previsión.<br><br>
+      Las dos producen el mismo resultado:<br>
+      ausentarse del único lugar<br>
+      donde algo puede cambiar.<br><br>
+      Las dos venden lo mismo:<br>
+      continuidad como refugio<br>
+      contra la incertidumbre.
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      Los secuestradores del umbral anterior vienen de afuera: 
+      el diseño tecnológico, la cultura de la urgencia, 
+      el ruido del mundo. Estos son distintos. 
+      Los atractores vienen de adentro, 
+      y son más difíciles de nombrar 
+      porque tienen muy buena prensa.
+    </p>
+    <p>
+      La nostalgia se llama memoria afectiva. 
+      La previsión se llama responsabilidad. 
+      Ambas parecen virtudes. Y en pequeñas dosis, lo son. 
+      El problema no es recordar ni anticipar — 
+      es cuando la atención queda <em>atrapada</em> ahí, 
+      incapaz de volver al único tiempo donde la vida ocurre.
+    </p>
+  </div>
+
+  <!-- Campo gravitacional SVG -->
+  <div class="campo-gravitacional seccion" id="campo">
+    <svg class="campo-svg-wrap" viewBox="0 0 560 220"
+         fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- Fondo tenue izquierda (pasado) -->
+      <ellipse cx="100" cy="110" rx="90" ry="70"
+               fill="rgba(30,42,58,0.25)" />
+
+      <!-- Fondo tenue derecha (futuro) -->
+      <ellipse cx="460" cy="110" rx="90" ry="70"
+               fill="rgba(90,63,32,0.25)" />
+
+      <!-- Línea central del tiempo -->
+      <line x1="30" y1="110" x2="530" y2="110"
+            stroke="#2a2418" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- Atractor pasado -->
+      <circle cx="100" cy="110" r="32"
+              fill="#0d0c0b" stroke="#3a4a6a" stroke-width="1"/>
+      <text x="100" y="104" font-family="Georgia,serif" font-size="9"
+            fill="#5a7aaa" text-anchor="middle" letter-spacing="1.5">PASADO</text>
+      <text x="100" y="118" font-family="Georgia,serif" font-size="8"
+            fill="#4a5a7a" text-anchor="middle" font-style="italic">nostalgia</text>
+
+      <!-- Flechas de atracción hacia el pasado -->
+      <path d="M 230 110 Q 170 90 140 110"
+            stroke="#3a4a6a" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+      <polygon points="137,105 132,110 137,115" fill="#3a4a6a"/>
+
+      <path d="M 230 110 Q 160 130 138 112"
+            stroke="#3a4a6a" stroke-width="0.7" fill="none" stroke-dasharray="3,3"
+            opacity="0.5"/>
+
+      <!-- Atractor futuro -->
+      <circle cx="460" cy="110" r="32"
+              fill="#0d0c0b" stroke="#6a4a2a" stroke-width="1"/>
+      <text x="460" y="104" font-family="Georgia,serif" font-size="9"
+            fill="#aa7a4a" text-anchor="middle" letter-spacing="1.5">FUTURO</text>
+      <text x="460" y="118" font-family="Georgia,serif" font-size="8"
+            fill="#7a5a3a" text-anchor="middle" font-style="italic">previsión</text>
+
+      <!-- Flechas de atracción hacia el futuro -->
+      <path d="M 330 110 Q 390 90 420 110"
+            stroke="#6a4a2a" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+      <polygon points="423,105 428,110 423,115" fill="#6a4a2a"/>
+
+      <path d="M 330 110 Q 400 130 422 112"
+            stroke="#6a4a2a" stroke-width="0.7" fill="none" stroke-dasharray="3,3"
+            opacity="0.5"/>
+
+      <!-- Presente — el punto que pulsa -->
+      <circle cx="280" cy="110" r="8"
+              fill="#c9a84c" opacity="0.9">
+        <animate attributeName="r" values="7;11;7" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="280" cy="110" r="18"
+              fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.3">
+        <animate attributeName="r" values="16;24;16" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0.05;0.3" dur="3s" repeatCount="indefinite"/>
+      </circle>
+
+      <text x="280" y="138" font-family="Georgia,serif" font-size="9"
+            fill="#c9a84c" text-anchor="middle" letter-spacing="1.5">AHORA</text>
+      <text x="280" y="152" font-family="Georgia,serif" font-size="7.5"
+            fill="#8a6f35" text-anchor="middle" font-style="italic">el único lugar real</text>
+
+      <!-- Nota inferior -->
+      <text x="280" y="200" font-family="Georgia,serif" font-size="7.5"
+            fill="#3a3028" text-anchor="middle" font-style="italic">
+        Ambos atractores ejercen una gravedad real. El presente requiere un ancla para sostenerse.
+      </text>
+    </svg>
+  </div>
+
+  <!-- Los dos atractores en detalle -->
+  <div class="atractores-par seccion" id="atractores">
+
+    <div class="atractor atractor-pasado">
+      <span class="atractor-label">atractor I · hacia atrás</span>
+      <span class="atractor-nombre">La nostalgia<br>y sus disfraces</span>
+      <p class="atractor-descripcion">
+        El pasado como refugio. Lo conocido como tierra firme. 
+        Cuando el presente duele y el futuro aterra, 
+        incluso la historia dolorosa se vuelve cómoda — 
+        porque al menos ya se sabe cómo termina.
+      </p>
+      <p class="atractor-trampa">
+        La trampa: hay personas que no quieren sanar del todo 
+        porque sanar significa soltar la única historia 
+        que saben contar de sí mismas.
+      </p>
+    </div>
+
+    <div class="atractor atractor-futuro">
+      <span class="atractor-label">atractor II · hacia adelante</span>
+      <span class="atractor-nombre">La previsión<br>y sus variantes</span>
+      <p class="atractor-descripcion">
+        La inquietud, el temor, la expectativa ansiosa. 
+        La mente que proyecta escenarios, 
+        evalúa riesgos, controla variables 
+        que todavía no existen. 
+        La ilusión de que pensar en el futuro 
+        es lo mismo que prepararse para él.
+      </p>
+      <p class="atractor-trampa">
+        La trampa: el futuro nunca llega tal como se imaginó. 
+        La energía gastada en controlarlo 
+        es exactamente la energía que faltará 
+        para habitarlo cuando llegue.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- La industria de la certeza -->
+  <div class="industria seccion" id="industria">
+    <p>
+      El atractor hacia el futuro es el más explotado comercialmente 
+      de los dos. Hay una industria entera construida sobre 
+      una sola promesa: que la incertidumbre puede eliminarse 
+      si se paga el precio correcto.
+    </p>
+    <p>
+      No vende respuestas — vende la ilusión de control 
+      sobre lo que todavía no ocurrió. 
+      Y funciona porque la incertidumbre genuina 
+      es una de las experiencias más difíciles 
+      de tolerar para la mente humana.
+    </p>
+    <div class="ejemplos-industria">
+      <span class="ejemplo-tag">el adivino que da certeza narrativa</span>
+      <span class="ejemplo-tag">el seguro que compra tranquilidad</span>
+      <span class="ejemplo-tag">la elección "correcta" que no existe</span>
+      <span class="ejemplo-tag">el plan perfecto que lo cubre todo</span>
+      <span class="ejemplo-tag">la consulta que valida lo que ya se decidió</span>
+      <span class="ejemplo-tag">el horóscopo como mapa del día</span>
+    </div>
+  </div>
+
+  <!-- El GPS de la intuición -->
+  <div class="gps seccion" id="gps">
+    <span class="gps-titulo">El GPS que no se escucha</span>
+    <p>
+      Hay un instrumento de orientación que funciona 
+      en tiempo real, que opera desde el cuerpo, 
+      que no requiere pago ni intermediario: 
+      la intuición somática. 
+      La sensación de expansión o contracción 
+      que antecede a cualquier decisión importante. 
+      El saber que precede al razonamiento.
+    </p>
+    <p>
+      Ese GPS no está roto. Está sofocado. 
+      Bajo el ruido de la previsión compulsiva, 
+      bajo la urgencia de decidir rápido y bien, 
+      bajo el miedo a equivocarse — 
+      la señal existe pero no se puede escuchar. 
+      Recuperar la atención al presente 
+      es, entre otras cosas, recuperar el acceso 
+      a ese instrumento.
+    </p>
+  </div>
+
+  <!-- Aforismo -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      La intuición no habla en el ruido.<br>
+      Habla en la pausa.<br>
+      Y la pausa solo existe en el presente.
+    </span>
+  </blockquote>
+
+  <!-- La paradoja de la seguridad -->
+  <div class="paradoja seccion" id="paradoja">
+    <span class="paradoja-texto">
+      La verdadera seguridad no se encuentra<br>
+      en lo predecible.<br>
+      Se encuentra en lo relacional.<br>
+      Y lo relacional es exactamente<br>
+      lo que no puede controlarse.
+    </span>
+    <p class="paradoja-desarrollo">
+      Las personas buscan seguridad en la certeza — 
+      en el plan que no puede fallar, en el futuro que ya está resuelto. 
+      Pero la seguridad que sostiene de verdad no viene de ahí. 
+      Viene de la calidad del vínculo con lo que está presente: 
+      con uno mismo, con los demás, con el momento que ocurre. 
+      Eso no se puede garantizar de antemano. 
+      Solo se puede habitar. Y para habitarlo 
+      hay que estar donde se está.
+    </p>
+  </div>
+
+  <!-- Nota sobre la melancolía -->
+  <div class="nota-melancolia seccion" id="nota-mel">
+    <p>
+      El atractor hacia el pasado tiene una lógica que merece compasión, 
+      no solo diagnóstico. <strong>Cuando el presente duele y el futuro aterra, 
+      el pasado — incluso el doloroso — ofrece algo que los otros dos tiempos no pueden:</strong> 
+      la familiaridad. Ya se sabe cómo se sobrevivió aquello. 
+      El archivo está completo. Hay una extraña comodidad en lo conocido, 
+      aunque lo conocido sea sufrimiento.
+    </p>
+    <p>
+      Reconocer ese movimiento sin juzgarlo 
+      es el primer paso para poder salir de él. 
+      No se abandona un refugio empujando — 
+      se abandona cuando se encuentra algo 
+      más habitable que lo que protege.
+    </p>
+  </div>
+
+  <!-- Práctica -->
+  <div class="practica seccion" id="p1">
+    <p>
+      La próxima vez que notes que tu atención está atrapada 
+      en el pasado o anticipando el futuro, 
+      no intentes traerla de vuelta por fuerza.
+    </p>
+    <p>
+      Primero: nombrá el atractor. 
+      "Estoy en el pasado" o "estoy en el futuro". 
+      Sin juicio — solo orientación.
+    </p>
+    <p>
+      Segundo: buscá la señal somática. 
+      ¿Cómo se siente ese atractor en el cuerpo? 
+      ¿Es un peso, una contracción, una agitación? 
+      Esa sensación es la puerta de salida — 
+      porque el cuerpo solo puede sentirse ahora.
+    </p>
+    <p>
+      Tercero: una respiración al vientre. 
+      No para resolver lo que preocupa. 
+      Solo para estar donde estás 
+      mientras lo que preocupa sigue siendo real.
+    </p>
+  </div>
+
+  <!-- Aforismo de cierre -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      No se trata de dejar de recordar<br>
+      ni de dejar de anticipar.<br>
+      Se trata de no confundir<br>
+      el mapa con el territorio.<br>
+      El pasado y el futuro son mapas.<br>
+      El presente es el único territorio<br>
+      donde algo puede ocurrir.
+    </span>
+  </blockquote>
+
+  <!-- Pregunta de cierre -->
+  <div class="pregunta seccion" id="q1">
+    <p class="pregunta-texto">
+      ¿Hacia qué tiempo se va tu atención<br>
+      cuando el presente se vuelve difícil?<br><br>
+      ¿Y qué encontrarías ahí<br>
+      si te quedaras?
+    </p>
+  </div>
+
+  <!-- Navegación -->
+  <nav class="navegacion seccion" id="nav">
+    <span class="nav-label">Siguiente umbral</span>
+    <span class="nav-titulo">V — El Gesto</span>
+    <span class="nav-subtitulo">El Observador como práctica, no como lugar</span>
+    <br>
+    <a class="nav-flecha" href="#">continuar &rarr;</a>
+  </nav>
+
+</main>
+
+<script>
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.seccion, .aforismo, .campo-gravitacional, .atractores-par, ' +
+    '.industria, .gps, .paradoja, .apertura'
+  ).forEach(el => observador.observe(el));
+
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) apertura.style.animationPlayState = 'running';
+  }, 200);
+</script>
+
+</body>
+</html>

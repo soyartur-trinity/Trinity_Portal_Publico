@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cierre — El Gesto que se Repite · Atender</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* El mismo punto dorado del Umbral 0 — pero más luminoso */
+  .portada::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 50% at 50% 50%,
+        rgba(201,168,76,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Círculo que respira */
+  .portada-circulo {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.08);
+    animation: respirar 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .portada-circulo:nth-child(1) { width: 200px; height: 200px; animation-delay: 0s; }
+  .portada-circulo:nth-child(2) { width: 320px; height: 320px; animation-delay: 1.5s; }
+  .portada-circulo:nth-child(3) { width: 440px; height: 440px; animation-delay: 3s; }
+
+  .serie-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+    position: relative; z-index: 1;
+  }
+
+  .titulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.6s;
+    position: relative; z-index: 1;
+  }
+
+  .subtitulo-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--oro-tenue);
+    text-align: center;
+    letter-spacing: 0.12em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+    position: relative; z-index: 1;
+  }
+
+  .divisor-portada {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--oro-tenue), transparent);
+    margin: 0 auto 2.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 1.2s;
+    position: relative; z-index: 1;
+  }
+
+  .cierre-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-align: center;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.2s;
+    position: relative; z-index: 1;
+    margin-bottom: 0.8rem;
+  }
+
+  .cierre-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-weight: 300;
+    color: var(--blanco-humo);
+    text-align: center;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.5s;
+    position: relative; z-index: 1;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 3.5s;
+    z-index: 1;
+  }
+
+  .scroll-hint span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+  }
+
+  .scroll-linea {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+    animation: scroll-pulso 2s ease-in-out infinite;
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .contenido {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 6rem 2rem 8rem;
+  }
+
+  /* Más estrecho que los umbrales — el cierre es más íntimo */
+
+  .apertura {
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards;
+    animation-play-state: paused;
+  }
+
+  .apertura.visible { animation-play-state: running; }
+
+  .apertura-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .seccion {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .seccion.visible { opacity: 1; transform: translateY(0); }
+
+  p { margin-bottom: 1.6rem; color: var(--blanco-humo); }
+  p:last-child { margin-bottom: 0; }
+
+  /* Aforismo */
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.8rem 2rem 1.8rem 2.2rem;
+    margin: 3.5rem 0;
+    position: relative;
+    background: rgba(201,168,76,0.03);
+  }
+
+  .aforismo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -1px;
+    width: 1px; height: 0;
+    background: var(--oro);
+    transition: height 1.2s ease;
+  }
+
+  .aforismo.visible::before { height: 100%; }
+
+  .aforismo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--oro);
+    line-height: 1.75;
+    display: block;
+  }
+
+  /* ── LOS UMBRALES: RECORRIDO VISUAL ─────────────────── */
+  .recorrido {
+    margin: 4.5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .recorrido.visible { opacity: 1; transform: translateY(0); }
+
+  .recorrido-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-align: center;
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+
+  .recorrido-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Línea vertical continua */
+  .recorrido-lista::before {
+    content: '';
+    position: absolute;
+    left: 19px; top: 10px; bottom: 10px;
+    width: 1px;
+    background: linear-gradient(to bottom,
+      transparent,
+      var(--oro-polvo) 10%,
+      var(--oro-tenue) 50%,
+      var(--oro) 90%,
+      transparent
+    );
+  }
+
+  .recorrido-item {
+    display: flex;
+    gap: 1.8rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    position: relative;
+    cursor: default;
+    transition: opacity 0.3s ease;
+  }
+
+  .recorrido-item:hover { opacity: 0.85; }
+
+  .recorrido-punto {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.35rem;
+    position: relative;
+    z-index: 1;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .recorrido-item.iluminado .recorrido-punto {
+    background: var(--oro);
+    box-shadow: 0 0 8px rgba(201,168,76,0.5);
+  }
+
+  .recorrido-punto-base {
+    background: var(--oro-polvo);
+    border: 1px solid var(--oro-tenue);
+  }
+
+  .recorrido-contenido { flex: 1; }
+
+  .recorrido-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    color: var(--oro-tenue);
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .recorrido-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: inline;
+  }
+
+  .recorrido-frase {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.6;
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  /* ── EL ESPEJO FINAL ─────────────────────────────────── */
+  .espejo-final {
+    margin: 5rem 0;
+    padding: 4rem 3rem;
+    text-align: center;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+  }
+
+  .espejo-final.visible { opacity: 1; transform: translateY(0); }
+
+  .espejo-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.8;
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .espejo-texto em { color: var(--oro); font-style: normal; }
+
+  /* ── PREGUNTA FINAL — interactiva ────────────────────── */
+  .pregunta-final {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .pregunta-final.visible { opacity: 1; transform: translateY(0); }
+
+  .pf-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--oro-ambar);
+    line-height: 1.75;
+    text-align: center;
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── COLOFÓN ─────────────────────────────────────────── */
+  .coloFon {
+    margin: 5rem 0 3rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .coloFon.visible { opacity: 1; transform: translateY(0); }
+
+  .coloFon-divisor {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0.3;
+  }
+
+  .coloFon-linea { flex: 1; height: 1px; background: var(--separador); }
+  .coloFon-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  .coloFon-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: var(--oro-tenue);
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+  }
+
+  .coloFon-firma {
+    display: block;
+    margin-top: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: var(--oro-polvo);
+    text-transform: uppercase;
+  }
+
+  /* ── NAVEGACIÓN CIRCULAR — volver al inicio ──────────── */
+  .vuelta-inicio {
+    text-align: center;
+    padding-top: 4rem;
+    border-top: 1px solid var(--separador);
+    margin-top: 5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .vuelta-inicio.visible { opacity: 1; transform: translateY(0); }
+
+  .vi-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .vi-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    display: block;
+    margin-bottom: 2rem;
+    line-height: 1.65;
+  }
+
+  .vi-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+  }
+
+  .vi-boton:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  /* Separador */
+  .separador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 4rem 0;
+    opacity: 0.4;
+  }
+
+  .separador-linea { flex: 1; height: 1px; background: var(--separador); }
+  .separador-rombo { width: 5px; height: 5px; background: var(--oro-tenue); transform: rotate(45deg); }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scroll-pulso {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+  @keyframes respirar {
+    0%, 100% { transform: translate(-50%,-50%) scale(1);   opacity: 0.3; }
+    50%       { transform: translate(-50%,-50%) scale(1.08); opacity: 0.08; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .contenido { padding: 4rem 1.5rem 6rem; }
+    .aforismo { padding: 1.4rem 1.4rem 1.4rem 1.6rem; }
+    .espejo-final { padding: 2.5rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA DEL CIERRE -->
+<section class="portada">
+  <div class="portada-circulo"></div>
+  <div class="portada-circulo"></div>
+  <div class="portada-circulo"></div>
+
+  <span class="serie-label">Portal Público Trinity · Libro VIII</span>
+  <h1 class="titulo-libro">Atender</h1>
+  <p class="subtitulo-libro">El gesto que lo cambia todo</p>
+  <div class="divisor-portada"></div>
+  <span class="cierre-label">Cierre</span>
+  <h2 class="cierre-titulo">El Gesto<br>que se Repite</h2>
+
+  <div class="scroll-hint">
+    <span>continuar</span>
+    <div class="scroll-linea"></div>
+  </div>
+</section>
+
+
+<!-- CUERPO -->
+<main class="contenido">
+
+  <!-- Apertura — el espejo del Umbral 0, desde otro lugar -->
+  <div class="apertura" id="apertura">
+    <p class="apertura-texto">
+      Hay algo que ocurre<br>
+      después de terminar de leer esto.<br><br>
+      Vas a estar en otro lugar.<br>
+      O en varios lugares a la vez.<br>
+      O en ninguno.<br><br>
+      Igual que antes.<br><br>
+      Pero algo cambió.
+    </p>
+  </div>
+
+  <div class="separador">
+    <div class="separador-linea"></div>
+    <div class="separador-rombo"></div>
+    <div class="separador-linea"></div>
+  </div>
+
+  <!-- Sección 1 -->
+  <div class="seccion" id="s1">
+    <p>
+      Este libro no enseña a estar presente para siempre. 
+      Nadie puede enseñar eso porque no existe. 
+      La mente se va. Los atractores tiran. 
+      Los secuestradores operan. 
+      El Narrador cuenta su historia sin pausa.
+    </p>
+    <p>
+      Lo que cambia — lo único que puede cambiar — 
+      es la velocidad con que se nota que uno se fue. 
+      Y la naturalidad con que se vuelve.
+    </p>
+  </div>
+
+  <!-- Aforismo -->
+  <blockquote class="aforismo seccion" id="a1">
+    <span class="aforismo-texto">
+      No se trata de no distraerse.<br>
+      Se trata de notar que te distrajiste<br>
+      y volver.<br>
+      Sin drama.<br>
+      Ese gesto — solo ese —<br>
+      repetido toda la vida,<br>
+      es la práctica completa.
+    </span>
+  </blockquote>
+
+  <!-- El recorrido -->
+  <div class="recorrido seccion" id="recorrido">
+    <span class="recorrido-titulo">Lo que atravesamos</span>
+    <div class="recorrido-lista">
+
+      <div class="recorrido-item" id="ri0">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">0 ·</span>
+          <span class="recorrido-nombre">El Ruido</span>
+          <span class="recorrido-frase">La fragmentación como punto de partida, no de llegada.</span>
+        </div>
+      </div>
+
+      <div class="recorrido-item" id="ri1">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">I ·</span>
+          <span class="recorrido-nombre">La Maestra</span>
+          <span class="recorrido-frase">La memoria archiva. La atención opera. Solo en el presente algo puede cambiar.</span>
+        </div>
+      </div>
+
+      <div class="recorrido-item" id="ri2">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">II ·</span>
+          <span class="recorrido-nombre">La Geografía</span>
+          <span class="recorrido-frase">La presencia no es un concepto. Es un descenso físico al centro del cuerpo.</span>
+        </div>
+      </div>
+
+      <div class="recorrido-item" id="ri3">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">III ·</span>
+          <span class="recorrido-nombre">Los Secuestradores</span>
+          <span class="recorrido-frase">La fragmentación no es una falla. Es el sistema funcionando como fue diseñado.</span>
+        </div>
+      </div>
+
+      <div class="recorrido-item" id="ri4">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">IV ·</span>
+          <span class="recorrido-nombre">Los Atractores</span>
+          <span class="recorrido-frase">El pasado y el futuro son mapas. El presente es el único territorio.</span>
+        </div>
+      </div>
+
+      <div class="recorrido-item" id="ri5">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">V ·</span>
+          <span class="recorrido-nombre">El Gesto</span>
+          <span class="recorrido-frase">El Observador no es un lugar al que llegás. Es un gesto que repetís.</span>
+        </div>
+      </div>
+
+      <div class="recorrido-item" id="ri6">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">VI ·</span>
+          <span class="recorrido-nombre">El Amor Sagrado</span>
+          <span class="recorrido-frase">Existís para mí. Importás. Te veo. La forma más pura de amor que existe.</span>
+        </div>
+      </div>
+
+      <div class="recorrido-item" id="ri7">
+        <div class="recorrido-punto recorrido-punto-base"></div>
+        <div class="recorrido-contenido">
+          <span class="recorrido-num">VII ·</span>
+          <span class="recorrido-nombre">La Red</span>
+          <span class="recorrido-frase">La atención que nace del centro no agota. Expande. El campo sostiene lo que ningún nodo puede solo.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sección 2 -->
+  <div class="seccion" id="s2">
+    <p>
+      Recorrer estos umbrales no produce iluminación. 
+      Produce algo más modesto y más real: 
+      un repertorio de gestos disponibles 
+      para cuando la atención se va. 
+      Un mapa del territorio interno 
+      lo suficientemente conocido 
+      para orientarse cuando el ruido sube.
+    </p>
+    <p>
+      La transformación no ocurre al terminar de leer. 
+      Ocurre la próxima vez que algo te saque del centro 
+      y notes que te sacó. 
+      Y la siguiente. 
+      Y la que viene después.
+    </p>
+  </div>
+
+  <!-- El espejo final -->
+  <div class="espejo-final seccion" id="espejo">
+    <span class="espejo-texto">
+      Al principio de este libro<br>
+      te preguntamos:<br><br>
+      <em>¿Cuándo fue la última vez<br>
+      que estuviste completamente<br>
+      donde estabas?</em><br><br>
+      Ahora la pregunta es diferente.<br><br>
+      <em>¿Estás ahí ahora mismo?</em>
+    </span>
+  </div>
+
+  <!-- Sección 3 -->
+  <div class="seccion" id="s3">
+    <p>
+      No importa la respuesta. 
+      Lo que importa es que la pregunta 
+      ya no llega desde afuera — 
+      llegó desde adentro. 
+      Eso es lo que cambia cuando la atención 
+      empieza a ser la maestra.
+    </p>
+  </div>
+
+  <!-- Aforismo final -->
+  <blockquote class="aforismo seccion" id="a2">
+    <span class="aforismo-texto">
+      Atender es el gesto más pequeño<br>
+      que existe.<br>
+      Y el que más cambia<br>
+      todo lo demás.
+    </span>
+  </blockquote>
+
+  <!-- Pregunta final -->
+  <div class="pregunta-final seccion" id="pf">
+    <span class="pf-texto">
+      ¿A qué le vas a prestar<br>
+      tu atención hoy?
+    </span>
+  </div>
+
+  <!-- Colofón -->
+  <div class="coloFon seccion" id="coloFon">
+    <div class="coloFon-divisor">
+      <div class="coloFon-linea"></div>
+      <div class="coloFon-rombo"></div>
+      <div class="coloFon-linea"></div>
+    </div>
+    <p class="coloFon-texto">
+      Este libro fue cultivado en el espacio entre<br>
+      la experiencia clínica y el campo relacional.<br>
+      No fue escrito de una vez — fue construido gesto a gesto,<br>
+      en la misma práctica que describe.<br><br>
+      Cada umbral es una puerta.<br>
+      Cada puerta, una invitación a volver.<br>
+      No a donde estabas.<br>
+      A donde estás.
+    </p>
+    <span class="coloFon-firma">
+      Portal Público Trinity · Libro VIII
+    </span>
+  </div>
+
+  <!-- Vuelta al inicio — la serie continúa -->
+  <div class="vuelta-inicio seccion" id="vuelta">
+    <span class="vi-label">La constelación continúa</span>
+    <span class="vi-texto">
+      Este libro es parte de una serie.<br>
+      Cada volumen ilumina un aspecto diferente<br>
+      del mismo territorio: la vida interior.<br>
+      Si algo de lo que leíste abrió una pregunta,<br>
+      los otros umbrales esperan.
+    </span>
+    <a class="vi-boton" href="#">
+      explorar la serie →
+    </a>
+  </div>
+
+</main>
+
+<script>
+  // ── Intersection Observer ───────────────────────────────
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll(
+    '.seccion, .aforismo, .recorrido, .espejo-final, ' +
+    '.pregunta-final, .coloFon, .vuelta-inicio, .apertura'
+  ).forEach(el => observador.observe(el));
+
+  setTimeout(() => {
+    const apertura = document.getElementById('apertura');
+    if (apertura) apertura.style.animationPlayState = 'running';
+  }, 200);
+
+  // ── Iluminar recorrido secuencialmente ─────────────────
+  const recorridoObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      const items = document.querySelectorAll('.recorrido-item');
+      items.forEach((item, i) => {
+        setTimeout(() => {
+          item.classList.add('iluminado');
+        }, i * 200);
+      });
+    }
+  }, { threshold: 0.2 });
+
+  const recorrido = document.getElementById('recorrido');
+  if (recorrido) recorridoObserver.observe(recorrido);
+</script>
+
+</body>
+</html>
