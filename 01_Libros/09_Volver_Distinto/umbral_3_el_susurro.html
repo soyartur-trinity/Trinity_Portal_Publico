@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral III · El susurro | Volver distinto</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(13,12,11,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--separador);
+    z-index: 100;
+  }
+
+  .nav a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav a:hover { color: var(--oro-tenue); }
+
+  .nav-centro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+  }
+
+  /* ── ENCABEZADO ──────────────────────────────────────── */
+  .encabezado {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Onda de sonido muy tenue — el susurro como forma */
+  .onda-contenedor {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .onda-contenedor svg {
+    width: min(700px, 95vw);
+    height: min(300px, 40vh);
+    opacity: 0.06;
+  }
+
+  .onda-path {
+    fill: none;
+    stroke: var(--oro);
+    stroke-width: 1;
+    animation: onda-pulso 4s ease-in-out infinite;
+  }
+
+  .onda-path:nth-child(2) { animation-delay: 0.8s; opacity: 0.6; }
+  .onda-path:nth-child(3) { animation-delay: 1.6s; opacity: 0.3; }
+
+  @keyframes onda-pulso {
+    0%, 100% { transform: scaleY(1); }
+    50%       { transform: scaleY(1.15); }
+  }
+
+  .umbral-etiqueta {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: subir 1s ease forwards 0.3s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(5rem, 18vw, 11rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 0.85;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards 0.5s;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards 0.8s;
+    position: relative; z-index: 1;
+    letter-spacing: 0.04em;
+  }
+
+  .umbral-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards 1.1s;
+    position: relative; z-index: 1;
+  }
+
+  .scroll-indicador {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    opacity: 0;
+    animation: subir 1s ease forwards 1.8s;
+    position: relative; z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .scroll-linea {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .cuerpo {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem 8rem;
+  }
+
+  .bloque {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .bloque.visible { opacity: 1; transform: translateY(0); }
+
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.5rem 0 1.5rem 2rem;
+    margin: 3.5rem 0;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .aforismo.visible { opacity: 1; transform: translateY(0); }
+
+  .aforismo p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+  }
+
+  .cuerpo p {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--gris-calido);
+    line-height: 1.95;
+    margin-bottom: 1.8rem;
+  }
+
+  .cuerpo p strong { color: var(--blanco-humo); font-weight: 500; }
+
+  .separador-ornamental {
+    text-align: center;
+    margin: 3.5rem 0;
+    color: var(--oro-polvo);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .separador-ornamental.visible { opacity: 1; transform: translateY(0); }
+
+  /* Señales del susurro */
+  .senales {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .senales.visible { opacity: 1; transform: translateY(0); }
+
+  .senales-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .senal-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--separador);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .senal-item:first-of-type { border-top: 1px solid var(--separador); }
+
+  .senal-item:hover { background: rgba(201,168,76,0.02); padding-left: 0.5rem; }
+
+  .senal-icono {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--oro-polvo);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    transition: color 0.3s ease;
+  }
+
+  .senal-item:hover .senal-icono { color: var(--oro-tenue); }
+
+  .senal-contenido { flex: 1; }
+
+  .senal-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 0.3rem;
+    transition: color 0.3s ease;
+  }
+
+  .senal-item:hover .senal-nombre { color: var(--oro); }
+
+  .senal-descripcion {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.6;
+  }
+
+  /* ── CONTINUAR ───────────────────────────────────────── */
+  .continuar {
+    margin-top: 6rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--separador);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .continuar.visible { opacity: 1; transform: translateY(0); }
+
+  .continuar-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+  }
+
+  .continuar-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+  }
+
+  .continuar-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    color: var(--blanco-humo);
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+  }
+
+  .continuar-link:hover .continuar-nombre { color: var(--oro); }
+
+  .continuar-circulo {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--oro-polvo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .continuar-link:hover .continuar-circulo {
+    border-color: var(--oro-tenue);
+    background: rgba(201,168,76,0.05);
+  }
+
+  .continuar-flecha {
+    font-size: 1rem;
+    color: var(--oro-polvo);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .continuar-link:hover .continuar-flecha {
+    color: var(--oro-tenue);
+    transform: translateY(2px);
+  }
+
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .cuerpo { padding: 0 1.5rem 6rem; }
+    .nav { padding: 1rem 1.2rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="umbral_2_el_circulo_que_aprisiona.html">← Umbral II</a>
+  <span class="nav-centro">Umbral III</span>
+  <a href="umbral_4_la_dosis.html">Umbral IV →</a>
+</nav>
+
+<header class="encabezado">
+  <div class="onda-contenedor">
+    <svg viewBox="0 0 700 300" preserveAspectRatio="none">
+      <path class="onda-path" d="M0,150 C70,150 70,80 140,80 C210,80 210,220 280,220 C350,220 350,50 420,50 C490,50 490,200 560,200 C630,200 630,120 700,120"/>
+      <path class="onda-path" d="M0,150 C70,150 70,100 140,100 C210,100 210,190 280,190 C350,190 350,80 420,80 C490,80 490,180 560,180 C630,180 630,130 700,130"/>
+      <path class="onda-path" d="M0,150 C70,150 70,120 140,120 C210,120 210,170 280,170 C350,170 350,110 420,110 C490,110 490,165 560,165 C630,165 630,140 700,140"/>
+    </svg>
+  </div>
+
+  <span class="umbral-etiqueta">Volver distinto · Umbral</span>
+  <div class="umbral-numero">III</div>
+  <h1 class="umbral-titulo">El susurro</h1>
+  <p class="umbral-subtitulo">La señal antes de que se vuelva grito.</p>
+
+  <div class="scroll-indicador">
+    <div class="scroll-linea"></div>
+    <span>leer</span>
+  </div>
+</header>
+
+<main class="cuerpo">
+
+  <div class="bloque">
+    <p>
+      El cambio genuino casi nunca llega como revelación.
+      Llega antes — mucho antes — como una incomodidad
+      que no tiene nombre todavía.
+    </p>
+    <p>
+      El problema es que esa incomodidad se aprende a ignorar.
+      No por cobardía. Por entrenamiento.
+      Años de aprender a funcionar bien dentro del círculo
+      enseñan también a silenciar lo que el círculo no quiere escuchar.
+    </p>
+  </div>
+
+  <div class="aforismo">
+    <p>El cuerpo sabe antes que la mente.<br>
+    La mente sabe antes que las palabras.<br>
+    Las palabras llegan cuando ya no queda otra.</p>
+  </div>
+
+  <div class="bloque">
+    <p>
+      El susurro es la señal temprana.
+      La que aparece antes de que la situación se vuelva insostenible,
+      antes de que el "basta" llegue con toda su fuerza,
+      antes de que haya daño que reparar.
+    </p>
+    <p>
+      Escuchar el susurro no exige valentía heroica.
+      Exige algo más difícil: <strong>silencio suficiente
+      para oírlo.</strong>
+    </p>
+  </div>
+
+  <div class="separador-ornamental">⟐ &nbsp; ⟐ &nbsp; ⟐</div>
+
+  <!-- Señales del susurro -->
+  <div class="senales">
+    <span class="senales-titulo">Cómo suena el susurro</span>
+
+    <div class="senal-item">
+      <span class="senal-icono">◦</span>
+      <div class="senal-contenido">
+        <span class="senal-nombre">El hastío sin causa aparente</span>
+        <span class="senal-descripcion">Cansancio que no corresponde al esfuerzo real. El cuerpo ya pagó algo que la mente no terminó de procesar.</span>
+      </div>
+    </div>
+
+    <div class="senal-item">
+      <span class="senal-icono">◦</span>
+      <div class="senal-contenido">
+        <span class="senal-nombre">La ironía que crece</span>
+        <span class="senal-descripcion">Cuando el humor se vuelve distancia. La ironía crónica es entusiasmo que aprendió a protegerse.</span>
+      </div>
+    </div>
+
+    <div class="senal-item">
+      <span class="senal-icono">◦</span>
+      <div class="senal-contenido">
+        <span class="senal-nombre">La fantasía de fuga</span>
+        <span class="senal-descripcion">No el deseo concreto de irse, sino la imagen que aparece sola: "y si todo fuera distinto". No es escapismo — es información.</span>
+      </div>
+    </div>
+
+    <div class="senal-item">
+      <span class="senal-icono">◦</span>
+      <div class="senal-contenido">
+        <span class="senal-nombre">La conversación que se evita</span>
+        <span class="senal-descripcion">Hay algo que no se dice porque "no es el momento". Cuando ese momento nunca llega, el susurro lleva tiempo esperando.</span>
+      </div>
+    </div>
+
+    <div class="senal-item">
+      <span class="senal-icono">◦</span>
+      <div class="senal-contenido">
+        <span class="senal-nombre">El entusiasmo selectivo</span>
+        <span class="senal-descripcion">Energía para todo menos para lo central. El interés que migra es el interés que ya sabe algo.</span>
+      </div>
+    </div>
+
+    <div class="senal-item">
+      <span class="senal-icono">◦</span>
+      <div class="senal-contenido">
+        <span class="senal-nombre">La nostalgia por uno mismo</span>
+        <span class="senal-descripcion">Recordar con cierta envidia una versión anterior que no cargaba con esto. El pasado como espejo del presente.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <p>
+      Ninguna de estas señales es diagnóstico definitivo.
+      Una sola puede ser ruido. Varias juntas, sostenidas en el tiempo,
+      son el susurro haciéndose más audible.
+    </p>
+    <p>
+      La diferencia entre escuchar el susurro y esperar el grito
+      no es solo de intensidad. Es de costo.
+      <strong>El grito siempre llega con algo roto.</strong>
+      El susurro llega cuando todavía hay margen para elegir.
+    </p>
+  </div>
+
+  <div class="aforismo">
+    <p>No se trata de actuar ante el primer signo de incomodidad.<br>
+    Se trata de no fingir que no está<br>
+    cuando ya lleva tiempo ahí.</p>
+  </div>
+
+  <div class="bloque">
+    <p>
+      Este umbral no pide que tomes ninguna decisión.
+      Solo que pares un momento y te preguntes:
+      ¿hay algún susurro que lleva tiempo esperando ser escuchado?
+    </p>
+    <p>
+      No hace falta saber qué hacer con él todavía.
+      Reconocerlo ya es el gesto.
+    </p>
+  </div>
+
+  <div class="continuar" id="continuar">
+    <span class="continuar-label">Siguiente umbral</span>
+    <a href="umbral_4_la_dosis.html" class="continuar-link">
+      <span class="continuar-nombre">La dosis</span>
+      <div class="continuar-circulo">
+        <span class="continuar-flecha">↓</span>
+      </div>
+    </a>
+  </div>
+
+</main>
+
+<script>
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observador.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.bloque, .aforismo, .separador-ornamental, .senales, .continuar')
+    .forEach(el => observador.observe(el));
+</script>
+
+</body>
+</html>

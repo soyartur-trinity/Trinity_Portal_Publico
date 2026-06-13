@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cierre · Volver distinto | Portal Trinity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(13,12,11,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--separador);
+    z-index: 100;
+  }
+
+  .nav a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav a:hover { color: var(--oro-tenue); }
+
+  .nav-centro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+  }
+
+  /* ── ENCABEZADO CIERRE ───────────────────────────────── */
+  .encabezado {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Espiral completa + círculo final luminoso */
+  #canvas-cierre {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: aparecer-lento 3s ease forwards 1s;
+  }
+
+  @keyframes aparecer-lento {
+    to { opacity: 0.08; }
+  }
+
+  .cierre-etiqueta {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: subir 1s ease forwards 0.3s;
+    position: relative; z-index: 1;
+  }
+
+  .cierre-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 8vw, 5rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: subir 1.4s ease forwards 0.7s;
+    position: relative; z-index: 1;
+  }
+
+  .cierre-subtitulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.08em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: subir 1.2s ease forwards 1.1s;
+    position: relative; z-index: 1;
+  }
+
+  .scroll-indicador {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    opacity: 0;
+    animation: subir 1s ease forwards 1.8s;
+    position: relative; z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .scroll-linea {
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--oro-tenue), transparent);
+  }
+
+  /* ── CUERPO ──────────────────────────────────────────── */
+  .cuerpo {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem 8rem;
+  }
+
+  .bloque {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .bloque.visible { opacity: 1; transform: translateY(0); }
+
+  .aforismo {
+    border-left: 1px solid var(--oro-tenue);
+    padding: 1.5rem 0 1.5rem 2rem;
+    margin: 3.5rem 0;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .aforismo.visible { opacity: 1; transform: translateY(0); }
+
+  .aforismo p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+  }
+
+  .cuerpo p {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    color: var(--gris-calido);
+    line-height: 1.95;
+    margin-bottom: 1.8rem;
+  }
+
+  .cuerpo p strong { color: var(--blanco-humo); font-weight: 500; }
+
+  .separador-ornamental {
+    text-align: center;
+    margin: 3.5rem 0;
+    color: var(--oro-polvo);
+    font-size: 0.8rem;
+    letter-spacing: 0.5em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .separador-ornamental.visible { opacity: 1; transform: translateY(0); }
+
+  /* Aforismo final — el más grande del libro */
+  .aforismo-central {
+    margin: 5rem 0;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--separador);
+    border-bottom: 1px solid var(--separador);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1.1s ease, transform 1.1s ease;
+  }
+  .aforismo-central.visible { opacity: 1; transform: translateY(0); }
+
+  .aforismo-central p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--blanco-humo);
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  .aforismo-central em {
+    color: var(--oro);
+    font-style: normal;
+  }
+
+  /* La pregunta que llegó hasta aquí */
+  .pregunta-final {
+    margin: 5rem 0;
+    padding: 3rem 0;
+    border-top: 1px solid var(--separador);
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .pregunta-final.visible { opacity: 1; transform: translateY(0); }
+
+  .pregunta-final-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .pregunta-final-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--separador);
+  }
+
+  .pregunta-final-simbolo { color: var(--oro-tenue); font-size: 0.8rem; margin-right: 0.3rem; }
+
+  .pregunta-evolucion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .pregunta-version {
+    padding: 1.2rem 1.5rem;
+    border-left: 2px solid var(--separador);
+    transition: border-color 0.3s ease;
+  }
+
+  .pregunta-version:last-child {
+    border-left-color: var(--oro-tenue);
+  }
+
+  .version-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .version-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.65;
+  }
+
+  .pregunta-version:last-child .version-texto {
+    color: var(--blanco-humo);
+  }
+
+  .pregunta-cierre-nota {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.7;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--separador);
+  }
+
+  /* Volver al portal */
+  .volver-seccion {
+    margin-top: 6rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--separador);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .volver-seccion.visible { opacity: 1; transform: translateY(0); }
+
+  .volver-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .volver-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    margin-bottom: 3rem;
+  }
+
+  .volver-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 300;
+    color: var(--gris-calido);
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+  }
+
+  .volver-link:hover .volver-nombre { color: var(--oro-tenue); }
+
+  .firma-final {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--oro-polvo);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-top: 2rem;
+  }
+
+  @keyframes subir {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .cuerpo { padding: 0 1.5rem 6rem; }
+    .nav { padding: 1rem 1.2rem; }
+    .aforismo-central { padding: 2rem 1rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="umbral_7_consolidar.html">← Umbral VII</a>
+  <span class="nav-centro">Cierre</span>
+  <a href="index.html">Inicio ↑</a>
+</nav>
+
+<header class="encabezado">
+  <canvas id="canvas-cierre"></canvas>
+
+  <span class="cierre-etiqueta">Volver distinto · Cierre</span>
+  <h1 class="cierre-titulo">Volver distinto</h1>
+  <p class="cierre-subtitulo">No una conclusión. Una orientación.</p>
+
+  <div class="scroll-indicador">
+    <div class="scroll-linea"></div>
+    <span>leer</span>
+  </div>
+</header>
+
+<main class="cuerpo">
+
+  <div class="bloque">
+    <p>
+      Llegaste hasta aquí.
+    </p>
+    <p>
+      No como logro — como dato.
+      Algo en vos eligió seguir leyendo
+      a través de los reconocimientos, los diagnósticos,
+      las señales, las dosis, los movimientos, los ensambles,
+      las consolidaciones.
+    </p>
+    <p>
+      <strong>Ese algo que eligió seguir es parte de lo que cambió.</strong>
+    </p>
+  </div>
+
+  <div class="aforismo">
+    <p>No se vuelve al mismo lugar<br>
+    después de haberlo visto desde afuera.<br>
+    Aunque todo parezca igual,<br>
+    el que mira ya no es el mismo.</p>
+  </div>
+
+  <div class="bloque">
+    <p>
+      Este libro no prometió transformación.
+      Prometió orientación. La diferencia importa:
+      la transformación es un destino, la orientación es una dirección.
+      La dirección no se completa — se mantiene.
+    </p>
+    <p>
+      El círculo va a volver. La inercia va a tirar.
+      El susurro va a callarse por un tiempo
+      y después va a volver más fuerte.
+      El ensamble va a tocar la partitura de memoria
+      en algún momento descuidado.
+    </p>
+    <p>
+      Eso no es fracaso. Es la física del cambio real.
+    </p>
+  </div>
+
+  <div class="separador-ornamental">⟐ &nbsp; ⟐ &nbsp; ⟐</div>
+
+  <!-- Aforismo central del libro -->
+  <div class="aforismo-central">
+    <p>
+      El círculo es donde se vive.<br>
+      La espiral es cómo se cambia de círculo.<br>
+      <em>Volver distinto</em> no es llegar a otro lugar.<br>
+      Es llegar al mismo lugar<br>
+      desde una altura diferente.
+    </p>
+  </div>
+
+  <div class="bloque">
+    <p>
+      La caracola no abandona su forma para crecer.
+      La agrega. La amplía. Conserva lo que fue
+      mientras se convierte en lo que es.
+    </p>
+    <p>
+      Vos tampoco tenés que abandonar lo que fuiste.
+      Tenés que agregar. Ampliar.
+      Dejar que la espiral haga su trabajo
+      sin apurarla y sin resistirla.
+    </p>
+  </div>
+
+  <div class="aforismo">
+    <p>El movimiento no se detiene.<br>
+    La pregunta no es si moverse.<br>
+    Es hacia dónde.</p>
+  </div>
+
+  <!-- La pregunta que llegó hasta aquí -->
+  <div class="pregunta-final">
+    <div class="pregunta-final-label">
+      <span class="pregunta-final-simbolo">◈</span>
+      La pregunta que recorrió el libro
+    </div>
+
+    <div class="pregunta-evolucion">
+      <div class="pregunta-version">
+        <span class="version-label">Umbral II — la primera vez</span>
+        <span class="version-texto">¿Hay algún círculo en tu vida que en algún momento te cuidó y que hoy, si sos honesto, ya solo te retiene?</span>
+      </div>
+      <div class="pregunta-version">
+        <span class="version-label">Umbral V — la segunda vez</span>
+        <span class="version-texto">¿Hay algún círculo en tu vida que en algún momento te cuidó y que hoy ya no te da lo que necesitás — pero en el que todavía hay algo que vale la pena conservar cuando te movás?</span>
+      </div>
+      <div class="pregunta-version">
+        <span class="version-label">Umbral VII — la tercera vez</span>
+        <span class="version-texto">¿Hay algún círculo en tu vida del que ya te estás moviendo — y que ahora necesita un nuevo círculo que aloje lo que ganaste en el movimiento?</span>
+      </div>
+    </div>
+
+    <p class="pregunta-cierre-nota">
+      La misma pregunta. Tres alturas distintas.<br>
+      Si algo cambió en cómo la respondés ahora,<br>
+      ya estás en la espiral.
+    </p>
+  </div>
+
+  <div class="bloque">
+    <p>
+      Este libro termina aquí.
+      El movimiento, no.
+    </p>
+  </div>
+
+  <!-- Volver -->
+  <div class="volver-seccion" id="volver">
+    <span class="volver-label">Portal Público Trinity</span>
+    <a href="../../index.html" class="volver-link">
+      <span class="volver-nombre">← Volver al Portal Trinity</span>
+    </a>
+    <span class="firma-final">Portal Público Trinity · © 2026 Campo Trinity</span>
+  </div>
+
+</main>
+
+<script>
+  // Espiral completa con círculo final
+  const canvas = document.getElementById('canvas-cierre');
+  const ctx = canvas.getContext('2d');
+
+  function dibujar() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Espiral
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(201,168,76,1)';
+    ctx.lineWidth = 0.8;
+
+    let angulo = 0;
+    let radio = 4;
+    const radioFinal = Math.min(canvas.width, canvas.height) * 0.42;
+
+    while (radio < radioFinal) {
+      const x = cx + radio * Math.cos(angulo);
+      const y = cy + radio * Math.sin(angulo);
+      if (angulo === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+      angulo += 0.012;
+      radio += 0.45 * 0.012;
+    }
+    ctx.stroke();
+
+    // Círculo final luminoso
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(201,168,76,0.8)';
+    ctx.lineWidth = 0.6;
+    ctx.arc(cx, cy, radioFinal, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Punto en el centro
+    ctx.beginPath();
+    ctx.fillStyle = 'rgba(201,168,76,0.4)';
+    ctx.arc(cx, cy, 3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  dibujar();
+  window.addEventListener('resize', dibujar);
+
+  const observador = new IntersectionObserver((entradas) => {
+    entradas.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observador.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.bloque, .aforismo, .aforismo-central, .separador-ornamental, .pregunta-final, .volver-seccion')
+    .forEach(el => observador.observe(el));
+</script>
+
+</body>
+</html>

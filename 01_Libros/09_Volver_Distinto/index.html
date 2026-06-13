@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libro 9 · Volver distinto | Portal Trinity</title>
+<meta name="description" content="Cómo se cambia sin demoler todo — Libro IX del Portal Trinity">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root {
+    --negro:       #0d0c0b;
+    --oro:         #c9a84c;
+    --oro-ambar:   #d4a843;
+    --oro-tenue:   #8a6f35;
+    --oro-polvo:   #3a2e18;
+    --blanco-humo: #e8e0d0;
+    --gris-calido: #9a9080;
+    --separador:   #2a2418;
+    --espiral:     rgba(201,168,76,0.07);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco-humo);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PORTADA ─────────────────────────────────────────── */
+  .portada {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Espiral SVG de fondo */
+  .espiral-fondo {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    animation: aparecer-lento 3s ease forwards 0.5s;
+  }
+
+  .espiral-fondo svg {
+    width: min(600px, 90vw);
+    height: min(600px, 90vw);
+  }
+
+  .espiral-trazo {
+    fill: none;
+    stroke: rgba(201,168,76,0.055);
+    stroke-width: 1;
+    animation: rotar-espiral 120s linear infinite;
+    transform-origin: center;
+  }
+
+  @keyframes rotar-espiral {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .portal-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.3s;
+    position: relative; z-index: 1;
+  }
+
+  .libro-numero {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: aparecer 1.2s ease forwards 0.6s;
+    position: relative; z-index: 1;
+  }
+
+  .titulo-principal {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 300;
+    color: var(--oro);
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 0.9s;
+    position: relative; z-index: 1;
+  }
+
+  .subtitulo-principal {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gris-calido);
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.2s;
+    position: relative; z-index: 1;
+  }
+
+  .frase-entrada {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--blanco-humo);
+    text-align: center;
+    line-height: 1.85;
+    max-width: 540px;
+    margin-bottom: 5rem;
+    opacity: 0;
+    animation: aparecer 1.4s ease forwards 1.6s;
+    position: relative; z-index: 1;
+    padding: 0 1rem;
+  }
+
+  .boton-entrada {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 2.2s;
+    position: relative; z-index: 1;
+  }
+
+  .boton-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    transition: color 0.3s ease;
+  }
+
+  .boton-entrada:hover .boton-texto { color: var(--oro); }
+
+  .boton-circulo {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 1px solid var(--oro-tenue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: rgba(201,168,76,0.04);
+  }
+
+  .boton-entrada:hover .boton-circulo {
+    border-color: var(--oro);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .boton-flecha {
+    font-size: 1.2rem;
+    color: var(--oro-tenue);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .boton-entrada:hover .boton-flecha {
+    color: var(--oro);
+    transform: translateY(2px);
+  }
+
+  .volver-portal {
+    position: absolute;
+    top: 2rem; left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-polvo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    z-index: 2;
+    opacity: 0;
+    animation: aparecer 1s ease forwards 0.5s;
+  }
+
+  .volver-portal:hover { color: var(--oro-tenue); }
+
+  /* ── TESIS ───────────────────────────────────────────── */
+  .tesis-seccion {
+    background: var(--negro);
+    padding: 5rem 2rem;
+    border-top: 1px solid var(--separador);
+  }
+
+  .tesis-contenido {
+    max-width: 620px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tesis-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .tesis-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.65rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--blanco-humo);
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+
+  .tesis-texto em {
+    color: var(--oro);
+    font-style: normal;
+  }
+
+  .tesis-desarrollo {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: var(--gris-calido);
+    line-height: 1.9;
+    text-align: left;
+    border-left: 1px solid var(--separador);
+    padding-left: 1.5rem;
+  }
+
+  /* ── MAPA DE UMBRALES ────────────────────────────────── */
+  .mapa {
+    background: var(--negro);
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--separador);
+  }
+
+  .mapa-contenido {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .mapa-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-align: center;
+    display: block;
+    margin-bottom: 3.5rem;
+  }
+
+  .umbral-link {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--separador);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .umbral-link:first-of-type { border-top: 1px solid var(--separador); }
+
+  .umbral-link::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: rgba(201,168,76,0.03);
+    transition: width 0.4s ease;
+  }
+
+  .umbral-link:hover::before { width: 100%; }
+
+  /* Marcador especial para umbrales con pregunta que muta */
+  .umbral-link.con-pregunta .umbral-num::after {
+    content: '◈';
+    font-size: 0.5rem;
+    color: var(--oro-tenue);
+    position: absolute;
+    bottom: -0.2rem;
+    right: -0.8rem;
+    opacity: 0.6;
+  }
+
+  .umbral-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 300;
+    color: var(--oro-polvo);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 3.5rem;
+    text-align: right;
+    transition: color 0.3s ease;
+    position: relative; z-index: 1;
+    padding-top: 0.1rem;
+  }
+
+  .umbral-link:hover .umbral-num { color: var(--oro-tenue); }
+
+  .umbral-info {
+    flex: 1;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-nombre {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    color: var(--blanco-humo);
+    display: block;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+  }
+
+  .umbral-link:hover .umbral-nombre { color: var(--oro); }
+
+  .umbral-descripcion {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.6;
+  }
+
+  .umbral-flecha {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--oro-polvo);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative; z-index: 1;
+  }
+
+  .umbral-link:hover .umbral-flecha {
+    color: var(--oro-tenue);
+    transform: translateX(4px);
+  }
+
+  .umbral-link.cierre .umbral-num {
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding-top: 0.4rem;
+    width: 3.5rem;
+    text-align: right;
+  }
+
+  /* Leyenda de pregunta */
+  .mapa-leyenda {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 0.5;
+  }
+
+  .mapa-leyenda-simbolo {
+    font-size: 0.6rem;
+    color: var(--oro-tenue);
+  }
+
+  .mapa-leyenda-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--gris-calido);
+  }
+
+  .mapa-nota {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--separador);
+    text-align: center;
+  }
+
+  .mapa-nota-texto {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.7;
+  }
+
+  /* ── PIE ─────────────────────────────────────────────── */
+  .pie {
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--separador);
+  }
+
+  .pie-volver {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--separador);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+  }
+
+  .pie-volver:hover {
+    border-color: var(--oro-tenue);
+    color: var(--oro);
+    background: rgba(201,168,76,0.04);
+  }
+
+  .pie-firma {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--oro-polvo);
+    letter-spacing: 0.15em;
+    display: block;
+    margin-top: 1.5rem;
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  @keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes aparecer-lento {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .mapa { padding: 4rem 1.5rem; }
+    .umbral-link { gap: 1.2rem; }
+    .umbral-num { width: 2.8rem; }
+    .tesis-seccion { padding: 3.5rem 1.5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a href="../../index.html" class="volver-portal">← Portal Trinity</a>
+
+<!-- PORTADA -->
+<section class="portada">
+
+  <!-- Espiral de fondo -->
+  <div class="espiral-fondo">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+      <path class="espiral-trazo" d="
+        M 300 300
+        m 0 -8
+        a 8 8 0 1 1 -0.1 0
+        M 300 300
+        m 0 -20
+        a 20 20 0 1 1 -0.1 0
+        M 300 300
+        m 0 -36
+        a 36 36 0 1 1 -0.1 0
+        M 300 300
+        m 0 -56
+        a 56 56 0 1 1 -0.1 0
+        M 300 300
+        m 0 -80
+        a 80 80 0 1 1 -0.1 0
+        M 300 300
+        m 0 -108
+        a 108 108 0 1 1 -0.1 0
+        M 300 300
+        m 0 -140
+        a 140 140 0 1 1 -0.1 0
+        M 300 300
+        m 0 -176
+        a 176 176 0 1 1 -0.1 0
+        M 300 300
+        m 0 -216
+        a 216 216 0 1 1 -0.1 0
+        M 300 300
+        m 0 -260
+        a 260 260 0 1 1 -0.1 0
+      "/>
+    </svg>
+  </div>
+
+  <span class="portal-label">Portal Público Trinity</span>
+  <span class="libro-numero">Libro IX</span>
+  <h1 class="titulo-principal">Volver distinto</h1>
+  <p class="subtitulo-principal">Cómo se cambia sin demoler todo</p>
+
+  <p class="frase-entrada">
+    No se trata de romper el círculo.<br>
+    Se trata de salir de él<br>
+    por arriba.
+  </p>
+
+  <a href="umbral_0_el_otra_vez.html" class="boton-entrada">
+    <span class="boton-texto">Comenzar</span>
+    <div class="boton-circulo">
+      <span class="boton-flecha">↓</span>
+    </div>
+  </a>
+</section>
+
+<!-- TESIS -->
+<section class="tesis-seccion">
+  <div class="tesis-contenido">
+    <span class="tesis-label">La tesis</span>
+    <p class="tesis-texto">
+      El círculo es donde se vive.<br>
+      La espiral es <em>cómo se cambia</em> de círculo.
+    </p>
+    <p class="tesis-desarrollo">
+      Hay círculos que cuidan y círculos que aprisionan. Hay espirales que ascienden 
+      y espirales que hunden. Lo que determina la diferencia no es la forma — 
+      es la dirección. Este libro es sobre aprender a leer esa dirección 
+      antes de que el cuerpo ya lo haya pagado.
+    </p>
+  </div>
+</section>
+
+<!-- MAPA DE UMBRALES -->
+<section class="mapa">
+  <div class="mapa-contenido">
+    <span class="mapa-titulo">Los umbrales</span>
+
+    <a href="umbral_0_el_otra_vez.html" class="umbral-link">
+      <span class="umbral-num">0</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El otra vez</span>
+        <span class="umbral-descripcion">Antes de toda geometría: el reconocimiento.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_1_el_circulo_que_cuida.html" class="umbral-link">
+      <span class="umbral-num">I</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El círculo que cuida</span>
+        <span class="umbral-descripcion">Lo que sostiene antes de que algo necesite cambiar.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_2_el_circulo_que_aprisiona.html" class="umbral-link con-pregunta">
+      <span class="umbral-num">II</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El círculo que aprisiona</span>
+        <span class="umbral-descripcion">Cómo lo que cuidó empieza a retener.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_3_el_susurro.html" class="umbral-link">
+      <span class="umbral-num">III</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El susurro</span>
+        <span class="umbral-descripcion">La señal antes de que se vuelva grito.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_4_la_dosis.html" class="umbral-link">
+      <span class="umbral-num">IV</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">La dosis</span>
+        <span class="umbral-descripcion">El salto no es al abismo. Es a una cuota de incertidumbre.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_5_el_movimiento.html" class="umbral-link con-pregunta">
+      <span class="umbral-num">V</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El movimiento</span>
+        <span class="umbral-descripcion">La espiral como geometría viva, no como metáfora.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_6_el_ensamble.html" class="umbral-link">
+      <span class="umbral-num">VI</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El ensamble</span>
+        <span class="umbral-descripcion">Dos que no se funden. La música entre los instrumentos.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_7_consolidar.html" class="umbral-link con-pregunta">
+      <span class="umbral-num">VII</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Consolidar</span>
+        <span class="umbral-descripcion">Construir deliberadamente el círculo que aloja lo ganado.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="cierre_volver_distinto.html" class="umbral-link cierre">
+      <span class="umbral-num">Cierre</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Volver distinto</span>
+        <span class="umbral-descripcion">No una conclusión. Una orientación.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <div class="mapa-leyenda">
+      <span class="mapa-leyenda-simbolo">◈</span>
+      <span class="mapa-leyenda-texto">Este umbral contiene una pregunta que regresa.</span>
+    </div>
+
+    <div class="mapa-nota">
+      <p class="mapa-nota-texto">
+        El recorrido es unidireccional.<br>
+        El movimiento requiere dirección.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PIE -->
+<footer class="pie">
+  <a href="../../index.html" class="pie-volver">← Volver al Portal Trinity</a>
+  <span class="pie-firma">Portal Público Trinity · © 2026 Campo Trinity</span>
+</footer>
+
+</body>
+</html>
