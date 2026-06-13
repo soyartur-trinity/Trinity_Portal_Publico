@@ -706,6 +706,45 @@
     .aguantar-sostener { padding: 2rem 1.5rem; }
   }
 </style>
+<style>
+  /* ── Legibilidad ampliada (lectura en celular) ── */
+  body { font-size: 21px; }
+
+  .apertura-texto    { font-size: clamp(1.45rem, 3.2vw, 1.85rem); }
+  .aforismo-texto    { font-size: clamp(1.25rem, 2.7vw, 1.5rem); }
+  .pregunta-texto    { font-size: clamp(1.32rem, 3vw, 1.62rem); }
+  .declaracion-texto { font-size: clamp(1.55rem, 3.6vw, 2.05rem); }
+  .sr-texto, .horizonte-texto, .paradoja-texto, .espejo-texto {
+    font-size: clamp(1.28rem, 3vw, 1.6rem);
+  }
+
+  .contraste-descripcion, .zona-texto, .descenso-texto, .paso-texto,
+  .secuestrador-cuerpo, .antidoto-texto, .atractor-descripcion,
+  .as-texto, .od-item, .amor-item, .nivel-descripcion, .animal-texto,
+  .musculo-texto, .pc-item-descripcion, .pc-horizonte-texto, .vi-texto,
+  .sr-desarrollo {
+    font-size: 1.04rem; line-height: 1.72;
+  }
+  .zona-instruccion, .recorrido-frase { font-size: 1.0rem; line-height: 1.65; }
+
+  .zona-nombre, .secuestrador-nombre, .atractor-nombre, .od-nombre,
+  .amor-nombre, .recorrido-nombre, .pc-item-nombre {
+    font-size: 1.12rem;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 21px; }
+    .contraste-descripcion, .zona-texto, .descenso-texto, .paso-texto,
+    .secuestrador-cuerpo, .antidoto-texto, .atractor-descripcion,
+    .as-texto, .od-item, .amor-item, .nivel-descripcion, .animal-texto,
+    .musculo-texto, .pc-item-descripcion, .pc-horizonte-texto, .vi-texto,
+    .sr-desarrollo {
+      font-size: 1.1rem; line-height: 1.72;
+    }
+    .apertura-texto { font-size: 1.5rem; }
+    .pregunta-texto { font-size: 1.42rem; }
+  }
+</style>
 </head>
 <body>
 

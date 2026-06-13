@@ -388,6 +388,18 @@
     .umbral-num { width: 2.8rem; }
   }
 </style>
+<style>
+  /* ── Legibilidad ampliada (lectura en celular) ── */
+  body { font-size: 21px; }
+  .umbral-nombre      { font-size: 1.22rem; }
+  .umbral-descripcion { font-size: 1.04rem; line-height: 1.55; }
+  .frase-entrada      { font-size: clamp(1.25rem, 3vw, 1.6rem); }
+  .mapa-nota-texto    { font-size: 1.0rem; }
+  @media (max-width: 600px) {
+    body { font-size: 21px; }
+    .umbral-descripcion { font-size: 1.08rem; }
+  }
+</style>
 </head>
 <body>
 
@@ -483,7 +495,7 @@
       <span class="umbral-num">VI</span>
       <div class="umbral-info">
         <span class="umbral-nombre">El Amor Sagrado</span>
-        <span class="umbral-descripcion">Atender al otro como el acto ético más radical.</span>
+        <span class="umbral-descripcion">Atender al otro —y a uno mismo— como el acto ético más radical.</span>
       </div>
       <span class="umbral-flecha">→</span>
     </a>
