@@ -440,6 +440,37 @@
     }
   }
 </style>
+<style>
+  /* ── Legibilidad ampliada (lectura en celular) ── */
+  body { font-size: 20px; }
+  .cuerpo p { font-size: clamp(1.12rem, 1.7vw, 1.24rem); line-height: 2.0; }
+  .aforismo p { font-size: clamp(1.28rem, 3vw, 1.55rem); }
+  .pregunta-texto { font-size: clamp(1.3rem, 3.2vw, 1.62rem); }
+  .pregunta-instruccion { font-size: 1.02rem; }
+  .firma-pregunta { font-size: 1.12rem; }
+  .inventario-nombre { font-size: 1.12rem; }
+  .inventario-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .senal-nombre { font-size: 1.12rem; }
+  .senal-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .dosis-opcion-texto { font-size: 1.08rem; }
+  .escucha-item { font-size: 1.05rem; }
+  .test-escena { font-size: 1.12rem; }
+  .paso-pregunta { font-size: 1.12rem; }
+  .paso-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .posicionador-pregunta { font-size: 1.12rem; }
+  .posicionador-lectura { font-size: 1.12rem; }
+  .naturaleza-nombre { font-size: 1.1rem; }
+  .naturaleza-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .version-texto { font-size: 1.15rem; line-height: 1.8; }
+  .umbral-subtitulo { font-size: clamp(1.02rem, 2.3vw, 1.28rem); }
+  @media (max-width: 600px) {
+    body { font-size: 20px; }
+    .cuerpo p { font-size: 1.18rem; line-height: 2.0; }
+    .aforismo p { font-size: 1.34rem; }
+    .pregunta-texto { font-size: 1.4rem; }
+    .version-texto { font-size: 1.18rem; }
+  }
+</style>
 </head>
 <body>
 

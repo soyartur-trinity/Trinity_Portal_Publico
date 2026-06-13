@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Umbral VII · Consolidar | Volver distinto</title>
+<title>Umbral VII · El ensamble | Volver distinto</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
@@ -73,11 +73,58 @@
     overflow: hidden;
   }
 
-  /* Espiral que termina en círculo — el nuevo círculo que aloja */
-  #canvas-consolidar {
+  /* Dos círculos que se acercan sin fusionarse */
+  .dos-circulos {
     position: absolute;
-    inset: 0;
-    opacity: 0.055;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; height: 200px;
+    pointer-events: none;
+  }
+
+  .circulo-a, .circulo-b {
+    position: absolute;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,168,76,0.07);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .circulo-a {
+    left: 0;
+    animation: pulso-a 6s ease-in-out infinite;
+  }
+
+  .circulo-b {
+    right: 0;
+    animation: pulso-b 6s ease-in-out infinite 1s;
+  }
+
+  @keyframes pulso-a {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.6; }
+    50%       { transform: translateY(-50%) translateX(12px); opacity: 0.2; }
+  }
+
+  @keyframes pulso-b {
+    0%, 100% { transform: translateY(-50%) translateX(0); opacity: 0.6; }
+    50%       { transform: translateY(-50%) translateX(-12px); opacity: 0.2; }
+  }
+
+  /* Punto de resonancia entre ambos */
+  .punto-resonancia {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 4px; height: 4px;
+    background: var(--oro-tenue);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulso-punto 3s ease-in-out infinite;
+  }
+
+  @keyframes pulso-punto {
+    0%, 100% { opacity: 0.3; transform: translate(-50%,-50%) scale(1); }
+    50%       { opacity: 0.8; transform: translate(-50%,-50%) scale(2); }
   }
 
   .umbral-etiqueta {
@@ -206,16 +253,76 @@
   }
   .separador-ornamental.visible { opacity: 1; transform: translateY(0); }
 
-  /* Constructor del nuevo círculo */
-  .constructor {
+  /* Dos modos de escucha */
+  .escucha-comparacion {
     margin: 4rem 0;
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.9s ease, transform 0.9s ease;
   }
-  .constructor.visible { opacity: 1; transform: translateY(0); }
+  .escucha-comparacion.visible { opacity: 1; transform: translateY(0); }
 
-  .constructor-titulo {
+  .escucha-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--oro-tenue);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .escucha-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--separador);
+  }
+
+  .escucha-col {
+    background: var(--negro);
+    padding: 2rem 1.5rem;
+  }
+
+  .escucha-col-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--separador);
+  }
+
+  .escucha-col:first-child .escucha-col-titulo { color: var(--gris-calido); }
+  .escucha-col:last-child .escucha-col-titulo  { color: var(--oro-tenue); }
+
+  .escucha-item {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 0.8rem;
+    border-left: 1px solid var(--separador);
+  }
+
+  .escucha-col:last-child .escucha-item {
+    border-left-color: rgba(138,111,53,0.3);
+  }
+
+  /* Test de escucha */
+  .test-escucha {
+    margin: 4rem 0;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .test-escucha.visible { opacity: 1; transform: translateY(0); }
+
+  .test-titulo {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.68rem;
     letter-spacing: 0.4em;
@@ -225,14 +332,14 @@
     display: block;
   }
 
-  .constructor-caja {
+  .test-caja {
     background: rgba(201,168,76,0.02);
     border: 1px solid var(--separador);
     padding: 2.5rem;
     position: relative;
   }
 
-  .constructor-caja::before {
+  .test-caja::before {
     content: '';
     position: absolute;
     top: 0; left: 0;
@@ -240,7 +347,7 @@
     background: var(--oro-tenue);
   }
 
-  .constructor-caja::after {
+  .test-caja::after {
     content: '';
     position: absolute;
     top: 0; left: 0;
@@ -248,108 +355,65 @@
     background: var(--oro-tenue);
   }
 
-  .constructor-intro {
+  .test-escena {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
     font-style: italic;
     color: var(--gris-calido);
-    line-height: 1.7;
+    line-height: 1.75;
     margin-bottom: 2rem;
   }
 
-  .constructor-paso {
-    margin-bottom: 1.8rem;
-    padding-bottom: 1.8rem;
-    border-bottom: 1px solid var(--separador);
-  }
-
-  .constructor-paso:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-
-  .paso-numero {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--oro-tenue);
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .paso-pregunta {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-style: italic;
-    color: var(--blanco-humo);
-    line-height: 1.65;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-
-  .paso-descripcion {
-    font-family: 'EB Garamond', serif;
-    font-size: 0.88rem;
-    font-style: italic;
-    color: var(--gris-calido);
-    line-height: 1.6;
-  }
-
-  /* Pregunta que muta — versión 3 */
-  .pregunta-muta {
-    margin: 5rem 0 0;
-    padding: 3rem 0;
-    border-top: 1px solid var(--separador);
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-  }
-  .pregunta-muta.visible { opacity: 1; transform: translateY(0); }
-
-  .pregunta-muta-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.4em;
-    text-transform: uppercase;
-    color: var(--oro-polvo);
-    margin-bottom: 1.8rem;
+  .test-opciones {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 0.8rem;
+    margin-bottom: 1.5rem;
   }
 
-  .pregunta-muta-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--separador);
-  }
-
-  .pregunta-muta-simbolo { color: var(--oro-tenue); font-size: 0.7rem; margin-right: 0.3rem; }
-
-  .pregunta-texto {
+  .test-btn {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.15rem, 2.8vw, 1.5rem);
-    font-style: italic;
-    font-weight: 300;
-    color: var(--blanco-humo);
-    line-height: 1.75;
-    margin-bottom: 1rem;
-  }
-
-  .pregunta-instruccion {
-    font-family: 'EB Garamond', serif;
     font-size: 0.9rem;
     font-style: italic;
-    color: var(--oro-polvo);
-    line-height: 1.6;
+    color: var(--gris-calido);
+    background: none;
+    border: 1px solid var(--separador);
+    padding: 0.9rem 1.4rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: left;
+    width: 100%;
   }
 
-  /* ── CONTINUAR AL CIERRE ─────────────────────────────── */
+  .test-btn:hover {
+    border-color: var(--oro-tenue);
+    color: var(--blanco-humo);
+    background: rgba(201,168,76,0.03);
+  }
+
+  .test-btn.activo {
+    border-color: var(--oro-tenue);
+    background: rgba(201,168,76,0.05);
+    color: var(--blanco-humo);
+  }
+
+  .test-respuesta {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--gris-calido);
+    line-height: 1.75;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--separador);
+    min-height: 3rem;
+    transition: opacity 0.4s ease;
+  }
+
+  .test-respuesta.oculta { opacity: 0; }
+
+  /* ── CONTINUAR ───────────────────────────────────────── */
   .continuar {
-    margin-top: 5rem;
+    margin-top: 6rem;
     padding-top: 3rem;
     border-top: 1px solid var(--separador);
     display: flex;
@@ -423,7 +487,10 @@
   @media (max-width: 600px) {
     .cuerpo { padding: 0 1.5rem 6rem; }
     .nav { padding: 1rem 1.2rem; }
-    .constructor-caja { padding: 1.8rem; }
+    .escucha-cols { grid-template-columns: 1fr; }
+    .test-caja { padding: 1.8rem; }
+    .dos-circulos { width: 280px; height: 140px; }
+    .circulo-a, .circulo-b { width: 120px; height: 120px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -433,22 +500,57 @@
     }
   }
 </style>
+<style>
+  /* ── Legibilidad ampliada (lectura en celular) ── */
+  body { font-size: 20px; }
+  .cuerpo p { font-size: clamp(1.12rem, 1.7vw, 1.24rem); line-height: 2.0; }
+  .aforismo p { font-size: clamp(1.28rem, 3vw, 1.55rem); }
+  .pregunta-texto { font-size: clamp(1.3rem, 3.2vw, 1.62rem); }
+  .pregunta-instruccion { font-size: 1.02rem; }
+  .firma-pregunta { font-size: 1.12rem; }
+  .inventario-nombre { font-size: 1.12rem; }
+  .inventario-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .senal-nombre { font-size: 1.12rem; }
+  .senal-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .dosis-opcion-texto { font-size: 1.08rem; }
+  .escucha-item { font-size: 1.05rem; }
+  .test-escena { font-size: 1.12rem; }
+  .paso-pregunta { font-size: 1.12rem; }
+  .paso-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .posicionador-pregunta { font-size: 1.12rem; }
+  .posicionador-lectura { font-size: 1.12rem; }
+  .naturaleza-nombre { font-size: 1.1rem; }
+  .naturaleza-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .version-texto { font-size: 1.15rem; line-height: 1.8; }
+  .umbral-subtitulo { font-size: clamp(1.02rem, 2.3vw, 1.28rem); }
+  @media (max-width: 600px) {
+    body { font-size: 20px; }
+    .cuerpo p { font-size: 1.18rem; line-height: 2.0; }
+    .aforismo p { font-size: 1.34rem; }
+    .pregunta-texto { font-size: 1.4rem; }
+    .version-texto { font-size: 1.18rem; }
+  }
+</style>
 </head>
 <body>
 
 <nav class="nav">
-  <a href="umbral_6_el_ensamble.html">← Umbral VI</a>
+  <a href="umbral_6_la_espiral_interior.html">← Umbral VI</a>
   <span class="nav-centro">Umbral VII</span>
-  <a href="cierre_volver_distinto.html">Cierre →</a>
+  <a href="umbral_8_consolidar.html">Umbral VIII →</a>
 </nav>
 
 <header class="encabezado">
-  <canvas id="canvas-consolidar"></canvas>
+  <div class="dos-circulos">
+    <div class="circulo-a"></div>
+    <div class="circulo-b"></div>
+    <div class="punto-resonancia"></div>
+  </div>
 
   <span class="umbral-etiqueta">Volver distinto · Umbral</span>
   <div class="umbral-numero">VII</div>
-  <h1 class="umbral-titulo">Consolidar</h1>
-  <p class="umbral-subtitulo">Construir deliberadamente el círculo que aloja lo ganado.</p>
+  <h1 class="umbral-titulo">El ensamble</h1>
+  <p class="umbral-subtitulo">Dos que no se funden. La música entre los instrumentos.</p>
 
   <div class="scroll-indicador">
     <div class="scroll-linea"></div>
@@ -460,130 +562,130 @@
 
   <div class="bloque">
     <p>
-      Hay un momento que casi ningún libro sobre el cambio incluye.
+      Hay una fantasía de la cercanía que también puede ser un círculo:
+      la idea de que vincularse bien significa volverse uno.
+      Que la intimidad es fusión. Que la diferencia es distancia.
     </p>
     <p>
-      El momento después del movimiento.
-      Cuando la espiral ya dio su vuelta, cuando algo se desplazó,
-      cuando la dosis mínima produjo su efecto.
-      Ese momento en que el cambio existe pero todavía es frágil —
-      y puede evaporarse si no se hace nada con él.
+      El ensamble propone lo contrario:
+      <strong>dos que se vuelven más ellos mismos para que algo entre ellos sea posible.</strong>
+      No a pesar del otro. Gracias al otro que permanece distinto.
     </p>
   </div>
 
   <div class="aforismo">
-    <p>El cambio no se sostiene por la intensidad del momento<br>
-    en que ocurrió.<br>
-    Se sostiene por el círculo que se construye<br>
-    para alojarlo.</p>
+    <p>La música no está en ningún instrumento.<br>
+    Está en lo que ocurre entre ellos<br>
+    cuando cada uno suena desde lo que es.</p>
   </div>
 
   <div class="bloque">
     <p>
-      Consolidar no es aferrarse. Es lo opuesto:
-      es darle al cambio una estructura lo suficientemente liviana
-      para que pueda seguir moviéndose,
-      y lo suficientemente sólida para que no se deshaga
-      a la primera presión del círculo anterior.
+      Un dúo donde ambos tocan lo mismo no es un dúo — es un unísono.
+      La riqueza del ensamble viene de la tensión entre dos voces distintas
+      que eligen escucharse en lugar de superponerse.
     </p>
     <p>
-      El círculo anterior tiene más historia, más inercia, más refuerzo.
-      Va a volver. No como fracaso — como gravedad.
-      <strong>Consolidar es construir la fuerza opuesta a esa gravedad.</strong>
+      Esto se aplica a los vínculos, al trabajo colaborativo,
+      a la relación con cualquier sistema o institución.
+      La pregunta no es "¿cómo me adapto?"
+      sino <strong>"¿cómo me mantengo suficientemente yo mismo
+      para que lo que hacemos juntos tenga algo verdadero?"</strong>
     </p>
   </div>
 
   <div class="separador-ornamental">⟐ &nbsp; ⟐ &nbsp; ⟐</div>
 
+  <!-- Dos modos de escucha -->
+  <div class="escucha-comparacion">
+    <span class="escucha-titulo">Dos formas de estar en el vínculo</span>
+    <div class="escucha-cols">
+      <div class="escucha-col">
+        <span class="escucha-col-titulo">Tocar la partitura de memoria</span>
+        <div class="escucha-item">Responder a lo que el otro "siempre dice", no a lo que dice ahora.</div>
+        <div class="escucha-item">Anticipar el conflicto antes de que empiece.</div>
+        <div class="escucha-item">Adaptarse al rol que se aprendió a tener en ese vínculo.</div>
+        <div class="escucha-item">Escuchar para confirmar lo que ya se sabe.</div>
+      </div>
+      <div class="escucha-col">
+        <span class="escucha-col-titulo">Escuchar en tiempo real</span>
+        <div class="escucha-item">Responder a lo que el otro dice hoy, aunque sea inesperado.</div>
+        <div class="escucha-item">Dejar que la conversación vaya a donde va.</div>
+        <div class="escucha-item">Ocupar el propio espacio sin invadir el ajeno.</div>
+        <div class="escucha-item">Escuchar para descubrir algo que no se sabía.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="bloque">
     <p>
-      Ritualizar lo ganado no es convertirlo en rutina vacía.
-      Es convertirlo en estructura que no requiera
-      tomar la misma decisión todos los días.
+      Tocar la partitura de memoria no es mala fe.
+      Es el resultado natural de los círculos:
+      cualquier vínculo sostenido en el tiempo desarrolla
+      sus propias rutinas, sus propios roles, sus propias melodías.
     </p>
     <p>
-      La persona que decidió tener conversaciones más directas
-      no puede depender de la valentía cotidiana para mantenerlo.
-      Necesita condiciones: un contexto, un momento, una práctica
-      que haga que lo nuevo sea el camino de menor resistencia.
+      El ensamble vivo es el que puede interrumpir la partitura
+      cuando algo real pide ser escuchado.
+      No para destruir lo conocido — para que lo conocido
+      no tape lo nuevo.
     </p>
   </div>
 
   <div class="aforismo">
-    <p>Lo que no se ritualiza se deja a la voluntad.<br>
-    Y la voluntad es el recurso más agotable que existe.</p>
+    <p>El vínculo que no puede sorprenderse<br>
+    ya no está escuchando.<br>
+    Está recordando.</p>
   </div>
 
-  <!-- Constructor del nuevo círculo -->
-  <div class="constructor">
-    <span class="constructor-titulo">Construir el nuevo círculo</span>
-    <div class="constructor-caja">
-      <p class="constructor-intro">
-        Cuatro preguntas para darle estructura al cambio.
-        No todas van a tener respuesta hoy. Alcanza con que queden abiertas.
+  <!-- Test de escucha -->
+  <div class="test-escucha">
+    <span class="test-titulo">Una escena</span>
+    <div class="test-caja">
+      <p class="test-escena">
+        Alguien cercano te dice algo que no esperabas.
+        Algo que no encaja con la imagen que tenés de esa persona,
+        o con la dinámica habitual entre ustedes.<br><br>
+        ¿Qué pasa primero en vos?
       </p>
-
-      <div class="constructor-paso">
-        <span class="paso-numero">Paso uno</span>
-        <span class="paso-pregunta">¿Qué cambió concretamente?</span>
-        <span class="paso-descripcion">No la intención — el gesto. Algo que hiciste o dejaste de hacer, dijiste o dejaste de decir. Lo que puede nombrarse en una frase.</span>
+      <div class="test-opciones">
+        <button class="test-btn" onclick="responderTest('sorpresa')">
+          "Espero. No sé bien cómo tomar esto todavía."
+        </button>
+        <button class="test-btn" onclick="responderTest('partitura')">
+          "Sé exactamente por qué lo dice. Ya lo conozco."
+        </button>
+        <button class="test-btn" onclick="responderTest('defensa')">
+          "Me pone en guardia. Algo cambia."
+        </button>
+        <button class="test-btn" onclick="responderTest('curiosidad')">
+          "Me da curiosidad. Quiero entender qué pasó."
+        </button>
       </div>
-
-      <div class="constructor-paso">
-        <span class="paso-numero">Paso dos</span>
-        <span class="paso-pregunta">¿Qué condiciones hicieron posible ese cambio?</span>
-        <span class="paso-descripcion">¿Fue la hora del día, el estado de ánimo, la presencia de alguien, un contexto particular? Identificar las condiciones es identificar lo que hay que reproducir.</span>
-      </div>
-
-      <div class="constructor-paso">
-        <span class="paso-numero">Paso tres</span>
-        <span class="paso-pregunta">¿Qué del círculo anterior querés conservar?</span>
-        <span class="paso-descripcion">El nuevo círculo no empieza de cero. Siempre hay algo del anterior que vale la pena. Nombrar qué se conserva evita que el movimiento se vuelva demolición.</span>
-      </div>
-
-      <div class="constructor-paso">
-        <span class="paso-numero">Paso cuatro</span>
-        <span class="paso-pregunta">¿Qué gesto pequeño podés repetir esta semana que señale la dirección?</span>
-        <span class="paso-descripcion">No el plan completo. El primer gesto repetido dos o tres veces. Ese es el embrión del nuevo círculo.</span>
-      </div>
+      <div class="test-respuesta oculta" id="test-respuesta"></div>
     </div>
   </div>
 
   <div class="bloque">
     <p>
-      Este umbral es el más silencioso del libro.
-      No tiene gran drama. No tiene revelación.
-      Tiene trabajo concreto y sostenido.
+      El ensamble tiene una condición previa:
+      que cada uno haya hecho algo del trabajo de este libro.
+      Que el movimiento propio esté en marcha —
+      aunque sea en dosis mínimas.
     </p>
     <p>
-      Pero es el que determina si lo que ocurrió antes
-      fue un movimiento real o una experiencia interesante
-      que no dejó nada detrás.
-    </p>
-  </div>
-
-  <!-- Pregunta que muta — versión 3 -->
-  <div class="pregunta-muta">
-    <div class="pregunta-muta-label">
-      <span class="pregunta-muta-simbolo">◈</span>
-      Una pregunta para llevar
-    </div>
-    <p class="pregunta-texto">
-      ¿Hay algún círculo en tu vida del que ya te estás moviendo —
-      y que ahora necesita un nuevo círculo que aloje
-      lo que ganaste en el movimiento?
-    </p>
-    <p class="pregunta-instruccion">
-      La misma pregunta, tres veces. La primera: ¿qué te retiene?
-      La segunda: ¿qué conservar mientras te movés?
-      La tercera, esta: ¿qué construir para que el movimiento dure?
+      Porque dos personas que no se mueven por sí mismas
+      no forman un ensamble. Forman un círculo compartido.
+      Y ese círculo puede cuidar durante un tiempo,
+      pero tarde o temprano uno de los dos
+      va a escuchar el susurro.
     </p>
   </div>
 
   <div class="continuar" id="continuar">
-    <span class="continuar-label">Último umbral</span>
-    <a href="cierre_volver_distinto.html" class="continuar-link">
-      <span class="continuar-nombre">Volver distinto</span>
+    <span class="continuar-label">Siguiente umbral</span>
+    <a href="umbral_8_consolidar.html" class="continuar-link">
+      <span class="continuar-nombre">Consolidar</span>
       <div class="continuar-circulo">
         <span class="continuar-flecha">↓</span>
       </div>
@@ -593,47 +695,23 @@
 </main>
 
 <script>
-  // Espiral que termina en círculo estable
-  const canvas = document.getElementById('canvas-consolidar');
-  const ctx = canvas.getContext('2d');
+  const respuestas = {
+    sorpresa: 'La pausa antes de interpretar es el gesto del ensamble. No saber todavía cómo tomar algo es exactamente el espacio donde lo nuevo puede entrar.',
+    partitura: 'Conocer bien a alguien puede volverse un obstáculo para escucharlo. La partitura de memoria es cómoda y eficiente — y tapa lo que está pasando ahora.',
+    defensa: 'La guardia activada es información: algo en vos registró que la escena salió del círculo habitual. La pregunta es si ese cambio es una amenaza o una invitación.',
+    curiosidad: 'La curiosidad genuina es el signo del ensamble vivo. Querer entender en lugar de confirmar: eso es escuchar en tiempo real.'
+  };
 
-  function dibujar() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const cx = canvas.width / 2;
-    const cy = canvas.height / 2;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Espiral que crece hasta radio final
-    ctx.beginPath();
-    ctx.strokeStyle = 'rgba(201,168,76,1)';
-    ctx.lineWidth = 0.8;
-
-    let angulo = 0;
-    let radio = 5;
-    const radioFinal = Math.min(canvas.width, canvas.height) * 0.32;
-
-    while (radio < radioFinal) {
-      const x = cx + radio * Math.cos(angulo);
-      const y = cy + radio * Math.sin(angulo);
-      if (angulo === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-      angulo += 0.015;
-      radio += 0.55 * 0.015;
-    }
-    ctx.stroke();
-
-    // Círculo final — el nuevo círculo que aloja
-    ctx.beginPath();
-    ctx.strokeStyle = 'rgba(201,168,76,0.5)';
-    ctx.lineWidth = 0.6;
-    ctx.arc(cx, cy, radioFinal, 0, Math.PI * 2);
-    ctx.stroke();
+  function responderTest(tipo) {
+    document.querySelectorAll('.test-btn').forEach(b => b.classList.remove('activo'));
+    event.currentTarget.classList.add('activo');
+    const el = document.getElementById('test-respuesta');
+    el.classList.add('oculta');
+    setTimeout(() => {
+      el.textContent = respuestas[tipo];
+      el.classList.remove('oculta');
+    }, 300);
   }
-
-  dibujar();
-  window.addEventListener('resize', dibujar);
 
   const observador = new IntersectionObserver((entradas) => {
     entradas.forEach(e => {
@@ -644,7 +722,7 @@
     });
   }, { threshold: 0.15 });
 
-  document.querySelectorAll('.bloque, .aforismo, .separador-ornamental, .constructor, .pregunta-muta, .continuar')
+  document.querySelectorAll('.bloque, .aforismo, .separador-ornamental, .escucha-comparacion, .test-escucha, .continuar')
     .forEach(el => observador.observe(el));
 </script>
 

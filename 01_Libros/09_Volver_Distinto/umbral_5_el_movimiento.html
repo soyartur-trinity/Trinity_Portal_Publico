@@ -495,13 +495,44 @@
     }
   }
 </style>
+<style>
+  /* ── Legibilidad ampliada (lectura en celular) ── */
+  body { font-size: 20px; }
+  .cuerpo p { font-size: clamp(1.12rem, 1.7vw, 1.24rem); line-height: 2.0; }
+  .aforismo p { font-size: clamp(1.28rem, 3vw, 1.55rem); }
+  .pregunta-texto { font-size: clamp(1.3rem, 3.2vw, 1.62rem); }
+  .pregunta-instruccion { font-size: 1.02rem; }
+  .firma-pregunta { font-size: 1.12rem; }
+  .inventario-nombre { font-size: 1.12rem; }
+  .inventario-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .senal-nombre { font-size: 1.12rem; }
+  .senal-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .dosis-opcion-texto { font-size: 1.08rem; }
+  .escucha-item { font-size: 1.05rem; }
+  .test-escena { font-size: 1.12rem; }
+  .paso-pregunta { font-size: 1.12rem; }
+  .paso-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .posicionador-pregunta { font-size: 1.12rem; }
+  .posicionador-lectura { font-size: 1.12rem; }
+  .naturaleza-nombre { font-size: 1.1rem; }
+  .naturaleza-descripcion { font-size: 0.98rem; line-height: 1.7; }
+  .version-texto { font-size: 1.15rem; line-height: 1.8; }
+  .umbral-subtitulo { font-size: clamp(1.02rem, 2.3vw, 1.28rem); }
+  @media (max-width: 600px) {
+    body { font-size: 20px; }
+    .cuerpo p { font-size: 1.18rem; line-height: 2.0; }
+    .aforismo p { font-size: 1.34rem; }
+    .pregunta-texto { font-size: 1.4rem; }
+    .version-texto { font-size: 1.18rem; }
+  }
+</style>
 </head>
 <body>
 
 <nav class="nav">
   <a href="umbral_4_la_dosis.html">← Umbral IV</a>
   <span class="nav-centro">Umbral V</span>
-  <a href="umbral_6_el_ensamble.html">Umbral VI →</a>
+  <a href="umbral_6_la_espiral_interior.html">Umbral VI →</a>
 </nav>
 
 <header class="encabezado">
@@ -630,7 +661,7 @@
       ¿Hay algún círculo en tu vida que en algún momento te cuidó
       y que hoy, si sos honesto, ya no te da lo que necesitás —
       pero en el que todavía hay algo que vale la pena conservar
-      cuando te mováss?
+      cuando te movás?
     </p>
     <p class="pregunta-instruccion">
       La misma pregunta que antes, desde una altura diferente.
@@ -640,8 +671,8 @@
 
   <div class="continuar" id="continuar">
     <span class="continuar-label">Siguiente umbral</span>
-    <a href="umbral_6_el_ensamble.html" class="continuar-link">
-      <span class="continuar-nombre">El ensamble</span>
+    <a href="umbral_6_la_espiral_interior.html" class="continuar-link">
+      <span class="continuar-nombre">La espiral interior</span>
       <div class="continuar-circulo">
         <span class="continuar-flecha">↓</span>
       </div>
