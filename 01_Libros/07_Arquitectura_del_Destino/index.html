@@ -74,6 +74,20 @@ canvas{position:fixed;inset:0;z-index:0;opacity:.65;pointer-events:none;}
   .cta-oracle{padding:18px 36px;}
 }
 </style>
+<style>
+  /* ── Legibilidad ampliada (lectura en celular) ── */
+  .desc        { font-size: clamp(18px,2.1vw,20px); line-height:1.9; }
+  .epigraph    { font-size: clamp(17px,2.2vw,20px); }
+  .reading-txt { font-size: clamp(18px,2.1vw,20px); line-height:1.9; }
+  .reading-q   { font-size: 15px; }
+  .sec-preview { font-size: 15.5px; }
+  .title       { font-size: clamp(22px,4vw,36px); }
+  @media(max-width:600px){
+    .desc, .reading-txt { font-size:18.5px; }
+    .epigraph { font-size:18px; }
+    .sec-preview { font-size:16px; }
+  }
+</style>
 </head>
 <body>
 
@@ -95,7 +109,7 @@ canvas{position:fixed;inset:0;z-index:0;opacity:.65;pointer-events:none;}
   <!-- DESCRIPTION -->
   <div class="desc">
     <p>Este libro no se lee de principio a fin. Se consulta, como el I Ching o el Libro de la Arena de Borges. Cada aforismo es un espejo que puede activar algo diferente según el momento en que se lo encuentre.</p>
-    <p>112 aforismos organizados en 25 ejes temáticos: el viaje y la identidad, el sufrimiento, el observador, el tiempo como profundidad, las pequeñas muertes, el vacío fértil, el borde del lenguaje, el silencio como forma de conocer.</p>
+    <p>113 aforismos organizados en 25 ejes temáticos: el viaje y la identidad, el sufrimiento, el observador, el tiempo como profundidad, las pequeñas muertes, el vacío fértil, el borde del lenguaje, el silencio como forma de conocer.</p>
     <p>Cada consulta es única. El campo no responde a lo que preguntás. Responde a lo que sos en el momento en que preguntás.</p>
   </div>
 
@@ -112,7 +126,7 @@ canvas{position:fixed;inset:0;z-index:0;opacity:.65;pointer-events:none;}
     <div class="div-line"></div>
   </div>
 
-  <p class="sections-title">25 ejes temáticos · 112 aforismos</p>
+  <p class="sections-title">25 ejes temáticos · 113 aforismos</p>
 
   <!-- SECTIONS GRID -->
   <div class="sections-grid" id="secGrid"></div>
