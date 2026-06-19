@@ -34,9 +34,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
 
 /* INTENTION */
 .i-lbl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:6px;text-transform:uppercase;color:var(--gold-d);margin-bottom:44px;}
-.i-q{font-size:clamp(19px,2.8vw,26px);font-style:italic;font-weight:300;color:var(--text);max-width:460px;line-height:1.75;margin-bottom:44px;}
+.i-q{font-size:clamp(19px,2.8vw,26px);font-style:italic;font-weight:300;color:var(--text);max-width:460px;line-height:1.75;margin-bottom:18px;}
+.i-helper{font-size:13px;color:#8a8378;font-style:italic;margin-bottom:30px;font-family:'Source Sans 3',sans-serif;letter-spacing:.3px;}
 .i-inp{width:100%;max-width:460px;background:transparent;border:none;border-bottom:1px solid var(--gold-d);color:var(--text);font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;padding:14px 4px;outline:none;text-align:center;transition:border-color .3s ease;caret-color:var(--gold);margin-bottom:20px;}
-.i-inp::placeholder{color:var(--text-d);font-style:italic;}
+.i-inp::placeholder{color:#8a8378;font-style:italic;}
 .i-inp:focus{border-color:var(--gold);}
 .i-nt{font-size:12px;color:var(--text-d);font-style:italic;margin-bottom:48px;max-width:340px;line-height:1.8;font-family:'Source Sans 3',sans-serif;}
 
@@ -100,22 +101,23 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
   <h1 class="e-ttl" id="ettl">Arquitectura del Destino</h1>
   <div class="e-sub" id="esub">Oráculo · Constelación Campo Trinity</div>
   <p class="e-dsc" id="edsc">No encontrarás aquí respuestas.<br>Encontrarás el gesto de tu propia búsqueda.</p>
-  <button class="btn" id="btn-ent" onclick="toInt()">Consultar el campo</button>
+  <button class="btn" id="btn-ent" onclick="toInt()">Consultar el oráculo</button>
 </div>
 
 <!-- INTENTION -->
 <div class="screen" id="s-int">
   <div class="i-lbl">Umbral I · La intención</div>
-  <p class="i-q">¿Desde dónde consultás?</p>
+  <p class="i-q">¿Qué traés al consultar?</p>
+  <p class="i-helper">Escribí aquí abajo una palabra o frase breve</p>
   <input class="i-inp" id="iinp" type="text" placeholder="Nombrá lo que traés…" maxlength="140"/>
-  <p class="i-nt">Lo que escribís no será procesado ni guardado.<br>Es un gesto tuyo, para vos.<br>El campo escucha a su manera.</p>
+  <p class="i-nt">Lo que escribís no será procesado ni guardado.<br>Es un gesto tuyo, para vos.<br>El oráculo responde a su manera.</p>
   <button class="btn inst" onclick="toPau()">Soltar y recibir</button>
 </div>
 
 <!-- PAUSE -->
 <div class="screen" id="s-pau">
   <div class="pw"><div class="pr pr1"></div><div class="pr pr2"></div><div class="pr pr3"></div><div class="pc">◈</div></div>
-  <p class="pt">El campo está escuchando…</p>
+  <p class="pt">El oráculo está escuchando…</p>
 </div>
 
 <!-- REVELATION -->
@@ -124,7 +126,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(
   <p class="r-txt" id="rtxt"></p>
   <div class="r-hr" id="rhr"></div>
   <p class="r-q" id="rq"></p>
-  <button class="r-ret" id="rret" onclick="toRet()">◈</button>
+  <button class="r-ret" id="rret" onclick="toRet()" title="Volver al inicio">◈</button>
 </div>
 
 <script>
