@@ -11,7 +11,12 @@
             --texto: #3E3E3E;
             --acento: #C9A961;
             --borde: #D0C4B0;
-            --blanco: #E0D5C7;
+            --carta-fondo: #0d0c0b;
+            --carta-borde: #3a2e18;
+            --oro: #c9a84c;
+            --oro-tenue: #8a6f35;
+            --humo: #e8e0d0;
+            --desc: #8a8070;
         }
         body { font-family: Georgia, serif; background-color: var(--fondo); color: var(--texto); line-height: 1.8; }
         .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
@@ -20,85 +25,86 @@
         .subtitulo { font-size: 1.3rem; color: var(--acento); font-style: italic; margin-bottom: 2rem; }
         .autor { font-size: 1rem; color: var(--acento); }
         .libros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin: 3rem 0; }
-        .libro-card { background: var(--blanco); border: 3px solid var(--borde); border-radius: 12px; padding: 2.5rem; text-decoration: none; color: var(--texto); transition: all 0.3s ease; display: block; }
-        .libro-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: var(--acento); }
-        .libro-card.destacado { border-color: var(--acento); background: #EDE5D0; }
-        .libro-card.destacado:hover { box-shadow: 0 10px 30px rgba(201,169,97,0.2); }
 
-        /* Libro 7 — Oráculo */
-        .libro-card.oraculo { border-color: #8a7050; background: #1a1510; color: #d4cfc8; }
+        /* ── Tarjeta base: contemplativa oscura/oro ── */
+        .libro-card {
+            background: var(--carta-fondo);
+            border: 3px solid var(--carta-borde);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: var(--humo);
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .libro-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 65% 50% at 50% 42%, rgba(201,168,76,0.045) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .libro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(201,168,76,0.13);
+            border-color: var(--oro-tenue);
+        }
+        .libro-numero { font-size: 0.85rem; color: var(--oro-tenue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; position: relative; z-index: 1; }
+        .libro-titulo { font-size: 1.8rem; margin-bottom: 1rem; font-weight: 600; color: var(--oro); position: relative; z-index: 1; }
+        .libro-descripcion { font-size: 1rem; line-height: 1.7; color: var(--desc); position: relative; z-index: 1; }
+        .estado { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; margin-top: 1rem; font-weight: 500; position: relative; z-index: 1; }
+
+        /* Libro 6 — destacado */
+        .libro-card.destacado { border-color: var(--oro-tenue); }
+        .libro-card.destacado::before { background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(201,168,76,0.07) 0%, transparent 70%); }
+        .libro-card.destacado:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.2); }
+
+        /* Libro 7 — Oráculo (negro cálido, su seña) */
+        .libro-card.oraculo { border-color: #8a7050; background: #1a1510; }
         .libro-card.oraculo .libro-numero { color: #c9a96e; }
         .libro-card.oraculo .libro-titulo { color: #e8d4a8; }
-        .libro-card.oraculo .libro-descripcion { color: #7a7570; }
-        .libro-card.oraculo:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(201,169,110,0.15); border-color: #c9a96e; }
+        .libro-card.oraculo:hover { box-shadow: 0 10px 40px rgba(201,169,110,0.15); border-color: #c9a96e; }
 
         /* Libro 8 — Atender */
-        .libro-card.atender {
-            border-color: #6a5535;
-            background: #0d0c0b;
-            color: #e8e0d0;
-            position: relative;
-            overflow: hidden;
-        }
-        .libro-card.atender::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.05) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        .libro-card.atender .libro-numero { color: #8a6f35; }
-        .libro-card.atender .libro-titulo { color: #c9a84c; }
-        .libro-card.atender .libro-descripcion { color: #6a6050; }
-        .libro-card.atender:hover { transform: translateY(-5px); box-shadow: 0 10px 40px rgba(201,168,76,0.12); border-color: #8a6f35; }
+        .libro-card.atender { border-color: #6a5535; }
+        .libro-card.atender::before { background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.05) 0%, transparent 70%); }
+        .libro-card.atender:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.12); border-color: #8a6f35; }
 
-        /* Libro 9 — Volver distinto */
-        .libro-card.volver {
-            border-color: #5a4828;
-            background: #0d0c0b;
-            color: #e8e0d0;
-            position: relative;
-            overflow: hidden;
-        }
-        .libro-card.volver::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        /* Espiral SVG decorativa muy tenue */
+        /* Libro 9 — Volver distinto (círculos concéntricos) */
+        .libro-card.volver { border-color: #5a4828; }
+        .libro-card.volver::before { background: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%); }
         .libro-card.volver::after {
             content: '';
             position: absolute;
             right: -20px; bottom: -20px;
             width: 120px; height: 120px;
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='none' stroke='rgba(201,168,76,0.06)' stroke-width='0.8'/%3E%3Ccircle cx='50' cy='50' r='32' fill='none' stroke='rgba(201,168,76,0.05)' stroke-width='0.8'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='rgba(201,168,76,0.04)' stroke-width='0.8'/%3E%3Ccircle cx='50' cy='50' r='10' fill='none' stroke='rgba(201,168,76,0.04)' stroke-width='0.8'/%3E%3C/svg%3E") no-repeat center;
-            background-size: contain;
-            pointer-events: none;
-            opacity: 0.8;
+            background-size: contain; pointer-events: none; opacity: 0.8;
         }
-        .libro-card.volver .libro-numero { color: #8a6f35; position: relative; z-index: 1; }
-        .libro-card.volver .libro-titulo { color: #c9a84c; position: relative; z-index: 1; }
-        .libro-card.volver .libro-descripcion { color: #6a6050; position: relative; z-index: 1; }
-        .libro-card.volver .estado { position: relative; z-index: 1; }
-        .libro-card.volver:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(201,168,76,0.14);
-            border-color: #8a6f35;
-        }
+        .libro-card.volver:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.14); border-color: #8a6f35; }
 
-        .libro-numero { font-size: 0.85rem; color: var(--acento); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
-        .libro-titulo { font-size: 1.8rem; margin-bottom: 1rem; font-weight: 600; }
-        .libro-descripcion { font-size: 1rem; line-height: 1.7; color: #6B6B6B; }
-        .estado { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; margin-top: 1rem; font-weight: 500; }
-        .publicado { background: #A8B69A; color: white; }
-        .proceso { background: #7A8B9A; color: white; }
-        .proximamente { background: #D4A59A; color: white; }
-        .nuevo { background: var(--acento); color: white; }
+        /* Libro 10 — El sentido de la vuelta (espiral logarítmica) */
+        .libro-card.sentido { border-color: #5a4828; }
+        .libro-card.sentido::before { background: radial-gradient(ellipse 70% 55% at 50% 45%, rgba(201,168,76,0.05) 0%, transparent 70%); }
+        .libro-card.sentido::after {
+            content: '';
+            position: absolute;
+            right: -24px; bottom: -24px;
+            width: 140px; height: 140px;
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Cpath%20d%3D%27M%2050.70%2050.00%20L%2050.72%2050.13%20L%2050.71%2050.27%20L%2050.68%2050.41%20L%2050.62%2050.54%20L%2050.53%2050.67%20L%2050.42%2050.78%20L%2050.28%2050.88%20L%2050.13%2050.95%20L%2049.95%2051.00%20L%2049.76%2051.01%20L%2049.57%2050.99%20L%2049.37%2050.94%20L%2049.19%2050.84%20L%2049.01%2050.71%20L%2048.85%2050.54%20L%2048.73%2050.34%20L%2048.63%2050.11%20L%2048.58%2049.86%20L%2048.57%2049.59%20L%2048.61%2049.32%20L%2048.71%2049.04%20L%2048.86%2048.78%20L%2049.06%2048.54%20L%2049.31%2048.33%20L%2049.60%2048.16%20L%2049.94%2048.04%20L%2050.30%2047.98%20L%2050.68%2047.99%20L%2051.07%2048.07%20L%2051.46%2048.23%20L%2051.82%2048.46%20L%2052.15%2048.76%20L%2052.44%2049.13%20L%2052.65%2049.56%20L%2052.80%2050.05%20L%2052.86%2050.57%20L%2052.82%2051.11%20L%2052.68%2051.67%20L%2052.43%2052.20%20L%2052.08%2052.71%20L%2051.62%2053.16%20L%2051.07%2053.53%20L%2050.44%2053.82%20L%2049.74%2053.99%20L%2048.99%2054.03%20L%2048.21%2053.94%20L%2047.44%2053.70%20L%2046.69%2053.31%20L%2045.99%2052.77%20L%2045.38%2052.09%20L%2044.88%2051.28%20L%2044.52%2050.36%20L%2044.33%2049.34%20L%2044.32%2048.27%20L%2044.50%2047.17%20L%2044.90%2046.08%20L%2045.51%2045.04%20L%2046.33%2044.09%20L%2047.34%2043.26%20L%2048.54%2042.61%20L%2049.88%2042.16%20L%2051.33%2041.96%20L%2052.86%2042.01%20L%2054.42%2042.36%20L%2055.95%2043.00%20L%2057.39%2043.95%20L%2058.69%2045.18%20L%2059.80%2046.68%20L%2060.64%2048.43%20L%2061.19%2050.38%20L%2061.38%2052.47%20L%2061.19%2054.65%20L%2060.59%2056.84%20L%2059.56%2058.97%20L%2058.12%2060.97%20L%2056.27%2062.74%20L%2054.04%2064.21%20L%2051.49%2065.29%20L%2048.68%2065.93%20L%2045.68%2066.06%20L%2042.59%2065.63%20L%2039.50%2064.62%20L%2036.53%2063.01%20L%2033.79%2060.81%20L%2031.39%2058.04%20L%2029.45%2054.77%20L%2028.08%2051.05%20L%2027.37%2046.99%20L%2027.39%2042.71%20L%2028.22%2038.33%20L%2029.88%2033.99%20L%2032.39%2029.87%20L%2035.72%2026.11%20L%2039.83%2022.89%20L%2044.64%2020.36%20L%2050.04%2018.66%20L%2055.88%2017.93%20L%2061.99%2018.27%20L%2068.18%2019.75%20L%2074.25%2022.42%20L%2079.96%2026.29%20L%2085.08%2031.31%20L%2089.39%2037.40%20L%2092.66%2044.44%20L%2094.70%2052.26%27%20fill%3D%27none%27%20stroke%3D%27rgba%28201%2C168%2C76%2C0.07%29%27%20stroke-width%3D%270.8%27%2F%3E%3C%2Fsvg%3E") no-repeat center;
+            background-size: contain; pointer-events: none; opacity: 0.9;
+        }
+        .libro-card.sentido:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.15); border-color: #8a6f35; }
+
+        /* ── Badges de estado (sobre oscuro) ── */
+        .publicado { background: rgba(168,182,154,0.16); color: #b8c2a8; border: 1px solid #4a5440; }
+        .nuevo { background: rgba(201,168,76,0.12); color: var(--oro); border: 1px solid var(--oro-tenue); }
         .oraculo-badge { background: #2a2018; color: #c9a96e; border: 1px solid #6a5535; }
         .atender-badge { background: #1a1510; color: #c9a84c; border: 1px solid #5a4528; letter-spacing: 0.05em; }
         .volver-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
+        .sentido-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
 
         .nota-autoria { background: rgba(201, 169, 97, 0.1); border-left: 4px solid var(--acento); padding: 1.5rem; margin: 3rem 0; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
         footer { text-align: center; margin-top: 6rem; padding-top: 2rem; border-top: 2px solid var(--borde); font-size: 0.9rem; color: var(--acento); }
@@ -181,7 +187,14 @@
             <div class="libro-numero">Libro 9</div>
             <h2 class="libro-titulo">Volver distinto</h2>
             <p class="libro-descripcion">Cómo se cambia sin demoler todo. Ocho umbrales sobre el movimiento entre el círculo y la espiral — para quien ya dijo basta y pregunta qué sigue.</p>
-            <span class="estado volver-badge">◈ Nuevo · Umbrales interactivos</span>
+            <span class="estado volver-badge">◈ Umbrales interactivos</span>
+        </a>
+
+        <a href="01_Libros/10_El_Sentido_de_la_Vuelta/index.html" class="libro-card sentido">
+            <div class="libro-numero">Libro 10</div>
+            <h2 class="libro-titulo">El sentido de la vuelta</h2>
+            <p class="libro-descripcion">Volvés siempre a lo mismo: lo que cambia es la altura desde la que volvés. Ocho umbrales —dos vueltas de una espiral— que no se leen, se habitan. Continúa <em>Volver distinto</em>.</p>
+            <span class="estado sentido-badge">🌀 Nuevo · Umbrales interactivos</span>
         </a>
 
     </div>
