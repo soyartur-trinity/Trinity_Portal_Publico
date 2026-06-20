@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El sentido de la vuelta · Libro X | Portal Trinity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.9;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+
+  /* ── PORTADA ── */
+  .portada{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; padding:5rem 2rem; position:relative; overflow:hidden; text-align:center;}
+  #hilo{position:absolute; inset:0; opacity:.06; pointer-events:none;}
+  .anillo{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:50%;
+    border:1px solid rgba(201,168,76,0.05); pointer-events:none; animation:respirar 7s ease-in-out infinite;}
+  .anillo:nth-child(1){width:180px;height:180px;animation-delay:0s;}
+  .anillo:nth-child(2){width:340px;height:340px;animation-delay:2.3s;}
+  .anillo:nth-child(3){width:520px;height:520px;animation-delay:4.6s;}
+
+  .volver-portal{position:absolute; top:2rem; left:1.6rem; z-index:3;
+    font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.25em; text-transform:uppercase;
+    color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;
+    opacity:0; animation:aparecer 1s ease forwards .5s;}
+  .volver-portal:hover{color:var(--oro-tenue);}
+
+  .portal-label{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.4rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .3s; position:relative; z-index:1;}
+  .libro-numero{font-family:'Cormorant Garamond',serif; font-size:.78rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo); margin-bottom:1.4rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .6s; position:relative; z-index:1;}
+  .titulo-principal{font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,9vw,5rem);
+    font-weight:300; color:var(--oro); letter-spacing:.05em; line-height:1.04; margin-bottom:1.4rem;
+    opacity:0; animation:aparecer 1.4s ease forwards .9s; position:relative; z-index:1;}
+  .frase-entrada{font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,3vw,1.6rem);
+    font-style:italic; font-weight:300; color:var(--blanco-humo); line-height:1.7; max-width:30rem;
+    margin-bottom:4.5rem; opacity:0; animation:aparecer 1.4s ease forwards 1.4s; position:relative; z-index:1; padding:0 .5rem;}
+
+  .boton-entrada{display:inline-flex; flex-direction:column; align-items:center; gap:.8rem;
+    text-decoration:none; opacity:0; animation:aparecer 1s ease forwards 2s; position:relative; z-index:1;}
+  .boton-texto{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-tenue); transition:color .3s ease;}
+  .boton-entrada:hover .boton-texto{color:var(--oro);}
+  .boton-circulo{width:54px; height:54px; border-radius:50%; border:1px solid var(--oro-tenue);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease; background:rgba(201,168,76,0.04);}
+  .boton-entrada:hover .boton-circulo{border-color:var(--oro); background:rgba(201,168,76,0.08);}
+  .boton-flecha{font-size:1.2rem; color:var(--oro-tenue); transition:all .3s ease;}
+  .boton-entrada:hover .boton-flecha{color:var(--oro); transform:translateY(2px);}
+
+  /* ── ANTES DE EMPEZAR ── */
+  .antes{padding:6rem 2rem; border-top:1px solid var(--separador);}
+  .antes-contenido{max-width:600px; margin:0 auto;}
+  .antes-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:2.6rem;}
+  .antes p{color:var(--gris-calido); font-size:clamp(1.1rem,1.9vw,1.22rem); line-height:2; margin-bottom:1.4rem;}
+  .antes p strong{color:var(--blanco-humo); font-weight:500;}
+
+  /* ── MAPA ── */
+  .mapa{padding:5rem 2rem 6rem;}
+  .mapa-contenido{max-width:640px; margin:0 auto;}
+  .mapa-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:3rem;}
+  .umbral-link{display:flex; gap:1.6rem; align-items:flex-start; padding:1.6rem 0;
+    border-bottom:1px solid var(--separador); text-decoration:none; position:relative; transition:all .3s ease;}
+  .umbral-link:first-of-type{border-top:1px solid var(--separador);}
+  .umbral-link::before{content:''; position:absolute; left:0; top:0; bottom:0; width:0;
+    background:rgba(201,168,76,0.03); transition:width .4s ease;}
+  .umbral-link:hover::before{width:100%;}
+  .umbral-num{font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,5vw,2.6rem); font-weight:300;
+    color:var(--oro-polvo); line-height:1; flex-shrink:0; width:3rem; text-align:right; padding-top:.15rem;
+    transition:color .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-num{color:var(--oro-tenue);}
+  .umbral-info{flex:1; position:relative; z-index:1;}
+  .umbral-nombre{font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,3vw,1.5rem); font-weight:400;
+    color:var(--blanco-humo); display:block; margin-bottom:.3rem; line-height:1.2; transition:color .3s ease;}
+  .umbral-link:hover .umbral-nombre{color:var(--oro);}
+  .umbral-descripcion{font-size:1.02rem; font-style:italic; color:var(--gris-calido); line-height:1.6;}
+  .umbral-flecha{font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--oro-polvo);
+    flex-shrink:0; margin-top:.2rem; transition:all .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-flecha{color:var(--oro-tenue); transform:translateX(4px);}
+
+  .mapa-nota{margin-top:2.6rem; text-align:center;}
+  .mapa-nota p{font-family:'Cormorant Garamond',serif; font-size:.95rem; font-style:italic;
+    color:var(--oro-polvo); line-height:1.7;}
+
+  /* ── PREGUNTA QUE VUELVE ── */
+  .pregunta-final{padding:6rem 2rem 6rem; border-top:1px solid var(--separador); text-align:center;}
+  .pf-label{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-polvo); display:block; margin-bottom:1.6rem;}
+  .pf-pregunta{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.5rem,4.2vw,2.1rem); color:var(--oro); line-height:1.5; max-width:28rem; margin:0 auto 1.8rem;}
+  .pf-nota{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:1rem; max-width:24rem; margin:0 auto;}
+
+  /* ── PIE ── */
+  .pie{padding:3rem 2rem 4rem; text-align:center; border-top:1px solid var(--separador);}
+  .pie-volver{display:inline-block; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.25em; text-transform:uppercase; color:var(--oro-tenue); text-decoration:none;
+    padding:.8rem 1.8rem; border:1px solid var(--separador); transition:all .3s ease; margin-bottom:1.6rem;}
+  .pie-volver:hover{border-color:var(--oro-tenue); color:var(--oro); background:rgba(201,168,76,0.04);}
+  .pie-firma{font-family:'Cormorant Garamond',serif; font-size:.78rem; color:var(--oro-polvo);
+    letter-spacing:.12em; display:block;}
+
+  @keyframes aparecer{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+  @keyframes respirar{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.4;}
+    50%{transform:translate(-50%,-50%) scale(1.06);opacity:.08;}}
+
+  @media (max-width:600px){
+    body{font-size:21px;}
+    .mapa, .antes, .pregunta-final{padding-left:1.4rem; padding-right:1.4rem;}
+    .umbral-link{gap:1.1rem;} .umbral-num{width:2.4rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #hilo{display:none;} .anillo{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="portada">
+  <canvas id="hilo"></canvas>
+  <div class="anillo"></div><div class="anillo"></div><div class="anillo"></div>
+
+  <a href="../../index.html" class="volver-portal">← Portal Trinity</a>
+
+  <span class="portal-label">Portal Público Trinity</span>
+  <span class="libro-numero">Libro X</span>
+  <h1 class="titulo-principal">El sentido<br>de la vuelta</h1>
+  <p class="frase-entrada">No se trata de dejar de volver.<br>Se vuelve siempre a lo mismo.<br>Se trata de a qué altura se vuelve.</p>
+
+  <a href="umbral_0_lo_que_mueve.html" class="boton-entrada">
+    <span class="boton-texto">Entrar</span>
+    <div class="boton-circulo"><span class="boton-flecha">↓</span></div>
+  </a>
+</section>
+
+<!-- ANTES DE EMPEZAR -->
+<section class="antes">
+  <div class="antes-contenido">
+    <span class="antes-titulo">Antes de empezar</span>
+    <p>Este no es un libro para leer rápido. No trae respuestas para aplicar ni pasos para seguir. Trae un modo de mirar — el mismo que recorre, de distinta forma, todos los libros de este Portal.</p>
+    <p>Si en algún umbral algo resuena, detenete ahí: ese es el lugar donde el libro estaba trabajando para vos. Si algo no te dice nada, seguí — ya volverá, o no era para este momento de tu vida.</p>
+    <p>No hace falta creer en nada de lo que sigue. Solo mirar, y verificar contra tu propia experiencia. <strong>Lo que sirva, quedátelo. Lo demás, dejalo pasar.</strong></p>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="mapa">
+  <div class="mapa-contenido">
+    <span class="mapa-titulo">Los umbrales</span>
+
+    <a href="umbral_0_lo_que_mueve.html" class="umbral-link">
+      <span class="umbral-num">0</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Lo que mueve</span>
+        <span class="umbral-descripcion">Nada está quieto. Ni siquiera ahora.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_1_el_mismo_movimiento.html" class="umbral-link">
+      <span class="umbral-num">I</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El mismo movimiento</span>
+        <span class="umbral-descripcion">Círculo y espiral son el mismo gesto, a dos alturas.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_2_ver_no_alcanza.html" class="umbral-link">
+      <span class="umbral-num">II</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Ver no alcanza</span>
+        <span class="umbral-descripcion">Entender no abre la jaula. Otra cosa la abre.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_3_transparentar.html" class="umbral-link">
+      <span class="umbral-num">III</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Transparentar</span>
+        <span class="umbral-descripcion">La luz no se enciende. Se deja de tapar.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_4_subir_a_ver.html" class="umbral-link">
+      <span class="umbral-num">IV</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Subir a ver</span>
+        <span class="umbral-descripcion">Adentro no ves la forma. Solo desde arriba aparece.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_5_lo_que_tira.html" class="umbral-link">
+      <span class="umbral-num">V</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Lo que tira</span>
+        <span class="umbral-descripcion">No se vacía el tanque. Se corta el suministro.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_6_hacia_donde_gira.html" class="umbral-link">
+      <span class="umbral-num">VI</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">Hacia dónde gira</span>
+        <span class="umbral-descripcion">La misma forma sube o se hunde. Aprendé a leer el sentido.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <a href="umbral_7_el_surco.html" class="umbral-link">
+      <span class="umbral-num">VII</span>
+      <div class="umbral-info">
+        <span class="umbral-nombre">El surco</span>
+        <span class="umbral-descripcion">Una vida no cambia por un salto. Por instantes frecuentados.</span>
+      </div>
+      <span class="umbral-flecha">→</span>
+    </a>
+
+    <div class="mapa-nota">
+      <p>Dos vueltas de una misma espiral.<br>Terminás donde empezaste — más arriba.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PREGUNTA QUE VUELVE · tercera altura -->
+<section class="pregunta-final">
+  <span class="pf-label">La pregunta que vuelve</span>
+  <p class="pf-pregunta">La próxima vez que vuelvas a lo de siempre —<br>¿desde qué altura vas a volver?</p>
+  <p class="pf-nota">No la respondas hoy de una vez. Es de las que se contestan distinto cada vez que se vuelve.</p>
+</section>
+
+<!-- PIE -->
+<footer class="pie">
+  <a href="../../index.html" class="pie-volver">← Volver al Portal Trinity</a>
+  <span class="pie-firma">Portal Público Trinity · Lic. Arturo Rodríguez · © 2026 Campo Trinity</span>
+</footer>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function(){
+    const c=document.getElementById('hilo'); if(!c||reduce) return;
+    const x=c.getContext('2d'); let t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      const cx=c.width/2, cy=c.height/2, md=Math.min(c.width,c.height);
+      x.clearRect(0,0,c.width,c.height); x.beginPath();
+      let a=0,r=4; const phi=1.618;
+      while(r<md*0.55){ const xx=cx+Math.cos(a+t)*r, yy=cy+Math.sin(a+t)*r;
+        a===0?x.moveTo(xx,yy):x.lineTo(xx,yy); a+=0.1; r=4*Math.pow(phi,a/(Math.PI*1.15))*0.9; }
+      x.strokeStyle='rgba(201,168,76,0.9)'; x.lineWidth=0.9; x.stroke();
+      t+=0.0007; requestAnimationFrame(draw);
+    } draw();
+  })();
+</script>
+
+</body>
+</html>

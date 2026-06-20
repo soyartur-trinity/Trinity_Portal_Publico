@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral VI · Hacia dónde gira | El sentido de la vuelta</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418; --frio:#6f7e88;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover{color:var(--oro-tenue);}
+
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  #hero-hilo{position:absolute; inset:0; opacity:.05; pointer-events:none;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s; position:relative; z-index:1;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s; position:relative; z-index:1;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s; position:relative; z-index:1;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s; position:relative; z-index:1;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s; position:relative; z-index:1;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:3rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem); line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .primera{font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,5vw,2.4rem);
+    font-weight:300; color:var(--blanco-humo); text-align:center; line-height:1.35; margin:1rem 0 3rem;}
+
+  .aforismo{margin:5rem 0; text-align:center; opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .aforismo.visible{opacity:1; transform:none;}
+  .aforismo p{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.4rem,3.6vw,1.85rem); font-style:italic; color:var(--blanco-humo); line-height:1.6;}
+
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4.5rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center; margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .geo-lienzo{width:100%; border:1px solid var(--separador); background:rgba(201,168,76,.012); display:block;}
+  .geo-estado{text-align:center; min-height:4.2rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .nombre{font-family:'Cormorant Garamond',serif; font-size:clamp(1.25rem,3.2vw,1.6rem);
+    display:block; letter-spacing:.02em; transition:color .4s ease; margin-bottom:.3rem;}
+  .geo-estado .glosa{font-style:italic; color:var(--gris-calido); font-size:1rem; line-height:1.6;}
+  .geo-control{margin:1.7rem 0 .4rem;}
+  .geo-escala{display:flex; justify-content:space-between; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.16em; text-transform:uppercase; color:var(--oro-polvo); margin-bottom:.5rem;}
+  input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:1px;
+    background:linear-gradient(90deg,var(--frio),var(--oro-polvo),var(--ambar)); outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; appearance:none;
+    width:18px; height:18px; border-radius:50%; background:var(--oro); cursor:pointer; box-shadow:0 0 10px rgba(201,168,76,.5);}
+  input[type=range]::-moz-range-thumb{width:18px; height:18px; border:none; border-radius:50%;
+    background:var(--oro); cursor:pointer; box-shadow:0 0 10px rgba(201,168,76,.5);}
+  .geo-eco{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--oro-polvo); font-size:.95rem; margin-top:1.3rem;}
+
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue); background:rgba(201,168,76,.05);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .continuar a:hover .continuar-flecha{color:var(--oro-tenue); transform:translateY(2px);}
+
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){ body{font-size:21px;} .wrap{padding:0 1.3rem;} }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #hero-hilo{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="umbral_5_lo_que_tira.html">← Umbral V</a>
+  <span>Umbral VI</span>
+  <a href="umbral_7_el_surco.html">Umbral VII →</a>
+</nav>
+
+<header class="encabezado">
+  <canvas id="hero-hilo"></canvas>
+  <span class="etiqueta">El sentido de la vuelta · Umbral</span>
+  <div class="numero">VI</div>
+  <h1 class="titulo">Hacia dónde gira</h1>
+  <p class="subtitulo">el sentido</p>
+  <div class="cue"><div class="linea"></div><span>leer</span></div>
+</header>
+
+<main class="wrap cuerpo">
+
+  <p class="primera bloque">La espiral no sube siempre.<br>Esa es la versión de los pósters, y no es verdad.</p>
+
+  <div class="bloque">
+    <p>Toda vuelta tiene dos sentidos posibles. Hay vidas que vuelven a su material cada vez desde un poco más arriba — la misma herida, pero con algo de comprensión nueva adentro, con un borde más que antes no se veía. Y hay vidas que vuelven cada vez desde un poco más abajo, donde la misma herida, en cada vuelta, <strong>duele más y enseña menos</strong>, y el surco en vez de abrirse se cierra.</p>
+    <p>La misma forma. Sentido contrario. Y reconocer hacia dónde gira la propia espiral no es un lujo: es lo que decide si todo este trabajo eleva o hunde.</p>
+  </div>
+
+  <!-- ════ geometría: leer el sentido (vuelve el helix del Umbral I) ════ -->
+  <div class="geo" id="geo">
+    <span class="geo-label">La misma figura del Umbral I · ahora leéla</span>
+    <p class="geo-instruccion">Movés el sentido de la vuelta. Reconocés las señas.</p>
+
+    <canvas class="geo-lienzo" id="lienzo" height="380"></canvas>
+
+    <div class="geo-estado">
+      <span class="nombre" id="geo-nombre">Asciende</span>
+      <span class="glosa" id="geo-glosa">vuelta a vuelta: un poco más de comprensión. La herida trae algo nuevo. Se abre.</span>
+    </div>
+
+    <div class="geo-control">
+      <div class="geo-escala"><span>← se hunde</span><span>círculo</span><span>asciende →</span></div>
+      <input type="range" id="pitch" min="-100" max="100" value="38" aria-label="Sentido de la vuelta">
+    </div>
+    <p class="geo-eco">Lo tocaste en el Umbral I sin saber leerlo. Ahora sí.</p>
+  </div>
+
+  <div class="bloque">
+    <p>¿Y cómo se reconoce, en la propia vida, hacia dónde gira? No por cómo se siente en el momento — eso engaña: ascender a veces duele, y hundirse a veces se disfraza de esfuerzo o de calma. Se reconoce por la <strong>tendencia a través de las vueltas</strong>. Una sola pregunta alcanza: la herida de siempre, vuelta tras vuelta, ¿te enseña un poco más, o un poco menos? ¿Se va abriendo, o se va cerrando?</p>
+  </div>
+
+  <div class="aforismo">
+    <p>La pregunta no es si volvés.<br>
+    Vas a volver.<br>
+    Es si llegás un poco más arriba,<br>o un poco más abajo.</p>
+  </div>
+
+  <div class="sep">⟐ &nbsp; ⟐ &nbsp; ⟐</div>
+
+  <div class="bloque">
+    <p>Y acá lo que más importa: el sentido, en parte, <strong>se elige</strong>. No siempre se puede cambiar el material —hay círculos que no se dejan: un cuerpo, una pérdida, una historia—, pero frente a lo que no se cambia todavía queda elegir la altura desde la que se vuelve. A eso, cuando es verdadero, se lo llama aceptación. Y tiene una falsificación que se le parece tanto que casi nadie las distingue.</p>
+    <p>La aceptación mira algo real y elige su altura frente a ello. La resignación usa las mismas palabras —"es lo que hay", "ya está"— para no dar el paso que teme. Se parecen por fuera. Por dentro son opuestas: una es una espiral que asciende dentro de lo inamovible; la otra es una que se hunde, disfrazada de paz.</p>
+  </div>
+
+  <div class="aforismo">
+    <p>Hay una sola pregunta que las separa:<br>
+    ¿esto no se puede cambiar,<br>o no me animo a cambiarlo?</p>
+  </div>
+
+  <div class="bloque">
+    <p>Una cosa más, y es la que impide que este umbral hunda a quien lo lea. Descubrir que tu espiral viene girando hacia abajo no es una condena — es, exactamente, el primer instante en que empieza a girar hacia arriba. Porque para ver que te hundís tuvo que despertarse algo en vos que mira; y esa consciencia que asiste a su propia caída es, ya, altura. El sentido no está fijado. Se reconoce, y al reconocerse, empieza a poder darse vuelta.</p>
+  </div>
+
+  <div class="continuar">
+    <span class="continuar-label">Siguiente umbral</span>
+    <a href="umbral_7_el_surco.html">
+      <span class="continuar-nombre">El surco</span>
+      <div class="continuar-circulo"><span class="continuar-flecha">↓</span></div>
+    </a>
+  </div>
+
+</main>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  (function(){
+    const c=document.getElementById('hero-hilo'); if(!c||reduce) return;
+    const x=c.getContext('2d'); let t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      const cx=c.width/2, cy=c.height/2, md=Math.min(c.width,c.height);
+      x.clearRect(0,0,c.width,c.height); x.beginPath();
+      let a=0,r=4; const phi=1.618;
+      while(r<md*0.5){ const xx=cx+Math.cos(a+t)*r, yy=cy+Math.sin(a+t)*r;
+        a===0?x.moveTo(xx,yy):x.lineTo(xx,yy); a+=0.12; r=4*Math.pow(phi,a/(Math.PI*1.15))*0.9; }
+      x.strokeStyle='rgba(201,168,76,0.9)'; x.lineWidth=0.8; x.stroke();
+      t+=0.0006; requestAnimationFrame(draw);
+    } draw();
+  })();
+
+  /* ════ Leer el sentido — helix con señas (callback Umbral I) ════ */
+  (function(){
+    const cv=document.getElementById('lienzo'); const x=cv.getContext('2d');
+    const pitchEl=document.getElementById('pitch');
+    const nombreEl=document.getElementById('geo-nombre');
+    const glosaEl=document.getElementById('geo-glosa');
+    let dpr=Math.min(window.devicePixelRatio||1,2), W=0,H=0,R=0, t=0;
+    const E=0.30, TURNS=3.4, STEP=0.06;
+
+    function resize(){ W=cv.clientWidth; H=380; R=Math.min(W,H)*0.30;
+      cv.width=W*dpr; cv.height=H*dpr; cv.style.height=H+'px'; x.setTransform(dpr,0,0,dpr,0,0); }
+    function pv(){ return parseInt(pitchEl.value,10)/100; }
+    function project(theta,s){
+      const px=R*Math.cos(theta), py=R*Math.sin(theta);
+      const rpt=s*R*0.52; let z=rpt*(theta/(Math.PI*2)); z-=rpt*TURNS/2;
+      return [W/2+px, H/2 - z*Math.cos(E) + py*Math.sin(E), z];
+    }
+    function draw(){
+      const s=pv(); x.clearRect(0,0,W,H);
+      x.strokeStyle='rgba(58,46,24,0.7)'; x.lineWidth=1;
+      x.beginPath(); x.moveTo(W/2,H*0.12); x.lineTo(W/2,H*0.88); x.stroke();
+      const thetaMax=Math.PI*2*TURNS, frio = s<-0.08 ? Math.min(1,(-s-0.08)/0.7) : 0;
+      let prev=null;
+      for(let th=0; th<=thetaMax; th+=STEP){
+        const [sx,sy,z]=project(th,s);
+        const aN=(z/(R*0.52*TURNS))+0.5;
+        let br=0.30+0.65*Math.max(0,Math.min(1,aN));
+        // color: oro al ascender, frío/azulado al hundirse
+        const rr=Math.round(201-frio*120), gg=Math.round(168-frio*70), bb=Math.round(76+frio*70);
+        if(prev){ x.beginPath(); x.moveTo(prev[0],prev[1]); x.lineTo(sx,sy);
+          x.strokeStyle='rgba('+rr+','+gg+','+bb+','+br.toFixed(3)+')'; x.lineWidth=1.7; x.stroke(); }
+        prev=[sx,sy];
+      }
+      const [dx,dy]=project(t,s);
+      x.beginPath(); x.arc(dx,dy,4.5,0,7); x.fillStyle='rgba(232,224,208,0.95)'; x.fill();
+      if(!reduce){ t+=STEP*0.9; if(t>thetaMax) t=0; }
+      requestAnimationFrame(draw);
+    }
+    function etiqueta(){
+      const v=parseInt(pitchEl.value,10);
+      if(v>8){ nombreEl.textContent='Asciende'; nombreEl.style.color='var(--oro)';
+        glosaEl.textContent='vuelta a vuelta: un poco más de comprensión. La herida trae algo nuevo. Se abre.'; }
+      else if(v<-8){ nombreEl.textContent='Se hunde'; nombreEl.style.color='var(--frio)';
+        glosaEl.textContent='vuelta a vuelta: un poco más de resentimiento. La misma herida duele más y enseña menos. Se cierra.'; }
+      else { nombreEl.textContent='El círculo'; nombreEl.style.color='var(--gris-calido)';
+        glosaEl.textContent='gira sin sentido todavía. Ni sube ni baja: espera.'; }
+    }
+    pitchEl.addEventListener('input',etiqueta);
+    window.addEventListener('resize',resize);
+    resize(); etiqueta(); draw();
+  })();
+
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.14});
+  document.querySelectorAll('.bloque,.aforismo,.sep,.geo,.continuar').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
