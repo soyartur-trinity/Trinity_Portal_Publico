@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral III · Las dos culpas | Atravesar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --brasa:#c46a3a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover{color:var(--oro-tenue);}
+
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  #hero-hilo{position:absolute; inset:0; opacity:.05; pointer-events:none;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s; position:relative; z-index:1;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s; position:relative; z-index:1;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s; position:relative; z-index:1;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s; position:relative; z-index:1;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s; position:relative; z-index:1;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:3rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem); line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .primera{font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,5vw,2.4rem);
+    font-weight:300; color:var(--blanco-humo); text-align:center; line-height:1.35; margin:1rem 0 3rem;}
+
+  .aforismo{margin:5rem 0; text-align:center; opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .aforismo.visible{opacity:1; transform:none;}
+  .aforismo p{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.4rem,3.6vw,1.85rem); font-style:italic; color:var(--blanco-humo); line-height:1.6;}
+
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4.5rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+
+  .puerta{margin:-.6rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-polvo); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro-tenue);}
+
+  /* movimiento — rótulo interno del umbral doble */
+  .movimiento{text-align:center; margin:5rem 0 2.6rem; opacity:0; transition:opacity .9s ease;}
+  .movimiento.visible{opacity:1;}
+  .movimiento span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+
+  /* geometría — la mano en el pasado */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center; margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .geo-lienzo{width:100%; border:1px solid var(--separador); background:rgba(201,168,76,.012);
+    display:block; touch-action:none; cursor:ew-resize;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .geo-acciones{display:flex; gap:1px; background:var(--separador); border:1px solid var(--separador); margin-top:1.4rem;}
+  .geo-acciones button{flex:1; background:var(--negro); border:none; padding:.95rem .5rem;
+    font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--oro-polvo); cursor:pointer; transition:all .3s ease;}
+  .geo-acciones button:hover{color:var(--oro-tenue);}
+
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue); background:rgba(201,168,76,.05);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .continuar a:hover .continuar-flecha{color:var(--oro-tenue); transform:translateY(2px);}
+
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){ body{font-size:21px;} .wrap{padding:0 1.3rem;} }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #hero-hilo{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="umbral_2_el_enojo_y_el_viento.html">← Umbral II</a>
+  <span>Umbral III</span>
+  <a href="umbral_4_la_sed.html">Umbral IV →</a>
+</nav>
+
+<header class="encabezado">
+  <canvas id="hero-hilo"></canvas>
+  <span class="etiqueta">Atravesar · Umbral</span>
+  <div class="numero">III</div>
+  <h1 class="titulo">Las dos culpas</h1>
+  <p class="subtitulo">la aversión hacia adentro</p>
+  <div class="cue"><div class="linea"></div><span>leer</span></div>
+</header>
+
+<main class="wrap cuerpo">
+
+  <p class="primera bloque">No toda culpa es la misma culpa.<br>Hay una que pasa y hay una que se queda.</p>
+
+  <div class="bloque">
+    <p>La primera es incómoda y es sana. Hiciste algo que no está bien: contestaste mal, faltaste, mentiste, dejaste a alguien esperando. Aparece un peso en el pecho, molesta lo suficiente como para que hagas algo — pedir disculpas, arreglar, no repetirlo — y después se va. Es tolerable. Es señal de que algo te importa. <strong>Nadie querría una vida sin esa culpa:</strong> es lo que hace que uno sea alguien con quien se puede contar.</p>
+    <p>La segunda no se parece en nada. No dura horas: dura años. No pesa: tortura. Vuelve sin aviso, se despierta con uno, se acuesta con uno, y —esto es lo peor— <strong>colorea el presente entero</strong>: cosas que no tienen nada que ver quedan teñidas de eso. No pide reparación, porque ninguna reparación le alcanza. Pide otra vuelta. Y otra. Y otra.</p>
+    <p>Todo este umbral trata de la segunda. Y empieza con una pregunta que casi nunca se hace: <strong>si tortura tanto y no sirve para nada, ¿por qué sigue ahí?</strong></p>
+  </div>
+
+  <div class="movimiento"><span>Primer movimiento · para qué sirve</span></div>
+
+  <div class="bloque">
+    <p>Sigue ahí porque hace algo. No es un vicio, no es masoquismo, no es falta de voluntad. <strong>Es una defensa</strong>, y las defensas defienden.</p>
+    <p>Fijate en la diferencia entre estas dos frases, que parecen casi iguales y no lo son:</p>
+    <p><strong>Hice algo malo.</strong> Es la culpa. Habla de un acto. Un acto es acotado, tuvo un día y una hora, y en principio se puede reparar.<br>
+    <strong>Soy algo malo.</strong> Eso ya no es culpa: es vergüenza. Y de ahí no se sale, porque no hay nada que reparar — no hiciste algo defectuoso, sos lo defectuoso.</p>
+    <p>Mientras se rumia la culpa, uno se queda del lado de la primera frase. Doloroso, agotador, interminable — y todavía del lado del acto. <strong>La rumiación es un dique.</strong> Aguanta para que no llegue lo otro. Por eso quien la sufre no puede simplemente dejarla: no está eligiendo el sufrimiento, está sosteniendo una pared.</p>
+    <p>Y hay una segunda función, más callada. Cuando la culpa es con alguien que ya no está —o con alguien con quien todo se rompió—, seguir culpándose es seguir teniendo relación. Es el único vínculo que quedó disponible. <strong>Soltar la culpa se siente, ahí, como perder a la persona una segunda vez.</strong></p>
+    <p>Nada de esto va a desarmarse en este umbral, y quiero decirlo con todas las letras: <strong>una defensa no se toca antes de saber de qué defendía.</strong> Lo único que vamos a mirar es una pieza suelta de todo ese aparato. Una sola. La que sostiene la frase que aparece siempre, en todos los casos, sin excepción:</p>
+    <p class="primera"><em>yo tendría que haber podido preverlo.</em></p>
+  </div>
+
+  <div class="movimiento"><span>Segundo movimiento · la mano en el pasado</span></div>
+
+  <!-- ════ geometría: la mano en el pasado ════ -->
+  <div class="geo" id="geo">
+    <span class="geo-label">La mano en el pasado</span>
+    <p class="geo-instruccion">Arrastrá hacia atrás. Todo lo que quieras.</p>
+
+    <canvas class="geo-lienzo" id="lienzo" height="340"></canvas>
+
+    <div class="geo-estado">
+      <span class="glosa" id="glosa">A la derecha, lo que pasó. Llevá el asa hacia atrás.</span>
+    </div>
+
+    <div class="geo-acciones">
+      <button id="b-volver">Volver a la escena</button>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <p>El asa se terminó. No se rompió, no falló, no hiciste nada mal: simplemente <strong>hasta ahí llegaba tu mano</strong>. Y el riel seguía. Se veía seguir, hacia atrás, hacia cosas que ya estaban andando antes de que llegaras — decisiones de otros, historias que empezaron antes, información que no tenías, azar puro.</p>
+    <p>Ahora bien: este umbral no te va a decir que no fue tu culpa. Sería mentir, y a veces sería una mentira ofensiva. A veces sí hiciste algo. A veces se podía hacer mejor y no se hizo.</p>
+    <p>Lo que dice es otra cosa, más incómoda y más exacta. <strong>La culpa anclada no supone que hiciste algo mal: supone que podías haberlo controlado todo.</strong> Y si mirás bien esa suposición, tiene menos de humildad que de otra cosa. Para haberlo previsto habrías necesitado un poder que ningún ser humano tuvo nunca: ver el futuro, conocer lo que no se sabía, manejar lo que dependía de otros.</p>
+    <p>Y ahí está el fondo de todo, que es lo que la culpa realmente protege. Si yo podía evitarlo, entonces el mundo es controlable, y me basta con ser más cuidadoso para que no vuelva a pasar. <strong>Culparse duele menos que estar a la intemperie.</strong> Es más tolerable ser el responsable de un mundo manejable que ser una persona chiquita en un mundo que no avisa.</p>
+  </div>
+
+  <div class="aforismo">
+    <p>La culpa que no repara nada<br>no es humildad.<br>Es la última forma del control.</p>
+  </div>
+
+  <div class="sep">⟐ &nbsp; ⟐ &nbsp; ⟐</div>
+
+  <div class="bloque">
+    <p>Queda entonces separar dos cosas que la culpa anclada tiene fundidas, y en esa separación está casi todo lo practicable de este umbral.</p>
+    <p><strong>La responsabilidad</strong> mira lo que hiciste, es acotada, y mira hacia adelante: qué reparo, qué digo, qué hago distinto. Es un acto. Cuesta, y termina.</p>
+    <p><strong>La culpa anclada</strong> mira lo que sos, no tiene borde, y mira hacia atrás. No es un acto: es una postura. Puede durar toda la vida sin producir un solo movimiento — y de hecho suele impedirlos, porque quien está ocupado castigándose no está reparando nada.</p>
+    <p>Es una paradoja que conviene tener presente: <strong>la culpa que más duele suele ser la que menos repara.</strong></p>
+  </div>
+
+  <div class="puerta">
+    <a href="../09_Volver_Distinto/index.html">⟐ &nbsp;Sobre cambiar algo sin demolerse en el intento: <em>Volver distinto</em>, Libro IX.</a>
+  </div>
+
+  <div class="bloque">
+    <p>¿Y si no hay reparación posible? Pasa seguido: la persona murió, pasaron veinte años, el vínculo se cerró, no hay a quién decirle nada. Ahí la culpa se vuelve un cuarto sin puerta, y el error es quedarse adentro esperando una llave que no existe.</p>
+    <p>Lo que queda no es una llave, pero es algo: <strong>reparar en otra dirección.</strong> Lo que no se le puede devolver a esa persona se le puede dar a alguien más, o a uno mismo, o a la manera en que se hacen las cosas de ahora en adelante. No es un truco de consuelo. Es la única forma de que aquello ocupe un lugar en tu vida en vez de ocuparte la vida entera.</p>
+    <p>Y una cosa que hay que decir sin adornos. Si lo que cargás es una pérdida reciente, un abuso, algo que te hicieron o algo que no elegiste, esto no se atraviesa a solas con un libro abierto en el teléfono. No porque seas frágil: porque hay cosas que necesitan otro ser humano enfrente para poder decirse. <strong>Buscá con quién.</strong> No es un paso previo al trabajo — es el trabajo.</p>
+  </div>
+
+  <div class="aforismo">
+    <p>Tu mano llega hasta acá.<br>Lo demás ya venía andando<br>desde antes de que llegaras.</p>
+  </div>
+
+  <div class="continuar">
+    <span class="continuar-label">Siguiente umbral</span>
+    <a href="umbral_4_la_sed.html">
+      <span class="continuar-nombre">La sed</span>
+      <div class="continuar-circulo"><span class="continuar-flecha">↓</span></div>
+    </a>
+  </div>
+
+</main>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  (function(){
+    const c=document.getElementById('hero-hilo'); if(!c||reduce) return;
+    const x=c.getContext('2d'); let t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      const cx=c.width/2, cy=c.height/2, md=Math.min(c.width,c.height);
+      x.clearRect(0,0,c.width,c.height); x.beginPath();
+      let a=0,r=4; const phi=1.618;
+      while(r<md*0.5){ const xx=cx+Math.cos(a+t)*r, yy=cy+Math.sin(a+t)*r;
+        a===0?x.moveTo(xx,yy):x.lineTo(xx,yy); a+=0.12; r=4*Math.pow(phi,a/(Math.PI*1.15))*0.9; }
+      x.strokeStyle='rgba(201,168,76,0.9)'; x.lineWidth=0.8; x.stroke();
+      t+=0.0006; requestAnimationFrame(draw);
+    } draw();
+  })();
+
+  /* ════ La mano en el pasado: el riel sigue, el asa no ════ */
+  (function(){
+    const cv=document.getElementById('lienzo'); const x=cv.getContext('2d');
+    const glosa=document.getElementById('glosa');
+    const bVolver=document.getElementById('b-volver');
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    let W=0, H=340, tPrev=performance.now(), t=0;
+
+    let rielY=0, inicioX=0, limiteX=0, finX=0;
+    let asa=0, arrastrando=false, agarreDX=0;
+    let enTope=0, revelado=0, avisoTope=false;
+
+    /* lo que sí estuvo en tus manos */
+    const propios=[
+      {u:0.30, txt:'lo que dijiste'},
+      {u:0.62, txt:'lo que decidiste'},
+      {u:0.88, txt:'lo que no viste'}
+    ];
+    /* lo que ya venía andando */
+    const previos=[
+      {u:0.78, txt:'lo que no podías saber'},
+      {u:0.55, txt:'lo que otros decidieron'},
+      {u:0.32, txt:'lo que ya venía andando'},
+      {u:0.10, txt:'lo que empezó antes de vos'}
+    ];
+
+    function resize(){
+      W=cv.clientWidth; cv.width=W*dpr; cv.height=H*dpr;
+      cv.style.height=H+'px'; x.setTransform(dpr,0,0,dpr,0,0);
+      rielY=H*0.40; inicioX=W*0.87; limiteX=W*0.42; finX=W*0.05;
+      if(!arrastrando && asa===0) asa=inicioX;
+    }
+
+    function coords(e){ const r=cv.getBoundingClientRect(); return [e.clientX-r.left, e.clientY-r.top]; }
+
+    cv.addEventListener('pointerdown', e=>{
+      const [px,py]=coords(e);
+      if(Math.hypot(px-asa, py-rielY)>60) return;
+      e.preventDefault(); cv.setPointerCapture(e.pointerId);
+      arrastrando=true; agarreDX=px-asa;
+      glosa.textContent='Volvés sobre la escena. Otra vez.';
+    });
+    cv.addEventListener('pointermove', e=>{
+      if(!arrastrando) return;
+      const [px]=coords(e);
+      let destino=px-agarreDX;
+      if(destino<limiteX){
+        /* el asa no pasa: resistencia elástica, no fracaso */
+        destino = limiteX - Math.min(10, (limiteX-destino)*0.07);
+      }
+      asa=Math.max(limiteX-10, Math.min(inicioX, destino));
+    });
+    function soltar(){ arrastrando=false; }
+    cv.addEventListener('pointerup', soltar);
+    cv.addEventListener('pointercancel', soltar);
+    cv.addEventListener('pointerleave', soltar);
+
+    bVolver.addEventListener('click', ()=>{
+      asa=inicioX; arrastrando=false;
+      glosa.textContent = revelado>0.9
+        ? 'Podés recorrerlo las veces que quieras. El tramo es siempre el mismo.'
+        : 'A la derecha, lo que pasó. Llevá el asa hacia atrás.';
+    });
+
+    function draw(ahora){
+      const now=ahora||performance.now();
+      const dt=Math.min((now-tPrev)/1000,0.1); tPrev=now; t+=dt;
+
+      const tocandoTope = asa<=limiteX+1.5;
+      enTope = tocandoTope ? Math.min(1, enTope+dt*1.5) : Math.max(0, enTope-dt*1.2);
+      if(enTope>0.55 && !avisoTope){
+        avisoTope=true;
+        glosa.innerHTML='Acá se termina el asa.<br>El riel sigue.';
+      }
+      if(enTope>0.55) revelado=Math.min(1, revelado+dt*0.55);
+
+      x.clearRect(0,0,W,H);
+
+      /* riel anterior — visible, sin asa */
+      x.beginPath(); x.moveTo(finX,rielY); x.lineTo(limiteX,rielY);
+      x.strokeStyle='rgba(154,144,128,'+(0.10+revelado*0.13).toFixed(3)+')';
+      x.lineWidth=1; x.setLineDash([3,5]); x.stroke(); x.setLineDash([]);
+
+      /* riel alcanzable */
+      x.beginPath(); x.moveTo(limiteX,rielY); x.lineTo(inicioX,rielY);
+      x.strokeStyle='rgba(201,168,76,0.26)'; x.lineWidth=1.4; x.stroke();
+
+      /* tope */
+      x.beginPath(); x.moveTo(limiteX,rielY-11); x.lineTo(limiteX,rielY+11);
+      x.strokeStyle='rgba(212,168,67,'+(0.20+enTope*0.55).toFixed(3)+')';
+      x.lineWidth=1+enTope*1.2; x.stroke();
+
+      x.textAlign='center';
+
+      /* nodos previos — se revelan al llegar al tope */
+      previos.forEach((n,i)=>{
+        const px=finX+(limiteX-finX)*n.u;
+        const ap=Math.max(0, Math.min(1, revelado*1.5 - i*0.22));
+        x.beginPath(); x.arc(px,rielY,2.6,0,7);
+        x.fillStyle='rgba(154,144,128,'+(ap*0.42).toFixed(3)+')'; x.fill();
+        x.font="italic 12.5px 'Cormorant Garamond', Georgia, serif";
+        x.fillStyle='rgba(154,144,128,'+(ap*0.50).toFixed(3)+')';
+        x.fillText(n.txt, px, rielY + 26 + (i%2)*20);
+      });
+
+      /* nodos propios — se encienden al pasar el asa */
+      propios.forEach(n=>{
+        const px=limiteX+(inicioX-limiteX)*n.u;
+        const pasado = asa<=px+2;
+        x.beginPath(); x.arc(px,rielY, pasado?4.2:3.2, 0,7);
+        x.fillStyle=pasado?'rgba(212,168,67,0.72)':'rgba(201,168,76,0.26)'; x.fill();
+        x.font="italic 12.5px 'Cormorant Garamond', Georgia, serif";
+        x.fillStyle=pasado?'rgba(232,224,208,0.60)':'rgba(154,144,128,0.30)';
+        x.fillText(n.txt, px, rielY-22);
+      });
+
+      /* la escena — extremo derecho */
+      const lat=0.5+0.5*Math.sin(t*1.4);
+      const g=x.createRadialGradient(inicioX,rielY,0,inicioX,rielY,20+lat*5);
+      g.addColorStop(0,'rgba(196,106,58,0.28)'); g.addColorStop(1,'rgba(196,106,58,0)');
+      x.fillStyle=g; x.beginPath(); x.arc(inicioX,rielY,20+lat*5,0,7); x.fill();
+      x.beginPath(); x.arc(inicioX,rielY,3.4,0,7); x.fillStyle='rgba(212,168,67,0.75)'; x.fill();
+      x.font="italic 12.5px 'Cormorant Garamond', Georgia, serif";
+      x.fillStyle='rgba(154,144,128,0.55)'; x.fillText('lo que pasó', inicioX, rielY-22);
+
+      /* el asa */
+      const gh=x.createRadialGradient(asa,rielY,0,asa,rielY,26);
+      gh.addColorStop(0,'rgba(212,168,67,'+(0.20+enTope*0.16).toFixed(3)+')');
+      gh.addColorStop(1,'rgba(212,168,67,0)');
+      x.fillStyle=gh; x.beginPath(); x.arc(asa,rielY,26,0,7); x.fill();
+      x.beginPath(); x.arc(asa,rielY,8.5,0,7);
+      x.fillStyle='rgba(13,12,11,1)'; x.fill();
+      x.strokeStyle='rgba(232,224,208,'+(0.62+enTope*0.3).toFixed(3)+')'; x.lineWidth=1.4; x.stroke();
+
+      /* leyenda final bajo el tope */
+      if(revelado>0.35){
+        x.font="italic 13px 'Cormorant Garamond', Georgia, serif";
+        x.fillStyle='rgba(212,168,67,'+(revelado*0.55).toFixed(3)+')';
+        x.fillText('hasta acá llega tu mano', limiteX, H-22);
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize',resize);
+    resize(); requestAnimationFrame(draw);
+  })();
+
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.14});
+  document.querySelectorAll('.bloque,.aforismo,.sep,.geo,.puerta,.movimiento,.continuar').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
