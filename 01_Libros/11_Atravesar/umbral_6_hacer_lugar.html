@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral VI · Hacer lugar | Atravesar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --brasa:#c46a3a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover{color:var(--oro-tenue);}
+
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  #hero-hilo{position:absolute; inset:0; opacity:.05; pointer-events:none;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s; position:relative; z-index:1;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s; position:relative; z-index:1;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s; position:relative; z-index:1;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s; position:relative; z-index:1;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s; position:relative; z-index:1;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:3rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem); line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .primera{font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,5vw,2.4rem);
+    font-weight:300; color:var(--blanco-humo); text-align:center; line-height:1.35; margin:1rem 0 3rem;}
+
+  .aforismo{margin:5rem 0; text-align:center; opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .aforismo.visible{opacity:1; transform:none;}
+  .aforismo p{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.4rem,3.6vw,1.85rem); font-style:italic; color:var(--blanco-humo); line-height:1.6;}
+
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4.5rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+
+  .puerta{margin:-.6rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-polvo); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro-tenue);}
+
+  /* geometría — el marco */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center; margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .geo-lienzo{width:100%; border:1px solid var(--separador); background:rgba(201,168,76,.012);
+    display:block; touch-action:none; cursor:pointer;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .geo-acciones{display:flex; gap:1px; background:var(--separador); border:1px solid var(--separador); margin-top:1.4rem;}
+  .geo-acciones button{flex:1; background:var(--negro); border:none; padding:.95rem .5rem;
+    font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--oro-polvo); cursor:pointer; transition:all .3s ease;}
+  .geo-acciones button:hover{color:var(--oro-tenue);}
+
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue); background:rgba(201,168,76,.05);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .continuar a:hover .continuar-flecha{color:var(--oro-tenue); transform:translateY(2px);}
+
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){ body{font-size:21px;} .wrap{padding:0 1.3rem;} }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #hero-hilo{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="umbral_5_lo_que_esta_debajo.html">← Umbral V</a>
+  <span>Umbral VI</span>
+  <a href="umbral_7_atravesar.html">Umbral VII →</a>
+</nav>
+
+<header class="encabezado">
+  <canvas id="hero-hilo"></canvas>
+  <span class="etiqueta">Atravesar · Umbral</span>
+  <div class="numero">VI</div>
+  <h1 class="titulo">Hacer lugar</h1>
+  <p class="subtitulo">el giro</p>
+  <div class="cue"><div class="linea"></div><span>leer</span></div>
+</header>
+
+<main class="wrap cuerpo">
+
+  <p class="primera bloque">No se achica.<br>Lo que se agranda es el cuarto.</p>
+
+  <div class="bloque">
+    <p>Llegamos al lugar donde este libro tiene que decir qué se puede hacer, y conviene empezar por lo que <strong>no</strong> es, porque casi todo lo que circula con este nombre es alguna de estas tres cosas y ninguna funciona.</p>
+    <p>No es <strong>aprobar</strong>. Hacerle lugar a la bronca por algo injusto no es decir que estuvo bien. No es <strong>resignarse</strong>: la resignación es una forma triste de la pelea, la de quien ya perdió pero sigue en el ring. Y no es <strong>una técnica para que se vaya</strong> — este es el punto que más se traiciona, y vamos a volver sobre él.</p>
+    <p>Hasta acá vimos que hay dos puertas y que las dos dan al mismo lugar. Pelear con lo que sentís: le das corriente. Negarlo: se acumula, y sale por otro lado. Este umbral es la tercera puerta, y no se explica bien. Se prueba.</p>
+  </div>
+
+  <!-- ════ geometría: el marco ════ -->
+  <div class="geo" id="geo">
+    <span class="geo-label">El marco</span>
+    <p class="geo-instruccion">Empujá la forma. O tomá la esquina del marco.</p>
+
+    <canvas class="geo-lienzo" id="lienzo" height="420"></canvas>
+
+    <div class="geo-estado">
+      <span class="glosa" id="glosa">Ocupa casi todo. Probá sacarla de ahí.</span>
+    </div>
+
+    <div class="geo-acciones">
+      <button id="b-reiniciar">Volver al principio</button>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <p>Mirá bien lo que pasó, porque es todo el umbral en una imagen. <strong>La forma no cambió.</strong> No se achicó, no se aclaró, no se fue. Tiene exactamente el mismo tamaño que tenía al principio — se puede medir.</p>
+    <p>Lo que cambió fue el cuarto. Y al cambiar el cuarto, la forma dejó de ser <em>todo lo que hay</em>. Sigue estando, sigue siendo del mismo tamaño, y ahora hay además otras cosas — que estaban desde antes, del otro lado del borde, esperando que alguien corriera el marco.</p>
+    <p>Y también viste lo otro: cada vez que la empujaste, creció. No porque el dibujo esté trucado. Porque es lo que hace.</p>
+  </div>
+
+  <div class="aforismo">
+    <p>La forma quedó igual.<br>Cambió el tamaño del cuarto.</p>
+  </div>
+
+  <div class="sep">⟐ &nbsp; ⟐ &nbsp; ⟐</div>
+
+  <div class="bloque">
+    <p>En la práctica, hacer lugar tiene tres movimientos, y ninguno de los tres es un ejercicio de respiración.</p>
+    <p><strong>Nombrar sin discutir.</strong> No <em>no tengo que estar así</em>, sino <em>hay miedo</em>. No <em>ya tendría que haberlo superado</em>, sino <em>hay bronca</em>. Parece un detalle de redacción y no lo es: la primera versión abre una discusión, y toda discusión es corriente. La segunda solamente registra lo que hay.</p>
+    <p><strong>Bajar del relato al cuerpo.</strong> Una emoción, sin la historia que la acompaña, es una sensación física en un lugar preciso: el pecho apretado, la garganta cerrada, el estómago hueco, el calor en la cara. Se puede estar con eso. Lo que no se puede es estar con la historia, porque la historia se puede repetir infinitas veces y la sensación no: la sensación cambia sola si se la deja.</p>
+    <p><strong>Seguir haciendo lo que importa, con eso puesto.</strong> Este es el que agranda el cuarto. No se hace lugar quedándose quieto a esperar que la forma achique: se hace lugar poniendo vida alrededor. Trabajar, llamar a alguien, salir a caminar, cumplir con lo que uno se comprometió — con miedo, con bronca, con lo que haya. No <em>a pesar de</em>, que sigue siendo pelear. Con eso puesto.</p>
+  </div>
+
+  <div class="puerta">
+    <a href="../08_Atender/index.html">⟐ &nbsp;Nada de esto es una técnica nueva: es atención puesta de otro modo. El instrumento está en <em>Atender</em>, Libro VIII.</a>
+  </div>
+
+  <div class="bloque">
+    <p>Ahora, la trampa. Es la más fina de todo el libro y hay que decirla sin adornos.</p>
+    <p>Apenas alguien entiende esto, hace lugar <strong>para que se vaya</strong>. Se sienta a respirar, registra la sensación, la nombra sin discutir — y a los diez minutos revisa: <em>¿ya bajó?</em> Eso no es hacer lugar. <strong>Es pelear con mejores modales</strong>, y la emoción lo detecta al instante, porque la operación es exactamente la misma: sigue siendo una maniobra para sacarse algo de encima.</p>
+    <p>Y ahí está lo incómodo, que no tiene arreglo: <em>hacer lugar</em> sólo funciona cuando dejaste de necesitar que funcione. No es una paradoja de manual. Es la parte del asunto que no se puede simular, y por eso no se aprende en una tarde.</p>
+    <p>Lo único honesto que se puede prometer es esto: <strong>no vas a dejar de sentir, y aun así vas a poder hacer tu vida.</strong> Que es bastante más de lo que parece, y bastante menos de lo que uno querría.</p>
+  </div>
+
+  <div class="bloque">
+    <p>Una advertencia, la última, y de las que no se negocian. <strong>Hacer lugar no es tolerar lo intolerable.</strong> Si alguien te maltrata, si estás en una situación que te daña, si hay violencia, la respuesta no es ampliar el marco: es irse, poner un límite, pedir ayuda, denunciar.</p>
+    <p>La diferencia es simple de enunciar y a veces difícil de ver desde adentro. <strong>Se le hace lugar a lo que ya pasó y a lo que no se puede cambiar.</strong> No a lo que está pasando ahora y podría dejar de pasar. Cualquier lectura de este umbral que te deje más quieto frente a algo que te está dañando es una mala lectura — y si tenés dudas sobre cuál de los dos casos es el tuyo, esa duda ya es motivo suficiente para consultarlo con alguien.</p>
+  </div>
+
+  <div class="aforismo">
+    <p>No hiciste que se fuera.<br>Hiciste que dejara de ser todo.</p>
+  </div>
+
+  <div class="continuar">
+    <span class="continuar-label">Último umbral</span>
+    <a href="umbral_7_atravesar.html">
+      <span class="continuar-nombre">Atravesar</span>
+      <div class="continuar-circulo"><span class="continuar-flecha">↓</span></div>
+    </a>
+  </div>
+
+</main>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  (function(){
+    const c=document.getElementById('hero-hilo'); if(!c||reduce) return;
+    const x=c.getContext('2d'); let t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      const cx=c.width/2, cy=c.height/2, md=Math.min(c.width,c.height);
+      x.clearRect(0,0,c.width,c.height); x.beginPath();
+      let a=0,r=4; const phi=1.618;
+      while(r<md*0.5){ const xx=cx+Math.cos(a+t)*r, yy=cy+Math.sin(a+t)*r;
+        a===0?x.moveTo(xx,yy):x.lineTo(xx,yy); a+=0.12; r=4*Math.pow(phi,a/(Math.PI*1.15))*0.9; }
+      x.strokeStyle='rgba(201,168,76,0.9)'; x.lineWidth=0.8; x.stroke();
+      t+=0.0006; requestAnimationFrame(draw);
+    } draw();
+  })();
+
+  /* ════ El marco: la forma no cambia de tamaño. Nunca. ════ */
+  (function(){
+    const cv=document.getElementById('lienzo'); const x=cv.getContext('2d');
+    const glosa=document.getElementById('glosa');
+    const bReiniciar=document.getElementById('b-reiniciar');
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    let W=0, H=420, tPrev=performance.now(), t=0;
+
+    let cx=0, cy=0;
+    const R0=74;                 /* radio base de la forma — sólo crece si la empujan */
+    let R=R0, empujes=0;
+    let marco=0, marcoObjetivo=0;   /* 0 = marco ceñido ; 1 = marco completo */
+    let despX=0, despY=0;           /* desplazamiento elástico al empujar */
+    let modo=null, agarre=null;
+    let vioMarco=false;
+
+    const satelites=[
+      {u:.16,v:.20},{u:.84,v:.24},{u:.12,v:.78},{u:.88,v:.74},
+      {u:.30,v:.90},{u:.70,v:.09},{u:.06,v:.48},{u:.94,v:.52}
+    ];
+
+    function resize(){
+      W=cv.clientWidth; cv.width=W*dpr; cv.height=H*dpr;
+      cv.style.height=H+'px'; x.setTransform(dpr,0,0,dpr,0,0);
+      cx=W/2; cy=H/2;
+    }
+
+    function marcoRect(){
+      const minW=R*2+34, minH=R*2+34;
+      const maxW=W-16, maxH=H-16;
+      const w=minW+(maxW-minW)*marco, h=minH+(maxH-minH)*marco;
+      return {x:cx-w/2, y:cy-h/2, w, h};
+    }
+
+    function coords(e){ const r=cv.getBoundingClientRect(); return [e.clientX-r.left, e.clientY-r.top]; }
+
+    cv.addEventListener('pointerdown', e=>{
+      const [px,py]=coords(e); const m=marcoRect();
+      const esq=Math.hypot(px-(m.x+m.w), py-(m.y+m.h));
+      if(esq<44){ modo='marco'; }
+      else if(Math.hypot(px-(cx+despX), py-(cy+despY))<R){ modo='forma'; }
+      else return;
+      e.preventDefault(); cv.setPointerCapture(e.pointerId);
+      agarre=[px,py];
+    });
+
+    cv.addEventListener('pointermove', e=>{
+      if(!modo) return;
+      const [px,py]=coords(e);
+      if(modo==='forma'){
+        despX=(px-agarre[0])*0.22; despY=(py-agarre[1])*0.22;
+      } else {
+        const m=marcoRect();
+        const d=(px-(m.x+m.w))+(py-(m.y+m.h));
+        marcoObjetivo=Math.max(0, Math.min(1, marcoObjetivo + d*0.0016));
+        if(marcoObjetivo>0.28 && !vioMarco){
+          vioMarco=true;
+          glosa.innerHTML='La forma no se movió ni un milímetro.<br>Se movió el borde.';
+        }
+      }
+    });
+
+    function soltar(){
+      if(modo==='forma'){
+        empujes++;
+        R=Math.min(R0*1.34, R+5.5);
+        glosa.textContent = empujes<3
+          ? 'Volvió. Y quedó un poco más grande.'
+          : 'Cuanto más la empujás, más ocupa. Probá la esquina del marco.';
+      }
+      modo=null; despX=despY=0;
+    }
+    cv.addEventListener('pointerup', soltar);
+    cv.addEventListener('pointercancel', soltar);
+    cv.addEventListener('pointerleave', soltar);
+
+    bReiniciar.addEventListener('click', ()=>{
+      R=R0; empujes=0; marco=marcoObjetivo=0; despX=despY=0; vioMarco=false;
+      glosa.textContent='Ocupa casi todo. Probá sacarla de ahí.';
+    });
+
+    function draw(ahora){
+      const now=ahora||performance.now();
+      const dt=Math.min((now-tPrev)/1000,0.1); tPrev=now; t+=dt;
+
+      marco += (marcoObjetivo-marco)*Math.min(1,dt*4.5);
+      if(!modo){ despX*=Math.max(0,1-dt*7); despY*=Math.max(0,1-dt*7); }
+
+      x.clearRect(0,0,W,H);
+      const m=marcoRect();
+
+      /* lo que estaba fuera del borde, y aparece al correrlo */
+      satelites.forEach((s,i)=>{
+        const sx=m.x+m.w*s.u, sy=m.y+m.h*s.v;
+        const ap=Math.max(0, Math.min(1,(marco-0.18)*1.5)) * (0.5+0.5*Math.sin(t*0.7+i));
+        if(ap<=0.01) return;
+        const g=x.createRadialGradient(sx,sy,0,sx,sy,15);
+        g.addColorStop(0,'rgba(201,168,76,'+(ap*0.22).toFixed(3)+')');
+        g.addColorStop(1,'rgba(201,168,76,0)');
+        x.fillStyle=g; x.beginPath(); x.arc(sx,sy,15,0,7); x.fill();
+        x.beginPath(); x.arc(sx,sy,2.2,0,7);
+        x.fillStyle='rgba(232,224,208,'+(ap*0.34).toFixed(3)+')'; x.fill();
+      });
+
+      /* el marco */
+      x.beginPath(); x.rect(m.x,m.y,m.w,m.h);
+      x.strokeStyle='rgba(201,168,76,'+(0.30-marco*0.10).toFixed(3)+')';
+      x.lineWidth=1; x.stroke();
+
+      /* asa de la esquina */
+      const hx=m.x+m.w, hy=m.y+m.h;
+      x.beginPath(); x.moveTo(hx-16,hy); x.lineTo(hx,hy); x.lineTo(hx,hy-16);
+      x.strokeStyle='rgba(212,168,67,'+(0.48+(modo==='marco'?0.35:0)).toFixed(3)+')';
+      x.lineWidth=1.6; x.stroke();
+
+      /* la forma — radio R, dibujada exactamente igual siempre */
+      const fx=cx+despX, fy=cy+despY;
+      const lat=0.5+0.5*Math.sin(t*1.1);
+      const g2=x.createRadialGradient(fx,fy,0,fx,fy,R);
+      g2.addColorStop(0,'rgba(196,106,58,'+(0.30+lat*0.05).toFixed(3)+')');
+      g2.addColorStop(0.65,'rgba(196,106,58,0.14)');
+      g2.addColorStop(1,'rgba(196,106,58,0)');
+      x.fillStyle=g2; x.beginPath(); x.arc(fx,fy,R,0,7); x.fill();
+      x.beginPath(); x.arc(fx,fy,R,0,7);
+      x.strokeStyle='rgba(212,168,67,0.44)'; x.lineWidth=1.2; x.stroke();
+
+      /* medida constante de la forma, para que se pueda verificar */
+      if(marco>0.32){
+        x.beginPath(); x.moveTo(fx-R,fy+R+14); x.lineTo(fx+R,fy+R+14);
+        x.strokeStyle='rgba(154,144,128,0.26)'; x.lineWidth=1; x.stroke();
+        x.beginPath(); x.moveTo(fx-R,fy+R+10); x.lineTo(fx-R,fy+R+18);
+        x.moveTo(fx+R,fy+R+10); x.lineTo(fx+R,fy+R+18); x.stroke();
+        x.font="italic 12px 'Cormorant Garamond', Georgia, serif"; x.textAlign='center';
+        x.fillStyle='rgba(154,144,128,0.42)';
+        x.fillText('la misma de antes', fx, fy+R+32);
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize',resize);
+    resize(); requestAnimationFrame(draw);
+  })();
+
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.14});
+  document.querySelectorAll('.bloque,.aforismo,.sep,.geo,.puerta,.continuar').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

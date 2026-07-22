@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral I · Lo que pasa y lo que se queda | Atravesar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --brasa:#c46a3a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover{color:var(--oro-tenue);}
+
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  #hero-hilo{position:absolute; inset:0; opacity:.05; pointer-events:none;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s; position:relative; z-index:1;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s; position:relative; z-index:1;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s; position:relative; z-index:1;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s; position:relative; z-index:1;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s; position:relative; z-index:1;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:3rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem); line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .primera{font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,5vw,2.4rem);
+    font-weight:300; color:var(--blanco-humo); text-align:center; line-height:1.35; margin:1rem 0 3rem;}
+
+  .aforismo{margin:5rem 0; text-align:center; opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .aforismo.visible{opacity:1; transform:none;}
+  .aforismo p{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.4rem,3.6vw,1.85rem); font-style:italic; color:var(--blanco-humo); line-height:1.6;}
+
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4.5rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+
+  .puerta{margin:-.6rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-polvo); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro-tenue);}
+
+  /* geometría — la ola */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center; margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .geo-lienzo{width:100%; border:1px solid var(--separador); background:rgba(201,168,76,.012); display:block;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .geo-acciones{display:flex; gap:1px; background:var(--separador); border:1px solid var(--separador); margin-top:1.4rem;}
+  .geo-acciones button{flex:1; background:var(--negro); border:none; padding:.95rem .5rem;
+    font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--oro-polvo); cursor:pointer; transition:all .3s ease;}
+  .geo-acciones button:hover{color:var(--oro-tenue);}
+
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue); background:rgba(201,168,76,.05);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .continuar a:hover .continuar-flecha{color:var(--oro-tenue); transform:translateY(2px);}
+
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){ body{font-size:21px;} .wrap{padding:0 1.3rem;} }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #hero-hilo{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="umbral_0_lo_que_no_viene_solo.html">← Umbral 0</a>
+  <span>Umbral I</span>
+  <a href="umbral_2_el_enojo_y_el_viento.html">Umbral II →</a>
+</nav>
+
+<header class="encabezado">
+  <canvas id="hero-hilo"></canvas>
+  <span class="etiqueta">Atravesar · Umbral</span>
+  <div class="numero">I</div>
+  <h1 class="titulo">Lo que pasa<br>y lo que se queda</h1>
+  <p class="subtitulo">la distinción</p>
+  <div class="cue"><div class="linea"></div><span>leer</span></div>
+</header>
+
+<main class="wrap cuerpo">
+
+  <p class="primera bloque">Una emoción dura poco.<br>Mucho menos de lo que creés.</p>
+
+  <div class="bloque">
+    <p>Dejada sola, sin que nadie la empuje ni la pelee, una emoción tiene un arco corto: sube, llega a un punto, baja. Se parece a una ola. No dura horas ni días — dura lo que dura una ola.</p>
+    <p>Entonces, ¿qué es eso que llevás encima hace tres meses? Algo, seguro. Pero no es la emoción. <strong>Es un estado anclado</strong>, que es otra cosa y funciona de otro modo: no pasa, porque algo lo vuelve a encender antes de que termine de apagarse.</p>
+  </div>
+
+  <!-- ════ geometría: la ola ════ -->
+  <div class="geo" id="geo">
+    <span class="geo-label">La ola</span>
+    <p class="geo-instruccion">No hay nada que hacer acá.</p>
+
+    <canvas class="geo-lienzo" id="lienzo" height="300"></canvas>
+
+    <div class="geo-estado">
+      <span class="glosa" id="glosa">&nbsp;</span>
+    </div>
+
+    <div class="geo-acciones">
+      <button id="b-pensar">Pensarlo otra vez</button>
+    </div>
+  </div>
+
+  <div class="bloque">
+    <p>Si esperaste, se apagó sola. No hizo falta técnica, ni respiración, ni decisión: solamente tiempo. Y si apretaste —una vez, o cinco, o todas las que quisiste— volvió entera, cada vez, como si recién empezara.</p>
+    <p>Eso es todo lo que hay que entender de este umbral. La ola no es el problema. <strong>El problema es que cada vez que volvés sobre ella, la reponés.</strong> Repasar la conversación, ensayar lo que deberías haber contestado, revisar por enésima vez si tenías razón: cada una de esas vueltas es un dedo apretando el botón.</p>
+  </div>
+
+  <div class="puerta">
+    <a href="../10_El_Sentido_de_la_Vuelta/umbral_5_lo_que_tira.html">⟐ &nbsp;El mecanismo completo —el agua caliente y el suministro eléctrico— está en <em>Lo que tira</em>, Umbral V del Libro X.</a>
+  </div>
+
+  <div class="aforismo">
+    <p>La ola duró lo que dura una ola.<br>Lo que duró tres meses<br>fue otra cosa.</p>
+  </div>
+
+  <div class="sep">⟐ &nbsp; ⟐ &nbsp; ⟐</div>
+
+  <div class="bloque">
+    <p>Y acá viene lo importante, porque en este punto casi todo el mundo hace lo mismo: se pasa la factura. <em>Encima resulta que es culpa mía.</em> Si la estoy alimentando yo, entonces soy responsable de estar así, y ahora tengo dos problemas en vez de uno.</p>
+    <p>No. Nadie se sienta a decidir volver sobre lo mismo. La vuelta es automática, viene sin aviso, y se aprendió tan temprano que ya no parece una conducta sino un rasgo de carácter. Nadie eligió esto.</p>
+  </div>
+
+  <div class="aforismo">
+    <p>Nadie elige alimentarla.<br>Se aprende a hacerlo<br>mucho antes de saber que se hace.</p>
+  </div>
+
+  <div class="bloque">
+    <p>Hay algo más, que va a ocupar buena parte de este libro: <strong>esa vuelta insistente casi siempre está haciendo un trabajo.</strong> No es un vicio ni un defecto de fábrica. Sirve para algo — protege de algo, evita algo, sostiene algo. Y una defensa no se desarma antes de haber entendido de qué defendía.</p>
+    <p>Por eso todavía no hay nada que hacer. Antes de tocar el botón hay que saber qué apaga.</p>
+  </div>
+
+  <div class="bloque">
+    <p>Con una excepción que conviene tener a mano desde ahora, porque separa una herramienta de un daño. <strong>No toda vuelta es reciclaje.</strong> A veces algo insiste porque todavía no terminó de decir lo que tenía para decir: un duelo que nadie acompañó, una injusticia que nunca se nombró, una herida que sigue abierta. Eso no pide soltarse. Pide presencia.</p>
+    <p>La pregunta que lo discierne es una sola, y va a volver varias veces en este libro: <strong>¿esto todavía tiene algo que decirme, o ya solo se repite?</strong></p>
+  </div>
+
+  <div class="continuar">
+    <span class="continuar-label">Siguiente umbral</span>
+    <a href="umbral_2_el_enojo_y_el_viento.html">
+      <span class="continuar-nombre">El enojo y el viento</span>
+      <div class="continuar-circulo"><span class="continuar-flecha">↓</span></div>
+    </a>
+  </div>
+
+</main>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  (function(){
+    const c=document.getElementById('hero-hilo'); if(!c||reduce) return;
+    const x=c.getContext('2d'); let t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      const cx=c.width/2, cy=c.height/2, md=Math.min(c.width,c.height);
+      x.clearRect(0,0,c.width,c.height); x.beginPath();
+      let a=0,r=4; const phi=1.618;
+      while(r<md*0.5){ const xx=cx+Math.cos(a+t)*r, yy=cy+Math.sin(a+t)*r;
+        a===0?x.moveTo(xx,yy):x.lineTo(xx,yy); a+=0.12; r=4*Math.pow(phi,a/(Math.PI*1.15))*0.9; }
+      x.strokeStyle='rgba(201,168,76,0.9)'; x.lineWidth=0.8; x.stroke();
+      t+=0.0006; requestAnimationFrame(draw);
+    } draw();
+  })();
+
+  /* ════ La ola: decae sola en ~12 s; el botón la repone entera ════ */
+  (function(){
+    const cv=document.getElementById('lienzo'); const x=cv.getContext('2d');
+    const glosa=document.getElementById('glosa');
+    const bPensar=document.getElementById('b-pensar');
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    let W=0, H=300, t=0;
+
+    /* decaimiento por tiempo real, no por frames:
+       a 60 Hz y a 120 Hz la ola tarda lo mismo en apagarse */
+    let A=1, t0=performance.now(), tPrev=t0;
+    const TAU=3580;          /* ms — la ola muere a los ~12 s */
+    let reposiciones=0, apagada=false;
+
+    function resize(){
+      W=cv.clientWidth; cv.width=W*dpr; cv.height=H*dpr;
+      cv.style.height=H+'px'; x.setTransform(dpr,0,0,dpr,0,0);
+    }
+
+    bPensar.addEventListener('click',()=>{
+      A=1; t0=performance.now(); apagada=false; reposiciones++;
+      if(reposiciones===1) glosa.textContent='Volvió entera.';
+      else if(reposiciones<4) glosa.textContent='Volvió entera. Otra vez.';
+      else glosa.textContent='Sigue disponible. Siempre sigue disponible.';
+    });
+
+    function draw(ahora){
+      const cy=H/2;
+      const now = ahora || performance.now();
+      const dt = Math.min(now-tPrev, 100); tPrev=now;
+      A = Math.exp(-(now-t0)/TAU);
+      if(A<0.035 && !apagada){
+        apagada=true;
+        glosa.textContent = reposiciones===0
+          ? 'Se apagó sola. Nadie hizo nada.'
+          : 'Cuando dejaste de tocar, se apagó sola.';
+      }
+
+      x.clearRect(0,0,W,H);
+
+      /* línea de reposo */
+      x.beginPath(); x.moveTo(0,cy); x.lineTo(W,cy);
+      x.strokeStyle='rgba(201,168,76,0.07)'; x.lineWidth=1; x.stroke();
+
+      /* la ola: paquete que respira y se aplana */
+      const amp = A*(H*0.33);
+      x.beginPath();
+      for(let i=0;i<=W;i++){
+        const u=i/W;
+        const sobre=Math.exp(-Math.pow((u-0.5)*3.1,2));
+        const y=cy - Math.sin(u*11 - t*2.1)*amp*sobre;
+        i===0?x.moveTo(i,y):x.lineTo(i,y);
+      }
+      x.strokeStyle='rgba(212,168,67,'+(0.16+A*0.62).toFixed(3)+')';
+      x.lineWidth=1.4; x.stroke();
+
+      /* rescoldo: cuando la ola muere queda una brasa mínima, no la nada */
+      const g=x.createRadialGradient(W/2,cy,0,W/2,cy,10+A*40);
+      g.addColorStop(0,'rgba(196,106,58,'+(0.05+A*0.22).toFixed(3)+')');
+      g.addColorStop(1,'rgba(196,106,58,0)');
+      x.fillStyle=g; x.beginPath(); x.arc(W/2,cy,10+A*40,0,7); x.fill();
+
+      t += dt/1000;
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize',resize);
+    resize(); requestAnimationFrame(draw);
+  })();
+
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.14});
+  document.querySelectorAll('.bloque,.aforismo,.sep,.geo,.puerta,.continuar').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
