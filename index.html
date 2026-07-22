@@ -98,6 +98,19 @@
         }
         .libro-card.sentido:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.15); border-color: #8a6f35; }
 
+        /* Libro 11 — Atravesar (la constelación: cuatro hebras flojas, una tensa) */
+        .libro-card.atravesar { border-color: #5a4828; }
+        .libro-card.atravesar::before { background: radial-gradient(ellipse 70% 55% at 50% 42%, rgba(201,168,76,0.05) 0%, transparent 70%); }
+        .libro-card.atravesar::after {
+            content: '';
+            position: absolute;
+            right: -18px; bottom: -30px;
+            width: 132px; height: 132px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 50 34 Q 36 26 22 16' fill='none' stroke='rgba(201,168,76,0.05)' stroke-width='0.8'/%3E%3Cpath d='M 50 34 Q 60 22 68 10' fill='none' stroke='rgba(201,168,76,0.05)' stroke-width='0.8'/%3E%3Cpath d='M 50 34 Q 70 36 84 42' fill='none' stroke='rgba(201,168,76,0.045)' stroke-width='0.8'/%3E%3Cpath d='M 50 34 Q 30 44 16 52' fill='none' stroke='rgba(201,168,76,0.045)' stroke-width='0.8'/%3E%3Cpath d='M 50 34 L 52 92' fill='none' stroke='rgba(201,168,76,0.10)' stroke-width='1'/%3E%3Ccircle cx='50' cy='34' r='1.6' fill='rgba(201,168,76,0.10)'/%3E%3Ccircle cx='22' cy='16' r='1.1' fill='rgba(201,168,76,0.07)'/%3E%3Ccircle cx='68' cy='10' r='1.1' fill='rgba(201,168,76,0.07)'/%3E%3Ccircle cx='84' cy='42' r='1.1' fill='rgba(201,168,76,0.06)'/%3E%3Ccircle cx='16' cy='52' r='1.1' fill='rgba(201,168,76,0.06)'/%3E%3Ccircle cx='52' cy='92' r='1.9' fill='rgba(201,168,76,0.12)'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain; pointer-events: none; opacity: 0.9;
+        }
+        .libro-card.atravesar:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.15); border-color: #8a6f35; }
+
         /* ── Badges de estado (sobre oscuro) ── */
         .publicado { background: rgba(168,182,154,0.16); color: #b8c2a8; border: 1px solid #4a5440; }
         .nuevo { background: rgba(201,168,76,0.12); color: var(--oro); border: 1px solid var(--oro-tenue); }
@@ -105,6 +118,7 @@
         .atender-badge { background: #1a1510; color: #c9a84c; border: 1px solid #5a4528; letter-spacing: 0.05em; }
         .volver-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
         .sentido-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
+        .atravesar-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
 
         .nota-autoria { background: rgba(201, 169, 97, 0.1); border-left: 4px solid var(--acento); padding: 1.5rem; margin: 3rem 0; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
         footer { text-align: center; margin-top: 6rem; padding-top: 2rem; border-top: 2px solid var(--borde); font-size: 0.9rem; color: var(--acento); }
@@ -194,7 +208,14 @@
             <div class="libro-numero">Libro 10</div>
             <h2 class="libro-titulo">El sentido de la vuelta</h2>
             <p class="libro-descripcion">Volvés siempre a lo mismo: lo que cambia es la altura desde la que volvés. Ocho umbrales —dos vueltas de una espiral— que no se leen, se habitan. Continúa <em>Volver distinto</em>.</p>
-            <span class="estado sentido-badge">🌀 Nuevo · Umbrales interactivos</span>
+            <span class="estado sentido-badge">🌀 Umbrales interactivos</span>
+        </a>
+
+        <a href="01_Libros/11_Atravesar/index.html" class="libro-card atravesar">
+            <div class="libro-numero">Libro 11</div>
+            <h2 class="libro-titulo">Atravesar</h2>
+            <p class="libro-descripcion">Las emociones que se anclan. Una emoción no se revierte: se atraviesa. Siete umbrales por el enojo, la culpa y la sed — y por el miedo que está debajo de las tres. Continúa <em>El sentido de la vuelta</em>.</p>
+            <span class="estado atravesar-badge">⟐ Nuevo · Umbrales interactivos</span>
         </a>
 
     </div>
