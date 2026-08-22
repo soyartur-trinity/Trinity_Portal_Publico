@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cultivar · Libro XII | Portal Trinity</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.9;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  .portada{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; padding:5rem 2rem; position:relative; overflow:hidden; text-align:center;}
+  #fondo{position:absolute; inset:0; opacity:.06; pointer-events:none;}
+  .anillo{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:50%;
+    border:1px solid rgba(201,168,76,0.05); pointer-events:none; animation:respirar 7s ease-in-out infinite;}
+  .anillo:nth-child(1){width:180px;height:180px;animation-delay:0s;}
+  .anillo:nth-child(2){width:340px;height:340px;animation-delay:2.3s;}
+  .anillo:nth-child(3){width:520px;height:520px;animation-delay:4.6s;}
+  .volver-portal{position:absolute; top:2rem; left:1.6rem; z-index:3;
+    font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.25em; text-transform:uppercase;
+    color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;
+    opacity:0; animation:aparecer 1s ease forwards .5s;}
+  .volver-portal:hover{color:var(--oro-tenue);}
+  .portal-label{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.4rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .3s; position:relative; z-index:1;}
+  .libro-numero{font-family:'Cormorant Garamond',serif; font-size:.78rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo); margin-bottom:1.4rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .6s; position:relative; z-index:1;}
+  .titulo-principal{font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,9vw,5rem);
+    font-weight:300; color:var(--oro); letter-spacing:.05em; line-height:1.04; margin-bottom:.8rem;
+    opacity:0; animation:aparecer 1.4s ease forwards .9s; position:relative; z-index:1;}
+  .subtitulo-libro{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1rem,2.6vw,1.25rem); color:var(--oro-tenue); letter-spacing:.1em; margin-bottom:2.4rem;
+    opacity:0; animation:aparecer 1.4s ease forwards 1.1s; position:relative; z-index:1;}
+  .frase-entrada{font-family:'Cormorant Garamond',serif; font-size:clamp(1.35rem,3.4vw,1.85rem);
+    font-style:italic; font-weight:300; color:var(--blanco-humo); line-height:1.6; max-width:30rem;
+    margin-bottom:4.5rem; opacity:0; animation:aparecer 1.4s ease forwards 1.5s; position:relative; z-index:1; padding:0 .5rem;}
+  .boton-entrada{display:inline-flex; flex-direction:column; align-items:center; gap:.8rem;
+    text-decoration:none; opacity:0; animation:aparecer 1s ease forwards 2.1s; position:relative; z-index:1;}
+  .boton-texto{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-tenue); transition:color .3s ease;}
+  .boton-entrada:hover .boton-texto{color:var(--oro);}
+  .boton-circulo{width:54px; height:54px; border-radius:50%; border:1px solid var(--oro-tenue);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease; background:rgba(201,168,76,0.04);}
+  .boton-entrada:hover .boton-circulo{border-color:var(--oro); background:rgba(201,168,76,0.08);}
+  .boton-flecha{font-size:1.2rem; color:var(--oro-tenue); transition:all .3s ease;}
+  .boton-entrada:hover .boton-flecha{color:var(--oro);}
+  .antes{padding:6rem 2rem; border-top:1px solid var(--separador);}
+  .antes-contenido{max-width:600px; margin:0 auto;}
+  .antes-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:2.6rem;}
+  .antes p{color:var(--gris-calido); font-size:clamp(1.1rem,1.9vw,1.22rem); line-height:2; margin-bottom:1.4rem;}
+  .antes p strong{color:var(--blanco-humo); font-weight:500;}
+  .antes p a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .antes p a:hover{color:var(--oro);}
+  .mapa{padding:5rem 2rem 6rem;}
+  .mapa-contenido{max-width:640px; margin:0 auto;}
+  .mapa-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:3rem;}
+  .umbral-link{display:flex; gap:1.6rem; align-items:flex-start; padding:1.6rem 0;
+    border-bottom:1px solid var(--separador); text-decoration:none; position:relative; transition:all .3s ease;}
+  .umbral-link:first-of-type{border-top:1px solid var(--separador);}
+  .umbral-link::before{content:''; position:absolute; left:0; top:0; bottom:0; width:0;
+    background:rgba(201,168,76,0.03); transition:width .4s ease;}
+  .umbral-link:hover::before{width:100%;}
+  .umbral-num{font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,4.4vw,2.3rem); font-weight:300;
+    color:var(--oro-polvo); line-height:1; flex-shrink:0; width:3rem; text-align:right; padding-top:.25rem;
+    transition:color .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-num{color:var(--oro-tenue);}
+  .umbral-info{flex:1; position:relative; z-index:1;}
+  .umbral-nombre{font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,3vw,1.5rem); font-weight:400;
+    color:var(--blanco-humo); display:block; margin-bottom:.4rem; line-height:1.2; transition:color .3s ease;}
+  .umbral-link:hover .umbral-nombre{color:var(--oro);}
+  .umbral-descripcion{font-size:1.05rem; font-style:italic; color:var(--gris-calido); line-height:1.6;
+    font-family:'Cormorant Garamond',serif;}
+  .umbral-flecha{font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--oro-polvo);
+    flex-shrink:0; margin-top:.3rem; transition:all .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-flecha{color:var(--oro-tenue); transform:translateX(4px);}
+  .umbral-link.centro .umbral-num{color:var(--oro-tenue);}
+  .umbral-link.cierre .umbral-num{font-size:clamp(1.1rem,3vw,1.5rem);}
+  .mapa-nota{margin-top:2.6rem; text-align:center;}
+  .mapa-nota p{font-family:'Cormorant Garamond',serif; font-size:.95rem; font-style:italic;
+    color:var(--oro-polvo); line-height:1.7;}
+  .pie{padding:3rem 2rem 4rem; text-align:center; border-top:1px solid var(--separador);}
+  .pie-volver{display:inline-block; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.25em; text-transform:uppercase; color:var(--oro-tenue); text-decoration:none;
+    padding:.8rem 1.8rem; border:1px solid var(--separador); transition:all .3s ease; margin-bottom:1.6rem;}
+  .pie-volver:hover{border-color:var(--oro-tenue); color:var(--oro); background:rgba(201,168,76,0.04);}
+  .pie-firma{font-family:'Cormorant Garamond',serif; font-size:.78rem; color:var(--oro-polvo);
+    letter-spacing:.12em; display:block;}
+  a:focus-visible{outline:1px solid var(--oro-tenue); outline-offset:3px;}
+  @keyframes aparecer{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+  @keyframes respirar{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.4;}
+    50%{transform:translate(-50%,-50%) scale(1.06);opacity:.08;}}
+  @media (max-width:600px){
+    .mapa, .antes{padding-left:1.4rem; padding-right:1.4rem;}
+    .umbral-link{gap:1.1rem;} .umbral-num{width:2.4rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #fondo{display:none;} .anillo{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<section class="portada">
+  <canvas id="fondo"></canvas>
+  <div class="anillo"></div><div class="anillo"></div><div class="anillo"></div>
+  <a href="../../index.html" class="volver-portal">← Portal Trinity</a>
+  <span class="portal-label">Portal Público Trinity</span>
+  <span class="libro-numero">Libro XII</span>
+  <h1 class="titulo-principal">Cultivar</h1>
+  <p class="subtitulo-libro">tres cosas que se riegan, una que brota</p>
+  <p class="frase-entrada">No vas a lograr ninguna.<br>Vas a empezar a tenerlas<br>el día que dejes de revisar si ya las tenés.</p>
+  <a href="umbral_0_lo_que_no_elegiste.html" class="boton-entrada">
+    <span class="boton-texto">Entrar</span>
+    <div class="boton-circulo"><span class="boton-flecha">↓</span></div>
+  </a>
+</section>
+
+<section class="antes">
+  <div class="antes-contenido">
+    <span class="antes-titulo">Antes de empezar</span>
+    <p>Los libros anteriores trabajaron lo que traba, lo que duele y lo que vuelve. Este es el otro lado: qué se hace después, con lo que quedó.</p>
+    <p>Este libro no explica. Pide. Cada umbral termina con un <strong>sendero</strong>: un gesto para hoy, tan chico que no se pueda fallar; qué hacer el día que igual no salga; la trampa de ese umbral; y una línea para guardar. No hace falta entender el umbral para hacer el sendero. Es al revés: el entendimiento llega después del movimiento.</p>
+    <p>En el centro hay cuatro cosas. <strong>La presencia</strong>, estar donde uno está, y no se cultiva: se libera, desde donde está atrapada. Las otras tres son lo que se cultiva para que eso ocurra. <strong>La paciencia</strong>, sostener sin que nada te lo devuelva. <strong>La atención gozosa</strong>, mirar sin sacarle nada a lo que mirás. <strong>La calma</strong>, no que no pase nada, sino que no te lleve. Cada una tiene una imitación que se le parece tanto que desde adentro no se distingue.</p>
+    <p>No hay técnica. Hay un orden de operaciones, un cuaderno, y <strong>ninguna promesa sobre lo que va a salir</strong>. Lo que sí se sostiene: el trabajo cambia al que lo hace, aunque no cambie el resultado.</p>
+    <p>Y la advertencia, que no es formalidad: <strong>un duelo reciente, una herida abierta o un peligro real no se cultivan</strong>. Se atraviesan, y acompañado. Si eso es lo que traés, el camino es <a href="../11_Atravesar/index.html">Atravesar</a>, el Libro XI. Este empieza después.</p>
+  </div>
+</section>
+
+<section class="mapa">
+  <div class="mapa-contenido">
+    <span class="mapa-titulo">Los umbrales</span>
+    <a href="umbral_0_lo_que_no_elegiste.html" class="umbral-link"><span class="umbral-num">0</span><div class="umbral-info"><span class="umbral-nombre">Lo que no elegiste</span><p class="umbral-descripcion">Lo primero que sos, no lo elegiste. Y aun así, algo es tuyo.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_1_el_enojo_y_lo_que_lo_alimenta.html" class="umbral-link"><span class="umbral-num">I</span><div class="umbral-info"><span class="umbral-nombre">El enojo y lo que lo alimenta</span><p class="umbral-descripcion">La primera chispa no la elegís. La hoguera sí.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_2_cuando_no_hay_ganas.html" class="umbral-link"><span class="umbral-num">II</span><div class="umbral-info"><span class="umbral-nombre">Cuando no hay ganas</span><p class="umbral-descripcion">Abrí la ventana. Con eso alcanza por hoy.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_3_la_voz_que_orienta.html" class="umbral-link"><span class="umbral-num">III</span><div class="umbral-info"><span class="umbral-nombre">La voz que orienta</span><p class="umbral-descripcion">Brújula, no GPS. La brújula no promete llegar; por eso no puede fallar.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_4_la_presencia.html" class="umbral-link centro"><span class="umbral-num">IV</span><div class="umbral-info"><span class="umbral-nombre">La presencia</span><p class="umbral-descripcion">No se sale del laberinto. Se ve que es un laberinto.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_5_la_paciencia.html" class="umbral-link centro"><span class="umbral-num">V</span><div class="umbral-info"><span class="umbral-nombre">La paciencia</span><p class="umbral-descripcion">Seguí. Aunque hoy no devuelva nada. Sobre todo hoy.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_6_la_atencion_gozosa.html" class="umbral-link centro"><span class="umbral-num">VI</span><div class="umbral-info"><span class="umbral-nombre">La atención gozosa</span><p class="umbral-descripcion">La luz de las cinco sobre una pared alcanza. Siempre alcanzó.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_7_la_calma.html" class="umbral-link centro"><span class="umbral-num">VII</span><div class="umbral-info"><span class="umbral-nombre">La calma</span><p class="umbral-descripcion">Que algo te duela todavía es una buena noticia.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="umbral_8_lo_que_tarda_y_lo_que_falla.html" class="umbral-link"><span class="umbral-num">VIII</span><div class="umbral-info"><span class="umbral-nombre">Lo que tarda y lo que falla</span><p class="umbral-descripcion">Anotá lo chico. En marzo no vas a creerle a tu memoria.</p></div><span class="umbral-flecha">→</span></a>
+    <a href="cierre_cultivar.html" class="umbral-link cierre"><span class="umbral-num">⟐</span><div class="umbral-info"><span class="umbral-nombre">El sendero propio</span><p class="umbral-descripcion">Cuatro gestos para construir el que el libro no te dio.</p></div><span class="umbral-flecha">→</span></a>
+    <div class="mapa-nota">
+      <p>Se pueden leer en cualquier orden.<br>Del IV al VII está el centro: lo que brota y las tres que lo riegan.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <a href="../../index.html" class="pie-volver">Volver al Portal</a>
+  <span class="pie-firma">Lic. Arturo Rodríguez · Campo Trinity · © 2026</span>
+</footer>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function(){
+    const c=document.getElementById('fondo'); if(!c||reduce) return;
+    const x=c.getContext('2d'); let t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      x.clearRect(0,0,c.width,c.height);
+      const cx=c.width/2, cy=c.height*0.5, R=Math.min(c.width,c.height)*0.32;
+      for(let k=0;k<4;k++){
+        const a=t*0.12+k*Math.PI/2;
+        const r=R*(0.55+0.12*k);
+        x.beginPath();
+        x.arc(cx,cy,r,a,a+Math.PI*0.5);
+        x.strokeStyle='rgba(201,168,76,'+(0.9-k*0.18)+')'; x.lineWidth=0.9; x.stroke();
+      }
+      t+=0.004; requestAnimationFrame(draw);
+    } draw();
+  })();
+</script>
+</body>
+</html>
