@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral IV · La presencia | Cultivar</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80; --falso:#7a6a72;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  #hero{position:absolute; inset:0; opacity:.05; pointer-events:none;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s; position:relative; z-index:1;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s; position:relative; z-index:1;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s; position:relative; z-index:1;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s; position:relative; z-index:1;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s; position:relative; z-index:1;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem); line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%; transform:translateX(-50%);
+    color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem;}
+  .aviso p:last-child{margin-bottom:0;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center; margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .geo-lienzo{width:100%; border:1px solid var(--separador); background:rgba(201,168,76,.012);
+    display:block; touch-action:none;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem; min-height:230px;}
+  .geo-estado{text-align:center; min-height:3.6rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .geo-acciones{display:flex; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); border-top:none;}
+  .geo-acciones button{flex:1; background:var(--negro); border:none; padding:.9rem .5rem;
+    font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--oro-polvo); cursor:pointer; transition:all .3s ease;}
+  .geo-acciones button:hover, .geo-acciones button:focus-visible{color:var(--oro-tenue);}
+  .dicho{font-size:1.06rem; line-height:1.9; color:var(--blanco-humo); margin-bottom:.7rem; animation:entrar .5s ease;}
+  .dicho.perdido{color:var(--lejos); font-style:italic;}
+  .tentacion{display:block; width:100%; text-align:left; margin:.8rem 0 .2rem; background:none;
+    border:1px dashed var(--separador); padding:.7rem .9rem; font-family:'EB Garamond',Georgia,serif;
+    font-style:italic; font-size:.98rem; color:var(--gris-calido); cursor:pointer;
+    transition:all .3s ease; animation:entrar .5s ease;}
+  .tentacion:hover, .tentacion:focus-visible{color:var(--ambar); border-color:var(--oro-polvo);}
+
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:7.2rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  a:focus-visible, button:focus-visible{outline:1px solid var(--oro-tenue); outline-offset:3px;}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){ .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;} .opciones{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #hero{display:none;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar{opacity:1!important; transform:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="umbral_3_la_voz_que_orienta.html">&larr; Umbral III</a>
+  <span>Umbral IV</span>
+  <a href="umbral_5_la_paciencia.html">Umbral V &rarr;</a>
+</nav>
+
+<header class="encabezado">
+  <canvas id="hero"></canvas>
+  <span class="etiqueta">Cultivar · Umbral</span>
+  <div class="numero">IV</div>
+  <h1 class="titulo">La presencia</h1>
+  <p class="subtitulo">estar donde uno está</p>
+  <div class="cue"><div class="linea"></div><span>leer</span></div>
+</header>
+
+<main class="wrap cuerpo">
+
+  <div class="escena">
+    <p>Domingo, mesa larga, diez personas. Alguien cuenta algo y los demás se ríen. Vos también te reís, en el lugar correcto.</p>
+    <p>Pero no estás ahí. Estás en una conversación de hace tres años, contestando lo que no contestaste. Ya vas por la cuarta versión.</p>
+    <p class="apagado">Nadie lo nota. Ni vos, todavía.</p>
+    <p>Y en un momento, sin motivo, te das cuenta: hace veinte minutos que estoy discutiendo con alguien que no está acá.</p>
+    <p>No salís de la discusión. Pero ahora hay una mesa, además de la discusión. Y se oye la risa.</p>
+  </div>
+  <div class="perla">
+    <p>Se puede estar rodeado de gente<br>y no estar en ningún lado.</p>
+  </div>
+  <div class="bloque">
+    <p>Hay que decir primero qué no es, porque la palabra viene cargada. <strong>La presencia de este umbral no es estar para los demás.</strong> No es escuchar mejor, ni acompañar, ni poner cara de interés. Eso viene después, como consecuencia. Esto es anterior y más simple: <strong>estar donde uno está.</strong></p>
+    <p>Y casi nunca estamos. La cabeza produce imágenes todo el tiempo: lo que pasó, lo que podría pasar, lo que habría que haber dicho. No es una falla, es lo que hace. El problema es otro: que esas imágenes no se viven como imágenes. <strong>Se viven como realidades.</strong> Uno no recuerda la discusión: la tiene. No imagina el problema del lunes: lo sufre el sábado. Y mientras tanto, la mesa, la taza, la voz del que habla, quedan del otro lado de una pared que nadie construyó.</p>
+  </div>
+  <div class="perla grave">
+    <p>Nadie decide irse.<br>Uno se encuentra lejos, y no sabe desde cuándo.</p>
+  </div>
+
+  <div class="geo" id="geo">
+    <span class="geo-label">El laberinto</span>
+    <p class="geo-instruccion">Estás en una mesa con gente. Y aparece una imagen de hace tres años.</p>
+    <div class="panel" id="laberinto"></div>
+    <div class="geo-acciones">
+      <button id="b-seguir">Seguir la imagen</button>
+      <button id="b-notar">Notar que es una imagen</button>
+      <button id="b-reiniciar">Empezar de nuevo</button>
+    </div>
+    <div class="geo-estado"><span class="glosa" id="glosa">Alguien cuenta algo. Vos ya no estás escuchando.</span></div>
+  </div>
+  <div class="bloque">
+    <p>Fijate lo que hizo el segundo botón, porque es todo el umbral. No sacó la imagen. No la discutió, no la resolvió, no la hizo más chica. Solo la nombró como lo que es: <strong>esto es una imagen.</strong> Y en ese instante apareció el lugar donde estabas. No porque hubiera llegado: estaba desde antes. Era vos el que no estaba.</p>
+    <p>Eso es lo único que hay que entender de este umbral, y no se entiende leyéndolo: <strong>no se sale del laberinto. Se ve que es un laberinto.</strong> Cuando se ve, uno sigue adentro, pero ya no es todo lo que hay. Hay un espacio entre el que mira y lo mirado. Y cuanto más ancho es ese espacio, más claridad.</p>
+  </div>
+  <div class="puerta">
+    <a href="../08_Atender/umbral_5_el_gesto.html">&#10192; &nbsp;Ese espacio entre el que mira y lo mirado tiene un nombre y una práctica en <em>Atender</em>, Libro VIII: el Umbral V, <em>El gesto</em>. El observador no es un lugar al que se llega. Es un gesto que se repite.</a>
+  </div>
+  <div class="sep">&#10192; &nbsp; &#10192; &nbsp; &#10192;</div>
+  <div class="bloque">
+    <p>Ahora lo que este umbral tiene de distinto respecto de los demás, y por eso está en el centro del libro.</p>
+    <p><strong>La presencia no se cultiva.</strong> No se planta, no se riega, no crece con esfuerzo. Proponerse estar presente es agregar una imagen más: la de uno intentándolo. Lo que pasa es otra cosa: la presencia ya está, atrapada adentro de la imagen, viviéndola, sufriéndola. Cuando se nota la imagen, la presencia no aparece. <strong>Se libera.</strong></p>
+    <p>Entonces ¿qué se cultiva? Lo que hace posible ese instante, y lo que hace que dure. Los tres umbrales que siguen son eso: la paciencia, para repetir el gesto mil veces sin que la repetición se vuelva frustración; la atención gozosa, que es la que puede dirigirse sin pedirle nada a lo que mira; y la calma, que impide que un segundo después de notar, el laberinto vuelva a cerrarse. <strong>Las tres son el riego. Esta es lo que brota.</strong></p>
+  </div>
+  <div class="bloque">
+    <p>Y una señal para reconocerla, que no falla: cuando estuviste presente de verdad, después no te acordás de vos. Te acordás de la taza, de lo que dijo el otro, de la luz. El que evalúa cómo le está yendo no está presente: está en otra imagen, la de sí mismo mirándose.</p>
+  </div>
+
+  <div class="sendero">
+    <div class="paso"><div class="paso-nombre">Hoy</div><p>Una sola vez en el día, cuando te descubras adentro de una imagen (una discusión que no pasó, una escena de hace años, el lunes que todavía no llegó), no salgas de ella. Solo decite: <strong>esto es una imagen.</strong> Y mirá una cosa que tengas delante. Un segundo alcanza.</p></div>
+    <div class="paso"><div class="paso-nombre">Cuando no salga</div><p>Si pasó el día entero sin ese segundo, darte cuenta ahora, leyendo esto, es el segundo. Ya está. No se repone; mañana hay otro.</p></div>
+    <div class="paso"><div class="paso-nombre">La trampa</div><p>Intentar no tener imágenes. No se puede, y el intento es otra imagen. El gesto no es vaciar la cabeza ni salir del laberinto: es ver que es un laberinto, y que hay una mesa además.</p></div>
+    <div class="paso guardar"><div class="paso-nombre">Guardar</div><p>Anotá qué tenías delante cuando notaste. No la imagen: lo que apareció cuando la nombraste. La taza, la pared, el ruido de la calle. Eso es lo que vale guardar, porque es adonde la atención va a poder volver.</p></div>
+  </div>
+  <div class="perla">
+    <p>La presencia no se cultiva.<br>Se libera.<br>Desde donde estaba atrapada.</p>
+  </div>
+
+  <div class="continuar">
+    <span class="continuar-label">Siguiente umbral</span>
+    <a href="umbral_5_la_paciencia.html">
+      <span class="continuar-nombre">La paciencia</span>
+      <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+    </a>
+  </div>
+</main>
+
+<footer class="pie">
+  <span>Portal P&uacute;blico Trinity &middot; &copy; 2026 Campo Trinity</span>
+</footer>
+
+<script>
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function(){
+    const c=document.getElementById('hero'); if(!c||reduce) return;
+    const x=c.getContext('2d'); let t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      x.clearRect(0,0,c.width,c.height);
+      const cx=c.width/2, cy=c.height/2, R=Math.min(c.width,c.height)*0.30;
+      const r=R*(1+0.03*Math.sin(t));
+      x.beginPath(); x.arc(cx,cy,r,0,Math.PI*2);
+      x.strokeStyle='rgba(201,168,76,0.9)'; x.lineWidth=0.9; x.stroke();
+      t+=0.006; requestAnimationFrame(draw);
+    } draw();
+  })();
+
+
+  (function(){
+    const cont=document.getElementById('laberinto'), glosa=document.getElementById('glosa');
+    if(!cont) return;
+    const IMG=['Aquella discusión. Lo que te dijo, con ese tono.',
+               'Lo que tendrías que haber contestado y no contestaste.',
+               'Lo que vas a decir si vuelve a pasar. Lo estás ensayando.',
+               'Y la vez anterior, que fue igual. Y la anterior a esa.',
+               'Ahora ya no es un recuerdo: es una sala donde estás discutiendo.',
+               'Te late la mandíbula. Acá, en esta mesa, por algo que pasó hace tres años.'];
+    const PRES=['La taza, tibia, en la mano.','La voz de alguien, contando algo.','La luz de la ventana sobre la mesa.',
+                'El peso del cuerpo en la silla.','Alguien se ríe. Ahora lo escuchás.'];
+    let i=0, notas=0, fin=false, adentro=0;
+    function linea(txt,cls,col){ const p=document.createElement('p'); p.className='dicho'+(cls?' '+cls:'');
+      if(col) p.style.color=col; p.innerHTML=txt; cont.appendChild(p); cont.scrollTop=cont.scrollHeight; }
+    function seguir(){
+      if(fin) return;
+      if(i<IMG.length){ linea(IMG[i],'', i>=4?'var(--brasa)':'var(--gris-calido)'); i++; adentro++; }
+      if(i>=IMG.length){ fin=true;
+        glosa.textContent='Ya no estás en la mesa. Estás adentro de la imagen, y nadie decidió eso.';
+        const bs=document.getElementById('b-seguir'); bs.disabled=true; bs.style.color='var(--oro-polvo)';
+        return; }
+      glosa.textContent = i<3 ? 'Parece que estás pensando. No: estás adentro.'
+        : 'Cada paso hacia adentro se siente como entender algo.';
+    }
+    function notar(){
+      if(i===0){ glosa.textContent='Todavía no apareció nada. Seguí primero.'; return; }
+      if(fin && notas===0){ fin=false; const bs=document.getElementById('b-seguir'); bs.disabled=false; bs.style.color=''; }
+      notas++;
+      linea('&mdash; esto es una imagen.','', 'var(--oro)');
+      linea(PRES[Math.min(notas-1,PRES.length-1)],'', 'var(--blanco-humo)');
+      glosa.textContent = notas===1 ? 'No salió nada de la cabeza. Pero ahora hay una mesa además de la imagen.'
+        : notas===2 ? 'La imagen sigue ahí, igual de intensa. El cuarto se hizo más grande.'
+        : 'Cada vez que notás, el espacio queda un poco más ancho. Eso es todo el trabajo.';
+      if(i<IMG.length){ i=Math.max(0,i-1); }
+    }
+    function reiniciar(){ cont.innerHTML=''; i=0; notas=0; fin=false; adentro=0;
+      const bs=document.getElementById('b-seguir'); bs.disabled=false; bs.style.color='';
+      glosa.textContent='Alguien cuenta algo. Vos ya no estás escuchando.';
+      linea('Empieza con una frase suelta: «¿y si otra vez…?»','', 'var(--lejos)'); }
+    document.getElementById('b-seguir').addEventListener('click',seguir);
+    document.getElementById('b-notar').addEventListener('click',notar);
+    document.getElementById('b-reiniciar').addEventListener('click',reiniciar);
+    reiniciar();
+  })();
+
+
+  (function(){
+    const obs=new IntersectionObserver(es=>{
+      es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); } });
+    },{threshold:.15});
+    document.querySelectorAll('.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar').forEach(el=>obs.observe(el));
+  })();
+
+</script>
+
+</body>
+</html>
