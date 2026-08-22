@@ -111,6 +111,20 @@
         }
         .libro-card.atravesar:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.15); border-color: #8a6f35; }
 
+        /* Libro 12 — Cultivar (el terreno: tallo arriba, raíz abajo) */
+        .libro-card.cultivar { border-color: #5a4828; }
+        .libro-card.cultivar::before { background: radial-gradient(ellipse 70% 55% at 50% 44%, rgba(201,168,76,0.05) 0%, transparent 70%); }
+        .libro-card.cultivar::after {
+            content: '';
+            position: absolute;
+            right: -18px; bottom: -30px;
+            width: 132px; height: 132px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M 8 52 L 92 52' fill='none' stroke='rgba(201,168,76,0.09)' stroke-width='0.8'/%3E%3Cpath d='M 50 52 L 50 18' fill='none' stroke='rgba(201,168,76,0.11)' stroke-width='1'/%3E%3Cellipse cx='43' cy='30' rx='6.5' ry='2.5' transform='rotate(-28 43 30)' fill='rgba(201,168,76,0.07)'/%3E%3Cellipse cx='57' cy='39' rx='6.5' ry='2.5' transform='rotate(28 57 39)' fill='rgba(201,168,76,0.06)'/%3E%3Cpath d='M 50 52 L 50 72' fill='none' stroke='rgba(201,168,76,0.09)' stroke-width='0.9'/%3E%3Cpath d='M 50 64 Q 39 72 31 88' fill='none' stroke='rgba(201,168,76,0.055)' stroke-width='0.7'/%3E%3Cpath d='M 50 66 Q 62 75 71 90' fill='none' stroke='rgba(201,168,76,0.055)' stroke-width='0.7'/%3E%3Cpath d='M 50 72 Q 47 82 45 94' fill='none' stroke='rgba(201,168,76,0.05)' stroke-width='0.7'/%3E%3Ccircle cx='50' cy='52' r='1.6' fill='rgba(201,168,76,0.11)'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain; pointer-events: none; opacity: 0.9;
+        }
+        .libro-card.cultivar:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.15); border-color: #8a6f35; }
+
+
         /* ── Badges de estado (sobre oscuro) ── */
         .publicado { background: rgba(168,182,154,0.16); color: #b8c2a8; border: 1px solid #4a5440; }
         .nuevo { background: rgba(201,168,76,0.12); color: var(--oro); border: 1px solid var(--oro-tenue); }
@@ -119,6 +133,7 @@
         .volver-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
         .sentido-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
         .atravesar-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
+        .cultivar-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
 
         .nota-autoria { background: rgba(201, 169, 97, 0.1); border-left: 4px solid var(--acento); padding: 1.5rem; margin: 3rem 0; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
         footer { text-align: center; margin-top: 6rem; padding-top: 2rem; border-top: 2px solid var(--borde); font-size: 0.9rem; color: var(--acento); }
@@ -215,8 +230,16 @@
             <div class="libro-numero">Libro 11</div>
             <h2 class="libro-titulo">Atravesar</h2>
             <p class="libro-descripcion">Las emociones que se anclan. Una emoción no se revierte: se atraviesa. Siete umbrales por el enojo, la culpa y la sed — y por el miedo que está debajo de las tres. Continúa <em>El sentido de la vuelta</em>.</p>
-            <span class="estado atravesar-badge">⟐ Nuevo · Umbrales interactivos</span>
+            <span class="estado atravesar-badge">⟐ Umbrales interactivos</span>
         </a>
+
+        <a href="01_Libros/12_Cultivar/index.html" class="libro-card cultivar">
+            <div class="libro-numero">Libro 12</div>
+            <h2 class="libro-titulo">Cultivar</h2>
+            <p class="libro-descripcion">Lo que se hace crecer a propósito. Ocho umbrales sobre qué quitar, qué sembrar y cómo sostenerlo cuando todavía no se ve nada. El otro lado de <em>Atravesar</em>.</p>
+            <span class="estado cultivar-badge">❋ Nuevo · Umbrales interactivos</span>
+        </a>
+
 
     </div>
 
