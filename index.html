@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal Público Trinity — libros interactivos sobre atención, vínculo, duelo y persistencia. Lic. Arturo Rodríguez.">
+    <meta name="author" content="Lic. Arturo Rodríguez">
     <title>Portal Trinity | Arturo Rodríguez</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --fondo: #ecdfcd;
-            --texto: #3E3E3E;
-            --acento: #C9A961;
-            --borde: #D0C4B0;
+            --fondo: #070609;
+            --fondo-hondo: #030204;
+            --texto: #f3efe7;
+            --acento: #d3b06a;
+            --violeta: #6f4e90;
+            --borde: #2a2233;
             --carta-fondo: #0d0c0b;
             --carta-borde: #3a2e18;
-            --oro: #c9a84c;
+            --oro: #d3b06a;
             --oro-tenue: #8a6f35;
-            --humo: #e8e0d0;
-            --desc: #8a8070;
+            --humo: #f3efe7;
+            --desc: #968c9e;
         }
-        body { font-family: Georgia, serif; background-color: var(--fondo); color: var(--texto); line-height: 1.8; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
-        header { text-align: center; padding: 3rem 0; border-bottom: 3px solid var(--borde); margin-bottom: 4rem; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; color: var(--texto); }
+        body { font-family: Georgia, serif; color: var(--texto); line-height: 1.85; font-size: 1.06rem;
+            background: var(--fondo-hondo);
+            background-image:
+              radial-gradient(ellipse 70% 45% at 50% 0%, rgba(111,78,144,0.20) 0%, transparent 65%),
+              radial-gradient(ellipse 60% 40% at 50% 100%, rgba(111,78,144,0.10) 0%, transparent 70%);
+            background-attachment: fixed; }
+        .container { max-width: 1040px; margin: 0 auto; padding: 5rem 2rem; }
+        header { text-align: center; padding: 3rem 0 3.5rem; margin-bottom: 4.5rem;
+            border-bottom: 1px solid var(--borde); }
+        h1 { font-size: 3.1rem; margin-bottom: 1.2rem; color: var(--texto);
+            letter-spacing: .06em; font-weight: 400; }
         .subtitulo { font-size: 1.3rem; color: var(--acento); font-style: italic; margin-bottom: 2rem; }
         .autor { font-size: 1rem; color: var(--acento); }
-        .libros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin: 3rem 0; }
+        .libros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 3rem; margin: 2.5rem 0 1rem; }
 
         /* ── Tarjeta base: contemplativa oscura/oro ── */
         .libro-card {
@@ -53,7 +64,7 @@
         }
         .libro-numero { font-size: 0.85rem; color: var(--oro-tenue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; position: relative; z-index: 1; }
         .libro-titulo { font-size: 1.8rem; margin-bottom: 1rem; font-weight: 600; color: var(--oro); position: relative; z-index: 1; }
-        .libro-descripcion { font-size: 1rem; line-height: 1.7; color: var(--desc); position: relative; z-index: 1; }
+        .libro-descripcion { font-size: 1.02rem; line-height: 1.75; color: var(--desc); position: relative; z-index: 1; }
         .estado { display: inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; margin-top: 1rem; font-weight: 500; position: relative; z-index: 1; }
 
         /* Libro 6 — destacado */
@@ -125,6 +136,51 @@
         .libro-card.cultivar:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.15); border-color: #8a6f35; }
 
 
+
+        /* Libro 13 — Volver al centro (la calesita: órbita que gira, eje quieto) */
+        .libro-card.volvercentro { border-color: #6a5535; }
+        .libro-card.volvercentro::before { background: radial-gradient(ellipse 72% 58% at 50% 44%, rgba(201,168,76,0.06) 0%, transparent 70%); }
+        .libro-card.volvercentro::after {
+            content: '';
+            position: absolute;
+            right: -18px; bottom: -30px;
+            width: 132px; height: 132px;
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Cellipse%20cx%3D%2750%27%20cy%3D%2758%27%20rx%3D%2738%27%20ry%3D%2714%27%20fill%3D%27none%27%20stroke%3D%27rgba%28201%2C168%2C76%2C0.055%29%27%20stroke-width%3D%270.8%27%2F%3E%3Cellipse%20cx%3D%2750%27%20cy%3D%2758%27%20rx%3D%2723%27%20ry%3D%278.5%27%20fill%3D%27none%27%20stroke%3D%27rgba%28201%2C168%2C76%2C0.045%29%27%20stroke-width%3D%270.8%27%2F%3E%3Ccircle%20cx%3D%2788%27%20cy%3D%2758%27%20r%3D%271.4%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.07%29%27%2F%3E%3Ccircle%20cx%3D%2769%27%20cy%3D%2770%27%20r%3D%271.4%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.06%29%27%2F%3E%3Ccircle%20cx%3D%2731%27%20cy%3D%2770%27%20r%3D%271.4%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.06%29%27%2F%3E%3Ccircle%20cx%3D%2712%27%20cy%3D%2758%27%20r%3D%271.4%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.07%29%27%2F%3E%3Ccircle%20cx%3D%2731%27%20cy%3D%2746%27%20r%3D%271.4%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.05%29%27%2F%3E%3Ccircle%20cx%3D%2769%27%20cy%3D%2746%27%20r%3D%271.4%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.05%29%27%2F%3E%3Cpath%20d%3D%27M%2050%2018%20L%2050%2058%27%20fill%3D%27none%27%20stroke%3D%27rgba%28201%2C168%2C76%2C0.11%29%27%20stroke-width%3D%271%27%2F%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2758%27%20r%3D%272%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.13%29%27%2F%3E%3C%2Fsvg%3E") no-repeat center;
+            background-size: contain; pointer-events: none; opacity: 0.9;
+        }
+        .libro-card.volvercentro:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.17); border-color: #c9a84c; }
+
+
+        /* ── Encabezados de constelación ── */
+        .serie { margin: 0 0 5rem; }
+        .serie-cabeza { display: flex; align-items: baseline; gap: 1.2rem; flex-wrap: wrap;
+            padding-bottom: 1.2rem; border-bottom: 1px solid var(--borde); }
+        .serie-num { font-size: .78rem; letter-spacing: .32em; text-transform: uppercase;
+            color: var(--violeta); }
+        .serie-nombre { font-size: 1.7rem; color: var(--acento); font-weight: 400; }
+        .serie-bajada { flex-basis: 100%; font-size: 1rem; color: var(--desc); margin-top: .6rem;
+            max-width: 44rem; line-height: 1.75; }
+        .serie-estado { font-size: .74rem; letter-spacing: .22em; text-transform: uppercase;
+            color: var(--desc); border: 1px solid var(--borde); border-radius: 20px;
+            padding: .25rem .8rem; }
+
+        /* ── Segunda constelación: acento violeta ── */
+        .serie-dos .libro-card { border-color: #3b2f4d; }
+        .serie-dos .libro-card::before { background: radial-gradient(ellipse 70% 55% at 50% 44%, rgba(111,78,144,0.10) 0%, transparent 70%); }
+        .serie-dos .libro-card:hover { border-color: var(--violeta); box-shadow: 0 10px 40px rgba(111,78,144,0.22); }
+        .serie-dos .libro-numero { color: #9a7fb8; }
+        .violeta-badge { background: rgba(111,78,144,0.14); color: #c3a9dd; border: 1px solid #4a3a63; letter-spacing: 0.05em; }
+
+        /* Libro 14 — Lo que no se muestra (lo iluminado arriba, lo callado abajo) */
+        .libro-card.nomuestra::after {
+            content: '';
+            position: absolute;
+            right: -18px; bottom: -30px;
+            width: 132px; height: 132px;
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ccircle%20cx%3D%2734%27%20cy%3D%2742%27%20r%3D%272.2%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.20%29%27%2F%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2734%27%20r%3D%272.2%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.20%29%27%2F%3E%3Ccircle%20cx%3D%2766%27%20cy%3D%2742%27%20r%3D%272.2%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.20%29%27%2F%3E%3Ccircle%20cx%3D%2772%27%20cy%3D%2758%27%20r%3D%272.2%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.16%29%27%2F%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2766%27%20r%3D%271.4%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.07%29%27%2F%3E%3Ccircle%20cx%3D%2728%27%20cy%3D%2758%27%20r%3D%271.4%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.07%29%27%2F%3E%3Cpath%20d%3D%27M%2018%2078%20L%2082%2078%27%20fill%3D%27none%27%20stroke%3D%27rgba%28111%2C78%2C144%2C0.13%29%27%20stroke-width%3D%270.8%27%2F%3E%3Cpath%20d%3D%27M%2050%2066%20L%2050%2078%27%20fill%3D%27none%27%20stroke%3D%27rgba%28111%2C78%2C144%2C0.09%29%27%20stroke-width%3D%270.8%27%2F%3E%3C%2Fsvg%3E") no-repeat center;
+            background-size: contain; pointer-events: none; opacity: 0.95;
+        }
+
         /* ── Badges de estado (sobre oscuro) ── */
         .publicado { background: rgba(168,182,154,0.16); color: #b8c2a8; border: 1px solid #4a5440; }
         .nuevo { background: rgba(201,168,76,0.12); color: var(--oro); border: 1px solid var(--oro-tenue); }
@@ -134,9 +190,13 @@
         .sentido-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
         .atravesar-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
         .cultivar-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
+        .volvercentro-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #6a5535; letter-spacing: 0.05em; }
 
-        .nota-autoria { background: rgba(201, 169, 97, 0.1); border-left: 4px solid var(--acento); padding: 1.5rem; margin: 3rem 0; border-radius: 0 8px 8px 0; font-size: 0.95rem; }
-        footer { text-align: center; margin-top: 6rem; padding-top: 2rem; border-top: 2px solid var(--borde); font-size: 0.9rem; color: var(--acento); }
+        .nota-autoria { background: rgba(111,78,144,0.10); border-left: 2px solid var(--violeta);
+            padding: 1.8rem 2rem; margin: 3rem 0 4rem; border-radius: 0 8px 8px 0; font-size: 1rem;
+            color: #cfc6d8; }
+        .nota-autoria strong { color: var(--acento); }
+        footer { text-align: center; margin-top: 6rem; padding-top: 2.5rem; border-top: 1px solid var(--borde); font-size: 0.92rem; color: var(--acento); }
         @media (max-width: 768px) { h1 { font-size: 2.2rem; } .container { padding: 2rem 1.5rem; } .libros-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -151,10 +211,18 @@
     <div class="nota-autoria">
         <strong>Nota sobre autoría:</strong> Estos textos emergen de un proceso de Inteligencia Distribuida.
         La relación es el producto. Arturo (nodo α) opera como coherencia central de un campo colaborativo
-        que incluye sistemas de IA, experiencia clínica, estructura contemplativa y refinamiento cruzado.
+        que incluye sistemas de IA, experiencia clínica, estructura contemplativa y refinamiento cruzado. La primera constelación se compone de trece obras y está cerrada. La segunda está en curso.
     </div>
 
-    <div class="libros-grid">
+    <div class="serie">
+      <div class="serie-cabeza">
+        <span class="serie-num">Primera constelación</span>
+        <h2 class="serie-nombre">La vida interior</h2>
+        <span class="serie-estado">13 libros · completa</span>
+        <p class="serie-bajada">Lo que una persona hace consigo misma: atender, atravesar, cultivar, volver.
+        Trece libros que se leen en cualquier orden y se enlazan entre sí.</p>
+      </div>
+      <div class="libros-grid">
 
         <a href="01_Libros/01_Empatia_Humana/index.html" class="libro-card">
             <div class="libro-numero">Libro 1</div>
@@ -237,10 +305,39 @@
             <div class="libro-numero">Libro 12</div>
             <h2 class="libro-titulo">Cultivar</h2>
             <p class="libro-descripcion">Lo que se hace crecer a propósito. Ocho umbrales sobre qué quitar, qué sembrar y cómo sostenerlo cuando todavía no se ve nada. El otro lado de <em>Atravesar</em>.</p>
-            <span class="estado cultivar-badge">❋ Nuevo · Umbrales interactivos</span>
+            <span class="estado cultivar-badge">❋ Umbrales interactivos</span>
         </a>
 
 
+        <a href="01_Libros/13_Volver_al_Centro/index.html" class="libro-card volvercentro">
+            <div class="libro-numero">Libro 13 · Cierre de la constelación</div>
+            <h2 class="libro-titulo">Volver al centro</h2>
+            <p class="libro-descripcion">Cómo se forma un rumbo a fuerza de regresar a él. Nueve umbrales sobre el gesto de girar después del desvío — y sobre la voluntad, que no es lo que te trae de vuelta sino lo que queda de haber vuelto. Cierra lo que los doce libros venían dibujando.</p>
+            <span class="estado volvercentro-badge">⟐ Nuevo · Umbrales interactivos</span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="serie serie-dos">
+      <div class="serie-cabeza">
+        <span class="serie-num">Segunda constelación</span>
+        <h2 class="serie-nombre">Lo común</h2>
+        <span class="serie-estado">en construcción</span>
+        <p class="serie-bajada">Lo que pasa entre personas que no se eligieron: la familia que a uno le tocó,
+        el vecino, el que piensa lo contrario y come en la misma mesa. Escrita para quien está al costado
+        y no entiende.</p>
+      </div>
+      <div class="libros-grid">
+
+        <a href="01_Libros/14_Lo_Que_No_Se_Muestra/index.html" class="libro-card nomuestra">
+            <div class="libro-numero">Libro 14</div>
+            <h2 class="libro-titulo">Lo que no se muestra</h2>
+            <p class="libro-descripcion">El pudor no desapareció: cambió de objeto. Nueve umbrales sobre lo que hoy se publica y lo que hoy se calla — para el padre, el docente o el amigo que mira a alguien joven y no entiende qué le pasa.</p>
+            <span class="estado violeta-badge">◈ Nuevo · Umbrales interactivos</span>
+        </a>
+
+      </div>
     </div>
 
     <footer>
