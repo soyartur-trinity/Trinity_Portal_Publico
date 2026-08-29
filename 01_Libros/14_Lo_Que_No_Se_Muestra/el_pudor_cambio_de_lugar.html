@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral 0 &middot; El pudor cambi&oacute; de lugar | Lo que no se muestra</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80; --falso:#7a6a72;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  #hero{position:absolute; inset:0; opacity:.05; pointer-events:none;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s; position:relative; z-index:1;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s; position:relative; z-index:1;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s; position:relative; z-index:1;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s; position:relative; z-index:1;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s; position:relative; z-index:1;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem); line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%; transform:translateX(-50%);
+    color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem;}
+  .aviso p:last-child{margin-bottom:0;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center; margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .geo-lienzo{width:100%; border:1px solid var(--separador); background:rgba(201,168,76,.012);
+    display:block; touch-action:none;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem; min-height:230px;}
+  .geo-estado{text-align:center; min-height:3.6rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .geo-acciones{display:flex; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); border-top:none;}
+  .geo-acciones button{flex:1; background:var(--negro); border:none; padding:.9rem .5rem;
+    font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--oro-polvo); cursor:pointer; transition:all .3s ease;}
+  .geo-acciones button:hover, .geo-acciones button:focus-visible{color:var(--oro-tenue);}
+  .dicho{font-size:1.06rem; line-height:1.9; color:var(--blanco-humo); margin-bottom:.7rem; animation:entrar .5s ease;}
+  .dicho.perdido{color:var(--lejos); font-style:italic;}
+  .tentacion{display:block; width:100%; text-align:left; margin:.8rem 0 .2rem; background:none;
+    border:1px dashed var(--separador); padding:.7rem .9rem; font-family:'EB Garamond',Georgia,serif;
+    font-style:italic; font-size:.98rem; color:var(--gris-calido); cursor:pointer;
+    transition:all .3s ease; animation:entrar .5s ease;}
+  .tentacion:hover, .tentacion:focus-visible{color:var(--ambar); border-color:var(--oro-polvo);}
+
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:7.2rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  a:focus-visible, button:focus-visible{outline:1px solid var(--oro-tenue); outline-offset:3px;}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){ .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;} .opciones{grid-template-columns:1fr;} }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    #hero{display:none;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar{opacity:1!important; transform:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">&larr; Portada</a>
+  <span>Umbral 0</span>
+  <a href="umbral_1_lo_que_ya_no_se_esconde.html">Umbral I &rarr;</a>
+</nav>
+
+<header class="encabezado">
+  <canvas id="hero"></canvas>
+  <span class="etiqueta">Lo que no se muestra &middot; Umbral</span>
+  <div class="numero">0</div>
+  <h1 class="titulo">El pudor cambi&oacute; de lugar</h1>
+  <p class="subtitulo">no se fue: se mud&oacute;</p>
+  <div class="cue"><div class="linea"></div><span>leer</span></div>
+</header>
+
+<main class="wrap cuerpo">
+
+  <div class="escena">
+    <p>Ve&iacute;s que public&oacute; algo de la separaci&oacute;n. Ah&iacute;, a la vista de todos, con una foto y un texto largo.</p>
+    <p>Y sent&iacute;s eso que se siente: una mezcla de verg&uuml;enza ajena y desconcierto. <em>&iquest;C&oacute;mo puede exponer as&iacute; algo tan &iacute;ntimo?</em></p>
+    <p class="apagado">Esa misma noche le pregunt&aacute;s c&oacute;mo est&aacute;.</p>
+    <p>&mdash;Bien.</p>
+    <p>Y ah&iacute; se termina la conversaci&oacute;n.</p>
+    <p>La contradicci&oacute;n es tan grande que uno concluye lo obvio: prefiere contarle a desconocidos antes que a m&iacute;. Es una conclusi&oacute;n razonable y es equivocada.</p>
+  </div>
+
+  <div class="perla">
+    <p>No perdi&oacute; la verg&uuml;enza.<br>La mud&oacute; de lugar.</p>
+  </div>
+
+  <div class="bloque">
+    <p>Durante casi todo el siglo pasado, la vida ps&iacute;quica se pens&oacute; con un mecanismo bastante claro. Hay cosas que no se pueden mostrar &mdash;el deseo, la bronca, lo que la moral no admite&mdash;, esas cosas se esconden, y al esconderse presionan. Vuelven despu&eacute;s, deformadas: en un s&iacute;ntoma, en un sue&ntilde;o, en un acto fallido, en una angustia sin causa aparente.</p>
+    <p>Ese aparato supone algo que hoy conviene revisar: <strong>supone que lo &iacute;ntimo no tiene salida.</strong></p>
+    <p>Hoy la tiene, y es inmediata. Lo que antes necesitaba a&ntilde;os de an&aacute;lisis para poder decirse, ahora tiene formato, hora de publicaci&oacute;n y p&uacute;blico. La separaci&oacute;n, el diagn&oacute;stico, la pelea con la madre, el cuerpo, el fracaso.</p>
+  </div>
+
+  <div class="geo" id="geo">
+    <span class="geo-label">&iquest;Cu&aacute;l es cu&aacute;l?</span>
+    <p class="geo-instruccion">Dos listas de cosas que no se cuentan. Una es de 1975 y la otra es de ahora. Eleg&iacute; y fijate.</p>
+    <div class="panel" id="panel"></div>
+    <div class="opciones" id="listas">
+      <button data-k="a" aria-pressed="false">Lista A</button>
+      <button data-k="b" aria-pressed="false">Lista B</button>
+    </div>
+    <div class="geo-estado"><span class="glosa" id="glosa">Las dos son listas de cosas que dan verg&uuml;enza. No de las mismas.</span></div>
+  </div>
+
+  <div class="bloque">
+    <p>Lo que se oculta hoy no es lo prohibido. Es <strong>lo insignificante</strong>.</p>
+    <p>El mi&eacute;rcoles en que no pas&oacute; nada. La tarde entera perdida sin siquiera disfrutarla. El intento que no lleg&oacute; a ninguna parte y adem&aacute;s no tuvo &eacute;pica: no fue un fracaso interesante, fue un tr&aacute;mite que sali&oacute; mal. Estar aburrido. Estar solo un s&aacute;bado sin que eso sea una historia.</p>
+    <p>Nada de eso se muestra, y no por estrategia. Se oculta como se ocultaba antes lo que daba verg&uuml;enza: <strong>porque da verg&uuml;enza.</strong></p>
+  </div>
+
+  <div class="perla grave">
+    <p>Antes daba verg&uuml;enza<br>lo que uno no deb&iacute;a ser.<br>Ahora, lo que uno es<br>cuando no pasa nada.</p>
+  </div>
+
+  <div class="bloque">
+    <p>Y ac&aacute; est&aacute; la vuelta que cambia todo lo que sigue en este libro. Si eso es as&iacute;, entonces la escena del principio se lee al rev&eacute;s.</p>
+    <p>Public&oacute; la separaci&oacute;n porque una separaci&oacute;n <em>es contable</em>: tiene forma, tiene un antes y un despu&eacute;s, se puede narrar. Y te dijo <em>bien</em> porque lo que le est&aacute; pasando de verdad &mdash;que se despierta a las cuatro, que no tiene ganas de nada, que no le pasa nada interesante&mdash; no tiene forma, y por eso mismo no se cuenta.</p>
+    <p><strong>Lo que public&oacute; no era lo &iacute;ntimo. Era la parte presentable de lo &iacute;ntimo.</strong></p>
+  </div>
+
+  <div class="puerta">
+    <a href="../02_La_Voz_Interior/index.html">&#10192; &nbsp;Las voces que dictan qu&eacute; es presentable y qu&eacute; no est&aacute;n trabajadas en <em>La Voz Interior</em>, el Libro II. Ac&aacute; no las explicamos: las damos por le&iacute;das.</a>
+  </div>
+
+  <div class="aviso">
+    <span class="aviso-label">Antes de seguir</span>
+    <p>Si mientras le&iacute;as pensaste en alguien que dijo o insinu&oacute; algo sobre no querer estar, o que hace tiempo est&aacute; de una manera que te asusta, ese es otro camino y es urgente.</p>
+    <p>Un profesional, esta semana. No hay una versi&oacute;n de este libro que reemplace eso, y no conviene esperar a terminarlo.</p>
+  </div>
+
+  <div class="sep">&#10192; &nbsp; &#10192; &nbsp; &#10192;</div>
+
+  <div class="bloque">
+    <p>Un &uacute;ltimo apunte sobre lo que este libro no va a hacer.</p>
+    <p>No vas a leer que las redes arruinaron a nadie. Puede que hayan hecho da&ntilde;o &mdash;se discute, y la evidencia est&aacute; lejos de ser concluyente&mdash;, pero eso no es lo que ac&aacute; se trabaja. <strong>Ac&aacute; se trabaja una sola cosa: entender qu&eacute; se esconde ahora, para no seguir buscando en el lugar equivocado.</strong></p>
+    <p>Porque mientras vos pregunt&aacute;s por lo grave, lo que est&aacute; guardado es lo com&uacute;n. Y por eso las dos personas pueden querer hablar, hacer el intento, y salir de la conversaci&oacute;n con la sensaci&oacute;n de que no hubo caso.</p>
+  </div>
+
+  <div class="sendero">
+    <div class="paso"><div class="paso-nombre">Con qui&eacute;n</div><p>Pens&aacute; en una persona concreta &mdash;una sola&mdash; mientras le&eacute;s este libro. Con nombre. Todos los gestos que siguen son con esa persona, y ninguno funciona en abstracto.</p></div>
+    <div class="paso"><div class="paso-nombre">El gesto</div><p>Esta semana, <strong>pregunt&aacute;le algo sin importancia</strong>: qu&eacute; almorz&oacute;, si el colectivo vino lleno, qu&eacute; est&aacute; escuchando. Y qued&aacute;te con la respuesta, sin encadenar una segunda pregunta.</p></div>
+    <div class="paso"><div class="paso-nombre">Cuando no salga</div><p>Te va a contestar con una palabra. Es lo esperable: la primera vez, cualquier pregunta tuya se lee como el comienzo de otra cosa. Repetilo tres d&iacute;as seguidos antes de sacar conclusiones.</p></div>
+    <div class="paso"><div class="paso-nombre">La trampa</div><p>Usar lo trivial como puerta de entrada a lo importante. Se nota en el primer segundo, y despu&eacute;s de eso ninguna pregunta chica vuelve a ser cre&iacute;ble.</p></div>
+    <div class="paso guardar"><div class="paso-nombre">Guardar</div><p>Un dato concreto que hayas aprendido esta semana sobre su vida com&uacute;n. Qu&eacute; come, con qui&eacute;n habla, a qu&eacute; hora se duerme. Sin interpretarlo.</p></div>
+  </div>
+
+  <div class="perla">
+    <p>Est&aacute;s preguntando por lo grave.<br>Lo que est&aacute; guardado<br>es lo com&uacute;n.</p>
+  </div>
+
+  <div class="continuar">
+    <span class="continuar-label">Siguiente umbral</span>
+    <a href="umbral_1_lo_que_ya_no_se_esconde.html">
+      <span class="continuar-nombre">Lo que ya no se esconde</span>
+      <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+    </a>
+  </div>
+</main>
+
+<footer class="pie">
+  <span>Portal P&uacute;blico Trinity &middot; &copy; 2026 Campo Trinity</span>
+</footer>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function(){
+    var c=document.getElementById('hero'); if(!c||reduce) return;
+    var x=c.getContext('2d'), t=0;
+    function draw(){
+      c.width=innerWidth; c.height=c.parentElement.offsetHeight;
+      x.clearRect(0,0,c.width,c.height);
+      var cx=c.width/2, cy=c.height/2, R=Math.min(c.width,c.height)*0.28;
+      x.beginPath(); x.arc(cx,cy,R,-Math.PI*0.15+t*0.2,Math.PI*1.15+t*0.2);
+      x.strokeStyle='rgba(201,168,76,0.9)'; x.lineWidth=0.9; x.stroke();
+      x.beginPath(); x.arc(cx,cy,R,Math.PI*1.15+t*0.2,Math.PI*1.85+t*0.2);
+      x.strokeStyle='rgba(201,168,76,0.16)'; x.lineWidth=0.9; x.stroke();
+      t+=0.004; requestAnimationFrame(draw);
+    } draw();
+  })();
+
+  (function(){
+    var panel=document.getElementById('panel'), glosa=document.getElementById('glosa');
+    if(!panel) return;
+    var L={
+      a:['Lista A',
+         ['Que te gusta alguien que no deber&iacute;a gustarte.',
+          'Que le tuviste bronca a tu madre.',
+          'Que fuiste al psic&oacute;logo.',
+          'Que te separaste.',
+          'Que ten&eacute;s una enfermedad.'],
+         '1975. Todo esto hoy tiene formato, hora de publicaci&oacute;n y comentarios.'],
+      b:['Lista B',
+         ['Que el mi&eacute;rcoles no hiciste nada y tampoco lo disfrutaste.',
+          'Que est&aacute;s aburrido y no se te ocurre nada.',
+          'Que el s&aacute;bado no ten&iacute;as plan y no fue una historia interesante.',
+          'Que lo intentaste, sali&oacute; mal, y ni siquiera fue un fracaso &eacute;pico.',
+          'Que la mayor parte del tiempo no pasa nada.'],
+         'Ahora. Ninguna de estas cosas se publica, y no por estrategia.']
+    };
+    function pinta(k){
+      var d=L[k], h='<p class="dicho" style="color:var(--oro)">'+d[0]+'</p>';
+      d[1].forEach(function(l){ h+='<p class="dicho" style="color:var(--gris-calido)">'+l+'</p>'; });
+      h+='<p class="dicho" style="color:var(--blanco-humo);margin-top:1.2rem">'+d[2]+'</p>';
+      panel.innerHTML=h;
+    }
+    panel.innerHTML='<p class="dicho perdido">Eleg&iacute; una de las dos.</p>';
+    document.getElementById('listas').addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return;
+      Array.prototype.forEach.call(document.querySelectorAll('#listas button'),function(o){
+        o.setAttribute('aria-pressed', o===b?'true':'false');
+      });
+      pinta(b.dataset.k);
+      glosa.textContent='La verg&uuml;enza no se fue a ninguna parte. Cambi&oacute; de objeto.';
+    });
+  })();
+
+  (function(){
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); } });
+    },{threshold:.15});
+    document.querySelectorAll('.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar').forEach(function(el){obs.observe(el);});
+  })();
+
+</script>
+
+</body>
+</html>
