@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umbral IV &middot; Etiquetar | Bien</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  /* escena secundaria: misma familia, un grado más tenue y sin barra */
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  /* ── la cita con autor ── */
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  /* ── la frase de todos, última línea del umbral ── */
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  /* ── interactivos ── */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral_3_la_primicia.html">&larr; La primicia</a>
+  <span>Umbral IV</span>
+  <a href="umbral_5_juzgar.html">Juzgar &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">Bien &middot; Umbral</span>
+  <div class="numero">IV</div>
+  <h1 class="titulo">Etiquetar</h1>
+  <p class="subtitulo">un nombre no describe: clausura</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+<div class="escena">
+  <p>La conversaci&oacute;n ven&iacute;a yendo bien. Alguien est&aacute; contando algo enredado sobre una persona de su trabajo: que a veces la trata estupendamente y a veces la ignora dos d&iacute;as, que no sabe si es con ella o si es as&iacute; con todos, que el jueves pas&oacute; algo raro y no supo c&oacute;mo tomarlo.</p>
+  <p>Est&aacute; buscando. Se contradice, vuelve atr&aacute;s, no llega.</p>
+  <p>Y t&uacute; dices:</p>
+  <p>&mdash;Es un narcisista.</p>
+  <p>Y la conversaci&oacute;n se termina ah&iacute;.</p>
+  <p>No se termina mal. Se termina bien: los dos asienten, alguien dice <em>tal cual</em>, se pasa a otro tema. Ella se va con una palabra que no ten&iacute;a y t&uacute; te vas con la sensaci&oacute;n de haber ayudado.</p>
+  <p>Sobre esa persona del trabajo no se averigu&oacute; absolutamente nada, y ya no se va a averiguar.</p>
+</div>
+<div class="perla"><p>Un diagn&oacute;stico tambi&eacute;n cierra,<br>y cierra desde adentro.</p></div>
+<div class="bloque">
+  <p>Un nombre t&eacute;cnico parece que describe. En realidad <strong>clausura</strong>, y lo hace de la peor manera posible: dejando contentos a los dos.</p>
+  <p>El que lo dijo siente que entendi&oacute;. El que lo escuch&oacute; siente que fue entendido. Y esa satisfacci&oacute;n compartida es exactamente lo que impide notar que se dej&oacute; de mirar.</p>
+  <p>Porque una persona enredada, dif&iacute;cil, contradictoria, es algo con lo que todav&iacute;a se puede hacer algo: se la puede seguir observando, se le puede preguntar, se puede cambiar de opini&oacute;n sobre ella el mes que viene. <strong>Una categor&iacute;a, no.</strong> Con una categor&iacute;a no se discute y no se convive: se toman medidas.</p>
+  <p>Nada de esto es un problema de los nombres. En su lugar sirven, y sirven mucho: hacen falta a&ntilde;os para usarlos bien, se aplican con enorme cuidado, y el que los usa en serio sabe cu&aacute;nto se pierde cada vez que los aplica. Prestados, sin ese cuidado y sin ese costo, hacen otra cosa: <strong>convierten a alguien en un tipo de persona</strong>, y de un tipo de persona no hay nada nuevo que aprender.</p>
+</div>
+
+<div class="geo">
+  <span class="geo-label">Poner nombre</span>
+  <div class="panel" id="p4">
+    <p id="txt4" style="color:var(--blanco-humo);font-size:1.06rem;line-height:1.85;margin:0;">No s&eacute; bien c&oacute;mo explicarlo. A veces me trata como si fu&eacute;ramos amigos de toda la vida, me cuenta cosas suyas, me espera para almorzar. Y otras veces no. Otras veces pasa dos d&iacute;as sin dirigirme la palabra y yo no s&eacute; si hice algo. El jueves entr&oacute; y no salud&oacute; a nadie, as&iacute; que quiz&aacute; no era conmigo, pero despu&eacute;s con Marta habl&oacute; normal. O sea que s&iacute; era conmigo. O no, no s&eacute;. Lo peor es que cuando est&aacute; bien es de las personas m&aacute;s generosas que conozco, y eso es lo que me desconcierta, porque si fuera siempre igual yo ya sabr&iacute;a a qu&eacute; atenerme.</p>
+  </div>
+  <button type="button" class="accion" id="b4" style="margin-top:1px;">Poner nombre</button>
+  <div class="geo-estado"><span class="glosa" id="g4"></span></div>
+</div>
+<div class="cita">
+  <p>Cada etiqueta que aceptas &mdash;profesi&oacute;n, nacionalidad, g&eacute;nero, edad&mdash; es un colapso que reduce tu infinitud.</p>
+  <p>La maestr&iacute;a social no es rechazar todas las etiquetas, sino usarlas como vestuario temporal sin confundirlas con tu piel.</p>
+  <cite><a href="https://soyartur-trinity.github.io/Trinity-/02_Trinity_Quantum/Libro_04/nodo_04.html" target="_blank" rel="noopener"><span class="obra">La Paradoja Luminosa</span></a> &middot; Nodo 4</cite>
+</div>
+<div class="bloque">
+  <p>Hay una segunda versi&oacute;n y es m&aacute;s dif&iacute;cil de ver, porque llega con cara de haber entendido algo importante sobre uno mismo.</p>
+  <p><em>Soy evitativo. Tengo apego ansioso. Me pasa por el trauma.</em></p>
+  <p>Ah&iacute; el cierre es desde adentro. Antes hab&iacute;a una persona que en algunas situaciones hac&iacute;a tal cosa y no sab&iacute;a bien por qu&eacute; &mdash; es decir, alguien con un asunto abierto. Despu&eacute;s hay <strong>algo que uno es</strong>, y con lo que uno es no se negocia: se convive, se explica, se avisa de antemano.</p>
+  <p>La frase <em>yo soy as&iacute; por esto</em> termina m&aacute;s conversaciones que cualquier pelea. Y las termina desde el lado de adentro, que es donde nadie las puede reabrir.</p>
+</div>
+<div class="escena secundaria">
+  <p>Una madre dice, cuando le preguntan por su hijo, el nombre del diagn&oacute;stico.</p>
+  <p>No est&aacute; mintiendo. El nombre es correcto, le cost&oacute; cuatro a&ntilde;os conseguirlo, y el d&iacute;a que lo tuvo pudo por fin explicar cosas que hac&iacute;a una d&eacute;cada no pod&iacute;a explicarle a nadie.</p>
+  <p>Lo que pas&oacute; despu&eacute;s no lo vio venir: desde entonces nadie le pregunta nada m&aacute;s sobre su hijo.</p>
+  <p>Le dan el nombre por respuesta a ella.</p>
+</div>
+<div class="puerta"><a href="../11_Atravesar/index.html">&#10192; Que una emoci&oacute;n no se revierte sino que se atraviesa est&aacute; trabajado en <em>Atravesar</em>, el Libro XI. Un nombre hace lo contrario: la congela con una etiqueta y la deja donde est&aacute;.</a></div>
+<div class="sendero">
+  <div class="paso"><div class="paso-nombre">Con qui&eacute;n</div><div><p>La misma persona, y esta vez tambi&eacute;n contigo.</p></div></div>
+  <div class="paso"><div class="paso-nombre">El gesto</div><div><p>Tres d&iacute;as sin usar ning&uacute;n t&eacute;rmino t&eacute;cnico sobre nadie. Ni sobre otro, ni sobre ti. Cuando te venga uno, describe en su lugar lo que la persona hizo: <em>el jueves no me contest&oacute; y el viernes me llam&oacute; dos veces.</em></p></div></div>
+  <div class="paso"><div class="paso-nombre">Cuando no salga</div><div><p>Te va a salir igual, probablemente el primer d&iacute;a. No pasa nada. Lo que importa no es no decirlo: es escucharte dici&eacute;ndolo y notar en qu&eacute; momento de la conversaci&oacute;n aparece. Casi siempre aparece justo cuando el asunto se estaba poniendo dif&iacute;cil.</p></div></div>
+  <div class="paso"><div class="paso-nombre">La trampa</div><div><p>Cambiar la palabra por un rodeo que dice lo mismo. <em>No es que sea narcisista, pero tiene esa cosa de creerse el centro.</em> Eso es la misma clausura con mejores modales.</p></div></div>
+  <div class="paso guardar"><div class="paso-nombre">Guardar</div><div><p>La descripci&oacute;n sin nombre. Los hechos, en orden, como pasaron.</p></div></div>
+  <div class="paso traslada"><div class="paso-nombre">Lo que no se traslada</div><div><p>Averiguar c&oacute;mo es alguien. Un nombre te lo da cualquiera al instante, y ahora se consigue m&aacute;s r&aacute;pido que nunca. Enterarte de c&oacute;mo es una persona lleva a&ntilde;os, no se puede acelerar, y si lo hace otro por ti no te enteraste de nada.</p></div></div>
+</div>
+<div class="perla grave"><p>Con una persona se convive.<br>Con una categor&iacute;a<br>se toman medidas.</p></div>
+
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral_5_juzgar.html"><span class="continuar-nombre">Juzgar</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+
+  (function(){
+    var b=document.getElementById('b4'); if(!b) return;
+    var t=document.getElementById('txt4'), g=document.getElementById('g4');
+    b.addEventListener('click',function(){
+      t.style.transition='opacity 1.1s ease';
+      t.style.opacity='0';
+      setTimeout(function(){
+        t.innerHTML='Narcisista.';
+        t.style.textAlign='center';
+        t.style.fontFamily="'Cormorant Garamond',serif";
+        t.style.fontSize='clamp(1.6rem,5vw,2.2rem)';
+        t.style.color='var(--oro)';
+        t.style.padding='2.4rem 0';
+        t.style.opacity='1';
+        g.innerHTML='No hay c&oacute;mo volver atr&aacute;s.<br>Si quieres el p&aacute;rrafo otra vez, hay que recargar el umbral.';
+        b.disabled=true; b.textContent='Ya est&aacute; puesto';
+      },1150);
+    });
+  })();
+
+
+  (function(){
+    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+
+</script>
+</body>
+</html>
