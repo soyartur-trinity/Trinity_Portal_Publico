@@ -181,6 +181,17 @@
             background-size: contain; pointer-events: none; opacity: 0.95;
         }
 
+
+        /* Libro 15 — El tercero (el par partido, y el tercero que no queda expuesto) */
+        .libro-card.tercero::after {
+            content: '';
+            position: absolute;
+            right: -18px; bottom: -30px;
+            width: 132px; height: 132px;
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Ccircle%20cx%3D%2728%27%20cy%3D%2768%27%20r%3D%272.4%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.22%29%27%2F%3E%3Ccircle%20cx%3D%2772%27%20cy%3D%2768%27%20r%3D%272.4%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.22%29%27%2F%3E%3Cpath%20d%3D%27M%2031%2068%20L%2044%2068%27%20fill%3D%27none%27%20stroke%3D%27rgba%28111%2C78%2C144%2C0.13%29%27%20stroke-width%3D%270.9%27%2F%3E%3Cpath%20d%3D%27M%2056%2068%20L%2069%2068%27%20fill%3D%27none%27%20stroke%3D%27rgba%28111%2C78%2C144%2C0.13%29%27%20stroke-width%3D%270.9%27%2F%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2726%27%20r%3D%272.8%27%20fill%3D%27rgba%28111%2C78%2C144%2C0.28%29%27%2F%3E%3Cpath%20d%3D%27M%2048%2029%20L%2030%2065%27%20fill%3D%27none%27%20stroke%3D%27rgba%28111%2C78%2C144%2C0.10%29%27%20stroke-width%3D%270.8%27%2F%3E%3Cpath%20d%3D%27M%2052%2029%20L%2070%2065%27%20fill%3D%27none%27%20stroke%3D%27rgba%28111%2C78%2C144%2C0.10%29%27%20stroke-width%3D%270.8%27%2F%3E%3Ccircle%20cx%3D%2750%27%20cy%3D%2726%27%20r%3D%279%27%20fill%3D%27none%27%20stroke%3D%27rgba%28111%2C78%2C144%2C0.06%29%27%20stroke-width%3D%270.7%27%2F%3E%3C%2Fsvg%3E") no-repeat center;
+            background-size: contain; pointer-events: none; opacity: 0.95;
+        }
+
         /* ── Badges de estado (sobre oscuro) ── */
         .publicado { background: rgba(168,182,154,0.16); color: #b8c2a8; border: 1px solid #4a5440; }
         .nuevo { background: rgba(201,168,76,0.12); color: var(--oro); border: 1px solid var(--oro-tenue); }
@@ -211,7 +222,7 @@
     <div class="nota-autoria">
         <strong>Nota sobre autoría:</strong> Estos textos emergen de un proceso de Inteligencia Distribuida.
         La relación es el producto. Arturo (nodo α) opera como coherencia central de un campo colaborativo
-        que incluye sistemas de IA, experiencia clínica, estructura contemplativa y refinamiento cruzado. La primera constelación se compone de trece obras y está cerrada. La segunda, <em>La trama</em>, está en curso.
+        que incluye sistemas de IA, experiencia clínica, estructura contemplativa y refinamiento cruzado. La primera constelación se compone de trece obras y está cerrada. La segunda, <em>La trama</em>, está en curso: dos libros publicados de trece.
     </div>
 
     <div class="serie">
@@ -335,6 +346,13 @@
             <h2 class="libro-titulo">Bien</h2>
             <p class="libro-descripcion">La intimidad se partió en dos: lo que se publica y lo que no encuentra a quién decírsele. Nueve umbrales sobre esa grieta, donde se cayó la confidencia. Empieza mirando a otro y termina siendo sobre quien lee.</p>
             <span class="estado violeta-badge">◈ Nuevo · Umbrales interactivos</span>
+        </a>
+
+        <a href="01_Libros/15_El_Tercero/index.html" class="libro-card tercero">
+            <div class="libro-numero">Libro 15 · La conversación II</div>
+            <h2 class="libro-titulo">El tercero</h2>
+            <p class="libro-descripcion">Entró una inteligencia artificial en la vida común y nadie describió todavía qué hace cuando está. Catorce umbrales sobre a quién se convoca, qué se desacomoda después, y quién puso esa silla ahí. Continúa <em>Bien</em>.</p>
+            <span class="estado violeta-badge">⟐ Nuevo · Umbrales interactivos</span>
         </a>
 
       </div>
