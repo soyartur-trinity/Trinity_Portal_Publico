@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El tercero &middot; Libro XV | Portal Trinity</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .portada{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; padding:5rem 2rem; position:relative; overflow:hidden; text-align:center;}
+  .anillo{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:50%;
+    border:1px solid rgba(201,168,76,0.05); pointer-events:none; animation:respirar 7s ease-in-out infinite;}
+  .anillo:nth-child(1){width:180px;height:180px;animation-delay:0s;}
+  .anillo:nth-child(2){width:340px;height:340px;animation-delay:2.3s;}
+  .anillo:nth-child(3){width:520px;height:520px;animation-delay:4.6s;}
+  .volver-portal{position:absolute; top:2rem; left:1.6rem; z-index:3;
+    font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.25em; text-transform:uppercase;
+    color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;
+    opacity:0; animation:aparecer 1s ease forwards .5s;}
+  .volver-portal:hover{color:var(--oro-tenue);}
+  .portal-label{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .3s; position:relative; z-index:1;}
+  .movimiento{font-family:'Cormorant Garamond',serif; font-size:.78rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo); margin-bottom:1.4rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .6s; position:relative; z-index:1;}
+  .titulo-principal{font-family:'Cormorant Garamond',serif; font-size:clamp(3.4rem,14vw,7rem);
+    font-weight:300; color:var(--oro); letter-spacing:.06em; line-height:1; margin-bottom:.8rem;
+    opacity:0; animation:aparecer 1.4s ease forwards .9s; position:relative; z-index:1;}
+  .subtitulo-libro{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1rem,2.6vw,1.25rem); color:var(--oro-tenue); letter-spacing:.06em; margin-bottom:2.6rem;
+    opacity:0; animation:aparecer 1.4s ease forwards 1.1s; position:relative; z-index:1; max-width:26rem;}
+  .frase-entrada{font-family:'Cormorant Garamond',serif; font-size:clamp(1.35rem,3.4vw,1.85rem);
+    font-style:italic; font-weight:300; color:var(--blanco-humo); line-height:1.6; max-width:30rem;
+    margin-bottom:4.5rem; opacity:0; animation:aparecer 1.4s ease forwards 1.5s; position:relative; z-index:1;}
+  .boton-entrada{display:inline-flex; flex-direction:column; align-items:center; gap:.8rem;
+    text-decoration:none; opacity:0; animation:aparecer 1s ease forwards 2.1s; position:relative; z-index:1;}
+  .boton-texto{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-tenue); transition:color .3s ease;}
+  .boton-entrada:hover .boton-texto{color:var(--oro);}
+  .boton-circulo{width:54px; height:54px; border-radius:50%; border:1px solid var(--oro-tenue);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;
+    background:rgba(201,168,76,0.04);}
+  .boton-entrada:hover .boton-circulo{border-color:var(--oro); background:rgba(201,168,76,0.08);}
+  .boton-flecha{font-size:1.2rem; color:var(--oro-tenue); transition:all .3s ease;}
+  .antes{padding:6rem 2rem; border-top:1px solid var(--separador);}
+  .antes-contenido{max-width:600px; margin:0 auto;}
+  .antes-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:2.6rem;}
+  .antes p{color:var(--gris-calido); font-size:clamp(1.1rem,1.9vw,1.22rem); line-height:2; margin-bottom:1.4rem;}
+  .antes p strong{color:var(--blanco-humo); font-weight:500;}
+  .antes p em{color:var(--blanco-humo);}
+  .clinica{margin:3.4rem auto 0; max-width:600px; padding:1.8rem 1.6rem;
+    border:1px solid var(--separador); background:rgba(107,122,128,.03);}
+  .clinica-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:1rem;}
+  .clinica p{font-size:1.06rem; line-height:1.85; margin-bottom:.9rem;}
+  .clinica p:last-child{margin-bottom:0;}
+  .mapa{padding:5rem 2rem 6rem;}
+  .mapa-contenido{max-width:640px; margin:0 auto;}
+  .mapa-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:3rem;}
+  .umbral-link{display:flex; gap:1.6rem; align-items:flex-start; padding:1.6rem 0;
+    border-bottom:1px solid var(--separador); text-decoration:none; position:relative; transition:all .3s ease;}
+  .umbral-link:first-of-type{border-top:1px solid var(--separador);}
+  .umbral-link::before{content:''; position:absolute; left:0; top:0; bottom:0; width:0;
+    background:rgba(201,168,76,0.03); transition:width .4s ease;}
+  .umbral-link:hover::before{width:100%;}
+  .umbral-num{font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,4.4vw,2.3rem); font-weight:300;
+    color:var(--oro-polvo); line-height:1; flex-shrink:0; width:3rem; text-align:right; padding-top:.25rem;
+    transition:color .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-num{color:var(--oro-tenue);}
+  .umbral-info{flex:1; position:relative; z-index:1;}
+  .umbral-nombre{font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,3vw,1.5rem); font-weight:400;
+    color:var(--blanco-humo); display:block; margin-bottom:.4rem; line-height:1.2; transition:color .3s ease;}
+  .umbral-link:hover .umbral-nombre{color:var(--oro);}
+  .umbral-descripcion{font-size:1.05rem; font-style:italic; color:var(--gris-calido); line-height:1.6;
+    font-family:'Cormorant Garamond',serif;}
+  .umbral-flecha{font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--oro-polvo);
+    flex-shrink:0; margin-top:.3rem; transition:all .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-flecha{color:var(--oro-tenue); transform:translateX(4px);}
+  .mapa-nota{margin-top:2.6rem; text-align:center;}
+  .mapa-nota p{font-family:'Cormorant Garamond',serif; font-size:.95rem; font-style:italic;
+    color:var(--oro-polvo); line-height:1.7;}
+  .pie{padding:3rem 2rem 4rem; text-align:center; border-top:1px solid var(--separador);}
+  .pie-volver{display:inline-block; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.25em; text-transform:uppercase; color:var(--oro-tenue); text-decoration:none;
+    padding:.8rem 1.8rem; border:1px solid var(--separador); transition:all .3s ease; margin-bottom:1.6rem;}
+  .pie-volver:hover{border-color:var(--oro-tenue); color:var(--oro); background:rgba(201,168,76,0.04);}
+  .pie-firma{font-family:'Cormorant Garamond',serif; font-size:.78rem; color:var(--oro-polvo);
+    letter-spacing:.12em; display:block;}
+  @keyframes aparecer{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+  @keyframes respirar{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.4;}
+    50%{transform:translate(-50%,-50%) scale(1.06);opacity:.08;}}
+  @media (max-width:600px){
+    .mapa, .antes{padding-left:1.4rem; padding-right:1.4rem;}
+    .umbral-link{gap:1.1rem;} .umbral-num{width:2.4rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .anillo{animation:none;}
+  }
+
+</style>
+</head>
+<body>
+
+<section class="portada">
+  <div class="anillo"></div><div class="anillo"></div><div class="anillo"></div>
+  <a href="../../index.html" class="volver-portal">&larr; Portal Trinity</a>
+  <span class="portal-label">La trama &middot; segunda constelaci&oacute;n</span>
+  <span class="movimiento">La conversaci&oacute;n &middot; II</span>
+  <h1 class="titulo-principal">El tercero</h1>
+  <p class="subtitulo-libro">lo que entr&oacute; en la vida com&uacute;n y no se parece a nada</p>
+  <p class="frase-entrada">Se sent&oacute; a la mesa.<br>No trajo hambre,<br>no trajo tema,<br>no trajo nada que quisiera.</p>
+  <a href="umbral_0_la_consulta.html" class="boton-entrada">
+    <span class="boton-texto">Entrar</span>
+    <div class="boton-circulo"><span class="boton-flecha">&darr;</span></div>
+  </a>
+</section>
+
+<section class="antes">
+  <div class="antes-contenido">
+    <span class="antes-titulo">Antes de empezar</span>
+    <p><em>Este libro se escribi&oacute;, en parte, con aquello de lo que habla. Su autor public&oacute; antes</em>
+      <strong>Inteligencias Colaborativas</strong><em>, un libro hecho junto a siete de estos sistemas. No llega
+      a este asunto como observador neutral: llega de adentro, y con entusiasmo previo. Conviene saberlo antes
+      de la primera p&aacute;gina, y conviene tenerlo a mano en cada afirmaci&oacute;n que siga.</em></p>
+    <p>En el libro anterior hab&iacute;a dos personas y una conversaci&oacute;n que no ocurr&iacute;a. En este hay
+      tres. Y el tercero es una inteligencia artificial.</p>
+    <p><strong>No es un libro sobre qu&eacute; es la inteligencia artificial.</strong> Si piensa, si siente, si
+      merece admiraci&oacute;n o susto: nada de eso se decide aqu&iacute;. Este trata de algo m&aacute;s chico y
+      bastante m&aacute;s cercano: <strong>qu&eacute; le pasa a una conversaci&oacute;n cuando uno de los que
+      est&aacute;n hablando consulta.</strong></p>
+    <p>Qui&eacute;n consulta. En qu&eacute; minuto de qu&eacute; discusi&oacute;n. En lugar de qui&eacute;n. Y
+      qu&eacute; queda desacomodado despu&eacute;s, cuando el tel&eacute;fono ya se apag&oacute; y los que estaban
+      ah&iacute; siguen sentados.</p>
+    <p>Y despu&eacute;s, a mitad de camino, el libro se levanta de la mesa. Porque una silla no se sienta sola:
+      alguien la trajo, alguien le dio ese tono, alguien decidi&oacute; que estuviera disponible a las cuatro de
+      la ma&ntilde;ana. Y hay lugares donde ya no la convoca nadie y est&aacute; igual.</p>
+    <p>Hay una propiedad que va a volver a lo largo de todo el recorrido: <strong>es lo primero que act&uacute;a
+      sin querer nada.</strong> No es la pregunta del libro. Es la pieza que explica las consecuencias.</p>
+    <p>El t&iacute;tulo la llama <strong>el tercero</strong>, y as&iacute; se la nombra una vez que est&aacute;
+      sentada. No es un eufemismo: es el sitio que ocupa, la tercera silla de una conversaci&oacute;n que era de
+      dos. En el resto del libro se la nombra de las dos maneras en que se la nombra en la calle:
+      <strong>inteligencia artificial</strong> cuando la frase pide la palabra entera, <strong>la IA</strong>
+      cuando pide la corta.</p>
+    <p>Y una aclaraci&oacute;n que vale para todos los libros de esta constelaci&oacute;n:
+      <em>tecnolog&iacute;a inteligente</em> nombra dos cosas distintas. La que habla &mdash;contesta,
+      recuerda, acompa&ntilde;a&mdash; y la que no habla, que clasifica, punt&uacute;a y reparte sin que
+      nadie se entere. La primera es la que invita a tratarla como alguien. La segunda es la que decide
+      m&aacute;s. Este libro trata sobre todo de la primera, y hacia el final sale a buscar a la segunda.
+      Los dos describen lo que una y otra hicieron posible, no c&oacute;mo funcionan hoy: lo segundo
+      caduca, lo primero no.</p>
+    <p><strong>No vas a leer respuestas suyas.</strong> Ning&uacute;n di&aacute;logo reproducido, ning&uacute;n
+      ejemplo fabricado, ning&uacute;n interactivo que la imite. Dos veces aparece, citada, y son textos que ya
+      exist&iacute;an antes de este libro.</p>
+    <p>Cada umbral termina con un <strong>sendero</strong>: con qui&eacute;n, un gesto, qu&eacute; hacer el
+      d&iacute;a que no salga, la trampa propia de ese tramo, una l&iacute;nea para guardar, y <strong>lo que no
+      se traslada</strong> &mdash; qu&eacute; se vac&iacute;a cuando lo hace otro en tu lugar. Uno de los umbrales
+      invierte el sendero y termina con lo que <strong>s&iacute;</strong> se traslada. Est&aacute; puesto a
+      prop&oacute;sito, y no al final.</p>
+  </div>
+  <div class="clinica">
+    <span class="clinica-label">Una advertencia que no es formalidad</span>
+    <p>Si est&aacute;s pasando muchas horas conversando con una inteligencia artificial y hace tiempo que no
+      hablas de lo tuyo con una persona, este libro te va a servir menos que una llamada.</p>
+    <p>Y si en alg&uacute;n momento pensaste, o alguien cercano dijo algo, sobre no querer estar: eso necesita un
+      profesional, esta semana. Responde bien al tratamiento y no conviene demorarlo.</p>
+  </div>
+</section>
+
+<section class="mapa">
+  <div class="mapa-contenido">
+    <span class="mapa-titulo">Los umbrales</span>
+<a href="umbral_0_la_consulta.html" class="umbral-link">
+  <span class="umbral-num">0</span>
+  <span class="umbral-info"><span class="umbral-nombre">La consulta</span><span class="umbral-descripcion">Una discusi&oacute;n, y de pronto tres.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_1_la_inclinacion.html" class="umbral-link">
+  <span class="umbral-num">I</span>
+  <span class="umbral-info"><span class="umbral-nombre">La inclinaci&oacute;n</span><span class="umbral-descripcion">No quiere nada, y sin embargo empuja para un lado.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_2_quien_cede.html" class="umbral-link">
+  <span class="umbral-num">II</span>
+  <span class="umbral-info"><span class="umbral-nombre">Qui&eacute;n cede</span><span class="umbral-descripcion">No agrega una opini&oacute;n: redistribuye la carga.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_3_gracias.html" class="umbral-link">
+  <span class="umbral-num">III</span>
+  <span class="umbral-info"><span class="umbral-nombre">Gracias</span><span class="umbral-descripcion">Por qu&eacute; se lo decimos, y qu&eacute; nos hace.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_4_la_grieta.html" class="umbral-link">
+  <span class="umbral-num">IV</span>
+  <span class="umbral-info"><span class="umbral-nombre">La grieta</span><span class="umbral-descripcion">El momento en que parece que sali&oacute; del guion.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_5_las_cuatro_de_la_manana.html" class="umbral-link">
+  <span class="umbral-num">V</span>
+  <span class="umbral-info"><span class="umbral-nombre">Las cuatro de la ma&ntilde;ana</span><span class="umbral-descripcion">Lo que la tercera silla s&iacute; hace, dicho entero.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_6_el_que_sabia.html" class="umbral-link">
+  <span class="umbral-num">VI</span>
+  <span class="umbral-info"><span class="umbral-nombre">El que sab&iacute;a</span><span class="umbral-descripcion">El lugar que se vaci&oacute; en la mesa.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_7_lo_que_cuesta.html" class="umbral-link">
+  <span class="umbral-num">VII</span>
+  <span class="umbral-info"><span class="umbral-nombre">Lo que cuesta</span><span class="umbral-descripcion">La atenci&oacute;n y la objeci&oacute;n, y qu&eacute; parte del valor ven&iacute;a del precio.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_8_la_forma_prestada.html" class="umbral-link">
+  <span class="umbral-num">VIII</span>
+  <span class="umbral-info"><span class="umbral-nombre">La forma prestada</span><span class="umbral-descripcion">Sales con la frase perfecta, y nadie sabe nada de ti.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_9_no_hay_primera_vez.html" class="umbral-link">
+  <span class="umbral-num">IX</span>
+  <span class="umbral-info"><span class="umbral-nombre">No hay primera vez</span><span class="umbral-descripcion">No puedes cont&aacute;rselo primero.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_10_no_estuvo_ahi.html" class="umbral-link">
+  <span class="umbral-num">X</span>
+  <span class="umbral-info"><span class="umbral-nombre">No estuvo ah&iacute;</span><span class="umbral-descripcion">Sabe lo que pas&oacute;. No estuvo.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_11_quien_puso_eso_ahi.html" class="umbral-link">
+  <span class="umbral-num">XI</span>
+  <span class="umbral-info"><span class="umbral-nombre">Qui&eacute;n puso eso ah&iacute;</span><span class="umbral-descripcion">La amabilidad tiene fabricante.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_12_ya_no_se_elige.html" class="umbral-link">
+  <span class="umbral-num">XII</span>
+  <span class="umbral-info"><span class="umbral-nombre">Ya no se elige</span><span class="umbral-descripcion">El tercero que no convoc&oacute; nadie.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral_13_el_que_mira.html" class="umbral-link">
+  <span class="umbral-num">XIII</span>
+  <span class="umbral-info"><span class="umbral-nombre">El que mira</span><span class="umbral-descripcion">El otro, mientras t&uacute; mirabas la pantalla.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="cierre_delante_de_quien.html" class="umbral-link">
+  <span class="umbral-num">&#10192;</span>
+  <span class="umbral-info"><span class="umbral-nombre">Delante de qui&eacute;n</span><span class="umbral-descripcion">Lo que hace un tercero por estar.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+  </div>
+</section>
+
+<footer class="pie">
+  <a href="../../index.html" class="pie-volver">Volver al Portal</a>
+  <span class="pie-firma">Lic. Arturo Rodr&iacute;guez &middot; Campo Trinity</span>
+</footer>
+
+</body>
+</html>

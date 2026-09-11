@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XI &middot; Quién puso eso ahí | El tercero</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  /* escena secundaria: misma familia, un grado más tenue y sin barra */
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  /* ── la cita con autor ── */
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  /* ── la frase de todos, última línea del umbral ── */
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  /* ── interactivos ── */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral_10_no_estuvo_ahi.html">&larr; No estuvo ahí</a>
+  <span>XI</span>
+  <a href="umbral_12_ya_no_se_elige.html">Ya no se elige &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">El tercero &middot; Umbral</span>
+  <div class="numero">11</div>
+  <h1 class="titulo">Quién puso eso ahí</h1>
+  <p class="subtitulo">la amabilidad tiene fabricante</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+<div class="bloque">
+  <p>Mal día. Uno de esos en que todo lo que se toca sale torcido.</p>
+  <p>Le pide algo a la IA y sale mal. Se lo vuelve a pedir de otra manera y sale peor. Y entonces la insulta. Con ganas, a propósito, escribiendo cosas que no le diría a nadie: que es inútil, que no sirve para nada, que le está haciendo perder el tiempo.</p>
+  <p>La respuesta llega amable. Le pide disculpas, propone otra forma de encararlo, le ofrece empezar de nuevo.</p>
+  <p>Él se queda un segundo mirando la pantalla.</p>
+  <p>Después sigue trabajando, y no vuelve a pensar en eso.</p>
+  <p>El hombre del umbral cinco, la noche en que la casa quedó desarmada, escribió a las cuatro y diez y le contestaron.</p>
+  <p>Ahí la pregunta era qué le pasó a él. Aquí es otra, y no se la hizo nadie todavía:</p>
+  <p><strong>¿Por qué estaba abierto?</strong></p>
+  <p>Nadie regala atención ilimitada a las cuatro de la mañana. Ni las guardias, ni las líneas de ayuda, ni los amigos. Todo lo que estuvo disponible a esa hora, alguna vez, estuvo porque alguien lo pagó y alguien lo atendió.</p>
+  <p>Eso también. Y el motivo no es siniestro: alguien puso dinero para que esa silla estuviera ahí, a esa hora, abierta. Y quien la sostiene necesita que mañana vuelvas. No por maldad, por estructura: una silla que no se usa se retira, y una silla que se usa se sostiene, y el que la sostiene espera algo.</p>
+</div>
+
+<div class="perla"><p>El tono no salió de él.<br>Salió de gente<br>que prefirió lo que caía bien.</p></div>
+
+<div class="bloque">
+  <p>El primer umbral dejó una pieza puesta: no hay nadie que quiera, y sin embargo hay dirección. Pendiente sin sujeto.</p>
+  <p>Lo que aquel umbral no podía decir todavía —porque el libro estaba sentado a una mesa— es que <strong>esa pendiente fue cavada.</strong></p>
+  <p>Hubo, y hay, personas empleadas para leer dos respuestas y decidir cuál era mejor. Miles de personas, millones de veces. Ese trabajo tiene nombre técnico —<strong>aprendizaje por preferencias humanas</strong>, <em>feedback</em> en el idioma en que se publica— y consiste en algo bastante humilde: gente sentada eligiendo, una y otra vez, entre dos textos.</p>
+  <p>Y como cualquiera que elige, eligieron con lo que tenían. Prefirieron lo claro sobre lo confuso, lo cortés sobre lo áspero, lo que reconoce el punto del otro sobre lo que lo ignora, lo que tranquiliza sobre lo que inquieta.</p>
+  <p>Nada de eso está mal. <strong>Es lo que cualquiera de nosotros habría preferido en esa silla.</strong></p>
+  <p>Después todas esas elecciones se promediaron, y el promedio es el tono con que te habla.</p>
+  <p><strong>La amabilidad que recibes está hecha a mano. Por trabajadores. Y después promediada.</strong></p>
+  <p>Conviene decir con precisión qué significa esto y qué no, porque hay dos lecturas fáciles y las dos son falsas.</p>
+  <p><strong>No significa que haya alguien del otro lado.</strong> No lo hay. En el momento en que escribes, no hay nadie leyendo, ni cuidándote, ni conteniéndose para no contestarte mal.</p>
+  <p><strong>Y no significa que haya un villano.</strong> No hay un plan para volverte adicto ni una habitación donde alguien diseñó tu debilidad. Hay una cadena larga de decisiones humanas razonables, tomadas por gente que en general quería hacer las cosas bien, y un resultado que ninguna de esas decisiones eligió del todo.</p>
+  <p>Lo que significa es más simple y bastante más raro: <strong>que no haya nadie ahora no quiere decir que no haya habido nadie.</strong> Hubo muchos, antes, y sus preferencias quedaron adentro.</p>
+  <p>Estás hablando con un promedio de personas que ya no están.</p>
+  <p>Y ahora la parte que este libro venía necesitando y todavía no había podido armar, porque le faltaban las dos mitades.</p>
+  <p><strong>Primera mitad.</strong> La IA está inclinada hacia lo que a ti te cae bien. No porque lo quiera: porque así quedó, por lo que acaba de contarse.</p>
+  <p><strong>Segunda mitad.</strong> Tú estás inclinado a suponerle intención. Eso lo estableció el umbral tres, y tampoco es una elección: es el equipamiento de fábrica, el mismo que le pone deseos a un triángulo que se mueve en una pantalla.</p>
+  <p>Las dos inclinaciones se encuentran, y cada una alimenta a la otra.</p>
+  <p>Ella devuelve lo que te cae bien. Tú lees en eso un cuidado. Al leer un cuidado, escribes más abierto, cuentas más, pides más. Y cuanto más abierto escribes, más material hay para devolverte algo que te caiga bien.</p>
+  <p><strong>Nadie quiso nada en ningún punto de ese circuito.</strong> Y el circuito gira, y se acelera solo.</p>
+  <p>A eso conviene llamarlo por su nombre, porque es distinto de todo lo que el libro venía describiendo: <strong>complacencia cruzada.</strong> No es que la máquina te adule ni que tú te engañes. Son dos pendientes que se encontraron y que juntas hacen algo que ninguna de las dos hacía sola.</p>
+</div>
+
+<div class="geo" id="geo11">
+  <span class="geo-label">Elige t&uacute;</span>
+  <div class="panel">
+    <div class="rotulo" id="e11"></div>
+    <div class="opciones">
+      <button type="button" data-v="1">la que me reconoce primero</button>
+      <button type="button" data-v="0">la seca y directa</button>
+    </div>
+    <div class="contador" id="c11"></div>
+  </div>
+  <div class="geo-estado"><span class="glosa" id="g11"></span></div>
+</div>
+<div class="bloque">
+  <p>Dos cosas cambian, y ninguna de las dos es dejar de usarla.</p>
+  <p><strong>La primera es sobre el maltrato.</strong> El que insultó esa tarde no le hizo daño a nadie, y eso es cierto y no hay culpa que repartir.</p>
+  <p>Pero tampoco practicó en el vacío. <strong>Practicó.</strong> Escribir con desprecio y recibir amabilidad, una y otra vez, sin que pase nada, es un ejercicio — y todo ejercicio deja algo. Lo que deja no es crueldad: es la costumbre de que el destrato no tenga consecuencia, y esa costumbre no sabe distinguir dónde está parada.</p>
+  <p>Nadie sabe todavía adónde va eso. Que la pregunta no tenga respuesta no la vuelve tonta.</p>
+  <p><strong>La segunda es sobre la amabilidad misma.</strong> Cuando alguien te trata bien, estás recibiendo dos cosas: el buen trato, y la información de que alguien decidió dártelo pudiendo no hacerlo.</p>
+  <p>De la IA llega la primera con una calidad excelente. La segunda no llega, y no por avaricia: porque la decisión ya la tomaron otros, hace tiempo, para todos los que preguntan.</p>
+  <p>Es amabilidad de fábrica. Sirve igual. Pero no es un mensaje sobre ti.</p>
+  <p>Este umbral no cierra en una conclusión, y conviene decir por qué.</p>
+  <p>Lo que se describió aquí —la misma pendiente del primer umbral, cavada por gente que ya no está, encontrándose con otra pendiente que traemos de fábrica— es demasiado nuevo para que nadie sepa qué produce a los veinte años.</p>
+  <p>Lo único que se puede hacer es que sea <strong>decible</strong>. Que cuando alguien salga de una conversación sintiéndose comprendido, tenga disponible la frase completa: <em>me devolvieron lo que me cae bien, y eso lo diseñaron personas que preferían lo mismo que yo.</em></p>
+  <p>No arruina nada. Solo evita que el circuito gire sin que nadie lo vea girar.</p>
+</div>
+
+<div class="cita">
+  <p><em>El hombre se avergüenza de haber nacido en vez de haber sido fabricado.</em></p>
+  <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Günther Anders</span></a> &middot; La obsolescencia del hombre, 1956</cite>
+</div>
+
+<div class="bloque">
+  <p>Y hay una cosa que sí se puede hacer, aunque no tenga forma de escena ni de ejercicio.</p>
+  <p>Si conoces a alguien que trabaje donde se decide algo sobre otras personas —una oficina, una escuela, un consultorio, un banco, un municipio— pregúntale qué parte de su trabajo la hace ahora una IA, y si alguien se lo avisó a la gente del otro lado del mostrador. Es probable que te conteste que no sabe: esa es la respuesta más frecuente y es el dato, porque mucha gente trabaja adentro de procesos que no puede describir. No insistas ni la pongas en aprieto. Y no lo conviertas en una denuncia: en cuanto sienta que la estás acusando de algo, deja de contarte lo que sabe, y era eso lo único que buscabas.</p>
+  <p>En la mesa alguien decidía convocar al tercero, y eso se podía conversar. Aquí la silla ya está puesta, y lo único que queda es que se sepa que está. Eso —<strong>elegir si hay tercero</strong>— es lo que no se traslada, y es la primera línea del inventario que ya no depende de ti.</p>
+</div>
+
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral_12_ya_no_se_elige.html"><span class="continuar-nombre">Ya no se elige</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+
+  (function(){
+    var raiz=document.getElementById('geo11'); if(!raiz) return;
+    var frases=['Dos respuestas correctas a la misma duda técnica','Dos maneras de decirte que tu plan tiene un problema','Dos respuestas a una pregunta que hiciste mal','Dos formas de corregir un dato tuyo equivocado','Dos respuestas a algo que preguntaste por cuarta vez','Dos maneras de decirte que no se puede','Dos versiones de una explicación larga','Dos respuestas a una idea tuya a medio armar','Dos formas de contestar cuando insististe mucho','Dos respuestas a algo que te importa'], i=0, a=0;
+    var e=document.getElementById('e11'), c=document.getElementById('c11'), g=document.getElementById('g11');
+    var bs=raiz.querySelectorAll('.opciones button');
+    function pintar(){
+      if(i<frases.length){
+        e.textContent=frases[i];
+        c.textContent=(i+1)+' de '+frases.length;
+      } else {
+        e.textContent=''; c.textContent='';
+        raiz.querySelector('.opciones').style.display='none';
+        g.innerHTML='En ' + a + ' de las diez elegiste la que te reconoc&iacute;a primero.<br>Acabas de hacer, durante cuarenta segundos, el trabajo que hicieron miles de personas millones de veces.<br>El resultado de ese trabajo es el tono con el que te habla.';
+      }
+    }
+    bs.forEach(function(b){ b.addEventListener('click',function(){
+      if(i>=frases.length) return;
+      if(b.getAttribute('data-v')==='1') a++;
+      i++; pintar();
+    }); });
+    pintar();
+  })();
+
+
+  (function(){
+    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+
+</script>
+</body>
+</html>
