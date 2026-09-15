@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IV &middot; La consulta | Lo que queda dicho</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  /* escena secundaria: misma familia, un grado más tenue y sin barra */
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  /* ── la cita con autor ── */
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  /* ── la frase de todos, última línea del umbral ── */
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  /* ── interactivos ── */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+
+  .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .registro.visible{opacity:1; transform:none;}
+  .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+  .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
+    font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-03.html">&larr; La que no tiene archivo</a>
+  <span>IV</span>
+  <a href="umbral-05.html">Releerse &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">Lo que queda dicho &middot; Umbral</span>
+  <div class="numero">04</div>
+  <h1 class="titulo">La consulta</h1>
+  <p class="subtitulo">que esté guardado no depende de ti; abrirlo, sí</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Julián abre la conversación un martes a las dos y cuarenta de la madrugada.</p>
+  <p>No la busca: la tiene fijada arriba de todo. Es una discusión de hace cuatro meses con su hermano, por la casa de la madre, y ya la leyó completa unas veinte veces.</p>
+  <p>La lee otra vez. Tarda once minutos. Termina con el corazón acelerado y sin sueño.</p>
+  <p>Y al terminar hace lo mismo de siempre: vuelve al principio y busca un mensaje puntual, el que más le duele, y lo lee tres o cuatro veces seguidas.</p>
+  <p>A la mañana siguiente está de mal humor y no sabe bien por qué.</p>
+</div>
+
+<div class="perla"><p>El archivo no hizo nada.<br>Estuvo cuatro meses quieto.<br>Lo que pasó a las dos y cuarenta<br>lo hizo él.</p></div>
+
+<div class="bloque">
+  <p>Aquí está la jurisdicción entera del libro, y es más chica de lo que uno querría y más grande de lo que parece.</p>
+  <p>Nadie controla lo que quedó escrito. Nadie controla lo que tiene guardado el otro, ni puede borrarlo, ni puede impedir que lo lea. Sobre eso no hay nada.</p>
+  <p>Lo que sí es de uno es una sola cosa: <strong>ir a buscar.</strong></p>
+  <p>Y hay que decirlo con cuidado, porque suena a reproche y no lo es. Julián no abre esa conversación por masoquismo ni por falta de fuerza de voluntad. La abre porque algo se le quedó sin resolver y volver ahí se siente como estar resolviéndolo.</p>
+  <p>No lo está resolviendo. Eso es lo que hay que ver, y con verlo alcanza para bastante.</p>
+</div>
+
+<div class="bloque">
+  <p>Un texto no cambia. La discusión con el hermano dice exactamente lo mismo en la lectura veinte que en la primera. No hay información nueva esperando adentro.</p>
+  <p>Lo único que cambia con cada lectura es que el surco se hace un poco más profundo. La frase se aprende de memoria. La escena se fija en una sola versión — la escrita — y las otras versiones posibles, las que el tiempo habría ido armando, no llegan a existir.</p>
+  <p><strong>Releer no es recordar. Es grabar de nuevo.</strong></p>
+</div>
+
+<div class="escena">
+  <p>Nora tiene una forma distinta y ella no la llama así.</p>
+  <p>Ella no relee. Lo que hace, cada tanto, es <strong>verificar</strong>: entra, busca una frase puntual, confirma que dice lo que ella creía, y sale. Treinta segundos.</p>
+  <p>Lo hace cuando algo no le cierra, y sale de ahí tranquila: tenía razón.</p>
+  <p>Y no se da cuenta de que hizo doce verificaciones en cuatro meses, ni de que cada una la dejó un poco más segura de su versión y un poco menos disponible para la de él.</p>
+</div>
+
+<div class="bloque">
+  <p>La verificación se siente inocente porque es corta. Es la misma operación.</p>
+</div>
+
+<div class="puerta"><a href="../11_Atravesar/index.html">&#10192; <em>&#10192; Qué hace en una persona el volver una y otra vez sobre el mismo material, y por qué esa vuelta se siente como estar trabajando algo cuando no lo está, se trabaja en <strong>Atravesar &middot; Umbral III, Las dos culpas</strong>, donde la que tiene historia no resuelta se alimenta exactamente de eso. El libro entero,</em></a></div>
+
+<div class="cita">
+  <p><em>La rumiación se distingue de la reflexión en que no produce conclusiones nuevas.</em></p>
+  <cite><span class="obra">Susan Nolen-Hoeksema</span> &middot; Women Who Think Too Much, 2003<br><small>(paráfrasis de la tesis; cotejo pendiente)</small></cite>
+</div>
+
+<div class="bloque">
+  <p>Ahora, cuándo se abre un archivo. Porque no todas las veces son iguales y confundirlas lleva a prohibirse cosas razonables.</p>
+  <p><strong>Para buscar un dato.</strong> La dirección, el horario, lo que había que llevar. Se entra, se saca y se sale. Esto no es el problema y nunca lo fue.</p>
+  <p><strong>Para revivir algo bueno.</strong> Los audios de la abuela, la conversación del día que nació alguien. Esto tampoco es el problema — es una de las cosas buenas que llegaron con todo esto.</p>
+  <p><strong>Para confirmar que uno tenía razón.</strong> Aquí empieza. Se siente como buscar un dato y no lo es: lo que se busca no es información, es una posición.</p>
+  <p><strong>Para volver a sentir lo que se sintió.</strong> Esta es la de las dos y cuarenta. Y tiene una particularidad que conviene saber: siempre funciona. Uno va buscando la puñalada y la encuentra intacta, porque ahí está, escrita, esperando.</p>
+</div>
+
+<div class="bloque">
+  <p>Las dos primeras no necesitan vigilancia. Las dos últimas son un operativo, y un operativo no se frena diciéndole que se frene.</p>
+  <p>Lo que sí se puede es <strong>decir en voz alta qué se espera encontrar</strong>, y decirlo antes.</p>
+  <p>Julián lo probó una noche, sintiéndose ridículo, hablando solo en la cocina. Dijo: <em>voy a entrar a ver si mi hermano fue tan miserable como me acuerdo.</em></p>
+  <p>Y no entró. No por disciplina: porque dicho en voz alta sonó a lo que era, y ya no tuvo ninguna gracia.</p>
+  <p>No siempre funciona. Funciona bastante, y funciona porque la operación depende de no estar mirada.</p>
+</div>
+
+<div class="perla"><p>Un operativo no se frena.<br>Se lo obliga a decir su nombre.</p></div>
+
+<div class="bloque">
+  <p>Y hay una cosa más que es de las mejores de este libro, y es material.</p>
+  <p><strong>Desfijar la conversación.</strong></p>
+  <p>La de Julián estaba arriba de todo, anclada, primera en la lista. Cada vez que abría el teléfono la veía. No hacía falta buscarla: se ofrecía.</p>
+  <p>La desancló un jueves. Bajó dos días, después una semana, y a los diez días había cuarenta conversaciones encima.</p>
+  <p>No la borró. Sigue entera, sigue disponible, sigue diciendo lo mismo. Lo que cambió es que ahora hay que ir a buscarla a propósito, con una decisión adentro.</p>
+  <p>Eso no es voluntad. Es distancia.</p>
+</div>
+
+<div class="cita">
+  <p><em>Entre el estímulo y la respuesta hay un espacio, y en ese espacio está nuestra libertad.</em></p>
+  <cite><span class="obra">Atribuida a Viktor Frankl</span><br><small>(atribución discutida)</small></cite>
+</div>
+
+<div class="bloque">
+  <p>Se usa siempre en clave heroica, como si en ese espacio hubiera que resistir algo. Sirve mejor en clave práctica: <strong>el espacio no se consigue resistiendo, se consigue alargándolo.</strong> Diez días de conversaciones encima es exactamente eso, y no requiere ninguna fortaleza.</p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">La próxima vez</span>Vas a querer abrir algo guardado esta semana. Probablemente ya sabes cuál.</p>
+  <p>Haz una sola cosa antes: di en voz alta qué esperas encontrar. Ridículo, hablando solo, tal cual.</p>
+  <p>Si después entras igual, entra. No se trata de impedirlo y no evalúes si valió la pena.</p>
+  <p>Y si hay una conversación que tienes fijada arriba de todo, despégala esta semana. No la borres — despégala nada más, y deja que se vaya bajando sola.</p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Lo que no quedó</span>La discusión con el hermano tiene ciento cuarenta mensajes y Julián los tiene casi memorizados.</p>
+  <p>No tiene registrado que su hermano lo llamó dos días después y estuvieron cuarenta minutos por teléfono, y que esa conversación fue bastante buena. No quedó nada de eso: fue por teléfono.</p>
+  <p>Tampoco quedó que en el velorio del padre, un año antes, se abrazaron.</p>
+  <p>El archivo tiene la peor semana entera y ninguna de las otras.</p>
+</div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-05.html"><span class="continuar-nombre">Releerse</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
