@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IX &middot; El terreno | La división</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  /* escena secundaria: misma familia, un grado más tenue y sin barra */
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  /* ── la cita con autor ── */
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  /* ── la frase de todos, última línea del umbral ── */
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  /* ── interactivos ── */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+
+  .antes{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .antes.visible{opacity:1; transform:none;}
+  .antes p{font-size:1.02rem; line-height:1.78; color:var(--blanco-humo); margin:0 0 .7rem;}
+  .antes p:last-child{margin-bottom:0;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-08.html">&larr; Cuando no es simétrico</a>
+  <span>IX</span>
+  <a href="umbral-10.html">El padre &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">La divisi&oacute;n &middot; Umbral</span>
+  <div class="numero">09</div>
+  <h1 class="titulo">El terreno</h1>
+  <p class="subtitulo">lo que se repone haciendo, y ninguna conversación repone</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="bloque">
+  <p>Hay que decir primero por qué las conversaciones no alcanzan, porque es la operación que todo el mundo intenta y la que más rompe.</p>
+</div>
+
+<div class="escena">
+  <p>Elena lo intentó tres veces en dos años.</p>
+  <p>La primera fue una llamada larga con Claudio en la que se propuso escucharlo de verdad, sin interrumpir. Lo escuchó cuarenta minutos y él la escuchó a ella veinte, y los dos colgaron con una sensación buena que duró dos días.</p>
+  <p>La segunda fue un almuerzo que organizó específicamente para hablar de lo que estaba pasando en la familia. Duró tres horas, se dijeron cosas honestas, y salieron agotados. A la semana siguiente todo estaba igual.</p>
+  <p>La tercera fue un mensaje largo, escrito con cuidado, que ella releyó dos veces antes de mandar. Claudio contestó con otro mensaje largo y cuidadoso.</p>
+  <p>Nada de eso cambió nada.</p>
+</div>
+
+<div class="perla"><p>Tres conversaciones buenas.<br>Y la mesa siguió vacía.</p></div>
+
+<div class="bloque">
+  <p>Conviene ver por qué, porque no es que hablar esté mal. Es que se le está pidiendo a la conversación algo que no puede dar.</p>
+  <p>Una conversación sobre el desacuerdo <strong>pone el desacuerdo en el centro.</strong> Durante esas tres horas, lo único que existió entre Elena y Claudio fue eso que los separa. Se lo miró desde varios ángulos, con buena voluntad, y al terminar seguía ahí — más nítido, mejor formulado, más presente que antes.</p>
+  <p>Y hay algo peor: <strong>cada uno llegó a esa conversación con su posición puesta.</strong> Nadie va a una charla así dispuesto a cambiar de idea. Se va dispuesto a explicarse mejor, que no es lo mismo y que casi nunca produce movimiento.</p>
+  <p>Lo que hace falta no es entenderse mejor.</p>
+  <p><strong>Lo que hace falta es que entre esas dos personas haya más cosas además de eso.</strong></p>
+  <p>Y eso no se fabrica hablando. Se fabrica haciendo.</p>
+</div>
+
+<div class="bloque">
+  <p>Aquí está la operación del libro, y es literal.</p>
+  <p><strong>Hacer algo juntos que requiera las manos, que tenga un resultado el mismo día, y no conversar sobre el asunto.</strong></p>
+  <p>Mover muebles. Pintar. Cocinar para mucha gente. Arreglar algo que se rompió. Acomodar la casa de alguien que se muda. Levantar cosas del suelo.</p>
+  <p>No es una metáfora sobre la colaboración. Es el ejercicio, tal cual.</p>
+</div>
+
+<div class="bloque">
+  <p>Y hay una razón por la que funciona, que es lo que este umbral tiene para aportar.</p>
+  <p><strong>Pensar de a dos requiere suspender el juicio previo.</strong> Y el juicio previo no se suspende por decisión: nadie puede proponerse dejar de juzgar y lograrlo. Es como proponerse no pensar en algo.</p>
+  <p>Lo que sí ocurre es que hay situaciones donde <strong>se suspende solo, sin que nadie se lo proponga.</strong></p>
+  <p>Dos personas levantando un ropero no están defendiendo nada. No porque hayan hecho un esfuerzo de apertura: porque tienen las manos ocupadas y hay un problema concreto adelante que no admite posiciones. El ropero pasa o no pasa por la puerta. Eso no se opina.</p>
+  <p>En ese rato, lo que circula entre los dos no tiene dueño. Uno dice <em>por aquí no</em>, el otro dice <em>probemos al revés</em>, alguien se equivoca y no pasa nada, alguien acierta y tampoco. <strong>Las ideas entran y salen sin que nadie las tenga que defender</strong>, porque no son de nadie: son del ropero.</p>
+  <p>Eso es el movimiento sin defensa. Y no se puede pedir — se puede fabricar la situación donde ocurre.</p>
+</div>
+
+<div class="perla"><p>El juicio previo no se suspende.<br>Se ocupan las manos,<br>y se suspende solo.</p></div>
+
+<div class="puerta"><a href="../13_Volver_al_Centro/index.html">&#10192; <em>&#10192; Que un camino no se proyecte sino que se haga pasando muchas veces por el mismo lugar, y que el centro no sea un sitio al que se llega sino algo que se produce al andar, se trabaja en <strong>Volver al centro &middot; Umbral VII, El eje</strong>. El libro entero,</em></a></div>
+
+<div class="bloque">
+  <p>Ahora, lo que hay que cuidar, porque esto se hace mal con facilidad.</p>
+  <p><strong>No anunciarlo.</strong> Si Elena le dice a Claudio <em>vamos a pintar juntos para acercarnos</em>, ya arruinó la operación: convirtió la pintura en una terapia, y ahora las dos personas están actuando en una escena en lugar de estar pintando. Se pide ayuda para pintar. Punto.</p>
+  <p><strong>Que haya una necesidad real.</strong> Una tarea inventada se nota. Tiene que ser algo que efectivamente había que hacer, donde la ayuda del otro sea verdadera y no simbólica.</p>
+  <p><strong>Y no evaluarlo después.</strong> No preguntar cómo estuvo, no decir <em>qué bueno que pudimos</em>, no sacar conclusiones. La tarde se terminó y se terminó. Evaluarla la devuelve al terreno de la conversación, que es de donde había que sacarla.</p>
+</div>
+
+<div class="bloque">
+  <p>Lo que se está construyendo no se ve en una tarde y no hay nada que medir.</p>
+  <p><strong>Lo que se acumula es cantidad de vínculo que no depende del acuerdo.</strong></p>
+  <p>Dos personas que pintaron un salón, mudaron un ropero y cocinaron para veinte tienen entre ellas tres tardes que no estaban antes. Ninguna de las tres resolvió la diferencia. Las tres hicieron otra cosa: <strong>le sacaron a la diferencia el monopolio.</strong></p>
+  <p>Antes, entre Elena y Claudio había una sola cosa y era el desacuerdo. Ahora hay cuatro cosas, y una de ellas sigue siendo el desacuerdo.</p>
+  <p>Ese es todo el cambio, y es enorme.</p>
+</div>
+
+<div class="perla"><p>No se achica la diferencia.<br>Se agranda lo demás.</p></div>
+
+<div class="cita">
+  <p><em>Obras son amores, y no buenas razones.</em></p>
+  <cite><span class="obra">Refrán</span> &middot; documentado en castellano desde el siglo XVI<br><small>(atribución a cotejar)</small></cite>
+</div>
+
+<div class="cita">
+  <p><em>Si quieres ir rápido, ve solo. Si quieres llegar lejos, ve acompañado.</em></p>
+  <cite><span class="obra">Proverbio africano</span> &middot; atribución tradicional</cite>
+</div>
+
+<div class="bloque">
+  <p>Y hay algo que aparece solo, después de un tiempo, y que nadie puede provocar.</p>
+  <p>En algún momento de alguna de esas tardes, con las manos sucias, alguien dice algo sobre el asunto. Una frase suelta, sin la armadura puesta, del tipo <em>igual yo entiendo por qué lo dices</em>.</p>
+  <p>No es una concesión y no cambia ninguna posición. Es otra cosa: <strong>es la primera vez en años que ese tema circula entre los dos sin que nadie esté defendiéndose.</strong></p>
+  <p>Elena y Claudio pintaron el cobertizo del padre en octubre, porque había que pintarlo. Cinco horas, con una radio puesta.</p>
+  <p>A la hora y media, Claudio dijo una frase de cuatro palabras sobre lo que había pasado en julio.</p>
+  <p>Elena contestó <em>sí</em>, y siguió pintando.</p>
+  <p>Eso es todo lo que se dijeron del tema en cinco horas, y es más de lo que produjeron tres conversaciones enteras.</p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">La próxima vez</span>Piensa en alguien con quien esto te esté pasando. Y descarta la idea de hablar con esa persona sobre el asunto: no es que esté prohibido, es que ya lo intentaste o ya sabes cómo termina.</p>
+  <p>Busca en cambio algo material que efectivamente haya que hacer, esta semana o el mes que viene, y donde su ayuda sirva de verdad.</p>
+  <p>Pídesela sin explicar por qué.</p>
+  <p>Durante la tarea no saques el tema y no te propongas nada. Si aparece una frase suelta, contesta corto y sigue con lo que estabas haciendo.</p>
+  <p>Y cuando termine, no evalúes nada. Solo fíjate si volverías a pedirle ayuda con otra cosa.</p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Lo que había antes</span></p>
+</div>
+
+<div class="antes"><p><em>El cobertizo lo construyó el padre en 1988, con los cuatro hijos ayudando durante dos veranos.</em></p><p><em>Claudio tenía veinticuatro años y fue el que armó el techo. Elena tenía dieciocho y alcanzaba materiales. Cuando lo terminaron, el padre les sacó una foto a los cinco adelante, con las herramientas en el piso.</em></p><p><em>Esa foto está colgada adentro del cobertizo. La estuvieron mirando los dos, en octubre, sin decir nada, antes de empezar a pintar.</em></p></div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-10.html"><span class="continuar-nombre">El padre</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.antes';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>

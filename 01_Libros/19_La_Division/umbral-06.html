@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VI &middot; Sin caras | La división</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  /* escena secundaria: misma familia, un grado más tenue y sin barra */
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  /* ── la cita con autor ── */
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  /* ── la frase de todos, última línea del umbral ── */
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  /* ── interactivos ── */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+
+  .antes{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .antes.visible{opacity:1; transform:none;}
+  .antes p{font-size:1.02rem; line-height:1.78; color:var(--blanco-humo); margin:0 0 .7rem;}
+  .antes p:last-child{margin-bottom:0;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-05.html">&larr; El cerco corto</a>
+  <span>VI</span>
+  <a href="umbral-07.html">El que se calla &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">La divisi&oacute;n &middot; Umbral</span>
+  <div class="numero">06</div>
+  <h1 class="titulo">Sin caras</h1>
+  <p class="subtitulo">el ascenso sin ningún freno</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Claudio escribe de noche.</p>
+  <p>No mucho: tres o cuatro veces por semana, diez minutos, casi siempre después de las once. Contesta algo que leyó, o pone algo propio, y a veces se engancha en un intercambio que se hace largo.</p>
+  <p>Discute con gente que no conoce. No sabe cómo se llaman de verdad, ni qué edad tienen, ni si están en su ciudad o del otro lado del continente. No va a verlos nunca.</p>
+  <p>Y les dice cosas que nunca le diría a nadie en la cara.</p>
+  <p>No insultos —Claudio no insulta—. Otra cosa: una manera de responder que no deja nada en pie. Frases exactas, filosas, construidas para terminar el intercambio. A veces las relee al otro día y le parecen buenas.</p>
+  <p>Lo que no puede hacer es imaginarse diciéndoselas a alguien sentado enfrente.</p>
+</div>
+
+<div class="perla"><p>Del otro lado no hay nadie<br>que después pase la sal.</p></div>
+
+<div class="bloque">
+  <p>Conviene decir enseguida qué no es este umbral, porque el tema tiene un montón de literatura fácil.</p>
+  <p>No es una denuncia de las redes, ni un lamento sobre la época, ni una recomendación de desconectarse. Nada de eso sirve y además nadie lo cumple.</p>
+  <p>Es otra cosa, y es la pieza que le faltaba al libro: <strong>aquí se ve el mecanismo puro.</strong></p>
+  <p>Todo lo que este libro viene describiendo —el ascenso de opinión a verdad, el papel que uno ocupa, el cerco corto— ocurre también en las mesas, y en las mesas hay algo que lo frena. Ese algo nunca se nombró porque nadie lo notó nunca.</p>
+  <p><strong>El freno es que el otro está.</strong></p>
+  <p>Está su cara. Está el segundo incómodo después de que uno dijo algo de más. Está que hay que seguir ahí veinte minutos, y que después alguien tiene que pedir el postre, y que el sábado hay un cumpleaños.</p>
+  <p>Nada de eso es un argumento. Es fricción física, y era lo único que nos había contenido siempre.</p>
+  <p>Cuando se saca, el mecanismo corre libre.</p>
+</div>
+
+<div class="bloque">
+  <p>Y hay tres cosas que pasan, y las tres se pueden observar en cualquier intercambio de diez líneas.</p>
+  <p><strong>Se discute contra la peor versión.</strong> En una mesa, el que está enfrente aclara: <em>no, no quise decir eso</em>. Sin cara, no aclara nadie — uno se queda con la lectura más tonta posible de lo que leyó, y le contesta a esa. Del otro lado pasa lo mismo, en espejo, y los dos terminan discutiendo con alguien que no existe.</p>
+  <p><strong>Se escribe para los que miran.</strong> Esta es la peor y casi nadie la nota. En una conversación de dos, uno habla para el otro. En un intercambio público, uno habla para la tribuna — y lo que funciona en la tribuna no es lo que convence: es lo que remata. La frase que cierra, la ironía que se comparte, el golpe. Y el que remata mejor gana, con lo cual el intercambio premia exactamente lo contrario de lo que haría falta para entender algo.</p>
+  <p><strong>No hay costo.</strong> Si Claudio se pasa de la raya con su hermana, el jueves está incómodo. Si se pasa de la raya con alguien que no conoce, no pasa absolutamente nada. Y una conducta sin costo no se autocorrige nunca.</p>
+</div>
+
+<div class="puerta"><a href="../03_Encuentro_Real/index.html">&#10192; <em>&#10192; Cómo una pantalla no crea lo que somos sino que amplifica lo que ya estaba, y por qué eso vuelve tan difícil reconocerse en lo que uno hace ahí, se trabaja en <strong>Encuentro real &middot; La pantalla como amplificador</strong>. El libro entero,</em></a></div>
+
+<div class="cita">
+  <p><em>Es más fácil desintegrar un átomo que un prejuicio.</em></p>
+  <cite><span class="obra">Atribuida a Albert Einstein</span><br><small>(atribución discutida)</small></cite>
+</div>
+
+<div class="bloque">
+  <p>Y ahora la parte que hace que esto no sea un umbral sobre otra gente.</p>
+  <p><strong>Claudio es el mismo hombre que le hizo una tortilla a su hermana a las tres de la mañana.</strong></p>
+  <p>No hay dos personas. Hay un solo hombre de sesenta y dos años, decente, que a las once de la noche escribe de una manera que a las once de la mañana no reconocería.</p>
+  <p>Y lo que le pasa después es lo que importa: <strong>esa manera vuelve.</strong></p>
+  <p>Porque las frases que a uno le salieron bien se guardan. La posición que uno defendió veinte veces sin que nadie la tocara se endurece. El repertorio de argumentos se afina contra la peor versión del otro lado, y después uno llega a la mesa de diciembre con ese repertorio puesto.</p>
+  <p>Claudio llegó a la sobremesa del 12 de julio con dos años de discusiones sin cara encima.</p>
+  <p>Andrea no estaba discutiendo con su hermano. Estaba recibiendo, sin saberlo, algo que se había entrenado en otro lado.</p>
+</div>
+
+<div class="perla"><p>Lo que se practica sin nadie enfrente<br>se usa después con alguien enfrente.</p></div>
+
+<div class="bloque">
+  <p>Y hay algo más, del lado del que lee y no escribe, que alcanza a mucha más gente.</p>
+  <p><strong>La proporción se rompe.</strong></p>
+  <p>Elena lee mucho y escribe poco. Y lo que le pasa es que las posiciones más extremas de cualquier discusión son las que más circulan — no porque sean las más comunes, sino porque son las que provocan reacción.</p>
+  <p>Entonces, después de un año de leer, Elena tiene la impresión de que la gente del otro lado piensa mayoritariamente lo peor que leyó.</p>
+  <p>Y no es cierto. <strong>Lo que ella vio no es una muestra: es una selección de lo más filoso.</strong></p>
+  <p>Eso le pasa igual a los dos lados, al mismo tiempo, y produce un efecto medible: cada uno cree que enfrente hay un bloque compacto de gente extrema, cuando enfrente hay, sobre todo, gente con opiniones tibias que no escribe nada.</p>
+  <p><strong>La mayoría silenciosa no es una figura retórica. Es literalmente la mayoría, y es silenciosa, y por eso no aparece.</strong></p>
+</div>
+
+<div class="cita">
+  <p><em>La opinión pública no es la suma de lo que la gente piensa, sino de lo que cada uno cree que piensan los demás.</em></p>
+  <cite><span class="obra">Elisabeth Noelle-Neumann</span> &middot; La espiral del silencio, 1977<br><small>(paráfrasis de la tesis)</small></cite>
+</div>
+
+<div class="bloque">
+  <p>Y ahora lo que sirve, que son dos cosas chicas.</p>
+  <p><strong>La primera: no contestar de noche.</strong></p>
+  <p>No es una regla moral. Es una observación: a las once de la noche, después de un día entero, la tolerancia al desacuerdo es la más baja del día. Lo que se escribe ahí se escribe con la peor versión disponible de uno mismo.</p>
+  <p>Claudio lo probó en marzo. No dejó de escribir: dejó de contestar el mismo día. Escribe la respuesta, la deja sin mandar, y la mira a la mañana. Manda una de cada cuatro.</p>
+  <p><strong>Y la segunda, que es la que más devuelve: buscar la mejor versión del otro lado.</strong></p>
+  <p>Una vez por mes, a propósito, leer a alguien que piense distinto y que <strong>escriba bien</strong>. No al peor: al mejor. Al que argumenta, al que reconoce las dificultades de su propia posición, al que no remata.</p>
+  <p>Es aburrido comparado con lo otro, y no da ninguna satisfacción. Lo que hace es reponer una cosa que se pierde sin que uno lo note: <strong>la certeza de que del otro lado hay gente pensando.</strong></p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">La próxima vez</span>Si escribes en algún lado donde te lee gente que no conoces, prueba una cosa esta semana: escribe lo que ibas a escribir y no lo mandes hasta el día siguiente.</p>
+  <p>No lo hagas para portarte mejor. Hazlo para ver cuántas mandas.</p>
+  <p>Y si eres de los que leen y no escriben, busca una vez —una— a alguien del otro lado que argumente bien. Vas a tener que buscar, porque el que argumenta bien circula menos que el que remata.</p>
+  <p>Cuando lo encuentres, no le contestes. Solo léelo hasta el final.</p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Lo que había antes</span></p>
+</div>
+
+<div class="antes"><p><em>En 2011, Claudio se jubiló de una actividad que había hecho veintiséis años y estuvo unos meses bastante perdido.</em></p><p><em>Andrea le armó, con una amiga, algo para que hiciera tres veces por semana. Le costó convencerlo. Él dijo que no varias veces. Fue seis años, hasta que se terminó por otra cosa.</em></p><p><em>Nunca hablaron de eso. Los dos saben que esos seis años existieron gracias a una llamada que ella hizo sin pedirle permiso.</em></p></div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-07.html"><span class="continuar-nombre">El que se calla</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.antes';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
