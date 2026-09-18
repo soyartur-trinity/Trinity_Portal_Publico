@@ -74,27 +74,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +94,76 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: la cuenta de los no ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .no-fila{display:grid; grid-template-columns:1fr 6.4rem; gap:.7rem; margin-bottom:.7rem;
+    align-items:stretch;}
+  .no-campo{width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .no-campo::placeholder{color:var(--lejos); font-style:italic;}
+  .no-campo:focus{border-color:var(--oro-polvo); outline:none;}
+  .no-fecha{width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .5rem; text-align:center;
+    font-family:'Cormorant Garamond',serif; font-size:.92rem; color:var(--gris-calido);
+    font-style:italic; letter-spacing:.05em;}
+  .no-fecha::placeholder{color:var(--lejos);}
+  .no-fecha:focus{border-color:var(--oro-polvo); outline:none;}
+  .agregar{display:block; width:100%; background:none; border:1px dashed var(--separador);
+    padding:.7rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.7rem;
     letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
-    cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    cursor:pointer; transition:all .3s ease; margin-top:.4rem;}
+  .agregar:hover{color:var(--oro-tenue); border-color:var(--oro-polvo);}
+  .agregar:disabled{opacity:.4; cursor:not-allowed;}
+  .cerrar{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease; margin-top:1.2rem;}
+  .cerrar:hover:not(:disabled), .cerrar:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .cerrar:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +182,17 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
+    .no-fila{grid-template-columns:1fr 5.2rem;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +209,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>Héctor consigue lo que se propone.</p>
   <p>No es una frase suya: es una descripción. Pide algo y se hace. Dice que hay que cambiar el criterio y el criterio cambia. Interrumpe cuando le parece que la reunión se está yendo por las ramas, y la reunión vuelve.</p>
@@ -306,19 +281,74 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Étienne de La Boétie</span></a> &middot; Discurso de la servidumbre voluntaria, 1548</cite>
 </div>
 
+<!-- ══════════════ INTERACTIVO: LA CUENTA DE LOS NO ══════════════ -->
 <div class="geo" id="geoumbral030">
-  <span class="geo-label">Sin que nadie te lo diga</span>
+  <span class="geo-label">La cuenta de los no</span>
+  <p class="geo-instruccion">Las veces que alguien te dijo que no, y sostuvo el no. Dos meses hacia atrás. Con nombre y fecha si los recuerdas.</p>
   <div class="panel">
-    <label class="campo"><span>¿cuándo fue la última vez que alguien te dijo que no, y sostuvo el no?</span><textarea id="eumbral030_0" rows="2" placeholder=""></textarea></label>
-    <button type="button" class="marcable" id="bumbral030">Listo</button>
+    <div id="filasNo">
+      <div class="no-fila">
+        <input type="text" class="no-campo" placeholder="Quién, qué te dijo que no">
+        <input type="text" class="no-fecha" placeholder="cuándo">
+      </div>
+    </div>
+    <button type="button" class="agregar" id="btnAgregar">+ agregar otro</button>
+    <button type="button" class="cerrar" id="btnCerrar">Cerrar la cuenta</button>
+    <div class="veredicto" id="veredictoNo"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral030"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Va a haber una reunión, una mesa, una conversación donde consigas lo que pedías.</p>
-  <p>Cuando pase, no hagas nada distinto. Solo fíjate en una cosa: <strong>cuánto tardó.</strong></p>
-  <p>Si todo el mundo estuvo de acuerdo enseguida, eso puede significar dos cosas muy distintas, y desde donde estás no se distinguen.</p>
-  <p>Y si se te ocurre preguntar, no preguntes <em>¿están de acuerdo?</em> — esa pregunta solo tiene una respuesta disponible. Pregunta qué se pierde con lo que estás proponiendo. Es la única versión que le deja lugar al otro para contestar algo que no sea sí.</p>
+  <p>Lo que acaba de pasar no es un diagnóstico. Es un conteo.</p>
+  <p>Si la lista tiene cinco o seis entradas con fecha y nombre, no hay nada que mirar: hay gente a tu alrededor que se anima a contradecirte, y el operativo no está cerrando la puerta.</p>
+  <p>Si la lista quedó vacía, o tiene una sola entrada de hace dos meses, el dato es otro. Y no prueba que seas una persona difícil: prueba que el costo de decirte que no es más alto que el beneficio, para quien tendría que hacerlo.</p>
+  <p>Las dos respuestas sirven. Lo que no sirve es seguir creyendo que todos están de acuerdo, cuando en realidad están calculando.</p>
+</div>
+
+<div class="perla"><p>Donde nadie te dice que no,<br>la cuenta que importa<br>no la llevas tú.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Esta semana, en una conversación donde pidas algo, no hagas nada distinto.</strong> Pide como pides siempre. No te moderes, no aclares que aceptas un no, no agregues nada.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>Cuando la otra persona conteste, mira el reloj.</strong> No la cara. El reloj. Cuenta los segundos que pasaron entre que terminaste de pedir y que empezó a contestar.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>Anota una sola línea en el teléfono:</strong> cuántos segundos tardó la respuesta y si la respuesta fue un sí, un no, o una pregunta.</p>
+      <p>Si tardó menos de dos segundos y fue un sí: eso es lo que estás buscando. Guarda la línea.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>Repítelo tres veces esta semana.</strong> Con tres personas distintas. Tres líneas más, mismo formato.</p>
+      <p>No lo comentes con nadie. Ni con la persona a la que le pediste, ni con un amigo. El conteo se hace solo.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p>Al final de la semana, abre las cuatro líneas y míralas juntas.</p>
+      <p><strong>Si en las cuatro la respuesta llegó en menos de dos segundos y todas fueron un sí, ese es el dato.</strong> Nadie te está pensando la respuesta: te la están concediendo antes de evaluarla.</p>
+      <p>Y si en alguna tardó más, o hubo un <em>déjame ver</em>, o hubo un no, esa persona tiene una puerta abierta contigo. Empieza por ahí.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>No es algo que vuelva, porque no es una costumbre que se rompe: es un dato que, una vez visto, no se des-ve.</p>
+  <p>La próxima vez que pidas algo y te contesten en dos segundos que sí, vas a saber lo que está pasando. Y eso, aunque no cambies nada esa vez, cambia el registro de lo que crees que ocurre en esa conversación.</p>
+  <p>El gesto no se repite semanalmente. Se repite cada seis meses, o cuando entres a un lugar nuevo, o cuando sientas que hace mucho que nadie te discute.</p>
 </div>
 
 <div class="bloque">
@@ -332,7 +362,6 @@
   <p><em>Héctor pensó que otra vez le habían avisado tarde.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-04.html"><span class="continuar-nombre">El límite de la forma</span>
@@ -343,29 +372,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral030'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral030'), g=document.getElementById('gumbral030');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>Si tuviste que pensarlo mucho, ese es el dato.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -378,6 +386,56 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var contenedor = document.getElementById('filasNo');
+    var btnAgregar = document.getElementById('btnAgregar');
+    var btnCerrar = document.getElementById('btnCerrar');
+    var veredicto = document.getElementById('veredictoNo');
+    if(!contenedor || !btnAgregar || !btnCerrar) return;
+
+    var MAX = 8;
+
+    btnAgregar.addEventListener('click', function(){
+      var filas = contenedor.querySelectorAll('.no-fila');
+      if(filas.length >= MAX){ btnAgregar.disabled = true; return; }
+      var nueva = document.createElement('div');
+      nueva.className = 'no-fila';
+      nueva.innerHTML = '<input type="text" class="no-campo" placeholder="Quién, qué te dijo que no">' +
+                        '<input type="text" class="no-fecha" placeholder="cuándo">';
+      contenedor.appendChild(nueva);
+      if(contenedor.querySelectorAll('.no-fila').length >= MAX){
+        btnAgregar.disabled = true;
+      }
+    });
+
+    btnCerrar.addEventListener('click', function(){
+      var llenas = 0;
+      contenedor.querySelectorAll('.no-fila').forEach(function(fila){
+        var quien = fila.querySelector('.no-campo').value.trim();
+        var cuando = fila.querySelector('.no-fecha').value.trim();
+        if(quien || cuando){ llenas++; }
+      });
+
+      btnCerrar.disabled = true;
+      contenedor.querySelectorAll('input').forEach(function(inp){ inp.disabled = true; });
+      btnAgregar.disabled = true;
+
+      var texto;
+      if(llenas === 0){
+        texto = 'La cuenta quedó en cero.' +
+                '<strong>Dos meses sin que nadie te diga que no.</strong>' +
+                '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">No es un diagnóstico sobre ti. Es un dato sobre el costo de contradecirte.</span>';
+      } else if(llenas <= 2){
+        texto = 'La cuenta tiene ' + llenas + (llenas === 1 ? ' entrada.' : ' entradas.') +
+                '<strong>Es poco para dos meses.</strong>';
+      } else {
+        texto = 'La cuenta tiene ' + llenas + ' entradas.' +
+                '<strong>Hay gente a tu alrededor que se anima.</strong>';
+      }
+      veredicto.innerHTML = texto;
+      veredicto.classList.add('visible');
+    });
+  })();
 </script>
 </body>
 </html>
