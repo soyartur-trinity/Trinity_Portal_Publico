@@ -66,7 +66,6 @@
   .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
     font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
     max-width:26rem; margin:0 auto;}
-  .perla.grave p{color:var(--blanco-humo);}
   .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
     background:rgba(201,168,76,.017);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -74,27 +73,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +93,79 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: el registro de los regresos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .toque-btn{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1.3rem .8rem; font-family:'Cormorant Garamond',serif; font-size:.85rem;
+    letter-spacing:.2em; text-transform:uppercase; color:var(--oro-tenue);
     cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
-    border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .toque-btn:hover:not(:disabled){color:var(--oro); border-color:var(--oro-tenue);
+    background:rgba(201,168,76,.04);}
+  .toque-btn:disabled{cursor:default; opacity:.5;}
+  .regresos-lista{margin-top:1.6rem; min-height:2rem;}
+  .regreso-fila{display:grid; grid-template-columns:2rem 1fr auto; gap:.8rem;
+    align-items:baseline; padding:.7rem .2rem;
+    border-bottom:1px solid rgba(42,36,24,.6); font-size:1rem;
+    color:var(--gris-calido); animation:aparecerFila .4s ease;}
+  .regreso-fila:last-child{border-bottom:none;}
+  .regreso-num{font-family:'Cormorant Garamond',serif; font-size:.9rem;
+    color:var(--oro-polvo); letter-spacing:.08em;}
+  .regreso-txt{font-style:italic; color:var(--blanco-humo);}
+  .regreso-fecha{font-family:'Cormorant Garamond',serif; font-size:.88rem;
+    color:var(--oro-tenue); letter-spacing:.05em; font-variant-numeric:tabular-nums;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+  .veredicto .cuenta{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador); margin-top:1.6rem;
+    font-style:normal;}
+  .veredicto .cuenta div{background:var(--negro); padding:1rem .6rem; text-align:center;}
+  .veredicto .cuenta .num{font-size:1.7rem; color:var(--oro); display:block; line-height:1.1;}
+  .veredicto .cuenta .eti{font-size:.62rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--oro-polvo); display:block; margin-top:.3rem;}
+  .reiniciar{display:block; width:100%; background:none; border:none; padding:.7rem;
+    font-family:'Cormorant Garamond',serif; font-size:.65rem; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--lejos); cursor:pointer; transition:all .3s ease;
+    margin-top:.8rem;}
+  .reiniciar:hover{color:var(--oro-tenue);}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +184,17 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @keyframes aparecerFila{from{opacity:0;transform:translateX(-8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +211,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>Diego puso la cuenta en cero un jueves.</p>
   <p>Los primeros diez días fueron buenos. No porque pasara algo distinto: porque el total había dejado de pesar. Sofía se olvidó de una cosa el lunes y Diego lo registró como lo que era, un olvido de un lunes, sin arrastre.</p>
@@ -293,21 +270,71 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Aristóteles</span></a> &middot; Ética a Nicómaco II</cite>
 </div>
 
+<!-- ══════════════ INTERACTIVO: EL REGISTRO DE LOS REGRESOS ══════════════ -->
 <div class="geo" id="geoumbral100">
-  <span class="geo-label">Cuánto duró</span>
+  <span class="geo-label">El registro de los regresos</span>
+  <p class="geo-instruccion">Cada vez que vuelvas a lo de siempre, aunque sea chico, marcá el botón. Sin anotar qué pasó. Solo el día y la hora.</p>
   <div class="panel">
-    <label class="campo"><span>la última vez que volviste a lo de siempre, ¿cuánto duró?</span><textarea id="eumbral100_0" rows="2" placeholder=""></textarea></label>
-    <label class="campo"><span>la vez anterior, ¿cuánto había durado?</span><textarea id="eumbral100_1" rows="2" placeholder=""></textarea></label>
-    <button type="button" class="marcable" id="bumbral100">Listo</button>
+    <button type="button" class="toque-btn" id="btnToque">Volví a lo de siempre</button>
+    <div class="regresos-lista" id="regresosLista"></div>
+    <button type="button" class="cerrar" id="btnCerrarReg" style="margin-top:1.4rem;">Ver el registro</button>
+    <button type="button" class="reiniciar" id="btnReiniciarReg">Empezar de nuevo</button>
+    <div class="veredicto" id="veredictoReg"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral100"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a volver a caer en lo mismo, probablemente esta semana.</p>
-  <p>Cuando pase, no evalúes el método ni evalúes tu carácter. Las dos evaluaciones se hacen desde adentro del surco viejo y las dos dan el mismo resultado.</p>
-  <p>Haz una sola cosa, y es la más corta de todo este libro: <strong>vuelve a empezar sin comentarlo.</strong></p>
-  <p>Sin decírtelo, sin reprochártelo, sin anotar que es la cuarta vez. El reproche es otra vuelta por el mismo surco.</p>
-  <p>Y si te sirve un dato para los días malos: <strong>la única diferencia entre el que lo logra y el que no, es la cantidad de veces que volvió a empezar.</strong> No es una frase de aliento. Es literalmente el mecanismo.</p>
+  <p>Lo que acaba de pasar es un conteo, y su único valor está en una cosa: <strong>que cada regreso sea un punto, no un veredicto</strong>.</p>
+  <p>Si en dos semanas hay ocho puntos, la primera lectura es <em>no funciona</em>. Y esa lectura es exactamente el problema: mide el proceso con el criterio del interruptor.</p>
+  <p>Un surco no se mide por la cantidad de veces que volviste al viejo. Se mide por cuánto tiempo tardaste en darte cuenta. La primera vez, tres días. La quinta, una tarde. La décima, veinte minutos. Eso es lo que se está moviendo, y solo se ve si los regresos están anotados y no vividos como fracasos.</p>
+</div>
+
+<div class="perla"><p>Cada regreso es un dato.<br>Ninguno es un juicio.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Abrí una nota en el teléfono y ponele un nombre simple:</strong> <em>Regresos</em>. Con eso alcanza.</p>
+      <p>No es para compartir, no es para revisar, no es para mostrarle a nadie. Es un archivo personal y momentáneo.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>Cada vez que vuelvas a lo de siempre —aunque sea por cinco minutos, aunque sea en el pensamiento— anotá solo la fecha y la hora.</strong></p>
+      <p>Nada más. No <em>otra vez</em>, no <em>qué desastre</em>, no una descripción del episodio. Fecha y hora.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>Cuando lo notes, no hagas nada.</strong> No te corrijas, no intentes volver al surco nuevo en el momento, no te reproches. Es una marca en un registro y ya está.</p>
+      <p>El reproche también es una vuelta por el surco viejo, y agrega un punto al registro que no corresponde a un regreso real.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>A las dos semanas, abrí la nota y mirá solo una cosa:</strong> el tiempo entre el primer regreso y el segundo, y el tiempo entre el último y el actual.</p>
+      <p>Si los intervalos se van acortando —no alargando, acortando—, el surco viejo está perdiendo terreno. Tarda menos en volver porque está siendo desalojado: aparece más seguido, con menos fuerza, y se va antes.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p><strong>Cuando la nota tenga veinte marcas, borrala.</strong> Entera. Sin mirarla de nuevo, sin sacarle una foto, sin guardar nada.</p>
+      <p>El registro no es un archivo histórico: es un instrumento de dos semanas. Pasado ese tiempo, empieza a pesar en la dirección contraria. Se borra, y se empieza uno nuevo si hace falta.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. El surco viejo no se cierra: se cubre de tierra, y la tierra tarda. Cada regreso no es una prueba de que el trabajo no sirve: es la prueba de que el surco viejo sigue estando ahí, disponible, y de que todavía lo estás recorriendo cuando bajas la guardia.</p>
+  <p>Lo que cambia con la práctica no es que dejes de caer. Es que cada caída dura menos, y que la distancia entre el momento en que caés y el momento en que te das cuenta se hace más corta.</p>
+  <p>Al principio, la distancia es de días. Después, de horas. Después, de minutos. Y hay un momento, bastante lejano y bastante real, en que la distancia es cero: te das cuenta en el mismo segundo en que empezás a caer, y esa vez, por primera vez, no terminás de caer.</p>
+  <p>Eso no se busca. Se llega.</p>
 </div>
 
 <div class="bloque">
@@ -320,7 +347,6 @@
   <p><em>Al día siguiente no se acordaba de que hubiera pasado nada.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-11.html"><span class="continuar-nombre">Tú también te escapas</span>
@@ -331,29 +357,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral100'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral100'), g=document.getElementById('gumbral100');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>Si el segundo número es más grande, el surco nuevo está trabajando.</strong><br><strong>Si son parecidos, todavía es pronto. Si no te acuerdas del segundo, tampoco pasa nada: empieza a contar desde esta vez.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -366,6 +371,85 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var btnToque = document.getElementById('btnToque');
+    var btnCerrar = document.getElementById('btnCerrarReg');
+    var btnReiniciar = document.getElementById('btnReiniciarReg');
+    var lista = document.getElementById('regresosLista');
+    var veredicto = document.getElementById('veredictoReg');
+    if(!btnToque || !btnCerrar) return;
+
+    var regresos = [];
+
+    function fechaActual(){
+      var d = new Date();
+      var dia = d.getDate();
+      var mes = d.getMonth() + 1;
+      var hora = d.getHours();
+      var min = d.getMinutes();
+      if(min < 10) min = '0' + min;
+      return dia + '/' + mes + ' · ' + hora + ':' + min;
+    }
+
+    btnToque.addEventListener('click', function(){
+      var f = fechaActual();
+      regresos.push({ f: f, t: Date.now() });
+      var num = regresos.length;
+      var fila = document.createElement('div');
+      fila.className = 'regreso-fila';
+      fila.innerHTML =
+        '<span class="regreso-num">' + (num < 10 ? '0' : '') + num + '</span>' +
+        '<span class="regreso-txt">regreso ' + num + '</span>' +
+        '<span class="regreso-fecha">' + f + '</span>';
+      lista.appendChild(fila);
+      veredicto.classList.remove('visible');
+      veredicto.innerHTML = '';
+    });
+
+    btnCerrar.addEventListener('click', function(){
+      if(regresos.length === 0){
+        veredicto.innerHTML = 'Sin marcas todavía.' +
+          '<strong>Marcá al menos una, y volvé.</strong>';
+        veredicto.classList.add('visible');
+        return;
+      }
+
+      var total = regresos.length;
+      var primero = regresos[0].t;
+      var ultimo = regresos[total-1].t;
+      var spanDias = Math.max(1, Math.round((ultimo - primero) / (1000 * 60 * 60 * 24)));
+      var promedio = (spanDias / Math.max(1, total - 1)).toFixed(1);
+
+      var html =
+        '<div class="cuenta">' +
+        '<div><span class="num">' + total + '</span><span class="eti">regresos</span></div>' +
+        '<div><span class="num">' + spanDias + '</span><span class="eti">días</span></div>' +
+        '</div>';
+
+      if(total < 3){
+        html += '<strong>Todavía es muy pronto para comparar.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Con menos de tres marcas no hay promedio posible. Sigue marcando una semana más.</span>';
+      } else if(promedio <= 2){
+        html += '<strong>Un regreso cada ' + promedio + ' días.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Parece mucho, y es la señal más clara de que el surco viejo está perdiendo terreno. Está volviendo seguido porque todavía tiene fuerza, y se va rápido porque ya no tiene dónde quedarse.</span>';
+      } else if(promedio <= 5){
+        html += '<strong>Un regreso cada ' + promedio + ' días.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">El surco nuevo está trabajando. Los regresos siguen apareciendo, pero ya no ocupan la semana entera.</span>';
+      } else {
+        html += '<strong>Un regreso cada ' + promedio + ' días.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Los intervalos son largos. Eso no significa que el surco nuevo haya ganado: significa que todavía está muy pronto para verlo. Sigue midiendo.</span>';
+      }
+      veredicto.innerHTML = html;
+      veredicto.classList.add('visible');
+    });
+
+    btnReiniciar.addEventListener('click', function(){
+      regresos = [];
+      lista.innerHTML = '';
+      veredicto.classList.remove('visible');
+      veredicto.innerHTML = '';
+    });
+  })();
 </script>
 </body>
 </html>
