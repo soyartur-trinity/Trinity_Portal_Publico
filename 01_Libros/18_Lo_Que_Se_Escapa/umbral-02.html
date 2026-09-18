@@ -74,27 +74,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +94,74 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: puerta o no ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .caso-campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:1rem 1.1rem; margin-bottom:1.4rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.75;
+    color:var(--blanco-humo); resize:vertical; min-height:5rem;
+    transition:opacity 1.2s ease, border-color .4s ease;}
+  .caso-campo::placeholder{color:var(--lejos); font-style:italic;}
+  .caso-campo:focus{border-color:var(--oro-polvo);}
+  .pregunta-puerta{text-align:center; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:1.15rem; color:var(--blanco-humo);
+    margin-bottom:1rem;}
+  .puerta-botones{display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-bottom:.6rem;}
+  .puerta-btn{background:var(--negro); border:1px solid var(--separador); padding:1.1rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:1rem;
     color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
-    cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+  .puerta-btn:hover, .puerta-btn:focus-visible{color:var(--blanco-humo); border-color:var(--oro-polvo);}
+  .puerta-btn[aria-pressed="true"]{color:var(--oro); border-color:var(--oro-tenue);
+    background:rgba(201,168,76,.04);}
+  .puerta-btn.no[aria-pressed="true"]{color:var(--brasa); border-color:rgba(196,106,58,.4);}
+  .cerrar{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease; margin-top:1.2rem;}
+  .cerrar:hover:not(:disabled), .cerrar:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .cerrar:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +180,17 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
+    .puerta-botones{grid-template-columns:1fr;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +207,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>A Tomás le sacaron una muela.</p>
   <p>Una semana después le dan una radiografía de control y él se queda mirándola más de lo que mira nadie una radiografía. Hay una línea blanca donde le parece que no debería haber nada.</p>
@@ -309,12 +282,76 @@
   <p>Lo que este umbral describe no es una fórmula para obtener cosas. Es <strong>dónde tiene sentido gastar la insistencia</strong>: en lo que tiene puerta, aunque esté cerrada; y no en el interior de otra persona, aunque esa persona te quiera.</p>
 </div>
 
+<!-- ══════════════ INTERACTIVO: ¿TIENE PUERTA? ══════════════ -->
+<div class="geo" id="geoumbral020">
+  <span class="geo-label">Puerta o no</span>
+  <p class="geo-instruccion">Elige algo sobre lo que vienes insistiendo, y contesta la única pregunta que importa.</p>
+  <div class="panel">
+    <textarea class="caso-campo" id="casoPuerta" rows="3"
+      placeholder="Sobre qué vienes insistiendo, hace semanas o meses."></textarea>
+    <p class="pregunta-puerta">¿Hay una puerta?</p>
+    <div class="puerta-botones">
+      <button type="button" class="puerta-btn" data-valor="si" id="btnSi">
+        Sí.<br><span style="font-size:.85rem; opacity:.75;">Hay un turno, un papel, otra persona a quien preguntarle.</span>
+      </button>
+      <button type="button" class="puerta-btn no" data-valor="no" id="btnNo">
+        No.<br><span style="font-size:.85rem; opacity:.75;">Lo que quiero es que alguien entienda, recuerde o piense distinto.</span>
+      </button>
+    </div>
+    <button type="button" class="cerrar" id="btnCerrarPuerta">Ver el veredicto</button>
+    <div class="veredicto" id="veredictoPuerta"></div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Antes de insistir, una sola pregunta, y no es <em>¿depende de mí?</em></p>
-  <p><strong>¿Hay una puerta?</strong></p>
-  <p>Un turno, un papel, otro profesional, otra ventanilla, otra persona a quien preguntarle. Algo que puedas hacer distinto la próxima vez.</p>
-  <p>Si la hay, insiste todo lo que quieras y desplázate: no repitas el mismo movimiento con mejor técnica.</p>
-  <p>Si no la hay —si lo que quieres es que alguien recuerde, entienda, sienta o piense otra cosa—, lo que estés por hacer no va a funcionar, y lo que sí va a hacer es ocuparte una zona que todavía estaba libre.</p>
+  <p>La pregunta no admite matices porque los matices son la manera de no contestarla. O hay una puerta concreta —un teléfono, un turno, otra oficina, otra persona, un día distinto— o lo que hay es una expectativa puesta en que el otro cambie por dentro.</p>
+  <p>Las dos cosas pueden ser verdaderas al mismo tiempo. Se puede querer que alguien entienda <em>y</em> haber una puerta para lo que sí depende de ti. Pero son dos operaciones distintas, y confundirlas es lo que hace que se repita el mismo movimiento durante ocho meses.</p>
+</div>
+
+<div class="perla"><p>Lo que tiene puerta<br>se puede abrir, aunque no se abra.<br>Lo que no tiene puerta<br>no se abre nunca, aunque insistas.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Toma algo sobre lo que vienes insistiendo hace más de un mes.</strong> Algo que ya intentaste varias veces y sigue igual.</p>
+      <p>Escríbelo en una línea, en el teléfono o en un papel.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>Contesta una sola pregunta:</strong> ¿qué podría hacer distinto <em>mañana</em>?</p>
+      <p>No <em>qué debería entender el otro</em>. No <em>qué debería pasar</em>. Qué podrías hacer tú, mañana, distinto de lo que hiciste los últimos diez días.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>Si hay una respuesta concreta</strong> —llamar a otro lado, escribir a otra persona, ir otro día, probar otra ventanilla—, esa es la puerta. Hazla esta semana.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>Si la única respuesta posible empieza con <em>que él/ella...</em></strong> —que entienda, que recapacite, que cambie, que se acuerde—, entonces no hay puerta. Y lo que estás haciendo no es insistir: es esperar. Lo cual es legítimo, pero es otra cosa.</p>
+      <p>En ese caso no hagas nada distinto esta semana. Solo anota cuántas veces al día te sorprendes pensando en eso. El número es el dato.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p><strong>Repite el gesto con otra cosa.</strong> Dos semanas después, con una segunda situación. La operación es corta y se puede hacer con todo lo que se está repitiendo.</p>
+      <p>Al tercer caso, la pregunta empieza a aparecer antes: en el momento en que estás a punto de insistir por décima vez sobre lo mismo, te das cuenta de que no hay puerta antes de golpear.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>No es algo que vuelva, porque no es un episodio. Es una distinción, y las distinciones no se recuperan: quedan.</p>
+  <p>Lo que va a volver, cada vez más rápido, es la pregunta. La primera vez la hacés después de un mes de insistir. La tercera vez, después de tres intentos. La décima, antes del segundo. Ese adelantamiento es todo el cambio.</p>
+  <p>Y no implica dejar de insistir. Implica dejar de insistir sobre lo que no tiene puerta, y empezar a hacerlo sobre lo que sí, aunque el resultado no esté garantizado. Los tres del principio —Elena, Martín, Paula— insistieron muchísimo. Ninguno insistió en la dirección equivocada.</p>
 </div>
 
 <div class="bloque">
@@ -328,7 +365,6 @@
   <p><em>Nunca se lo dijo a Tomás.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-03.html"><span class="continuar-nombre">El que ordena</span>
@@ -339,10 +375,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
-
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -355,6 +389,60 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var campo = document.getElementById('casoPuerta');
+    var btnSi = document.getElementById('btnSi');
+    var btnNo = document.getElementById('btnNo');
+    var btnCerrar = document.getElementById('btnCerrarPuerta');
+    var veredicto = document.getElementById('veredictoPuerta');
+    if(!campo || !btnCerrar) return;
+
+    var eleccion = null;
+
+    function marcar(boton, valor){
+      btnSi.setAttribute('aria-pressed','false');
+      btnNo.setAttribute('aria-pressed','false');
+      boton.setAttribute('aria-pressed','true');
+      eleccion = valor;
+    }
+
+    btnSi.addEventListener('click', function(){ marcar(btnSi, 'si'); });
+    btnNo.addEventListener('click', function(){ marcar(btnNo, 'no'); });
+
+    btnCerrar.addEventListener('click', function(){
+      var texto = campo.value.trim();
+      if(!texto){
+        veredicto.innerHTML = 'Escribe primero sobre qué estás insistiendo.';
+        veredicto.classList.add('visible');
+        return;
+      }
+      if(!eleccion){
+        veredicto.innerHTML = 'Falta la única pregunta que importa.';
+        veredicto.classList.add('visible');
+        return;
+      }
+
+      campo.disabled = true;
+      btnSi.disabled = true;
+      btnNo.disabled = true;
+      btnCerrar.disabled = true;
+
+      var html = '';
+      if(eleccion === 'si'){
+        html =
+          'Hay puerta.' +
+          '<strong>Eso se puede hacer esta semana. Aunque no funcione.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">El resultado no está garantizado. Paula podía no obtener el crédito. Lo que sí estaba en sus manos era volver el jueves con otro papel.</span>';
+      } else {
+        html =
+          'No hay puerta.' +
+          '<strong>Y llevas tiempo golpeando la pared.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">No es un error. Es un gasto. La energía que se va en insistir sobre el interior de otro no es infinita, y es la misma que hace falta para lo que sí depende de ti.</span>';
+      }
+      veredicto.innerHTML = html;
+      veredicto.classList.add('visible');
+    });
+  })();
 </script>
 </body>
 </html>
