@@ -74,27 +74,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +94,64 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: el consejo que no dijiste ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .consejo-campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:1rem 1.1rem; margin-bottom:1.2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.75;
+    color:var(--blanco-humo); resize:vertical; min-height:6rem;
+    transition:opacity 1.2s ease, border-color .4s ease, filter .6s ease;}
+  .consejo-campo::placeholder{color:var(--lejos); font-style:italic;}
+  .consejo-campo:focus{border-color:var(--oro-polvo);}
+  .consejo-campo.apagandose{opacity:.35; filter:blur(2px);}
+  .accion-callar{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--oro-polvo);
     cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+  .accion-callar:hover:not(:disabled), .accion-callar:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .accion-callar:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +170,16 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +196,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>Domingo a la tarde. Suena el teléfono y es la hermana.</p>
   <p>Tomás sabe cómo sigue. Sabe que van a ser cuarenta minutos, que va a volver tres veces sobre lo mismo, que en el minuto veintidós se le va a quebrar la voz. Lo sabe porque ya pasó, y porque va a volver a pasar.</p>
@@ -293,19 +255,68 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Tao Te Ching</span></a> &middot; capítulo 15, siglo VI a. C.</cite>
 </div>
 
+<!-- ══════════════ INTERACTIVO: EL CONSEJO QUE NO DIJISTE ══════════════ -->
 <div class="geo" id="geoumbral070">
   <span class="geo-label">El consejo que tienes listo</span>
+  <p class="geo-instruccion">Escribe el consejo que le darías ahora mismo a alguien que está pasando algo. Tal cual, con las palabras exactas.</p>
   <div class="panel">
-    <label class="campo"><span>Escribe el consejo que le darías ahora mismo a alguien que está pasando algo.</span><textarea id="eumbral070_0" rows="2" placeholder=""></textarea></label>
-    <button type="button" class="marcable" id="bumbral070">Listo</button>
+    <textarea id="consejo" class="consejo-campo" rows="3"
+      placeholder="Escríbelo tal cual lo dirías."></textarea>
+    <button type="button" class="accion-callar" id="btnCallar">No decirlo</button>
+    <div class="veredicto" id="veredictoConsejo"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral070"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Va a llamar. Va a contar lo mismo. Va a dar tres vueltas.</p>
-  <p>Aguanta hasta el final sin proponer nada. Vas a cortar más cansado que otras veces: eso no significa que lo hiciste mal. Significa que lo hiciste.</p>
-  <p>Y no te propongas escuchar mejor. Escuchar mejor es otra tarea, y es una que se puede fallar. Lo único que hay que hacer acá es <strong>no decir</strong>, que es una sola cosa y se puede sostener aunque estés distraído.</p>
-  <p>Si se te escapa un consejo, no te disculpes ni lo señales. Sigue sin decir el siguiente.</p>
+  <p>Lo que acaba de pasar no fue un juego. Ese consejo va a aparecer la próxima vez que alguien te cuente algo, con esas palabras o con otras parecidas, y va a estar igual de listo.</p>
+  <p>Lo único que cambió es que ahora sabes cuál es. Y un consejo que se reconoce cuando aparece —no después, cuando ya lo dijiste— es un consejo que se puede no decir.</p>
+  <p>No hace falta que sea un buen consejo ni un mal consejo. Todos son iguales para este ejercicio: son la forma que tiene la cabeza de terminar una conversación que no sabe cómo sostener.</p>
+</div>
+
+<div class="perla"><p>El consejo no es para el otro.<br>Es para que la incomodidad<br>termine antes.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Esta semana va a llamar alguien, o te va a contar algo, y va a ser sobre algo que no tiene arreglo.</strong> Lo vas a reconocer rápido: a los dos minutos ya vas a tener un consejo formado.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>Abre el cronómetro del teléfono justo cuando empiece a contar.</strong> Ponlo en marcha y dejalo corriendo en un lugar donde lo veas de reojo.</p>
+      <p>No es para medirte. Es para que la cabeza tenga algo que hacer que no sea armar el consejo.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p>Cada vez que aparezca un consejo armado, <strong>no lo digas</strong>. Anota mentalmente el minuto en que apareció. Sigue escuchando.</p>
+      <p>Van a aparecer tres, cuatro, cinco. Todos buenos. Todos disponibles. Ninguno va a salir.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p>Cuando la otra persona termine, <strong>mira el cronómetro</strong> y para el tiempo.</p>
+      <p>Después no digas nada: ni <em>qué difícil</em>, ni <em>qué fuerte</em>, ni <em>te entiendo</em>. Ese tipo de frase es el consejo con otro nombre, y también termina la escena antes de tiempo.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p><strong>Esa noche, anota dos números:</strong> cuánto duró la conversación, y cuántos consejos no dijiste.</p>
+      <p>Si la conversación duró más que las anteriores, y no dijiste nada, el dato está. Vas a sentirte más cansado que otras veces —eso es normal, es la energía que se armó y no se descargó—. El cansancio no significa que hiciste mal: significa que lo hiciste.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que alguien te cuente algo que no tiene arreglo, los consejos van a aparecer con la misma velocidad de siempre, y van a estar igual de armados.</p>
+  <p>Lo que cambia con la práctica no es que aparezcan menos. Es que los reconoces antes. La primera vez, reconoces el consejo cuando ya lo dijiste. La tercera vez, lo reconoces cuando lo estás pensando. La décima, lo reconoces cuando aparece.</p>
+  <p>Ese reconocimiento es todo el ejercicio. No hay una versión avanzada donde dejas de tener consejos: hay una versión donde tenerlos no implica decirlos.</p>
 </div>
 
 <div class="bloque">
@@ -318,7 +329,6 @@
   <p><em>Lo que notó, más tarde, fue que no estaba con esa cosa apurada de otras veces. Lo atribuyó a que ya está más acomodada, que también es cierto.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-08.html"><span class="continuar-nombre">El registro sobrevive</span>
@@ -329,29 +339,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral070'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral070'), g=document.getElementById('gumbral070');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>¿Es probable que ya se le haya ocurrido?</strong><br><em>Y debajo:</em><br><strong>Casi siempre sí. El consejo rara vez es información nueva. Casi siempre es una manera de terminar.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -364,6 +353,39 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var campo = document.getElementById('consejo');
+    var boton = document.getElementById('btnCallar');
+    var veredicto = document.getElementById('veredictoConsejo');
+    if(!campo || !boton || !veredicto) return;
+
+    var vacio = true;
+    campo.addEventListener('input', function(){
+      vacio = campo.value.trim() === '';
+    });
+
+    boton.addEventListener('click', function(){
+      if (vacio) {
+        veredicto.innerHTML = 'Escribe algo primero.';
+        veredicto.classList.add('visible');
+        return;
+      }
+
+      boton.disabled = true;
+      campo.classList.add('apagandose');
+
+      setTimeout(function(){
+        campo.disabled = true;
+        boton.style.display = 'none';
+
+        veredicto.innerHTML =
+          'Ese consejo acaba de quedarse sin decir.' +
+          '<strong>No se guardó, no se mandó, no existió.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Esa es toda la operación del umbral: tenerlo, no decirlo, dejar que la conversación llegue a su final.</span>';
+        veredicto.classList.add('visible');
+      }, 900);
+    });
+  })();
 </script>
 </body>
 </html>
