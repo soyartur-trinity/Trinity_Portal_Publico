@@ -74,27 +74,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +94,85 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: la tabla de las tres formas ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .op-fila{display:grid; grid-template-columns:1fr 4rem; gap:.7rem; margin-bottom:.7rem; align-items:stretch;}
+  .op-campo{width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .op-campo::placeholder{color:var(--lejos); font-style:italic;}
+  .op-campo:focus{border-color:var(--oro-polvo); outline:none;}
+  .op-forma{width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .3rem; text-align:center;
+    font-family:'Cormorant Garamond',serif; font-size:.68rem; color:var(--gris-calido);
+    letter-spacing:.15em; text-transform:uppercase; cursor:pointer;
+    transition:all .3s ease; appearance:none; -webkit-appearance:none;}
+  .op-forma:focus{border-color:var(--oro-polvo); outline:none;}
+  .op-forma.activo-0{color:var(--brasa); border-color:rgba(196,106,58,.4);}
+  .op-forma.activo-1{color:var(--ambar); border-color:rgba(212,168,67,.4);}
+  .op-forma.activo-2{color:var(--frio); border-color:rgba(107,122,128,.4);}
+  .agregar{display:block; width:100%; background:none; border:1px dashed var(--separador);
+    padding:.7rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.7rem;
     letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
-    cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    cursor:pointer; transition:all .3s ease; margin-top:.4rem;}
+  .agregar:hover{color:var(--oro-tenue); border-color:var(--oro-polvo);}
+  .agregar:disabled{opacity:.4; cursor:not-allowed;}
+  .cerrar{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease; margin-top:1rem;}
+  .cerrar:hover:not(:disabled), .cerrar:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .cerrar:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+  .veredicto .conteo{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador); margin-top:1.6rem;
+    font-style:normal;}
+  .veredicto .conteo div{background:var(--negro); padding:.9rem .5rem; text-align:center;}
+  .veredicto .conteo .num{font-size:1.5rem; color:var(--oro); display:block; line-height:1.1;}
+  .veredicto .conteo .eti{font-size:.62rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--oro-polvo); display:block; margin-top:.3rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +191,16 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +217,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>Diego la quiere. Conviene decirlo antes que nada, porque todo lo que sigue pasa adentro de eso.</p>
   <p>Sofía se olvida de las cosas. De comprar lo que habían hablado, del nombre de la prima, de lo que él le contó el jueves. Interrumpe en la mitad de las frases y se va para otro lado, y cuando él termina de decir lo que estaba diciendo, ella ya está en otro tema.</p>
@@ -282,20 +265,77 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Francis Bacon</span></a> &middot; De las sediciones y los disturbios, 1625</cite>
 </div>
 
+<!-- ══════════════ INTERACTIVO: LA TABLA DE LAS TRES FORMAS ══════════════ -->
 <div class="geo" id="geoumbral010">
-  <span class="geo-label">Dónde llegó</span>
+  <span class="geo-label">Qué forma usas más</span>
+  <p class="geo-instruccion">Las últimas tres veces que algo se te salió de control. Qué hiciste, y en qué forma entró.</p>
   <div class="panel">
-    <label class="campo"><span>algo que no puedas controlar y que te esté molestando. Una línea.</span><textarea id="eumbral010_0" rows="2" placeholder=""></textarea></label>
-    <label class="campo"><span>tres zonas de tu vida donde esto ya apareció esta semana.</span><textarea id="eumbral010_1" rows="2" placeholder=""></textarea></label>
-    <button type="button" class="marcable" id="bumbral010">Listo</button>
+    <div id="filasOp">
+      <div class="op-fila">
+        <input type="text" class="op-campo" placeholder="Qué situación, en una línea">
+        <select class="op-forma" data-forma="-1">
+          <option value="-1">forma</option>
+          <option value="0">vigilar</option>
+          <option value="1">aconsejar</option>
+          <option value="2">retirarme</option>
+        </select>
+      </div>
+    </div>
+    <button type="button" class="agregar" id="btnAgregarOp">+ agregar otra</button>
+    <button type="button" class="cerrar" id="btnCerrarOp">Cerrar la cuenta</button>
+    <div class="veredicto" id="veredictoOp"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral010"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Esta semana vas a montar uno. No hace falta que lo impidas.</p>
-  <p>Solo fíjate cuál de las tres formas usas: vigilar, aconsejar o retirarte. Probablemente uses las tres, alternadas, y la tercera cuando las otras dos fallaron.</p>
-  <p>Y anota una sola cosa: <strong>qué zona tuya ocupó esto que no controlas.</strong> La más clara.</p>
-  <p>No vigiles el operativo. Montar un operativo sobre el operativo es la misma maniobra con otro objeto, y cansa el doble.</p>
+  <p>Lo que acaba de pasar no es un test de personalidad. Es un conteo, y su utilidad está en una sola cosa: <strong>saber cuál de las tres formas es la tuya</strong>.</p>
+  <p>La mayoría usa las tres, y usa la tercera —retirarse— cuando las otras dos fallaron. Retirarse tiene la ventaja de que no se nota, y por eso se acumula sin que uno lo registre.</p>
+  <p>El número no importa. La forma dominante importa, porque es la que vas a tener que reconocer primero cuando aparezca, y es la que el libro va a trabajar en los umbrales que vienen.</p>
+</div>
+
+<div class="perla"><p>Saber cuál de las tres es la tuya<br>es el único punto de partida<br>que hay.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Esta semana, cada vez que algo se te salga de control, anota tres cosas en el teléfono:</strong> el día, la situación en una línea, y cuál de las tres formas usaste.</p>
+      <p>No busques hacer nada distinto. No interrumpas el operativo. Solo anótalo.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>La forma no siempre es clara.</strong> A veces vas a dudar entre <em>vigilar</em> y <em>aconsejar</em>. Poné la que aparece primero. Es la que el cuerpo eligió, y esa es la que cuenta.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>Anótalo antes de dormir, no en el momento.</strong> Anotarlo en el momento interrumpe el operativo, y el punto no es interrumpirlo: es verlo funcionando con total libertad.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>Al séptimo día, contá las tres columnas.</strong> Cuántas veces vigilar, cuántas aconsejar, cuántas retirarte.</p>
+      <p>La más alta es tu operativo principal. Guarda ese número —no el de las tres, solo el de la más alta— y no lo compartas con nadie.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p><strong>No hagas nada con el número todavía.</strong> No te propongas bajarlo. No lo comentes con quien te haya visto distraído. Es un dato, y los datos se guardan hasta que hay algo que hacer con ellos.</p>
+      <p>Lo que hay que hacer con él está tres umbrales más adelante.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>El operativo no se va a detener, y no hay que pedirle que se detenga. Va a seguir apareciendo cada vez que algo se te salga de control, con la misma velocidad de siempre.</p>
+  <p>Lo que cambia con la anotación no es el operativo. Es el registro. Después de una semana, ya no se puede decir <em>no me di cuenta</em>, porque hay siete líneas escritas.</p>
+  <p>Al mes siguiente, repite el conteo. Si el número de la forma dominante bajó, es porque el operativo empezó a aparecer con un segundo de retraso. Ese segundo es todo lo que este libro está pidiendo.</p>
 </div>
 
 <div class="bloque">
@@ -308,7 +348,6 @@
   <p><em>No sabe de qué.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-02.html"><span class="continuar-nombre">Dónde sí</span>
@@ -319,29 +358,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral010'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral010'), g=document.getElementById('gumbral010');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>Lo primero sigue igual que hace un mes.</strong><br><strong>Lo otro son tres zonas que hace un mes no estaban.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -354,6 +372,91 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var contenedor = document.getElementById('filasOp');
+    var btnAgregar = document.getElementById('btnAgregarOp');
+    var btnCerrar = document.getElementById('btnCerrarOp');
+    var veredicto = document.getElementById('veredictoOp');
+    if(!contenedor || !btnAgregar || !btnCerrar) return;
+
+    var MAX = 8;
+
+    function marcarSelect(sel){
+      sel.classList.remove('activo-0','activo-1','activo-2');
+      var v = sel.value;
+      if(v === '0') sel.classList.add('activo-0');
+      if(v === '1') sel.classList.add('activo-1');
+      if(v === '2') sel.classList.add('activo-2');
+    }
+
+    function conectarFila(fila){
+      var sel = fila.querySelector('.op-forma');
+      sel.addEventListener('change', function(){ marcarSelect(sel); });
+    }
+
+    contenedor.querySelectorAll('.op-fila').forEach(conectarFila);
+
+    btnAgregar.addEventListener('click', function(){
+      var filas = contenedor.querySelectorAll('.op-fila');
+      if(filas.length >= MAX){ btnAgregar.disabled = true; return; }
+      var nueva = document.createElement('div');
+      nueva.className = 'op-fila';
+      nueva.innerHTML = '<input type="text" class="op-campo" placeholder="Qué situación, en una línea">' +
+                        '<select class="op-forma" data-forma="-1">' +
+                        '<option value="-1">forma</option>' +
+                        '<option value="0">vigilar</option>' +
+                        '<option value="1">aconsejar</option>' +
+                        '<option value="2">retirarme</option>' +
+                        '</select>';
+      contenedor.appendChild(nueva);
+      conectarFila(nueva);
+      if(contenedor.querySelectorAll('.op-fila').length >= MAX){
+        btnAgregar.disabled = true;
+      }
+    });
+
+    btnCerrar.addEventListener('click', function(){
+      var c = [0,0,0];
+      var total = 0;
+      contenedor.querySelectorAll('.op-fila').forEach(function(fila){
+        var texto = fila.querySelector('.op-campo').value.trim();
+        var forma = fila.querySelector('.op-forma').value;
+        if(texto && forma !== '-1'){
+          c[parseInt(forma,10)]++;
+          total++;
+        }
+      });
+
+      btnCerrar.disabled = true;
+      contenedor.querySelectorAll('input, select').forEach(function(el){ el.disabled = true; });
+      btnAgregar.disabled = true;
+
+      if(total === 0){
+        veredicto.innerHTML = 'La cuenta quedó vacía.' +
+          '<strong>Sin datos no hay nada que contar.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Vuelve cuando tengas al menos tres situaciones anotadas.</span>';
+        veredicto.classList.add('visible');
+        return;
+      }
+
+      var nombres = ['vigilar','aconsejar','retirarte'];
+      var maxIdx = 0;
+      for(var i=1;i<3;i++){ if(c[i] > c[maxIdx]) maxIdx = i; }
+      var empatadas = (c.filter(function(x){ return x === c[maxIdx]; }).length > 1);
+
+      var html = 'Tu forma dominante: <em>' + (empatadas ? 'empatada' : nombres[maxIdx]) + '</em>.' +
+        '<strong>Esa es la que hay que aprender a ver primero.</strong>' +
+        '<div class="conteo">' +
+        '<div><span class="num">' + c[0] + '</span><span class="eti">vigilar</span></div>' +
+        '<div><span class="num">' + c[1] + '</span><span class="eti">aconsejar</span></div>' +
+        '<div><span class="num">' + c[2] + '</span><span class="eti">retirarte</span></div>' +
+        '</div>' +
+        '<span style="display:block; margin-top:1.4rem; color:var(--gris-calido); font-size:.95rem;">Guarda el número más alto. Los otros dos son ruido.</span>';
+
+      veredicto.innerHTML = html;
+      veredicto.classList.add('visible');
+    });
+  })();
 </script>
 </body>
 </html>
