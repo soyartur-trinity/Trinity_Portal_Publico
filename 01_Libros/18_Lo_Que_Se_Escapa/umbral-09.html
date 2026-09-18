@@ -66,7 +66,6 @@
   .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
     font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
     max-width:26rem; margin:0 auto;}
-  .perla.grave p{color:var(--blanco-humo);}
   .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
     background:rgba(201,168,76,.017);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -74,27 +73,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +93,75 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: las dos versiones ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .version-label{font-family:'Cormorant Garamond',serif; font-size:.68rem;
+    letter-spacing:.3em; text-transform:uppercase; display:block; margin-bottom:.7rem;}
+  .version-label.propia{color:var(--oro-tenue);}
+  .version-label.otra{color:var(--frio);}
+  .version-campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:1rem 1.1rem; margin-bottom:1.2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.75;
+    color:var(--blanco-humo); resize:vertical; min-height:5rem;}
+  .version-campo::placeholder{color:var(--lejos); font-style:italic;}
+  .version-campo:focus{border-color:var(--oro-polvo); outline:none;}
+  .version-campo.bloqueado{opacity:.6; pointer-events:none;}
+  .avanzar{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--oro-polvo);
     cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+  .avanzar:hover:not(:disabled), .avanzar:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .avanzar:disabled{color:#241d12; cursor:not-allowed;}
+  .espera{text-align:center; padding:1.6rem .8rem; min-height:5rem;
+    display:none;}
+  .espera.activo{display:block;}
+  .espera p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1rem;}
+  .espera-contador{font-family:'Cormorant Garamond',serif; font-size:clamp(2.4rem,9vw,3.4rem);
+    font-weight:300; color:var(--oro); line-height:1; letter-spacing:.04em;
+    font-variant-numeric:tabular-nums;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +180,16 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +206,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>Diego y Sofía discuten por algo del fin de semana.</p>
   <p>Diego tiene un argumento y es bueno. Lo dice. Ella contesta otra cosa. Diego lo dice mejor. Ella contesta otra cosa distinta. Diego encuentra una manera todavía más clara de decirlo.</p>
@@ -298,19 +270,78 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Arquímedes</span></a> &middot; siglo III a. C.</cite>
 </div>
 
+<!-- ══════════════ INTERACTIVO: LAS DOS VERSIONES CON ESPERA ══════════════ -->
 <div class="geo" id="geoumbral090">
-  <span class="geo-label">La otra versión</span>
+  <span class="geo-label">Las dos versiones</span>
+  <p class="geo-instruccion">Una discusión reciente. Primero la cuentas como la contarías siempre. Después, treinta segundos, y la cuentas desde donde estaba el otro.</p>
   <div class="panel">
-    <label class="campo"><span>una discusión reciente, contada por ti.</span><textarea id="eumbral090_0" rows="2" placeholder=""></textarea></label>
-    <label class="campo"><span>la misma discusión, contada por el otro.</span><textarea id="eumbral090_1" rows="2" placeholder=""></textarea></label>
-    <button type="button" class="marcable" id="bumbral090">Listo</button>
+    <span class="version-label propia">Tu versión</span>
+    <textarea class="version-campo" id="versionPropia" rows="4"
+      placeholder="Cómo lo contarías si te preguntaran hoy."></textarea>
+    <button type="button" class="avanzar" id="btnAvanzar" disabled>Contar la otra versión</button>
+    <div class="espera" id="espera">
+      <p>Treinta segundos. Sin hacer nada.</p>
+      <div class="espera-contador" id="contador">30</div>
+    </div>
+    <div id="segundaVersion" style="display:none; margin-top:1.4rem;">
+      <span class="version-label otra">La versión del otro</span>
+      <textarea class="version-campo" id="versionOtra" rows="4"
+        placeholder="La misma discusión, contada desde donde estaba el otro."></textarea>
+      <button type="button" class="avanzar" id="btnCerrarVersiones">Ver</button>
+    </div>
+    <div class="veredicto" id="veredictoVersiones"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral090"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Hazlo después de la discusión, esa misma noche o al día siguiente, cuando ya no sirva para ganar nada. Adentro de la escena todavía no hay lugar; con el tiempo lo va a haber.</p>
-  <p>Y no te preguntes qué sintió el otro. Pregúntate algo más chico y más fácil de contestar: <strong>¿qué vio desde donde estaba?</strong></p>
-  <p>Si la respuesta es <em>lo mismo que yo</em>, hay más para buscar ahí. Vuelve mañana: aparece.</p>
+  <p>Lo que acaba de pasar no fue un ejercicio de empatía. La segunda versión no tiene que ser amable ni generosa con el otro, y no tiene que reconocerle razón en nada.</p>
+  <p>Lo que importa es <strong>que haya algo distinto de la primera</strong>. Un detalle. Una frase que en tu versión no aparecía. Algo que el otro dijo y que vos no habías registrado como parte del asunto.</p>
+  <p>Si las dos versiones son la misma cosa con nombres cambiados, entonces todavía estás en tu tribuna, solo que con más palabras. Y eso es exactamente lo que el umbral viene a mostrar: la altura sola no alcanza.</p>
+</div>
+
+<div class="perla"><p>La segunda versión<br>no estaba afuera.<br>Estaba disponible todo el tiempo.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Después de la próxima discusión —no durante, no al día siguiente—, escribí tu versión.</strong> En el teléfono, sin pensarla mucho, con las palabras que usarías si te preguntaran.</p>
+      <p>No la corrijas. No la embellezcas. Escribila como sale.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>Cerrá los ojos o mirá por la ventana, treinta segundos.</strong> Sin pensar en nada en particular. No es relajación. Es dejar que la primera versión se enfríe un poco.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>Escribí la segunda versión.</strong> La misma discusión, contada desde donde estaba el otro. No desde lo que el otro sintió —no tenés cómo saberlo—. Desde lo que el otro <em>vio</em>. Qué tenía delante, qué le llegó, qué se le dijo.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>Compará solo una cosa:</strong> ¿aparece en la segunda versión algún elemento que no estaba en la primera? Un gesto, una frase, un detalle, un momento del día.</p>
+      <p>Si sí, anotá ese elemento aparte. Ese es el nuevo sector. Es lo que estaba tapado desde tu tribuna y ahora tiene nombre.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p><strong>No se lo cuentes al otro.</strong> Ni que hiciste el ejercicio, ni qué descubriste. La otra persona no tiene que saber que ocupaste su lugar durante un rato: no es una reparación ni una disculpa. Es una operación tuya, y funciona sola.</p>
+      <p>Repetilo cada vez que haya una discusión que se enrosque. Tres o cuatro veces alcanza para que la segunda versión empiece a aparecer antes de que termine la primera.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver, porque las discusiones vuelven siempre, y con la misma persona o con otra. Lo que cambia no es que dejes de discutir, ni que discutas mejor.</p>
+  <p>Lo que cambia es que la segunda versión empieza a estar disponible antes. La primera vez la escribís al día siguiente. La tercera, esa misma noche. La décima, en el medio de la discusión, sin que nadie lo note, y esa es la vez en que algo se puede decir distinto.</p>
+  <p>Ese adelantamiento es todo el ejercicio. La versión del otro siempre estuvo disponible: el trabajo es hacerla llegar antes de que la discusión termine.</p>
 </div>
 
 <div class="bloque">
@@ -324,7 +355,6 @@
   <p><em>Las dos son de la misma tarde. Y ninguna de las dos está mintiendo.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-10.html"><span class="continuar-nombre">El surco nuevo</span>
@@ -335,29 +365,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral090'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral090'), g=document.getElementById('gumbral090');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>La segunda versión la escribiste tú.</strong><br><strong>Eso significa que estaba disponible todo el tiempo.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -370,6 +379,81 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var propia = document.getElementById('versionPropia');
+    var btnAvanzar = document.getElementById('btnAvanzar');
+    var espera = document.getElementById('espera');
+    var contador = document.getElementById('contador');
+    var segunda = document.getElementById('segundaVersion');
+    var otra = document.getElementById('versionOtra');
+    var btnCerrar = document.getElementById('btnCerrarVersiones');
+    var veredicto = document.getElementById('veredictoVersiones');
+    if(!propia || !btnAvanzar) return;
+
+    propia.addEventListener('input', function(){
+      btnAvanzar.disabled = propia.value.trim() === '';
+    });
+
+    btnAvanzar.addEventListener('click', function(){
+      propia.disabled = true;
+      btnAvanzar.disabled = true;
+      espera.classList.add('activo');
+
+      var t = 30;
+      contador.textContent = t;
+      var intervalo = setInterval(function(){
+        t--;
+        contador.textContent = t;
+        if(t <= 0){
+          clearInterval(intervalo);
+          espera.classList.remove('activo');
+          segunda.style.display = 'block';
+          otra.focus();
+        }
+      }, 1000);
+    });
+
+    btnCerrar.addEventListener('click', function(){
+      if(otra.value.trim() === ''){
+        veredicto.innerHTML = 'Falta la segunda versión.';
+        veredicto.classList.add('visible');
+        return;
+      }
+
+      otra.disabled = true;
+      btnCerrar.disabled = true;
+
+      var v1 = propia.value.toLowerCase();
+      var v2 = otra.value.toLowerCase();
+
+      // Comparación aproximada: contamos palabras distintas en v2 que no aparecen en v1
+      var palabras1 = v1.split(/\s+/).filter(function(p){ return p.length > 4; });
+      var palabras2 = v2.split(/\s+/).filter(function(p){ return p.length > 4; });
+      var nuevas = [];
+      var vistas = {};
+      palabras1.forEach(function(p){ vistas[p] = true; });
+      palabras2.forEach(function(p){
+        if(!vistas[p] && nuevas.indexOf(p) === -1){ nuevas.push(p); }
+      });
+
+      var html = '';
+      if(nuevas.length === 0){
+        html = 'Las dos versiones son casi la misma cosa.' +
+          '<strong>Todavía estás en tu tribuna.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">No es un fracaso. Es información: la segunda versión necesita más distancia, más tiempo, o más honestidad. Vuelve a intentarlo en unos días.</span>';
+      } else if(nuevas.length < 4){
+        html = 'La segunda versión tiene ' + nuevas.length + ' elementos nuevos.' +
+          '<strong>Uno de esos es el nuevo sector.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">No hace falta que sean muchos. Un solo detalle que no estaba en la primera versión cambia la orientación de la escena.</span>';
+      } else {
+        html = 'La segunda versión tiene ' + nuevas.length + ' elementos nuevos.' +
+          '<strong>El movimiento se hizo.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">La escena ya no está orientada como estaba. Lo que hagas con eso es otra cosa, y no importa ahora.</span>';
+      }
+      veredicto.innerHTML = html;
+      veredicto.classList.add('visible');
+    });
+  })();
 </script>
 </body>
 </html>
