@@ -66,7 +66,6 @@
   .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
     font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
     max-width:26rem; margin:0 auto;}
-  .perla.grave p{color:var(--blanco-humo);}
   .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
     background:rgba(201,168,76,.017);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -74,27 +73,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +93,73 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+
+  /* ── interactivo: quién te lee la cara ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
-    cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .pregunta-bloque{margin-bottom:1.4rem;}
+  .pregunta-titulo{font-family:'Cormorant Garamond',serif; font-size:1rem;
+    color:var(--blanco-humo); display:block; margin-bottom:.5rem; font-style:italic;}
+  .pregunta-campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo); resize:vertical; min-height:2.8rem;}
+  .pregunta-campo::placeholder{color:var(--lejos); font-style:italic;}
+  .pregunta-campo:focus{border-color:var(--oro-polvo); outline:none;}
+  .cerrar{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease; margin-top:1.2rem;}
+  .cerrar:hover:not(:disabled), .cerrar:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .cerrar:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +178,16 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto,.aviso{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +204,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="aviso"><span class="aviso-label">Antes de seguir</span>
   <p><em>Este umbral está escrito del otro lado entero.</em></p>
 </div>
@@ -300,19 +270,84 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Dhammapada</span></a> &middot; 252</cite>
 </div>
 
+<!-- ══════════════ INTERACTIVO: QUIÉN TE LEE LA CARA ══════════════ -->
 <div class="geo" id="geoumbral110">
-  <span class="geo-label">De quién eres tú</span>
+  <span class="geo-label">Quién te lee la cara</span>
+  <p class="geo-instruccion">Tres preguntas sobre alguien que te conoce bien y que está montando un registro sobre ti sin saberlo.</p>
   <div class="panel">
-    <label class="campo"><span>alguien que te conoce bien.</span><textarea id="eumbral110_0" rows="2" placeholder=""></textarea></label>
-    <label class="campo"><span>¿qué cosa tuya no puede controlar esa persona?</span><textarea id="eumbral110_1" rows="2" placeholder=""></textarea></label>
-    <button type="button" class="marcable" id="bumbral110">Listo</button>
+    <div class="pregunta-bloque">
+      <span class="pregunta-titulo">1. ¿Quién entra a un lugar y lo primero que hace es mirarte la cara?</span>
+      <textarea class="pregunta-campo" id="p1" rows="2"
+        placeholder="Una persona, un nombre, un vínculo."></textarea>
+    </div>
+    <div class="pregunta-bloque">
+      <span class="pregunta-titulo">2. ¿Qué cosa tuya no puede controlar esa persona, aunque quisiera?</span>
+      <textarea class="pregunta-campo" id="p2" rows="2"
+        placeholder="Tu humor, tus silencios, tu cansancio, algo tuyo que ella no puede predecir."></textarea>
+    </div>
+    <div class="pregunta-bloque">
+      <span class="pregunta-titulo">3. ¿Cuándo fue la última vez que le dijiste en voz alta qué te estaba pasando, sin que lo tuviera que adivinar?</span>
+      <textarea class="pregunta-campo" id="p3" rows="2"
+        placeholder="Una fecha, un momento, o 'no me acuerdo'."></textarea>
+    </div>
+    <button type="button" class="cerrar" id="btnCerrarLeer">Ver</button>
+    <div class="veredicto" id="veredictoLeer"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral110"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Cuando te quedes callado y notes que alguien te está leyendo la cara, di en voz alta qué está pasando. Una frase. Sin explicar, sin justificar y sin pedir nada.</p>
-  <p>Y si no sabes qué está pasando, di eso mismo. <strong>No saber es información</strong>, y es de las más útiles que puedes dar: aclara que no hay un mensaje escondido.</p>
-  <p>Después no revises si sirvió. Revisar si sirvió es la manera de convertirlo en un operativo.</p>
+  <p>Si en la tercera pregunta la respuesta fue <em>no me acuerdo</em> o una fecha muy lejana, no es un dato sobre la relación. Es un dato sobre el silencio. Los silencios que uno no aclara se llenan con la interpretación del otro, y esa interpretación casi nunca es buena.</p>
+  <p>No hay que hacer nada con las tres respuestas. Solo verlas juntas: la persona, lo que no puede controlar, y desde cuándo no le decís qué te pasa. Las tres cosas forman el mapa del operativo que el otro montó sobre vos, y que no depende de vos desmontar.</p>
+</div>
+
+<div class="perla"><p>No se controla el registro ajeno.<br>Se le puede dejar menos huecos<br>para llenar.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Esta semana, en algún momento, vas a quedarte callado.</strong> Sin motivo, sin mensaje, sin nada que decir. Es algo que pasa todos los días y que la mayoría de la gente no registra.</p>
+      <p>Cuando pase, y estés con alguien, <strong>no lo dejes pasar</strong>.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>Decí una frase y nada más.</strong> Tres opciones, todas igual de válidas:</p>
+      <p><em>Me quedé callado por algo mío.</em></p>
+      <p><em>Estoy de mal humor y no es contigo.</em></p>
+      <p><em>No sé por qué estoy así hoy.</em></p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>No expliques nada más.</strong> No cuentes qué te pasó, no justifiques el silencio, no agregues un <em>ya se me va a pasar</em>. La frase sola es el gesto completo.</p>
+      <p>Explicar de más convierte la frase en un tema, y el tema abre la puerta al registro que estás tratando de no alimentar.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>No esperes que la otra persona conteste bien.</strong> Puede no contestar, puede decir <em>ah, ok</em>, puede pasar de largo. Nada de eso significa que el gesto no sirvió.</p>
+      <p>El gesto no es para la respuesta inmediata. Es para el archivo del otro: en lugar de un silencio vacío, queda una frase. La frase sola no cambia nada; quince frases reemplazan la interpretación por el dato.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p><strong>Repetilo tres veces esta semana, con la misma persona.</strong> Tres frases, tres momentos, tres silencios aclarados.</p>
+      <p>No hace falta hacerlo con todos. Con uno alcanza, y con el que más te lee la cara.</p>
+      <p>Al final de la semana, no evalúes. Ni si sirvió, ni si el otro lo notó, ni si la relación cambió. Anotá solo si pudiste hacerlo las tres veces. Ese número es el único dato que importa.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver, y va a volver seguido. Cada vez que te quedes callado, la tentación de no decir nada va a estar ahí, intacta, con el mismo argumento de siempre: <em>no vale la pena, es un momento, ya va a pasar</em>.</p>
+  <p>Lo que cambia con la práctica no es que dejes de callarte. Es que la frase sale más rápido, y el silencio dura menos. La primera vez, tres horas. La quinta, veinte minutos. La décima, sale sin que te des cuenta, en el mismo momento en que lo pensás.</p>
+  <p>Eso no se busca y no se decide. Se practica, y aparece.</p>
 </div>
 
 <div class="bloque">
@@ -325,7 +360,6 @@
   <p><em>Lo segundo, unos días más tarde, fue que él venía haciendo lo mismo hacía ocho meses y le parecía perfectamente razonable.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="cierre.html"><span class="continuar-nombre">El movimiento</span>
@@ -336,29 +370,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral110'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral110'), g=document.getElementById('gumbral110');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>Esa persona tiene un operativo. Lo montó sin darse cuenta y le sale caro, igual que a ti.</strong><br><strong>No hay nada que hacer con eso, salvo una cosa: que tenga menos huecos que llenar.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto,.aviso';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -371,6 +384,45 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var p1 = document.getElementById('p1');
+    var p2 = document.getElementById('p2');
+    var p3 = document.getElementById('p3');
+    var btn = document.getElementById('btnCerrarLeer');
+    var veredicto = document.getElementById('veredictoLeer');
+    if(!p1 || !btn) return;
+
+    btn.addEventListener('click', function(){
+      var t1 = p1.value.trim();
+      var t2 = p2.value.trim();
+      var t3 = p3.value.trim();
+
+      if(!t1 || !t2 || !t3){
+        veredicto.innerHTML = 'Faltan preguntas.';
+        veredicto.classList.add('visible');
+        return;
+      }
+
+      [p1,p2,p3].forEach(function(p){ p.disabled = true; });
+      btn.disabled = true;
+
+      var pista = /no me acuerdo|no recuerdo|nunca|no sé|hace mucho|ni idea/i;
+      var esViejo = pista.test(t3) || t3.length < 5;
+
+      var html = '';
+      if(esViejo){
+        html = 'Hace mucho que no le dices qué te pasa.' +
+          '<strong>Ese silencio es lo que el otro completa.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">No es un dato sobre la relación. Es un dato sobre el hueco. Y los huecos se llenan con la interpretación más antigua, no con la más benévola.</span>';
+      } else {
+        html = 'Hay una fecha reciente.' +
+          '<strong>El gesto ya está empezando.</strong>' +
+          '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Lo único que falta es que la frase salga también en los momentos chicos, sin que nadie pregunte, sin que sea un tema.</span>';
+      }
+      veredicto.innerHTML = html;
+      veredicto.classList.add('visible');
+    });
+  })();
 </script>
 </body>
 </html>
