@@ -74,27 +74,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +94,67 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: la invitación de la semana ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .invitacion{display:block; width:100%; text-align:left; background:none;
+    border:1px solid var(--separador); padding:1.1rem 1.2rem; margin-bottom:.8rem;
     font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
-    cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    color:var(--gris-calido); cursor:pointer; transition:all .35s ease;}
+  .invitacion:hover{color:var(--blanco-humo); border-color:var(--oro-polvo);}
+  .invitacion .op-num{font-family:'Cormorant Garamond',serif; font-size:.7rem;
+    letter-spacing:.3em; color:var(--oro-polvo); display:block; margin-bottom:.4rem;
+    text-transform:uppercase;}
+  .invitacion[aria-pressed="true"]{color:var(--blanco-humo); border-color:var(--oro-tenue);
+    background:rgba(201,168,76,.04);}
+  .invitacion[aria-pressed="true"] .op-num{color:var(--oro);}
+  .cerrar{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:1rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.28em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease; margin-top:1rem;}
+  .cerrar:hover:not(:disabled), .cerrar:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .cerrar:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +173,16 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +199,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>A Tomás le va bien.</p>
   <p>Se levanta a las seis y diez. Desayuna lo mismo. Trabaja, camina cuarenta minutos, come temprano, lee un rato, se acuesta. Los martes tiene una cosa fija y los jueves otra. La casa está en orden. Las cuentas al día.</p>
@@ -297,19 +262,78 @@
   <p>Pero el perímetro ya no va a ser invisible. Y un perímetro que se ve se empieza a abrir por donde uno quiera, que es una libertad que antes no tenía.</p>
 </div>
 
+<!-- ══════════════ INTERACTIVO: LA INVITACIÓN DE LA SEMANA ══════════════ -->
 <div class="geo" id="geoumbral050">
-  <span class="geo-label">Lo que dejaste de hacer</span>
+  <span class="geo-label">La invitación que ya está ahí</span>
+  <p class="geo-instruccion">Las tres cosas que ya sabes que vas a rechazar esta semana. Escríbelas. Después elige la que te da más pereza.</p>
   <div class="panel">
-    <label class="campo"><span>Tres cosas que hacías hace cinco años y ya no haces.</span><textarea id="eumbral050_0" rows="2" placeholder=""></textarea></label>
-    <button type="button" class="marcable" id="bumbral050">Listo</button>
+    <button type="button" class="invitacion" data-op="0">
+      <span class="op-num">Invitación 1</span>
+      Algo que ya te propusieron y todavía no contestaste.
+    </button>
+    <button type="button" class="invitacion" data-op="1">
+      <span class="op-num">Invitación 2</span>
+      Algo que va a aparecer estos días, y que ya sabes cómo vas a esquivar.
+    </button>
+    <button type="button" class="invitacion" data-op="2">
+      <span class="op-num">Invitación 3</span>
+      Algo que ni siquiera te van a proponer, porque ya saben que no.
+    </button>
+    <button type="button" class="cerrar" id="btnCerrarInv">Guardar la elegida</button>
+    <div class="veredicto" id="veredictoInv"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral050"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Esta semana va a haber una invitación, un plan, una llamada en mal momento. Algo que no estaba previsto.</p>
-  <p>Di que sí a una. No a todas: a una.</p>
-  <p>Y no elijas la más atractiva. <strong>Elige la que te da más pereza</strong>, que es la que mejor te va a mostrar cómo funciona el perímetro: vas a notar, en el mismo momento de decidir, cuántos motivos razonables aparecen para no ir.</p>
-  <p>Después no evalúes si valió la pena. Esa evaluación la hace el perímetro.</p>
+  <p>Si tuviste que pensarlo mucho para elegir, la más incómoda de las tres es la que importa. No la más atractiva. La que te dio más pereza imaginar haciendo.</p>
+  <p>Esa es la que te va a mostrar, en el momento de decidir, cuántos motivos razonables aparecen para no ir. Y esa lista de motivos —no la invitación— es el dato.</p>
+</div>
+
+<div class="perla"><p>El perímetro no se ve<br>desde adentro.<br>Se ve desde la puerta<br>que estuviste a punto de cruzar.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>Esta semana va a llegar una invitación</strong> —un plan, un llamado, algo que no estaba previsto.</p>
+      <p>Cuando llegue, <strong>contesta en el momento</strong>. No la pienses. No digas <em>te aviso</em>. No la dejes para después.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p>En los tres segundos siguientes a haber dicho que sí, van a aparecer motivos. Todos razonables. Todos buenos. Que esa noche tenías otra cosa, que al otro día madrugas, que ese grupo no es el tuyo.</p>
+      <p><strong>Anótalos.</strong> En la nota del teléfono, en el orden en que aparecen.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>Ve igual.</strong> No importa si al final te aburres, si la pasas mal, si te arrepientes. Esa evaluación la va a hacer el perímetro si lo dejas, y no es el punto.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>Al día siguiente, lee la lista de motivos.</strong> No la evalúes. Solo mira cuántos había y qué tan buenos eran.</p>
+      <p>Una lista de tres motivos para no ir a algo que ya aceptaste: el perímetro está trabajando bien.</p>
+      <p>Una lista de siete motivos en tres segundos: el perímetro tiene la puerta cerrada con llave.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p>No lo comentes con nadie esa semana. Ni con la persona que te invitó, ni con quien te pregunta cómo estuvo.</p>
+      <p>El perímetro se defiende con explicaciones: si cuentas que fuiste, el perímetro va a encontrar la manera de hacerte sentir que fue un esfuerzo sin recompensa. No le des material.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>No es algo que vuelva, porque no es un episodio: es un rasgo de la semana que se ve una vez y después se puede ver siempre.</p>
+  <p>La próxima invitación que llegue, aunque no digas que sí, vas a notar los motivos apareciendo. Y ese notarlos es el cambio entero. Antes no había motivos: había una sensación de <em>no me da</em> que no se discutía.</p>
+  <p>Repite el gesto cuando entres a un lugar nuevo, cuando cambies de trabajo, cuando alguien te proponga algo que hace diez años no harías. La operación no se automatiza: se practica.</p>
 </div>
 
 <div class="bloque">
@@ -322,7 +346,6 @@
   <p><em>Se acordó el martes y pensó que lo llamaba el fin de semana.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-06.html"><span class="continuar-nombre">Lo que sí dependía</span>
@@ -333,29 +356,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral050'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral050'), g=document.getElementById('gumbral050');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>Si alguna te costó recordarla, no la dejaste: se fue sola.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -368,6 +370,38 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var opciones = document.querySelectorAll('.invitacion');
+    var btn = document.getElementById('btnCerrarInv');
+    var veredicto = document.getElementById('veredictoInv');
+    if(!opciones.length || !btn) return;
+
+    var elegida = null;
+
+    opciones.forEach(function(op){
+      op.addEventListener('click', function(){
+        opciones.forEach(function(o){ o.setAttribute('aria-pressed','false'); });
+        op.setAttribute('aria-pressed','true');
+        elegida = op.querySelector('.op-num').textContent;
+      });
+    });
+
+    btn.addEventListener('click', function(){
+      if(!elegida){
+        veredicto.innerHTML = 'Elige una primero.';
+        veredicto.classList.add('visible');
+        return;
+      }
+      opciones.forEach(function(o){ o.disabled = true; });
+      btn.disabled = true;
+
+      veredicto.innerHTML =
+        'La ' + elegida.toLowerCase() + ' es la que importa.<br>' +
+        '<strong>Esa es la que te va a mostrar el perímetro.</strong>' +
+        '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Guárdala. No la anotes en un lugar donde la vayas a ver todo el tiempo: el perímetro también sabe leer.</span>';
+      veredicto.classList.add('visible');
+    });
+  })();
 </script>
 </body>
 </html>
