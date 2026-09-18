@@ -74,27 +74,13 @@
   .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
-  .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
-  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
-    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
-  .sep.visible{opacity:1;}
   .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
   .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
     color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
   .puerta a:hover{color:var(--oro);}
-  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
-    background:rgba(107,122,128,.03);
-    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .aviso.visible{opacity:1; transform:none;}
-  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
-    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
-  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
-  .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,87 +94,73 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+
+  /* ── interactivo: el cronómetro del consejo ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
   .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
     text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
-    margin-bottom:.4rem;}
+    margin-bottom:.6rem;}
   .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
-  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
-  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
-  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
-    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
-  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador); margin-top:1.2rem;}
-  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
-    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
-  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
-  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
-  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
-    border:1px solid var(--separador);}
-  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
-  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
-    margin-bottom:.9rem; text-align:center;}
-  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
-    margin-bottom:.45rem;}
-  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
-    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
-    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
-  .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
-  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
-    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
-    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
-    color:var(--blanco-humo); resize:vertical;}
-  .campo::placeholder{color:var(--lejos); font-style:italic;}
-  .campo:focus{border-color:var(--oro-polvo);}
-  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
-    display:block; margin-bottom:.5rem;}
-  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
-    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
-    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
-    cursor:pointer; transition:all .3s ease;}
-  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.6rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.8rem 1.5rem;}
+  .crono-display{text-align:center; font-family:'Cormorant Garamond',serif;
+    font-size:clamp(2.6rem,10vw,4rem); font-weight:300; color:var(--oro);
+    letter-spacing:.06em; line-height:1; padding:1rem 0 1.4rem;
+    font-variant-numeric:tabular-nums;}
+  .crono-display.activo{color:var(--ambar);}
+  .crono-botones{display:grid; grid-template-columns:1fr 1fr; gap:.6rem; margin-bottom:.6rem;}
+  .crono-btn{background:var(--negro); border:1px solid var(--separador); padding:.9rem .5rem;
+    font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--oro-polvo); cursor:pointer; transition:all .3s ease;}
+  .crono-btn:hover:not(:disabled), .crono-btn:focus-visible:not(:disabled){color:var(--oro-tenue);
     border-color:var(--oro-polvo);}
-  .accion:disabled{color:#241d12; cursor:not-allowed;}
-  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+  .crono-btn:disabled{color:#241d12; cursor:not-allowed;}
+  .crono-btn.principal{grid-column:1 / -1; border-color:var(--oro-polvo);}
+  .crono-btn.principal:hover:not(:disabled){color:var(--oro); border-color:var(--oro-tenue);}
+  .marca{display:grid; grid-template-columns:2.2rem 1fr auto; gap:.8rem; align-items:baseline;
+    padding:.7rem .2rem; border-bottom:1px solid rgba(42,36,24,.6); font-size:1rem;
+    color:var(--gris-calido);}
+  .marca:last-of-type{border-bottom:none;}
+  .marca-num{font-family:'Cormorant Garamond',serif; font-size:.9rem; color:var(--oro-polvo);
+    letter-spacing:.08em;}
+  .marca-txt{font-style:italic; color:var(--blanco-humo);}
+  .marca-tiempo{font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--oro);
+    font-variant-numeric:tabular-nums;}
+  .marcas-lista{margin-top:1.4rem; min-height:2rem;}
+  .veredicto{text-align:center; margin-top:1.8rem; min-height:3rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
-    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
-  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
-  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
-  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
-    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
-    margin-top:.4rem;}
-  /* ── el sendero ── */
-  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
-    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transition:opacity .8s ease;}
+  .veredicto.visible{opacity:1;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal; display:block;
+    margin-top:.6rem;}
+
+  /* ── el gesto ── */
+  .gesto{margin:5rem 0 4rem; padding:2.6rem 1.8rem 2.2rem;
+    border:1px solid var(--oro-polvo); position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
-  .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .gesto.visible{opacity:1; transform:none;}
+  .gesto::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
-  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+  .gesto-paso{display:grid; grid-template-columns:2.2rem 1fr; gap:1.1rem; padding:1.15rem 0;
     border-top:1px solid var(--separador);}
-  .paso:first-of-type{border-top:none; padding-top:.2rem;}
-  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
-    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
-  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
-  .paso p strong{color:var(--blanco-humo);}
-  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
-  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
-  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .gesto-paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .gesto-num{font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:300;
+    color:var(--oro-polvo); line-height:1; padding-top:.3rem;}
+  .gesto-txt p{margin-bottom:.6rem; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .gesto-txt p:last-child{margin-bottom:0;}
+  .gesto-txt p strong{color:var(--blanco-humo); font-weight:500;}
+  .gesto-txt p em{color:var(--blanco-humo); font-style:italic;}
+
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
     opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
@@ -207,18 +179,17 @@
   .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
     text-transform:uppercase; color:var(--oro-polvo);}
   @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
   @media (max-width:600px){
     .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
-    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
     .cita{padding-left:1.2rem;}
+    .gesto-paso{grid-template-columns:1.8rem 1fr; gap:.8rem;}
+    .crono-botones{grid-template-columns:1fr;}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
-    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+    .bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto{
       opacity:1!important; transform:none!important;}
   }
-
 </style>
 </head>
 <body>
@@ -235,6 +206,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p>Tomás tiene la vida acomodada y le costó años acomodarla.</p>
   <p>Se levanta a la misma hora. Desayuna lo mismo. Sabe qué va a hacer el martes a las seis y le gusta saberlo. No es rigidez: es que así funciona bien, y le tomó bastante averiguar cómo funciona bien.</p>
@@ -279,21 +251,70 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">La Rochefoucauld</span></a> &middot; Máximas, 1665</cite>
 </div>
 
+<!-- ══════════════ INTERACTIVO: EL CRONÓMETRO ══════════════ -->
 <div class="geo" id="geoumbral000">
-  <span class="geo-label">Tu lista</span>
+  <span class="geo-label">Dónde aparece el primero</span>
+  <p class="geo-instruccion">Piensa en la última conversación donde alguien te contó algo que no tenía arreglo. Marca el minuto en que apareció cada consejo.</p>
   <div class="panel">
-    <label class="campo"><span>Primera persona</span><textarea id="eumbral000_0" rows="2" placeholder=""></textarea><span class="par"><button type="button" class="marcable par-op" data-o="0">la elegí</button><button type="button" class="marcable par-op" data-o="1">me tocó</button></span></label>
-    <label class="campo"><span>Segunda persona</span><textarea id="eumbral000_1" rows="2" placeholder=""></textarea><span class="par"><button type="button" class="marcable par-op" data-o="0">la elegí</button><button type="button" class="marcable par-op" data-o="1">me tocó</button></span></label>
-    <label class="campo"><span>Tercera persona</span><textarea id="eumbral000_2" rows="2" placeholder=""></textarea><span class="par"><button type="button" class="marcable par-op" data-o="0">la elegí</button><button type="button" class="marcable par-op" data-o="1">me tocó</button></span></label>
-    <button type="button" class="marcable" id="bumbral000">Listo</button>
+    <div class="crono-display" id="cronoDisplay">00:00</div>
+    <div class="crono-botones">
+      <button type="button" class="crono-btn principal" id="btnIniciar">Iniciar el reloj</button>
+      <button type="button" class="crono-btn" id="btnMarcar" disabled>Aquí apareció un consejo</button>
+      <button type="button" class="crono-btn" id="btnDetener" disabled>Corté / terminó</button>
+    </div>
+    <div class="marcas-lista" id="marcasLista"></div>
+    <div class="veredicto" id="veredictoCrono"></div>
   </div>
-  <div class="geo-estado"><span class="glosa" id="gumbral000"></span></div>
 </div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Va a haber próxima vez: esa es la única garantía que da este libro. La hermana vuelve a llamar, el lunes vuelve a pasar.</p>
-  <p>Cuando pase, no des ni un consejo. Ninguno. Cuarenta minutos sin proponer nada.</p>
-  <p>Van a salir solos, porque los consejos son lo que uno hace con las manos cuando no sabe qué hacer con lo que está escuchando. Si se te escapa uno, no te corrijas en voz alta.</p>
-  <p>Y fíjate en qué minuto quisiste cortar. Ese dato vale más que la llamada entera.</p>
+  <p>Lo que acaba de pasar no fue un ejercicio. Es lo que efectivamente ocurre en cada llamada, y ahora está sobre la mesa.</p>
+  <p>Si los consejos aparecieron entre el minuto cinco y el minuto diez, la conversación no llegó nunca a la mitad. El consejo no fue una respuesta a lo que la otra persona dijo: fue una respuesta a tu propia incomodidad, y llegó antes de que el otro hubiera terminado de contar lo que tenía que contar.</p>
+  <p>Si aparecieron más tarde, después de los veinte minutos, la escena tuvo tiempo de desarrollarse. Los consejos que aparecen al final son menos urgentes, y también menos necesarios.</p>
+  <p>Las dos cosas son datos. Lo que no es un dato es lo que la cabeza hace con ellos cuando el reloj no está corriendo: convertir el momento en una sensación, y la sensación en <em>fue una llamada difícil</em>.</p>
+</div>
+
+<div class="perla"><p>El consejo llegó antes<br>que la otra persona.</p></div>
+
+<!-- ══════════════ EL GESTO ══════════════ -->
+<div class="gesto">
+  <div class="gesto-paso">
+    <span class="gesto-num">1</span>
+    <div class="gesto-txt">
+      <p><strong>La próxima vez que alguien te cuente algo que no tiene arreglo,</strong> antes de que empiece, abre el cronómetro del teléfono y ponlo en marcha. Dejalo corriendo a la vista.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">2</span>
+    <div class="gesto-txt">
+      <p><strong>Cada vez que aparezca un consejo armado —lo que le dirías, cómo lo resolverías— no lo digas.</strong> Solo mira el reloj y guarda el minuto en la cabeza.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">3</span>
+    <div class="gesto-txt">
+      <p><strong>Cuando la conversación termine, para el reloj.</strong> Anota dos cosas en la nota del teléfono: cuánto duró, y en qué minuto apareció el primer consejo.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">4</span>
+    <div class="gesto-txt">
+      <p><strong>No le cuentes a nadie que hiciste esto.</strong> Ni a la persona que te contó, ni a un amigo, ni en voz alta al salir. Contarlo convierte el gesto en una anécdota, y una anécdota pide testigos.</p>
+    </div>
+  </div>
+  <div class="gesto-paso">
+    <span class="gesto-num">5</span>
+    <div class="gesto-txt">
+      <p><strong>Repítelo tres veces en dos semanas.</strong> Tres llamadas, tres anotaciones. Al final vas a tener tres números.</p>
+      <p>Si el minuto del primer consejo fue subiendo —de seis a doce, de doce a veinte—, algo está cambiando. Y no es que hayas aprendido a escuchar mejor: es que la conversación ahora puede llegar más lejos antes de que la cortes.</p>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver, y no hace falta esperar a la próxima llamada de tu hermana. Vuelve cada vez que alguien te cuenta algo que no tiene solución, y en cada una el consejo va a aparecer con la misma velocidad de la primera vez.</p>
+  <p>Lo que cambia no es que aparezca menos. Es que sabes en qué momento aparece, y ese saber es la única distancia disponible entre el consejo y la boca.</p>
+  <p>No hay una versión avanzada donde dejas de tener el impulso. Hay una versión donde lo reconoces antes de decirlo. El minuto es lo que estás entrenando.</p>
 </div>
 
 <div class="bloque">
@@ -306,7 +327,6 @@
   <p><em>Los dos colgaron creyendo que el otro estaba bien.</em></p>
 </div>
 
-
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
   <a href="umbral-01.html"><span class="continuar-nombre">El operativo</span>
@@ -317,29 +337,8 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var raiz=document.getElementById('geoumbral000'); if(!raiz) return;
-    raiz.querySelectorAll('.par').forEach(function(p){
-      p.querySelectorAll('.par-op').forEach(function(b){
-        b.addEventListener('click', function(){
-          var on = b.getAttribute('aria-pressed')==='true';
-          p.querySelectorAll('.par-op').forEach(function(o){ o.setAttribute('aria-pressed','false'); });
-          b.setAttribute('aria-pressed', on ? 'false' : 'true');
-        });
-      });
-    });
-    var bt=document.getElementById('bumbral000'), g=document.getElementById('gumbral000');
-    bt.addEventListener('click', function(){
-      var vacio=true;
-      raiz.querySelectorAll('textarea').forEach(function(t){ if(t.value.trim()) vacio=false; });
-      g.innerHTML = vacio ? 'Escribe algo primero.' : '<strong>La lista es el veredicto.</strong>';
-    });
-  })();
-
-
-  (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.geo,.continuar,.cita,.dicho,.gesto';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -352,6 +351,98 @@
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
 
+  (function(){
+    var display = document.getElementById('cronoDisplay');
+    var btnIniciar = document.getElementById('btnIniciar');
+    var btnMarcar = document.getElementById('btnMarcar');
+    var btnDetener = document.getElementById('btnDetener');
+    var marcasLista = document.getElementById('marcasLista');
+    var veredicto = document.getElementById('veredictoCrono');
+    if(!display || !btnIniciar) return;
+
+    var inicio = 0, intervalo = null, activo = false, marcas = [];
+
+    function formato(ms){
+      var s = Math.floor(ms / 1000);
+      var m = Math.floor(s / 60);
+      s = s % 60;
+      return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    }
+
+    function actualizar(){
+      if(!activo) return;
+      display.textContent = formato(Date.now() - inicio);
+    }
+
+    btnIniciar.addEventListener('click', function(){
+      if(activo) return;
+      inicio = Date.now();
+      activo = true;
+      marcas = [];
+      marcasLista.innerHTML = '';
+      veredicto.classList.remove('visible');
+      veredicto.innerHTML = '';
+      display.classList.add('activo');
+      display.textContent = '00:00';
+      intervalo = setInterval(actualizar, 250);
+      btnIniciar.disabled = true;
+      btnMarcar.disabled = false;
+      btnDetener.disabled = false;
+    });
+
+    btnMarcar.addEventListener('click', function(){
+      if(!activo) return;
+      var t = Date.now() - inicio;
+      var m = Math.floor(t / 1000 / 60);
+      marcas.push(m);
+      var num = marcas.length;
+      var fila = document.createElement('div');
+      fila.className = 'marca';
+      fila.innerHTML =
+        '<span class="marca-num">' + (num < 10 ? '0' : '') + num + '</span>' +
+        '<span class="marca-txt">consejo ' + num + '</span>' +
+        '<span class="marca-tiempo">min ' + m + '</span>';
+      marcasLista.appendChild(fila);
+    });
+
+    btnDetener.addEventListener('click', function(){
+      if(!activo) return;
+      activo = false;
+      clearInterval(intervalo);
+      var tFinal = Date.now() - inicio;
+      display.textContent = formato(tFinal);
+      display.classList.remove('activo');
+      btnIniciar.disabled = false;
+      btnMarcar.disabled = true;
+      btnDetener.disabled = true;
+
+      var duracionMin = Math.floor(tFinal / 1000 / 60);
+      var html = '';
+
+      if(marcas.length === 0){
+        html = 'Ninguna marca.<br>' +
+               '<strong>No apareció ningún consejo, o no lo registraste.</strong>' +
+               '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">Si la conversación duró ' + duracionMin + ' minutos y no hubo consejos, eso también es un dato: la cabeza sostuvo la escena hasta el final.</span>';
+      } else {
+        var primero = marcas[0];
+        var ultimo = marcas[marcas.length - 1];
+        html = marcas.length + (marcas.length === 1 ? ' consejo' : ' consejos') +
+               ' · primero en el minuto ' + primero +
+               ' · último en el minuto ' + ultimo + '.';
+        if(duracionMin > 0){
+          var porcentaje = Math.round((primero / duracionMin) * 100);
+          html += '<strong>El primer consejo apareció al ' + porcentaje + '% de la conversación.</strong>';
+          if(porcentaje < 40){
+            html += '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">La otra persona no había terminado de contar lo que tenía que contar.</span>';
+          } else {
+            html += '<span style="display:block; margin-top:1rem; color:var(--gris-calido); font-size:.95rem;">La escena tuvo tiempo de desarrollarse. El consejo llegó tarde y con menos urgencia.</span>';
+          }
+        }
+      }
+      veredicto.innerHTML = html;
+      veredicto.classList.add('visible');
+    });
+  })();
 </script>
 </body>
 </html>
