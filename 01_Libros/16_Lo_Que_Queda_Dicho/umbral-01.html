@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,40 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── cómo terminan tus discusiones ── */
+  .modos{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .modos-encabezado{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.88rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:1rem;}
+  .modo-fila{padding:.9rem .3rem; border-bottom:1px solid var(--separador);}
+  .modo-fila:last-of-type{border-bottom:none;}
+  .modo-nombre{display:block; font-family:'EB Garamond',Georgia,serif;
+    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.6rem;}
+  .modo-nombre small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.88rem; color:var(--gris-calido); margin-top:.2rem;}
+  .modo-opciones{display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .modo-btn{background:var(--negro); border:none; padding:.7rem .4rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.86rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .modo-btn:hover, .modo-btn:focus-visible{color:var(--blanco-humo);}
+  .modo-btn[aria-pressed="true"][data-v="mucho"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .modo-btn[aria-pressed="true"][data-v="poco"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .modo-btn[aria-pressed="true"][data-v="nunca"]{color:var(--lejos); background:rgba(42,36,24,.4);}
+  .modos .accion{margin-top:1.1rem;}
+  .modos-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .modos-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .modos-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .modos-resultado-texto:last-child{margin-bottom:0;}
+  .modos-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  @media (max-width:600px){
+    .modo-opciones{grid-template-columns:1fr 1fr;}
+  }
 </style>
 </head>
 <body>
@@ -316,11 +344,73 @@
   <cite><span class="obra">L. P. Hartley</span> &middot; El mensajero, 1953</cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">Cómo terminan tus discusiones</span>
+  <p class="geo-instruccion">Piensa en las últimas discusiones que has tenido con alguien cercano. Para cada manera de terminar, marca si te pasa mucho, poco o nunca. No pienses en la peor: piensa en lo habitual.</p>
+  <div class="panel">
+    <div class="modos" id="modos">
+      <span class="modos-encabezado">Cuando discutís con alguien cercano...</span>
+
+      <div class="modo-fila" data-m="buscar">
+        <span class="modo-nombre">Uno busca y lo encuentra
+          <small>alguien fue al archivo y salió con la frase exacta</small>
+        </span>
+        <div class="modo-opciones">
+          <button class="modo-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="modo-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="modo-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+          <button class="modo-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="modo-fila" data-m="sinbuscar">
+        <span class="modo-nombre">Discutimos sin buscar
+          <small>los dos sostienen su versión y no se resuelve</small>
+        </span>
+        <div class="modo-opciones">
+          <button class="modo-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="modo-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="modo-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+          <button class="modo-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="modo-fila" data-m="ceder">
+        <span class="modo-nombre">Uno de los dos cede para no seguir
+          <small>el asunto se disuelve sin resolverse</small>
+        </span>
+        <div class="modo-opciones">
+          <button class="modo-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="modo-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="modo-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+          <button class="modo-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <button class="accion" id="btnModos" disabled>Ver el resultado</button>
+      <div id="modosResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Va a pasar que te acuerdes de algo distinto de como se acuerda el otro, y que puedas comprobarlo.</p>
-  <p>Prueba una vez con las cuatro palabras: <em>yo me acuerdo distinto.</em></p>
-  <p>Y después no aclares, no fundamentes y no busques. Deja que quede así, sin resolver, el tiempo que aguantes.</p>
-  <p>Va a dar incomodidad. Esa incomodidad es exactamente el lugar donde antes se arreglaban las cosas.</p>
+  <p>Lo que acabas de producir no es una estadística sobre tus peleas. Es un dato sobre qué modo de cierre usas más, y eso cambió en los últimos diez o quince años sin que nadie lo decidiera.</p>
+  <p><strong>"Uno busca y lo encuentra"</strong> es la manera nueva. Casi todos los que la marcan como "mucho" tienen una relación donde uno de los dos escribe más que el otro, o los dos escriben mucho. Antes no existía. No había forma de que alguien saliera de la cocina con el teléfono en la mano y tuviera razón con fecha y hora.</p>
+  <p><strong>"Discutimos sin buscar"</strong> es la manera vieja y todavía la más común. Los dos sostienen su versión, ninguno puede probar nada, y en algún momento el tema se agota. Lo que se cierra no es la discusión: es el cansancio. Y la historia compartida se rehace con las dos versiones adentro.</p>
+  <p><strong>"Uno cede para no seguir"</strong> es la tercera manera y la más silenciosa. No gana nadie y no se pierde nada visible: alguien decide que no vale la pena y el asunto se disuelve. En un matrimonio largo es el modo más frecuente de todos, y el que deja menos marcas.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Va a pasar que te acuerdes de algo distinto de como se acuerda el otro. Un detalle chico: qué se dijo, en qué orden, quién empezó. No lo busques todavía.</p></div>
+  <div class="paso"><span class="paso-nombre">Las cuatro palabras</span><p>Decí <em>yo me acuerdo distinto</em>. Cuatro palabras, sin más. No agregues "y además tengo el mensaje", no agregues nada que haga sonar que podrías probarlo.</p></div>
+  <div class="paso"><span class="paso-nombre">No aclares</span><p>Si el otro te dice que lo busque, no lo busques. Si el otro va a buscarlo él, no lo mires por encima del hombro. Si aparece la frase y te da la razón, no digas <em>¿viste?</em>.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Abrí la nota del teléfono. Anotá dos cosas: la fecha y una sola palabra sobre qué pasó. <em>Sigue</em>, <em>cerró</em>, <em>raro</em>, <em>quedó</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo repitas esa semana</span><p>Si el tema vuelve solo, lo hablás. Si no vuelve, no lo traés vos. La prueba que no se usa vale más que la prueba que se usa.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima discusión vas a sentir la misma cosa que sintió Rubén —la sensación de que te están moviendo el piso— y vas a ir al teléfono sin pensarlo, como fue a buscarlo él. Cuando te des cuenta, abrí la nota y agregá la fecha. Si te acordaste de las cuatro palabras antes de abrir, escribí <em>dije</em>. Si te acordaste después, escribí <em>abrí</em>. Las dos cosas son el dato. <strong>El gesto no es no buscar nunca: es tener anotado cuántas veces el brazo se detuvo antes de tocar el teléfono.</strong></p>
 </div>
 
 <div class="bloque">
@@ -340,7 +430,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -351,6 +441,73 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // cómo terminan tus discusiones
+    var filas=document.querySelectorAll('#modos .modo-fila');
+    var btn=document.getElementById('btnModos');
+    var salida=document.getElementById('modosResultado');
+
+    function habilitar(){
+      var hechas=document.querySelectorAll('#modos .modo-fila[data-eleccion]');
+      btn.disabled = hechas.length < filas.length;
+    }
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.modo-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          habilitar();
+        });
+      });
+    });
+
+    var nombres={
+      buscar:'uno busca y lo encuentra',
+      sinbuscar:'discutimos sin buscar',
+      ceder:'uno cede para no seguir'
+    };
+
+    btn.addEventListener('click',function(){
+      var hechas=document.querySelectorAll('#modos .modo-fila[data-eleccion]');
+      if(hechas.length<filas.length){ salida.innerHTML=''; return; }
+
+      var muchos=[], pocos=[], ninguno=[], noSe=[];
+      hechas.forEach(function(f){
+        var v=f.dataset.eleccion;
+        if(v==='mucho'){ muchos.push(f.dataset.m); }
+        else if(v==='poco'){ pocos.push(f.dataset.m); }
+        else if(v==='nunca'){ ninguno.push(f.dataset.m); }
+        else { noSe.push(f.dataset.m); }
+      });
+
+      var html='<div class="modos-resultado">';
+      html+='<span class="modos-resultado-etiqueta">Lo que dice el umbral</span>';
+
+      if(muchos.length===0){
+        html+='<p class="modos-resultado-texto">Ninguno en <strong>mucho</strong>. Eso significa que no tienes un modo por defecto, o que no reconoces el que tenés. Las dos cosas son datos. Volvé a mirar la lista en una semana.</p>';
+      } else if(muchos.length===1){
+        var c=muchos[0];
+        if(c==='buscar'){
+          html+='<p class="modos-resultado-texto">Tu manera más frecuente es <strong>'+nombres[c]+'</strong>. Es la nueva. Antes no existía: no había forma de que alguien saliera de la cocina con el teléfono en la mano y tuviera razón con fecha y hora.</p>';
+          html+='<p class="modos-resultado-texto">Cuando buscás y encontrás, ganás la discusión. Lo que se pierde no aparece en la escena: es la próxima vez, cuando el otro escriba distinto. Y escribir distinto es escribir menos.</p>';
+        } else if(c==='sinbuscar'){
+          html+='<p class="modos-resultado-texto">Tu manera más frecuente es <strong>'+nombres[c]+'</strong>. Es la vieja, y es la que sostuvo a las parejas de antes sin que nadie la defendiera. Los dos sostienen su versión, ninguno prueba nada, y en algún momento el tema se agota.</p>';
+          html+='<p class="modos-resultado-texto">Lo que se cierra no es la discusión: es el cansancio. Y la historia común se sigue rehaciendo con las dos versiones adentro, que es lo que hacía antes y lo que el archivo vino a interrumpir.</p>';
+        } else {
+          html+='<p class="modos-resultado-texto">Tu manera más frecuente es <strong>'+nombres[c]+'</strong>. Es la más silenciosa de las tres: no gana nadie y no se pierde nada visible. Alguien decide que no vale la pena y el asunto se disuelve.</p>';
+          html+='<p class="modos-resultado-texto">En un vínculo largo es el modo más común de todos y el que deja menos marcas. Cada cosa que se deja pasar por no discutir es una versión que no se rehace.</p>';
+        }
+      } else {
+        var lista=muchos.map(function(m){return nombres[m];}).join(' y ');
+        html+='<p class="modos-resultado-texto">Marcaste <strong>mucho</strong> en más de una: '+lista+'. Eso es lo más común de todo. En la misma relación conviven las tres maneras, y se alternan según el día, el cansancio y el tema.</p>';
+        html+='<p class="modos-resultado-texto">Lo que cambió no es que una manera reemplace a las otras: es que ahora hay una cuarta posibilidad que antes no existía, y siempre está disponible. Cualquiera puede ir a buscar. Eso es lo nuevo.</p>';
+      }
+
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
