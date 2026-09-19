@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,42 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el marcador de las tres cosas ── */
+  .marcador{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .marcador-encabezado{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:1rem;}
+  .marcador-fila{padding:1rem .3rem; border-bottom:1px solid var(--separador);}
+  .marcador-fila:last-of-type{border-bottom:none;}
+  .marcador-nombre{display:block; font-family:'EB Garamond',Georgia,serif;
+    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.6rem;}
+  .marcador-nombre small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.88rem; color:var(--gris-calido); margin-top:.2rem;}
+  .marcador-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .marcador-btn{background:var(--negro); border:none; padding:.7rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.35;}
+  .marcador-btn:hover, .marcador-btn:focus-visible{color:var(--blanco-humo);}
+  .marcador-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .marcador-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .marcador .accion{margin-top:1.1rem;}
+  .marcador-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .marcador-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .marcador-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .marcador-resultado-texto:last-child{margin-bottom:0;}
+  .marcador-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .marcador-frase{margin-top:1rem; padding:1rem 1.1rem; border-left:2px solid var(--oro-tenue);
+    background:rgba(201,168,76,.02); font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:1.06rem; line-height:1.7; color:var(--blanco-humo);}
+  .marcador-frase em{color:var(--oro); font-style:italic;}
+  @media (max-width:600px){
+    .marcador-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -306,11 +337,67 @@
   <cite><span class="obra">Eclesiastés</span> &middot; 3:1<br><small>(versión castellana tradicional)</small></cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">Las tres cosas que arruinan el momento</span>
+  <p class="geo-instruccion">Piensa en la última vez que alguien te dijo algo importante cuando ya no correspondía: en la puerta, en el ascensor, en el mensaje de las once y media. Marca, para cada una de las tres cosas que arruinan el momento, si la hiciste esa vez.</p>
+  <div class="panel">
+    <div class="marcador">
+      <span class="marcador-encabezado">Cuando el otro dijo algo importante en el peor momento, tú...</span>
+
+      <div class="marcador-fila" data-c="sentarse">
+        <span class="marcador-nombre">Te sentaste o dejaste lo que tenías en la mano
+          <small>la escena pasó a ser conversación</small>
+        </span>
+        <div class="marcador-opciones">
+          <button class="marcador-btn" data-v="si" aria-pressed="false">Sí, eso hice</button>
+          <button class="marcador-btn" data-v="no" aria-pressed="false">No, me quedé como estaba</button>
+        </div>
+      </div>
+
+      <div class="marcador-fila" data-c="cuentame">
+        <span class="marcador-nombre">Dijiste <em>cuéntame bien</em> o pusiste cara de estar escuchando
+          <small>el otro sintió que se metía en algo más grande</small>
+        </span>
+        <div class="marcador-opciones">
+          <button class="marcador-btn" data-v="si" aria-pressed="false">Sí, eso hice</button>
+          <button class="marcador-btn" data-v="no" aria-pressed="false">No, dejé el momento como estaba</button>
+        </div>
+      </div>
+
+      <div class="marcador-fila" data-c="abrigo">
+        <span class="marcador-nombre">Te sacaste el abrigo o volviste a entrar
+          <small>dejaste claro que ibas a quedarte hasta el final</small>
+        </span>
+        <div class="marcador-opciones">
+          <button class="marcador-btn" data-v="si" aria-pressed="false">Sí, eso hice</button>
+          <button class="marcador-btn" data-v="no" aria-pressed="false">No, seguí como si me fuera</button>
+        </div>
+      </div>
+
+      <button class="accion" id="btnMarcar" disabled>Ver el resultado</button>
+      <div id="marcadorResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Alguien te va a decir algo importante en el peor momento. Esta semana o la que viene.</p>
-  <p>Cuando pase, no cambies nada. No te sientes, no dejes lo que tenías en la mano, no pongas cara de escuchar.</p>
-  <p>Quédate dos segundos más de lo que hacía falta y, si dices algo, que sea de tres palabras: <em>¿desde cuándo?</em></p>
-  <p>Después vete como te ibas a ir. Y vuelve en dos o tres días, por otra cosa, y pregunta una cosa chica. Ahí se decide si lo de la puerta fue un desahogo o el principio de algo.</p>
+  <p>Lo que acabas de producir no es un juicio sobre lo que hiciste. Es un dato sobre qué haces por defecto cuando el otro se abre en un momento que no toca.</p>
+  <p>Si marcaste las tres cosas que sí, ya tienes el dato más claro del umbral. Las tres juntas hacen exactamente lo que el texto describe: convierten una apertura de treinta segundos en una conversación que el otro no puede sostener, y lo empujan a cerrar. No fue falta de cariño: fue el cariño de quedarse, aplicado al momento equivocado.</p>
+  <p>Si marcaste una sola, esa es tu puerta por defecto. Casi siempre es la que uno haría sin pensar. La que elegiste es la que conviene tener a mano para saber qué evitar la próxima vez.</p>
+  <p>Y si no marcaste ninguna, el dato es que ya dejás que las cosas se digan en el momento en que se dicen. Eso es lo que el umbral recomienda, y no es lo más frecuente.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe las tres cosas del interactivo en tres líneas cortas. Si quieres, marcá con un signo la que ya sabes que haces por defecto.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Va a haber una situación en la que alguien empiece a decir algo importante en un momento que no corresponde —o cuando ya se está yendo, o cuando claramente están apurados los dos—. No cambies nada.</p></div>
+  <div class="paso"><span class="paso-nombre">Quédate donde estabas</span><p>De pie si estabas de pie, con lo que tenías en la mano, sin cambiar el tono. Si dices algo, que sea de tres palabras: <em>¿desde cuándo?</em>. Si no dices nada, mejor: dos segundos de más es toda la respuesta.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Anotá dos cosas: la fecha y qué pasó. <em>Siguió hablando</em>, <em>se cerró</em>, <em>quedó para después</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Volvé en dos o tres días</span><p>Por otra cosa, no por esa. Y en algún momento, al costado, una pregunta chica. Ahí se decide si lo de la puerta fue un desahogo o el principio de algo.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que alguien diga algo en un momento que no corresponde, vas a hacer una de las tres cosas sin darte cuenta: sentarte, decir <em>cuéntame bien</em> o sacarte el abrigo. Cuando te des cuenta, abrí la nota y agregá la fecha. Si dejaste la escena como estaba, escribí <em>dejé</em>. Si la cambiaste, escribí <em>cambie</em> (esa palabra, sin tilde, para que la anotes rápido). <strong>El gesto no es dejar siempre las cosas como están: es tener anotado cuántas veces las dejaste y cuántas las cambiaste.</strong></p>
 </div>
 
 <div class="bloque">
@@ -332,7 +419,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -343,6 +430,76 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el marcador de las tres cosas
+    var filas=document.querySelectorAll('#marcador .marcador-fila');
+    var btn=document.getElementById('btnMarcar');
+    var salida=document.getElementById('marcadorResultado');
+
+    var nombres={
+      sentarse:'sentarte (o dejar lo que tenías en la mano)',
+      cuentame:'decir <em>cuéntame bien</em> (o poner cara de estar escuchando)',
+      abrigo:'sacarte el abrigo (o volver a entrar)'
+    };
+
+    // filas del selector: usamos un ID dinámico porque el marcador tiene clase .marcador y las filas están dentro
+    var contenedor=document.querySelector('.marcador');
+    filas=contenedor.querySelectorAll('.marcador-fila');
+
+    function habilitar(){
+      var hechas=contenedor.querySelectorAll('.marcador-fila[data-eleccion]');
+      btn.disabled = hechas.length < filas.length;
+    }
+
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.marcador-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          habilitar();
+          if(salida.querySelector('.marcador-resultado')){ render(); }
+        });
+      });
+    });
+
+    function render(){
+      var hechas=contenedor.querySelectorAll('.marcador-fila[data-eleccion]');
+      if(hechas.length<filas.length){ salida.innerHTML=''; return; }
+
+      var si=[], no=[];
+      hechas.forEach(function(f){
+        if(f.dataset.eleccion==='si'){ si.push(f.dataset.c); }
+        else { no.push(f.dataset.c); }
+      });
+
+      var html='';
+      html+='<div class="marcador-resultado">';
+      html+='<span class="marcador-resultado-etiqueta">Lo que dice el umbral</span>';
+
+      if(si.length===0){
+        html+='<p class="marcador-resultado-texto">No marcaste ninguna. El dato es que ya dejas que las cosas se digan en el momento en que se dicen. Eso es lo que el umbral recomienda, y no es lo más frecuente.</p>';
+      } else if(si.length===1){
+        html+='<p class="marcador-resultado-texto">Tu puerta por defecto es <strong>'+nombres[si[0]]+'</strong>. Casi siempre es la que uno haría sin pensar. Tenerla identificada es la mitad del gesto.</p>';
+      } else if(si.length===2){
+        var lista=si.map(function(c){return nombres[c];}).join(' y ');
+        html+='<p class="marcador-resultado-texto">Marcaste dos: <strong>'+lista+'</strong>. Tienes más de una manera de arruinar el momento, y las alternas. No es peor: es más difícil de ver desde adentro.</p>';
+      } else {
+        html+='<p class="marcador-resultado-texto">Las tres. Eso hace exactamente lo que el texto describe: convierte una apertura de treinta segundos en una conversación que el otro no puede sostener, y lo empuja a cerrar.</p>';
+        html+='<p class="marcador-resultado-texto">No fue falta de cariño. Fue el cariño de quedarse, aplicado al momento equivocado.</p>';
+      }
+
+      // Caja de la frase que se puede decir
+      html+='<div class="marcador-frase">';
+      html+='La frase es <em>¿desde cuándo?</em>. Y la no frase es todavía mejor: quedarse dos segundos más de lo que hacía falta, sin cambiar el tono, sin sentarse, sin sacarse el abrigo.';
+      html+='</div>';
+
+      html+='</div>';
+      salida.innerHTML=html;
+    }
+
+    btn.addEventListener('click',render);
   })();
 </script>
 </body>
