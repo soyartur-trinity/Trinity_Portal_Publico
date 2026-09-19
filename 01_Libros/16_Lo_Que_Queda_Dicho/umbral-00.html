@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,44 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── la escena que quedó registrada ── */
+  .escena-test{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .escena-test label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .escena-test textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:3.2rem;}
+  .escena-test textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .escena-test textarea:focus{border-color:var(--oro-polvo);}
+  .escena-test-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin:1.2rem 0 .6rem 0;}
+  .escena-test-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .escena-test-btn{background:var(--negro); border:none; padding:.85rem .6rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.35;}
+  .escena-test-btn:hover, .escena-test-btn:focus-visible{color:var(--blanco-humo);}
+  .escena-test-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .escena-test-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .escena-test .accion{margin-top:1.2rem;}
+  .escena-test-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .escena-test-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .escena-test-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .escena-test-texto:last-child{margin-bottom:0;}
+  .escena-test-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .escena-test-num{font-family:'Cormorant Garamond',serif; font-size:1.8rem;
+    color:var(--oro); display:block; margin-bottom:.3rem; letter-spacing:.06em;}
+  @media (max-width:600px){
+    .escena-test-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -313,11 +345,50 @@
   <p>Lo que el refrán no decía, porque nadie lo pensaba, es que ese viento hacía falta.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">La escena que quedó registrada</span>
+  <p class="geo-instruccion">Piensa en una discusión reciente de la que recuerdes una frase concreta — algo que el otro te dijo, o algo que dijiste tú, y que te quedó dando vueltas. Escribe la frase. Después marca cuáles de estas tres cosas tienes.</p>
+  <div class="panel">
+    <div class="escena-test">
+      <label for="fraseRecordada">La frase que recuerdas</label>
+      <textarea id="fraseRecordada" placeholder="Escríbela tal cual te resuena. No importa si no es literal."></textarea>
+
+      <span class="escena-test-sub">Lo que el archivo no guarda</span>
+      <div class="escena-test-opciones" id="escenaTestOpciones">
+        <button class="escena-test-btn" data-v="si" data-t="hora" aria-pressed="false">Hora: sí / no
+          <small>¿Sabes a qué hora se dijo eso?</small>
+        </button>
+        <button class="escena-test-btn" data-v="si" data-t="venia" aria-pressed="false">Qué venía pasando
+          <small>¿Sabes qué se había dicho antes?</small>
+        </button>
+        <button class="escena-test-btn" data-v="si" data-t="estaba" aria-pressed="false">Cómo estaba el otro
+          <small>¿Sabes en qué estado estaba cuando lo dijo?</small>
+        </button>
+      </div>
+      <button class="accion" id="btnEscenaTest" disabled>Ver qué quedó</button>
+      <div id="escenaTestResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Va a haber una discusión donde puedas ir a buscarlo. Esta semana, o la que viene.</p>
-  <p>Cuando aparezcan las ganas —y aparecen antes que el argumento—, no te propongas resistirlas. No funciona así.</p>
-  <p>Haz una cosa sola: antes de buscar, di en voz alta qué esperas encontrar.</p>
-  <p>Nada más. No decidas si vas o no vas. Solo dilo, y fíjate cómo suena dicho.</p>
+  <p>Lo que acabas de producir no es un juicio sobre tu memoria. Es un dato sobre qué clase de registro tienes de esa escena, y casi siempre es el mismo tipo.</p>
+  <p>Lo más frecuente es <strong>recordar la frase sin nada de lo demás</strong>: la frase exacta, las palabras, el tono, y ninguna de las tres cosas que le daban sentido. Eso no es un problema de memoria. Es que la frase tiene una propiedad que las otras tres no tienen: se puede repetir. Y lo que se puede repetir, se repite. Lo que no se puede repetir, se va.</p>
+  <p>Lo segundo más frecuente es <strong>no recordar la frase exacta y sí las tres condiciones</strong>: sabes que fue un domingo, sabes que venían de otra discusión, sabes que el otro estaba al límite, y no te acuerdas de qué dijo. Ese es el registro que se tenía antes de los teléfonos, y es más fiel al sentido y menos útil para discutir.</p>
+  <p>Y lo tercero, poco común, es <strong>tenerlo todo</strong>: la frase, la hora, qué venía pasando, cómo estaba el otro. Cuando pasa eso, casi siempre es porque la escena se habló después, y al hablar se le repusieron las condiciones. Es decir: no es que la memoria las conservó. Es que alguien las volvió a poner.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Va a haber una discusión donde puedas ir a buscar. Esta semana, o la que viene. No la evites: no se puede evitar y no es el punto.</p></div>
+  <div class="paso"><span class="paso-nombre">Antes de buscar</span><p>Cuando aparezcan las ganas —y aparecen antes que el argumento—, di en voz alta qué esperas encontrar. Solo eso. No decidas si vas o no vas. No te propongas resistir.</p></div>
+  <div class="paso"><span class="paso-nombre">Fíjate cómo suena</span><p>Dicho en voz alta, casi siempre suena distinto de como suena por dentro. Casi siempre suena más chico, o más obvio, o directamente ridículo.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Debajo</span><p>Abre la nota del teléfono. Anota tres cosas: la fecha, una palabra que describa lo que dijiste en voz alta, y si buscaste igual o no. Nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo cuentes</span><p>No le digas a nadie que estás haciendo esto. Ni al que te va a dar la razón, ni al que te la va a quitar. La nota queda cerrada.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez vas a ir a buscar sin decir nada primero, y te vas a dar cuenta a mitad de camino, con el dedo ya en la pantalla. Cuando pase, abrí la nota y agregá la fecha. Si esa vez te acordaste aunque sea dos segundos antes de abrir, escribí <em>dije</em>. Si abriste y después te acordaste de todo esto, escribí <em>abrí</em>. Las dos cosas son el dato. <strong>El gesto no es frenar el brazo: es tener anotado cuántas veces el brazo se detuvo antes de tocar el teléfono.</strong></p>
 </div>
 
 <div class="bloque">
@@ -337,7 +408,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -348,6 +419,93 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la escena que quedó registrada
+    var frase=document.getElementById('fraseRecordada');
+    var botones=document.querySelectorAll('#escenaTestOpciones .escena-test-btn');
+    var btn=document.getElementById('btnEscenaTest');
+    var salida=document.getElementById('escenaTestResultado');
+
+    // cada botón tiene estado "si" o "no" y su propio tipo de dato
+    // convertimos el toggle para que se pueda elegir sí/no por cada uno
+    var estados={hora:null, venia:null, estaba:null};
+
+    botones.forEach(function(b){
+      b.addEventListener('click',function(){
+        var tipo=b.dataset.t;
+        // ciclar: si → no → (limpio) → si
+        var actual=estados[tipo];
+        var siguiente;
+        if(actual===null){ siguiente='si'; }
+        else if(actual==='si'){ siguiente='no'; }
+        else { siguiente=null; }
+        estados[tipo]=siguiente;
+        // actualizar el texto del botón
+        var etiquetaBase={
+          hora:'Hora: ',
+          venia:'Qué venía pasando: ',
+          estaba:'Cómo estaba el otro: '
+        }[tipo];
+        var etiquetaDetalle={
+          hora:'¿Sabes a qué hora se dijo eso?',
+          venia:'¿Sabes qué se había dicho antes?',
+          estaba:'¿Sabes en qué estado estaba cuando lo dijo?'
+        }[tipo];
+        if(siguiente===null){
+          b.setAttribute('aria-pressed','false');
+          b.innerHTML=etiquetaBase+'—';
+        } else if(siguiente==='si'){
+          b.setAttribute('aria-pressed','true');
+          b.setAttribute('data-v','si');
+          b.innerHTML='Sí. '+etiquetaDetalle;
+        } else {
+          b.setAttribute('aria-pressed','true');
+          b.setAttribute('data-v','no');
+          b.innerHTML='No. '+etiquetaDetalle;
+        }
+        habilitar();
+      });
+    });
+
+    function habilitar(){
+      var todos=estados.hora!==null && estados.venia!==null && estados.estaba!==null;
+      btn.disabled = !todos;
+    }
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    btn.addEventListener('click',function(){
+      var f=frase.value.trim();
+      if(!f){ salida.innerHTML=''; return; }
+
+      var tiene=[];
+      var falta=[];
+      ['hora','venia','estaba'].forEach(function(t){
+        var nombre={hora:'la hora', venia:'qué venía pasando', estaba:'cómo estaba el otro'}[t];
+        if(estados[t]==='si'){ tiene.push(nombre); } else { falta.push(nombre); }
+      });
+
+      var html='<div class="escena-test-resultado">';
+      html+='<span class="escena-test-etiqueta">Lo que el archivo no guarda</span>';
+      html+='<span class="escena-test-num">'+tiene.length+' de 3</span>';
+
+      if(tiene.length===0){
+        html+='<p class="escena-test-texto">Ninguna de las tres. Recuerdas la frase y no recuerdas nada de las condiciones en que se dijo. Ese es el registro que deja el archivo: la frase suelta, sin lo que le daba sentido. No es un problema de memoria; es que la frase se puede repetir y las otras tres cosas no.</p>';
+      } else if(tiene.length===3){
+        html+='<p class="escena-test-texto">Las tres. Eso es raro. Casi siempre pasa cuando la escena se habló después: al hablar se le repusieron las condiciones. Es decir: no es que la memoria las conservó; es que alguien las volvió a poner.</p>';
+      } else {
+        var t=tiene.length===1?'una sola':'dos de tres';
+        html+='<p class="escena-test-texto">Tienes '+t+'. Las que tienes son: <strong>'+tiene.join(', ')+'</strong>. Las que faltan: <strong>'+falta.join(', ')+'</strong>. Una frase con la mitad de sus condiciones no dice lo mismo, y sigue estando disponible con la misma autoridad.</p>';
+      }
+
+      html+='<p class="escena-test-texto" style="margin-top:.9rem;">Esto es lo que va a hacer el archivo con todo lo que se escriba de ahora en adelante. Va a conservar la frase, con fecha. Y va a tirar las tres cosas que acabas de marcar.</p>';
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
