@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,41 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── las tres puertas, aplicadas ── */
+  .tres-puertas{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .tres-puertas label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .tres-puertas input[type="text"]{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem; margin-bottom:1.3rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo);}
+  .tres-puertas input[type="text"]::placeholder{color:var(--lejos); font-style:italic;}
+  .tres-puertas input[type="text"]:focus{border-color:var(--oro-polvo);}
+  .tres-puertas .puertas-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .puertas-btn{background:var(--negro); border:none; padding:1rem .6rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .25s ease; line-height:1.35;}
+  .puertas-btn:hover, .puertas-btn:focus-visible{color:var(--blanco-humo);}
+  .puertas-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .puertas-btn small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:normal; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--lejos); margin-top:.4rem;}
+  .puertas-btn[aria-pressed="true"] small{color:var(--oro-tenue);}
+  .puertas-respuesta{margin-top:1.3rem; padding:1.1rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .puertas-respuesta-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .puertas-respuesta-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0;}
+  .puertas-respuesta-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .puertas-respuesta-persona{margin-top:.7rem; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.94rem; color:var(--gris-calido); line-height:1.6;}
+  @media (max-width:600px){
+    .tres-puertas .puertas-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -289,11 +319,59 @@
   <cite><span class="obra">Søren Kierkegaard</span> &middot; Diarios, 1843</cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">Las tres puertas, aplicadas</span>
+  <p class="geo-instruccion">Piensa en alguien que te viene contestando <em>bien</em> hace meses. Escribe su nombre. Marca cuál de las tres puertas crees que es. El sistema te devuelve lo que el umbral dice para esa puerta, sin agregar nada.</p>
+  <div class="panel">
+    <div class="tres-puertas">
+      <label for="nombrePersona">Nombre o iniciales de la persona</label>
+      <input type="text" id="nombrePersona" placeholder="Ejemplo: M., mi hermano, mi hija.">
+      <div class="puertas-opciones" id="puertasOpciones">
+        <button class="puertas-btn" data-v="noQuiere" aria-pressed="false">
+          No quiere
+          <small>Eligió callar</small>
+        </button>
+        <button class="puertas-btn" data-v="noPuede" aria-pressed="false">
+          No puede
+          <small>Tiene algo y no encontró molde</small>
+        </button>
+        <button class="puertas-btn" data-v="noSabe" aria-pressed="false">
+          No sabe que hay algo
+          <small>Se le manifiesta en otro idioma</small>
+        </button>
+        <button class="puertas-btn" data-v="noSe" style="grid-column:1/-1; border-top:1px solid var(--separador);">
+          No lo sé
+          <small>Si dudas, trata como <em>no puede</em></small>
+        </button>
+      </div>
+      <div class="puertas-respuesta" id="puertasRespuesta" style="display:none;">
+        <span class="puertas-respuesta-etiqueta">Lo que dice el umbral</span>
+        <p class="puertas-respuesta-texto" id="puertasTexto"></p>
+        <p class="puertas-respuesta-persona" id="puertasPersona"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Piensa en alguien que viene contestándote <em>bien</em> hace meses.</p>
-  <p>Antes de volver a preguntarle nada, contéstate una sola cosa, y no es qué le pasa: <strong>¿cuál de las tres es?</strong></p>
-  <p>Si es que no quiere, dile una vez que estás, y no vuelvas sobre eso. Si es que no puede, no prepares ninguna pregunta: prepara un rato de hacer algo juntos. Y si es que no sabe, ten lista una frase de ocho palabras con un hecho adentro, sin ninguna opinión tuya.</p>
-  <p>Si no logras decidir cuál de las tres, trátalo como <em>no puede</em>. Es el error más barato de los tres.</p>
+  <p>Lo que acabas de producir no es un diagnóstico sobre la otra persona. Es un dato sobre ti: qué forma de tratar elegiste para alguien que te contesta <em>bien</em>.</p>
+  <p>Si marcaste <em>no quiere</em> y a la vez sentís que hace tiempo le insistís, ese es el dato. La insistencia sobre alguien que eligió callar es lo más costoso de las tres equivocaciones, porque no se nota desde afuera: desde afuera parece cariño.</p>
+  <p>Si marcaste <em>no puede</em>, la prueba es simple: fíjate si lo que le preparás son preguntas o son ratos al lado sin frente a frente. Si son preguntas, tu intuición y tu práctica están en puertas distintas.</p>
+  <p>Si marcaste <em>no sabe que hay algo</em>, tenés lo más concreto y lo más delicado. La frase que tenés que decir es un dato chico, verificable, sin interpretación. Es más fácil decirlo que callarlo bien.</p>
+  <p>Y si marcaste <em>no lo sé</em>, no es una derrota: es la respuesta más honesta de las cuatro. Tratar como <em>no puede</em> es el error más barato de los tres, porque lo que se pierde —un rato al lado, un mandado— no daña a nadie.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe una sola línea: el nombre de esa persona y cuál de las tres puertas crees que es. Poné la fecha debajo.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Hacé una sola cosa según la puerta que hayas marcado. Si es <em>no quiere</em>: una vez, una frase sobre que estás, y después silencio. Si es <em>no puede</em>: armá un rato al lado —un mandado, un auto, una cocina— y no preguntes nada. Si es <em>no sabe</em>: buscá un dato chico de los últimos meses y decilo sin interpretación.</p></div>
+  <div class="paso"><span class="paso-nombre">Una sola cosa</span><p>Una. No las tres. La que corresponde a la puerta que marcaste, y nada más. Hacer las tres a la vez convierte esto en una campaña.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al terminar la semana</span><p>Volvé a la nota. Anotá una segunda línea con la fecha y una sola palabra sobre qué pasó: <em>nada</em>, <em>algo</em>, <em>raro</em>.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No reclasifiques todavía</span><p>No vuelvas a decidir cuál de las tres puertas era. Eso se decide solo, después de varias semanas. La nota queda como está: puerta marcada, una acción hecha, resultado en una palabra.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver, con la misma persona y con otras. En algún momento vas a estar preguntándole lo de siempre y vas a darte cuenta de que no sabés cuál de las tres puertas es, o vas a estar tratando como <em>no puede</em> a alguien que en realidad eligió callar. Cuando pase, abrí la nota y agregá la fecha. Si seguís con la misma puerta marcada, es un dato. Si cambiaste, también. <strong>La puerta no se fija de una vez: se corrige. Lo único que conviene tener anotado es cuántas veces te equivocaste y cuántas veces no.</strong></p>
 </div>
 
 <div class="bloque">
@@ -319,7 +397,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -330,6 +408,55 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // las tres puertas, aplicadas
+    var campo=document.getElementById('nombrePersona');
+    var botones=document.querySelectorAll('#puertasOpciones .puertas-btn');
+    var resp=document.getElementById('puertasRespuesta');
+    var txt=document.getElementById('puertasTexto');
+    var per=document.getElementById('puertasPersona');
+
+    var contenido={
+      noQuiere:{
+        texto:'Lo que corresponde es <strong>una sola vez</strong>: decirle que estás, sin condiciones y sin fecha. Después, silencio. Insistirle no es cariño: es entrar sin llamar. Lo más difícil del libro es esta parte, que consiste en no hacer nada más.',
+        persona:'Con {n}: una frase, una vez. Nada más.'
+      },
+      noPuede:{
+        texto:'A esta persona no le sirve que le preguntes mejor. Cuanto más precisa la pregunta, más la enfrenta a que no tiene la respuesta armada. Lo que sí le sirve es <strong>tiempo al lado</strong>, sin frente a frente y sin final anunciado: un auto, una cocina, una caminata.',
+        persona:'Con {n}: armá un rato al lado. Y no preguntes nada.'
+      },
+      noSabe:{
+        texto:'A esta persona hay que <strong>nombrarla</strong>. No con un diagnóstico: con un dato chico, verificable, sin interpretación. <em>Desde marzo te duermes con la tele prendida.</em> Después hay que callarse. Va a contestar que no es nada — y va a abrir la frase tres días más tarde, solo.',
+        persona:'Con {n}: un dato, sin interpretación. Y silencio después.'
+      },
+      noSe:{
+        texto:'Trátala como <strong>no puede</strong>. Es el error más barato de los tres: un rato al lado, un mandado, ninguna pregunta frontal. Si te equivocaste, no perdiste nada. Si acertaste, ya tenés el lugar armado.',
+        persona:'Con {n}: un rato al lado. El resto se decide solo.'
+      }
+    };
+
+    function actualizar(){
+      var elegido=null;
+      botones.forEach(function(b){
+        if(b.getAttribute('aria-pressed')==='true'){ elegido=b.dataset.v; }
+      });
+      if(!elegido){ resp.style.display='none'; return; }
+      var nombre=(campo.value||'').trim();
+      if(!nombre){ nombre='esa persona'; }
+      var c=contenido[elegido];
+      txt.innerHTML=c.texto;
+      per.textContent=c.persona.replace('{n}',nombre);
+      resp.style.display='block';
+    }
+
+    botones.forEach(function(b){
+      b.addEventListener('click',function(){
+        botones.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        actualizar();
+      });
+    });
+    campo.addEventListener('input',actualizar);
   })();
 </script>
 </body>
