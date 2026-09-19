@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,57 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el registro de silencios ── */
+  .registro{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .registro-fila{padding:1rem .3rem; border-bottom:1px solid var(--separador);}
+  .registro-fila:last-of-type{border-bottom:none;}
+  .registro-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .registro input[type="text"]{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.7rem .85rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .registro input[type="text"]::placeholder{color:var(--lejos); font-style:italic;}
+  .registro input[type="text"]:focus{border-color:var(--oro-polvo);}
+  .registro-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .registro-btn{background:var(--negro); border:none; padding:.75rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.35;}
+  .registro-btn:hover, .registro-btn:focus-visible{color:var(--blanco-humo);}
+  .registro-btn[aria-pressed="true"][data-v="alivio"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .registro-btn[aria-pressed="true"][data-v="peso"]{color:var(--blanco-humo); background:rgba(107,122,128,.05);}
+  .registro-btn small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:normal; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--lejos); margin-top:.25rem;}
+  .registro-btn[aria-pressed="true"][data-v="alivio"] small{color:var(--oro-tenue);}
+  .registro-btn[aria-pressed="true"][data-v="peso"] small{color:var(--gris-calido);}
+  .registro .accion{margin-top:1.1rem;}
+  .registro-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .registro-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .registro-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .5rem 0;}
+  .registro-resultado-texto:last-child{margin-bottom:0;}
+  .registro-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .registro-proporcion{margin-top:1rem; padding-top:1rem; border-top:1px solid var(--separador);}
+  .registro-proporcion-nombre{font-family:'Cormorant Garamond',serif;
+    font-size:1.02rem; color:var(--blanco-humo); margin-bottom:.4rem; letter-spacing:.02em;}
+  .registro-proporcion-nombre span{color:var(--gris-calido); font-style:italic;
+    font-size:.92rem; margin-left:.4rem;}
+  .registro-proporcion-barra{display:flex; height:8px; width:100%;
+    background:var(--separador); overflow:hidden;}
+  .registro-proporcion-alivio{background:var(--oro-tenue); height:100%;}
+  .registro-proporcion-peso{background:var(--lejos); height:100%;}
+  .registro-proporcion-detalle{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.86rem; color:var(--gris-calido); margin-top:.35rem; line-height:1.5;}
+  .registro-proporcion + .registro-proporcion{margin-top:.9rem;}
+  @media (max-width:600px){
+    .registro-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -308,12 +354,63 @@
   <cite><span class="obra">Fiódor Dostoievski</span> &middot; Memorias del subsuelo, 1864<br><small>(paráfrasis de la versión corriente)</small></cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">El registro de silencios</span>
+  <p class="geo-instruction">Piensa en dos silencios de esta semana: dos cosas que callaste delante de alguien. Para cada uno, marca qué quedó después y a quién se lo callaste. El sistema va a contar en qué proporción tus silencios son elegidos y en cuáles se te imponen.</p>
+  <div class="panel">
+    <div class="registro">
+      <div class="registro-fila">
+        <label class="registro-etiqueta" for="nombre1">A quién le callaste el primero</label>
+        <input type="text" id="nombre1" placeholder="Ejemplo: M., mi hermana, un compañero.">
+        <div class="registro-opciones" id="opciones1">
+          <button class="registro-btn" data-v="alivio" aria-pressed="false">
+            Quedó alivio
+            <small>Lo elegí</small>
+          </button>
+          <button class="registro-btn" data-v="peso" aria-pressed="false">
+            Quedó peso
+            <small>Se me impuso</small>
+          </button>
+        </div>
+      </div>
+      <div class="registro-fila">
+        <label class="registro-etiqueta" for="nombre2">A quién le callaste el segundo</label>
+        <input type="text" id="nombre2" placeholder="Puede ser la misma persona u otra.">
+        <div class="registro-opciones" id="opciones2">
+          <button class="registro-btn" data-v="alivio" aria-pressed="false">
+            Quedó alivio
+            <small>Lo elegí</small>
+          </button>
+          <button class="registro-btn" data-v="peso" aria-pressed="false">
+            Quedó peso
+            <small>Se me impuso</small>
+          </button>
+        </div>
+      </div>
+      <button class="accion" id="btnRegistrar" disabled>Ver el registro</button>
+      <div id="registroResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a callar algo esta semana, y probablemente varias veces. No te propongas decirlo: no es el punto.</p>
-  <p>Diez minutos después de haberlo callado, fíjate una sola cosa: si te quedó alivio o te quedó peso.</p>
-  <p>Si quedó alivio, está resuelto y no hay nada que hacer. Guardaste lo que querías guardar.</p>
-  <p>Si quedó peso, tampoco lo digas hoy. Anota nada más a quién se lo callaste. Con el tiempo, esa lista de nombres dice más que el contenido.</p>
-  <p>Y si el motivo fue no cargar al otro, prueba una vez a preguntárselo en lugar de decidirlo: <em>¿tienes lugar para algo mío ahora o mejor otro día?</em> Es la única versión que le devuelve la decisión a quien le correspondía.</p>
+  <p>Lo que produjiste no es un diagnóstico. Es la proporción entre dos silencios que suelen confundirse.</p>
+  <p>El silencio elegido es el que el umbral llama <em>el que protege al otro</em>: uno sabe qué está guardando y por qué, y la conversación siguió sin que nadie notara nada porque efectivamente no había nada que notar. Ese silencio no daña. Se puede sostener años.</p>
+  <p>El silencio impuesto es el otro: el que protege al que calla. Uno quiso decir algo y no pudo, o no supo, o se le fue el momento, y lo que queda después no es calma sino una molestia que sigue dando vueltas cuando la otra persona ya se fue. La conversación también siguió sin problemas. La diferencia no está en la superficie: está en el cuerpo, diez minutos después.</p>
+  <p>Y hay una tercera lectura, que solo aparece cuando la proporción es pareja. Si hay un silencio de cada tipo, y están en la misma semana, es probable que la distinción no sea entre las dos situaciones sino entre las dos personas. Con una, callar sale gratis. Con la otra, siempre queda peso. Ese es un dato sobre el vínculo, no sobre el silencio.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Cada vez que calles algo, no lo anotes en el momento. Esperá diez minutos. Recién entonces fijate si quedó alivio o quedó peso, y a quién se lo callaste. Una sola línea por silencio, en la nota del teléfono.</p></div>
+  <div class="paso"><span class="paso-nombre">Tres silencios</span><p>Anotá tres, no más. Con tres ya se ve el patrón. Más de tres convierte esto en un inventario y el inventario no es el gesto.</p></div>
+  <div class="paso"><span class="paso-nombre">Al tercero</span><p>Mirá la lista. Fíjate si los <em>alivio</em> y los <em>peso</em> se reparten igual. Y fíjate si el mismo nombre aparece dos veces del mismo lado: eso también es un dato.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Debajo</span><p>Escribí una sola palabra que describa lo que viste. <em>Parejo</em>, <em>cargado</em>, <em>depende</em>. Nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No cambies nada todavía</span><p>No decidas ahora qué hacer con lo que anotaste. El gesto no es dejar de callar: es tener el registro. La decisión viene después, y conviene que no la tome el que hizo el inventario.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. Un día vas a estar en una conversación y vas a callar algo importante, y no te vas a acordar de esto ni diez minutos después. Cuando te acuerdes —al otro día, o dos días más tarde—, abrí la nota y agregá la fecha. Si esa vez fue alivio, escribí <em>alivio</em>. Si fue peso, escribí <em>peso</em>. Y si directamente no te acordás de qué se trataba, escribí <em>no me acuerdo</em>: eso también es el dato. <strong>El gesto no es distinguir cada silencio en el momento: es tener anotado cuántas veces te enteraste después.</strong></p>
 </div>
 
 <div class="bloque">
@@ -339,7 +436,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -350,6 +447,101 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el registro de silencios
+    var nombre1=document.getElementById('nombre1');
+    var nombre2=document.getElementById('nombre2');
+    var opciones1=document.querySelectorAll('#opciones1 .registro-btn');
+    var opciones2=document.querySelectorAll('#opciones2 .registro-btn');
+    var btn=document.getElementById('btnRegistrar');
+    var salida=document.getElementById('registroResultado');
+
+    var eleccion1=null, eleccion2=null;
+
+    function habilitar(){
+      btn.disabled = !(eleccion1 && eleccion2);
+    }
+    opciones1.forEach(function(b){
+      b.addEventListener('click',function(){
+        opciones1.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        eleccion1=b.dataset.v;
+        habilitar();
+        if(salida.querySelector('.registro-resultado')){ render(); }
+      });
+    });
+    opciones2.forEach(function(b){
+      b.addEventListener('click',function(){
+        opciones2.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        eleccion2=b.dataset.v;
+        habilitar();
+        if(salida.querySelector('.registro-resultado')){ render(); }
+      });
+    });
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    function nombreDe(input, fallback){
+      var v=(input.value||'').trim();
+      return v || fallback;
+    }
+
+    function render(){
+      if(!eleccion1 || !eleccion2){ salida.innerHTML=''; return; }
+      var n1=nombreDe(nombre1,'esa persona');
+      var n2=nombreDe(nombre2,'esa persona');
+
+      // Contamos por tipo
+      var porTipo={ alivio:0, peso:0 };
+      var porNombre={};
+      function registrar(nombre, eleccion){
+        porTipo[eleccion]++;
+        if(!porNombre[nombre]){ porNombre[nombre]={ alivio:0, peso:0, total:0 }; }
+        porNombre[nombre][eleccion]++;
+        porNombre[nombre].total++;
+      }
+      registrar(n1, eleccion1);
+      registrar(n2, eleccion2);
+
+      var html='<div class="registro-resultado">';
+      html+='<span class="registro-resultado-etiqueta">Lo que dice el umbral</span>';
+
+      var lectura='';
+      if(porTipo.alivio===1 && porTipo.peso===1){
+        lectura='Un silencio de cada tipo. Cuando la proporción es pareja, casi siempre la distinción no es entre las dos situaciones sino entre las dos personas. Con una, callar sale gratis. Con la otra, siempre queda peso.';
+      } else if(porTipo.alivio===2){
+        lectura='Los dos silencios quedaron en <strong>alivio</strong>. Elegiste los dos, y ninguno se te impuso. La semana no fue liviana, pero el silencio fue tuyo.';
+      } else {
+        lectura='Los dos silencios quedaron en <strong>peso</strong>. Ninguno lo elegiste, y los dos siguieron dando vueltas cuando la otra persona ya se había ido. Es el tipo de semana en la que uno se siente ausente en su propia noche, sin que nadie lo note.';
+      }
+      html+='<p class="registro-resultado-texto">'+lectura+'</p>';
+
+      html+='<div class="registro-proporcion">';
+      Object.keys(porNombre).forEach(function(nombre){
+        var d=porNombre[nombre];
+        var pctA=Math.round(d.alivio/d.total*100);
+        var pctP=100-pctA;
+        html+='<div class="registro-proporcion-nombre">'+escapar(nombre)+'<span>'+d.total+(d.total===1?' silencio':' silencios')+'</span></div>';
+        html+='<div class="registro-proporcion-barra">';
+        if(d.alivio){ html+='<div class="registro-proporcion-alivio" style="width:'+pctA+'%"></div>'; }
+        if(d.peso){ html+='<div class="registro-proporcion-peso" style="width:'+pctP+'%"></div>'; }
+        html+='</div>';
+        html+='<div class="registro-proporcion-detalle">'+d.alivio+' alivio · '+d.peso+' peso</div>';
+        html+='</div>';
+      });
+      html+='</div>';
+
+      html+='</div>';
+      salida.innerHTML=html;
+    }
+
+    btn.addEventListener('click',render);
+    nombre1.addEventListener('input',function(){ if(salida.querySelector('.registro-resultado')){ render(); } });
+    nombre2.addEventListener('input',function(){ if(salida.querySelector('.registro-resultado')){ render(); } });
   })();
 </script>
 </body>
