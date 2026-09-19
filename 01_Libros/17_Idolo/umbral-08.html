@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,33 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── las zonas sin comprobar ── */
+  .zonas{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .zona-fila{padding:1rem .4rem; border-bottom:1px solid var(--separador);}
+  .zona-fila:last-of-type{border-bottom:none;}
+  .zona-texto{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.65rem .8rem; margin-bottom:.7rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1rem; line-height:1.6;
+    color:var(--blanco-humo); resize:vertical; min-height:3rem;}
+  .zona-texto::placeholder{color:var(--lejos); font-style:italic;}
+  .zona-texto:focus{border-color:var(--oro-polvo);}
+  .zona-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .zona-btn{background:var(--negro); border:none; padding:.65rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .zona-btn:hover, .zona-btn:focus-visible{color:var(--blanco-humo);}
+  .zona-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .zona-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .zona-resultado{margin-top:1.3rem; text-align:center; min-height:2.6rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .zona-resultado strong{color:var(--oro); font-weight:400; font-style:normal;}
+  @media (max-width:600px){
+    .zona-opciones{grid-template-columns:1fr;}
+    .zona-texto{font-size:.96rem;}
+  }
 </style>
 </head>
 <body>
@@ -309,11 +331,55 @@
   <p>Lo primero que decía el sitio más consultado del mundo antiguo era que el trabajo empezaba en el que preguntaba.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">Las zonas sin comprobar</span>
+  <p class="geo-instruccion">Escribe tres cosas a las que les crees sin verificar: una persona, un texto o un medio, una costumbre. Para cada una, marca si alguna vez comprobaste un dato suyo —una fecha, un número, una afirmación concreta—. No importa el resultado: importa si alguna vez lo hiciste.</p>
+  <div class="panel">
+    <div class="zonas" id="zonas">
+      <div class="zona-fila">
+        <textarea class="zona-texto" id="z1" placeholder="Zona 1 — una persona, un texto, una institución, una costumbre"></textarea>
+        <div class="zona-opciones">
+          <button class="zona-btn" data-v="si">Sí, comprobé algún dato</button>
+          <button class="zona-btn" data-v="no">No, nunca comprobé nada</button>
+        </div>
+      </div>
+      <div class="zona-fila">
+        <textarea class="zona-texto" id="z2" placeholder="Zona 2"></textarea>
+        <div class="zona-opciones">
+          <button class="zona-btn" data-v="si">Sí, comprobé algún dato</button>
+          <button class="zona-btn" data-v="no">No, nunca comprobé nada</button>
+        </div>
+      </div>
+      <div class="zona-fila">
+        <textarea class="zona-texto" id="z3" placeholder="Zona 3"></textarea>
+        <div class="zona-opciones">
+          <button class="zona-btn" data-v="si">Sí, comprobé algún dato</button>
+          <button class="zona-btn" data-v="no">No, nunca comprobé nada</button>
+        </div>
+      </div>
+    </div>
+    <div class="zona-resultado" id="zonaResultado"></div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Contéstate la pregunta, y tómate un rato porque la primera respuesta va a ser falsa: <strong>¿dónde no comprobaste nunca nada?</strong></p>
-  <p>Cuando la encuentres, no hagas ninguna reforma. Comprueba una cosa sola, chica, de esas que se verifican en un minuto. Un dato, una fecha, un número.</p>
-  <p>No lo hagas para descubrir un engaño. Lo más probable es que todo esté bien.</p>
-  <p>Lo haces para lo otro: para que esa zona deje de ser la única de tu vida donde nunca miraste.</p>
+  <p>Lo que produjiste no es un diagnóstico. Es un mapa de qué zonas están abiertas y cuáles cerradas.</p>
+  <p>Puede querer decir tres cosas.</p>
+  <p>La primera: que las tres zonas estén <strong>sin comprobar</strong>, y entonces lo que tienes es un préstamo continuo, de esos que se sienten como tener razón y no tienen alcance. La segunda: que hayas comprobado en <strong>alguna</strong>, y esa sea precisamente la que menos te importa — porque comprobar es una actividad menor que solo se hace cuando el objeto no está cargado de importancia. La tercera: que una de las tres <strong>no te suene como zona</strong>, y eso es lo más útil. La zona verdadera no es la que uno reconoce: es la que uno no habría puesto en la lista.</p>
+  <p>Ninguna se resuelve en este umbral. El mapa solo muestra dónde nunca se te ocurrió mirar.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Elegí una de las tres zonas sin comprobar. La que te haya costado más escribir, o la que menos te suene como zona.</p></div>
+  <div class="paso"><span class="paso-nombre">Un solo dato</span><p>Comprobá un solo dato de esa zona. Uno: una fecha, un número, una afirmación concreta, algo que se verifique en un minuto y no requiera estudiar nada.</p></div>
+  <div class="paso"><span class="paso-nombre">No busques engaños</span><p>No lo hagas para descubrir un fraude. Lo más probable es que todo esté bien. Lo hacés para otra cosa: para que esa zona deje de ser la única de tu vida donde nunca miraste.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Debajo</span><p>Escribí en la nota del teléfono: la zona, el dato que comprobaste, el resultado en una línea, la fecha de hoy.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No reformes nada</span><p>No cambies de médico, no dejes de leer al autor, no cambies la costumbre. La zona queda como está. Lo único distinto es que ahora tiene una comprobación hecha.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En un mes vas a estar citando al mismo autor, creyéndole a la misma persona o siguiendo la misma costumbre, sin acordarte de la comprobación. Cuando pase, abre la nota y agregá una línea con la fecha. Si no comprobaste nada nuevo, es el dato. Si comprobaste otra cosa, también. <strong>El gesto no es comprobar siempre: es tener anotado cuántas veces la zona estuvo abierta y cuántas cerrada.</strong></p>
 </div>
 
 <div class="bloque">
@@ -338,7 +404,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -349,6 +415,48 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // las zonas sin comprobar
+    var filas=document.querySelectorAll('#zonas .zona-fila');
+    var res=document.getElementById('zonaResultado');
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.zona-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          calcular();
+        });
+      });
+    });
+    function calcular(){
+      var conTexto=0;
+      filas.forEach(function(f){
+        var ta=f.querySelector('.zona-texto');
+        if(ta && (ta.value||'').trim().length>=3){ conTexto++; }
+      });
+      var hechas=0, conComp=0, sinComp=0;
+      filas.forEach(function(f){
+        if(f.dataset.eleccion){ hechas++; }
+        if(f.dataset.eleccion==='si'){ conComp++; }
+        if(f.dataset.eleccion==='no'){ sinComp++; }
+      });
+      if(hechas<filas.length || conTexto<filas.length){ res.innerHTML=''; return; }
+      if(sinComp===3){
+        res.innerHTML='Las tres zonas sin comprobar. Es el caso más frecuente. La tercera —la que menos te suena como zona— es la que importa: la zona verdadera nunca es la que uno declara.';
+      } else if(sinComp===2){
+        res.innerHTML='Dos sin comprobar, una con un dato comprobado. Mirá cuál es la que sí comprobaste: suele ser <strong>la que menos te importa</strong>, porque comprobar es una actividad menor que solo se hace cuando el objeto no está cargado.';
+      } else if(sinComp===1){
+        res.innerHTML='Una sin comprobar, dos con algo comprobado. Fijate en la que queda abierta: puede ser la más vieja, o puede ser la que nunca se te ocurrió mirar porque ya está resuelta en tu cabeza.';
+      } else {
+        res.innerHTML='Las tres con algo comprobado. Es poco frecuente. Vuelve a mirar la lista en una semana: casi siempre hay una cuarta zona que no se te ocurrió poner y que es la que de verdad está sin abrir.';
+      }
+    }
+    filas.forEach(function(f){
+      var ta=f.querySelector('.zona-texto');
+      if(ta){ ta.addEventListener('input',calcular); }
+    });
   })();
 </script>
 </body>
