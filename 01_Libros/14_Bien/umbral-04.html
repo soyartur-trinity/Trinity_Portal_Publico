@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,36 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el clasificador de preguntas ── */
+  .clasificador{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .clasificador label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .clasificador textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:3.4rem;}
+  .clasificador textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .clasificador textarea:focus{border-color:var(--oro-polvo);}
+  .clasificador .accion{margin-top:.9rem;}
+  .clasificacion{margin-top:1.4rem;}
+  .clasificacion-caja{padding:1.1rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.9rem;}
+  .clasificacion-caja:last-of-type{margin-bottom:0;}
+  .clasificacion-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .clasificacion-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.02rem;
+    line-height:1.75; color:var(--blanco-humo); margin:0 0 .5rem 0;}
+  .clasificacion-texto:last-child{margin-bottom:0;}
+  .clasificacion-texto em{color:var(--oro); font-style:italic;}
+  .clasificacion-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.94rem; line-height:1.6; color:var(--gris-calido); margin:0;}
+  .clasificacion-caja.nueva{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .clasificacion-caja.nueva .clasificacion-etiqueta{color:var(--oro);}
+  .clasificacion-nombre{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:1.1rem; color:var(--oro); letter-spacing:.02em; margin-bottom:.4rem;
+    font-weight:400; font-style:italic;}
 </style>
 </head>
 <body>
@@ -313,11 +338,38 @@
   <cite><span class="obra">Refrán</span> &middot; variante popular del dicho escolástico<br><small>(atribución a cotejar)</small></cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">El clasificador de preguntas</span>
+  <p class="geo-instruccion">Escribe una pregunta que le harías esta semana a alguien sobre cómo está. El sistema te va a decir qué forma tiene —veredicto, respuesta puesta, permiso, o pregunta chica— y si no es chica, te va a mostrar la versión chica de esa misma pregunta.</p>
+  <div class="panel">
+    <div class="clasificador">
+      <label for="preguntaPropia">La pregunta que ibas a hacer</label>
+      <textarea id="preguntaPropia" placeholder="Ejemplo: ¿estás bien?"></textarea>
+      <button class="accion" id="btnClasificar" disabled>Clasificar</button>
+      <div class="clasificacion" id="clasificacion"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a querer preguntarle a alguien cómo está. No lo hagas.</p>
-  <p>Pregunta una sola cosa chica, con un dato adentro, que se pueda contestar en cinco palabras. <em>¿A qué hora te despertaste hoy?</em> <em>¿Cómo te fue el domingo?</em> <em>¿Desde cuándo?</em></p>
-  <p>Después no hagas la segunda pregunta. La tentación es encadenar, y encadenar convierte esto en un interrogatorio, que es la otra manera de cerrar.</p>
-  <p>Una pregunta chica, la respuesta, y seguir con otra cosa. Si hay algo, vuelve solo.</p>
+  <p>Lo que acabas de producir no es una pregunta mejor. Es un dato sobre la forma de pregunta que usas sin darte cuenta.</p>
+  <p><strong>Veredicto</strong> es la forma más común y más cara: <em>¿estás bien?</em>, <em>¿todo bien?</em>, <em>¿cómo te sentís?</em>, <em>¿cómo andás?</em>. Pide un balance entero en dos segundos, y el que responde casi siempre elige <em>bien</em> porque el otro camino —explicar— es más largo de lo que la pregunta admite.</p>
+  <p><strong>Respuesta puesta</strong> es la que ya trae el diagnóstico: <em>¿no estarás cansado?</em>, <em>¿seguro que no te pasa nada?</em>, <em>¿no será que estás exagerando?</em>. Le deja al otro dos salidas: mentir o desmentirte. Casi siempre elige la primera.</p>
+  <p><strong>Permiso</strong> es la que suena generosa y le pasa el trabajo al otro: <em>sabes que puedes contarme lo que sea</em>, <em>cualquier cosa que necesites, estoy</em>, <em>cuando quieras hablamos</em>. Abre la puerta y deja al otro a cargo de cruzarla. El que no encuentra por dónde empezar no necesita permiso: necesita una pregunta que tenga un dato adentro.</p>
+  <p><strong>Chica</strong> es la única forma que el umbral recomienda: <em>¿desde cuándo?</em>, <em>¿cómo fue el domingo?</em>, <em>¿qué hora es la más difícil?</em>, <em>¿a qué hora te dormiste?</em>, <em>¿cómo fue el almuerzo con tu padre?</em>. Pide una precisión, no un balance, y se puede contestar sin admitir nada.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe la pregunta que le ibas a hacer a alguien sobre cómo está. Si querías preguntarle <em>¿estás bien?</em>, escribila tal cual.</p></div>
+  <div class="paso"><span class="paso-nombre">Debajo</span><p>Escribe una sola pregunta chica —con un dato adentro— que puedas hacerle a la misma persona esta semana. <em>¿Desde cuándo?</em> no sirve como pregunta suelta; tiene que ser algo que se responda con un mes, una hora, un domingo.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Hazle solo la pregunta chica. Una sola, en un momento cualquiera, sin preparar nada alrededor. No la encadenes con otra. Si el otro contesta corto, no insistas: la pregunta ya hizo su trabajo, que era abrir un hueco sin obligar.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Volvé a la nota. Anotá dos cosas: la fecha y una sola palabra sobre qué pasó. <em>Nada</em>, <em>algo</em>, <em>corto</em>. Nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No preguntes de nuevo</span><p>La misma pregunta no se repite esa semana. Si vuelve a aparecer el tema, que sea por el otro, no por ti. La pregunta chica es de una sola vez, y funciona porque no obliga a una segunda.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que alguien te importe se te va a salir el <em>¿estás bien?</em> sin pensarlo, en la mesa, con las dos manos sobre el mantel. Cuando pase, abrí la nota y agregá la fecha. Si esa vez te acordaste a mitad de la frase y la cambiaste, escribí <em>cambiada</em>. Si la dejaste salir, escribí <em>salió</em>. Las dos cosas son el dato. <strong>El gesto no es preguntar chico siempre: es tener anotado cuántas veces te acordaste y cuántas no.</strong></p>
 </div>
 
 <div class="bloque">
@@ -339,7 +391,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -350,6 +402,164 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el clasificador de preguntas
+    var campo=document.getElementById('preguntaPropia');
+    var btn=document.getElementById('btnClasificar');
+    var salida=document.getElementById('clasificacion');
+
+    function limpiar(s){
+      s=(s||'').trim();
+      s=s.replace(/^[¿?¡!\s]+/,'').replace(/[¿?¡!\s]+$/,'').trim();
+      s=s.replace(/[.,;:]+$/,'').trim();
+      return s;
+    }
+    function normalizar(s){
+      return limpiar(s).toLowerCase();
+    }
+
+    // Clasificadores basados en patrones de las preguntas que el umbral enumera.
+    function clasificar(q){
+      var t=normalizar(q);
+      if(!t){ return null; }
+
+      // 1. veredicto: pide balance entero
+      var veredicto=[
+        'estás bien','estas bien','todo bien','cómo estás','como estas',
+        'cómo andás','como andas','cómo te sentís','como te sentis',
+        'cómo va todo','como va todo','qué tal todo','que tal todo',
+        'cómo estás vos','como estas vos','cómo te va','como te va'
+      ];
+      for(var i=0;i<veredicto.length;i++){
+        if(t.indexOf(veredicto[i])>=0){ return 'veredicto'; }
+      }
+
+      // 2. respuesta puesta: trae el diagnóstico
+      var respuestaPuesta=[
+        'no estarás','no estaras','no será que','no sera que',
+        'seguro que no','no te pasa nada','no te estará','no te estara',
+        'no será','no sera','no estarás un poco','no estaras un poco'
+      ];
+      for(var j=0;j<respuestaPuesta.length;j++){
+        if(t.indexOf(respuestaPuesta[j])>=0){ return 'respuestaPuesta'; }
+      }
+
+      // 3. permiso: suena generosa y deja el trabajo al otro
+      var permiso=[
+        'puedes contarme','podés contarme','podes contarme',
+        'cualquier cosa','cuando quieras','si necesitas','si me necesitas',
+        'sabes que puedes','sabés que podés','sabes que podés',
+        'aquí estoy','acá estoy','para lo que necesites','para lo que quieras'
+      ];
+      for(var k=0;k<permiso.length;k++){
+        if(t.indexOf(permiso[k])>=0){ return 'permiso'; }
+      }
+
+      // 4. chica: pide una precisión
+      var chicaInicios=['desde cuándo','desde cuando','cómo fue','como fue',
+        'qué hora','que hora','a qué hora','a que hora','cuándo fue','cuando fue',
+        'cuál es la peor','cual es la peor','qué parte','que parte',
+        'cómo te fue','como te fue','cuánto','cuanto'];
+      for(var m=0;m<chicaInicios.length;m++){
+        if(t.indexOf(chicaInicios[m])===0){ return 'chica'; }
+      }
+
+      // Si tiene "desde cuándo" o "cómo fue" en el medio y es corta, la tomamos como chica
+      if((t.indexOf('desde cuándo')>=0 || t.indexOf('desde cuando')>=0 ||
+          t.indexOf('cómo fue')>=0 || t.indexOf('como fue')>=0) && t.split(/\s+/).length<=8){
+        return 'chica';
+      }
+
+      // Si es muy larga, probablemente es una explicación y no una pregunta
+      if(t.split(/\s+/).length>16){ return 'larga'; }
+
+      return 'otra';
+    }
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    // Reescribe una pregunta de veredicto/permiso a una versión chica.
+    function versionChica(q){
+      var t=normalizar(q);
+      if(t.indexOf('estás bien')>=0 || t.indexOf('estas bien')>=0 ||
+         t.indexOf('cómo estás')>=0 || t.indexOf('como estas')>=0 ||
+         t.indexOf('cómo andás')>=0 || t.indexOf('como andas')>=0){
+        return '¿Cómo fue tu domingo?';
+      }
+      if(t.indexOf('todo bien')>=0){
+        return '¿Cómo te fue hoy en el trabajo?';
+      }
+      if(t.indexOf('cómo te sentís')>=0 || t.indexOf('como te sentis')>=0){
+        return '¿En qué momento del día te sentís peor?';
+      }
+      if(t.indexOf('cualquier cosa')>=0 || t.indexOf('cuando quieras')>=0 ||
+         t.indexOf('aquí estoy')>=0 || t.indexOf('acá estoy')>=0 ||
+         t.indexOf('puedes contarme')>=0 || t.indexOf('podés contarme')>=0 ||
+         t.indexOf('podes contarme')>=0){
+        return '¿Desde cuándo?';
+      }
+      return '¿Desde cuándo?';
+    }
+
+    function render(q, tipo){
+      var texto=escapar(limpiar(q));
+      var html='';
+
+      // Caja 1: la pregunta tal como la escribió el lector
+      html+='<div class="clasificacion-caja">';
+      html+='<span class="clasificacion-etiqueta">Tu pregunta</span>';
+      html+='<p class="clasificacion-texto"><em>'+texto+'</em></p>';
+      html+='</div>';
+
+      // Caja 2: la clasificación
+      var nombres={
+        veredicto:'Veredicto',
+        respuestaPuesta:'Respuesta puesta',
+        permiso:'Permiso',
+        chica:'Chica',
+        larga:'Explicación',
+        otra:'Sin forma reconocida'
+      };
+      var lecturas={
+        veredicto:'Pide un balance entero sobre la vida del otro, en el momento, en una palabra. Casi nunca se puede contestar sin mentir. Es la pregunta que el umbral llama <em>solo tiene una respuesta</em>.',
+        respuestaPuesta:'Ya trae el diagnóstico adentro. Le deja al otro dos salidas: mentir o desmentirte. Casi siempre elige la primera, y queda con la impresión de haber sido cuidado sin haber sido escuchado.',
+        permiso:'Suena generosa y le pasa el trabajo al otro. Abre la puerta y deja al que no encuentra por dónde empezar a cargo de cruzarla. El que no tiene la primera frase no necesita permiso: necesita una pregunta que tenga un dato adentro.',
+        chica:'Pide una precisión, no un balance. Se puede contestar sin admitir nada. Esta es la forma que el umbral recomienda, y es la única que abre un hueco sin obligar a llenarlo.',
+        larga:'Más de quince palabras. Lo más probable es que no sea una pregunta: sea una explicación con un signo de interrogación al final. Se contesta con otra explicación, y no con un dato.',
+        otra:'No cae en ninguno de los cuatro moldes del umbral. Puede ser una pregunta buena que no está en la lista, o puede ser algo que no termina de ser pregunta.'
+      };
+      html+='<div class="clasificacion-caja">';
+      html+='<span class="clasificacion-etiqueta">Cómo suena</span>';
+      html+='<span class="clasificacion-nombre">'+nombres[tipo]+'</span>';
+      html+='<p class="clasificacion-texto">'+lecturas[tipo]+'</p>';
+      html+='</div>';
+
+      // Caja 3: la versión chica, si aplica
+      if(tipo==='veredicto' || tipo==='respuestaPuesta' || tipo==='permiso'){
+        var chica=versionChica(q);
+        html+='<div class="clasificacion-caja nueva">';
+        html+='<span class="clasificacion-etiqueta">Una versión chica, para la misma persona</span>';
+        html+='<p class="clasificacion-texto"><em>'+escapar(chica)+'</em></p>';
+        html+='<p class="clasificacion-nota">Con un dato adentro. Se contesta en dos o tres palabras. No obliga a decir que está mal.</p>';
+        html+='</div>';
+      }
+
+      salida.innerHTML=html;
+    }
+
+    campo.addEventListener('input',function(){
+      btn.disabled = limpiar(campo.value).length<3;
+    });
+    btn.addEventListener('click',function(){
+      var q=limpiar(campo.value);
+      if(!q){ salida.innerHTML=''; return; }
+      var tipo=clasificar(q);
+      render(q, tipo);
+    });
   })();
 </script>
 </body>
