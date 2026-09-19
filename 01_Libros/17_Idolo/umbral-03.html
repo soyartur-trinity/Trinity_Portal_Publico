@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,29 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── el mapa de convicciones ── */
+  .convicciones{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .conviccion-fila{padding:1rem .4rem; border-bottom:1px solid var(--separador);}
+  .conviccion-fila:last-of-type{border-bottom:none;}
+  .conviccion-texto{display:block; font-family:'EB Garamond',Georgia,serif;
+    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.7rem;}
+  .conviccion-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .conviccion-btn{background:var(--negro); border:none; padding:.65rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .conviccion-btn:hover, .conviccion-btn:focus-visible{color:var(--blanco-humo);}
+  .conviccion-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .conviccion-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .conviccion-resultado{margin-top:1.3rem; text-align:center; min-height:2.6rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .conviccion-resultado strong{color:var(--oro); font-weight:400; font-style:normal;}
+  @media (max-width:600px){
+    .conviccion-opciones{grid-template-columns:1fr;}
+    .conviccion-texto{font-size:.98rem;}
+  }
 </style>
 </head>
 <body>
@@ -305,11 +323,62 @@
   <cite><span class="obra">John Stuart Mill</span> &middot; Sobre la libertad, 1859</cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">El mapa de las convicciones sin revisar</span>
+  <p class="geo-instruccion">Marca, para cada convicción, si alguna vez buscaste el mejor argumento en contra — el que te daría trabajo, no el peor. No importa si seguís sosteniéndola: importa si alguna vez la pusiste a prueba.</p>
+  <div class="panel">
+    <div class="convicciones" id="convicciones">
+      <div class="conviccion-fila" data-conv="tecnologia" data-medico="0">
+        <span class="conviccion-texto">Sobre la tecnología que rechazas de plano (una app, una práctica, una herramienta).</span>
+        <div class="conviccion-opciones">
+          <button class="conviccion-btn" data-v="si">Sí, busqué el mejor argumento en contra</button>
+          <button class="conviccion-btn" data-v="no">No, nunca</button>
+        </div>
+      </div>
+      <div class="conviccion-fila" data-conv="politica" data-medico="0">
+        <span class="conviccion-texto">Sobre un tema público o político que tenés resuelto.</span>
+        <div class="conviccion-opciones">
+          <button class="conviccion-btn" data-v="si">Sí, busqué el mejor argumento en contra</button>
+          <button class="conviccion-btn" data-v="no">No, nunca</button>
+        </div>
+      </div>
+      <div class="conviccion-fila" data-conv="crianza" data-medico="0">
+        <span class="conviccion-texto">Sobre algo de la crianza, o de una relación de familia, que tenés resuelto.</span>
+        <div class="conviccion-opciones">
+          <button class="conviccion-btn" data-v="si">Sí, busqué el mejor argumento en contra</button>
+          <button class="conviccion-btn" data-v="no">No, nunca</button>
+        </div>
+      </div>
+      <div class="conviccion-fila" data-conv="medico" data-medico="1">
+        <span class="conviccion-texto">Sobre tu salud o tu cuerpo, tal como te lo explicó alguna vez un profesional y no volviste a preguntar.</span>
+        <div class="conviccion-opciones">
+          <button class="conviccion-btn" data-v="si">Sí, busqué el mejor argumento en contra</button>
+          <button class="conviccion-btn" data-v="no">No, nunca</button>
+        </div>
+      </div>
+    </div>
+    <div class="conviccion-resultado" id="conviccionResultado"></div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Piensa en algo que rechaces de plano. Una tecnología, una práctica, una manera de hacer las cosas. Algo sobre lo que ya no discutes.</p>
-  <p>Esta semana, busca a alguien que esté del otro lado y pídele que te cuente para qué le sirve. No para refutarlo: para escucharlo veinte minutos.</p>
-  <p>No tienes que cambiar de opinión, y probablemente no cambies. Lo único que hay que revisar después es si tu razón sigue siendo la misma.</p>
-  <p>Y si hay algo en lo que nunca preguntas nada —un médico, un contador, alguien que sabe—, esa es tu zona. Todos tenemos una. Lo único que se pide es saber cuál es la tuya.</p>
+  <p>Lo que produjiste no es una acusación. Es un mapa de dónde pusiste a prueba y dónde no.</p>
+  <p>Puede querer decir tres cosas.</p>
+  <p>La primera: que las convicciones sin revisar son las que tenés <strong>porque nadie te las discutió</strong>, y no porque las hayas elegido. La segunda: que las revisaste alguna vez y las seguís sosteniendo, y entonces <strong>son tuyas de verdad</strong>, aunque nadie lo sepa. La tercera, que es la del umbral: que la cuarta —salud, cuerpo, médico— haya quedado <strong>sin revisar</strong> aun cuando todas las demás sí. Ese es el caso de Beatriz. Y ese es el que el texto llama desconfianza que no era desconfianza.</p>
+  <p>Ninguna de las tres se resuelve hoy. El mapa solo muestra qué convicciones tenés sin haberlas puesto a prueba.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Elige la convicción que hayas marcado como sin revisar y que más te cueste sostener. No la más importante: la que menos ganas tengas de tocar.</p></div>
+  <div class="paso"><span class="paso-nombre">Busca una sola</span><p>La mejor razón en contra, no la peor. Escrita, en un papel o en la nota del teléfono. Tiene que ser una que te dé trabajo contestar.</p></div>
+  <div class="paso"><span class="paso-nombre">Escríbela abajo</span><p>Debajo de la razón en contra, escribí tu respuesta en dos o tres líneas. Si no se te ocurre ninguna, escribí <em>no tengo respuesta todavía</em>.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Poné la fecha</span><p>Al final de todo, la fecha de hoy. No borres nada. Guardá la nota.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo cuentes</span><p>No le digas a nadie que estás revisando esa convicción. Ni al que estaría de acuerdo, ni al que estaría en contra. La nota queda cerrada.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. Dentro de una semana vas a seguir sosteniendo lo mismo, y no vas a acordarte de haber buscado la razón en contra. Cuando pase, abre la nota y lee lo que escribiste. Si tu respuesta sigue siendo la misma que la primera vez, ya tenés el dato. Si ya no te convence, también. <strong>El gesto no es cambiar de opinión: es tener por escrito que una vez buscaste el mejor argumento en contra.</strong></p>
 </div>
 
 <div class="bloque">
@@ -334,7 +403,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -345,6 +414,50 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el mapa de convicciones sin revisar
+    var filas=document.querySelectorAll('#convicciones .conviccion-fila');
+    var res=document.getElementById('conviccionResultado');
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.conviccion-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          calcular();
+        });
+      });
+    });
+    function calcular(){
+      var hechas=document.querySelectorAll('#convicciones .conviccion-fila[data-eleccion]');
+      if(hechas.length<filas.length){ res.innerHTML=''; return; }
+      var nombres={tecnologia:'tecnología',politica:'tema público o político',crianza:'crianza o familia',medico:'salud y cuerpo'};
+      var sinRevisar=[], revisadas=[];
+      var medicoSin=false;
+      hechas.forEach(function(f){
+        if(f.dataset.eleccion==='no'){
+          sinRevisar.push(nombres[f.dataset.conv]);
+          if(f.dataset.medico==='1'){ medicoSin=true; }
+        } else {
+          revisadas.push(nombres[f.dataset.conv]);
+        }
+      });
+      var n=sinRevisar.length;
+      if(n===0){
+        res.innerHTML='Las cuatro revisadas. Es poco frecuente. Vuelve a mirar la cuarta en una semana: es la que más cuesta recordar si alguna vez se puso a prueba.';
+        return;
+      }
+      var txt='Sin revisar: <strong>'+sinRevisar.join(', ')+'</strong>.';
+      if(medicoSin && n<4){
+        txt+=' Y entre ellas está <strong>salud y cuerpo</strong>, que es la que el texto señala: la que no se disfraza de tema público y por eso se sostiene sin que nadie la mire.';
+      } else if(medicoSin && n===4){
+        txt+=' Las cuatro, incluida <strong>salud y cuerpo</strong>. La cuarta es la que el texto llama convicción invisible: la que uno no declara como convicción.';
+      } else if(n===4){
+        txt+=' Las cuatro sin revisar. Ese es el dato más limpio: son convicciones que tenés porque nadie te las discutió.';
+      }
+      res.innerHTML=txt;
+    }
   })();
 </script>
 </body>
