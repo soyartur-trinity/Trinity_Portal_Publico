@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,56 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el mandado de esta semana ── */
+  .mandado{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .mandado label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .mandado input[type="text"]{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem; margin-bottom:1.2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .mandado input[type="text"]::placeholder{color:var(--lejos); font-style:italic;}
+  .mandado input[type="text"]:focus{border-color:var(--oro-polvo);}
+  .mandado-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .mandado-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .mandado-btn{background:var(--negro); border:none; padding:.85rem .6rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .25s ease;
+    line-height:1.35; text-align:left;}
+  .mandado-btn:hover, .mandado-btn:focus-visible{color:var(--blanco-humo);}
+  .mandado-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .mandado .accion{margin-top:1.1rem;}
+  .mandado-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .mandado-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .mandado-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .mandado-resultado-texto:last-child{margin-bottom:0;}
+  .mandado-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .mandado-regla{margin-top:1rem; padding-top:1rem; border-top:1px solid var(--separador);
+    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1rem; line-height:1.7; color:var(--gris-calido);}
+  .mandado-regla em{color:var(--oro); font-style:italic;}
+
+  /* ── casos especiales del cierre ── */
+  .casos{margin:4rem 0 0; padding:2rem 1.6rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014);}
+  .casos-titulo{font-family:'Cormorant Garamond',serif; font-size:1.06rem;
+    color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    font-weight:400; font-style:italic;}
+  .casos p{color:var(--gris-calido); font-size:clamp(1.06rem,1.7vw,1.16rem);
+    line-height:1.9; margin-bottom:1rem;}
+  .casos p:last-child{margin-bottom:0;}
+  .casos + .casos{margin-top:1.4rem;}
+  @media (max-width:600px){
+    .mandado-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -262,6 +307,36 @@
   <p>Ninguna de esas seis cosas requiere haberse vuelto una persona sabia. Se hacen distraído, de mal humor, sin convicción. Y ninguna se falla, porque casi todas consisten en no hacer algo.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">El mandado de esta semana</span>
+  <p class="geo-instruccion">El libro termina con una frase: <em>Tienes un mandado que hacer esta semana. Invéntalo.</em> Elige con quién y qué mandado. El sistema te va a decir si lo que elegiste tiene las tres condiciones de un mandado, y qué hacer si no las tiene.</p>
+  <div class="panel">
+    <div class="mandado">
+      <label for="conQuien">Con quién</label>
+      <input type="text" id="conQuien" placeholder="Nombre, inicial, o parentesco.">
+
+      <span class="mandado-sub">El mandado</span>
+      <div class="mandado-opciones" id="mandadoOpciones">
+        <button class="mandado-btn" data-v="auto" aria-pressed="false">Llevar o que me lleve en auto</button>
+        <button class="mandado-btn" data-v="cocina" aria-pressed="false">Cocinar o lavar juntos</button>
+        <button class="mandado-btn" data-v="caminata" aria-pressed="false">Caminata o vuelta a la manzana</button>
+        <button class="mandado-btn" data-v="tramite" aria-pressed="false">Acompañar a un trámite o compra</button>
+        <button class="mandado-btn" data-v="casa" aria-pressed="false">Ordenar algo de la casa juntos</button>
+        <button class="mandado-btn" data-v="otro" aria-pressed="false">Otro (lo escribo en la nota)</button>
+      </div>
+
+      <button class="accion" id="btnMandado" disabled>Ver cómo queda</button>
+      <div id="mandadoResultado"></div>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es un plan: es el mandado con el que el libro cierra. Cualquiera de las opciones cumple las condiciones —tiempo sin final anunciado, algo al costado, ninguna pregunta frontal— porque el mandado es chico por definición y no hay mandado que pida una conversación.</p>
+  <p>Si elegiste <em>otro</em>, el sistema te pide verificarlo tú. Es la opción que el libro deja abierta a propósito: hay mandados que no están en ninguna lista y funcionan igual.</p>
+  <p>Y hay una tercera lectura. Si el nombre que escribiste es la misma persona con la que ya probaste un gesto en otro umbral —la que te contesta <em>bien</em>, la que te cerró una escena, la que te trajo un silencio—, este no es un mandado nuevo: es el siguiente paso del mismo. Lo único que cambia es que ahora sabes que no hace falta que ocurra nada. El mandado ya hizo su trabajo por el hecho de armarlo.</p>
+</div>
+
 <div class="bloque">
   <p><span class="rotulo">Dónde quedaron</span><strong>Alicia</strong> sigue diciendo <em>bien</em> casi siempre, y ahora sabe cuándo lo dice. Dijo cuatro palabras en una pileta y esas cuatro alcanzaron para que alguien supiera que había algo. A su hija la escuchó un sábado, en un auto, cuarenta minutos de tráfico; lo suyo se lo contó tres semanas después, en el mismo auto y por el mismo procedimiento. No fue a ver a nadie todavía. Va a ir.</p>
   <p><strong>Lucía</strong> se enteró tarde y no llegó tarde. Dejó de preguntar de frente y aprendió a inventar mandados, que es una destreza menor y le va a servir toda la vida — con su madre, y después con gente que todavía no conoce.</p>
@@ -272,6 +347,21 @@
 
 <div class="bloque">
   <p>Ninguno de los cinco estaba escondiendo nada. Ninguno desconfiaba de nadie. Todos tenían algo sin forma esperando un molde que no llegaba, y cinco veces alguien armó un lugar donde el molde dejó de hacer falta.</p>
+</div>
+
+<div class="casos">
+  <p class="casos-titulo">Cuando el otro nunca abre</p>
+  <p>Hay una situación que el libro no recorrió y que existe: el otro no se abre nunca. No en una tarde, no en un año, no en veinte. Se puede armar el lugar cien veces, con las tres condiciones, sin una pregunta frontal, y el otro sigue contestando <em>bien</em> toda la vida.</p>
+  <p>Eso no quiere decir que uno hizo algo mal. Significa que hay formas de estar en el mundo que no pasan por decir. Hay gente que se ordena hacia adentro y no hacia afuera, y no está sufriendo por eso. Uno puede haber armado un sitio perfecto y el otro simplemente no haber entrado nunca, sin que eso sea un fracaso de nadie.</p>
+  <p>Lo que cambia cuando uno sabe esto es que el mandado deja de tener un objetivo. Se arma porque vale la pena estar al lado, no porque tenga que pasar algo. Las tres condiciones siguen ahí, el rato sigue siendo bueno, y el resultado —que el otro cuente o no cuente— se vuelve una cosa secundaria. Un lector que necesitaba que el otro abriera puede soltar eso sin perder nada: el rato ya existió, y no hacía falta que diera frutos.</p>
+</div>
+
+<div class="casos">
+  <p class="casos-titulo">Cuando el otro se abre y se arrepiente</p>
+  <p>Y hay otro caso, más difícil y más frecuente de lo que parece: el otro se abre, dice algo importante, y a los tres días se cierra con más fuerza que antes. Contesta <em>bien</em> otra vez, y esta vez con una frontera. Cambia de tema cuando el tema se acerca. No menciona lo que dijo.</p>
+  <p>Lo primero que aparece del lado del que escuchó es la duda: <em>¿hice algo mal? ¿lo forcé? ¿fue un error haber dicho algo?</em></p>
+  <p>No fue un error. Lo que pasó es que el que se abrió gastó mucho para hacerlo —más de lo que costaba decir, porque también costaba cruzar un idioma armado durante años— y necesita volver al terreno conocido un rato. Cerrarse no es un retroceso: es el descanso. La mayoría de la gente que dice algo importante necesita después unos días en los que no pasa nada, y si esos días tienen preguntas o escenas, el cierre se vuelve definitivo.</p>
+  <p>Lo que corresponde ahí es lo mismo que en el umbral IX: no arreglar la escena. Tratar al otro como siempre. No volver sobre el tema. Y en algún momento, al costado, una pregunta chica. La cantidad de veces que el otro se abra y se cierre no es una medida de nada: es la manera en que la mayoría de la gente hace esto.</p>
 </div>
 
 <div class="cita">
@@ -324,7 +414,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.casos';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -335,6 +425,67 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el mandado de esta semana
+    var conQuien=document.getElementById('conQuien');
+    var botones=document.querySelectorAll('#mandadoOpciones .mandado-btn');
+    var btn=document.getElementById('btnMandado');
+    var salida=document.getElementById('mandadoResultado');
+
+    var elegido=null;
+
+    function habilitar(){
+      btn.disabled = !(conQuien.value.trim().length>=1 && elegido);
+    }
+    conQuien.addEventListener('input',habilitar);
+    botones.forEach(function(b){
+      b.addEventListener('click',function(){
+        botones.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        elegido=b.dataset.v;
+        habilitar();
+      });
+    });
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    var nombres={
+      auto:'llevar o que te lleve en auto',
+      cocina:'cocinar o lavar juntos',
+      caminata:'una caminata o una vuelta a la manzana',
+      tramite:'acompañar a un trámite o una compra',
+      casa:'ordenar algo de la casa juntos',
+      otro:'un mandado que inventaste tú'
+    };
+
+    btn.addEventListener('click',function(){
+      if(!elegido){ salida.innerHTML=''; return; }
+      var quien=conQuien.value.trim()||'esa persona';
+
+      var html='<div class="mandado-resultado">';
+      html+='<span class="mandado-resultado-etiqueta">Tu mandado</span>';
+      html+='<p class="mandado-resultado-texto">Con <strong>'+escapar(quien)+'</strong>: '+escapar(nombres[elegido])+'.</p>';
+
+      if(elegido==='otro'){
+        html+='<p class="mandado-resultado-texto">No está en la lista, y eso está bien: hay mandados que no caben en ninguna y funcionan igual. Verifica tú que cumpla las tres condiciones:</p>';
+        html+='<div class="mandado-regla">';
+        html+='Que dure una hora, sin hora de finalización anunciada. Que las manos estén ocupadas en algo. Y que en el momento no haya ninguna pregunta frontal — eso lo cubre uno mismo, no el mandado.';
+        html+='</div>';
+      } else {
+        html+='<p class="mandado-resultado-texto">Las tres condiciones están cubiertas por construcción: dura lo que dura el mandado, las manos van ocupadas, y no hay una pregunta frontal que hacer. La tercera —no preguntar en el momento— la cubres tú.</p>';
+      }
+
+      html+='<p class="mandado-resultado-texto" style="margin-top:.9rem;">De diez mandados que armes, ocho van a pasar sin que ocurra nada. Ninguno se pierde: cada uno deja del otro lado el dato de que con <strong>'+escapar(quien)+'</strong> hay lugar. Y ese dato espera.</p>';
+
+      html+='<div class="mandado-regla">La única cosa que puede arruinarlo es <em>aprovechar</em> el rato. En el momento en que <strong>'+escapar(quien)+'</strong> note que armaste el mandado para preguntar algo, el mandado deja de ser un mandado. Habla del tránsito. Deja que el rato sea lo que parece.</div>';
+
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
