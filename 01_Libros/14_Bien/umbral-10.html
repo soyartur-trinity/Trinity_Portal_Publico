@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,56 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el examinador de la conclusión automática ── */
+  .examinador{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .examinador label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .examinador input[type="text"]{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem; margin-bottom:1.2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .examinador input[type="text"]::placeholder{color:var(--lejos); font-style:italic;}
+  .examinador input[type="text"]:focus{border-color:var(--oro-polvo);}
+  .examinador-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .conclusiones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .conclusion-btn{background:var(--negro); border:none; padding:1rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .25s ease; line-height:1.4;
+    text-align:left;}
+  .conclusion-btn:hover, .conclusion-btn:focus-visible{color:var(--blanco-humo);}
+  .conclusion-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .conclusion-btn small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:normal; font-size:.76rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--lejos); margin-top:.35rem;}
+  .conclusion-btn[aria-pressed="true"] small{color:var(--oro-tenue);}
+  .examinador .accion{margin-top:1.1rem;}
+  .examinador-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .examinador-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .examinador-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .examinador-resultado-texto:last-child{margin-bottom:0;}
+  .examinador-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .examinador-otras{margin-top:1rem; padding-top:1rem; border-top:1px solid var(--separador);}
+  .examinador-otras-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--frio); margin-bottom:.6rem;}
+  .examinador-otras-lista{list-style:none; padding:0; margin:0;}
+  .examinador-otras-lista li{font-family:'EB Garamond',Georgia,serif; font-size:1rem;
+    line-height:1.75; color:var(--gris-calido); margin-bottom:.55rem;
+    padding-left:1.1rem; position:relative;}
+  .examinador-otras-lista li:last-child{margin-bottom:0;}
+  .examinador-otras-lista li::before{content:'—'; color:var(--oro-tenue);
+    position:absolute; left:0; top:.15rem;}
+  @media (max-width:600px){
+    .conclusiones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -310,12 +355,58 @@
 
 <div class="perla"><p>Se enteró tarde<br>y no llegó tarde.</p></div>
 
+<div class="geo">
+  <span class="geo-label">La conclusión que llega sola</span>
+  <p class="geo-instruccion">Piensa en algo que te enteraste por un tercero —algo que alguien cercano le contó a otro antes que a ti—. Escribe su nombre o una inicial. Y marca la conclusión que te llegó primero, la que sacaste sin razonarla. Después el sistema te muestra las otras lecturas posibles.</p>
+  <div class="panel">
+    <div class="examinador">
+      <label for="persona">Nombre o inicial de la persona</label>
+      <input type="text" id="persona" placeholder="Ejemplo: M., mi madre, mi hermano.">
+
+      <span class="examinador-sub">La conclusión que llegó sola</span>
+      <div class="conclusiones" id="conclusiones">
+        <button class="conclusion-btn" data-v="noConfia" aria-pressed="false">
+          No confía en mí
+          <small>la conclusión por defecto</small>
+        </button>
+        <button class="conclusion-btn" data-v="noQuiere" aria-pressed="false">
+          No quiere que yo sepa
+          <small>quiere protegerme</small>
+        </button>
+        <button class="conclusion-btn" data-v="noPudo" aria-pressed="false">
+          No pudo decírmelo
+          <small>no encontró por dónde</small>
+        </button>
+        <button class="conclusion-btn" data-v="noSe" aria-pressed="false">
+          No sé por qué
+          <small>no llegué a una conclusión</small>
+        </button>
+      </div>
+      <button class="accion" id="btnVer" disabled>Ver otras lecturas</button>
+      <div id="examinadorResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a enterarte de algo por un tercero. Alguien cercano le contó a otro lo que no te contó a ti.</p>
-  <p>Cuando pase, no saques la conclusión. Es la única disponible y es casi siempre falsa.</p>
-  <p>No lo llames para decirle que te enteraste. Eso convierte lo suyo en un asunto tuyo, y ahora tiene dos cosas que atender.</p>
-  <p>Haz una sola cosa, y es la del umbral III: invéntate un mandado esta semana. Y en ese rato no preguntes nada — cuenta algo tuyo, mal, sin final.</p>
-  <p>Del otro lado, eso dice más que cualquier pregunta: dice que aquí se puede hablar así.</p>
+  <p>Lo que acabas de producir no es un juicio sobre la conclusión que sacaste. Es un dato sobre cuál es la que llega sola, sin que tengas que pensarla.</p>
+  <p><strong>No confía en mí</strong> es la más común, y es la única que el umbral llama <em>disponible</em>: con los datos que hay —pregunté bien, no me contó nada, se lo contó a otro— es la única lectura que aparece sin esfuerzo. Y casi siempre es falsa, porque supone una decisión sobre vos que el otro probablemente no tomó.</p>
+  <p><strong>No quiere que yo sepa</strong> es otra lectura real, y no es desconfianza: es protección. El que calla para no cargar al otro no está decidiendo que el otro no merece saber. Está decidiendo —solo, sin preguntar— que el otro ya tiene bastante. La parte que ese cálculo no ve es que el otro, cuando se entera, no se alivia: se ofende.</p>
+  <p><strong>No pudo decírmelo</strong> es la lectura que más veces es verdadera, y la que menos aparece sin esfuerzo. El otro no decidió nada: no encontró por dónde, con vos, en esa mesa, los jueves. Se lo contó a la prima en un patio porque el patio no era la mesa.</p>
+  <p>Y <strong>no sé por qué</strong> es la respuesta más honesta de las cuatro, y la que el umbral recomienda sostener más tiempo del que uno aguanta. Mientras uno no sabe, no hizo nada todavía. Y lo único que se puede hacer mientras no sabe es lo que Lucía hizo: inventar un mandado.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe el nombre o la inicial de la persona por la que te enteraste de algo tarde, y debajo la conclusión que te llegó sola. Poné la fecha.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>No la llames para decirle que te enteraste. Eso convierte lo suyo en un asunto tuyo, y ahora tiene dos cosas que atender. No le reclames nada. No armes una conversación importante.</p></div>
+  <div class="paso"><span class="paso-nombre">Inventá un mandado</span><p>Pedile que te acompañe a hacer una cosa corta: devolver algo, ir a una ferretería, llevar a alguien. Que tenga tránsito, o una caminata, o una espera. Que dure una hora y no tenga hora de finalización anunciada.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">En el mandado</span><p>No preguntes nada. Contá algo tuyo, mal, sin final. Después volvé a la nota y anotá dos cosas: la fecha del mandado, y una sola palabra sobre qué pasó. <em>Habló</em>, <em>no habló</em>, <em>raro</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Si no habló, esperá tres semanas</span><p>Y armá otro mandado. El primero no cierra nada: solo deja el dato de que hay lugar. Si a las tres semanas nada, tampoco es una conclusión. Es que todavía no tocaba.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. Vas a enterarte por un tercero de otra cosa importante dentro de unos meses, y la conclusión automática —<em>no confía en mí</em>— va a llegar sola otra vez, con la misma velocidad. Cuando pase, abrí la nota y agregá la fecha. Si te acordaste de las otras tres lecturas antes de creerle a la primera, escribí <em>otras</em>. Si le creíste a la primera, escribí <em>sola</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de creerle a la primera: es tener anotado cuántas veces te acordaste de que había otras tres.</strong></p>
 </div>
 
 <div class="bloque">
@@ -338,7 +429,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -349,6 +440,73 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el examinador de la conclusión automática
+    var persona=document.getElementById('persona');
+    var botones=document.querySelectorAll('#conclusiones .conclusion-btn');
+    var btn=document.getElementById('btnVer');
+    var salida=document.getElementById('examinadorResultado');
+
+    var elegido=null;
+
+    function habilitar(){
+      btn.disabled = !(persona.value.trim().length>=1 && elegido);
+    }
+
+    botones.forEach(function(b){
+      b.addEventListener('click',function(){
+        botones.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        elegido=b.dataset.v;
+        habilitar();
+      });
+    });
+    persona.addEventListener('input',habilitar);
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    var lecturas={
+      noConfia:'Es la más común, y es la única que el umbral llama <em>disponible</em>: con los datos que hay, es la lectura que aparece sin esfuerzo. Y casi siempre es falsa, porque supone una decisión sobre ti que el otro probablemente no tomó.',
+      noQuiere:'Es una lectura real, y no es desconfianza: es protección. El que calla para no cargar al otro no está decidiendo que el otro no merece saber. Está decidiendo —solo, sin preguntar— que el otro ya tiene bastante. Lo que ese cálculo no ve es que el otro, cuando se entera, no se alivia: se ofende.',
+      noPudo:'Es la lectura que más veces es verdadera, y la que menos aparece sin esfuerzo. El otro no decidió nada: no encontró por dónde, contigo, en esa mesa, en ese momento. Se lo contó a la prima en un patio porque el patio no era la mesa.',
+      noSe:'Es la respuesta más honesta de las cuatro, y la que el umbral recomienda sostener más tiempo del que uno aguanta. Mientras uno no sabe, no hizo nada todavía. Y lo único que se puede hacer mientras no sabe es lo que Lucía hizo: inventar un mandado.'
+    };
+    var nombres={
+      noConfia:'No confía en mí',
+      noQuiere:'No quiere que yo sepa',
+      noPudo:'No pudo decírmelo',
+      noSe:'No sé por qué'
+    };
+    var orden=['noConfia','noQuiere','noPudo','noSe'];
+
+    btn.addEventListener('click',function(){
+      if(!elegido){ salida.innerHTML=''; return; }
+      var nombrePersona=persona.value.trim()||'esa persona';
+
+      var html='<div class="examinador-resultado">';
+      html+='<span class="examinador-resultado-etiqueta">La conclusión que marcaste</span>';
+      html+='<p class="examinador-resultado-texto"><strong>'+nombres[elegido]+'</strong>, sobre '+escapar(nombrePersona)+'.</p>';
+      html+='<p class="examinador-resultado-texto">'+lecturas[elegido]+'</p>';
+
+      // Otras lecturas (todas menos la elegida)
+      var otras=orden.filter(function(v){ return v!==elegido; });
+      html+='<div class="examinador-otras">';
+      html+='<span class="examinador-otras-etiqueta">Las otras lecturas, sobre la misma persona</span>';
+      html+='<ul class="examinador-otras-lista">';
+      otras.forEach(function(v){
+        html+='<li><strong style="color:var(--blanco-humo);font-weight:500;font-style:normal;">'+nombres[v]+'</strong>. '+lecturas[v]+'</li>';
+      });
+      html+='</ul>';
+      html+='</div>';
+
+      html+='<p class="examinador-resultado-texto" style="margin-top:1rem;">La conclusión automática no es la única verdad: es la única que llega sola. Lo que se hace después —el mandado, el auto, la caminata— no depende de cuál de las cuatro es la verdadera. Depende de no haber elegido antes de tiempo.</p>';
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
