@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,38 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── lo que sostenías y lo que sigue ── */
+  .doblez{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .doblez label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .doblez textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem; margin-bottom:1.3rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:2.8rem;}
+  .doblez textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .doblez textarea:focus{border-color:var(--oro-polvo);}
+  .doblez .accion{margin-top:.2rem;}
+  .doblez-resultado{margin-top:1.3rem;}
+  .doblez-caja{padding:1.2rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:1rem;}
+  .doblez-caja:last-of-type{margin-bottom:0;}
+  .doblez-caja.antes{border-color:var(--separador);}
+  .doblez-caja.igual{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .doblez-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .doblez-caja.antes .doblez-etiqueta{color:var(--lejos);}
+  .doblez-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .6rem 0;}
+  .doblez-texto:last-child{margin-bottom:0;}
+  .doblez-texto em{color:var(--oro); font-style:italic;}
+  .doblez-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.92rem; line-height:1.65; color:var(--gris-calido); margin:0;}
+  @media (max-width:600px){
+    .doblez{padding:1.2rem 1rem;}
+  }
 </style>
 </head>
 <body>
@@ -321,11 +347,41 @@
   <p>La chica de los quince era ella y su circunstancia, y su circunstancia era una casa donde nadie le cobraba alquiler. <strong>No cambió ella sola: cambió con lo que la rodeaba.</strong> Y algo, en el medio de todo eso, se mantuvo igual — y ahora se puede señalar con el dedo, que es lo que no pudo hacer nadie antes.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">Lo que sostenías y lo que sigue</span>
+  <p class="geo-instruccion">Piensa en algo que sostenías hace años —cinco, diez, quince— y hoy no sostendrías. Escríbelo. Después piensa en algo que sostenías en la misma época y hoy sigue igual. Escribilo. El sistema te va a leer las dos cosas y decir qué cambió y qué no.</p>
+  <div class="panel">
+    <div class="doblez">
+      <label for="antesSost">Algo que sostenías y hoy no</label>
+      <textarea id="antesSost" placeholder="Ejemplo: que nunca iba a estudiar algo por el dinero. O: que nunca iba a perdonar a alguien. O: que a los treinta iba a estar viviendo afuera."></textarea>
+
+      <label for="sigueSost">Algo que sostenías y sigue igual</label>
+      <textarea id="sigueSost" placeholder="Ejemplo: una manera de enojarme con las injusticias chicas. O: una lealtad con dos o tres personas. O: que el domingo es para no hacer nada."></textarea>
+
+      <button class="accion" id="btnDoblez" disabled>Ver el resultado</button>
+      <div class="doblez-resultado" id="doblezResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Si tienes conversaciones tuyas de hace más de cinco años, entra a una. Una sola, y elige una común — no la del peor momento.</p>
-  <p>Lee veinte minutos y para. Vas a encontrar dos cosas.</p>
-  <p>Cosas que hoy no sostendrías. Para cada una, contéstate qué no sabías entonces: dónde vivías, de qué dependías, qué no te había pasado todavía.</p>
-  <p>Y cosas que siguen igual. Esas anótalas. Son las que nadie, antes de ahora, pudo verificar de sí mismo.</p>
+  <p>Lo que acabas de producir no es un juicio sobre tu coherencia. Es un dato sobre dos cosas distintas que el archivo puede probar al mismo tiempo.</p>
+  <p><strong>Lo que cambió no es traición.</strong> Es lo mismo que hace la chica de los quince cuando dice algo que no va a poder sostener a los treinta. Escribió desde donde estaba, sin los datos que vinieron después. Nadie antes pudo verificar ese cambio con fecha: siempre había que contarlo, y el que lo cuenta lo cuenta como quiere.</p>
+  <p><strong>Lo que sigue igual es lo que no se pudo armar hacia atrás.</strong> Es la única prueba de identidad que existe — no metafórica, no discursiva. Algo que dijiste a los quince, con tus palabras, y que hoy sigue siendo verdad. Elsa no tiene nada de eso. Se lo cree, y con creerlo le alcanza, y podría estar equivocada.</p>
+  <p>Y hay una tercera lectura, que es la que aparece cuando las dos cosas que escribiste se parecen demasiado. Si tu "antes" y tu "sigue" están casi en la misma familia de ideas, puede significar dos cosas: que cambiaste poco —que es una forma de la constancia— o que lo que hoy llamás "no sostener" en realidad es una variante de lo mismo. Eso también es un dato.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Si tenés conversaciones tuyas de hace más de cinco años, entra a una. Una sola, y elegí una común — no la del peor momento.</p></div>
+  <div class="paso"><span class="paso-nombre">Veinte minutos</span><p>Leé veinte minutos y pará. No sigas hasta el final buscando la frase que te va a hacer mal. A los veinte minutos ya está el dato.</p></div>
+  <div class="paso"><span class="paso-nombre">Lo que hoy no sostendrías</span><p>Marcá dos o tres cosas. Para cada una, contéstate qué no sabías entonces: dónde vivías, de qué dependías, qué no te había pasado todavía. Nada más. No hace falta que te lo expliques a vos mismo.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Lo que sigue igual</span><p>Anotá una sola cosa que sigue igual. Una, con tu letra. Esa es la única prueba de identidad que existe, y no es lo mismo que creérselo.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo cuentes todavía</span><p>No le digas a nadie <em>estuve leyendo mis mensajes de los quince y descubrí que…</em>. Eso convierte el dato en un relato, y el relato se arma a favor de quien lo cuenta — que es justamente lo que el archivo vino a interrumpir.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En algún momento del próximo mes vas a encontrar otra conversación vieja, o un posteo de 2018, o una foto con un comentario tuyo que hoy no escribirías. Cuando pase, abrí la nota y agregá la fecha. Si esa vez anotaste lo que ya no sostenés, escribí <em>anoté</em>. Si lo leíste y cerraste sin anotar, escribí <em>leí y pasé</em>. Las dos cosas son el dato. <strong>El gesto no es releerse siempre con atención: es tener anotado cuántas veces el pasado dejó algo que puedas mostrar, y cuántas veces lo cerraste sin verlo.</strong></p>
 </div>
 
 <div class="bloque">
@@ -346,7 +402,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -357,6 +413,49 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // lo que sostenías y lo que sigue
+    var antes=document.getElementById('antesSost');
+    var sigue=document.getElementById('sigueSost');
+    var btn=document.getElementById('btnDoblez');
+    var salida=document.getElementById('doblezResultado');
+
+    function habilitar(){
+      btn.disabled = !(antes.value.trim().length>=4 && sigue.value.trim().length>=4);
+    }
+    antes.addEventListener('input',habilitar);
+    sigue.addEventListener('input',habilitar);
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    btn.addEventListener('click',function(){
+      var a=antes.value.trim();
+      var s=sigue.value.trim();
+      if(!a || !s){ salida.innerHTML=''; return; }
+
+      var html='';
+
+      html+='<div class="doblez-caja antes">';
+      html+='<span class="doblez-etiqueta">Lo que hoy no sostendrías</span>';
+      html+='<p class="doblez-texto"><em>'+escapar(a)+'</em></p>';
+      html+='<p class="doblez-nota">Esto lo escribió alguien que no tenía los datos que tenés ahora. No cambió la persona: cambió con lo que la rodeaba. Nadie antes pudo verificar ese cambio con fecha.</p>';
+      html+='</div>';
+
+      html+='<div class="doblez-caja igual">';
+      html+='<span class="doblez-etiqueta">Lo que sigue igual</span>';
+      html+='<p class="doblez-texto"><em>'+escapar(s)+'</em></p>';
+      html+='<p class="doblez-nota">Esto es lo que no se pudo armar hacia atrás. Es la única prueba de identidad que existe — no metafórica, no discursiva. Algo que dijiste con tus palabras, en otro momento, y que hoy sigue siendo verdad. Elsa no tiene nada de eso: se lo cree, y podría estar equivocada.</p>';
+      html+='</div>';
+
+      // pequeña nota final
+      html+='<p class="doblez-nota" style="margin-top:1rem; text-align:center;">Las dos cosas están escritas. Las dos tienen fecha. Es lo que el archivo prueba y lo que nadie pudo probar antes.</p>';
+
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
