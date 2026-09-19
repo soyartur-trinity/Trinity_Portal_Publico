@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,25 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── lo que no tiene forma ── */
+  .sinforma{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .sinforma label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .sinforma textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:4.2rem;}
+  .sinforma textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .sinforma textarea:focus{border-color:var(--oro-polvo);}
+  .sinforma .accion{margin-top:.9rem;}
+  .sinforma-salida{margin-top:1.3rem; text-align:center; min-height:2.6rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .sinforma-salida strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .sinforma-salida .num{font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem; color:var(--oro); display:block; margin-bottom:.3rem;
+    letter-spacing:.08em;}
 </style>
 </head>
 <body>
@@ -309,11 +323,37 @@
   <cite><span class="obra">Isak Dinesen</span> &middot; citada por Hannah Arendt en La condición humana, 1958</cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">Lo que no tiene forma</span>
+  <p class="geo-instruccion">Escribe algo que no le has contado a nadie, y que no tiene forma: no empieza un día, no tiene culpable, no cabe en tres oraciones. Escribilo mal, como salga. Después el sistema te va a decir cuántas palabras tiene.</p>
+  <div class="panel">
+    <div class="sinforma">
+      <label for="sinForma">Lo que no le has contado a nadie</label>
+      <textarea id="sinForma" placeholder="No empieces por el principio. Empezá por cualquier lado."></textarea>
+      <button class="accion" id="btnContar" disabled>Contar palabras</button>
+      <div class="sinforma-salida" id="sinFormaSalida"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Esta semana, cuéntale a alguien algo que no tenga final. Una sola cosa, chica, sin conclusión.</p>
-  <p>No la prepares. Si la preparas vas a encontrarle forma, y entonces ya no es esto.</p>
-  <p>Empiézala mal, a propósito: <em>no sé cómo decirte esto porque no pasó nada.</em> Esa frase sirve de arranque y no requiere que hayas entendido nada.</p>
-  <p>Y no la cierres con un chiste ni con un <em>pero bueno, ya se va a acomodar</em>. Déjala abierta. Alguien la va a querer cerrar por ti: agradece y sigue sin cerrarla.</p>
+  <p>Lo que produjiste no es una frase mejor ni peor. Es un dato sobre cuánto le falta para poder decirse.</p>
+  <p>Menos de veinte palabras es lo que la mayor parte de la gente lleva meses esperando encontrar. Menos de veinte palabras ya se puede decir tal cual, mal, en el momento menos pensado, y no requiere que el otro tenga el rato preparado. Casi todo lo que la gente no dice cabe ahí.</p>
+  <p>Entre veinte y cincuenta es el tamaño típico de lo que uno quiere contar bien. Ese es el registro donde se prepara la conversación, donde se elige el momento, donde se espera a que decante. Y donde no se dice nunca.</p>
+  <p>Más de cincuenta palabras no es lo que uno quiere decir: es todo lo que uno tiene alrededor de lo que quiere decir. En general hay una sola frase adentro de esas cincuenta que es la que importa, y el resto es contexto que uno mismo se pide para autorizarse a decirla.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Vas a estar con alguien de confianza en algún rato muerto: un auto, una cocina, una caminata. No prepares nada.</p></div>
+  <div class="paso"><span class="paso-nombre">Empezá mal</span><p>Decí una frase que no tenga final: <em>no sé cómo decirte esto porque no pasó nada</em>. Esa frase sirve de arranque y no requiere que hayas entendido nada.</p></div>
+  <div class="paso"><span class="paso-nombre">No cierres</span><p>Si el otro intenta resolverlo, si te pregunta <em>¿pero qué pasó?</em>, si aparece un <em>ya se va a acomodar</em>: no cierres. Agradecé y seguí sin cerrar. Un relato sin final puede seguir.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Abrí la nota del teléfono. Anotá dos cosas: la fecha y una sola palabra sobre qué pasó. Nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Espera</span><p>No vuelvas a la nota esta semana. Si en esos días te dan ganas de contarle a alguien más lo mismo, es el dato. Agregalo cuando vuelvas.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En algún momento de las próximas semanas vas a tener otra vez algo sin forma y vas a esperar a que decante, sin acordarte de esto. Cuando pase, abrí la nota y agregá la fecha. Si lo dijiste mal esa vez, escribí <em>dicho</em>. Si seguís esperando, escribí <em>esperando</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de esperar: es tener anotado cuántas veces esperaste y cuántas veces dijiste igual.</strong></p>
 </div>
 
 <div class="bloque">
@@ -335,7 +375,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -346,6 +386,36 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // lo que no tiene forma
+    var campo=document.getElementById('sinForma');
+    var btn=document.getElementById('btnContar');
+    var salida=document.getElementById('sinFormaSalida');
+
+    function palabras(s){
+      s=(s||'').trim();
+      if(!s){ return 0; }
+      return s.split(/\s+/).length;
+    }
+    campo.addEventListener('input',function(){
+      btn.disabled = palabras(campo.value)<1;
+    });
+    btn.addEventListener('click',function(){
+      var t=campo.value.trim();
+      if(!t){ salida.innerHTML=''; return; }
+      var n=palabras(t);
+      var html='<span class="num">'+n+' palabras</span>';
+      var v='';
+      if(n<=20){
+        v='Menos de veinte. Eso ya se puede decir tal cual, mal, en el momento menos pensado. Es el tamaño que la mayor parte de la gente lleva meses sin encontrar.';
+      } else if(n<=50){
+        v='Entre veinte y cincuenta. Es el tamaño típico de lo que uno quiere <strong>contar bien</strong>. Ese registro tiene una sola consecuencia: no se dice nunca.';
+      } else {
+        v='Más de cincuenta. Adentro de todo eso suele haber una sola frase que es la que importa; el resto es contexto que uno mismo se pide para autorizarse. Volvé a mirar el primer renglón.';
+      }
+      html+=v;
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
