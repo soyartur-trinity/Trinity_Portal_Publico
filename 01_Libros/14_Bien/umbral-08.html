@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,37 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el inversor de la lista ── */
+  .inversor{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .inversor-fila{padding:1rem .3rem; border-bottom:1px solid var(--separador);}
+  .inversor-fila:last-of-type{border-bottom:none;}
+  .inversor-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .inversor input[type="text"]{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.7rem .85rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .inversor input[type="text"]::placeholder{color:var(--lejos); font-style:italic;}
+  .inversor input[type="text"]:focus{border-color:var(--oro-polvo);}
+  .inversor .accion{margin-top:1.1rem;}
+  .inversor-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .inversor-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .inversor-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .5rem 0;}
+  .inversor-resultado-texto:last-child{margin-bottom:0;}
+  .inversor-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .inversor-pasos{margin-top:1rem; padding-top:1rem; border-top:1px solid var(--separador);
+    list-style:none; padding-left:0;}
+  .inversor-pasos li{font-family:'EB Garamond',Georgia,serif; font-size:1rem;
+    line-height:1.75; color:var(--gris-calido); margin-bottom:.45rem; padding-left:1.2rem;
+    position:relative;}
+  .inversor-pasos li:last-child{margin-bottom:0;}
+  .inversor-pasos li::before{content:'\27D0'; color:var(--oro-tenue); font-size:.7rem;
+    position:absolute; left:0; top:.3rem;}
 </style>
 </head>
 <body>
@@ -303,11 +329,43 @@
 
 <div class="perla"><p>La lista no se elige.<br>Se prueba.</p></div>
 
+<div class="geo">
+  <span class="geo-label">El inversor de la lista</span>
+  <p class="geo-instruccion">Escribe dos nombres. Primero, la persona a la que le contarías algo sin forma. Segundo, alguien con quien te ves seguido —cada semana, cada mes— y a quien nunca le contaste nada de esta clase. El sistema te va a decir cuál de las dos probablemente funcione, y por qué.</p>
+  <div class="panel">
+    <div class="inversor">
+      <div class="inversor-fila">
+        <label class="inversor-etiqueta" for="intimo">La persona a la que le contarías algo sin forma</label>
+        <input type="text" id="intimo" placeholder="Ejemplo: M., mi mejor amigo, mi hermana.">
+      </div>
+      <div class="inversor-fila">
+        <label class="inversor-etiqueta" for="cercano">Alguien con quien te ves seguido y nunca le contaste nada de esta clase</label>
+        <input type="text" id="cercano" placeholder="Ejemplo: el compañero de trabajo, la vecina, el sobrino.">
+      </div>
+      <button class="accion" id="btnInvertir" disabled>Invertir la lista</button>
+      <div id="inversorResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Haz una lista corta, mentalmente, ahora mismo: ¿a quién le contarías algo que no tiene forma?</p>
-  <p>Si aparecen dos o tres nombres, ya está — usa uno esta semana.</p>
-  <p>Si no aparece ninguno, no es una conclusión sobre tu vida: es un dato sobre el reparto. Entonces elige a alguien con quien ya te veas por otra cosa, y esta semana dile una sola frase que no pertenezca al idioma de ese vínculo. Chica. Sin explicar por qué se la estás diciendo.</p>
-  <p>Y si eres el que escucha a todos, la tarea es otra y es más difícil: contéstale mal a alguien. Una vez, a propósito, sin el <em>bien</em> de siempre. Le vas a dar a esa persona una información que no tenía, que es que a ti también se te puede preguntar.</p>
+  <p>Lo que produjiste no es una recomendación sobre personas. Es un dato sobre el supuesto que ordena tu lista.</p>
+  <p>El sistema te dijo que la segunda —el que no es tu íntimo— es la que probablemente funcione. No porque sea mejor persona: porque tiene menos idioma acumulado con vos y menos consecuencias si sale mal. La primera ya tiene un idioma armado, y ese idioma no tiene la palabra que necesitas. Ampliarlo cuesta más de lo que cuesta usar uno nuevo con alguien que no lo tiene todavía.</p>
+  <p>Eso no quiere decir que la persona íntima no sirva. Quiere decir que sirve para otra cosa: para el después, cuando lo que había que decir ya se dijo en otro lado. El íntimo acompaña lo que ya tiene forma. El otro, el que no es tan íntimo, es donde aparece la forma por primera vez.</p>
+  <p>Y hay una tercera lectura, que solo aparece cuando la segunda persona que escribiste te resulta completamente improbable. Eso significa que ya tienes el idioma armado con todas las personas que ves seguido, y el hueco no está en tu lista: está en algún vínculo que todavía no tenés.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Elegí a la segunda persona —la que no es tu íntimo— y decile una sola frase que no pertenezca al idioma habitual de ese vínculo. Chica. Sin explicar por qué se la estás diciendo.</p></div>
+  <div class="paso"><span class="paso-nombre">No la prepares</span><p>No elijas la frase con cuidado. Lo que importa no es el contenido: es que rompa el idioma. Un dato real, una observación sobre algo tuyo, una pregunta que no encaje con el registro de siempre.</p></div>
+  <div class="paso"><span class="paso-nombre">Mirá qué pasa</span><p>No esperes que la conversación siga. En general no sigue. Lo que hay que ver es si el otro deja lugar: si pregunta algo, si se queda un segundo en silencio, si no cambia de tema.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Abrí la nota del teléfono. Escribí la fecha, una sola palabra sobre lo que pasó, y el nombre. Nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Esperá dos semanas</span><p>No vuelvas a romper el idioma con esa persona esta semana. Si en dos semanas el otro te trajo algo, aunque sea mínimo, es señal de que la puerta quedó abierta. Si no trajo nada, también es información: esa puerta no es la que corresponde, y hay que probar con otra.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que quieras contarle algo importante a alguien, la lista que vas a hacer mentalmente va a ser la misma de siempre: los tres o cuatro nombres de costumbre. Cuando pase, abrí la nota y agregá la fecha. Si la última vez rompiste el idioma con alguien nuevo, escribí <em>rompí</em>. Si volviste a la lista de siempre, escribí <em>volví a la lista</em>. <strong>El gesto no es cambiar la lista definitivamente: es tener anotado cuántas veces probaste con alguien nuevo y cuántas veces volviste a los mismos.</strong></p>
 </div>
 
 <div class="bloque">
@@ -329,7 +387,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -340,6 +398,44 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el inversor de la lista
+    var intimo=document.getElementById('intimo');
+    var cercano=document.getElementById('cercano');
+    var btn=document.getElementById('btnInvertir');
+    var salida=document.getElementById('inversorResultado');
+
+    function habilitar(){
+      btn.disabled = !(intimo.value.trim().length>=2 && cercano.value.trim().length>=2);
+    }
+    intimo.addEventListener('input',habilitar);
+    cercano.addEventListener('input',habilitar);
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    btn.addEventListener('click',function(){
+      var n1=intimo.value.trim();
+      var n2=cercano.value.trim();
+      if(!n1 || !n2){ salida.innerHTML=''; return; }
+
+      var html='<div class="inversor-resultado">';
+      html+='<span class="inversor-resultado-etiqueta">Lo que dice el umbral</span>';
+      html+='<p class="inversor-resultado-texto">La que probablemente funcione es <strong>'+escapar(n2)+'</strong>, no <strong>'+escapar(n1)+'</strong>.</p>';
+      html+='<p class="inversor-resultado-texto">No porque <strong>'+escapar(n2)+'</strong> sea mejor persona. Porque tiene menos idioma acumulado contigo y menos consecuencias si sale mal. El vínculo con <strong>'+escapar(n1)+'</strong> ya tiene un idioma armado, y ese idioma no tiene la palabra que necesitas. Ampliarlo cuesta más que usar uno nuevo con alguien que todavía no lo tiene.</p>';
+      html+='<ul class="inversor-pasos">';
+      html+='<li>Esta semana, decile a <strong>'+escapar(n2)+'</strong> una sola frase que no pertenezca al idioma habitual de ese vínculo.</li>';
+      html+='<li>No la prepares. Que sea un dato real o una observación tuya que no encaje con el registro de siempre.</li>';
+      html+='<li>No esperes que la conversación siga. Lo que hay que ver es si el otro deja lugar.</li>';
+      html+='<li>Si en dos semanas <strong>'+escapar(n2)+'</strong> te trajo algo, aunque sea mínimo, la puerta quedó abierta.</li>';
+      html+='</ul>';
+      html+='<p class="inversor-resultado-texto" style="margin-top:.9rem;">Y no descartes a <strong>'+escapar(n1)+'</strong>. Sirve para el después: para cuando lo que había que decir ya se dijo en otro lado. El íntimo acompaña lo que ya tiene forma. El otro es donde la forma aparece por primera vez.</p>';
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
