@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,35 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── la frase que contestarías mañana ── */
+  .frase-previa{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .frase-previa label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .frase-previa textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:3.4rem;}
+  .frase-previa textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .frase-previa textarea:focus{border-color:var(--oro-polvo);}
+  .frase-previa .accion{margin-top:.9rem;}
+  .comparacion{margin-top:1.4rem;}
+  .comparacion-caja{padding:1.1rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.8rem;}
+  .comparacion-caja:last-of-type{margin-bottom:0;}
+  .comparacion-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.5rem;}
+  .comparacion-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.02rem;
+    line-height:1.7; color:var(--blanco-humo); margin:0;}
+  .comparacion-texto em{color:var(--oro); font-style:italic;}
+  .comparacion-num{font-family:'Cormorant Garamond',serif; font-size:.9rem;
+    color:var(--oro-polvo); letter-spacing:.18em; text-transform:uppercase;
+    margin-left:.4rem;}
+  .comparacion-veredicto{margin-top:1rem; text-align:center;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .comparacion-veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
 </style>
 </head>
 <body>
@@ -305,10 +329,37 @@
   <cite><span class="obra">Refrán</span> &middot; recogido en castellano desde el siglo XV<br><small>(atribución a cotejar)</small></cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">La frase que contestarías mañana</span>
+  <p class="geo-instruccion">Mañana alguien te va a preguntar cómo estás. Escribe ahora, sin preparar nada, lo que contestarías. El sistema te la muestra al lado de la frase de Alicia, y cuenta las palabras de las dos.</p>
+  <div class="panel">
+    <div class="frase-previa">
+      <label for="frasePropia">Lo que contestarías mañana</label>
+      <textarea id="frasePropia" placeholder="Bien, ____."></textarea>
+      <button class="accion" id="btnComparar" disabled>Comparar</button>
+      <div class="comparacion" id="comparacion"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Alguien te va a preguntar cómo estás, probablemente mañana. Contesta <em>bien</em>, como siempre. No lo cambies: no hay nada malo en esa respuesta y forzarla no produce nada.</p>
-  <p>Lo único que hay que hacer es notar, un segundo después, si era exacto o si era lo único que encontraste.</p>
-  <p>Si te quedó algo adentro, no lo digas ahora ni vuelvas sobre el tema. Solo fíjate qué tamaño tenía. Ese dato vale más que la conversación entera.</p>
+  <p>Lo que acabas de producir no es un juicio sobre tu respuesta. Es un dato sobre su tamaño.</p>
+  <p>Una respuesta de tres o cuatro palabras —<em>bien</em>, <em>cansado, pero bien</em>— hace lo mismo que hacía la de Alicia: cierra la conversación sin que se note, y no deja entrar nada. Eso no es un defecto: es lo que hay cuando no se encontró por dónde, y el umbral entero lo dice. La respuesta chica es exacta.</p>
+  <p>Una respuesta de quince o veinte palabras ya está intentando algo. Es el tamaño de la primera oración de un relato, aunque todavía no lo sea. Casi siempre empieza con un matiz, con un <em>en realidad</em>, con un <em>mirá</em>. Ese matiz es lo único que hay que conservar cuando llegue el momento de decir algo que no tiene forma.</p>
+  <p>Y una respuesta larga —de treinta palabras para arriba— no está contestando la pregunta. Está pidiendo una escena. Casi nunca se dice tal cual, porque requiere que el otro tenga dos horas por delante. Ese es el tamaño de la frase que el libro llama <em>sin ocasión</em>, y que suele salir mal, al costado, cuando ya nadie mira.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe la frase que contestarías mañana cuando te pregunten cómo estás. Nada más que esa frase, con las palabras que te salgan.</p></div>
+  <div class="paso"><span class="paso-nombre">Cuenta</span><p>Cuenta las palabras. Si son más de quince, está intentando algo. Si son menos de cinco, es una respuesta exacta y todavía no hay nada que decir.</p></div>
+  <div class="paso"><span class="paso-nombre">Debajo</span><p>Escribe, en una sola línea, la última vez que contestaste <em>bien</em> y no era del todo cierto. Solo la fecha. No la conversación.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Guarda la nota</span><p>No la compartas. No le cuentes a nadie que hiciste esto. La fecha y el número de palabras quedan juntos en la nota.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Espera tres días</span><p>Vuelve a la nota el cuarto día. Si en esos tres días contestaste <em>bien</em> sin pensarlo, ya tienes el dato. Si alguna vez contestaste algo distinto, también.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver, mañana mismo y todos los días. La palabra <em>bien</em> va a salir sola, sin que la decidas, y en algún momento te vas a dar cuenta recién después de haberla dicho. Cuando pase, abre la nota y agrega la fecha. Si esa vez la frase era exacta, escribí <em>exacta</em>. Si no, escribí <em>no exacta</em>. La cantidad de veces que se vuelve a anotar es el único registro del gesto.</p>
 </div>
 
 <div class="bloque">
@@ -334,7 +385,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -345,6 +396,56 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la frase que contestarías mañana
+    var campo=document.getElementById('frasePropia');
+    var btn=document.getElementById('btnComparar');
+    var salida=document.getElementById('comparacion');
+
+    var FRASE_ALICIA='Los domingos, como a las seis, se me junta algo acá y a las nueve se me va. No pasó nada. Hace cuatro meses.';
+    var PALABRAS_ALICIA=27;
+
+    function palabras(s){
+      s=(s||'').trim();
+      if(!s){ return 0; }
+      return s.split(/\s+/).length;
+    }
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    campo.addEventListener('input',function(){
+      btn.disabled = palabras(campo.value)<1;
+    });
+
+    btn.addEventListener('click',function(){
+      var propia=campo.value.trim();
+      if(!propia){ salida.innerHTML=''; return; }
+      var n=palabras(propia);
+      var html='';
+      html+='<div class="comparacion-caja">';
+      html+='<span class="comparacion-etiqueta">Tu frase</span>';
+      html+='<p class="comparacion-texto"><em>'+escapeHtml(propia)+'</em><span class="comparacion-num">'+n+' palabras</span></p>';
+      html+='</div>';
+      html+='<div class="comparacion-caja">';
+      html+='<span class="comparacion-etiqueta">La de Alicia, del umbral</span>';
+      html+='<p class="comparacion-texto"><em>'+escapeHtml(FRASE_ALICIA)+'</em><span class="comparacion-num">'+PALABRAS_ALICIA+' palabras</span></p>';
+      html+='</div>';
+
+      var v='';
+      if(n<=5){
+        v='Cinco palabras o menos. Es una respuesta <strong>exacta</strong>: hace lo mismo que la de Alicia, cierra la conversación sin que se note. El libro no la corrige.';
+      } else if(n<=15){
+        v='Entre seis y quince palabras. Es un <strong>matiz</strong>. No es un relato todavía, y es lo único que hay que conservar cuando aparezca algo que decir.';
+      } else if(n<=30){
+        v='Entre dieciséis y treinta palabras. Es el tamaño de una <strong>primera oración de relato</strong>. Casi siempre empieza con un <em>en realidad</em> o un <em>mirá</em>. Eso es lo que se guarda.';
+      } else {
+        v='Más de treinta palabras. Eso ya no contesta la pregunta: está pidiendo una <strong>escena</strong>. El libro la llama <em>sin ocasión</em>, y sale mal, al costado, cuando ya nadie mira.';
+      }
+      html+='<p class="comparacion-veredicto">'+v+'</p>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
