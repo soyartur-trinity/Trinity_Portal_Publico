@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,42 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── vestir la frase ── */
+  .vestidor{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .vestidor label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .vestidor input[type="text"], .vestidor textarea{display:block; width:100%;
+    background:rgba(201,168,76,.012); border:1px solid var(--separador);
+    padding:.75rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .vestidor input[type="text"]::placeholder, .vestidor textarea::placeholder{
+    color:var(--lejos); font-style:italic;}
+  .vestidor input[type="text"]:focus, .vestidor textarea:focus{border-color:var(--oro-polvo);}
+  .vestidor textarea{resize:vertical; min-height:2.8rem;}
+  .vestidor .accion{margin-top:.4rem;}
+  .vestidor-resultado{margin-top:1.4rem;}
+  .vestido-caja{padding:1.2rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:1rem;}
+  .vestido-caja:last-of-type{margin-bottom:0;}
+  .vestido-caja.desnuda{border-color:var(--separador);}
+  .vestido-caja.vestida{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .vestido-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .vestido-caja.desnuda .vestido-etiqueta{color:var(--lejos);}
+  .vestido-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0;}
+  .vestido-texto em.frase{color:var(--blanco-humo); font-style:italic;}
+  .vestido-texto em.contexto{color:var(--oro); font-style:italic;}
+  .vestido-texto em.vacio{color:var(--lejos); font-style:italic;}
+  .vestido-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.92rem; line-height:1.65; color:var(--gris-calido); margin-top:.6rem;}
+  @media (max-width:600px){
+    .vestidor{padding:1.2rem 1rem;}
+  }
 </style>
 </head>
 <body>
@@ -312,11 +342,47 @@
   <p>Se usó durante siglos para discutir cómo se lee un texto sagrado. Sirve igual para un chat de un domingo, y por la misma razón: <strong>las palabras exactas de alguien no son la verdad sobre ese alguien.</strong> Son lo que le salió esa vez.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">Vestir la frase</span>
+  <p class="geo-instruccion">Escribe una frase guardada que recuerdes — tuya o del otro, la que sea. Después llena las tres condiciones que el archivo no guarda. El sistema te va a mostrar la frase desnuda, como aparece en un chat, y la frase vestida, con lo que le pusiste.</p>
+  <div class="panel">
+    <div class="vestidor">
+      <label for="fraseCruda">La frase, tal como quedó escrita</label>
+      <textarea id="fraseCruda" placeholder="Ejemplo: a mí me da lo mismo."></textarea>
+
+      <label for="horaFrase">Qué hora era</label>
+      <input type="text" id="horaFrase" placeholder="Ejemplo: casi medianoche. O: no me acuerdo.">
+
+      <label for="veniaFrase">Qué venía pasando</label>
+      <input type="text" id="veniaFrase" placeholder="Ejemplo: dos días discutiendo lo mismo. O: no me acuerdo.">
+
+      <label for="estabaFrase">Cómo estaba el que la escribió</label>
+      <input type="text" id="estabaFrase" placeholder="Ejemplo: agotado, después de catorce horas. O: no me acuerdo.">
+
+      <button class="accion" id="btnVestir" disabled>Vestir la frase</button>
+      <div class="vestidor-resultado" id="vestirResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a leer algo guardado que te hizo mal — tuyo o del otro.</p>
-  <p>Antes de sacar cualquier conclusión, contéstate las tres: qué hora era, qué venía pasando, cómo estaba el que escribió eso.</p>
-  <p>Si no sabes alguna de las tres, ese es el dato. Significa que estás leyendo una frase a la que le falta el ochenta por ciento y la estás tomando por completa.</p>
-  <p>Y si la que escribió eso fuiste tú, hazte las mismas tres preguntas. Suele costar más: con los propios somos peores jueces que con nadie.</p>
+  <p>Lo que acabas de producir no es una mejor versión de la frase. Son dos versiones de la misma cosa, y solo una de las dos aparece cuando alguien va al archivo.</p>
+  <p>La desnuda tiene la propiedad de parecer objetiva: está escrita, tiene fecha, es verificable. Frente a ella, cualquier contexto que aporte el que la escribió suena a excusa o a acomodación. <strong>Pero el contexto no es una excusa: es la mitad de lo que la frase dijo.</strong></p>
+  <p>La vestida es la misma frase con lo que las dos personas sabían sin decirlo. Y ahí se ve por qué el archivo produce una versión empobrecida: no es que mienta, es que recorta. Recorta exactamente lo que no se puede escribir.</p>
+  <p>Y hay un caso particular que vale la pena mirar. Si en las tres condiciones escribiste <em>no me acuerdo</em>, lo que tienes es la frase desnuda tal cual aparece —que es lo que casi todos tienen de casi todas las frases. En ese caso, el archivo no te está dando una versión peor que tu memoria: te está dando la única versión que existe. La diferencia es que la de tu memoria va a ir cambiando, y la del archivo no.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Va a aparecer una frase guardada que te haga mal. Tuya o del otro. No la busques: va a aparecer. Un mensaje que se cruza cuando abrís por otra cosa, un audio viejo, una captura que aparece sin querer.</p></div>
+  <div class="paso"><span class="paso-nombre">Antes de sacar conclusiones</span><p>Contéstate las tres: qué hora era, qué venía pasando, cómo estaba el que escribió eso. Si no sabes alguna, eso también es información: significa que estás leyendo una frase a la que le falta el ochenta por ciento.</p></div>
+  <div class="paso"><span class="paso-nombre">Si la escribiste tú</span><p>Hazte las mismas tres preguntas. Con las propias solemos ser peores jueces que con las ajenas: nos leemos como nos lee el archivo, sin contexto, sin piedad y sin la mitad que falta.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Abrí la nota del teléfono. Escribí una sola línea: la frase, y cuál de las tres condiciones fue la que cambió el sentido. Con eso alcanza.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo cuentes todavía</span><p>No le digas al otro <em>me di cuenta de que estabas cansado</em>. Eso no sirve: parece una concesión, y él ya sabe que estaba cansado. El contexto repuesto no es para decirlo, es para leer distinto.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima frase guardada te va a hacer el mismo efecto que la primera vez —el frío, la contundencia, la sensación de que dice exactamente lo que dice— y vas a olvidarte de las tres preguntas. Cuando pase, abrí la nota y agregá la fecha. Si esa vez te acordaste de reponer aunque sea una de las tres, escribí <em>repuse</em>. Si leíste desnuda, escribí <em>desnuda</em>. Las dos cosas son el dato. <strong>El gesto no es leer siempre con contexto: es tener anotado cuántas veces repusiste y cuántas veces leíste como lee el archivo.</strong></p>
 </div>
 
 <div class="bloque">
@@ -336,7 +402,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -347,6 +413,83 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // vestir la frase
+    var frase=document.getElementById('fraseCruda');
+    var hora=document.getElementById('horaFrase');
+    var venia=document.getElementById('veniaFrase');
+    var estaba=document.getElementById('estabaFrase');
+    var btn=document.getElementById('btnVestir');
+    var salida=document.getElementById('vestirResultado');
+
+    function habilitar(){
+      btn.disabled = frase.value.trim().length < 2;
+    }
+    frase.addEventListener('input',habilitar);
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    function limpia(s){
+      s=(s||'').trim();
+      if(!s){ return ''; }
+      s=s.replace(/[.\s]+$/,'');
+      return s;
+    }
+    function esVacio(s){
+      var t=(s||'').trim().toLowerCase();
+      return t==='' || t==='no me acuerdo' || t==='no me acuerdo.' || t==='no recuerdo';
+    }
+
+    btn.addEventListener('click',function(){
+      var f=limpia(frase.value);
+      if(!f){ salida.innerHTML=''; return; }
+      var h=limpia(hora.value);
+      var v=limpia(venia.value);
+      var e=limpia(estaba.value);
+
+      var hVacia=esVacio(h), vVacia=esVacio(v), eVacia=esVacio(e);
+      var vacias=0;
+      if(hVacia){ vacias++; }
+      if(vVacia){ vacias++; }
+      if(eVacia){ vacias++; }
+
+      var html='';
+
+      // caja 1: desnuda
+      html+='<div class="vestido-caja desnuda">';
+      html+='<span class="vestido-etiqueta">La frase desnuda, como aparece en el chat</span>';
+      html+='<p class="vestido-texto"><em class="frase">'+escapar(f)+'</em>.</p>';
+      html+='<p class="vestido-nota">Esto es lo que entrega el archivo. Sin hora, sin contexto, sin lo que venía pasando. Suena a declaración.</p>';
+      html+='</div>';
+
+      // caja 2: vestida
+      html+='<div class="vestido-caja vestida">';
+      html+='<span class="vestido-etiqueta">La frase vestida, con las tres condiciones</span>';
+
+      var partes=[];
+      if(!hVacia){ partes.push('Era '+escapar(h)); }
+      if(!vVacia){ partes.push('venía pasando que '+escapar(v)); }
+      if(!eVacia){ partes.push('el que la escribió estaba '+escapar(e)); }
+
+      var encabezado=partes.length ? partes.join(', ')+'. ' : '';
+      var fraseVestida = encabezado + 'Y entonces dijo: <em class="frase">'+escapar(f)+'</em>.';
+
+      html+='<p class="vestido-texto">'+fraseVestida+'</p>';
+
+      if(vacias===3){
+        html+='<p class="vestido-nota">No pusiste ninguna de las tres. Eso significa que tienes solo la versión desnuda — como casi todo el mundo con casi todas las frases. No es un problema de memoria: es que la frase se puede repetir y las otras tres cosas no.</p>';
+      } else if(vacias===0){
+        html+='<p class="vestido-nota">Están las tres. Eso es raro. Casi siempre pasa cuando la escena se habló después: al hablar, alguien repuso las condiciones. No es que la memoria las conservó: es que las volvieron a poner entre los dos.</p>';
+      } else {
+        html+='<p class="vestido-nota">Falta' + (vacias>1?'n ':' ') + vacias + ' de las tres. Una frase con la mitad de sus condiciones no dice lo mismo, y sigue estando disponible con la misma autoridad.</p>';
+      }
+      html+='</div>';
+
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
