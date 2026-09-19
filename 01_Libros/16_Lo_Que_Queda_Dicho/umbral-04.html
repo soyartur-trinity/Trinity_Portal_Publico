@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,40 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── por qué lo abriste ── */
+  .motivos{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .motivos-encabezado{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.88rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:1rem;}
+  .motivo-fila{padding:.9rem .3rem; border-bottom:1px solid var(--separador);}
+  .motivo-fila:last-of-type{border-bottom:none;}
+  .motivo-nombre{display:block; font-family:'EB Garamond',Georgia,serif;
+    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.6rem;}
+  .motivo-nombre small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.88rem; color:var(--gris-calido); margin-top:.2rem;}
+  .motivo-opciones{display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .motivo-btn{background:var(--negro); border:none; padding:.7rem .4rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.86rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .motivo-btn:hover, .motivo-btn:focus-visible{color:var(--blanco-humo);}
+  .motivo-btn[aria-pressed="true"][data-v="mucho"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .motivo-btn[aria-pressed="true"][data-v="poco"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .motivo-btn[aria-pressed="true"][data-v="nunca"]{color:var(--lejos); background:rgba(42,36,24,.4);}
+  .motivos .accion{margin-top:1.1rem;}
+  .motivos-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .motivos-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .motivos-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .motivos-resultado-texto:last-child{margin-bottom:0;}
+  .motivos-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  @media (max-width:600px){
+    .motivo-opciones{grid-template-columns:1fr 1fr;}
+  }
 </style>
 </head>
 <body>
@@ -322,11 +350,85 @@
   <p>Se usa siempre en clave heroica, como si en ese espacio hubiera que resistir algo. Sirve mejor en clave práctica: <strong>el espacio no se consigue resistiendo, se consigue alargándolo.</strong> Diez días de conversaciones encima es exactamente eso, y no requiere ninguna fortaleza.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">¿Por qué lo abriste?</span>
+  <p class="geo-instruccion">Piensa en las últimas veces que abriste un archivo: un chat viejo, una foto guardada, un audio. Para cada motivo, marca si te pasa mucho, poco o nunca. No pienses en la peor vez: piensa en lo habitual.</p>
+  <div class="panel">
+    <div class="motivos" id="motivos">
+      <span class="motivos-encabezado">Cuando abro algo guardado, lo hago para...</span>
+
+      <div class="motivo-fila" data-m="dato">
+        <span class="motivo-nombre">Buscar un dato
+          <small>una dirección, un horario, algo que necesito</small>
+        </span>
+        <div class="motivo-opciones">
+          <button class="motivo-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="motivo-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="motivo-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+          <button class="motivo-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="motivo-fila" data-m="bueno">
+        <span class="motivo-nombre">Revivir algo bueno
+          <small>un audio, una foto, algo que quiero volver a sentir</small>
+        </span>
+        <div class="motivo-opciones">
+          <button class="motivo-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="motivo-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="motivo-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+          <button class="motivo-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="motivo-fila" data-m="confirmar">
+        <span class="motivo-nombre">Confirmar que tenía razón
+          <small>volver a la frase que me da la razón, aunque ya la sepa de memoria</small>
+        </span>
+        <div class="motivo-opciones">
+          <button class="motivo-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="motivo-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="motivo-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+          <button class="motivo-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="motivo-fila" data-m="doler">
+        <span class="motivo-nombre">Volver a sentir lo que sentí
+          <small>ir a buscar la puñalada, sabiendo que está</small>
+        </span>
+        <div class="motivo-opciones">
+          <button class="motivo-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="motivo-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="motivo-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+          <button class="motivo-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <button class="accion" id="btnMotivos" disabled>Ver el resultado</button>
+      <div id="motivosResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a querer abrir algo guardado esta semana. Probablemente ya sabes cuál.</p>
-  <p>Haz una sola cosa antes: di en voz alta qué esperas encontrar. Ridículo, hablando solo, tal cual.</p>
-  <p>Si después entras igual, entra. No se trata de impedirlo y no evalúes si valió la pena.</p>
-  <p>Y si hay una conversación que tienes fijada arriba de todo, despégala esta semana. No la borres — despégala nada más, y deja que se vaya bajando sola.</p>
+  <p>Lo que acabas de producir no es un diagnóstico. Es un dato sobre para qué usás el archivo, y hay dos de los cuatro motivos que el libro saca del medio y dos que deja.</p>
+  <p><strong>Buscar un dato</strong> y <strong>revivir algo bueno</strong> no son el problema. Son, de hecho, dos de las cosas buenas que llegaron con esto. El archivo sirve para eso y no requiere ninguna vigilancia.</p>
+  <p><strong>Confirmar que tenías razón</strong> es donde empieza. Se siente como buscar un dato: uno entra, encuentra lo que buscaba, sale tranquilo. Lo que cambia es lo que queda del otro lado. La próxima vez, la versión que uno tiene del asunto es un poco más sólida y la del otro un poco menos disponible.</p>
+  <p><strong>Volver a sentir lo que sentiste</strong> es el cuarto y el más claro. Tiene una propiedad específica que los otros tres no tienen: siempre funciona. Uno va buscando la puñalada y la encuentra intacta, porque ahí está, escrita, esperando. Cada lectura no cansa el dolor: lo fija.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Vas a querer abrir algo guardado. Probablemente ya sabés cuál. No te propongas no abrirlo: no funciona así y no es el punto.</p></div>
+  <div class="paso"><span class="paso-nombre">Antes de abrir</span><p>Di en voz alta qué esperás encontrar. Ridículo, hablando solo, tal cual. Aunque estés en la calle. Aunque la frase te suene peor dicha que pensada.</p></div>
+  <div class="paso"><span class="paso-nombre">Si igual abrís</span><p>Abrí. No te sientas mal, no evalúes si valió la pena. La frase ya hizo su trabajo — dejar de estar invisible — y eso es lo único que hacía falta.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Abrí la nota del teléfono. Anotá tres cosas: la fecha, la frase que dijiste en voz alta, y si abriste igual. Nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Si hay una conversación fijada arriba</span><p>Despegala esta semana. No la borres: despegala nada más, y dejá que se vaya bajando sola. Diez días después hay cuarenta conversaciones encima y ya no se ofrece.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez vas a estar abriendo antes de darte cuenta, y el decir en voz alta no va a llegar a tiempo. Cuando pase, abrí la nota y agregá la fecha. Si esa vez te acordaste antes de tocar la pantalla, escribí <em>dije</em>. Si te acordaste después, escribí <em>abrí</em>. Las dos cosas son el dato. <strong>El gesto no es no abrir: es tener anotado cuántas veces el brazo se detuvo y cuántas veces no.</strong></p>
 </div>
 
 <div class="bloque">
@@ -347,7 +449,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -358,6 +460,73 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // por qué lo abriste
+    var filas=document.querySelectorAll('#motivos .motivo-fila');
+    var btn=document.getElementById('btnMotivos');
+    var salida=document.getElementById('motivosResultado');
+
+    function habilitar(){
+      var hechas=document.querySelectorAll('#motivos .motivo-fila[data-eleccion]');
+      btn.disabled = hechas.length < filas.length;
+    }
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.motivo-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          habilitar();
+        });
+      });
+    });
+
+    var nombres={
+      dato:'buscar un dato',
+      bueno:'revivir algo bueno',
+      confirmar:'confirmar que tenías razón',
+      doler:'volver a sentir lo que sentiste'
+    };
+
+    btn.addEventListener('click',function(){
+      var hechas=document.querySelectorAll('#motivos .motivo-fila[data-eleccion]');
+      if(hechas.length<filas.length){ salida.innerHTML=''; return; }
+
+      var muchos=[], pocos=[], ninguno=[];
+      hechas.forEach(function(f){
+        var v=f.dataset.eleccion;
+        if(v==='mucho'){ muchos.push(f.dataset.m); }
+        else if(v==='poco'){ pocos.push(f.dataset.m); }
+        else if(v==='nunca'){ ninguno.push(f.dataset.m); }
+      });
+
+      var html='<div class="motivos-resultado">';
+      html+='<span class="motivos-resultado-etiqueta">Lo que dice el umbral</span>';
+
+      if(muchos.length===0){
+        html+='<p class="motivos-resultado-texto">Ninguno en <strong>mucho</strong>. Eso es raro y puede significar dos cosas: que no tenés un motivo por defecto — y entonces elegís cada vez —, o que no reconocés el motivo con el que más lo hacés. Volvé a mirar la lista en una semana.</p>';
+      } else if(muchos.length===1){
+        var c=muchos[0];
+        if(c==='dato'){
+          html+='<p class="motivos-resultado-texto">Tu motivo más frecuente es <strong>'+nombres[c]+'</strong>. Eso no es el problema y nunca lo fue. El archivo sirve para eso y no requiere ninguna vigilancia.</p>';
+        } else if(c==='bueno'){
+          html+='<p class="motivos-resultado-texto">Tu motivo más frecuente es <strong>'+nombres[c]+'</strong>. Es una de las cosas buenas que llegaron con el archivo: la voz de alguien que ya no está, un día que salió bien, un audio de once segundos. Elsa nunca pudo hacer esto.</p>';
+        } else if(c==='confirmar'){
+          html+='<p class="motivos-resultado-texto">Tu motivo más frecuente es <strong>'+nombres[c]+'</strong>. Aquí empieza lo otro. Se siente como buscar un dato — entrás, encontrás lo que buscabas, salís tranquilo — y no lo es: lo que buscás no es información, es una posición. Y cada vez que la confirmás, la versión del otro queda un poco menos disponible.</p>';
+        } else {
+          html+='<p class="motivos-resultado-texto">Tu motivo más frecuente es <strong>'+nombres[c]+'</strong>. Es el cuarto y el más claro de todos. Tiene una propiedad que los otros tres no tienen: <strong>siempre funciona</strong>. Vas buscando la puñalada y la encontrás intacta, porque ahí está, escrita, esperando.</p>';
+          html+='<p class="motivos-resultado-texto">Cada lectura no cansa el dolor: lo fija. Un texto no cambia — dice exactamente lo mismo en la lectura veinte que en la primera.</p>';
+        }
+      } else {
+        var lista=muchos.map(function(m){return nombres[m];}).join(' y ');
+        html+='<p class="motivos-resultado-texto">Marcaste <strong>mucho</strong> en más de uno: '+lista+'. Eso es lo más frecuente de todo. En la misma semana uno abre para buscar un dato y después abre para otra cosa, y la sensación interna es la misma.</p>';
+        html+='<p class="motivos-resultado-texto">Lo que hace la diferencia no es lo que uno siente al abrir: es lo que queda después. Las dos primeras categorías — dato y algo bueno — dejan lo mismo que había. Las otras dos dejan algo distinto.</p>';
+      }
+
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
