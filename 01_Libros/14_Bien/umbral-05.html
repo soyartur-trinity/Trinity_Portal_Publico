@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,44 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el examinador de frases de repertorio ── */
+  .examinador{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .examinador label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .examinador textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:3.4rem;}
+  .examinador textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .examinador textarea:focus{border-color:var(--oro-polvo);}
+  .examinador .accion{margin-top:.9rem;}
+  .examinacion{margin-top:1.4rem;}
+  .examinacion-caja{padding:1.1rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.9rem;}
+  .examinacion-caja:last-of-type{margin-bottom:0;}
+  .examinacion-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .examinacion-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.02rem;
+    line-height:1.75; color:var(--blanco-humo); margin:0 0 .4rem 0;}
+  .examinacion-texto:last-child{margin-bottom:0;}
+  .examinacion-texto em{color:var(--oro); font-style:italic;}
+  .examinacion-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.94rem; line-height:1.6; color:var(--gris-calido); margin:0;}
+  .examinacion-palabras{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.7rem;}
+  .examinacion-palabra{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1rem; color:var(--oro); padding:.15rem .55rem; border:1px solid var(--oro-polvo);
+    border-radius:2px; line-height:1.5;}
+  .examinacion-palabra small{display:block; font-style:normal; font-size:.7rem;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--oro-polvo);
+    text-align:center; margin-top:.1rem;}
+  .examinacion-num{font-family:'Cormorant Garamond',serif; font-size:1.8rem;
+    color:var(--oro); display:block; margin-bottom:.3rem; letter-spacing:.06em;}
+  .examinacion-caja.antiguedad{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .examinacion-caja.antiguedad .examinacion-texto{font-size:1.06rem;}
+  .examinacion-pregunta{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.06rem; line-height:1.65; color:var(--oro); margin-top:.4rem;}
 </style>
 </head>
 <body>
@@ -299,11 +332,38 @@
   <p>Y esa persona vuelve a hablar la próxima vez.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">El examinador de frases de repertorio</span>
+  <p class="geo-instruccion">Escribe una frase que tengas preparada y uses seguido — en discusiones, en sobremesas, cuando alguien te contradice. El sistema te va a decir cuántas palabras tiene, cuáles repetís, y te va a hacer una pregunta sobre la antigüedad.</p>
+  <div class="panel">
+    <div class="examinador">
+      <label for="frasePropia">La frase que tienes preparada</label>
+      <textarea id="frasePropia" placeholder="Escribila tal cual la dices, con las palabras que usas."></textarea>
+      <button class="accion" id="btnExaminar" disabled>Examinar</button>
+      <div class="examinacion" id="examinacion"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Va a haber una conversación de varios donde alguien empiece mal, se corrija y se quede a mitad de camino.</p>
-  <p>No lo ayudes. Cuenta cuatro en silencio.</p>
-  <p>Y si eres tú el que tiene la frase preparada, prueba una vez a no decirla. Una sola, para ver qué pasa en la mesa cuando el lugar queda vacío.</p>
-  <p>No evalúes el resultado. Esa evaluación la hace el que quiere tener razón.</p>
+  <p>Lo que acabas de producir no es una crítica a la frase. Es un dato sobre el repertorio.</p>
+  <p>Una frase de menos de doce palabras que se dice seguido es casi siempre una herramienta: sirve para cerrar un tema, para orientar una discusión, para no seguir discutiendo algo que no vale la pena. No todas las frases cortas son de repertorio: la mayoría son funcionales y hacen su trabajo.</p>
+  <p>Una frase de más de veinticinco palabras que se dice seguido ya no es una herramienta: es una pieza. Tiene estructura, tiene final, tiene la forma de un argumento cerrado. Ese tipo de frase solo se usa en ciertos contextos —discusiones, sobremesas, cuando alguien contradice— y no aparece cuando uno está pensando algo nuevo.</p>
+  <p>Y una frase que tiene palabras que se repiten adentro —un estribillo, una construcción que vuelve— es la más delatora de todas. El estribillo es el sello de la pieza: no aparece en el pensamiento espontáneo, aparece cuando alguien ya decidió qué quiere decir y está armando la frase para decirlo.</p>
+  <p>La pregunta de la antigüedad es la más importante del interactivo y no la puede contestar el sistema. Es la única que mide lo que el umbral mide: si la frase es de hoy o de hace años. Una pieza nueva puede ser pensamiento en voz alta. Una pieza vieja es repertorio.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe, con tus palabras, la frase que tienes preparada. La que usas cuando alguien te contradice en una mesa. Tal cual la dices.</p></div>
+  <div class="paso"><span class="paso-nombre">Debajo</span><p>Escribe una sola línea: la primera vez que la dijiste, si te acuerdas. Si no te acuerdas, escribí <em>no me acuerdo</em>, y eso también es un dato.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Va a haber una discusión en la que ibas a decirla. No la digas. Una vez, para ver qué pasa en la mesa cuando el lugar queda vacío. No busques decir otra cosa en su lugar: dejá el silencio.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Anotá en la nota dos cosas: la fecha y una sola palabra sobre qué pasó cuando no la dijiste. <em>Nada</em>, <em>raro</em>, <em>alguien habló</em>, <em>silencio</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No evalúes</span><p>No vuelvas a la nota a decidir si la frase era buena o mala. Esa evaluación la hace el que quiere tener razón. Vos solo anotás qué pasó cuando no la dijiste.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima discusión vas a decirla sin darte cuenta, y te vas a acordar de esto dos minutos después. Cuando pase, abrí la nota y agregá la fecha. Si esa vez la dijiste, escribí <em>dicha</em>. Si la dejaste pasar, escribí <em>no dicha</em>. Las dos cosas son el dato. <strong>El gesto no es no decirla nunca: es tener anotado cuántas veces la dijiste y cuántas veces no.</strong></p>
 </div>
 
 <div class="bloque">
@@ -329,7 +389,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -340,6 +400,121 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el examinador de frases de repertorio
+    var campo=document.getElementById('frasePropia');
+    var btn=document.getElementById('btnExaminar');
+    var salida=document.getElementById('examinacion');
+
+    // Palabras vacías del castellano que no se consideran estribillo.
+    var vacias={
+      'a':1,'al':1,'algo':1,'algunas':1,'algunos':1,'ante':1,'antes':1,'como':1,'con':1,
+      'contra':1,'cual':1,'cuando':1,'de':1,'del':1,'desde':1,'donde':1,'dos':1,'el':1,
+      'él':1,'ella':1,'ellas':1,'ellos':1,'en':1,'entre':1,'era':1,'es':1,'esa':1,'ese':1,
+      'eso':1,'esta':1,'está':1,'estas':1,'este':1,'esto':1,'estos':1,'fue':1,'ha':1,
+      'hacia':1,'hasta':1,'hay':1,'la':1,'las':1,'le':1,'les':1,'lo':1,'los':1,'más':1,
+      'me':1,'menos':1,'mi':1,'mis':1,'mucho':1,'muy':1,'nada':1,'ni':1,'no':1,'nos':1,
+      'o':1,'os':1,'otra':1,'otro':1,'para':1,'pero':1,'poco':1,'por':1,'porque':1,
+      'que':1,'qué':1,'quien':1,'quién':1,'se':1,'sin':1,'sobre':1,'su':1,'sus':1,
+      'tal':1,'también':1,'tan':1,'te':1,'tiene':1,'toda':1,'todas':1,'todo':1,'todos':1,
+      'tu':1,'tus':1,'un':1,'una':1,'uno':1,'unos':1,'y':1,'ya':1,'yo':1
+    };
+
+    function palabras(s){
+      s=(s||'').trim();
+      if(!s){ return []; }
+      return s.split(/\s+/);
+    }
+    function contar(s){
+      return palabras(s).length;
+    }
+    function limpiar(s){
+      return s.replace(/[.,;:¡!¿?"'«»()[\]—–\-]/g,' ').replace(/\s+/g,' ').trim();
+    }
+    function estribillos(texto){
+      var t=limpiar(texto).toLowerCase();
+      var arr=palabras(t);
+      var cuenta={};
+      arr.forEach(function(p){
+        if(p.length<4){ return; }
+        if(vacias[p]){ return; }
+        cuenta[p]=(cuenta[p]||0)+1;
+      });
+      var res=[];
+      Object.keys(cuenta).forEach(function(k){
+        if(cuenta[k]>=2){ res.push({p:k,n:cuenta[k]}); }
+      });
+      res.sort(function(a,b){ return b.n-a.n; });
+      return res;
+    }
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    campo.addEventListener('input',function(){
+      btn.disabled = contar(campo.value)<2;
+    });
+
+    btn.addEventListener('click',function(){
+      var frase=campo.value.trim();
+      if(!frase){ salida.innerHTML=''; return; }
+      var n=contar(frase);
+      var est=estribillos(frase);
+
+      var html='';
+
+      // Caja 1: la frase, con conteo de palabras
+      html+='<div class="examinacion-caja">';
+      html+='<span class="examinacion-etiqueta">Tu frase</span>';
+      html+='<span class="examinacion-num">'+n+' palabras</span>';
+      html+='<p class="examinacion-texto"><em>'+escapar(frase)+'</em></p>';
+      html+='</div>';
+
+      // Caja 2: lectura según longitud
+      var lectura='';
+      if(n<12){
+        lectura='Menos de doce palabras. Casi siempre es una <strong>herramienta</strong>: sirve para cerrar un tema, para orientar una discusión, para no seguir discutiendo algo que no vale la pena. La mayoría de las frases cortas no son repertorio, son función.';
+      } else if(n<25){
+        lectura='Entre doce y veinticinco palabras. Es una <strong>pieza corta</strong>. Tiene estructura, tiene final, tiene la forma de un argumento cerrado. Se usa en discusiones y sobremesas, y no aparece cuando uno está pensando algo nuevo.';
+      } else {
+        lectura='Más de veinticinco palabras. Es una <strong>pieza</strong> en sentido estricto. Tiene estructura, tiene remate, tiene la forma completa de un argumento cerrado. No es una frase que uno dice: es una frase que uno despliega.';
+      }
+      html+='<div class="examinacion-caja">';
+      html+='<span class="examinacion-etiqueta">Cómo suena</span>';
+      html+='<p class="examinacion-texto">'+lectura+'</p>';
+      html+='</div>';
+
+      // Caja 3: estribillos
+      if(est.length){
+        html+='<div class="examinacion-caja">';
+        html+='<span class="examinacion-etiqueta">Estribillo</span>';
+        html+='<p class="examinacion-texto">Hay '+est.length+(est.length===1?' palabra que se repite':' palabras que se repiten')+' adentro de la frase.';
+        html+=' El estribillo es el sello de la pieza: no aparece en el pensamiento espontáneo, aparece cuando alguien ya decidió qué quiere decir y está armando la frase para decirlo.</p>';
+        html+='<div class="examinacion-palabras">';
+        est.forEach(function(e){
+          html+='<span class="examinacion-palabra">'+escapar(e.p)+'<small>'+e.n+'×</small></span>';
+        });
+        html+='</div>';
+        html+='</div>';
+      } else {
+        html+='<div class="examinacion-caja">';
+        html+='<span class="examinacion-etiqueta">Estribillo</span>';
+        html+='<p class="examinacion-texto">Ninguna palabra se repite adentro de la frase. Eso es una buena señal para una herramienta y una señal neutra para una pieza: hay piezas que se sostienen sin estribillo y funcionan igual.</p>';
+        html+='</div>';
+      }
+
+      // Caja 4: antigüedad
+      html+='<div class="examinacion-caja antiguedad">';
+      html+='<span class="examinacion-etiqueta">La pregunta que no puede contestar el sistema</span>';
+      html+='<p class="examinacion-pregunta">¿Cuándo la dijiste por primera vez?</p>';
+      html+='<p class="examinacion-nota">Si te acordás y fue hace más de un año, ya es repertorio. Si fue la semana pasada, todavía puede ser pensamiento en voz alta. Si no te acordás, también es un dato: las frases de las que uno no recuerda el origen llevan tiempo ahí.</p>';
+      html+='</div>';
+
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
