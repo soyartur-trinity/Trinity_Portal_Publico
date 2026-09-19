@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,42 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── las cuatro maneras de cerrar ── */
+  .cerradores{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .cerradores-instruccion{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.98rem; line-height:1.6; color:var(--gris-calido); margin:0 0 1.2rem 0;}
+  .cerrador-fila{padding:.9rem .4rem; border-bottom:1px solid var(--separador);}
+  .cerrador-fila:last-of-type{border-bottom:none;}
+  .cerrador-cabecera{display:flex; align-items:baseline; gap:.7rem; margin-bottom:.6rem;}
+  .cerrador-nombre{font-family:'Cormorant Garamond',serif; font-size:1.04rem;
+    color:var(--blanco-humo); letter-spacing:.02em;}
+  .cerrador-cuando{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.9rem; color:var(--gris-calido);}
+  .cerrador-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .cerrador-btn{background:var(--negro); border:none; padding:.7rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .cerrador-btn:hover, .cerrador-btn:focus-visible{color:var(--blanco-humo);}
+  .cerrador-btn[aria-pressed="true"][data-v="mucho"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .cerrador-btn[aria-pressed="true"][data-v="poco"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .cerrador-btn[aria-pressed="true"][data-v="nunca"]{color:var(--lejos); background:rgba(42,36,24,.4);}
+  .cerrador-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .cerrador-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .cerrador-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .cerrador-resultado-texto:last-child{margin-bottom:0;}
+  .cerrador-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .cerrador-resultado-enlugar{font-family:'Cormorant Garamond',serif;
+    font-size:.98rem; line-height:1.7; color:var(--gris-calido); margin-top:.8rem;
+    padding-top:.8rem; border-top:1px solid var(--separador);}
+  .cerrador-resultado-enlugar em{color:var(--oro); font-style:italic;}
+  @media (max-width:600px){
+    .cerrador-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -307,11 +338,84 @@
 
 <div class="perla"><p>No te pido que lo arregles<br>es la frase que más escenas<br>mantiene abiertas.</p></div>
 
+<div class="geo">
+  <span class="geo-label">Las cuatro maneras de cerrar</span>
+  <p class="geo-instruccion">Marca, para cada una de las cuatro maneras, si la usas mucho, poco o nunca cuando alguien te está contando algo. Responde por lo que haces, no por lo que crees que haces. El sistema te va a decir cuál usas más y qué hacer en su lugar.</p>
+  <div class="panel">
+    <div class="cerradores" id="cerradores">
+      <p class="cerradores-instruccion">Cuando alguien te está contando algo que no tiene arreglo, tú...</p>
+
+      <div class="cerrador-fila" data-c="chiste">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le haces un chiste</span>
+          <span class="cerrador-cuando">descomprime y cierra en medio segundo</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+      <div class="cerrador-fila" data-c="solucion">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le das una solución</span>
+          <span class="cerrador-cuando">aparece antes de que termine de contar</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+      <div class="cerrador-fila" data-c="ejemplo">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le cuentas algo tuyo parecido</span>
+          <span class="cerrador-cuando">le saca el turno sin que se note</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+      <div class="cerrador-fila" data-c="consuelo">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le dices que se va a acomodar</span>
+          <span class="cerrador-cuando">el más cariñoso y el que más cierra</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+    </div>
+    <div id="cerradorResultado"></div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a cerrar una escena esta semana, con alguna de las cuatro. No trates de impedirlo: no se puede y no es lo importante.</p>
-  <p>Lo único que hay que hacer es notarlo después, y volver. Al rato o al otro día, con una frase corta que diga que cambiaste de tema y que ahora quieres escuchar. No expliques por qué lo hiciste; no hace falta y alarga.</p>
-  <p>Y si el que cuenta eres tú y te cerraron, prueba las siete palabras: <em>no te estoy pidiendo que lo resuelvas.</em></p>
-  <p>Después no evalúes si el otro se quedó. A veces no se queda. Volver a intentarlo la semana siguiente cuesta menos que la primera vez.</p>
+  <p>Lo que acabas de producir no es un juicio sobre tu manera de escuchar. Es un dato sobre tu cierre más frecuente.</p>
+  <p>Si marcaste <em>mucho</em> en una sola, esa es tu puerta de salida por defecto y probablemente la uses sin darte cuenta. La frase que hay que volver a decir después —<em>ayer te cambié de tema, cuéntame</em>— se apoya justo en reconocer cuál de las cuatro es la tuya.</p>
+  <p>Si marcaste <em>mucho</em> en dos o tres, el dato es que tienes más de una salida y las alternas. Eso no es peor: es más difícil de ver desde adentro. La frase para volver a abrir sigue siendo la misma, y sirve para las tres.</p>
+  <p>Y si marcaste <em>nunca</em> en las cuatro, hay dos lecturas posibles. La primera: que efectivamente dejás hablar hasta el final, y entonces ya estás haciendo lo que el umbral pide. La segunda —y conviene considerarla—: que no reconociste ninguna de las cuatro porque no te acuerdas de la última vez que alguien te contó algo que no tenía arreglo. Eso también es un dato.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe la manera de cerrar que marcaste como <em>mucho</em>. Si marcaste dos o tres, elegí la que más te suene. Poné la fecha debajo.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Vas a cerrar una escena con esa manera, en los próximos días, con alguien. No intentes impedirlo: no se puede. Lo único que hay que hacer es notarlo, aunque sea dos minutos tarde.</p></div>
+  <div class="paso"><span class="paso-nombre">Volvé al rato o al día siguiente</span><p>Con la frase completa: <em>ayer te conté algo y te cambié de tema. Cuéntame.</em> Nueve palabras. Si te olvidaste de la frase exacta, improvisá algo parecido — lo que importa no es la fórmula, es volver.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al terminar</span><p>Anotá en la nota dos cosas: la fecha del retorno y una sola palabra sobre qué pasó. <em>Contó</em>, <em>no contó</em>, <em>raro</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo repitas esa semana</span><p>No vuelvas a mencionar el tema. Si el otro quiere seguir, va a seguir él. Si no, ya está: la escena se reabrió y quedó reabierta. Reabrirlo dos veces la semana siguiente lo convierte en campaña.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima semana vas a cerrar otra escena y no te vas a acordar hasta dos días después, o directamente no te vas a acordar. Cuando pase, abrí la nota y agregá la fecha. Si volviste, escribí <em>volví</em>. Si no, escribí <em>no volví</em>. Las dos cosas son el dato. <strong>El gesto no es no cerrar nunca: es tener anotado cuántas veces volviste y cuántas no.</strong></p>
 </div>
 
 <div class="bloque">
@@ -333,7 +437,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -344,6 +448,68 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // las cuatro maneras de cerrar
+    var filas=document.querySelectorAll('#cerradores .cerrador-fila');
+    var salida=document.getElementById('cerradorResultado');
+
+    var nombres={
+      chiste:'el chiste',
+      solucion:'la solución en el segundo renglón',
+      ejemplo:'el ejemplo propio',
+      consuelo:'el consuelo anticipado'
+    };
+    var enLugar={
+      chiste:'Cuando alguien te esté contando algo, en vez del chiste probá una sola pregunta: <em>¿desde cuándo?</em>. Con eso ya alcanza para que la escena siga abierta treinta segundos más.',
+      solucion:'Cuando aparezca la solución, aguantala. La solución va a seguir siendo útil mañana; la escena no. En vez de proponer algo, preguntá por el detalle más chico que te hayan dado.',
+      ejemplo:'Si vas a contar algo tuyo parecido, hacelo recién cuando el otro haya terminado. Antes de eso, tu historia le saca el turno a la suya. El ejemplo propio funciona al final, no en el medio.',
+      consuelo:'El consuelo anticipado se reemplaza por una pregunta chica: <em>¿qué es lo peor de todo esto?</em>. El consuelo cierra porque obliga a contradecirlo; la pregunta abre porque se puede contestar en dos palabras.'
+    };
+
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.cerrador-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          calcular();
+        });
+      });
+    });
+
+    function calcular(){
+      var hechas=document.querySelectorAll('#cerradores .cerrador-fila[data-eleccion]');
+      if(hechas.length<filas.length){ salida.innerHTML=''; return; }
+
+      var muchos=[], pocos=[], ninguno=[];
+      hechas.forEach(function(f){
+        if(f.dataset.eleccion==='mucho'){ muchos.push(f.dataset.c); }
+        else if(f.dataset.eleccion==='poco'){ pocos.push(f.dataset.c); }
+        else { ninguno.push(f.dataset.c); }
+      });
+
+      var html='';
+      html+='<div class="cerrador-resultado">';
+      html+='<span class="cerrador-resultado-etiqueta">Lo que dice el umbral</span>';
+
+      if(muchos.length===0 && ninguno.length===4){
+        html+='<p class="cerrador-resultado-texto">Las cuatro en <strong>nunca</strong>. Hay dos lecturas. La primera: efectivamente dejás hablar hasta el final, y ya estás haciendo lo que el umbral pide. La segunda: no reconociste ninguna porque no te acordás de la última vez que alguien te contó algo que no tenía arreglo. Solo tú sabes cuál es.</p>';
+      } else if(muchos.length===0){
+        html+='<p class="cerrador-resultado-texto">Ninguna en <strong>mucho</strong>. Las cuatro son salidas posibles y ninguna es tu puerta por defecto. El dato es que puedes elegir; el gesto es notarlo cuando alguna aparezca, porque aparecer va a aparecer.</p>';
+      } else if(muchos.length===1){
+        var c=muchos[0];
+        html+='<p class="cerrador-resultado-texto">Tu puerta de salida por defecto es <strong>'+nombres[c]+'</strong>. Casi siempre se usa sin darse cuenta. La frase para volver a abrir —<em>ayer te cambié de tema, cuéntame</em>— se apoya en reconocer cuál es la tuya.</p>';
+        html+='<div class="cerrador-resultado-enlugar">'+enLugar[c]+'</div>';
+      } else {
+        var lista=muchos.map(function(c){return nombres[c];}).join(', ');
+        html+='<p class="cerrador-resultado-texto">Marcaste <strong>mucho</strong> en más de una: '+lista+'. Eso significa que tienes varias salidas y las alternas. No es peor: es más difícil de ver desde adentro.</p>';
+        html+='<div class="cerrador-resultado-enlugar">La frase para volver a abrir sigue siendo la misma y sirve para las '+muchos.length+': <em>ayer te conté algo y te cambié de tema. Cuéntame.</em></div>';
+      }
+
+      html+='</div>';
+      salida.innerHTML=html;
+    }
   })();
 </script>
 </body>
