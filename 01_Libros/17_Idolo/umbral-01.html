@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,24 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── la frase del préstamo ── */
+  .prestamo-lista{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .prestamo-fila{padding:1rem .5rem; border-bottom:1px solid var(--separador);}
+  .prestamo-fila:last-of-type{border-bottom:none;}
+  .prestamo-nombre{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:1.02rem; color:var(--blanco-humo); letter-spacing:.04em; margin-bottom:.5rem;}
+  .prestamo-frase{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.65rem .8rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:.98rem; line-height:1.6;
+    color:var(--blanco-humo); resize:vertical; min-height:4.4rem;}
+  .prestamo-frase::placeholder{color:var(--lejos); font-style:italic;}
+  .prestamo-frase:focus{border-color:var(--oro-polvo);}
+  .prestamo-resultado{margin-top:1.3rem; text-align:center; min-height:2.6rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .prestamo-resultado strong{color:var(--oro); font-weight:400; font-style:normal;}
+  @media (max-width:600px){ .prestamo-nombre{font-size:.96rem;} }
 </style>
 </head>
 <body>
@@ -307,11 +320,45 @@
   <cite><span class="obra">John Locke</span> &middot; Ensayo sobre el entendimiento humano, 1690<br><small>(paráfrasis de la tesis del capítulo)</small></cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">La frase del préstamo</span>
+  <p class="geo-instruccion">Elige tres personas a las que le haces caso sin discutir. Para cada una, escribe la frase completa: en qué le crees, de qué sabe exactamente, hasta cuándo vale. Si no puedes completar la parte del medio, déjala en blanco a propósito.</p>
+  <div class="panel">
+    <div class="prestamo-lista" id="prestamo">
+      <div class="prestamo-fila">
+        <label class="prestamo-nombre" for="p1">Persona 1</label>
+        <textarea class="prestamo-frase" id="p1" data-nombre="Persona 1" placeholder="Le creo en ____, porque sabe de ____, y hasta ____."></textarea>
+      </div>
+      <div class="prestamo-fila">
+        <label class="prestamo-nombre" for="p2">Persona 2</label>
+        <textarea class="prestamo-frase" id="p2" data-nombre="Persona 2" placeholder="Le creo en ____, porque sabe de ____, y hasta ____."></textarea>
+      </div>
+      <div class="prestamo-fila">
+        <label class="prestamo-nombre" for="p3">Persona 3</label>
+        <textarea class="prestamo-frase" id="p3" data-nombre="Persona 3" placeholder="Le creo en ____, porque sabe de ____, y hasta ____."></textarea>
+      </div>
+    </div>
+    <div class="prestamo-resultado" id="prestamoResultado"></div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Elige a alguien a quien le haces caso sin discutir. Un médico, un contador, un cuñado que sabe de autos, alguien de tu trabajo.</p>
-  <p>Y di la frase entera, aunque sea para ti solo, en el auto: <em>a esta persona le creo en esto, porque sabe de esto, y hasta que yo entienda más.</em></p>
-  <p>Después fíjate si te salió completa. La parte que más cuesta es la del medio: <strong>de qué sabe exactamente.</strong></p>
-  <p>Si no puedes terminar esa parte, ese es el dato. No significa que esté mal prestarle. Significa que no sabes qué le prestaste.</p>
+  <p>Lo que acabas de producir es un mapa de huecos, no de personas. Cada frase completa es un préstamo que ya tiene bordes. Cada frase con la parte del medio en blanco es un préstamo que sigue creciendo solo.</p>
+  <p>Puede querer decir dos cosas. La primera: que <strong>de verdad no sabes de qué sabe esa persona</strong> y nunca se te ocurrió preguntártelo. La segunda: que <strong>sí lo sabes y no lo escribiste</strong>, porque ponerlo por escrito te obliga a decir cuánto. Las dos son el mismo dato con distinto peso.</p>
+  <p>Y hay una tercera lectura que conviene tener cerca: que el hueco esté justamente en la persona más importante de la lista. Ahí el préstamo no es más grande: es más viejo.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Esta noche</span><p>Abre la nota del teléfono. Elige a la persona de las tres que dejaste con la parte del medio en blanco.</p></div>
+  <div class="paso"><span class="paso-nombre">Escribe una línea</span><p>La frase completa, con las tres partes: en qué le crees, de qué sabe exactamente, hasta cuándo vale. Si no puedes completar el medio, escribe <em>no sé de qué sabe</em>.</p></div>
+  <div class="paso"><span class="paso-nombre">Debajo</span><p>Pon la fecha de hoy y las iniciales de la persona. Nada más.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Guarda la nota</span><p>No la compartas. No se la cuentes a nadie. La fecha y las iniciales son el dato.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Espera una semana</span><p>Antes de volver a la nota, fíjate si esta semana pudiste completar mentalmente la parte del medio. Si no, escribe otra vez lo mismo.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En un mes vas a estar preguntándole algo a esa persona sin acordarte de esto. Cuando pase, no te corrijas: abre la nota y agrega una línea con la fecha. Si la frase de la nota decía <em>no sé de qué sabe</em>, y seguís sin poder completarla, ya tienes el resultado. El mecanismo no es completar la frase: es <strong>volver a mirar cuántas veces no la pudiste completar</strong>.</p>
 </div>
 
 <div class="bloque">
@@ -336,7 +383,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -347,6 +394,37 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la frase del préstamo
+    var campos=document.querySelectorAll('#prestamo .prestamo-frase');
+    var res=document.getElementById('prestamoResultado');
+    function calcular(){
+      var llenos=0, vacios=[], conTexto=[];
+      campos.forEach(function(c){
+        var v=(c.value||'').trim();
+        if(v.length===0){ return; }
+        llenos++;
+        // detectamos si el campo tiene texto pero "el medio" quedó sin completar
+        // (heurística simple: si el texto no contiene "sabe de" con algo después)
+        var t=v.toLowerCase();
+        var idx=t.indexOf('sabe de');
+        var medio='';
+        if(idx>=0){
+          medio=t.slice(idx+7).split(/[,.;]/)[0].trim();
+        }
+        if(!medio){ vacios.push(c.dataset.nombre); } else { conTexto.push(c.dataset.nombre); }
+      });
+      if(llenos===0){ res.innerHTML=''; return; }
+      if(llenos<campos.length){ res.innerHTML=''; return; }
+      if(vacios.length===0){
+        res.innerHTML='Las tres frases quedaron con la parte del medio escrita. Es poco frecuente. Vuelve a mirarlas en una semana y fíjate si siguen diciendo lo mismo.';
+      } else if(vacios.length===campos.length){
+        res.innerHTML='En <strong>las tres</strong> la parte del medio quedó vacía. Ese es el dato. No es un problema de escritura: es que nunca te preguntaste de qué saben.';
+      } else {
+        res.innerHTML='Sin la parte del medio: <strong>'+vacios.join(', ')+'</strong>. El resto tiene la frase completa.';
+      }
+    }
+    campos.forEach(function(c){ c.addEventListener('input',calcular); });
   })();
 </script>
 </body>
