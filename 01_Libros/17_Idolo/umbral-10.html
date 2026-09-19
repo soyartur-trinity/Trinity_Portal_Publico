@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,34 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── el guion de los treinta segundos ── */
+  .guion{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .guion label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.5rem;}
+  .guion input{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.65rem .8rem; margin-bottom:1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .guion input::placeholder{color:var(--lejos); font-style:italic;}
+  .guion input:focus{border-color:var(--oro-polvo);}
+  .guion .accion{margin-top:.4rem;}
+  .guion-salida{margin-top:1.3rem;}
+  .guion-parte{padding:1rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.6rem;}
+  .guion-parte:last-of-type{margin-bottom:0;}
+  .guion-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.4rem;}
+  .guion-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.7; color:var(--blanco-humo); margin:0;}
+  .guion-texto em{color:var(--oro); font-style:italic;}
+  .guion-parte.vacia{border-style:dashed; border-color:var(--oro-polvo);}
+  .guion-parte.vacia .guion-texto{color:var(--lejos); font-style:italic;}
+  .guion-aviso{margin-top:1rem; padding:.9rem 1rem; border-left:2px solid var(--oro-tenue);
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.96rem;
+    line-height:1.6; color:var(--gris-calido);}
 </style>
 </head>
 <body>
@@ -316,11 +339,41 @@
 
 <div class="puerta"><a href="../13_Volver_al_Centro/index.html">&#10192; <em>&#10192; Que un camino no se proyecte sino que se haga caminando, y que el centro no sea un lugar que estaba esperando sino algo que se produce al pasar muchas veces, se trabaja en <strong>Volver al centro &middot; Umbral VII, El eje</strong>. El libro entero,</em></a></div>
 
+<div class="geo">
+  <span class="geo-label">El guion de los treinta segundos</span>
+  <p class="geo-instruccion">Escribe un error tuyo, concreto, con fecha. De esos que no has dicho nunca en voz alta delante del grupo donde tu palabra pesa. El sistema te lo devuelve como guion de treinta segundos, listo para decir esta semana.</p>
+  <div class="panel">
+    <div class="guion">
+      <label for="gQue">Qué error fue, en una frase</label>
+      <input id="gQue" type="text" placeholder="Ejemplo: aprobé el cambio de horario sin mirar el calendario del cliente.">
+      <label for="gCuando">Cuándo fue</label>
+      <input id="gCuando" type="text" placeholder="Ejemplo: en marzo.">
+      <label for="gCausa">Cuál fue la causa, sin excusa</label>
+      <input id="gCausa" type="text" placeholder="Ejemplo: no revisé lo que ya tenía a mano.">
+      <button class="accion" id="btnGuion" disabled>Armar el guion</button>
+      <div class="guion-salida" id="guionSalida"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Si estás del lado del que recibe: esta semana, di un error tuyo en voz alta delante de los que te escuchan. Uno concreto, con fecha, en treinta segundos. Sin disculpas y sin escena.</p>
-  <p>Después no agregues nada. Solo fíjate cuánto dura la conversación siguiente.</p>
-  <p>Si estás del lado del que presta: contradice una vez, sobre algo que no importe, delante de otros. Que sea chico a propósito.</p>
-  <p>No lo hagas para tener razón. Lo más probable es que te equivoques, y da igual: lo que se está corrigiendo no es el dato.</p>
+  <p>Lo que produjiste no es una confesión. Es una frase, con tres partes, que dura treinta segundos y no pide nada.</p>
+  <p>Las tres partes que el sistema completó —qué fue, cuándo, cuál fue la causa— son las únicas que hacen falta. Están todas referidas al error y ninguna a la persona. Eso es lo que las vuelve decibles.</p>
+  <p>Y hay una cuarta parte que el sistema dejó vacía a propósito: <strong>lo que dirías después.</strong> Es la parte que uno quiere llenar con una disculpa, con una promesa, con un agradecimiento al que hable. Cualquiera de esas tres cosas convierte la frase en un acto sobre ti. Y lo que el umbral sostiene es que la frase es un acto sobre la sala: les dice que ahí se puede fallar.</p>
+  <p>Después de esas tres partes no va nada. Se pasa al punto siguiente. La regla de Sandra y la razón de todo el umbral.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Elige uno</span><p>Elige un error tuyo concreto, con fecha, de los que nunca has dicho en voz alta delante del grupo donde tu palabra pesa. No el más grave: el que puedas decir en tres frases.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Dilo en la próxima reunión, en los primeros cinco minutos. Treinta segundos: qué fue, cuándo, cuál fue la causa. Sin disculpas y sin escena.</p></div>
+  <div class="paso"><span class="paso-nombre">No agregues nada</span><p>Después de la tercera frase, pasá al punto siguiente de la reunión. No expliques por qué lo estás diciendo. No pidas que te contradigan. No agradezcas a nadie.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al salir</span><p>Abrí la nota del teléfono. Anotá tres cosas: la fecha, cuánto duró la reunión y cuántas personas hablaron más de lo habitual. Solo eso.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Una semana</span><p>Antes de volver a la nota, esperá una semana. Si alguien te trajo una mala noticia antes, o te contradijo en algo menor, agregá esa fecha. Si no pasó nada, agregá esa fecha igual.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. Dentro de un mes vas a estar a punto de decir un error y vas a elegir no decirlo, y no te vas a acordar de esto. Cuando pase, abrí la nota y agregá la fecha. Si lo dijiste igual, escribí <em>dicho</em>. Si no, escribí <em>no dicho</em>. Las dos cosas son el dato. <strong>El gesto no es decir siempre los errores: es tener anotado cuántas veces los dijiste y cuántas no.</strong></p>
 </div>
 
 <div class="bloque">
@@ -345,7 +398,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -356,6 +409,61 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el guion de los treinta segundos
+    var gQue=document.getElementById('gQue');
+    var gCuando=document.getElementById('gCuando');
+    var gCausa=document.getElementById('gCausa');
+    var btn=document.getElementById('btnGuion');
+    var salida=document.getElementById('guionSalida');
+
+    function puede(){
+      var ok = gQue.value.trim().length>=6 && gCuando.value.trim().length>=2 && gCausa.value.trim().length>=4;
+      btn.disabled = !ok;
+    }
+    gQue.addEventListener('input',puede);
+    gCuando.addEventListener('input',puede);
+    gCausa.addEventListener('input',puede);
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    function limpia(s){
+      s=(s||'').trim();
+      if(!s){ return ''; }
+      // saca punto final para poder integrar en la frase
+      s=s.replace(/[.\s]+$/,'');
+      return s;
+    }
+
+    btn.addEventListener('click',function(){
+      var que=limpia(gQue.value);
+      var cuando=limpia(gCuando.value);
+      var causa=limpia(gCausa.value);
+      if(!que || !cuando || !causa){ salida.innerHTML=''; return; }
+
+      var html='';
+      html+='<div class="guion-parte">';
+      html+='<span class="guion-etiqueta">Qué fue</span>';
+      html+='<p class="guion-texto"><em>'+escapeHtml(que)+'</em>.</p>';
+      html+='</div>';
+      html+='<div class="guion-parte">';
+      html+='<span class="guion-etiqueta">Cuándo</span>';
+      html+='<p class="guion-texto">Fue en <em>'+escapeHtml(cuando)+'</em>.</p>';
+      html+='</div>';
+      html+='<div class="guion-parte">';
+      html+='<span class="guion-etiqueta">Cuál fue la causa</span>';
+      html+='<p class="guion-texto">La causa fue que <em>'+escapeHtml(causa)+'</em>.</p>';
+      html+='</div>';
+      html+='<div class="guion-parte vacia">';
+      html+='<span class="guion-etiqueta">Lo que dirías después</span>';
+      html+='<p class="guion-texto">Nada. Se pasa al punto siguiente de la reunión. Si en el medio surge una disculpa, una promesa o un agradecimiento, ya no es este gesto.</p>';
+      html+='</div>';
+      html+='<div class="guion-aviso">Treinta segundos. Leído en voz alta suena distinto de como suena escrito: probá leerlo antes, solo, una vez.</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
