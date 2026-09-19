@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,31 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── la decisión escrita antes de consultar ── */
+  .escrito{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .escrito label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .escrito textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:4rem;}
+  .escrito textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .escrito textarea:focus{border-color:var(--oro-polvo);}
+  .escrito .accion{margin-top:.9rem;}
+  .dos-versiones{margin-top:1.4rem;}
+  .version{padding:1.1rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:1rem;}
+  .version:last-of-type{margin-bottom:0;}
+  .version-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .version-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.02rem;
+    line-height:1.7; color:var(--blanco-humo); margin:0 0 .5rem 0;}
+  .version-texto em{color:var(--oro); font-style:italic;}
+  .version-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.94rem; line-height:1.6; color:var(--gris-calido); margin:0;}
 </style>
 </head>
 <body>
@@ -310,11 +330,39 @@
   <cite><span class="obra">Formulación de este libro</span></cite>
 </div>
 
+<div class="geo">
+  <span class="geo-label">La versión que ibas a contar</span>
+  <p class="geo-instruccion">Escribe la decisión que tenés dando vueltas. Después escribí lo que le ibas a contar a la persona que consultarías primero, tal como se lo ibas a contar. El sistema te muestra las dos versiones al lado de la completa. La diferencia es el dato.</p>
+  <div class="panel">
+    <div class="escrito">
+      <label for="decision">La decisión, en una línea</label>
+      <textarea id="decision" placeholder="Ejemplo: aceptar el traslado que me ofrecieron."></textarea>
+      <label for="versionContada" style="margin-top:1rem;">Lo que le ibas a contar a la primera persona que consultarías</label>
+      <textarea id="versionContada" placeholder="Ejemplo: me quieren mudar de ciudad."></textarea>
+      <button class="accion" id="btnVersiones" disabled>Ver las dos versiones</button>
+      <div class="dos-versiones" id="dosVersiones"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Tienes una decisión dando vueltas. Antes de hablarla con nadie más, escribe una línea con lo que quieres hacer, y ponle la fecha.</p>
-  <p>Después llama al que sabes que te va a decir que no. Primero, no último.</p>
-  <p>Cuéntale la versión completa, incluso la parte que te deja mal parado. Si no se la cuentas, no estás consultando.</p>
-  <p>Y cuando decidas, vuelve al papel. Si dice lo mismo, está bien — solo sabrás que no fue la consulta lo que decidió.</p>
+  <p>Lo que produjiste no es una versión mejor. Son dos versiones del mismo hecho, y solo una sirve para consultar.</p>
+  <p>La versión contada es la que sale sola, y suele tener dos características: es la más favorable al que la cuenta, y deja afuera algo que la persona consultada no puede no saber si conoce el tema. La versión completa no es más larga: es la misma con eso agregado.</p>
+  <p>Y hay una tercera lectura, la que el interactivo no dice y el umbral entero sostiene. Si al escribir la versión contada <strong>no te costó nada</strong>, probablemente ya venías contando la completa. Si te costó escribirla, es porque la estás mirando por primera vez. Y si al compararla con la decisión escrita viste que <strong>son casi la misma frase</strong>, la consulta que ibas a hacer no iba a traerte información nueva: iba a traerte confirmación.</p>
+  <p>Ninguna de las tres se resuelve hoy. El contraste solo muestra qué se estaba dejando afuera.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Antes de esta noche</span><p>Abre la nota del teléfono. Escribí una sola línea: <em>lo que quiero hacer es ____</em>. Poné la fecha debajo. No lo cuentes todavía.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Elegí al que sabes que te va a decir que no. Llamalo primero, antes que a cualquier otro. No mandes mensaje: llamada.</p></div>
+  <div class="paso"><span class="paso-nombre">Contale la completa</span><p>Contale la versión completa, incluso la parte que te deja mal parado. Si no se la contás, no estás consultando: estás haciendo otra cosa.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al terminar</span><p>Abrí la nota y poné una segunda línea, debajo de la primera: la fecha de hoy y una sola palabra sobre cómo salió la llamada.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Recién después</span><p>Solo después de esa llamada, consultá a los demás si querés. En el orden que quieras. La primera ya está hecha, y con la versión completa.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima decisión la vas a consultar como siempre: primero al que te va a dar la razón, y con la versión recortada. Cuando pase, abre la nota y agregá una línea con la fecha. Si volviste a escribir la decisión antes de consultar, anotá eso también. Si no la escribiste, es el dato. <strong>El gesto no es consultar siempre en el orden correcto: es tener anotado cuántas veces escribiste la decisión antes de preguntar.</strong></p>
 </div>
 
 <div class="bloque">
@@ -339,7 +387,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -350,6 +398,53 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la versión que ibas a contar
+    var campoDec=document.getElementById('decision');
+    var campoVer=document.getElementById('versionContada');
+    var btn=document.getElementById('btnVersiones');
+    var salida=document.getElementById('dosVersiones');
+
+    function puede(){
+      var ok = campoDec.value.trim().length>=4 && campoVer.value.trim().length>=4;
+      btn.disabled = !ok;
+    }
+    campoDec.addEventListener('input',puede);
+    campoVer.addEventListener('input',puede);
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    btn.addEventListener('click',function(){
+      var dec=campoDec.value.trim();
+      var ver=campoVer.value.trim();
+      if(!dec || !ver){ return; }
+      // heurística: si la versión contada es muy parecida a la decisión, avisar
+      var d=dec.toLowerCase().replace(/[.,;:¡!¿?"']/g,'').trim();
+      var v=ver.toLowerCase().replace(/[.,;:¡!¿?"']/g,'').trim();
+      var parecidas = (d===v) || (d.indexOf(v)>=0) || (v.indexOf(d)>=0);
+      var html='';
+      html+='<div class="version">';
+      html+='<span class="version-etiqueta">Versión contada</span>';
+      html+='<p class="version-texto"><em>'+escapeHtml(ver)+'</em></p>';
+      html+='<p class="version-nota">Esta es la que sale sola. La escuchó la persona que ibas a consultar primero.</p>';
+      html+='</div>';
+      html+='<div class="version">';
+      html+='<span class="version-etiqueta">Versión completa</span>';
+      html+='<p class="version-texto"><em>'+escapeHtml(dec)+'</em>, con lo que dejaste afuera de la anterior.</p>';
+      html+='<p class="version-nota">No es más larga. Es la misma con eso agregado.</p>';
+      html+='</div>';
+      if(parecidas){
+        html+='<div class="version">';
+        html+='<span class="version-etiqueta">Aviso</span>';
+        html+='<p class="version-texto">Las dos frases son casi la misma. La consulta que ibas a hacer no te iba a traer información nueva: te iba a traer confirmación.</p>';
+        html+='</div>';
+      }
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
