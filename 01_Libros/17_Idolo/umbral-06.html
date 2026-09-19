@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,33 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── los subrayados con fecha ── */
+  .subrayados{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .subrayado-fila{padding:1rem .4rem; border-bottom:1px solid var(--separador);}
+  .subrayado-fila:last-of-type{border-bottom:none;}
+  .subrayado-frase{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.65rem .8rem; margin-bottom:.7rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.02rem;
+    line-height:1.6; color:var(--blanco-humo); resize:vertical; min-height:3.2rem;}
+  .subrayado-frase::placeholder{color:var(--lejos); font-style:italic;}
+  .subrayado-frase:focus{border-color:var(--oro-polvo);}
+  .subrayado-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .subrayado-btn{background:var(--negro); border:none; padding:.65rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .subrayado-btn:hover, .subrayado-btn:focus-visible{color:var(--blanco-humo);}
+  .subrayado-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .subrayado-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .subrayado-resultado{margin-top:1.3rem; text-align:center; min-height:2.6rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .subrayado-resultado strong{color:var(--oro); font-weight:400; font-style:normal;}
+  @media (max-width:600px){
+    .subrayado-opciones{grid-template-columns:1fr;}
+    .subrayado-frase{font-size:.98rem;}
+  }
 </style>
 </head>
 <body>
@@ -315,12 +337,55 @@
 
 <div class="perla"><p>El lápiz marca dónde te gustó.<br>La fecha la pone otra cosa.</p></div>
 
+<div class="geo">
+  <span class="geo-label">Los subrayados con fecha</span>
+  <p class="geo-instruccion">Escribe tres subrayados que tengas presentes —de un libro, de un artículo, de una nota—. Para cada uno, marca si tiene fecha de uso: si alguna vez hiciste algo distinto por esa frase. No importa que la fecha sea exacta: importa que exista.</p>
+  <div class="panel">
+    <div class="subrayados" id="subrayados">
+      <div class="subrayado-fila">
+        <textarea class="subrayado-frase" id="s1" placeholder="Subrayado 1"></textarea>
+        <div class="subrayado-opciones">
+          <button class="subrayado-btn" data-v="si">Tiene fecha de uso</button>
+          <button class="subrayado-btn" data-v="no">No tiene fecha</button>
+        </div>
+      </div>
+      <div class="subrayado-fila">
+        <textarea class="subrayado-frase" id="s2" placeholder="Subrayado 2"></textarea>
+        <div class="subrayado-opciones">
+          <button class="subrayado-btn" data-v="si">Tiene fecha de uso</button>
+          <button class="subrayado-btn" data-v="no">No tiene fecha</button>
+        </div>
+      </div>
+      <div class="subrayado-fila">
+        <textarea class="subrayado-frase" id="s3" placeholder="Subrayado 3"></textarea>
+        <div class="subrayado-opciones">
+          <button class="subrayado-btn" data-v="si">Tiene fecha de uso</button>
+          <button class="subrayado-btn" data-v="no">No tiene fecha</button>
+        </div>
+      </div>
+    </div>
+    <div class="subrayado-resultado" id="subrayadoResultado"></div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Toma algo que hayas leído y que te haya parecido cierto — un libro, un artículo, incluso alguno de estos umbrales.</p>
-  <p>Elige una sola idea y hazle la pregunta: ¿cuándo hiciste algo distinto por esto?</p>
-  <p>Si no tiene fecha, no vuelvas a leerlo. Releerlo es lo que te va a dar ganas de hacer, y es la trampa entera.</p>
-  <p>Haz en cambio la cosa más chica que se te ocurra, esta semana, aunque salga mal y aunque no sea el momento.</p>
-  <p>Y si te sale mal, esa es la fecha igual.</p>
+  <p>El número que produjiste no es un veredicto sobre tu lectura. Es un recuento de qué subrayados trabajaron y cuáles no.</p>
+  <p>Puede querer decir tres cosas.</p>
+  <p>La primera: que <strong>casi ninguno tenga fecha</strong>, y entonces lo que tienes son frases que te gustaron, no criterios que te hayan cambiado un martes. La segunda: que <strong>uno solo tenga fecha</strong>, y ese sea precisamente el que menos te acordabas de haber marcado — a veces la frase que trabaja no es la que uno recuerda, sino la que se activó sin avisar. La tercera: que <strong>los tres tengan fecha y ninguno te suene decisivo</strong>. Ese es el caso más raro, y el mejor: son subrayados que ya se volvieron tuyos, y por eso ya no los reconoces como frases ajenas.</p>
+  <p>Ninguna se resuelve acá. El recuento solo muestra qué quedó trabajando y qué quedó guardado.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Elige un subrayado que hayas marcado como sin fecha — de cualquier libro, artículo o nota. No el más lindo: el que más veces citaste.</p></div>
+  <div class="paso"><span class="paso-nombre">Una sola cosa</span><p>Haz una sola cosa chica, esta semana, que esa frase te esté pidiendo. Chica de verdad: un mensaje, una llamada, una nota que estuviste postergando, una pregunta que no hiciste.</p></div>
+  <div class="paso"><span class="paso-nombre">Aunque salga mal</span><p>Hazla aunque salga mal y aunque no sea el momento. Si sale mal, sale mal. La frase no se rompe por eso.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Debajo</span><p>Escribe en la nota del teléfono: la frase, la fecha de hoy y una sola palabra que describa cómo salió. Nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No la marques</span><p>No vuelvas a subrayarla. No la agregues al libro. No la cites en una sobremesa esta semana. La frase trabajó o no trabajó, y la fecha es el único registro.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En un mes vas a estar subrayando otra cosa y citándola antes de haber hecho nada con ella. Cuando pase, abre la nota y agrega una línea con la fecha. Si nunca hiciste nada con la primera frase, ya tienes el dato. Si hiciste algo y esta segunda la subrayaste igual, también. <strong>El gesto no es hacer algo con cada subrayado: es tener anotado cuántas veces subrayaste y cuántas veces hiciste.</strong></p>
 </div>
 
 <div class="bloque">
@@ -345,7 +410,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -356,6 +421,49 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // los subrayados con fecha
+    var filas=document.querySelectorAll('#subrayados .subrayado-fila');
+    var res=document.getElementById('subrayadoResultado');
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.subrayado-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          calcular();
+        });
+      });
+    });
+    function calcular(){
+      var conTexto=0;
+      filas.forEach(function(f){
+        var ta=f.querySelector('.subrayado-frase');
+        if((ta.value||'').trim().length>=4){ conTexto++; }
+      });
+      var hechas=0, conFecha=0, sinFecha=0;
+      filas.forEach(function(f){
+        if(f.dataset.eleccion){ hechas++; }
+        if(f.dataset.eleccion==='si'){ conFecha++; }
+        if(f.dataset.eleccion==='no'){ sinFecha++; }
+      });
+      if(hechas<filas.length){ res.innerHTML=''; return; }
+      var n=conFecha;
+      if(n===0){
+        res.innerHTML='Los tres subrayados <strong>sin fecha de uso</strong>. Es lo más común. Significa que hasta ahora citaste pero no trabajaste ninguno. Y todavía ninguno está perdido: la fecha la puede poner algo que todavía no pasó.';
+      } else if(n===1){
+        res.innerHTML='Uno con fecha, dos sin fecha. Conviene mirar cuál es el que <strong>tiene fecha</strong>: suele no ser el que más te gusta, sino el que se activó sin avisar.';
+      } else if(n===2){
+        res.innerHTML='Dos con fecha, uno sin fecha. La proporción se invirtió. Fíjate en el que no tiene: ese es el que más te suena y menos trabajó.';
+      } else {
+        res.innerHTML='Los tres con fecha. El caso raro. Cuando los tres tienen fecha, generalmente ya no se reconocen como frases ajenas: se volvieron criterio propio.';
+      }
+    }
+    filas.forEach(function(f){
+      var ta=f.querySelector('.subrayado-frase');
+      if(ta){ ta.addEventListener('input',calcular); }
+    });
   })();
 </script>
 </body>
