@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,29 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── las cuatro señales de la sala ── */
+  .senales{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .senal-fila{padding:1rem .4rem; border-bottom:1px solid var(--separador);}
+  .senal-fila:last-of-type{border-bottom:none;}
+  .senal-pregunta{display:block; font-family:'EB Garamond',Georgia,serif;
+    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.7rem;}
+  .senal-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .senal-btn{background:var(--negro); border:none; padding:.65rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .senal-btn:hover, .senal-btn:focus-visible{color:var(--blanco-humo);}
+  .senal-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .senal-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .senal-resultado{margin-top:1.3rem; text-align:center; min-height:2.6rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .senal-resultado strong{color:var(--oro); font-weight:400; font-style:normal;}
+  @media (max-width:600px){
+    .senal-opciones{grid-template-columns:1fr;}
+    .senal-pregunta{font-size:.98rem;}
+  }
 </style>
 </head>
 <body>
@@ -313,11 +331,62 @@
 
 <div class="perla"><p>No se pregunta.<br>Se cuenta.</p></div>
 
+<div class="geo">
+  <span class="geo-label">Las cuatro señales de tu sala</span>
+  <p class="geo-instruccion">Piensa en el grupo donde tu palabra pesa más: un equipo, un aula, una mesa familiar. Marca lo que pasa hoy. No lo que pasaba hace dos años: lo de hoy.</p>
+  <div class="panel">
+    <div class="senales" id="senales">
+      <div class="senal-fila" data-senal="duracion">
+        <span class="senal-pregunta">1. ¿Las conversaciones donde tú propones duran menos que hace un año?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, duran menos</button>
+          <button class="senal-btn" data-v="no">No, igual o más</button>
+        </div>
+      </div>
+      <div class="senal-fila" data-senal="privado">
+        <span class="senal-pregunta">2. ¿Las objeciones te llegan por privado, después de la reunión?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, casi todas</button>
+          <button class="senal-btn" data-v="no">No, llegan en el momento</button>
+        </div>
+      </div>
+      <div class="senal-fila" data-senal="traductor">
+        <span class="senal-pregunta">3. ¿Hay alguien que siempre habla primero y dice que le parece bien?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, siempre la misma persona</button>
+          <button class="senal-btn" data-v="no">No, cambia</button>
+        </div>
+      </div>
+      <div class="senal-fila" data-senal="tarde">
+        <span class="senal-pregunta">4. ¿La última mala noticia te llegó cuando ya no se podía hacer nada?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, ya era tarde</button>
+          <button class="senal-btn" data-v="no">No, llegó a tiempo</button>
+        </div>
+      </div>
+    </div>
+    <div class="senal-resultado" id="senalResultado"></div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Si tienes alguna posición donde otros te escuchan —un equipo, un aula, una mesa familiar donde tu opinión pesa—, mira esta semana las cuatro señales. No preguntes nada: cuéntalas.</p>
-  <p>Cuánto duran las conversaciones. Si las objeciones te llegan después y por separado. Si hay alguien que siempre habla primero. Cuánto tardó en llegarte la última mala noticia.</p>
-  <p>Y si alguien te contradice, presta atención a los dos segundos anteriores a tu respuesta. No a lo que contestas — a lo que te pasa antes de contestar.</p>
-  <p>Ese fastidio no te hace mala persona. Te avisa que hay algo prestado.</p>
+  <p>El número que acabas de producir no es un diagnóstico. Es un inventario.</p>
+  <p>Puede querer decir tres cosas, y solo tú sabes cuál.</p>
+  <p>La primera: que las cuatro señales apunten al mismo lado porque <strong>la sala efectivamente está prestando</strong>, y no lo habías visto desde adentro. La segunda: que aparezcan una o dos y sean <strong>rasgos de la dinámica normal</strong> de cualquier grupo, sin que eso signifique nada grave. La tercera, que es la que más cuesta admitir: que la señal que marcaste sea precisamente <strong>la que ya sabías</strong> y nunca contaste.</p>
+  <p>Ninguna de las tres se resuelve en este umbral. Lo único que hace el inventario es sacarte del lugar del emperador: dejarte ver la sala desde el único sitio donde no se veía.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Cuenta una sola de las cuatro señales, la que hayas marcado con más seguridad. Un dato por día, en la nota del teléfono, con la fecha.</p></div>
+  <div class="paso"><span class="paso-nombre">Tres días seguidos</span><p>Anota, cada vez que termines una conversación donde propusiste algo, cuánto duró. Tres números y listo. Nada más.</p></div>
+  <div class="paso"><span class="paso-nombre">El cuarto día</span><p>Mira los tres números. Compara el primero con el tercero. Si bajaron, ya tienes el dato. Si subieron o quedaron igual, también.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Debajo</span><p>Escribe la fecha del último día y una sola palabra que describa lo que viste. Una. Sin explicación.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo cuentes</span><p>No le digas a nadie de la sala que estás contando. Ni al traductor, ni a tu jefe, ni a un amigo del trabajo. La nota queda para ti.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. Dentro de un mes vas a proponer algo y las reuniones van a durar lo de siempre, o menos, y no vas a acordarte de haber contado nada. Cuando pase, no rehagas el análisis: abre la nota, agrega la fecha y volvé a contar tres días. Si los números son los mismos, el dato es que no cambió nada. Si bajaron otra vez, el dato es ese. <strong>El gesto no es resolver: es tener el número cada vez que se pregunta.</strong></p>
 </div>
 
 <div class="bloque">
@@ -342,7 +411,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -353,6 +422,49 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // las cuatro señales
+    var filas=document.querySelectorAll('#senales .senal-fila');
+    var res=document.getElementById('senalResultado');
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.senal-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          calcular();
+        });
+      });
+    });
+    function calcular(){
+      var hechas=document.querySelectorAll('#senales .senal-fila[data-eleccion]');
+      if(hechas.length<filas.length){ res.innerHTML=''; return; }
+      var presentes=[];
+      var nombres={duracion:'reuniones más cortas',privado:'objeciones en privado',traductor:'un traductor fijo',tarde:'malas noticias tardías'};
+      var traductor=false, tarde=false;
+      hechas.forEach(function(f){
+        if(f.dataset.eleccion==='si'){
+          presentes.push(nombres[f.dataset.senal]);
+          if(f.dataset.senal==='traductor'){ traductor=true; }
+          if(f.dataset.senal==='tarde'){ tarde=true; }
+        }
+      });
+      var n=presentes.length;
+      if(n===0){
+        res.innerHTML='Ninguna de las cuatro. Es posible, y también es poco frecuente. Vuelve a mirar la tercera y la cuarta en una semana: son las que más tardan en notarse desde adentro.';
+        return;
+      }
+      var txt='Presentes: <strong>'+presentes.join(', ')+'</strong>.';
+      if(traductor && tarde){
+        txt+=' Es la combinación más clara: alguien te traduce y las malas noticias te llegan tarde. Las dos se refuerzan.';
+      } else if(traductor){
+        txt+=' El traductor fijo es la señal más estable de las cuatro: cambia poco y no se disfraza.';
+      } else if(tarde){
+        txt+=' Las malas noticias tardías son la única de las cuatro que cuesta dinero.';
+      }
+      res.innerHTML=txt;
+    }
   })();
 </script>
 </body>
