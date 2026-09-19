@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -225,6 +220,31 @@
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
   .dicho.visible{opacity:1; transform:none;}
   .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── las dos reformulaciones de la pregunta ── */
+  .reformulador{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .reformulador label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .reformulador textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:3.4rem;}
+  .reformulador textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .reformulador textarea:focus{border-color:var(--oro-polvo);}
+  .reformulador .accion{margin-top:.9rem;}
+  .reformulaciones{margin-top:1.4rem;}
+  .reformulacion{padding:1.1rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:1rem; position:relative;}
+  .reformulacion:last-of-type{margin-bottom:0;}
+  .reformulacion-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .reformulacion-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.06rem;
+    line-height:1.7; color:var(--blanco-humo); margin:0;}
+  .reformulacion-texto em{color:var(--oro); font-style:italic;}
+  .reformulacion.nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.94rem; line-height:1.6; color:var(--gris-calido); margin-top:.5rem;}
 </style>
 </head>
 <body>
@@ -299,11 +319,37 @@
 
 <div class="perla"><p>Una respuesta resuelve un caso.<br>Una razón te deja un criterio.</p></div>
 
+<div class="geo">
+  <span class="geo-label">La pregunta con el peso cambiado</span>
+  <p class="geo-instruccion">Escribe una pregunta que ibas a hacerle a alguien —a un médico, a un contador, a un amigo, a un buscador, a una inteligencia artificial—. Después pásala por las dos versiones y mira qué queda de cada una.</p>
+  <div class="panel">
+    <div class="reformulador">
+      <label for="preguntaOriginal">Tu pregunta original</label>
+      <textarea id="preguntaOriginal" placeholder="Ejemplo: ¿conviene que acepte el traslado?"></textarea>
+      <button class="accion" id="btnReformular" disabled>Reformular</button>
+      <div class="reformulaciones" id="reformulaciones"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Vas a consultar algo esta semana. A alguien, a un buscador, a una inteligencia artificial.</p>
-  <p>Haz la pregunta que ibas a hacer, y agrégale una segunda: <strong>¿de qué depende?</strong></p>
-  <p>Después no decidas ese día. Quédate con la lista hasta el día siguiente, aunque incomode — y va a incomodar, porque parece que no avanzaste.</p>
-  <p>Y si ya te dieron una respuesta y estás por ejecutarla, cinco palabras antes: <em>¿en qué te basas?</em></p>
+  <p>Lo que acabas de producir no es una pregunta mejor. Son dos preguntas distintas, y solo una te devuelve la decisión.</p>
+  <p>La primera versión pide un veredicto. Casi siempre se puede contestar con una sola palabra: <em>sí</em>, <em>no</em>, <em>depende</em>. Eso es lo que vuelve. Y lo que vuelve no se puede examinar: se obedece o se rechaza.</p>
+  <p>La segunda versión pide el mecanismo. No se puede contestar con una palabra, porque obliga a enumerar lo que la decisión depende: cuánto pesa cada cosa, qué cambia según qué, qué se puede deshacer y qué no. Esa enumeración no decide por ti. Es lo que hace que tengas que decidir tú.</p>
+  <p>Y hay una tercera lectura, la que importa y por eso el interactivo no la dice: si tu pregunta original <strong>ya era del segundo tipo</strong>, entonces no estabas pidiendo compañía en la culpa. Estabas pidiendo datos. Casi nadie llega con esa pregunta de fábrica, y quien la tiene ya sabe lo que este umbral enseña.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Vas a consultar algo. A una persona, a un buscador, a una inteligencia artificial. Elige la consulta que tengas pendiente y no la hagas todavía.</p></div>
+  <div class="paso"><span class="paso-nombre">Antes de preguntar</span><p>Escribe la pregunta con la que ibas a ir. Una línea, en la nota del teléfono o en un papel.</p></div>
+  <div class="paso"><span class="paso-nombre">Debajo</span><p>Escribe la misma pregunta empezando con <em>¿de qué depende…</em> y terminá la frase. Si no te sale, escribe <em>no sé de qué depende</em>.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Consulta solo la segunda</span><p>Hazle a la fuente únicamente la pregunta <em>¿de qué depende…</em>. La primera no la hagas. Guarda lo que te devolvió y poné la fecha.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Espera un día</span><p>No decidas ese día. La lista que te devolvieron queda guardada, con la fecha, hasta el día siguiente. Si en ese día ya tomaste la decisión, escribí una línea debajo diciendo si podrías explicar por qué.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima consulta la vas a hacer como siempre, con la pregunta vieja, y vas a ejecutar sin darte cuenta. Cuando pase, abre la nota y anota la fecha. Si en el medio usaste aunque sea una vez la pregunta <em>¿de qué depende…</em>, el dato es ese. Si no la usaste ninguna vez, el dato es ese otro. <strong>El gesto no es preguntar siempre por razones: es tener anotado cuántas veces cambiaste de pregunta.</strong></p>
 </div>
 
 <div class="bloque">
@@ -328,7 +374,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -339,6 +385,88 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la pregunta con el peso cambiado
+    var campo=document.getElementById('preguntaOriginal');
+    var btn=document.getElementById('btnReformular');
+    var salida=document.getElementById('reformulaciones');
+    function limpia(s){
+      s=(s||'').trim();
+      if(!s){ return ''; }
+      // saca signos iniciales y finales de interrogación y espacios
+      s=s.replace(/^[¿?¡!\s]+/,'').replace(/[¿?¡!\s]+$/,'').trim();
+      return s;
+    }
+    function esDeQueDepende(s){
+      var t=s.toLowerCase();
+      return t.indexOf('de qué depende')===0 || t.indexOf('de que depende')===0
+        || t.indexOf('de qué depende')>=0 || t.indexOf('de que depende')>=0;
+    }
+    campo.addEventListener('input',function(){
+      btn.disabled = campo.value.trim().length < 4;
+    });
+    btn.addEventListener('click',function(){
+      var original=campo.value.trim();
+      var limpia_orig=limpia(original);
+      if(!limpia_orig){ salida.innerHTML=''; return; }
+
+      // si ya empieza con "de qué depende", lo marcamos
+      var yaEsDeQueDepende=esDeQueDepende(limpia_orig);
+
+      // versión 1: veredicto (dejar como está, pero completar el molde)
+      var v1;
+      if(yaEsDeQueDepende){
+        v1='Ya viene en la forma <em>¿de qué depende…?</em>. No hace falta traducirla a la versión de veredicto. Andá directo a la segunda.';
+      } else {
+        v1='<em>'+escapeHtml(limpia_orig)+'</em> — tal como está, pide un veredicto. Se puede contestar con una palabra.';
+      }
+
+      // versión 2: reescritura con "de qué depende"
+      var v2;
+      if(yaEsDeQueDepende){
+        v2='<em>'+escapeHtml(limpia_orig)+'</em>. Ya es esta forma.';
+      } else {
+        var nucleo=reescribir(limpia_orig);
+        v2='<em>¿De qué depende '+escapeHtml(nucleo)+'?</em>';
+      }
+
+      var html='';
+      html+='<div class="reformulacion">';
+      html+='<span class="reformulacion-etiqueta">Versión 1 &middot; pide un veredicto</span>';
+      html+='<p class="reformulacion-texto">'+v1+'</p>';
+      html+='</div>';
+      html+='<div class="reformulacion">';
+      html+='<span class="reformulacion-etiqueta">Versión 2 &middot; pide el mecanismo</span>';
+      html+='<p class="reformulacion-texto">'+v2+'</p>';
+      if(!yaEsDeQueDepende){
+        html+='<p class="reformulacion nota">La segunda no decide por ti. Enumera lo que hay que decidir.</p>';
+      }
+      html+='</div>';
+      salida.innerHTML=html;
+    });
+
+    function escapeHtml(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    // reescritura simple: intenta convertir "¿conviene que acepte el traslado?"
+    // a un núcleo tipo "que aceptes el traslado" / "aceptar el traslado" / "el traslado"
+    function reescribir(s){
+      var t=s.trim();
+      // quita "conviene", "me conviene", "debería", "debo", "tengo que"
+      t=t.replace(/^me\s+conviene\s+/i,'');
+      t=t.replace(/^conviene\s+/i,'');
+      t=t.replace(/^deber[ií]a\s+/i,'');
+      t=t.replace(/^debo\s+/i,'');
+      t=t.replace(/^tengo\s+que\s+/i,'');
+      // si empieza con "que ", lo dejamos
+      if(/^que\s+/i.test(t)){ t=t; }
+      // si empieza con verbo en infinitivo, lo dejamos
+      // devolvemos el texto limpio
+      t=t.replace(/^[,\s]+/,'').replace(/[,\s]+$/,'');
+      return t;
+    }
   })();
 </script>
 </body>
