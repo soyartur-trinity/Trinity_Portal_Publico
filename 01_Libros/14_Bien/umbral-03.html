@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,6 +214,48 @@
       opacity:1!important; transform:none!important;}
   }
 
+  /* ── el armador de una ocasión ── */
+  .armador{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .armador-campo{margin-bottom:1.2rem;}
+  .armador-campo:last-of-type{margin-bottom:0;}
+  .armador label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .armador input[type="text"]{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.7rem .85rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .armador input[type="text"]::placeholder{color:var(--lejos); font-style:italic;}
+  .armador input[type="text"]:focus{border-color:var(--oro-polvo);}
+  .opciones-tarea{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .tarea-btn{background:var(--negro); border:none; padding:.85rem .6rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .25s ease; line-height:1.35; text-align:left;}
+  .tarea-btn:hover, .tarea-btn:focus-visible{color:var(--blanco-humo);}
+  .tarea-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .armador .accion{margin-top:1.2rem;}
+  .ocasion-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .ocasion-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .ocasion-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .6rem 0;}
+  .ocasion-resultado-texto:last-child{margin-bottom:0;}
+  .ocasion-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .ocasion-faltantes{margin-top:.9rem; padding-top:.9rem; border-top:1px solid var(--separador);}
+  .ocasion-faltantes-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--frio); margin-bottom:.5rem;}
+  .ocasion-faltantes-lista{list-style:none; padding:0; margin:0;}
+  .ocasion-faltantes-lista li{font-family:'EB Garamond',Georgia,serif; font-size:.98rem;
+    line-height:1.65; color:var(--gris-calido); margin-bottom:.35rem;}
+  .ocasion-faltantes-lista li:last-child{margin-bottom:0;}
+  .ocasion-faltantes-lista li::before{content:'— '; color:var(--oro-tenue);}
+  @media (max-width:600px){
+    .opciones-tarea{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -325,11 +362,56 @@
   <p>Ese dato se guarda. Y el día que aparezca algo que decir —dentro de tres semanas, o de dos años, cuando ya ni te acuerdes del mandado— el otro va a saber dónde ponerlo.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">El armador de una ocasión</span>
+  <p class="geo-instruccion">Vas a armar una sola ocasión esta semana. Elige con quién y elige la tarea al costado. El sistema te va a decir cuál de las tres condiciones de una ocasión queda sin cubrir, si queda alguna.</p>
+  <div class="panel">
+    <div class="armador">
+      <div class="armador-campo">
+        <label for="quienOcasión">Con quién</label>
+        <input type="text" id="quienOcasión" placeholder="Ejemplo: mi padre, mi hija, M.">
+      </div>
+      <div class="armador-campo">
+        <label>La tarea al costado</label>
+        <div class="opciones-tarea" id="opcionesTarea">
+          <button class="tarea-btn" data-v="auto" aria-pressed="false">Manejar: lo llevo o me lleva</button>
+          <button class="tarea-btn" data-v="cocina" aria-pressed="false">Cocina: uno lava, el otro seca</button>
+          <button class="tarea-btn" data-v="caminata" aria-pressed="false">Caminata o mandado a pie</button>
+          <button class="tarea-btn" data-v="mandado" aria-pressed="false">Trámite o compra juntos</button>
+          <button class="tarea-btn" data-v="casa" aria-pressed="false">Ordenar algo de la casa</button>
+          <button class="tarea-btn" data-v="otra" aria-pressed="false">Otra (la escribo en la nota)</button>
+        </div>
+      </div>
+      <button class="accion" id="btnArmar" disabled>Ver cómo queda</button>
+      <div class="ocasion-resultado" id="ocasionResultado" style="display:none;">
+        <span class="ocasion-resultado-etiqueta">Lo que dice el umbral</span>
+        <p class="ocasion-resultado-texto" id="ocasionTexto"></p>
+        <div class="ocasion-faltantes" id="ocasionFaltantes" style="display:none;">
+          <span class="ocasion-faltantes-etiqueta">Lo que falta</span>
+          <ul class="ocasion-faltantes-lista" id="ocasionFaltantesLista"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Esta semana arma una, y una sola.</p>
-  <p>Elige a alguien y elige una tarea al lado: llevarlo a algún lado, acompañarlo a comprar, lavar mientras el otro seca. Que no tenga hora de finalización anunciada.</p>
-  <p>Y ahora lo único que hay que hacer, que consiste en no hacer: <strong>no preguntes nada.</strong> Ni cómo está, ni si le pasa algo, ni qué tal viene todo. Habla del tránsito. Deja que el rato sea lo que parece.</p>
-  <p>Si el otro no dice nada, no pasó nada malo: armaste un lugar y quedó armado. Y si dice algo, no estaciones.</p>
+  <p>Lo que produjiste no es un plan. Es una ocasión armada a medias, y el sistema te dice cuál de las tres condiciones está sin cubrir. Las tres que el umbral enumera: <em>tiempo sin final anunciado</em>, <em>algo al costado</em>, <em>ninguna pregunta frontal</em>.</p>
+  <p>Las dos primeras las cubre la tarea que elegiste. Cualquiera de las seis opciones —manejar, lavar, caminar, un trámite, ordenar, otra— pone las manos ocupadas y no tiene hora de finalización. Si tuviste que pasar a <em>Otra</em>, es porque ninguna de las cinco te servía: ahí el sistema te va a pedir que escribas en la nota por qué, y esa es información sobre cómo es tu semana, no sobre la ocasión.</p>
+  <p>La tercera es la que casi nadie cubre, y no la cubre la tarea: la cubre uno mismo cuando en el momento no pregunta nada. Ahí no hay nada que el sistema pueda verificar. Es lo único de este interactivo que queda colgado de vos: la ocasión está armada bien, y después hay que no aprovecharla.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe el nombre de la persona con la que vas a armar la ocasión y la tarea al costado. Poné la fecha debajo.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Armá la ocasión. Dura doce minutos, no más. Si te sale más larga, no la corrijas: es un dato. Que no tenga hora de finalización anunciada.</p></div>
+  <div class="paso"><span class="paso-nombre">No la aproveches</span><p>No preguntes cómo está. No preguntes si le pasa algo. No preguntes nada que suene a que armaste el rato para preguntar. Habla del tránsito. Deja que el rato sea lo que parece.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Anotá en la misma nota tres datos: la fecha, cuántos minutos duró en total, y si el otro dijo algo que no pertenecía al idioma habitual de esa relación. <em>Sí</em> o <em>no</em>, nada más.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Espera una semana</span><p>Antes de volver a la nota, fíjate si el otro te buscó en los días siguientes. Si te buscó, anotá la fecha. Si no, también. La búsqueda del otro es el único indicador de que la ocasión hizo algo.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima semana no vas a armar ninguna ocasión y vas a estar con la misma persona en la misma mesa de siempre, frente a frente, sin darte cuenta. Cuando pase, abrí la nota y agregá la fecha. Si te acordaste a mitad del encuentro de que podías haberlo movido a la vereda, escribí <em>acordé tarde</em>. Si no te acordaste, escribí <em>no me acordé</em>. Las dos cosas son el dato. <strong>El gesto no es armar una ocasión siempre: es tener anotado cuántas veces la armaste y cuántas veces te enteraste después.</strong></p>
 </div>
 
 <div class="bloque">
@@ -355,7 +437,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -366,6 +448,84 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el armador de una ocasión
+    var campo=document.getElementById('quienOcasión');
+    var botones=document.querySelectorAll('#opcionesTarea .tarea-btn');
+    var btn=document.getElementById('btnArmar');
+    var caja=document.getElementById('ocasionResultado');
+    var txt=document.getElementById('ocasionTexto');
+    var faltCaja=document.getElementById('ocasionFaltantes');
+    var faltLista=document.getElementById('ocasionFaltantesLista');
+
+    function seleccionada(){
+      var v=null;
+      botones.forEach(function(b){
+        if(b.getAttribute('aria-pressed')==='true'){ v=b.dataset.v; }
+      });
+      return v;
+    }
+
+    function habilitar(){
+      btn.disabled = !(campo.value.trim().length>=2 && seleccionada());
+    }
+    campo.addEventListener('input',habilitar);
+    botones.forEach(function(b){
+      b.addEventListener('click',function(){
+        botones.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        habilitar();
+        if(caja.style.display==='block'){ armar(); }
+      });
+    });
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    function armar(){
+      var quien=campo.value.trim()||'esa persona';
+      var v=seleccionada();
+      if(!v){ return; }
+
+      var nombres={
+        auto:'manejar: que él maneje o que manejes tú',
+        cocina:'la cocina: uno lava, el otro seca',
+        caminata:'una caminata o un mandado a pie',
+        mandado:'un trámite o una compra juntos',
+        casa:'ordenar algo de la casa juntos',
+        otra:'esa tarea que escribiste'
+      };
+      var descripcion={
+        auto:'Manejar tiene las tres condiciones sin que nadie las ponga: la hora del regreso no se sabe con precisión, el camino ocupa las manos, y nadie va a girar la cabeza para preguntarte cómo estás.',
+        cocina:'Lavar y secar tiene las tres condiciones. La tarea termina cuando termina, nadie dijo cuándo, y mirar una pileta de agua es una manera perfecta de no mirar a los ojos.',
+        caminata:'Caminar tiene las tres condiciones. El final de la caminata es donde ustedes decidan parar, las manos van ocupadas por el movimiento, y mirar para adelante no pide nada.',
+        mandado:'Un trámite juntos tiene las tres condiciones. La duración la decide la fila, la tarea ocupa, y mientras se resuelve lo que hay que resolver no hay pregunta frontal que hacer.',
+        casa:'Ordenar algo tiene las tres condiciones y una más: es tan aburrido que suspende la solemnidad por completo. Ninguna conversación importante empieza en una pieza que se está ordenando.',
+        otra:'La tarea que escribiste queda a tu criterio. Lo único que hay que verificar es que cumpla las tres condiciones, y ninguna de las tres depende del contenido: depende de que nadie sepa cuándo termina, de que las manos estén ocupadas, y de que no haya una pregunta frontal.'
+      };
+      var faltantes={
+        auto:[], cocina:[], caminata:[], mandado:[], casa:[],
+        otra:['Verificá que las manos estén ocupadas',
+             'Verificá que no haya hora de finalización',
+             'Verificá que en el momento no haya ninguna pregunta frontal']
+      };
+
+      txt.innerHTML='Con <strong>'+escapar(quien)+'</strong>, armás '+escapar(nombres[v])+'. '+descripcion[v];
+      var f=faltantes[v];
+      if(f && f.length){
+        faltCaja.style.display='block';
+        faltLista.innerHTML=f.map(function(x){return '<li>'+x+'</li>';}).join('');
+      } else {
+        faltCaja.style.display='none';
+        faltLista.innerHTML='';
+      }
+      caja.style.display='block';
+    }
+
+    btn.addEventListener('click',armar);
   })();
 </script>
 </body>
