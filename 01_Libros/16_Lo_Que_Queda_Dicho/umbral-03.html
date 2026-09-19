@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,42 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── la versión que tienes en la cabeza ── */
+  .versiones{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .versiones label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .versiones input[type="text"]{display:block; width:100%;
+    background:rgba(201,168,76,.012); border:1px solid var(--separador);
+    padding:.75rem .9rem; margin-bottom:1.3rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.6;
+    color:var(--blanco-humo);}
+  .versiones input[type="text"]::placeholder{color:var(--lejos); font-style:italic;}
+  .versiones input[type="text"]:focus{border-color:var(--oro-polvo);}
+  .versiones-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .versiones-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador); margin-bottom:1.2rem;}
+  .versiones-btn{background:var(--negro); border:none; padding:.85rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.35;}
+  .versiones-btn:hover, .versiones-btn:focus-visible{color:var(--blanco-humo);}
+  .versiones-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .versiones .accion{margin-top:.4rem;}
+  .versiones-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .versiones-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .versiones-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .versiones-resultado-texto:last-child{margin-bottom:0;}
+  .versiones-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  @media (max-width:600px){
+    .versiones-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -323,11 +353,52 @@
 
 <div class="perla"><p>Elsa no eligió qué olvidar.<br>Tú sí.</p></div>
 
+<div class="geo">
+  <span class="geo-label">La versión que tienes en la cabeza</span>
+  <p class="geo-instruccion">Piensa en alguien con quien tienes historia larga —años, muchas conversaciones, quizá alguien que ya no está—. Escribe su nombre. Marca cuántas versiones distintas de esa persona tienes disponibles ahora. Y después marca cuál consultas más.</p>
+  <div class="panel">
+    <div class="versiones">
+      <label for="nombreVersion">Su nombre o inicial</label>
+      <input type="text" id="nombreVersion" placeholder="Nombre, inicial, o parentesco.">
+
+      <span class="versiones-sub">Cuántas versiones tienes disponibles</span>
+      <div class="versiones-opciones" id="versionesCuantas">
+        <button class="versiones-btn" data-v="una" aria-pressed="false">Una sola</button>
+        <button class="versiones-btn" data-v="varias" aria-pressed="false">Dos o tres</button>
+        <button class="versiones-btn" data-v="muchas" aria-pressed="false">Muchas</button>
+      </div>
+
+      <span class="versiones-sub">Cuál consultas más</span>
+      <div class="versiones-opciones" id="versionesCual">
+        <button class="versiones-btn" data-v="buena" aria-pressed="false">La mejor</button>
+        <button class="versiones-btn" data-v="mala" aria-pressed="false">La peor</button>
+        <button class="versiones-btn" data-v="depende" aria-pressed="false">Depende del día</button>
+      </div>
+
+      <button class="accion" id="btnVersiones" disabled>Ver el resultado</button>
+      <div id="versionesResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Esta semana, piensa en una persona con la que tengas historia larga y muchas conversaciones guardadas.</p>
-  <p>Contéstate una sola pregunta, y no la busques en el teléfono: <strong>¿qué versión de esa persona tienes en la cabeza?</strong></p>
-  <p>Si es una sola, el trabajo ya está hecho — el tiempo hizo lo suyo o lo hiciste tú.</p>
-  <p>Si son varias, y una es bastante peor que las otras, ese es el dato. Y no hace falta que hagas nada con él todavía.</p>
+  <p>Lo que acabas de producir no es un juicio sobre la persona. Es un dato sobre qué clase de archivo tienes de ella en la cabeza, y qué se puede hacer con eso.</p>
+  <p><strong>Una sola versión</strong> —buena o mala— es el caso de Elsa. Alguien que se convirtió en una sola cosa para ti, casi siempre porque la persona se fue o porque hace mucho que no la ves. La versión que quedó la armó el tiempo, no tú, y no se puede cambiar: ya no hay material con el que trabajar.</p>
+  <p><strong>Dos o tres versiones</strong> es lo más frecuente con quien está vivo y cerca. Tenés el del trabajo, el de las fiestas, el de las discusiones. Tres personas distintas en el mismo cuerpo, todas verificables. Eso es lo que apareció con el archivo, y es lo que nadie tuvo nunca antes.</p>
+  <p><strong>Muchas versiones</strong> ya es otra cosa. Ya no tenés "una idea" de esa persona: tenés el archivo entero, sin jerarquía. Eso es lo que Ricoeur llamaba una memoria sin reserva, y es incómodo — porque no se puede pensar a alguien desde todas sus versiones al mismo tiempo.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abrí la nota del teléfono. Escribí el nombre de la persona del interactivo. Debajo, una sola frase: qué versión de esa persona tenés más disponible ahora mismo. No la busques en el teléfono: escribí lo que tenés en la cabeza.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Fíjate si esa versión aparece sola cuando pensás en la persona, o si tenés que ir a buscarla. Si aparece sola, es la que quedó. Si tenés que ir, hay otras.</p></div>
+  <div class="paso"><span class="paso-nombre">No la corrijas</span><p>No hagas nada esta semana para tener otra versión. No le pidas a la persona que te cuente, no busques conversaciones viejas, no reabras nada. La versión que aparece sola es el dato.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Agregá una segunda línea: la versión que apareció sola y si eso te pareció bien o no. Solo eso.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Esperá un mes</span><p>Volvé a la nota en un mes. Si la versión cambió, algo pasó en el medio — aunque no sepas qué. Si sigue igual, es la versión que quedó, y la elegiste vos sin darte cuenta.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En algún momento del próximo mes vas a darte cuenta de que la versión de alguien que tenés en la cabeza no es la única que hay disponible, y que hay otras con fecha, en el mismo aparato, en el mismo chat. Cuando pase, abrí la nota y agregá la fecha. Si esa vez buscaste para ver la otra versión, escribí <em>busqué</em>. Si dejaste la que tenías, escribí <em>dejé</em>. Las dos cosas son el dato. <strong>El gesto no es tener siempre la mejor versión: es tener anotado cuántas veces fuiste a buscar la otra.</strong></p>
 </div>
 
 <div class="bloque">
@@ -348,7 +419,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -359,6 +430,75 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la versión que tienes en la cabeza
+    var nombre=document.getElementById('nombreVersion');
+    var botonesCuantas=document.querySelectorAll('#versionesCuantas .versiones-btn');
+    var botonesCual=document.querySelectorAll('#versionesCual .versiones-btn');
+    var btn=document.getElementById('btnVersiones');
+    var salida=document.getElementById('versionesResultado');
+
+    var cuantas=null, cual=null;
+
+    function habilitar(){
+      btn.disabled = !(nombre.value.trim().length>=1 && cuantas && cual);
+    }
+
+    botonesCuantas.forEach(function(b){
+      b.addEventListener('click',function(){
+        botonesCuantas.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        cuantas=b.dataset.v;
+        habilitar();
+      });
+    });
+    botonesCual.forEach(function(b){
+      b.addEventListener('click',function(){
+        botonesCual.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        cual=b.dataset.v;
+        habilitar();
+      });
+    });
+    nombre.addEventListener('input',habilitar);
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    var cuantasTexto={
+      una:'<strong>Una sola versión</strong>. Alguien que se convirtió en una sola cosa para ti, casi siempre porque se fue o porque hace mucho que no lo ves. La versión que quedó la armó el tiempo, no tú, y no se puede cambiar: ya no hay material con el que trabajar.',
+      varias:'<strong>Dos o tres versiones</strong>. Es lo más frecuente con quien está vivo y cerca. Tenés el del trabajo, el de las fiestas, el de las discusiones. Tres personas distintas en el mismo cuerpo, todas verificables. Eso es lo que apareció con el archivo, y es lo que nadie tuvo nunca antes.',
+      muchas:'<strong>Muchas versiones</strong>. Ya no tenés "una idea" de esa persona: tenés el archivo entero, sin jerarquía. Eso es lo que Ricoeur llamaba una memoria sin reserva, y es incómodo — porque no se puede pensar a alguien desde todas sus versiones al mismo tiempo.'
+    };
+
+    var cualTexto={
+      buena:'Consultás más <strong>la mejor</strong>. Es lo que hacía el olvido por su cuenta: dejar que la persona se convierta en su mejor versión. La diferencia es que antes lo hacía el tiempo, sin que nadie eligiera, y ahora lo elegís vos. No está mal, y no es lo mismo.',
+      mala:'Consultás más <strong>la peor</strong>. Eso es lo que el archivo hace posible y ninguna época anterior permitió: tener una sola versión disponible, la peor, con fecha, y volver a ella sin que nada la desplace. No es más fiel a la verdad — es solo la más filosa de todas las que hay.',
+      depende:'Consultás más <strong>según el día</strong>. Es el caso más frecuente de todos, y el que cambió con el archivo. Antes, la versión que aparecía dependía del humor del momento. Ahora, cada vez que aparece una versión, hay otras dos o tres disponibles en el mismo aparato, con fecha, listas para ser consultadas si la primera no alcanza.'
+    };
+
+    btn.addEventListener('click',function(){
+      if(!cuantas || !cual){ salida.innerHTML=''; return; }
+      var n=nombre.value.trim()||'esa persona';
+      var html='<div class="versiones-resultado">';
+      html+='<span class="versiones-resultado-etiqueta">Lo que dice el umbral</span>';
+      html+='<p class="versiones-resultado-texto">Sobre <strong>'+escapar(n)+'</strong>:</p>';
+      html+='<p class="versiones-resultado-texto">'+cuantasTexto[cuantas]+'</p>';
+      html+='<p class="versiones-resultado-texto">'+cualTexto[cual]+'</p>';
+
+      if(cuantas==='una' && cual==='mala'){
+        html+='<p class="versiones-resultado-texto" style="margin-top:.9rem;">Cuando queda una sola versión y es la peor, eso es lo que hay. No se puede corregir con voluntad: alguien se volvió, para ti, esa sola noche. Si te molesta, no es un problema de memoria. Es que ya no hay más material con el que trabajar.</p>';
+      } else if(cuantas==='muchas' && cual==='mala'){
+        html+='<p class="versiones-resultado-texto" style="margin-top:.9rem;">Cuando hay muchas versiones y la que más consultás es la peor, hay algo del orden de la elección. Las otras están ahí, con fecha, disponibles. Que la peor sea la que aparece sola es un dato sobre vos, no sobre la persona.</p>';
+      } else if(cuantas==='varias' && cual==='buena'){
+        html+='<p class="versiones-resultado-texto" style="margin-top:.9rem;">Cuando hay varias versiones y la que consultás es la mejor, estás haciendo lo que Elsa no pudo elegir: dejar que la persona se convierta en su mejor versión. La diferencia es que ahora se elige, y eso tiene un costo. Lo que se deja atrás no desaparece: sigue disponible, con fecha, para el día que se te ocurra ir a buscarlo.</p>';
+      }
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
