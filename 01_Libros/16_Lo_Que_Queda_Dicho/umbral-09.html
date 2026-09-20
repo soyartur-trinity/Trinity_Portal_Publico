@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,41 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── ¿prescribe o no? ── */
+  .prescribe{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .prescribe label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .prescribe textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem; margin-bottom:1.3rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:2.8rem;}
+  .prescribe textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .prescribe textarea:focus{border-color:var(--oro-polvo);}
+  .prescribe-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .prescribe-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .prescribe-btn{background:var(--negro); border:none; padding:.85rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.35;}
+  .prescribe-btn:hover, .prescribe-btn:focus-visible{color:var(--blanco-humo);}
+  .prescribe-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .prescribe .accion{margin-top:1.2rem;}
+  .prescribe-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .prescribe-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .prescribe-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .prescribe-resultado-texto:last-child{margin-bottom:0;}
+  .prescribe-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  @media (max-width:600px){
+    .prescribe-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -321,12 +350,45 @@
 
 <div class="perla"><p>Prescribir no es perdonar.<br>Es acordar que eso ya no se usa,<br>para que lo que sigue<br>sea del tamaño que tiene.</p></div>
 
+<div class="geo">
+  <span class="geo-label">¿Prescribe o no?</span>
+  <p class="geo-instruccion">Pensá en algo que ya se habló bastante con alguien y que igual sigue volviendo. Escribí en una línea de qué se trata. Después marcá qué te pasa en el cuerpo cuando aparece —sin pensar, lo primero que llegue—.</p>
+  <div class="panel">
+    <div class="prescribe">
+      <label for="asuntoPrescribe">De qué se trata</label>
+      <textarea id="asuntoPrescribe" placeholder="Ejemplo: la mudanza. O: lo que dije en el cumpleaños. O: cómo se repartió el cuidado de mi padre."></textarea>
+
+      <span class="prescribe-sub">Cuando eso aparece, en el cuerpo...</span>
+      <div class="prescribe-opciones" id="prescribeOpciones">
+        <button class="prescribe-btn" data-v="fastidio" aria-pressed="false">Me da fastidio</button>
+        <button class="prescribe-btn" data-v="aprieta" aria-pressed="false">Se me aprieta algo</button>
+        <button class="prescribe-btn" data-v="noSe" aria-pressed="false">No sé</button>
+      </div>
+
+      <button class="accion" id="btnPrescribe" disabled>Ver el resultado</button>
+      <div class="prescribe-resultado" id="prescribeResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Piensa en algo que ya se habló bastante y que igual sigue volviendo.</p>
-  <p>Fíjate primero en el cuerpo: cuando aparece, ¿te da fastidio o se te aprieta algo? Si se aprieta, todavía no. Déjalo, y no te lo reproches.</p>
-  <p>Si da fastidio, decláralo esta semana. De frente, con su fecha, en una frase: <em>esto ya se habló y no vuelve.</em> Sin explicar por qué.</p>
-  <p>Y si alguien lo rompe, que va a pasar: no contestes en el momento, y sobre todo no contestes delante de otros. A los dos o tres días, por teléfono, seis palabras. <em>Eso habíamos quedado que no volvía.</em></p>
-  <p>Después no sigas. La regla se defiende una vez.</p>
+  <p>Lo que acabas de producir no es una conclusión sobre el asunto. Es un dato sobre si ese asunto está listo para declararse terminado o todavía no.</p>
+  <p><strong>Fastidio</strong> es el signo de lo que prescribe. Cuando el asunto ya dio todo lo que tenía que dar y sólo sigue apareciendo por inercia, la respuesta del cuerpo es el fastidio: una incomodidad menor, casi administrativa, que no está pidiendo ser atendida. En ese caso, declarar terminado no es evitar nada — es reconocer algo que ya está resuelto y sigue dando vueltas sin motivo.</p>
+  <p><strong>Se aprieta algo</strong> es el signo contrario. Cuando el asunto no terminó y sólo se dejó de hablar, el cuerpo no da fastidio: da una presión, algo que se cierra. Eso no prescribe todavía, y forzarlo hace daño. Declarar terminado algo que sigue apretando es enterrarlo, no cerrarlo — y en algún momento vuelve a salir, con más fuerza porque encima estaba prohibido.</p>
+  <p><strong>No sé</strong> es la respuesta más frecuente de todas. Casi nadie sabe qué siente cuando aparece un asunto viejo, porque no se lo pregunta con esa precisión. En ese caso, el gesto no es declarar ni no declarar: es <strong>prestar atención la próxima vez que aparezca</strong>, y contestar la pregunta en ese momento, no ahora. Un mes de esperar puede convertir "no sé" en "fastidio" o en "se me aprieta algo", y entonces ya se sabe qué hacer.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abrí la nota del teléfono. Escribí el asunto del interactivo y qué marcaste —fastidio, se aprieta, no sé—. Poné la fecha debajo.</p></div>
+  <div class="paso"><span class="paso-nombre">Si marcaste fastidio</span><p>Esta semana, declaralo. De frente, con su fecha, en una frase: <em>esto ya se habló y no vuelve</em>. Sin explicar por qué. Se dice una vez.</p></div>
+  <div class="paso"><span class="paso-nombre">Si marcaste se aprieta algo</span><p>No lo declares. Lo que hay que hacer con eso es lo contrario: darle su conversación, que no la tuvo. Buscá el momento para hablarlo en serio, una sola vez, sin archivo de por medio.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Si marcaste no sé</span><p>No hagas nada esta semana. La próxima vez que aparezca el asunto —y va a aparecer—, fijate en el cuerpo antes de reaccionar. Anotá qué sentiste y la fecha. Con eso ya tenés el dato.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Si alguien lo rompe</span><p>Si declaraste terminado y alguien lo rompió —en chiste, de costado, delante de otros—, no contestes en el momento. A los dos o tres días, por teléfono, seis palabras: <em>eso habíamos quedado que no volvía</em>. No sigas después de eso. La regla se defiende una vez.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. A los pocos meses, el asunto va a aparecer otra vez —en una sobremesa, en un chiste flojo, en una discusión que empieza por otra cosa— y vas a darte cuenta de que ya lo habías declarado terminado. Cuando pase, abrí la nota y agregá la fecha. Si esa vez lo nombraste, escribí <em>nombré</em>. Si lo dejaste pasar, escribí <em>pasó</em>. Las dos cosas son el dato. <strong>El gesto no es declarar terminado una vez y olvidarse: es tener anotado cuántas veces hubo que volver a declararlo.</strong></p>
 </div>
 
 <div class="bloque">
@@ -347,7 +409,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -358,6 +420,52 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // ¿prescribe o no?
+    var asunto=document.getElementById('asuntoPrescribe');
+    var botones=document.querySelectorAll('#prescribeOpciones .prescribe-btn');
+    var btn=document.getElementById('btnPrescribe');
+    var salida=document.getElementById('prescribeResultado');
+
+    var signo=null;
+
+    function habilitar(){
+      btn.disabled = !(asunto.value.trim().length>=3 && signo);
+    }
+
+    botones.forEach(function(b){
+      b.addEventListener('click',function(){
+        botones.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        signo=b.dataset.v;
+        habilitar();
+      });
+    });
+    asunto.addEventListener('input',habilitar);
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    var lecturas={
+      fastidio:'<strong>Está listo para declararse terminado.</strong> El fastidio es lo que el cuerpo hace con un asunto que ya dio todo lo que tenía que dar. Sólo sigue apareciendo por inercia, sin pedir nada. Declarar terminado no es evitar la conversación: es reconocer que ya la tuvo y que eso ya no se usa. La frase es: <em>esto ya se habló y no vuelve</em>. Se dice una vez, de frente, sin explicar por qué.',
+      aprieta:'<strong>Todavía no prescribe.</strong> Cuando el asunto no terminó y sólo se dejó de hablar, el cuerpo no da fastidio: da presión. Eso no está resuelto, y declararlo terminado lo entierra en lugar de cerrarlo. Lo que hace falta es lo contrario: darle la conversación que no tuvo. Una sola, en serio, sin archivo de por medio.',
+      noSe:'<strong>Falta información.</strong> Casi nadie sabe qué siente al aparecer un asunto viejo, porque no se pregunta con esa precisión. No hagas nada esta semana: cuando vuelva a aparecer —y va a aparecer—, fijate en el cuerpo antes de reaccionar. Anotá qué sentiste. Un mes después ya vas a tener la respuesta.'
+    };
+
+    btn.addEventListener('click',function(){
+      var a=asunto.value.trim();
+      if(!a || !signo){ salida.innerHTML=''; return; }
+
+      var html='<div class="prescribe-resultado">';
+      html+='<span class="prescribe-resultado-etiqueta">Lo que dice el umbral</span>';
+      html+='<p class="prescribe-resultado-texto">Sobre <strong>'+escapar(a)+'</strong>:</p>';
+      html+='<p class="prescribe-resultado-texto">'+lecturas[signo]+'</p>';
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
