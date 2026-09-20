@@ -277,20 +277,21 @@
 </div>
 
 <div class="geo" id="geo08">
-  <span class="geo-label">Antes y despu&eacute;s</span>
+  <span class="geo-label">Lo que se pierde en el pulido</span>
+  <p class="geo-instruccion">Escribe un mensaje difícil que tengas pendiente. De una sola vez, sin corregir. Después el sistema te muestra cuántas marcas de esfuerzo hay en él.</p>
   <div class="panel">
-    <div class="col">
-      <div><h4>A</h4><p>Te escribo porque hace rato que quiero decirte esto y no me sale, y quizá esto tampoco salga, pero prefiero mandarlo mal antes que seguir sin mandarlo.</p></div>
-      <div><h4>B</h4><p>Quer&iacute;a escribirte para conversar algo que vengo pensando hace tiempo. Me parece que vale la pena hablarlo con calma.</p></div>
-    </div>
-    <div class="opciones">
-      <button type="button">Es la A</button>
-      <button type="button">Es la B</button>
-    </div>
+    <textarea class="campo" id="q08" rows="5" placeholder="Escribe el mensaje como te salga. Sin pensarlo mucho."></textarea>
+    <button type="button" class="accion" id="b08" disabled>Ver qué se pierde</button>
   </div>
   <div class="geo-estado"><span class="glosa" id="g08"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">Dos versiones del mismo mensaje. &iquest;Cu&aacute;l se parece m&aacute;s a como estabas?</p>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+<div class="bloque">
+  <p>El número que acabas de ver no dice si escribes bien o mal. Dice cuánto de tu mensaje es esfuerzo visible. La forma promedio elimina ese esfuerzo, y al hacerlo elimina también la información de que del otro lado hay alguien que se está esforzando.</p>
+  <p>Puedes leerlo de dos maneras. Una: lo que se pierde cuando todo llega pulido, y nadie sabe ya cuánto costó decirlo. Otra: lo que se gana cuando no hay que mostrar el esfuerzo, y el mensaje llega limpio sin que nadie tenga que ver el desorden.</p>
+  <p>Las dos lecturas son ciertas. El umbral no elige por ti.</p>
+</div>
+
 <div class="bloque">
   <p>Este umbral podría terminar en una moraleja fea —escribe mal, sé auténtico— y sería una estupidez, además de imposible.</p>
   <p>Hay mensajes que hay que mandar bien. Un descargo laboral, una carta que va a leer un abogado, un pedido que se juega mucho en cómo está redactado. En todos esos casos la forma prestada es la herramienta correcta y usarla es sensatez, no traición.</p>
@@ -304,15 +305,47 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">E. M. Forster</span></a> &middot; Aspectos de la novela, 1927</cite>
 </div>
 
-<div class="bloque">
-  <p><strong>Con quién</strong> Alguien a quien le escribas seguido y que te importe.</p>
-  <p><strong>El gesto</strong> Esta semana, mándale un mensaje sin pasarlo por la IA. Uno solo, y que no sea trivial. Con las vueltas que le des, con la frase que te quedó torcida, con el final que no cierra del todo.</p>
-  <p><strong>Cuando no salga</strong> Puede que lo releas después y te dé un poco de vergüenza. Es esperable, y es el ejercicio entero: esa vergüenza es la marca de que ahí adentro se ve algo tuyo. Los mensajes pulidos no dan vergüenza nunca, y por eso tampoco muestran nada.</p>
-  <p><strong>La trampa</strong> Escribirlo mal a propósito. Fabricar torpeza es más artificial que la forma prestada, y además se nota. Escríbelo como te salga, y si te sale bien, mándalo bien.</p>
-  <p><strong>Guardar</strong> Qué te contestaron. Y si fue distinto de lo que te contestan cuando escribes pulido.</p>
-  <p><strong>Lo que no se traslada</strong> Que alguien entienda lo que dijiste mal. Conseguir la forma ya lo tienes resuelto y para siempre; que otro haya atravesado tu desorden y haya llegado igual a lo que querías decir es la otra mitad, y sigue necesitando a alguien del otro lado.</p>
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Alguien a quien le escribas seguido y que te importe.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, elige un mensaje que tengas que mandar y que no sea trivial.<br>
+    <strong>2.</strong> Escríbelo de una sola vez, sin borrar, sin corregir, sin pasarlo por ningún lado.<br>
+    <strong>3.</strong> Mándalo así, con las vueltas que le hayas dado, con la frase torcida, con el final que no cierra.<br>
+    <strong>4.</strong> Si te da vergüenza antes de mandarlo, espera cinco minutos y mándalo igual.<br>
+    <strong>5.</strong> Anota qué te contestaron. Y si la respuesta fue distinta de lo que te contestan cuando escribes pulido.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que lo releas después y te dé un poco de vergüenza. Es esperable, y es el ejercicio entero: esa vergüenza es la marca de que ahí adentro se ve algo tuyo. Los mensajes pulidos no dan vergüenza nunca, y por eso tampoco muestran nada.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Escribirlo mal a propósito. Fabricar torpeza es más artificial que la forma prestada, y además se nota. Escríbelo como te salga, y si te sale bien, mándalo bien.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Qué te contestaron. Y si fue distinto de lo que te contestan cuando escribes pulido.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Que alguien entienda lo que dijiste mal. Conseguir la forma ya lo tienes resuelto y para siempre; que otro haya atravesado tu desorden y haya llegado igual a lo que querías decir es la otra mitad, y sigue necesitando a alguien del otro lado.</p>
+  </div>
 </div>
 
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que tengas que mandar algo difícil, la tentación de pulirlo va a estar ahí, y probablemente caigas. Cuando caigas, no hagas nada distinto: vuelve a empezar. Escribe el mensaje de una sola vez y mándalo. La cantidad de veces que vuelves a empezar es el mecanismo.</p>
+</div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -326,16 +359,56 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo08'); if(!raiz) return;
-    var g=document.getElementById('g08');
-    raiz.querySelectorAll('.opciones button').forEach(function(b){
-      b.addEventListener('click',function(){
-        raiz.querySelector('.opciones').style.display='none';
-        g.innerHTML='La otra es la que mandaste.';
+    var t=document.getElementById('q08'); if(!t) return;
+    var b=document.getElementById('b08'), g=document.getElementById('g08');
+    var marcas = [
+      {patron:/\b(no sé|no se|quizás|quizas|tal vez|capaz|puede ser|puede que)\b/gi, tipo:'duda'},
+      {patron:/\b(perdón|perdon|disculpa|disculpe|perdona|perdone)\b/gi, tipo:'disculpa'},
+      {patron:/\b(bueno|este|eh|o sea|digamos|en realidad|mejor dicho)\b/gi, tipo:'muletilla'},
+      {patron:/\b(es que|lo que pasa es que|el tema es que)\b/gi, tipo:'explicación'},
+      {patron:/\b(un poquito|un ratito|un momentito|una cosita)\b/gi, tipo:'diminutivo'},
+      {patron:/\b(digo|quise decir|o sea que)\b/gi, tipo:'corrección'},
+      {patron:/\.\.\.|…/g, tipo:'frase inacabada'},
+      {patron:/\b(no sé si|no estoy seguro|no estoy segura)\b/gi, tipo:'vacilación'},
+      {patron:/\b(igual|de todos modos|de todas formas)\b/gi, tipo:'atenuante'}
+    ];
+    function contarRepeticiones(texto){
+      var palabras = texto.toLowerCase().split(/\s+/);
+      var repes = 0;
+      for(var i=1; i<palabras.length; i++){
+        if(palabras[i] === palabras[i-1] && palabras[i].length > 2) repes++;
+      }
+      return repes;
+    }
+    function analizar(texto){
+      var totalPalabras = texto.trim() ? texto.trim().split(/\s+/).length : 0;
+      var encontradas = [];
+      marcas.forEach(function(m){
+        var match = texto.match(m.patron);
+        if(match){
+          match.forEach(function(){ encontradas.push(m.tipo); });
+        }
       });
+      var repes = contarRepeticiones(texto);
+      for(var i=0; i<repes; i++) encontradas.push('repetición');
+      return {total: totalPalabras, marcas: encontradas.length, tipos: encontradas};
+    }
+    t.addEventListener('input', function(){ b.disabled = t.value.trim().length < 20; });
+    b.addEventListener('click', function(){
+      var texto = t.value.trim();
+      if(!texto) return;
+      b.disabled = true; t.readOnly = true;
+      var res = analizar(texto);
+      var porcentaje = res.total > 0 ? Math.round((res.marcas / res.total) * 100) : 0;
+      var tiposUnicos = {};
+      res.tipos.forEach(function(tp){ tiposUnicos[tp] = (tiposUnicos[tp]||0)+1; });
+      var listaTipos = Object.keys(tiposUnicos).map(function(k){ return k + ' (' + tiposUnicos[k] + ')'; }).join(', ');
+      g.innerHTML = 'Tu mensaje tiene <strong>' + res.total + '</strong> palabras.<br>' +
+        'De esas, <strong>' + res.marcas + '</strong> son marcas de esfuerzo: ' + (listaTipos || 'ninguna') + '.<br>' +
+        'Eso es el <strong>' + porcentaje + '%</strong> de lo que escribiste.<br>' +
+        'La forma promedio elimina esas marcas. Y al hacerlo, elimina también la información de que del otro lado hay alguien que se está esforzando.';
     });
   })();
-
 
   (function(){
     var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
