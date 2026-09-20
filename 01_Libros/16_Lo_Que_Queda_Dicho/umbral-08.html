@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,54 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── el pacto que tenés y el que te falta ── */
+  .pactos{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .pactos-encabezado{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.88rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:1rem;}
+  .pacto-fila{padding:.9rem .3rem; border-bottom:1px solid var(--separador);}
+  .pacto-fila:last-of-type{border-bottom:none;}
+  .pacto-nombre{display:block; font-family:'EB Garamond',Georgia,serif;
+    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.6rem;}
+  .pacto-nombre small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.88rem; color:var(--gris-calido); margin-top:.2rem;}
+  .pacto-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .pacto-btn{background:var(--negro); border:none; padding:.7rem .4rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.9rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .pacto-btn:hover, .pacto-btn:focus-visible{color:var(--blanco-humo);}
+  .pacto-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .pacto-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .pacto-btn[aria-pressed="true"][data-v="nose"]{color:var(--lejos); background:rgba(42,36,24,.4);}
+  .pactos-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin:1.4rem 0 .6rem 0;}
+  .pactos-ruptura{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .ruptura-btn{background:var(--negro); border:none; padding:.85rem .6rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .25s ease;
+    line-height:1.35; text-align:left;}
+  .ruptura-btn:hover, .ruptura-btn:focus-visible{color:var(--blanco-humo);}
+  .ruptura-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .ruptura-btn small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.82rem; color:var(--gris-calido); margin-top:.2rem;}
+  .ruptura-btn[aria-pressed="true"] small{color:var(--oro-tenue);}
+  .pactos .accion{margin-top:1.2rem;}
+  .pactos-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .pactos-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .pactos-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .pactos-resultado-texto:last-child{margin-bottom:0;}
+  .pactos-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  @media (max-width:600px){
+    .pacto-opciones, .pactos-ruptura{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -313,10 +355,98 @@
 
 <div class="perla"><p>No se acordó para arreglar lo que quedó escrito.<br>Se acordó para poder volver a escribir mal.</p></div>
 
+<div class="geo">
+  <span class="geo-label">El pacto que tenés y el que te falta</span>
+  <p class="geo-instruccion">Pensá en una relación donde hay cosas guardadas. Marcá cuáles de estos cuatro pactos ya tenés con esa persona. Después marcá qué pasa cuando uno de los dos rompe algo de lo acordado.</p>
+  <div class="panel">
+    <div class="pactos" id="pactos">
+      <span class="pactos-encabezado">Los cuatro pactos posibles</span>
+
+      <div class="pacto-fila" data-p="citar">
+        <span class="pacto-nombre">No citarse
+          <small>nadie dice <em>yo te escribí</em> ni <em>si buscas vas a ver</em></small>
+        </span>
+        <div class="pacto-opciones">
+          <button class="pacto-btn" data-v="si" aria-pressed="false">Lo tenemos</button>
+          <button class="pacto-btn" data-v="no" aria-pressed="false">No lo tenemos</button>
+          <button class="pacto-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="pacto-fila" data-p="leer">
+        <span class="pacto-nombre">No leer en voz alta
+          <small>nadie lee en voz alta en medio de una discusión</small>
+        </span>
+        <div class="pacto-opciones">
+          <button class="pacto-btn" data-v="si" aria-pressed="false">Lo tenemos</button>
+          <button class="pacto-btn" data-v="no" aria-pressed="false">No lo tenemos</button>
+          <button class="pacto-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="pacto-fila" data-p="terceros">
+        <span class="pacto-nombre">No mostrar a terceros
+          <small>nadie manda capturas de un chat de dos a un grupo</small>
+        </span>
+        <div class="pacto-opciones">
+          <button class="pacto-btn" data-v="si" aria-pressed="false">Lo tenemos</button>
+          <button class="pacto-btn" data-v="no" aria-pressed="false">No lo tenemos</button>
+          <button class="pacto-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <div class="pacto-fila" data-p="reabrir">
+        <span class="pacto-nombre">No reabrir lo ya hablado
+          <small>lo que se discutió y se cerró no vuelve a citarse</small>
+        </span>
+        <div class="pacto-opciones">
+          <button class="pacto-btn" data-v="si" aria-pressed="false">Lo tenemos</button>
+          <button class="pacto-btn" data-v="no" aria-pressed="false">No lo tenemos</button>
+          <button class="pacto-btn" data-v="nose" aria-pressed="false">No sé</button>
+        </div>
+      </div>
+
+      <span class="pactos-sub">Cuando uno de los dos rompe algo acordado</span>
+      <div class="pactos-ruptura" id="pactosRuptura">
+        <button class="ruptura-btn" data-v="momento" aria-pressed="false">Se dice en el momento
+          <small>se interrumpe la discusión y se nombra la ruptura</small>
+        </button>
+        <button class="ruptura-btn" data-v="despues" aria-pressed="false">Se dice después
+          <small>se deja pasar y a los días se habla</small>
+        </button>
+        <button class="ruptura-btn" data-v="pasa" aria-pressed="false">Se deja pasar
+          <small>nadie dice nada y el pacto se afloja</small>
+        </button>
+        <button class="ruptura-btn" data-v="nunca" aria-pressed="false">No se dice nunca
+          <small>la ruptura queda y nadie la nombra</small>
+        </button>
+      </div>
+
+      <button class="accion" id="btnPactos" disabled>Ver el resultado</button>
+      <div id="pactosResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Si hay alguien con quien esto te pasa, pídeselo esta semana, en un momento sin tema. Una frase, para los dos, sin fundamentar.</p>
-  <p>Y si te contestan que sí, no vuelvas sobre el asunto. Un pacto que se revisa deja de ser un pacto y pasa a ser una vigilancia.</p>
-  <p>Lo otro no hace falta pedirlo: deja de mandarle a un tercero lo que alguien escribió creyendo que te lo escribía a ti. Eso empieza hoy y no requiere el acuerdo de nadie.</p>
+  <p>Lo que acabas de producir no es un diagnóstico del vínculo. Es un dato sobre qué pactos tenés en pie y qué hacés cuando uno se rompe.</p>
+  <p><strong>Los cuatro pactos en pie</strong> es el caso menos frecuente de todos. Casi nadie los tiene explícitos: la mayoría tiene uno o dos sin haberlos nombrado, y funcionan porque se cumplen solos. El problema aparece el día que se rompen y nadie sabe si había un pacto.</p>
+  <p><strong>Dos o tres pactos en pie</strong> es lo más común. La pregunta, entonces, no es cuántos tenés: es <strong>cuál de los cuatro te falta</strong>. Los cuatro no cumplen la misma función: los dos primeros protegen el presente —lo que se va a seguir diciendo—; los dos últimos protegen el pasado —lo que ya quedó escrito—. Si te falta uno de los dos primeros, la lesión es sobre lo que viene. Si te falta uno de los dos últimos, la lesión es sobre lo que ya está.</p>
+  <p><strong>Ninguno en pie</strong> es el caso de la mayoría de las relaciones, y no es ninguna tragedia: no hay pacto porque no hubo motivo. Ese es el estado natural, y hay que entenderlo así: el pacto no es lo que hay que tener por defecto; es lo que se arma cuando apareció el problema.</p>
+  <p>Y sobre la ruptura: <strong>la única forma útil de romper un pacto y reponerlo es nombrarlo a los días</strong>, en corto, sin discutir el fondo. En el momento, al lado de otros, o con la discusión caliente, no sirve. Tampoco sirve dejarlo pasar: sin nombrarlo, el pacto no se rompe — se afloja, que es peor.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Si hay alguien con quien esto te pasa, pedile el pacto. Lavando platos, sin tema, en un domingo. Una sola frase: <em>no nos leamos lo escrito en voz alta</em>. Sin explicar por qué.</p></div>
+  <div class="paso"><span class="paso-nombre">Y a los terceros</span><p>No hace falta pedir nada para esto: dejá de mandar capturas de chats de dos a grupos. Empieza hoy y no requiere acuerdo de nadie. Si lo hacés seguido, alguien lo va a notar y va a dejar de mandarte a vos también, sin que lo digan.</p></div>
+  <div class="paso"><span class="paso-nombre">Si te contestan que sí</span><p>No vuelvas sobre el asunto. Un pacto que se revisa deja de ser un pacto y pasa a ser una vigilancia. Se dice una vez y se sostiene sin recordarlo.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Escribí en la nota del teléfono: la fecha del pedido, una sola palabra sobre cómo te contestaron. <em>Sí</em>, <em>duda</em>, <em>nada</em>. Solo eso.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Esperá un mes</span><p>Volvé a la nota en un mes. Si en ese mes no se rompió, anotá la fecha y cerrá. Si se rompió y lo nombraste, agregá dos palabras sobre qué pasó. Si se rompió y no lo nombraste, ese es el dato más importante de todos.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. Alguien va a leer en voz alta algo que se acordó no leer, o vas a mandar vos una captura a un grupo sin pensarlo, o el otro va a decir <em>pero si vos me escribiste</em>. Cuando pase, abrí la nota y agregá la fecha. Si esa vez lo nombraste a los días, escribí <em>nombré</em>. Si lo dejaste pasar, escribí <em>pasó</em>. Las dos cosas son el dato. <strong>El gesto no es sostener el pacto siempre: es tener anotado cuántas veces se rompió y cuántas veces se volvió a nombrar.</strong></p>
 </div>
 
 <div class="bloque">
@@ -337,7 +467,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -348,6 +478,110 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el pacto que tenés y el que te falta
+    var pactosFilas=document.querySelectorAll('#pactos .pacto-fila');
+    var rupturaBotones=document.querySelectorAll('#pactosRuptura .ruptura-btn');
+    var btn=document.getElementById('btnPactos');
+    var salida=document.getElementById('pactosResultado');
+
+    var ruptura=null;
+
+    function habilitar(){
+      var hechas=document.querySelectorAll('#pactos .pacto-fila[data-eleccion]');
+      btn.disabled = hechas.length < pactosFilas.length || !ruptura;
+    }
+
+    pactosFilas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.pacto-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          habilitar();
+        });
+      });
+    });
+    rupturaBotones.forEach(function(b){
+      b.addEventListener('click',function(){
+        rupturaBotones.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        ruptura=b.dataset.v;
+        habilitar();
+      });
+    });
+
+    var nombres={
+      citar:'no citarse',
+      leer:'no leer en voz alta',
+      terceros:'no mostrar a terceros',
+      reabrir:'no reabrir lo ya hablado'
+    };
+    // los dos primeros protegen el presente; los dos últimos, el pasado
+    var familia={
+      citar:'presente',
+      leer:'presente',
+      terceros:'pasado',
+      reabrir:'pasado'
+    };
+
+    var rupturaTexto={
+      momento:'Nombrarlo en el momento interrumpe la discusión y la convierte en una discusión sobre el pacto. Casi siempre sale mal: el otro no ve la ruptura, ve una maniobra.',
+      despues:'Nombrarlo a los días, por teléfono, en corto, sin discutir el fondo: es la única forma útil de romper y reponer. La regla se defiende una vez, y solo una.',
+      pasa:'Dejar pasar afloja el pacto. No lo rompe: lo afloja. Y aflojado es peor que roto, porque roto se puede nombrar y aflojado no se nota hasta que se rompe del todo.',
+      nunca:'No decirlo nunca convierte el pacto en algo que uno sabe y el otro no. La próxima vez que se rompa, ninguno de los dos va a saber si había un pacto o no.'
+    };
+
+    btn.addEventListener('click',function(){
+      var hechas=document.querySelectorAll('#pactos .pacto-fila[data-eleccion]');
+      if(hechas.length<pactosFilas.length || !ruptura){ salida.innerHTML=''; return; }
+
+      var enPie=[], faltan=[], noSe=[];
+      hechas.forEach(function(f){
+        if(f.dataset.eleccion==='si'){ enPie.push(f.dataset.p); }
+        else if(f.dataset.eleccion==='no'){ faltan.push(f.dataset.p); }
+        else { noSe.push(f.dataset.p); }
+      });
+
+      var html='<div class="pactos-resultado">';
+      html+='<span class="pactos-resultado-etiqueta">Lo que dice el umbral</span>';
+
+      html+='<p class="pactos-resultado-texto">En pie: <strong>'+enPie.length+' de 4</strong>.</p>';
+
+      if(enPie.length===0){
+        html+='<p class="pactos-resultado-texto">No tenés ninguno. Eso no es una tragedia: es el estado natural. El pacto no es lo que hay que tener por defecto: es lo que se arma cuando apareció el problema.</p>';
+      } else if(enPie.length===4){
+        html+='<p class="pactos-resultado-texto">Tenés los cuatro. Es poco frecuente: casi nadie tiene los cuatro explícitos. Lo que hay que cuidar es no revisarlos. Un pacto que se revisa deja de ser un pacto y pasa a ser una vigilancia.</p>';
+      } else {
+        if(faltan.length){
+          var nombresFaltan=faltan.map(function(p){return nombres[p];}).join(', ');
+          html+='<p class="pactos-resultado-texto">Te falta'+(faltan.length>1?'n ':' ')+'<strong>'+nombresFaltan+'</strong>.</p>';
+
+          // distinguir presente/pasado
+          var tienePresente=false, tienePasado=false;
+          faltan.forEach(function(p){
+            if(familia[p]==='presente'){ tienePresente=true; }
+            else { tienePasado=true; }
+          });
+          if(tienePresente && !tienePasado){
+            html+='<p class="pactos-resultado-texto">Lo que te falta es de los que protegen el <strong>presente</strong>: lo que se va a seguir diciendo. La lesión no está en lo que ya quedó escrito — eso ya está — sino en lo que va a venir. Mientras no haya pacto, cada mensaje nuevo va a escribirse con cuidado.</p>';
+          } else if(tienePasado && !tienePresente){
+            html+='<p class="pactos-resultado-texto">Lo que te falta es de los que protegen el <strong>pasado</strong>: lo que ya quedó escrito. La lesión ya ocurrió y no se puede reparar retroactivamente. Lo que se puede hacer es evitar que se use.</p>';
+          } else if(tienePresente && tienePasado){
+            html+='<p class="pactos-resultado-texto">Te faltan pactos de las dos familias: presente y pasado. Es el caso más difícil y también el más común. La recomendación es empezar por uno solo, el que más duela, y no pedir los dos al mismo tiempo — pedir dos parece un programa.</p>';
+          }
+        }
+        if(noSe.length){
+          html+='<p class="pactos-resultado-texto">Hay '+(noSe.length===1?'uno':'varios')+' que marcaste como <strong>no sé</strong>. Ese es un dato distinto de los otros dos: significa que hay algo que funciona sin haber sido dicho. Y funcionar sin haber sido dicho es lo que hace que, el día que se rompe, nadie sepa si había un pacto.</p>';
+        }
+      }
+
+      html+='<p class="pactos-resultado-texto" style="margin-top:.9rem;">Cuando se rompe: '+rupturaTexto[ruptura]+'</p>';
+
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
