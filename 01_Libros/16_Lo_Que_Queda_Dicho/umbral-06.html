@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,40 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── el reparto del archivo ── */
+  .reparto{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .reparto label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .reparto-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin:1.2rem 0 .6rem 0;}
+  .reparto-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .reparto-opciones.cuatro{grid-template-columns:1fr 1fr;}
+  .reparto-btn{background:var(--negro); border:none; padding:.85rem .6rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .25s ease;
+    line-height:1.35; text-align:left;}
+  .reparto-btn:hover, .reparto-btn:focus-visible{color:var(--blanco-humo);}
+  .reparto-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .reparto-btn small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.82rem; color:var(--gris-calido); margin-top:.2rem;}
+  .reparto-btn[aria-pressed="true"] small{color:var(--oro-tenue);}
+  .reparto .accion{margin-top:1.2rem;}
+  .reparto-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .reparto-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .reparto-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .reparto-resultado-texto:last-child{margin-bottom:0;}
+  .reparto-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  @media (max-width:600px){
+    .reparto-opciones, .reparto-opciones.cuatro{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -330,11 +358,59 @@
   <p>Eso se puede hacer siempre y casi nadie lo hace: <strong>escribir lo que se acordó, en vez de escribir lo que cada uno sostenía.</strong> Es el único uso del archivo que trabaja a favor de los dos.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">El reparto del archivo</span>
+  <p class="geo-instruccion">Piensa en una relación donde discutís cosas importantes. Marcá quién escribe más. Después marcá cuál de las cuatro cosas te pasa con más frecuencia en las discusiones.</p>
+  <div class="panel">
+    <div class="reparto">
+      <label>En esa relación, quién escribe más</label>
+      <div class="reparto-opciones" id="repartoQuien">
+        <button class="reparto-btn" data-v="yo" aria-pressed="false">Yo escribo más</button>
+        <button class="reparto-btn" data-v="otro" aria-pressed="false">El otro escribe más</button>
+        <button class="reparto-btn" data-v="parecido" aria-pressed="false">Escribimos parecido</button>
+      </div>
+
+      <span class="reparto-sub">En las discusiones, lo que más me pasa es</span>
+      <div class="reparto-opciones cuatro" id="repartoAccion">
+        <button class="reparto-btn" data-v="citar" aria-pressed="false">Me cito
+          <small>digo <em>yo te escribí</em> o <em>si buscas vas a ver</em></small>
+        </button>
+        <button class="reparto-btn" data-v="adaptar" aria-pressed="false">Me adapto al soporte
+          <small>escribo cosas que preferiría decir hablando</small>
+        </button>
+        <button class="reparto-btn" data-v="hablar" aria-pressed="false">Hablo lo importante
+          <small>lo serio lo digo caminando, en el auto, en la cocina</small>
+        </button>
+        <button class="reparto-btn" data-v="acuerdo" aria-pressed="false">Escribo lo acordado
+          <small>cuando arreglamos algo, lo dejo por escrito</small>
+        </button>
+      </div>
+
+      <button class="accion" id="btnReparto" disabled>Ver el resultado</button>
+      <div id="repartoResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Si en tu casa uno escribe más que el otro —y en casi todas pasa—, fíjate cuál eres.</p>
-  <p>Si eres el que escribe: esta semana, cuando tengas ganas de citarte, no lo hagas. Una vez, a propósito. Nadie va a notarlo y ese es el punto.</p>
-  <p>Si eres el que no escribe: no empieces a escribir mejor. Lo que sí puedes hacer es pedir que lo importante se hable, y pedirlo antes de que empiece.</p>
-  <p>Y cuando arreglen algo, escriban dos líneas con lo que acordaron. Los dos. Ese renglón vale más que cuarenta mensajes de razones.</p>
+  <p>Lo que acabas de producir no es un diagnóstico de la pareja. Es un dato sobre qué papel ocupás en el reparto y qué acción te toca hacer según eso.</p>
+  <p><strong>El que escribe más y se cita</strong> es la combinación que más daña sin que nadie lo note. El que escribe tiene razón, la prueba es buena, y el otro queda en la posición de estar equivocado y no poder probar nada. La renuncia a citarse —decir <em>yo me acuerdo distinto</em> en lugar de <em>si buscas vas a ver</em>— es lo único que repara eso, y no tiene recompensa visible.</p>
+  <p><strong>El que escribe menos y se adapta al soporte</strong> es el que paga el costo más largo. Cada mensaje que redacta para parecerse al otro es un mensaje que no habría escrito así, y cada uno le cuesta más que el anterior. Lo que hay que hacer ahí no es escribir mejor: es pedir que lo importante se hable, y pedirlo antes de que empiece la discusión.</p>
+  <p><strong>El que ya habla lo importante</strong> tiene el caso más fácil y no lo sabe. Solo hay que sostenerlo: cada vez que algo se decide por escrito y no hacía falta, volver a sacarlo a caminar.</p>
+  <p><strong>El que escribe lo acordado</strong> tiene la única práctica del umbral que trabaja a favor de los dos. No repara todo, pero cambia el archivo: en lugar de tener la pelea, tiene el cierre. Cuatro líneas por discusión, y dentro de un año son cincuenta.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abrí la nota del teléfono. Escribí quién escribe más en esa relación —tu nombre o el del otro— y la acción que más te pasa de las cuatro. La fecha debajo.</p></div>
+  <div class="paso"><span class="paso-nombre">Si escribís más</span><p>Esta semana, cuando tengas ganas de citarte, no lo hagas. Una vez, a propósito. Nadie lo va a notar y ese es el punto: las armas que no se usan no dejan marca.</p></div>
+  <div class="paso"><span class="paso-nombre">Si escribís menos</span><p>Esta semana, cuando algo importante se esté discutiendo por escrito, pedí que se hable. No escribas mejor: pedí que se hable. <em>Lo hablamos caminando</em> es una frase corta y sirve.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Cuando arreglen algo</span><p>Escribí dos líneas con lo que acordaron. Los dos, si se puede. Ese renglón vale más que cuarenta mensajes de razones, y es lo único del archivo que trabaja a favor de los dos.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo expliques</span><p>No le digas al otro <em>estoy tratando de no citarme</em>. Eso convierte la renuncia en una concesión, y las concesiones se cobran. Hacelo y callate: dentro de un año es un cambio, no un gesto.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima discusión vas a citarte sin darte cuenta —o vas a adaptarte al soporte— y te vas a acordar recién después. Cuando pase, abrí la nota y agregá la fecha. Si esa vez te detuviste antes de citarte, escribí <em>no me cité</em>. Si te citaste igual, escribí <em>me cité</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de citarse siempre: es tener anotado cuántas veces el brazo se detuvo antes de escribir la cita.</strong></p>
 </div>
 
 <div class="bloque">
@@ -355,7 +431,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -366,6 +442,71 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el reparto del archivo
+    var botonesQuien=document.querySelectorAll('#repartoQuien .reparto-btn');
+    var botonesAccion=document.querySelectorAll('#repartoAccion .reparto-btn');
+    var btn=document.getElementById('btnReparto');
+    var salida=document.getElementById('repartoResultado');
+
+    var quien=null, accion=null;
+
+    function habilitar(){
+      btn.disabled = !(quien && accion);
+    }
+
+    botonesQuien.forEach(function(b){
+      b.addEventListener('click',function(){
+        botonesQuien.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        quien=b.dataset.v;
+        habilitar();
+      });
+    });
+    botonesAccion.forEach(function(b){
+      b.addEventListener('click',function(){
+        botonesAccion.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        accion=b.dataset.v;
+        habilitar();
+      });
+    });
+
+    var quienTexto={
+      yo:'<strong>Escribís más</strong>. El archivo de esa relación está lleno de tu mejor versión: lo que escribís después de pensarlo, corregido, con la frase que conseguiste armar. Del lado del otro no hay ninguna versión. Cuando algo se discute, hay un lado que puede citarse y otro que solo puede acordarse.',
+      otro:'<strong>El otro escribe más</strong>. El archivo de esa relación está lleno de la mejor versión del otro. Lo que él dice, después de pensarlo, con los argumentos en orden. Del lado tuyo no queda nada: ni la versión buena ni la mala. En las discusiones, cuando aparece una cita, ya está decidido quién tiene el material.',
+      parecido:'<strong>Escriben parecido</strong>. Es el caso menos frecuente y el menos problemático — el archivo es de los dos por igual. Lo que puede pasar acá es distinto: los dos tienen razón a la vez, con fecha, y ninguna de las dos razones se impone. El archivo no da ventaja, y tampoco alivia.'
+    };
+
+    var accionTexto={
+      citar:'<strong>Te citás</strong>. Decís <em>yo te escribí en marzo</em> o <em>si buscas vas a ver</em>. Aunque sea cierto, y va a ser cierto, porque sos el que tiene el registro. Es la combinación que más daña sin que nadie lo note: el otro queda en la posición de estar equivocado y no poder probar nada. La renuncia es no citarse, nunca, aunque tengas razón.',
+      adaptar:'<strong>Te adaptás al soporte</strong>. Escribís mensajes más largos, más cuidados, con las razones puestas, cosas que preferirías decir hablando. Cada uno te cuesta más que el anterior y sale peor que lo que habrías dicho en dos minutos caminando. Lo que hay que hacer no es escribir mejor: es pedir que lo importante se hable.',
+      hablar:'<strong>Ya hablás lo importante</strong>. Lo serio lo decís caminando, en el auto, en la cocina. Ese es el caso más fácil y el que menos gente tiene. Lo único que hay que hacer es sostenerlo: cada vez que algo se decide por escrito y no hacía falta, sacarlo a caminar otra vez.',
+      acuerdo:'<strong>Escribís lo acordado</strong>. Cuando arreglan algo, lo dejás por escrito. Es la única práctica del umbral que trabaja a favor de los dos: en lugar de tener la pelea, el archivo tiene el cierre. Cuatro líneas por discusión, y dentro de un año son cincuenta.'
+    };
+
+    btn.addEventListener('click',function(){
+      if(!quien || !accion){ salida.innerHTML=''; return; }
+
+      var html='<div class="reparto-resultado">';
+      html+='<span class="reparto-resultado-etiqueta">Lo que dice el umbral</span>';
+      html+='<p class="reparto-resultado-texto">'+quienTexto[quien]+'</p>';
+      html+='<p class="reparto-resultado-texto">'+accionTexto[accion]+'</p>';
+
+      // combinaciones especiales
+      if(quien==='yo' && accion==='citar'){
+        html+='<p class="reparto-resultado-texto" style="margin-top:.9rem;">Sos el que escribe y el que se cita. Es la combinación donde más fácil se confunde tener razón con haber ganado. La renuncia no tiene recompensa visible — el otro no se va a enterar — y es lo único que le devuelve el piso a la otra parte.</p>';
+      } else if(quien==='otro' && accion==='adaptar'){
+        html+='<p class="reparto-resultado-texto" style="margin-top:.9rem;">Escribís menos y te estás adaptando al soporte del otro. Ese es el costo más largo de los cuatro, porque cada mensaje que redactás para parecerte al otro es un mensaje que no habrías escrito así, y cada uno cuesta más que el anterior.</p>';
+      } else if((quien==='yo' || quien==='parecido') && accion==='acuerdo'){
+        html+='<p class="reparto-resultado-texto" style="margin-top:.9rem;">Escribís lo acordado. Es la única práctica de todo el umbral que cambia el archivo a favor de los dos. La pelea sigue estando, sigue con fecha, sigue disponible. Lo que cambia es que al lado hay una línea corta con lo que se decidió. Dentro de un año, cuando alguien entre a buscar algo, va a ver las dos cosas.</p>';
+      } else if(accion==='hablar'){
+        html+='<p class="reparto-resultado-texto" style="margin-top:.9rem;">Ya hablás lo importante. Eso es lo que el umbral recomienda y lo que casi nadie hace. Lo único que puede aparecer es la tentación contraria: escribir lo que se podría haber hablado, porque por escrito queda. Que quede no siempre es una ventaja: para acordar, la desaparición es lo que hace falta.</p>';
+      }
+
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
