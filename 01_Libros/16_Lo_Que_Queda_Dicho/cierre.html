@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>⟐ &middot; Lo que se deja caer | Lo que queda dicho</title>
+<title>Lo que queda dicho &middot; Libro XVI | Portal Trinity</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
@@ -222,210 +222,128 @@
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
 
-  /* ── el estado de tu archivo ── */
-  .estado{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
-  .estado-encabezado{display:block; font-family:'Cormorant Garamond',serif;
-    font-size:.88rem; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--oro-tenue); margin-bottom:1rem;}
-  .estado-fila{padding:1rem .3rem; border-bottom:1px solid var(--separador);}
-  .estado-fila:last-of-type{border-bottom:none;}
-  .estado-pregunta{display:block; font-family:'EB Garamond',Georgia,serif;
-    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.6rem;}
-  .estado-pregunta small{display:block; font-family:'Cormorant Garamond',serif;
-    font-style:italic; font-size:.88rem; color:var(--gris-calido); margin-top:.2rem;}
-  .estado-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
-    background:var(--separador); border:1px solid var(--separador);}
-  .estado-btn{background:var(--negro); border:none; padding:.75rem .5rem;
-    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.94rem;
-    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.35;}
-  .estado-btn:hover, .estado-btn:focus-visible{color:var(--blanco-humo);}
-  .estado-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.06);}
-  .estado-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
-  .estado .accion{margin-top:1.1rem;}
-  .estado-resultado{margin-top:1.3rem; padding:1.3rem 1.2rem; border:1px solid var(--oro-polvo);
-    background:rgba(201,168,76,.03);}
-  .estado-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
-    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
-    color:var(--oro-tenue); margin-bottom:.7rem;}
-  .estado-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
-    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
-  .estado-resultado-texto:last-child{margin-bottom:0;}
-  .estado-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
-  @media (max-width:600px){
-    .estado-opciones{grid-template-columns:1fr;}
-  }
+  .umbral{display:grid; grid-template-columns:3.2rem 1fr 1.4rem; align-items:baseline; gap:1rem;
+    padding:1.15rem .4rem; border-bottom:1px solid var(--separador); text-decoration:none;
+    transition:all .3s ease;}
+  .umbral:hover{background:rgba(201,168,76,.03);}
+  .u-num{font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--oro-polvo);
+    letter-spacing:.1em; text-align:right;}
+  .umbral:hover .u-num{color:var(--oro-tenue);}
+  .u-txt{font-size:1.02rem; line-height:1.7; color:var(--gris-calido);}
+  .u-txt strong{color:var(--blanco-humo); font-weight:500; display:block;
+    font-family:'Cormorant Garamond',serif; font-size:1.28rem; letter-spacing:.02em;}
+  .umbral:hover .u-txt strong{color:var(--oro);}
+  .u-flecha{color:var(--oro-polvo); text-align:right;}
 </style>
 </head>
 <body>
 <nav class="nav">
-  <a href="umbral-10.html">&larr; Lo que conviene que quede</a>
-  <span>⟐</span>
-  <a href="index.html">Portal &rarr;</a>
+  <a href="../../index.html">&larr; Portal Trinity</a>
+  <span>XVI</span>
+  <a href="umbral-00.html">Entrar &rarr;</a>
 </nav>
 <header class="encabezado">
-  <span class="etiqueta">Lo que queda dicho &middot; Umbral</span>
-  <div class="numero">⟐</div>
-  <h1 class="titulo">Lo que se deja caer</h1>
-  <p class="subtitulo">lo que antes hacía el tiempo, ahora lo hace alguien</p>
-  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+  <span class="etiqueta">La trama &middot; segunda constelaci&oacute;n</span>
+  <span class="etiqueta" style="margin-top:-1.2rem;">La conversaci&oacute;n &middot; III</span>
+  <h1 class="titulo" style="font-size:clamp(2.2rem,8.5vw,4rem);">Lo que queda dicho</h1>
+  <p class="subtitulo">lo que haces con lo que qued&oacute; escrito</p>
+  <div class="cue"><span>Entrar</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
 
 <div class="bloque">
-  <p>Elsa no eligió nada.</p>
-  <p>Se le fue lo del 86 y se le fue la voz de Aníbal, y las dos cosas por el mismo mecanismo, que no le pidió permiso ninguna de las dos veces. Perdió el arma y perdió el tesoro en la misma operación, y a los setenta y cuatro años dice que no le falta nada — aunque le habría gustado escuchar dos minutos de él diciendo cualquier cosa.</p>
-  <p>Tú no vas a tener eso.</p>
-  <p>Va a quedar todo: lo que se dijo a las tres de la mañana en la peor semana, la frase de enero, lo que escribiste a los quince y hoy no sostienes, y también el audio de once segundos donde alguien se ríe.</p>
-  <p>Todo junto, todo con fecha, todo igual de disponible.</p>
-  <p>Y por primera vez, alguien tiene que decidir qué pesa.</p>
+  <p><span class="rotulo">Antes de empezar</span>Este es el tercero de <em>La conversaci&oacute;n</em>.</p>
+  <p>El primero trabaj&oacute; lo que no se dice. Este trabaja lo contrario: <strong>lo que se dijo y ya no se pierde.</strong></p>
+  <p>No es un libro sobre privacidad, ni sobre lo que hacen las empresas con tus datos. Es m&aacute;s chico y m&aacute;s cerca. Es sobre la conversaci&oacute;n de hace cuatro a&ntilde;os que sigue disponible, entera, con fecha, en el tel&eacute;fono de alguien que te quiere.</p>
+  <p>Nadie decidi&oacute; esto. No hubo una ley ni un anuncio. Es un subproducto de haber pasado a hablarnos por escrito, y lleg&oacute; completo antes de que a nadie se le ocurriera preguntarse qu&eacute; se hace con eso.</p>
+  <p>Lo que s&iacute; se puede decidir es una sola cosa, y es de la que trata el libro: <strong>el archivo es pasivo. El da&ntilde;o lo hace ir a buscar.</strong></p>
+  <p>Hay cinco personas a lo largo del recorrido y vuelven varias veces, cada una desde otro sitio. Al final de cada umbral hay unas l&iacute;neas con <strong>lo que no qued&oacute;</strong>: lo que el registro tir&oacute; de esa escena, que nunca es lo que uno supone.</p>
+  <p>A lo largo del recorrido hay tambi&eacute;n momentos en los que se te pide algo m&aacute;s que leer: escribir una frase que recuerdas, marcar en una lista, elegir entre dos o tres opciones, estimar cu&aacute;ntos mensajes tienes guardados. No es un examen. Es la parte del libro que no se puede hacer leyendo: lo que aparece ah&iacute; solo aparece si uno lo hace, y en general es un dato que uno no esperaba.</p>
+  <p>Y cada umbral cierra con <strong>un gesto</strong>: cinco pasos concretos, chicos, que se pueden hacer sin convicci&oacute;n, m&aacute;s un bloque final para cuando el gesto no funcione a la primera. No es una lista de buenas intenciones. Es lo que queda para hacer cuando termina la lectura.</p>
 </div>
 
-<div class="perla"><p>Lo que hacía el tiempo<br>ahora lo hace alguien.<br>Es más trabajo.<br>Y es otra cosa.</p></div>
-
-<div class="bloque">
-  <p><span class="rotulo">Lo que se aprendió</span>Eso que no se controla se dijo en la primera página: que lo dicho no se pierda no depende de nadie. No lo decidiste, no se puede desactivar, y borrar lo tuyo no sirve porque lo que importa está del otro lado.</p>
-  <p>Y la otra mitad, que es lo que el libro vino a dejar:</p>
-  <p><strong>El archivo es pasivo. El daño lo hace ir a buscar.</strong></p>
-  <p>Está quieto. No se abre solo, no reclama, no acusa. Lleva cuatro meses sin hacer nada. Lo que pasó a las dos y cuarenta de la madrugada no lo hizo el archivo: lo hizo alguien que fue a buscar, y esa es la única parte que tiene dueño.</p>
-</div>
-
-<div class="escena secundaria">
-  <p><em>Decir en voz alta qué esperas encontrar, antes de buscar.</em></p>
-  <p><em>Reponerle a lo guardado la hora, lo que venía pasando y cómo estaba el que lo escribió.</em></p>
-  <p><em>Sacar los datos de donde te obligan a volver.</em></p>
-  <p><em>Acordar que eso no se exhibe.</em></p>
-  <p><em>Declarar terminado lo que ya se habló.</em></p>
+<div class="aviso">
+  <span class="aviso-label">Una advertencia que no es formalidad</span>
+  <p>Si hay algo guardado que no puedes dejar de abrir, y abrirlo te deja peor cada vez, eso no se resuelve con un libro. Se habla con un profesional, y conviene no demorarlo.</p>
+  <p>Y si en alg&uacute;n momento apareci&oacute; la idea de no querer estar, eso necesita atenci&oacute;n esta semana. Responde bien al tratamiento.</p>
 </div>
 
 <div class="bloque">
-  <p>Ninguna requiere que el otro colabore, salvo las dos últimas. Ninguna borra nada. Y todas hay que rehacerlas, porque ninguna queda instalada.</p>
-</div>
-
-<div class="geo">
-  <span class="geo-label">El estado de tu archivo</span>
-  <p class="geo-instruccion">Tres preguntas sobre el estado de tu archivo. Contestá rápido, sin pensarlo mucho. El sistema te va a decir qué operación te falta, y en qué orden hacerla.</p>
-  <div class="panel">
-    <div class="estado" id="estado">
-      <span class="estado-encabezado">Estado actual</span>
-
-      <div class="estado-fila" data-q="fijada">
-        <span class="estado-pregunta">¿Tenés una conversación fijada arriba de todo?
-          <small>una que se ofrece sin que la busques</small>
-        </span>
-        <div class="estado-opciones">
-          <button class="estado-btn" data-v="si" aria-pressed="false">Sí</button>
-          <button class="estado-btn" data-v="no" aria-pressed="false">No</button>
-        </div>
-      </div>
-
-      <div class="estado-fila" data-q="pacto">
-        <span class="estado-pregunta">¿Tenés con alguien un pacto sobre no leer lo escrito en voz alta?
-          <small>dicho una vez, sin revisarlo</small>
-        </span>
-        <div class="estado-opciones">
-          <button class="estado-btn" data-v="si" aria-pressed="false">Sí</button>
-          <button class="estado-btn" data-v="no" aria-pressed="false">No</button>
-        </div>
-      </div>
-
-      <div class="estado-fila" data-q="bueno">
-        <span class="estado-pregunta">¿Sacaste afuera del chat cinco cosas buenas de alguien?
-          <small>una carpeta, una nota, donde no haya que buscarlas</small>
-        </span>
-        <div class="estado-opciones">
-          <button class="estado-btn" data-v="si" aria-pressed="false">Sí</button>
-          <button class="estado-btn" data-v="no" aria-pressed="false">No</button>
-        </div>
-      </div>
-
-      <button class="accion" id="btnEstado" disabled>Ver qué te falta</button>
-      <div id="estadoResultado"></div>
-    </div>
-  </div>
-</div>
-
-<div class="bloque">
-  <p>Lo que acabas de producir no es una nota sobre tu relación. Es el inventario de las tres cosas que el libro deja hechas, aplicadas a tu caso.</p>
-  <p>La primera —desfijar— es la más urgente cuando está pendiente, porque un archivo fijado se ofrece sin que nadie lo pida, y eso es la forma más frecuente de la lesión. La segunda —acordar— es la que cambia el presente, porque lo que se puede citar pesa sobre todo lo que se escriba de ahora en adelante. La tercera —sacar lo bueno— es la única que trabaja a favor y la que se puede hacer sin nadie.</p>
-  <p>Si te faltan las tres, la recomendación es hacerlas en ese orden. No porque las otras no importen: porque el orden las hace posibles. Primero desfijar para que el archivo deje de ofrecerse. Después acordar para que no vuelva a ofrecerse. Después cargar lo bueno, que es lo que va a quedar cuando ya no se esté mirando lo otro.</p>
-  <p>Si ya tenés las tres hechas, no hay nada más para hacer. Y eso es un dato tan válido como los otros: hay un punto en el que el archivo deja de ser un asunto y vuelve a ser lo que es —un lugar donde se guardaron cosas.</p>
-</div>
-
-<div class="bloque">
-  <p><span class="rotulo">Dónde quedaron</span><strong>Nora y Rubén</strong> tienen el pacto puesto desde marzo. Rubén sabe que tuvo razón en enero y se quedó con eso, y encontró una frase que le sirve aunque no siempre la sienta: prefiere seguir hablando a haber ganado. Nora volvió a escribir mal, larga, con la exageración del cansancio adentro. Eso está resuelto del todo.</p>
-  <p><strong>Julián</strong> despegó la conversación de arriba de todo y en diez días le quedó cuarenta abajo. Sigue entrando, menos. Lo de la casa con su hermano no se resolvió y sigue sin resolverse, que es distinto: ahora es una discusión sobre una casa y no sobre quince años.</p>
-  <p><strong>Los cuatro hermanos</strong> tienen el grupo <em>Papá</em> entero, con los doscientos treinta y un mensajes. Nadie lo cerró y nadie va a cerrarlo. No hay ninguna razón para entrar desde que Marcela sacó los papeles, y lo que había que arreglar se arregló de pie, frente a los platos, en marzo, sin que quedara registro de nada.</p>
-  <p><strong>Camila</strong> volvió a la conversación de los quince una segunda vez y encontró las dos cosas: lo que ya no sostiene y lo que sigue igual. Tiene una carpeta con seis audios y uno es de su padre, una sola frase, que no le muestra a nadie.</p>
-  <p><strong>Elsa</strong> sigue yendo a dos casas, los martes y los viernes. No tiene una sola frase de Aníbal escrita en ningún lado y tiene un marido entero, bastante mejor que el que fue.</p>
-</div>
-
-<div class="bloque">
-  <p>Ninguno de los cinco tenía un problema con la tecnología. Todos tenían una conversación guardada y algo que hacer con ella. Cinco veces alguien decidió qué se dejaba caer.</p>
-</div>
-
-<div class="cita">
-  <p><em>Y el olvido es una de las formas de la memoria, su vago sótano, la otra cara secreta de la moneda.</em></p>
-  <cite><span class="obra">Jorge Luis Borges</span> &middot; La moneda de hierro, 1976</cite>
-</div>
-
-<div class="bloque">
-  <p><span class="rotulo">Lo que se gana</span>Hay algo que ninguna generación anterior pudo hacer, y conviene decirlo entero porque es lo que este libro tiene para dar.</p>
-  <p>Elsa no eligió qué olvidar. Marcela no pudo verificar si era la chica tímida que cree haber sido. Nadie, nunca, pudo quedarse con la voz de alguien y soltar la peor noche.</p>
-  <p>Ahora se puede.</p>
-  <p>Se puede conservar el audio de once segundos y dejar que la frase de enero se vaya al fondo. Se puede escribir <em>estuvo bien lo de hoy</em> un martes cualquiera y que eso quede tan nítido dentro de veinte años como lo que se dijo a las tres de la mañana. Se puede decidir con qué versión de alguien uno se queda, y sostenerlo, y rehacerlo cuando se afloja.</p>
-  <p>No es automático y por eso cuesta. El tiempo lo hacía gratis y lo hacía a ciegas.</p>
-  <p><strong>El que elige qué dejar caer elige de qué está hecha la relación.</strong> Eso antes no se podía elegir: se aceptaba lo que el tiempo iba dejando, y el tiempo no tenía criterio.</p>
-  <p>Lo tuyo tiene criterio. Es lo único de todo esto que llegó como ganancia limpia.</p>
-</div>
-
-<div class="perla"><p>El olvido era gratis y era ciego.<br>Esto cuesta trabajo y ve.</p></div>
-
-<div class="bloque">
-  <p><span class="rotulo">El archivo se ofrece</span>Hay una parte del asunto que el libro fue usando sin nombrarla y conviene decirla con todas las letras.</p>
-  <p>Julián no abría la conversación con su hermano porque la buscara. La tenía fijada arriba de todo. Cada vez que abría el teléfono, la veía. No hacía falta ir: se ofrecía.</p>
-  <p>Marcela no abría el grupo <em>Papá</em> para volver a leer lo que se dijeron esa semana. Lo abría porque había que sacar un dato —el teléfono del escribano, la dirección del cementerio—. Y cada vez que entraba, pasaba por encima de las tres y veinte de la madrugada. No hacía falta ir a buscar: estaba en el camino.</p>
-  <p>Son dos formas distintas del mismo mecanismo. <strong>El archivo no solo se abre: se ofrece.</strong> Es la propiedad menos visible y la más importante — porque la búsqueda deliberada, la de las dos y cuarenta, es en realidad la menos frecuente de todas. La más frecuente es esta: no fuiste a buscar nada, y el archivo igual estaba ahí.</p>
-  <p>Lo que aparece solo no es más inocente que lo que uno busca. Es más peligroso, porque no hay decisión que detener. Cuando uno va a buscar, hay un momento en el que puede decirse la frase —<em>voy a entrar a ver si fue tan miserable como me acuerdo</em>— y no entrar. Cuando el archivo se ofrece, ese momento no existe: uno ya está adentro antes de darse cuenta.</p>
-  <p>Por eso la única operación útil contra esto no es la voluntad. Es la distancia. Lo que se ofrece se deja de ofrecer cuando hay que ir a buscarlo: desfijarlo, sacarlo del grupo, mover la carpeta. No borrar. Poner lejos. Diez días de conversaciones encima alcanzan para que lo que era primer plano pase a ser fondo, y ahí deja de ofrecerse solo.</p>
-  <p>Julián lo hizo con el chat de su hermano. Marcela lo hizo con los papeles del grupo. Ninguno de los dos borró nada. Los dos decidieron una sola cosa: que el archivo dejara de estar donde se ofrece.</p>
-</div>
-
-<div class="bloque">
-  <p><span class="rotulo">Cuando el otro borra</span>Y hay un caso que el libro apenas mencionó y conviene mirar entero, porque aparece más de lo que parece y no tiene buena solución.</p>
-  <p>El otro puede cerrar su parte del archivo. No borrar lo tuyo —eso no puede—, pero sí borrar lo suyo. Salir del chat, eliminar los mensajes que escribió, cerrar la cuenta con la que hablaba. Del lado del otro, la conversación deja de existir. Del lado tuyo, queda un monólogo: tus mensajes, uno abajo del otro, sin respuesta.</p>
-  <p>Y ahí aparece una forma distinta del daño, que el libro no había recorrido. Hasta este momento, el problema era que había un archivo con todo adentro y alguien iba a buscar. Ahora el problema es el opuesto: <strong>hay un archivo al que le falta la mitad</strong>.</p>
-  <p>Lo que queda es peor que el archivo completo, y por una razón bastante específica. Lo que se lee, cuando se entra a esa conversación, es lo que uno escribió. Y lo que uno escribió, leído solo, sin las respuestas del otro, siempre dice una cosa distinta de lo que dijo cuando había respuesta. Un pedido sin contestación es una insistencia. Una broma sin la carcajada del otro es un chiste que no cayó. Un <em>te quiero</em> sin el <em>yo también</em> suena a que se dijo para nada.</p>
-  <p>No hay una operación para arreglar eso. Lo que hay es una advertencia que sirve para lo que viene: <strong>el mismo aparato que guarda todo es el que permite hacer desaparecer la mitad.</strong> Lo que el otro escribió no lo controlás. Lo que el otro puede hacer con lo que escribió, tampoco. La única parte que depende de vos es lo que hacés con lo que quedó: si eso se va a leer como un monólogo o si se va a dejar quieto, como un archivo al que le falta la mitad y que ya no se usa.</p>
-  <p>Los que quedan en ese lugar suelen tener una misma tentación, y conviene nombrarla: llenar el hueco. Escribir de nuevo, buscar la respuesta que no está, mandar otro mensaje para que la conversación no termine en el aire. Eso no arregla el archivo: lo empeora, porque agrega material propio a una conversación a la que le falta el otro lado, y ese material, leído dentro de un año, va a sonar todavía más solo.</p>
-  <p>Lo único que se puede hacer con un archivo al que le falta la mitad es no leerlo solo. O leerlo sabiendo que lo que falta no era silencio: era lo que el otro escribió y después se llevó. La conversación existió completa. Lo que quedó es la mitad, y la mitad no es la historia.</p>
-</div>
-
-<div class="bloque">
-  <p><span class="rotulo">⟐</span>Va a seguir quedando todo.</p>
-  <p>La gente va a seguir escribiendo a las tres de la mañana lo que no puede decir de día, y va a seguir estando ahí al otro día, y al año, y a los veinte. Va a seguir habiendo alguien que tiene razón y puede probarlo.</p>
-  <p>Y al mismo tiempo, cada vez que alguien saca los papeles de un grupo, o despega una conversación, o dice en voz alta qué espera encontrar antes de ir a buscar, <strong>queda hecho algo que antes no estaba</strong>: un pedazo de tiempo que vuelve a poder pasar.</p>
-  <p>Eso no depende de lo que el otro tenga guardado. Nunca dependió.</p>
-</div>
-
-<div class="perla grave"><p>No se puede borrar lo que quedó dicho.<br>Se puede decidir qué se abre,<br>y qué se deja caer.</p></div>
-
-<div class="bloque">
-  <p>Hay una conversación que tienes fijada arriba de todo.</p>
-  <p>Despégala.</p>
+  <p><span class="rotulo">Los umbrales</span></p>
+<a href="umbral-00.html" class="umbral">
+  <span class="u-num">0</span>
+  <span class="u-txt"><strong>Lo que antes se caía</strong> Gana la discusión con el teléfono en la mano. Y se rompe otra cosa.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-01.html" class="umbral">
+  <span class="u-num">I</span>
+  <span class="u-txt"><strong>La prueba</strong> Recordar se arreglaba entre dos. Ahora lo decide un archivo.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-02.html" class="umbral">
+  <span class="u-num">II</span>
+  <span class="u-txt"><strong>Lo literal no es lo verdadero</strong> Guarda las palabras y tira la hora, el tono y lo que venía pasando.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-03.html" class="umbral">
+  <span class="u-num">III</span>
+  <span class="u-txt"><strong>La que no tiene archivo</strong> Cincuenta y un años de matrimonio sin una sola frase guardada.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-04.html" class="umbral">
+  <span class="u-num">IV</span>
+  <span class="u-txt"><strong>La consulta</strong> El archivo estuvo cuatro meses quieto. Lo de las dos y cuarenta lo hizo él.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-05.html" class="umbral">
+  <span class="u-num">V</span>
+  <span class="u-txt"><strong>Releerse</strong> Leer lo que pensabas a los quince. Ninguna generación anterior pudo.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-06.html" class="umbral">
+  <span class="u-num">VI</span>
+  <span class="u-txt"><strong>El que escribe de más</strong> Donde uno escribe y el otro no, el archivo es de uno solo.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-07.html" class="umbral">
+  <span class="u-num">VII</span>
+  <span class="u-txt"><strong>Lo que se dijo esa semana</strong> Nadie estaba en condiciones, y todo quedó con fecha.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-08.html" class="umbral">
+  <span class="u-num">VIII</span>
+  <span class="u-txt"><strong>Que no lo abras</strong> No se puede borrar. Se puede acordar que no se use.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-09.html" class="umbral">
+  <span class="u-num">IX</span>
+  <span class="u-txt"><strong>La prescripción</strong> Lo que el tiempo hacía solo, ahora hay que decirlo en voz alta.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="umbral-10.html" class="umbral">
+  <span class="u-num">X</span>
+  <span class="u-txt"><strong>Lo que conviene que quede</strong> Está lleno de buenas noticias y nadie las consulta.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
+<a href="cierre.html" class="umbral">
+  <span class="u-num">⟐</span>
+  <span class="u-txt"><strong>Lo que se deja caer</strong> Cierre: el que elige qué dejar caer elige de qué está hecha la relación.</span>
+  <span class="u-flecha">&rarr;</span>
+</a>
 </div>
 
 <div class="continuar">
-  <span class="continuar-label">Siguiente</span>
-  <a href="index.html"><span class="continuar-nombre">Portal</span>
-    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  <span class="continuar-label">Volver</span>
+  <a href="../../index.html"><span class="continuar-nombre">Portal P&uacute;blico</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&larr;</span></div>
   </a>
 </div>
 
 </main>
-<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<footer class="pie"><span>Lic. Arturo Rodr&iacute;guez &middot; Campo Trinity</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.registro';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -436,95 +354,6 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
-
-    // el estado de tu archivo
-    var filas=document.querySelectorAll('#estado .estado-fila');
-    var btn=document.getElementById('btnEstado');
-    var salida=document.getElementById('estadoResultado');
-
-    function habilitar(){
-      var hechas=document.querySelectorAll('#estado .estado-fila[data-eleccion]');
-      btn.disabled = hechas.length < filas.length;
-    }
-    filas.forEach(function(fila){
-      var btns=fila.querySelectorAll('.estado-btn');
-      btns.forEach(function(b){
-        b.addEventListener('click',function(){
-          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
-          b.setAttribute('aria-pressed','true');
-          fila.dataset.eleccion=b.dataset.v;
-          habilitar();
-        });
-      });
-    });
-
-    btn.addEventListener('click',function(){
-      var hechas=document.querySelectorAll('#estado .estado-fila[data-eleccion]');
-      if(hechas.length<filas.length){ salida.innerHTML=''; return; }
-
-      var resp={};
-      hechas.forEach(function(f){
-        resp[f.dataset.q] = f.dataset.eleccion;
-      });
-
-      var fijadaPend = resp.fijada === 'si';
-      var pactoPend  = resp.pacto === 'no';
-      var buenoPend  = resp.bueno === 'no';
-
-      var pendientes = [];
-      if(fijadaPend) pendientes.push('desfijar');
-      if(pactoPend) pendientes.push('acordar');
-      if(buenoPend) pendientes.push('sacar bueno');
-
-      var html='<div class="estado-resultado">';
-      html+='<span class="estado-resultado-etiqueta">Lo que dice el umbral</span>';
-
-      if(pendientes.length===0){
-        html+='<p class="estado-resultado-texto">No te falta ninguna de las tres. Tenés el archivo <strong>desfijado</strong>, tenés el <strong>pacto</strong> puesto, y tenés lo <strong>bueno</strong> sacado afuera.</p>';
-        html+='<p class="estado-resultado-texto">Eso es lo que el libro propone y casi nadie lo tiene. No hay nada más para hacer: hay un punto en el que el archivo deja de ser un asunto y vuelve a ser lo que es —un lugar donde se guardaron cosas.</p>';
-      } else if(pendientes.length===1){
-        var p=pendientes[0];
-        if(p==='desfijar'){
-          html+='<p class="estado-resultado-texto">Te falta <strong>desfijar</strong>. Hay una conversación que se ofrece sin que la busques. No la borres: despegala. Diez días de otras conversaciones encima y deja de estar en el primer plano.</p>';
-          html+='<p class="estado-resultado-texto">Es la operación más urgente de las tres cuando está pendiente, porque un archivo fijado se ofrece solo y no hay momento para decidir no entrar. Cuando hay que ir a buscarlo, ya hay una decisión adentro.</p>';
-        } else if(p==='acordar'){
-          html+='<p class="estado-resultado-texto">Te falta <strong>acordar</strong>. Con alguien con quien discutís cosas importantes, pedile el pacto: no leerse lo escrito en voz alta. Lavando platos, sin tema, en una sola frase. Sin explicar por qué.</p>';
-          html+='<p class="estado-resultado-texto">Es la que cambia el presente. Un archivo que puede exhibirse vuelve testigo a todo lo que se escriba de ahora en adelante — y escribir sabiendo que puede exhibirse es escribir menos.</p>';
-        } else {
-          html+='<p class="estado-resultado-texto">Te falta <strong>sacar lo bueno</strong>. Diez minutos: elegí una persona que te importe y sacá de su conversación cinco cosas afuera —una carpeta, una nota—. No lo hagas con la persona con la que estás peleado: hacelo con cualquiera, es para aprender la operación.</p>';
-          html+='<p class="estado-resultado-texto">Es la única de las tres que trabaja a favor, y la que se puede hacer sin que nadie colabore. Después queda hecho: la próxima vez que esa persona sea nada más que la peor frase que te dijo, hay algo del mismo tamaño disponible en el mismo aparato.</p>';
-        }
-      } else if(pendientes.length===2){
-        var primera, segunda;
-        // orden de prioridad: desfijar > acordar > sacar bueno
-        var orden=['desfijar','acordar','sacar bueno'];
-        var encontrados = orden.filter(function(x){ return pendientes.indexOf(x)>=0; });
-        primera=encontrados[0];
-        segunda=encontrados[1];
-
-        html+='<p class="estado-resultado-texto">Te faltan dos: <strong>'+primera+'</strong> y <strong>'+segunda+'</strong>. Hacelas en ese orden.</p>';
-
-        if(primera==='desfijar'){
-          html+='<p class="estado-resultado-texto">Primero desfijá. Hay una conversación que se ofrece sin que la busques. Despegala —no la borres— y dejá pasar diez días. Cuando el archivo deja de estar en el primer plano, hay momento para decidir si se entra.</p>';
-        } else if(primera==='acordar'){
-          html+='<p class="estado-resultado-texto">Primero acordá. Con alguien con quien discutís cosas importantes, una sola frase sin tema: <em>no nos leamos lo escrito en voz alta</em>. Y después no lo revises: un pacto que se revisa deja de ser un pacto.</p>';
-        }
-
-        if(segunda==='acordar'){
-          html+='<p class="estado-resultado-texto">Después el pacto. Es lo que cambia el presente: lo que se puede citar pesa sobre todo lo que se escriba de ahora en adelante.</p>';
-        } else if(segunda==='sacar bueno'){
-          html+='<p class="estado-resultado-texto">Después sacá lo bueno. Diez minutos, cinco cosas afuera del chat, con la persona con la que menos problema tengas. Es para aprender la operación, no para arreglar nada.</p>';
-        }
-      } else {
-        html+='<p class="estado-resultado-texto">Te faltan las tres. El orden importa: <strong>desfijar</strong>, después <strong>acordar</strong>, después <strong>sacar bueno</strong>.</p>';
-        html+='<p class="estado-resultado-texto"><strong>Primero desfijar.</strong> Hay una conversación que se ofrece sin que la busques. Despegala —no la borres—. Diez días después ya no está en el primer plano, y desfijarla es lo que hace posible todo lo demás: mientras el archivo se siga ofreciendo, no hay momento para decidir nada.</p>';
-        html+='<p class="estado-resultado-texto"><strong>Después acordar.</strong> Con alguien con quien discutís cosas importantes, una sola frase sin tema: <em>no nos leamos lo escrito en voz alta</em>. Eso cambia el presente: lo que se puede citar pesa sobre todo lo que se escriba de ahora en adelante.</p>';
-        html+='<p class="estado-resultado-texto"><strong>Y por último sacar lo bueno.</strong> Diez minutos, cinco cosas afuera del chat. Es la única que trabaja a favor, y la que se puede hacer sin que nadie colabore. Es lo que va a quedar cuando lo otro ya no esté en el primer plano.</p>';
-      }
-
-      html+='</div>';
-      salida.innerHTML=html;
-    });
   })();
 </script>
 </body>
