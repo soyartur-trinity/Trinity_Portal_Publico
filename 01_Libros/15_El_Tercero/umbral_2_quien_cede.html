@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -269,32 +264,32 @@
 </div>
 
 <div class="geo" id="geo02">
-  <span class="geo-label">La misma discusi&oacute;n, dos finales</span>
+  <span class="geo-label">La misma situación, dos consultas</span>
+  <p class="geo-instruccion">Pens&aacute; en una discusi&oacute;n que tengas pendiente con alguien. Escrib&iacute; c&oacute;mo se la contar&iacute;as a la IA si la consultaras ahora. Despu&eacute;s escrib&iacute; c&oacute;mo crees que la contar&iacute;a el otro. El sistema te muestra las dos consultas, una al lado de la otra.</p>
   <div class="panel">
-    <div class="col">
-      <div><h4>A</h4><p>Consulta el primero. Trae la respuesta, la lee en voz alta y el otro dice que est&aacute; bien.</p></div>
-      <div><h4>B</h4><p>Consulta el segundo. Trae la respuesta, la lee en voz alta y el primero dice que est&aacute; bien.</p></div>
-    </div>
-    <div class="opciones">
-      <button type="button">Es la A</button>
-      <button type="button">Es la B</button>
-    </div>
+    <label class="rotulo" for="v02a">C&oacute;mo se lo contar&iacute;as t&uacute;</label>
+    <textarea class="campo" id="v02a" rows="3" placeholder="Escribilo como si estuvieras escribi&eacute;ndole a la IA ahora."></textarea>
+    <label class="rotulo" for="v02b">C&oacute;mo crees que lo contar&iacute;a el otro</label>
+    <textarea class="campo" id="v02b" rows="3" placeholder="Lo que se te ocurra. No hace falta que sea exacto."></textarea>
+    <button type="button" class="accion" id="b02" disabled>Ver las dos consultas</button>
   </div>
   <div class="geo-estado"><span class="glosa" id="g02"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">La misma discusi&oacute;n, dos veces. Eliges qui&eacute;n consulta, no cu&aacute;ndo.</p>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es una mejor versión de la discusión. Son dos preguntas distintas sobre lo mismo, y cada una tiene su propia respuesta del otro lado.</p>
+  <p>Si las dos consultas fueran <strong>casi iguales</strong>, el dato es que las dos personas están viendo lo mismo, y la discusión no es sobre el hecho: es sobre qué hacer con él. Ese caso existe y no es el más frecuente.</p>
+  <p>Si las dos consultas fueran <strong>claramente distintas</strong>, el dato es el que el umbral describe: que no hay una situación, hay dos. La IA no recibe la discusión: recibe una de las dos versiones, y contesta sobre esa. Con la otra versión contestaría lo contrario, y las dos veces tendría razón.</p>
+  <p>Y hay una tercera lectura, que es la más frecuente de todas: que una de las dos versiones sea <strong>mucho más corta</strong> que la otra. El que escribe la versión larga va a recibir una respuesta larga. El que escribe cuatro líneas va a recibir cuatro líneas. La consulta no nivela: amplifica lo que le dieron, y le devuelve a cada uno la forma de lo que trajo.</p>
+</div>
+
 <div class="bloque">
   <p>Que una discusión se cierre rápido parece bueno. A veces lo es, y conviene no exagerar: hay peleas que no valían cuarenta minutos y terminarlas en veinte segundos es un alivio para los dos.</p>
   <p>Lo que se pierde es otra cosa, y es difícil de extrañar porque nunca tuvo nombre: <strong>el rato en que dos personas quedan en desacuerdo y siguen sentadas.</strong></p>
   <p>Ese rato hace un trabajo. Ahí uno de los dos afloja un poco sin decirlo, el otro ve algo que no había visto, y sobre todo los dos comprueban que se puede no coincidir sin que pase nada. Esa comprobación —que se hace muchas veces y nunca se enuncia— es buena parte de lo que sostiene a dos personas en la misma casa.</p>
   <p>Con un árbitro disponible, ese rato desaparece. No porque alguien haya decidido eliminarlo: <strong>porque hay algo más rápido y nadie eligió la lentitud.</strong></p>
   <p><em>⟐ Que la conversación completa —la que se contradice, la que retrocede, la que no llega— ya casi no tenga dónde entrar está trabajado en el umbral</em> Tener razón <em>del libro anterior,</em> <strong>Bien</strong>. <em>Aquí interesa el paso siguiente: qué pasa cuando el que trae la frase puesta no es una persona.</em></p>
-  <p><strong>Con quién</strong> Alguien con quien discutas seguido y bien: que las discusiones se resuelvan y no dejen resaca.</p>
-  <p><strong>El gesto</strong> Cuando esa persona traiga una consulta a una discusión contigo, no le discutas la consulta. Pregúntale qué piensa <strong>ella</strong>. Una sola vez, sin ironía y sin cara de estar aplicando una técnica.</p>
-  <p><strong>Cuando no salga</strong> Puede que te conteste que piensa lo mismo que la consulta. Aceptalo y no insistas: a veces es cierto. Lo que importa es que la pregunta haya existido, porque después de hecha una vez queda disponible.</p>
-  <p><strong>La trampa</strong> Consultar tú también, para empatar. Es lo más natural del mundo y es el final del asunto: dos consultas en la mesa no son un equilibrio, son una mesa donde ya no hay nadie sosteniendo nada.</p>
-  <p><strong>Guardar</strong> Qué contestó cuando le preguntaste qué pensaba ella.</p>
-  <p><strong>Lo que no se traslada</strong> Perder una discusión y quedarte en la mesa. Que alguien tenga razón sobre ti, que tú lo aceptes, y que los dos sigan cenando — eso no lo puede hacer nadie en tu lugar, y con un árbitro disponible deja de ocurrir sin que nadie lo haya decidido.</p>
 </div>
 
 <div class="perla"><p>El rato en que dos quedan<br>en desacuerdo y siguen sentados<br>hacía un trabajo.<br>Nadie le puso nombre nunca.</p></div>
@@ -304,6 +299,47 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Blaise Pascal</span></a> &middot; Pensamientos, 1670</cite>
 </div>
 
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Alguien con quien discutas seguido y bien: que las discusiones se resuelvan y no dejen resaca.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, cuando esa persona traiga una consulta a una discusión contigo, no le discutas la consulta.<br>
+    <strong>2.</strong> Preguntale qué piensa <strong>ella</strong>. Una sola vez, sin ironía y sin cara de estar aplicando una técnica.<br>
+    <strong>3.</strong> Esperá la respuesta sin ayudarla. No le sugieras, no le des opciones, no le completes la frase.<br>
+    <strong>4.</strong> Si te contesta que piensa lo mismo que la consulta, aceptalo sin insistir. A veces es cierto. Lo que importa es que la pregunta haya existido.<br>
+    <strong>5.</strong> Anotá qué contestó, y si fue distinto de lo que decía la consulta.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que te conteste que piensa lo mismo que la consulta. Aceptalo y no insistas: a veces es cierto. Lo que importa es que la pregunta haya existido, porque después de hecha una vez queda disponible.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Consultar tú también, para empatar. Es lo más natural del mundo y es el final del asunto: dos consultas en la mesa no son un equilibrio, son una mesa donde ya no hay nadie sosteniendo nada.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Qué contestó cuando le preguntaste qué pensaba ella.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Perder una discusión y quedarte en la mesa. Que alguien tenga razón sobre ti, que tú lo aceptes, y que los dos sigan cenando — eso no lo puede hacer nadie en tu lugar, y con un árbitro disponible deja de ocurrir sin que nadie lo haya decidido.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima discusión en la que el otro traiga una consulta vas a discutirle la consulta sin darte cuenta, y te vas a acordar de esto recién después. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez preguntaste qué pensaba él, escribí <em>pregunté</em>. Si discutiste la consulta, escribí <em>discutí</em>. Las dos cosas son el dato. <strong>El gesto no es preguntar siempre: es tener anotado cuántas veces te acordaste de que del otro lado hay una persona y no una fuente.</strong></p>
+</div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -317,13 +353,38 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo02'); if(!raiz) return;
-    var g=document.getElementById('g02');
-    raiz.querySelectorAll('.opciones button').forEach(function(b){
-      b.addEventListener('click',function(){
-        raiz.querySelector('.opciones').style.display='none';
-        g.innerHTML='Los dos finales son distintos. En los dos gan&oacute; el que consult&oacute;.<br>La respuesta no cambi&oacute; de bando: naci&oacute; del lado del que pregunt&oacute;.';
+    var ta=document.getElementById('v02a'); if(!ta) return;
+    var tb=document.getElementById('v02b');
+    var b=document.getElementById('b02'), g=document.getElementById('g02');
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
       });
+    }
+    function habilitar(){
+      b.disabled = ta.value.trim().length < 10 || tb.value.trim().length < 10;
+    }
+    ta.addEventListener('input',habilitar);
+    tb.addEventListener('input',habilitar);
+    b.addEventListener('click',function(){
+      var a=ta.value.trim(); var bb=tb.value.trim();
+      if(!a || !bb) return;
+      b.disabled=true; ta.readOnly=true; tb.readOnly=true;
+      var nA=a.split(/\s+/).filter(function(x){return x.length>0;}).length;
+      var nB=bb.split(/\s+/).filter(function(x){return x.length>0;}).length;
+      var mensaje='';
+      var ratio = nA>0 && nB>0 ? (Math.max(nA,nB)/Math.min(nA,nB)) : 1;
+      if(ratio < 1.5){
+        mensaje='Las dos consultas son casi iguales. Eso significa que las dos personas están viendo lo mismo, y la discusión no es sobre el hecho: es sobre qué hacer con él.';
+      } else if(ratio < 3){
+        mensaje='Una versión es claramente más larga que la otra. El que escribe la versión larga va a recibir una respuesta larga. El que escribe cuatro líneas va a recibir cuatro líneas. La consulta no nivela: amplifica lo que le dieron.';
+      } else {
+        mensaje='Una versión es mucho más corta que la otra. Ese es el caso más frecuente y el que más se nota. Lo que vuelve de la IA tiene la forma exacta de lo que cada uno llevó.';
+      }
+      g.innerHTML =
+        'Tu consulta: <em>“Ayudame a pensar esto: ' + escapar(a) + '”</em>.<br><br>' +
+        'La consulta del otro: <em>“Ayudame a pensar esto: ' + escapar(bb) + '”</em>.<br><br>' +
+        mensaje;
     });
   })();
 
