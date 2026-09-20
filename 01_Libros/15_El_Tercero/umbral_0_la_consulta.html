@@ -237,7 +237,7 @@
 <main class="wrap cuerpo">
 <div class="bloque">
   <p>Están discutiendo algo doméstico. De esos que no tienen importancia y ocupan cuarenta minutos: quién dijo qué, cuándo, si eso se había acordado o si uno lo dio por hecho.</p>
-  <p>Van y vienen. Cada uno tiene su versión, y ninguno de los dos está mintiendo.</p>
+  <p>Van y vienen. Cada uno tiene su versión y las dos son sinceras.</p>
   <p>Y en algún momento, uno de los dos saca el teléfono y le pregunta a una inteligencia artificial.</p>
   <p>No para irse de la conversación: para traer algo. Escribe unos segundos, espera, y lee en voz alta.</p>
   <p>La discusión no se resuelve.</p>
@@ -271,32 +271,22 @@
 </div>
 
 <div class="geo" id="geo00">
-  <span class="geo-label">D&oacute;nde poner la consulta</span>
+  <span class="geo-label">La frase que necesita respaldo</span>
+  <p class="geo-instruccion">Pens&aacute; en una discusi&oacute;n reciente, o en una que imagin&eacute;s. Escrib&iacute; una sola frase que dir&iacute;as en el medio. Como te salga. Despu&eacute;s el sistema te la devuelve con el respaldo puesto, y ves si la tuya resiste sola.</p>
   <div class="panel">
-    <button type="button" class="marcable" data-i="0" aria-pressed="false">Antes del primer intercambio</button>
-    <button type="button" class="marcable" data-i="1" aria-pressed="false">Despu&eacute;s del primero</button>
-    <button type="button" class="marcable" data-i="2" aria-pressed="false">En el medio</button>
-    <button type="button" class="marcable" data-i="3" aria-pressed="false">Antes del &uacute;ltimo</button>
-    <button type="button" class="marcable" data-i="4" aria-pressed="false">Cuando ya terminaron</button>
-    <div class="contador" id="c00">0 marcadas</div>
+    <label class="rotulo" for="f00">Una frase que dir&iacute;as en una discusi&oacute;n</label>
+    <textarea class="campo" id="f00" rows="2" placeholder="Ejemplo: eso lo hab&iacute;amos acordado en marzo."></textarea>
+    <button type="button" class="accion" id="b00" disabled>Ver con el respaldo puesto</button>
   </div>
   <div class="geo-estado"><span class="glosa" id="g00"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">Una discusi&oacute;n de cinco intercambios, sin ganador. Marca en qu&eacute; puntos habr&iacute;as consultado. Puedes marcar y desmarcar. No se guarda nada.</p>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+
 <div class="bloque">
-  <p><em>El lector puede insertar un botón <strong>consultar</strong> en cualquiera de los cinco puntos.</em></p>
-  <p><em>Donde lo ponga, aparece cómo sigue el intercambio a partir de ahí. Y puede volver atrás y probarlo en otro punto, las veces que quiera.</em></p>
-  <p><em>Al tercer intento, una línea debajo:</em></p>
-  <p><strong>Cambiaste el lugar cuatro veces. La respuesta consultada fue siempre la misma.</strong></p>
-  <p><em>No se guarda nada.</em></p>
-  <p>Durante los umbrales que siguen, ese tercero se queda en la mesa y lo vamos a mirar de cerca. No para decidir qué es —eso no lo sabe nadie todavía— sino para nombrar con precisión <strong>qué hace cuando está.</strong></p>
-  <p>Después, cuando la mesa se haya mirado entera, el libro se levanta y va a buscar de dónde salió esa silla.</p>
-  <p><strong>Con quién</strong> Una persona con la que discutas seguido. No la más difícil: una con la que las discusiones sean normales y se resuelvan.</p>
-  <p><strong>El gesto</strong> Esta semana, en una discusión con esa persona, no consultes. Una sola vez, a propósito, aunque sepas que consultando se termina en veinte segundos.</p>
-  <p><strong>Cuando no salga</strong> Puede que la discusión quede sin resolver. Eso es lo esperable y no es un fracaso del ejercicio: es el ejercicio. Fíjate qué hacen los dos cuando nadie tiene la razón confirmada.</p>
-  <p><strong>La trampa</strong> Consultar después, solo, para saber quién tenía razón. Es lo más común y desarma todo: convierte un rato de incertidumbre compartida en un veredicto privado que ya no se puede usar.</p>
-  <p><strong>Guardar</strong> Cómo terminó. Dos líneas, sin evaluar si estuvo bien o mal.</p>
-  <p><strong>Lo que no se traslada</strong> Discutir sin árbitro. Que dos personas queden en desacuerdo y sigan sentadas — eso no lo puede hacer nadie por ti, y con un árbitro disponible deja de ocurrir sin que nadie lo haya decidido.</p>
+  <p>Lo que acabas de producir no es un juicio sobre tu frase. Es un dato sobre si resiste sola.</p>
+  <p><strong>Una frase que aguanta sin el respaldo</strong> es una frase que ya estabas sosteniendo. La podés decir sin que nadie te dé la razón antes. Puede ser débil, puede ser insegura, puede ser equivocada — pero es tuya, y la sostenés mientras el otro te discute.</p>
+  <p><strong>Una frase que necesita el respaldo</strong> es una frase que solo funciona si viene con la respuesta ya traída. No es una frase sostenida en la mesa: es una frase que llega con alguien más atrás. Y ese alguien más no está para el otro, no se le puede contestar, y mañana no se va a acordar de lo que pasó en esa cocina.</p>
+  <p>Y hay una tercera lectura, que es la más frecuente de las tres: que la frase sea tuya y que igual quieras el respaldo. No porque no la sostengas, sino porque sostenerla sola cansa. Ese es el punto exacto donde empieza el libro.</p>
 </div>
 
 <div class="perla"><p>Ahora hay tres.<br>Y el tercero<br>no vino a nada.</p></div>
@@ -308,6 +298,52 @@
   <p><em>Lo que todavía no tiene palabra es la silla.</em></p>
 </div>
 
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Una persona con la que discutas seguido. No la más difícil: una con la que las discusiones sean normales y se resuelvan.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, en una discusión con esa persona, no consultes. Una sola vez, a propósito, aunque sepas que consultando se termina en veinte segundos.<br>
+    <strong>2.</strong> Cuando aparezca la incomodidad de no saber qué decir, aguantala. Ese momento es el dato. No lo tapes con otra cosa.<br>
+    <strong>3.</strong> Dejá que la discusión siga sin árbitro. Puede que quede sin resolver. Es lo esperable.<br>
+    <strong>4.</strong> Fijate qué hacen los dos cuando nadie tiene la razón confirmada. Ese es el gesto entero.<br>
+    <strong>5.</strong> Anotá cómo terminó. Dos líneas, sin evaluar si estuvo bien o mal.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que la discusión quede sin resolver. Eso es lo esperable y no es un fracaso del ejercicio: es el ejercicio. Fíjate qué hacen los dos cuando nadie tiene la razón confirmada.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Consultar después, solo, para saber quién tenía razón. Es lo más común y desarma todo: convierte un rato de incertidumbre compartida en un veredicto privado que ya no se puede usar.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Cómo terminó. Dos líneas, sin evaluar si estuvo bien o mal.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Discutir sin árbitro. Que dos personas queden en desacuerdo y sigan sentadas — eso no lo puede hacer nadie por ti, y con un árbitro disponible deja de ocurrir sin que nadie lo haya decidido.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima discusión vas a ir al teléfono sin darte cuenta, y te vas a acordar de esto con el dedo ya en la pantalla. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez te detuviste antes de abrir, escribí <em>no abrí</em>. Si abriste igual, escribí <em>abrí</em>. Las dos cosas son el dato. <strong>El gesto no es no consultar nunca: es tener anotado cuántas veces el brazo se detuvo antes de tocar el teléfono.</strong></p>
+</div>
+
+<div class="bloque">
+  <p>Durante los umbrales que siguen, ese tercero se queda en la mesa y lo vamos a mirar de cerca. No para decidir qué es —eso no lo sabe nadie todavía— sino para nombrar con precisión <strong>qué hace cuando está.</strong></p>
+  <p>Después, cuando la mesa se haya mirado entera, el libro se levanta y va a buscar de dónde salió esa silla.</p>
+</div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -321,15 +357,27 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo00'); if(!raiz) return;
-    var bs=raiz.querySelectorAll('.marcable'), c=document.getElementById('c00'), g=document.getElementById('g00');
-    function total(){ var n=0; bs.forEach(function(b){ if(b.getAttribute('aria-pressed')==='true') n++; }); return n; }
-    bs.forEach(function(b){ b.addEventListener('click',function(){
-      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true' ? 'false':'true');
-      var n=total();
-      c.textContent = n + (n===1 ? ' marcada' : ' marcadas');
-      g.innerHTML = n>0 ? 'Cambiaste el lugar ' + n + ' ' + (n===1?'vez':'veces') + '. La respuesta consultada fue siempre la misma.' : '';
-    }); });
+    var t=document.getElementById('f00'); if(!t) return;
+    var b=document.getElementById('b00'), g=document.getElementById('g00');
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    t.addEventListener('input',function(){
+      b.disabled = t.value.trim().length < 5;
+    });
+    b.addEventListener('click',function(){
+      var v=t.value.trim();
+      if(!v) return;
+      b.disabled=true; t.readOnly=true;
+      var n=v.split(/\s+/).filter(function(x){return x.length>0;}).length;
+      g.innerHTML =
+        'Tu frase sola: <em>' + escapar(v) + '</em>.<br><br>' +
+        'Tu frase con el respaldo puesto:<br>' +
+        '<em>Es que la IA dice que ' + escapar(v) + '</em>.<br><br>' +
+        'Fijate si la primera alcanza, o si necesita el respaldo para sostenerse.';
+    });
   })();
 
 
