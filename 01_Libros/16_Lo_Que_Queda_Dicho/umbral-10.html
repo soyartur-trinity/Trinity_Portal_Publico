@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,41 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── la proporción de tu archivo ── */
+  .proporcion{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .proporcion label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .proporcion input[type="number"]{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem; margin-bottom:1.3rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.06rem; line-height:1.6;
+    color:var(--blanco-humo); -moz-appearance:textfield;}
+  .proporcion input[type="number"]::-webkit-outer-spin-button,
+  .proporcion input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none; margin:0;}
+  .proporcion input[type="number"]::placeholder{color:var(--lejos); font-style:italic;}
+  .proporcion input[type="number"]:focus{border-color:var(--oro-polvo);}
+  .proporcion .accion{margin-top:.4rem;}
+  .proporcion-resultado{margin-top:1.3rem; padding:1.3rem 1.2rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .proporcion-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.7rem;}
+  .proporcion-num{font-family:'Cormorant Garamond',serif; font-size:2.2rem;
+    color:var(--oro); display:block; margin-bottom:.3rem; letter-spacing:.06em; line-height:1;}
+  .proporcion-num small{font-size:1rem; color:var(--oro-tenue); letter-spacing:.14em;
+    text-transform:uppercase; display:block; margin-top:.5rem;}
+  .proporcion-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:.9rem 0 0 0;}
+  .proporcion-texto:first-of-type{margin-top:0;}
+  .proporcion-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .proporcion-barra{margin-top:1.1rem; height:8px; width:100%;
+    background:var(--separador); overflow:hidden; display:flex;}
+  .proporcion-barra-pelea{background:var(--oro-tenue); height:100%;}
+  .proporcion-barra-resto{background:var(--lejos); height:100%;}
+  @media (max-width:600px){
+    .proporcion{padding:1.2rem 1rem;}
+  }
 </style>
 </head>
 <body>
@@ -323,11 +352,41 @@
 
 <div class="perla"><p>El mismo mecanismo que fija la peor noche<br>fija también un martes cualquiera.<br>La diferencia es qué se escribe.</p></div>
 
+<div class="geo">
+  <span class="geo-label">La proporción de tu archivo</span>
+  <p class="geo-instruccion">Piensa en tu conversación más larga —esa con la que llevas años hablando—. Poné un número aproximado de mensajes totales y un número aproximado de mensajes de pelea. No lo cuentes: estimá. El sistema te va a mostrar la proporción real.</p>
+  <div class="panel">
+    <div class="proporcion">
+      <label for="totalMsj">Cuántos mensajes tiene, más o menos</label>
+      <input type="number" id="totalMsj" placeholder="Ejemplo: 10000" min="10" max="1000000">
+
+      <label for="peleasMsj">Cuántos de esos son de pelea</label>
+      <input type="number" id="peleasMsj" placeholder="Ejemplo: 50" min="0" max="1000000">
+
+      <button class="accion" id="btnProporcion" disabled>Ver la proporción</button>
+      <div id="proporcionResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Esta semana, diez minutos: elige una persona que te importe y saca de su conversación cinco cosas buenas. Ponlas en una carpeta, en una nota, donde sea, fuera del chat.</p>
-  <p>No lo hagas con la persona con la que estás peleado. Hazlo con cualquiera — con la que menos problema tengas. Es para aprender la operación, no para arreglar nada.</p>
-  <p>Y después, cuando pase algo bueno, escríbelo. Dos líneas, en el momento, sin ocasión y sin motivo.</p>
-  <p>Va a quedar guardado igual que todo lo demás. Esa es la única parte de esto que elige uno.</p>
+  <p>Lo que acabas de producir no es una estadística de tu relación. Es un dato sobre qué contiene tu archivo, y ese dato casi siempre sorprende en la misma dirección.</p>
+  <p>La mayoría de la gente, cuando estima, calcula muy por encima la proporción de peleas. Diez por ciento, quince, a veces más. Y en la cuenta real es entre medio y uno por ciento. Eso significa que del archivo que uno guarda como una amenaza, entre el noventa y nueve y el noventa y nueve y medio por ciento <strong>no es una amenaza para nadie</strong>: son horarios, chistes malos, fotos, <em>llegué</em>.</p>
+  <p>Y hay un caso particular que vale la pena mirar: si los dos números que pusiste son chicos —un archivo de pocos cientos de mensajes—, el dato es distinto. Un archivo chico no es peor: es un archivo joven. Todavía no tuvo tiempo de acumular lo bueno, y por eso la proporción se siente pesada. Lo que se gana ahí no es limpiar: es empezar a cargarlo, ahora que se sabe qué es lo que hay que poner.</p>
+  <p>Si los números son grandes y la proporción es la esperada —una pelea por cada cien mensajes—, el dato es que lo que se aparece al abrir el archivo no es la proporción real: es <strong>la única parte del archivo que tiene función</strong>. Las cincuenta peleas son las que hacen cosas. Las diez mil restantes están y no se consultan, porque para qué.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Diez minutos. Elegí una persona que te importe y sacá de su conversación cinco cosas buenas. Ponelas en una carpeta, en una nota, donde sea, fuera del chat. No lo hagas con la persona con la que estás peleado: hacelo con cualquiera —con la que menos problema tengas—. Es para aprender la operación, no para arreglar nada.</p></div>
+  <div class="paso"><span class="paso-nombre">Después</span><p>Cuando pase algo bueno, escribilo. Dos líneas, en el momento, sin ocasión y sin motivo. Va a quedar guardado igual que todo lo demás: ese es el punto. De acá a un año vas a tener cincuenta, y van a estar todos disponibles al mismo nivel que la peor frase.</p></div>
+  <div class="paso"><span class="paso-nombre">Guardá la proporción</span><p>Anotá en la misma nota los dos números que estimaste y el resultado. No para volver a mirarlo: para saber que existió. Cuando en algún momento dudes de lo que contiene el archivo, ese número va a estar ahí, en tu letra.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">No lo cuentes</span><p>No le digas al otro <em>estoy sacando cosas buenas de nuestro chat</em>. Eso convierte la operación en una concesión, y las concesiones se cobran. Se hace y se calla: dentro de un año es un cambio, no un gesto.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Repetilo con otra persona</span><p>La operación se aprende en diez minutos y sirve para cualquiera. Cuando ya la tengas aceitada, hacela con la persona con la que tenés el archivo más pesado. No para arreglar nada: para que el archivo tenga las dos cosas.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En algún momento vas a abrir un chat para buscar algo específico y vas a salir con otra cosa: un mensaje que te gustó y no habías visto, una foto que no te acordabas de haber mandado, un audio de once segundos. Cuando pase, abrí la nota y agregá la fecha. Si esa vez lo guardaste, escribí <em>guardé</em>. Si lo leíste y cerraste, escribí <em>pasé</em>. Las dos cosas son el dato. <strong>El gesto no es sacar lo bueno siempre: es tener anotado cuántas veces lo bueno apareció solo y cuántas veces saliste a buscarlo.</strong></p>
 </div>
 
 <div class="bloque">
@@ -348,7 +407,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -359,6 +418,62 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la proporción de tu archivo
+    var total=document.getElementById('totalMsj');
+    var peleas=document.getElementById('peleasMsj');
+    var btn=document.getElementById('btnProporcion');
+    var salida=document.getElementById('proporcionResultado');
+
+    function habilitar(){
+      var t=parseInt(total.value,10);
+      var p=parseInt(peleas.value,10);
+      btn.disabled = !(t>0 && p>=0 && p<=t);
+    }
+    total.addEventListener('input',habilitar);
+    peleas.addEventListener('input',habilitar);
+
+    function formatear(n){
+      return n.toLocaleString('es-AR');
+    }
+
+    btn.addEventListener('click',function(){
+      var t=parseInt(total.value,10);
+      var p=parseInt(peleas.value,10);
+      if(!(t>0) || !(p>=0) || p>t){ salida.innerHTML=''; return; }
+
+      var ratio = t>0 ? (p/t*100) : 0;
+      var resto = t-p;
+      var restoPct = t>0 ? (resto/t*100) : 0;
+
+      var html='<div class="proporcion-resultado">';
+      html+='<span class="proporcion-resultado-etiqueta">Lo que dice el umbral</span>';
+      html+='<span class="proporcion-num">'+ratio.toFixed(2)+'%'+'<small>del archivo son peleas</small></span>';
+
+      // barra proporcional (con mínimo visible si es chico)
+      var pctPelea = Math.max(ratio, 0.5);
+      var pctResto = 100 - pctPelea;
+      html+='<div class="proporcion-barra">';
+      html+='<div class="proporcion-barra-pelea" style="width:'+pctPelea+'%"></div>';
+      html+='<div class="proporcion-barra-resto" style="width:'+pctResto+'%"></div>';
+      html+='</div>';
+
+      if(t < 1000){
+        html+='<p class="proporcion-texto">Un archivo chico. '+formatear(t)+' mensajes es todavía poco material para que la proporción diga algo. El dato no es que las peleas pesan: es que todavía no hubo tiempo de acumular lo otro. Lo que se gana acá no es limpiar: es empezar a cargarlo, ahora que sabés qué es lo que hay que poner.</p>';
+      } else if(ratio < 2){
+        html+='<p class="proporcion-texto">De <strong>'+formatear(t)+'</strong> mensajes, <strong>'+formatear(p)+'</strong> son de pelea. Eso significa que <strong>'+formatear(resto)+'</strong> no lo son. Del archivo que uno guarda como una amenaza, casi todo es horarios, chistes malos, <em>ya salgo</em>, fotos de un perro, <em>llegué</em>.</p>';
+        html+='<p class="proporcion-texto">Lo que se aparece al abrir el archivo no es la proporción real: es <strong>la única parte que tiene función</strong>. Esas '+formatear(p)+' peleas son las que hacen cosas. Las otras '+formatear(resto)+' están ahí, disponibles, y no las consultás, porque para qué.</p>';
+      } else if(ratio < 10){
+        html+='<p class="proporcion-texto">De <strong>'+formatear(t)+'</strong> mensajes, <strong>'+formatear(p)+'</strong> son de pelea. Eso es un archivo cargado en las dos direcciones: hay suficiente pelea para que aparezca sola, y suficiente resto para que el resto también esté disponible. Es el caso más común de un vínculo largo y difícil.</p>';
+        html+='<p class="proporcion-texto">La proporción no es el problema. El problema es que lo que se aparece al abrir no es lo que hay: es lo que hace algo. <strong>'+formatear(resto)+'</strong> mensajes que no son de pelea, y ninguno se consulta.</p>';
+      } else {
+        html+='<p class="proporcion-texto">De <strong>'+formatear(t)+'</strong> mensajes, <strong>'+formatear(p)+'</strong> son de pelea. Es una proporción alta —bastante más alta de lo habitual—. Puede significar dos cosas: que hubo un año muy duro, o que la estimación está pesada y el número real de peleas es más chico de lo que se siente.</p>';
+        html+='<p class="proporcion-texto">En cualquier caso, acá la operación del umbral es más importante que nunca: sacar lo bueno afuera, donde no haya que buscarlo. Porque adentro del archivo las '+formatear(p)+' peleas van a seguir apareciendo, y las '+formatear(resto)+' que no lo son, no.</p>';
+      }
+
+      html+='</div>';
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
