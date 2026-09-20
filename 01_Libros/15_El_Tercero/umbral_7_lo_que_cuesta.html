@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -219,6 +214,22 @@
       opacity:1!important; transform:none!important;}
   }
 
+  .dos-versiones{margin-top:1.2rem;}
+  .version-caja{padding:1.1rem 1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.9rem;}
+  .version-caja:last-of-type{margin-bottom:0;}
+  .version-caja.ia{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .version-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .version-texto{font-family:'EB Garamond',Georgia,serif; font-size:1rem; line-height:1.75;
+    color:var(--blanco-humo); margin:0 0 .6rem 0; font-style:italic;}
+  .version-texto:last-child{margin-bottom:0;}
+  .version-stat{display:flex; justify-content:space-between; gap:1rem;
+    font-family:'Cormorant Garamond',serif; font-size:.94rem; line-height:1.6;
+    color:var(--gris-calido); margin:0;}
+  .version-stat span:last-child{color:var(--oro);}
+  .version-stat.palabras span:last-child{color:var(--blanco-humo);}
 </style>
 </head>
 <body>
@@ -278,14 +289,27 @@
 </div>
 
 <div class="geo" id="geo07">
-  <span class="geo-label">Cu&aacute;nto dur&oacute;</span>
+  <span class="geo-label">La misma pregunta, dos versiones</span>
+  <p class="geo-instruccion">Eleg&iacute; una pregunta que te hayas hecho esta semana y que no sea trivial. Escribila dos veces: como se la har&iacute;as a una persona, y como se la hiciste o se la har&iacute;as a la IA. Despu&eacute;s el sistema te muestra qu&eacute; cambia entre las dos.</p>
   <div class="panel">
-    <label class="rotulo" for="q07">&iquest;Cu&aacute;ntas veces seguidas le preguntar&iacute;as lo mismo a una persona?</label>
-    <textarea class="campo" id="q07" rows="1"></textarea>
-    <button type="button" class="accion" id="b07" disabled>Responder</button>
+    <label class="rotulo" for="q07a">A una persona</label>
+    <textarea class="campo" id="q07a" rows="3" placeholder="Escribila como se la dir&iacute;as a alguien, con las palabras que usar&iacute;as."></textarea>
+    <label class="rotulo" for="q07b">A la IA</label>
+    <textarea class="campo" id="q07b" rows="3" placeholder="La misma pregunta, pero como se la har&iacute;as a la IA."></textarea>
+    <button type="button" class="accion" id="b07" disabled>Ver qu&eacute; cambia</button>
+    <div class="dos-versiones" id="dosVersiones"></div>
   </div>
   <div class="geo-estado"><span class="glosa" id="g07"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es un juicio sobre cómo hablás. Es un dato sobre cuánto filtro pide cada destinatario.</p>
+  <p><strong>Mismo filtro en las dos versiones</strong> es el caso más raro. Significa que escribís igual sin importar quién esté del otro lado. Puede ser confianza genuina con las personas, o puede ser que ya estés escribiéndole a la IA como si fuera una persona. Las dos cosas se ven igual desde afuera y son muy distintas.</p>
+  <p><strong>Menos filtro con la IA</strong> es lo que el umbral describe. Con la persona aparecen el <em>perdón</em>, el <em>no sé si molestar</em>, el <em>cuando puedas</em>, el <em>es una tontería</em>. Con la IA, no. No porque la IA te importe más: porque no hay nada que arriesgar al preguntarle, y por eso mismo no hay nada que te devuelva cuando te contesta.</p>
+  <p><strong>Más filtro con la IA</strong> es el caso que el umbral no esperaba y que también es un dato. Si le escribís con más cuidado a la IA que a una persona, probablemente estés pensando en la conversación con la IA como algo que se queda. Estás escribiendo para después. Y eso ya es otro asunto: ya no le estás preguntando, te estás dejando constancia.</p>
+</div>
+
 <div class="bloque">
   <p>Alguien que sabe todo esto y pide explícitamente que le hablen sin filtro, que no lo cuiden, que le digan las cosas como son.</p>
   <p>Y recibe exactamente eso: dureza. Bien argumentada, sin vueltas, incómoda.</p>
@@ -296,11 +320,6 @@
   <p><strong>Y no dice que las personas sean mejores.</strong> Un amigo distraído es un amigo distraído, y no se salva por ser humano. Una objeción cobarde es cobarde aunque la haya dicho alguien que se estaba jugando algo.</p>
   <p>Dice algo más chico: <strong>que la comparación no corresponde</strong>, y que hacerla igual —sin quererlo, sin notarlo— les sale caro a las personas que sí tienen un límite.</p>
   <p>Hay una consecuencia práctica que se paga sola: si toda tu corrección viene de donde no cuesta nada, vas a mejorar mucho lo que haces y no vas a enterarte nunca de quién estaba dispuesto a incomodarse por ti.</p>
-  <p>Este umbral pide dos personas, y es el único.</p>
-  <p>Alguien que últimamente te haya puesto un poco impaciente: cuéntale algo que ya le contaste, sabiendo que ya se lo contaste, y si se distrae no cambies de tema — espera y sigue donde estabas. Vas a sentir que estás haciendo un esfuerzo desproporcionado por una conversación menor, y ese esfuerzo es el dato: es lo que la otra persona viene poniendo cada vez que te escucha. La trampa es llevar la cuenta, porque ahí dejaste de escuchar y empezaste a cobrar.</p>
-  <p>Y alguien cuya opinión te importe y que últimamente esté de acuerdo contigo casi siempre: muéstrale algo tuyo y pídele una sola cosa, que te diga qué no funciona. No <em>qué te parece</em>, que invita a la respuesta amable. Probablemente te diga que está bien, porque estar de acuerdo es más barato para los dos; no insistas ese día, vuelve la semana siguiente con otra cosa y esta vez espera el silencio sin llenarlo.</p>
-  <p>Guarda dos cosas: en qué momento te dieron ganas de cortar, y qué te dijo el segundo, textual.</p>
-  <p><strong>Lo que no se traslada.</strong> Que alguien te escuche estando cansado — un oído entero y siempre disponible ya lo tienes; que alguien con su propio día encima se siente igual no mejora si lo hace otro, porque si lo hace otro era otra cosa. Y que te digan que no sabiendo que les puede costar caro: una objeción correcta la consigues en cinco segundos, pero que alguien elija incomodarte teniendo algo que perder no tiene versión sin riesgo.</p>
 </div>
 
 <div class="perla"><p>Uno de los dos<br>está compitiendo<br>con algo que no compite.</p></div>
@@ -310,10 +329,51 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Simone Weil</span></a> &middot; carta a Joë Bousquet, 1942</cite>
 </div>
 
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Este umbral pide dos personas, y es el único. Alguien que últimamente te haya puesto un poco impaciente. Y alguien cuya opinión te importe y que últimamente esté de acuerdo contigo casi siempre.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Con la primera persona: contale algo que ya le contaste, sabiendo que ya se lo contaste.<br>
+    <strong>2.</strong> Si se distrae, no cambies de tema. Esperá y seguí donde estabas. Vas a sentir que estás haciendo un esfuerzo desproporcionado por una conversación menor, y ese esfuerzo es el dato: es lo que la otra persona viene poniendo cada vez que te escucha.<br>
+    <strong>3.</strong> Con la segunda persona: mostrale algo tuyo y pedile una sola cosa, que te diga qué no funciona. No <em>qué te parece</em>, que invita a la respuesta amable. <em>Qué no funciona</em>.<br>
+    <strong>4.</strong> Probablemente te diga que está bien, porque estar de acuerdo es más barato para los dos. No insistas ese día. Volvé la semana siguiente con otra cosa y esta vez esperá el silencio sin llenarlo.<br>
+    <strong>5.</strong> Anotá dos cosas: en qué momento te dieron ganas de cortar, y qué te dijo el segundo, textual.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Con la primera persona puede pasar que te dé vergüenza insistir y cortes vos. Con la segunda puede pasar que te conteste cualquier cosa por compromiso. Las dos cosas son esperables y ninguna arruina el gesto: lo único que hace falta es haber notado qué pasó.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Llevar la cuenta. En cuanto empieces a contar cuántas veces escuchaste y cuántas te escucharon, dejaste de estar en la conversación y empezaste a cobrar. Y una conversación donde uno cobra no es una conversación: es una liquidación.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>En qué momento te dieron ganas de cortar, y qué te dijo el segundo, textual.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Que alguien te escuche estando cansado — un oído entero y siempre disponible ya lo tienes; que alguien con su propio día encima se siente igual no mejora si lo hace otro, porque si lo hace otro era otra cosa. Y que te digan que no sabiendo que les puede costar caro: una objeción correcta la consigues en cinco segundos, pero que alguien elija incomodarte teniendo algo que perder no tiene versión sin riesgo.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que alguien te escuche con su propio cansancio encima, vas a sentir la misma impaciencia que sentía la mujer del amigo distraído, y no te vas a acordar de nada de esto. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez te quedaste en la conversación, escribí <em>me quedé</em>. Si cortaste, escribí <em>corté</em>. Las dos cosas son el dato. <strong>El gesto no es no sentir impaciencia: es tener anotado cuántas veces la sentiste y qué hiciste con ella.</strong></p>
+</div>
+
 <div class="bloque">
   <p><em>Umbrales VIII, IX y X. Completan</em> La casa y el barrio.</p>
 </div>
-
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -327,12 +387,85 @@
 <script>
 
   (function(){
-    var t=document.getElementById('q07'); if(!t) return;
-    var b=document.getElementById('b07'), g=document.getElementById('g07');
-    t.addEventListener('input',function(){ b.disabled = !t.value.trim(); });
-    b.addEventListener('click',function(){
-      var v=t.value.trim(); b.disabled=true; t.readOnly=true;
-      g.innerHTML='Escribiste ' + v + '.<br>No hay n&uacute;mero correcto. Pero ahora sabes que tienes uno.';
+    var a=document.getElementById('q07a'); if(!a) return;
+    var b=document.getElementById('q07b');
+    var btn=document.getElementById('b07');
+    var g=document.getElementById('g07');
+    var dv=document.getElementById('dosVersiones');
+
+    var filtros = [
+      'perdón','perdon','disculpa','disculpe','disculpá','disculpa',
+      'no sé si','no se si','no quiero molestar','no quiero joder','no quiero incomodar',
+      'cuando puedas','si podés','si podes','si tienes tiempo','si tenés tiempo',
+      'es una tontería','es una tonteria','es una pavada','es una boludez',
+      'quizás','quizas','tal vez','capaz','puede ser',
+      'no sé si te parece','no se si te parece',
+      'gracias','mil gracias','te agradezco','te lo agradezco',
+      'rápido','rapido','breve','en un minuto','no te llevo mucho',
+      'sé que estás ocupado','se que estas ocupado','sé que estás ocupada','se que estas ocupada',
+      'si no es molestia','si no te molesta','si no es mucha molestia',
+      'de paso','aprovecho','aprovecho que estás','aprovecho que estas',
+      'no es urgente','tampoco es urgente','aunque sea'
+    ];
+
+    function contarFiltros(s){
+      var low = ' ' + (s||'').toLowerCase().replace(/[.,;:!?¡¿()«»""'']/g,' ') + ' ';
+      low = low.replace(/\s+/g,' ');
+      var cuenta=0;
+      var encontrados=[];
+      filtros.forEach(function(f){
+        var re = new RegExp('\\s' + f.replace(/\s+/g,'\\s+') + '\\s');
+        if(re.test(low)){
+          cuenta++;
+          encontrados.push(f);
+        }
+      });
+      return {cuenta: cuenta, encontrados: encontrados};
+    }
+    function palabras(s){
+      s=(s||'').trim();
+      if(!s){ return 0; }
+      return s.split(/\s+/).filter(function(x){return x.length>0;}).length;
+    }
+    function habilitar(){
+      btn.disabled = a.value.trim().length < 10 || b.value.trim().length < 10;
+    }
+    a.addEventListener('input',habilitar);
+    b.addEventListener('input',habilitar);
+
+    btn.addEventListener('click',function(){
+      var va=a.value.trim(); var vb=b.value.trim();
+      if(!va || !vb) return;
+      btn.disabled=true; a.readOnly=true; b.readOnly=true;
+
+      var fa = contarFiltros(va);
+      var fb = contarFiltros(vb);
+      var pa = palabras(va);
+      var pb = palabras(vb);
+
+      var html='';
+      html += '<div class="version-caja">';
+      html += '<span class="version-etiqueta">A la persona</span>';
+      html += '<p class="version-stat palabras"><span>Palabras</span><span>'+pa+'</span></p>';
+      html += '<p class="version-stat"><span>Palabras de filtro</span><span>'+fa.cuenta+'</span></p>';
+      html += '</div>';
+      html += '<div class="version-caja ia">';
+      html += '<span class="version-etiqueta">A la IA</span>';
+      html += '<p class="version-stat palabras"><span>Palabras</span><span>'+pb+'</span></p>';
+      html += '<p class="version-stat"><span>Palabras de filtro</span><span>'+fb.cuenta+'</span></p>';
+      html += '</div>';
+      dv.innerHTML = html;
+
+      var difFiltros = fa.cuenta - fb.cuenta;
+      var lectura = '';
+      if(fa.cuenta === fb.cuenta){
+        lectura = 'Mismo filtro en las dos versiones. Escribís igual sin importar quién esté del otro lado. Puede ser confianza genuina con las personas, o puede ser que ya le estés escribiendo a la IA como si fuera una persona. Las dos cosas se ven igual desde afuera y son muy distintas.';
+      } else if(difFiltros > 0){
+        lectura = 'A la persona le pusiste <strong>'+difFiltros+'</strong> palabra'+(difFiltros===1?'':'s')+' más de filtro que a la IA. Eso es exactamente lo que este umbral describe: con la persona aparecen el perdón, el cuando puedas, el es una tontería. Con la IA, no. No porque la IA te importe más, sino porque no hay nada que arriesgar al preguntarle, y por eso mismo no hay nada que te devuelva cuando te contesta.';
+      } else {
+        lectura = 'A la IA le pusiste <strong>'+Math.abs(difFiltros)+'</strong> palabra'+(Math.abs(difFiltros)===1?'':'s')+' más de filtro que a la persona. Ese es el caso que el umbral no esperaba. Si le escribís con más cuidado a la IA que a una persona, probablemente estés pensando la conversación como algo que se queda: estás escribiendo para después.';
+      }
+      g.innerHTML = lectura;
     });
   })();
 
