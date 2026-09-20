@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -219,6 +214,19 @@
       opacity:1!important; transform:none!important;}
   }
 
+  .clasificacion{margin-top:1.2rem;}
+  .clasificacion-caja{padding:1.1rem 1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.9rem;}
+  .clasificacion-caja:last-of-type{margin-bottom:0;}
+  .clasificacion-pregunta{font-family:'EB Garamond',Georgia,serif; font-size:1.02rem;
+    line-height:1.7; color:var(--blanco-humo); font-style:italic; margin:0 0 .5rem 0;}
+  .clasificacion-tipo{font-family:'Cormorant Garamond',serif; font-size:.94rem;
+    line-height:1.6; color:var(--gris-calido); margin:0;}
+  .clasificacion-tipo strong{color:var(--oro); font-weight:400; font-style:italic;}
+  .clasificacion-proporcion{margin-top:1rem; padding-top:1rem; border-top:1px solid var(--separador);
+    text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1rem,2.6vw,1.16rem); color:var(--blanco-humo); line-height:1.7;}
+  .clasificacion-proporcion strong{color:var(--oro); font-weight:500;}
 </style>
 </head>
 <body>
@@ -276,17 +284,32 @@
 </div>
 
 <div class="geo" id="geo06">
-  <span class="geo-label">Preg&uacute;ntale a alguien</span>
+  <span class="geo-label">Tres preguntas tuyas</span>
+  <p class="geo-instruccion">Escrib&iacute; tres preguntas que te hayas hecho esta semana, a la IA o a alguien. Las que se te ocurran. El sistema las va a clasificar por su forma: si piden un dato, si piden experiencia, o si piden opini&oacute;n.</p>
   <div class="panel">
-    <div class="rotulo" id="e06"></div>
-    <div class="opciones">
-      <button type="button" data-v="1">lo busco</button>
-      <button type="button" data-v="0">le pregunto a alguien</button>
-    </div>
-    <div class="contador" id="c06"></div>
+    <label class="rotulo" for="q06a">Pregunta 1</label>
+    <textarea class="campo" id="q06a" rows="1" placeholder="Escribila como la formulaste."></textarea>
+    <label class="rotulo" for="q06b">Pregunta 2</label>
+    <textarea class="campo" id="q06b" rows="1" placeholder="Otra."></textarea>
+    <label class="rotulo" for="q06c">Pregunta 3</label>
+    <textarea class="campo" id="q06c" rows="1" placeholder="Y otra."></textarea>
+    <button type="button" class="accion" id="b06" disabled>Clasificar las tres</button>
+    <div class="clasificacion" id="clasificacion"></div>
   </div>
   <div class="geo-estado"><span class="glosa" id="g06"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es un juicio sobre tus preguntas. Es un dato sobre qué clase de cosa le pedís a cada destinatario.</p>
+  <p><strong>Pregunta de dato</strong> es la que se contesta con información. Cuánto vive un roble. Qué año era. Si la planta hay que regarla seguido. Para esas preguntas el experto universal es mejor que el tío, y no hay discusión posible.</p>
+  <p><strong>Pregunta de experiencia</strong> es la que quiere que alguien haya pasado por ahí. Qué hago con mi madre. Cómo se le dice esto a un hijo. Si esto que siento es normal. Para esas preguntas el experto universal no sirve: dice cosas ciertas y no dice nada.</p>
+  <p><strong>Pregunta de opinión</strong> es la que quiere un veredicto. ¿Me conviene aceptar? ¿Está bien lo que hice? Se contesta, y la respuesta vale lo que valga, pero no es lo mismo que el dato ni lo mismo que la experiencia — es un tercer tipo que muchas veces pasa por los otros dos sin ser ninguno.</p>
+  <p>Y hay una lectura que el sistema no puede hacer y que conviene que hagas tú: de las tres preguntas que escribiste, ¿cuántas son de las que antes le habrías hecho a una persona y ahora le hacés a la IA?</p>
+</div>
+
+<div class="perla"><p>Hay preguntas que quieren un dato<br>y preguntas que quieren<br>que alguien haya pasado por ahí.<br>Se escriben en la misma caja.</p></div>
+
 <div class="bloque">
   <p>Nada de esto se arregla volviendo atrás. La respuesta correcta está disponible y va a seguir estándolo, y nadie va a dejar de usarla por leer un libro.</p>
   <p>Lo que sí se puede es distinguir dos preguntas que hoy se hacen igual y en el mismo tono.</p>
@@ -295,24 +318,52 @@
   <p>Las dos se pueden escribir en la misma caja. Solo una de las dos tiene ahí una respuesta que sirva.</p>
 </div>
 
-<div class="perla"><p>Hay preguntas que quieren un dato<br>y preguntas que quieren<br>que alguien haya pasado por ahí.<br>Se escriben en la misma caja.</p></div>
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
 
-<div class="bloque">
-  <p><strong>Con quién</strong> Alguien de tu familia o de tu círculo que tenga un saber propio. Va a ser fácil de identificar: es el que hace unos años contestaba y ahora habla menos.</p>
-  <p><strong>El gesto</strong> Esta semana, pregúntale algo de lo suyo. Y no verifiques después. Ni esa noche, ni a la semana.</p>
-  <p><strong>Cuando no salga</strong> Puede que se equivoque, y que tú te des cuenta. Déjalo pasar, salvo que importe de verdad: si es algo que puede hacerle mal a alguien, verifica y no te hagas el respetuoso.</p>
-  <p><strong>La trampa</strong> Preguntar algo que ya sabes, para hacerlo sentir bien. Se nota siempre, aunque nadie lo diga, y humilla más que no preguntar. Tiene que ser algo que de verdad no sepas.</p>
-  <p><strong>Guardar</strong> Qué te contestó, y qué parte de la respuesta no habrías conseguido en ningún otro lado.</p>
-  <p><strong>Lo que no se traslada</strong> Que te consulten a ti. La respuesta se consigue sin ti y cada vez mejor; que alguien te elija para preguntarte es otra cosa, y si lo hace un sistema no ocurrió.</p>
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Alguien de tu familia o de tu círculo que tenga un saber propio. Va a ser fácil de identificar: es el que hace unos años contestaba y ahora habla menos.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, pensá en una pregunta que le harías a esa persona y que sea de las suyas. No un dato que igual está en internet: algo que tenga que ver con lo que ella sabe hacer o con lo que vivió.<br>
+    <strong>2.</strong> Hacésela. En voz alta, en persona o por teléfono. Con la formulación que te salga, sin preparar nada.<br>
+    <strong>3.</strong> Escuchá la respuesta completa. Aunque dé vueltas, aunque meta una anécdota que no venía al caso, aunque tarde más de lo que tardaría una búsqueda.<br>
+    <strong>4.</strong> No verifiques después. Ni esa noche, ni a la semana. Si es algo que puede hacerle mal a alguien, sí verificalo — pero eso es la excepción.<br>
+    <strong>5.</strong> Anotá qué te contestó, y qué parte de la respuesta no habrías conseguido en ningún otro lado.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que se equivoque, y que tú te des cuenta. Déjalo pasar, salvo que importe de verdad. Si es algo que puede hacerle mal a alguien, verifica y no te hagas el respetuoso.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Preguntar algo que ya sabes, para hacerlo sentir bien. Se nota siempre, aunque nadie lo diga, y humilla más que no preguntar. Tiene que ser algo que de verdad no sepas.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Qué te contestó, y qué parte de la respuesta no habrías conseguido en ningún otro lado.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Que te consulten a ti. La respuesta se consigue sin ti y cada vez mejor; que alguien te elija para preguntarte es otra cosa, y si lo hace un sistema no ocurrió.</p>
+  </div>
 </div>
 
-<div class="perla"><p>Hay preguntas que quieren un dato<br>y preguntas que quieren<br>que alguien haya pasado por ahí.<br>Se escriben en la misma caja.</p></div>
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que aparezca una pregunta en una mesa vas a ver el teléfono encendido antes de que la persona termine la frase, y no vas a acordarte de nada de esto. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez dejaste que la persona contestara primero, escribí <em>dejé contestar</em>. Si consultaste igual, escribí <em>consulté</em>. Las dos cosas son el dato. <strong>El gesto no es no consultar nunca: es tener anotado cuántas veces dejaste que el otro llegue primero.</strong></p>
+</div>
 
 <div class="cita">
   <p><em>Más vale una cabeza bien hecha que bien llena.</em></p>
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Michel de Montaigne</span></a> &middot; Ensayos, 1580</cite>
 </div>
-
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -326,26 +377,89 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo06'); if(!raiz) return;
-    var frases=['Cuánto vive un roble','Cuándo se firmó la declaración de independencia','Cuánto tarda en secar una pared','Qué temperatura aguanta un limonero','Si conviene decirle a alguien lo que piensas de su pareja','Cuánto hay que esperar antes de volver a llamar','Cuándo un hijo está listo para volver solo','Si esto que sientes es normal'], i=0, a=0;
-    var e=document.getElementById('e06'), c=document.getElementById('c06'), g=document.getElementById('g06');
-    var bs=raiz.querySelectorAll('.opciones button');
-    function pintar(){
-      if(i<frases.length){
-        e.textContent=frases[i];
-        c.textContent=(i+1)+' de '+frases.length;
-      } else {
-        e.textContent=''; c.textContent='';
-        raiz.querySelector('.opciones').style.display='none';
-        g.innerHTML='En ' + a + ' de las ocho elegiste buscarlo.<br>Cuatro de las ocho no tienen respuesta correcta, y las contestaste igual.';
-      }
+    var qa=document.getElementById('q06a'); if(!qa) return;
+    var qb=document.getElementById('q06b');
+    var qc=document.getElementById('q06c');
+    var b=document.getElementById('b06');
+    var g=document.getElementById('g06');
+    var cls=document.getElementById('clasificacion');
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
     }
-    bs.forEach(function(b){ b.addEventListener('click',function(){
-      if(i>=frases.length) return;
-      if(b.getAttribute('data-v')==='1') a++;
-      i++; pintar();
-    }); });
-    pintar();
+    function habilitar(){
+      b.disabled = qa.value.trim().length < 4 || qb.value.trim().length < 4 || qc.value.trim().length < 4;
+    }
+    qa.addEventListener('input',habilitar);
+    qb.addEventListener('input',habilitar);
+    qc.addEventListener('input',habilitar);
+
+    function clasificar(s){
+      var t=' ' + s.toLowerCase().replace(/[.,;:!?¡¿()«»""'']/g,' ') + ' ';
+      t=t.replace(/\s+/g,' ');
+
+      // Experiencia: pide que alguien haya pasado por ahí
+      var experiencia = /(qu[eé]\s+(hago|har[ií]a|me\s+conviene)\s+(con|si)\b|qu[eé]\s+hago\s+con|me\s+siento|sentirse|es\s+normal|es\s+normal\s+que|le\s+digo|le\s+dije|c[oó]mo\s+se\s+le\s+dice|c[oó]mo\s+hacer\s+para\s+decir|c[oó]mo\s+se\s+supera|duele|c[oó]mo\s+llevar|c[oó]mo\s+vivir|mi\s+madre|mi\s+padre|mi\s+hijo|mi\s+hija|mi\s+pareja|mi\s+mujer|mi\s+marido|mi\s+hermano|mi\s+hermana|estoy\s+mal|estoy\s+bien|qu[eé]\s+me\s+pasa|es\s+grave|se\s+me\s+va|no\s+puedo\s+m[aá]s|c[oó]mo\s+se\s+hace\s+para\s+criar)/.test(t);
+
+      // Opinión: pide un veredicto
+      var opinion = /(est[aá]\s+bien|est[aá]\s+mal|deber[ií]a|es\s+lo\s+correcto|qu[eé]\s+opinas|qu[eé]\s+pens[aá]s|qu[eé]\s+te\s+parece|qu[eé]\s+har[ií]as|est[aá]\s+mal\s+que|es\s+una\s+buena\s+idea|me\s+conviene|deber[ií]a\s+hacer|estoy\s+haciendo\s+bien)/.test(t);
+
+      // Dato: pide información verificable
+      var dato = /(cu[aá]nt[oa]s?|cu[aá]nd[oó]|d[oó]nde|qu[eé]\s+a[nñ]o|de\s+qu[eé]\s+a[nñ]o|cu[aá]l\s+es|cu[aá]l\s+era|qu[eé]\s+es\s+el|qu[eé]\s+significa|cu[aá]nto\s+(tarda|cuesta|vale|vive|mide|pesa)|qu[eé]\s+pas[oó]\s+en|en\s+qu[eé]\s+a[nñ]o|a\s+qu[eé]\s+hora|qu[eé]\s+d[ií]a|c[oó]mo\s+se\s+llama|qui[eé]n\s+es|qui[eé]n\s+fue)/.test(t);
+
+      if(experiencia){ return 'experiencia'; }
+      if(opinion && !dato){ return 'opinion'; }
+      if(dato){ return 'dato'; }
+      // sin marca clara
+      return 'indeterminada';
+    }
+
+    b.addEventListener('click',function(){
+      var arr=[qa.value.trim(), qb.value.trim(), qc.value.trim()];
+      if(arr.some(function(x){return x.length<4;})) return;
+      b.disabled=true; qa.readOnly=true; qb.readOnly=true; qc.readOnly=true;
+
+      var tipos=arr.map(clasificar);
+      var conteo={dato:0, experiencia:0, opinion:0, indeterminada:0};
+      tipos.forEach(function(t){ conteo[t]++; });
+
+      var nombres={
+        dato: 'pide un dato',
+        experiencia: 'pide que alguien haya pasado por ahí',
+        opinion: 'pide un veredicto',
+        indeterminada: 'no se deja clasificar con claridad'
+      };
+
+      var html='';
+      arr.forEach(function(p, i){
+        html += '<div class="clasificacion-caja">';
+        html += '<p class="clasificacion-pregunta">'+escapar(p)+'</p>';
+        html += '<p class="clasificacion-tipo">Es una pregunta que <strong>'+nombres[tipos[i]]+'</strong>.</p>';
+        html += '</div>';
+      });
+      html += '<div class="clasificacion-proporcion">';
+      var partes=[];
+      if(conteo.dato){ partes.push('<strong>'+conteo.dato+'</strong> de dato'); }
+      if(conteo.experiencia){ partes.push('<strong>'+conteo.experiencia+'</strong> de experiencia'); }
+      if(conteo.opinion){ partes.push('<strong>'+conteo.opinion+'</strong> de opini&oacute;n'); }
+      if(conteo.indeterminada){ partes.push('<strong>'+conteo.indeterminada+'</strong> sin clasificar'); }
+      html += partes.join(' &middot; ') + '.';
+      html += '</div>';
+      cls.innerHTML = html;
+
+      // Lectura final
+      var lectura = '';
+      if(conteo.experiencia >= 2){
+        lectura = 'Mayoría de experiencia. Eso es lo que este umbral describe: preguntas que quieren que alguien haya pasado por ahí, y que ahora se le hacen al experto universal sin experiencia.';
+      } else if(conteo.dato >= 2){
+        lectura = 'Mayoría de dato. Es el caso raro, y también el más fácil de resolver: para las preguntas de dato, el experto universal es mejor que el tío y no hay nada que discutir.';
+      } else {
+        lectura = 'Mezcla equilibrada. Es el caso más frecuente. Fijate cuáles de las tres le harías a una persona y cuáles le hacés a la IA.';
+      }
+      g.innerHTML = lectura;
+    });
   })();
 
 
