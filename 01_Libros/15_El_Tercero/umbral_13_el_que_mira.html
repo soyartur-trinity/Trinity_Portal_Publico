@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -256,13 +251,19 @@
 
 <div class="geo" id="geo13">
   <span class="geo-label">Los quince segundos</span>
+  <p class="geo-instruccion">Al empezar, la pantalla se queda vac&iacute;a. Son quince segundos reales: no hay barra, no hay cuenta atr&aacute;s, no hay nada que mirar.</p>
   <div class="panel">
     <button type="button" class="accion" id="b13">Empezar</button>
     <div class="contador" id="c13">&nbsp;</div>
   </div>
   <div class="geo-estado"><span class="glosa" id="g13"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">Al empezar, la pantalla se queda vac&iacute;a. Son quince segundos reales: no hay barra, no hay cuenta atr&aacute;s, no hay nada que mirar.</p>
 </div>
+<div class="bloque">
+  <p>El dato que acabas de producir no es cu&aacute;ntos segundos pasaron. Son quince, siempre. El dato es qu&eacute; hiciste mientras pasaban: si mirabas la pantalla, si te pusiste a leer otra cosa, si te fuiste a otra pesta&ntilde;a, si contaste, si te impacientaste.</p>
+  <p>Puedes leerlo de dos maneras. Una: quince segundos se hacen largos cuando no hay nada que mirar, y por eso los otros siete de la mesa hacen algo con las manos sin darse cuenta. Otra: quince segundos se hacen cortos cuando uno est&aacute; haciendo otra cosa, y eso es lo que pasaba del otro lado de la pantalla mientras el libro miraba hacia el que consultaba.</p>
+  <p>Las dos lecturas son ciertas. El umbral no elige por ti.</p>
+</div>
+
 <div class="bloque">
   <p>Nadie espera de manera neutra.</p>
   <p>En quince segundos alguien decide, sin decidirlo, que lo que iba a decir no era tan importante. Y esa decisión no se toma una vez: se toma cada vez, y cada vez es más fácil.</p>
@@ -273,18 +274,59 @@
   <p>Este umbral no pide culpa. Pide algo mucho más chico: que en algún momento te toque notarlo.</p>
   <p>Se puede hacer poco, y es concreto.</p>
   <p><strong>Avisar.</strong> <em>Dejame ver una cosa</em> es una frase que ya se dice; se le pueden agregar cuatro palabras: <em>sigue, que te escucho</em>. No arregla los quince segundos, pero le dice al otro que sigue estando en la conversación.</p>
-  <p><strong>Devolver la frase.</strong> Cuando vuelves de consultar, preguntarle al que quedó esperando qué iba a decir. Casi siempre contesta que nada. Insistí una vez, no dos: la segunda vez que le preguntes, en otra ocasión, va a contestar.</p>
+  <p><strong>Devolver la frase.</strong> Cuando vuelves de consultar, preguntarle al que quedó esperando qué iba a decir. Casi siempre contesta que nada. Insiste una vez, no dos: la segunda vez que le preguntes, en otra ocasión, va a contestar.</p>
   <p><strong>Y no consultar delante de alguien que está contando algo suyo.</strong> Es la única regla dura de este libro y no tiene excepciones que valgan la pena. Lo que sea que estés por buscar puede esperar a que la persona termine.</p>
   <p>Una sola advertencia, y vale más que las tres: no se lo hagas notar. En cuanto le dices al otro que te tuvo esperando, convertiste una observación en un reproche, y la próxima vez va a consultar igual pero con culpa, que no mejora nada.</p>
   <p>Queda la última línea del inventario, y es la que sostiene a las trece anteriores: <strong>notar que el otro se fue de la conversación.</strong> Eso solo lo puede hacer alguien que estaba adentro de ella. Sin alguien que note, ninguna de las otras llega a ocurrir.</p>
   <p><em>⟐ Con esto el libro cierra su recorrido. Empezó en una mesa con dos personas y un teléfono, salió a mirar quién fabricó lo que había adentro del teléfono, y vuelve a la mesa para mirar a la persona que estuvo ahí todo el tiempo y no apareció en ninguna escena.</em></p>
 </div>
 
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Con la gente con la que ya compartes mesa. Este umbral no pide una persona nueva: pide mirar la que ya est&aacute; ah&iacute;, del otro lado del tel&eacute;fono.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> La pr&oacute;xima vez que consultes en medio de una conversaci&oacute;n, avisa antes de mirar la pantalla: <em>sigue, que te escucho</em>.<br>
+    <strong>2.</strong> Cuando termines de leer, devuelve la frase: preg&uacute;ntale al otro qu&eacute; iba a decir. Si te contesta que nada, no insistas ese d&iacute;a.<br>
+    <strong>3.</strong> Si alguien est&aacute; contando algo suyo, no consultes. Ni una cosa chica. Aguanta hasta que termine.<br>
+    <strong>4.</strong> Una vez, en la semana, quedate afuera de una consulta y mir&aacute; la mesa. No para juzgar: para notar qu&eacute; hacen las manos de los otros mientras alguien consulta.<br>
+    <strong>5.</strong> Anota una sola frase: la que se te venci&oacute; en la boca a ti, en esa semana. No la del otro. La tuya.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que olvides avisar, que la frase del otro ya se haya vencido, que consultes sin darte cuenta delante de alguien. Nada de eso arruina el gesto: lo &uacute;nico que hace falta es haberlo notado.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Hac&eacute;rselo notar al otro. En cuanto le dices a alguien que a ti te tuvo esperando, convertiste una observaci&oacute;n en un reproche. La pr&oacute;xima vez va a consultar igual, pero con culpa, y eso no mejora nada.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>La frase que se te venci&oacute; en la boca a ti, en esa semana. Una sola.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Notar que el otro se fue de la conversaci&oacute;n. Eso solo lo puede hacer alguien que estaba adentro de ella. Sin alguien que note, ninguna de las otras doce l&iacute;neas del inventario llega a ocurrir.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La pr&oacute;xima vez que est&eacute;s en una mesa y alguien consulte, la tentaci&oacute;n de mirar el techo va a estar ah&iacute;. Cuando pase, no hagas nada distinto: anota la frase que se te venci&oacute;. La cantidad de veces que la anotas es el mecanismo.</p>
+</div>
+
 <div class="cita">
   <p><em>En ninguna parte está quien está en todas partes.</em></p>
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Séneca</span></a> &middot; Cartas a Lucilio, carta 2, siglo I</cite>
 </div>
-
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -310,7 +352,6 @@
       },1000);
     });
   })();
-
 
   (function(){
     var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
