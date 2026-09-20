@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +167,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,7 +214,6 @@
       opacity:1!important; transform:none!important;}
   }
 
-
   .registro{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
     border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
     opacity:0; transform:translateY(12px); transition:all .9s ease;}
@@ -227,6 +221,49 @@
   .registro p{font-size:1.02rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
   .registro .sello{display:block; margin-top:.5rem; font-family:'Cormorant Garamond',serif;
     font-size:.82rem; letter-spacing:.12em; color:var(--oro-polvo); text-transform:uppercase;}
+
+  /* ── la frase y el estado ── */
+  .frase-estado{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .frase-estado label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.55rem;}
+  .frase-estado textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem; margin-bottom:1.3rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:3rem;}
+  .frase-estado textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .frase-estado textarea:focus{border-color:var(--oro-polvo);}
+  .frase-estado-sub{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.86rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .frase-estado-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .frase-estado-btn{background:var(--negro); border:none; padding:.85rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.35;}
+  .frase-estado-btn:hover, .frase-estado-btn:focus-visible{color:var(--blanco-humo);}
+  .frase-estado-btn[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .frase-estado .accion{margin-top:1.2rem;}
+  .frase-estado-resultado{margin-top:1.3rem;}
+  .frase-estado-caja{padding:1.2rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:1rem;}
+  .frase-estado-caja:last-of-type{margin-bottom:0;}
+  .frase-estado-caja.desnuda{border-color:var(--separador);}
+  .frase-estado-caja.vestida{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .frase-estado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .frase-estado-caja.desnuda .frase-estado-etiqueta{color:var(--lejos);}
+  .frase-estado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .6rem 0;}
+  .frase-estado-texto:last-child{margin-bottom:0;}
+  .frase-estado-texto em.frase{color:var(--blanco-humo); font-style:italic;}
+  .frase-estado-texto em.estado{color:var(--oro); font-style:italic;}
+  .frase-estado-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.92rem; line-height:1.65; color:var(--gris-calido); margin:0;}
+  @media (max-width:600px){
+    .frase-estado-opciones{grid-template-columns:1fr;}
+  }
 </style>
 </head>
 <body>
@@ -332,11 +369,48 @@
   <p>Eso se arregló de pie, frente a los platos, sin registro, y no existe en ningún lado.</p>
 </div>
 
+<div class="geo">
+  <span class="geo-label">La frase y el estado</span>
+  <p class="geo-instruccion">Escribe una frase que recuerdes de la peor semana de alguien cercano —o de la tuya—. Después marca en qué estado estaba el que la dijo. El sistema te va a mostrar la frase sola, como queda en un grupo, y la frase con el estado puesto.</p>
+  <div class="panel">
+    <div class="frase-estado">
+      <label for="fraseEstado">La frase que quedó de esa semana</label>
+      <textarea id="fraseEstado" placeholder="Escribila tal como la recuerdas. Propia o de otro."></textarea>
+
+      <span class="frase-estado-sub">En qué estado estaba el que la dijo</span>
+      <div class="frase-estado-opciones" id="fraseEstadoOpciones">
+        <button class="frase-estado-btn" data-v="agotamiento" aria-pressed="false">Agotamiento</button>
+        <button class="frase-estado-btn" data-v="dolor" aria-pressed="false">Dolor</button>
+        <button class="frase-estado-btn" data-v="miedo" aria-pressed="false">Miedo</button>
+        <button class="frase-estado-btn" data-v="rabia" aria-pressed="false">Rabia</button>
+        <button class="frase-estado-btn" data-v="otro" aria-pressed="false">Otro</button>
+        <button class="frase-estado-btn" data-v="nose" aria-pressed="false">No sé</button>
+      </div>
+
+      <button class="accion" id="btnFraseEstado" disabled>Ver la frase con el estado</button>
+      <div class="frase-estado-resultado" id="fraseEstadoResultado"></div>
+    </div>
+  </div>
+</div>
+
 <div class="bloque">
-  <p><span class="rotulo">La próxima vez</span>Si hay un grupo o una conversación que tienes que seguir abriendo por razones prácticas, y adentro hay algo que preferirías no ver: saca los datos.</p>
-  <p>Anótalos en otro lado, mándatelos a ti mismo, ponlos donde quieras. Media hora de trabajo.</p>
-  <p>Después no hagas nada más. No lo cierres, no lo borres, no lo hables.</p>
-  <p>Y si es una conversación que tienes que seguir teniendo con esa persona, tenla en otro lado — por teléfono, en un café, caminando. Lo que se diga ahí no va a quedar, y es lo único que puede correr las cuatro frases de lugar.</p>
+  <p>Lo que acabas de producir no es una mejor versión de la frase. Son dos versiones de la misma cosa, y en un grupo aparece solo una.</p>
+  <p>La frase desnuda —la que queda en el chat, con fecha y sin estado— es la que el otro lee tres meses después, cuando entra a buscar la dirección del cementerio. Dice exactamente lo que dice, y no dice lo que estabas pasando cuando la escribiste.</p>
+  <p>La frase con el estado puesto agrega una sola cosa, y con eso alcanza para que signifique otra cosa. <em>Estuve sola estos cuatro meses</em>, dicho con agotamiento, no es una acusación: es un pedido. Dicho con rabia, sí es una acusación. Dicho con dolor, es un reconocimiento. La misma frase, cuatro cosas distintas.</p>
+  <p>Y hay un caso particular que conviene mirar. Si marcaste <em>no sé</em>, es porque el estado no quedó en ningún lado y ya no se puede reconstruir —ni por vos, ni por el otro, ni por nadie. Eso es lo que pasa con la mayoría de las frases de la peor semana: queda la frase, se pierde el estado, y la frase vuelve a leerse como si el estado nunca hubiera existido.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Si hay un grupo o una conversación que tenés que seguir abriendo por razones prácticas, y adentro hay algo que preferirías no ver: sacá los datos. Anotalos en otro lado. Media hora de trabajo.</p></div>
+  <div class="paso"><span class="paso-nombre">No lo cierres</span><p>No cierres el grupo, no lo borres, no avises que estás sacando los datos. Un archivo que dejó de tener función no necesita ceremonia: se deja quieto y se abre cada vez menos.</p></div>
+  <div class="paso"><span class="paso-nombre">Si alguna vez lo hablás</span><p>Si en algún momento vuelve el tema, que sea en persona, en la cocina, lavando platos o caminando. Lo que se diga ahí no va a quedar, y es lo único que puede correr esas frases de lugar.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Abrí la nota del teléfono. Anotá dos cosas: la fecha en que sacaste los datos del grupo, y una sola palabra sobre cómo te quedó el cuerpo. <em>Alivio</em>, <em>raro</em>, <em>nada</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">Esperá un mes</span><p>Volvé a la nota en un mes. Si en ese mes no abriste el grupo por nada, ya está. Si lo abriste igual, es un dato: el grupo no era solo un lugar práctico.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. En algún momento del próximo mes vas a abrir ese grupo por curiosidad, sin ningún motivo práctico, y te vas a encontrar con la misma frase que dejaste ahí. Cuando pase, abrí la nota y agregá la fecha. Si esa vez repusiste el estado antes de leer, escribí <em>repuse</em>. Si leíste la frase desnuda, escribí <em>desnuda</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de leer esa frase: es tener anotado cuántas veces la leíste con el estado puesto y cuántas veces la leíste como la lee el grupo.</strong></p>
 </div>
 
 <div class="bloque">
@@ -357,7 +431,7 @@
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
   (function(){
-    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.registro,.geo,.sendero';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -368,6 +442,73 @@
       });
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // la frase y el estado
+    var frase=document.getElementById('fraseEstado');
+    var botones=document.querySelectorAll('#fraseEstadoOpciones .frase-estado-btn');
+    var btn=document.getElementById('btnFraseEstado');
+    var salida=document.getElementById('fraseEstadoResultado');
+
+    var estado=null;
+
+    function habilitar(){
+      btn.disabled = !(frase.value.trim().length>=3 && estado);
+    }
+
+    botones.forEach(function(b){
+      b.addEventListener('click',function(){
+        botones.forEach(function(o){o.setAttribute('aria-pressed','false');});
+        b.setAttribute('aria-pressed','true');
+        estado=b.dataset.v;
+        habilitar();
+      });
+    });
+    frase.addEventListener('input',habilitar);
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    var nombres={
+      agotamiento:'agotamiento',
+      dolor:'dolor',
+      miedo:'miedo',
+      rabia:'rabia',
+      otro:'otra cosa',
+      nose:'no lo sabés'
+    };
+
+    var lecturas={
+      agotamiento:'Dicha con agotamiento, esa frase no es una acusación: es un pedido. Alguien que no da más y que lo dice con las palabras que tiene a mano. En el grupo quedó como acusación.',
+      dolor:'Dicha con dolor, esa frase es un reconocimiento. Alguien que dice por primera vez en voz alta lo que le pasó, sin estar pidiendo nada. En el grupo quedó como reclamo.',
+      miedo:'Dicha con miedo, esa frase es casi siempre otra cosa: alguien que está asustado y que no puede decirlo. En el grupo quedó como declaración.',
+      rabia:'Dicha con rabia, esa frase sí es una acusación, y probablemente justa. Lo que cambia es que ahora sabés que estaba ahí, presente, mientras la escribía. En el grupo quedó como acusación y ganó razón al pasar los meses.',
+      otro:'No importa qué era exactamente: importa que hay algo que estaba ahí y que el grupo no guardó. Cualquiera sea el estado, la frase leída sin él dice otra cosa.',
+      nose:'No lo sabés. Eso es lo que le pasa a la mayoría de las frases de la peor semana: queda la frase, se pierde el estado, y la frase vuelve a leerse como si el estado nunca hubiera existido. No es un problema de memoria: es que el estado no se puede reconstruir.'
+    };
+
+    btn.addEventListener('click',function(){
+      var f=frase.value.trim();
+      if(!f || !estado){ salida.innerHTML=''; return; }
+
+      var html='';
+
+      html+='<div class="frase-estado-caja desnuda">';
+      html+='<span class="frase-estado-etiqueta">La frase como quedó en el grupo</span>';
+      html+='<p class="frase-estado-texto"><em class="frase">'+escapar(f)+'</em></p>';
+      html+='<p class="frase-estado-nota">Sin estado, sin saber quién la escribió, sin saber a qué hora. Así la encuentra el otro tres meses después.</p>';
+      html+='</div>';
+
+      html+='<div class="frase-estado-caja vestida">';
+      html+='<span class="frase-estado-etiqueta">La misma frase, con el estado puesto</span>';
+      html+='<p class="frase-estado-texto">'+escapar(f)+', <em class="estado">con '+nombres[estado]+'</em>.</p>';
+      html+='<p class="frase-estado-nota">'+lecturas[estado]+'</p>';
+      html+='</div>';
+
+      salida.innerHTML=html;
+    });
   })();
 </script>
 </body>
