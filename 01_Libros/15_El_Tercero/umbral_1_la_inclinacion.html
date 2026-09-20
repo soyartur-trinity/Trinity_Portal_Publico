@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -271,27 +266,22 @@
 </div>
 
 <div class="geo" id="geo01">
-  <span class="geo-label">Ocho frases</span>
+  <span class="geo-label">El verbo de querer</span>
+  <p class="geo-instruccion">Escrib&iacute; lo que dijiste esta semana sobre una inteligencia artificial. Una frase sola, a alguien que te escuchaba, con las palabras que usaste. Despu&eacute;s el sistema busca cu&aacute;ntas palabras de querer hay adentro.</p>
   <div class="panel">
-    <div class="rotulo" id="e01"></div>
-    <div class="opciones">
-      <button type="button" data-v="1">quiere algo</button>
-      <button type="button" data-v="0">tiene pendiente</button>
-    </div>
-    <div class="contador" id="c01"></div>
+    <label class="rotulo" for="f01">Lo que dijiste sobre la IA esta semana</label>
+    <textarea class="campo" id="f01" rows="3" placeholder="Ejemplo: le pregunt&eacute; algo y me contest&oacute; bien. La verdad es que me ayud&oacute;, aunque a veces se pone rara."></textarea>
+    <button type="button" class="accion" id="b01" disabled>Ver qué palabras usaste</button>
   </div>
   <div class="geo-estado"><span class="glosa" id="g01"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+
 <div class="bloque">
-  <p>Esto no se resuelve, se usa. De aquí en adelante, cada vez que en este libro pase algo raro en una mesa, la explicación va a estar en esta misma pieza.</p>
-  <p>Por qué no se cansa: la pendiente no se gasta. Por qué su objeción no arriesga nada: no hay quién arriesgue. Por qué te devuelve tu voz más clara y no queda sabiendo nada de ti: la pendiente ordena, y nadie escucha.</p>
-  <p><strong>No hace falta saber qué es algo para describir con precisión qué hace.</strong> La medicina funcionó siglos así, y curó bastante antes de entender.</p>
-  <p><strong>Con quién</strong> La misma persona del umbral anterior.</p>
-  <p><strong>El gesto</strong> Esta semana, cuando hables de inteligencia artificial con alguien, fíjate una sola cosa: qué verbo usas. Si te sale <em>me quiso ayudar</em>, <em>se puso pesado</em>, <em>hoy está raro</em> — cámbialo por lo que pasó. <em>Le pregunté tal cosa y me devolvió tal otra.</em> Nada más.</p>
-  <p><strong>Cuando no salga</strong> Va a sonar afectado, y probablemente alguien te mire raro. Es esperable: todos en esa mesa usan el verbo de querer, y el que no lo usa se nota. Aguantalo tres o cuatro veces antes de decidir si sirve.</p>
-  <p><strong>La trampa</strong> Reemplazar el verbo y quedarte tranquilo. Decir <em>me devolvió</em> y seguir creyéndole igual que antes es cambiar la palabra y no la cuenta. Lo que importa no es cómo lo nombres: es qué esperas de eso.</p>
-  <p><strong>Guardar</strong> Una frase tuya con verbo de querer, textual. Y al lado, la misma frase sin él.</p>
-  <p><strong>Lo que no se traslada</strong> Saber qué quieres tú. Es lo único de una conversación que ninguna de las dos partes puede averiguar del otro lado, y es lo que hace que valga la pena que haya dos.</p>
+  <p>Lo que acabas de producir no es una crítica a cómo hablas. Es un dato sobre cuántas veces, en tu propio idioma, tratás a la IA como alguien.</p>
+  <p><strong>Cero palabras de querer</strong> es el caso raro. Significa que cuando hablas de esto, hablás de lo que pasó y no de lo que la cosa hizo. Es el registro que el libro recomienda y que casi nadie tiene de fábrica.</p>
+  <p><strong>Una o dos palabras</strong> es lo más frecuente. El idioma arrastra: <em>me ayudó</em>, <em>me contestó</em>, <em>se puso rara</em>. No es un error y no hace falta corregirlo. Lo que importa es que ahora sabés que están ahí, y que de ahí a creerle como se le cree a alguien hay un paso corto que se da sin notarlo.</p>
+  <p><strong>Tres o más</strong> quiere decir que el registro ya está organizado alrededor de la atribución. No es un problema de vocabulario: es que la conversación con la IA ocupa en tu vida un lugar parecido al que ocupan las personas, y el lenguaje lo registró antes que vos.</p>
 </div>
 
 <div class="perla"><p>No hay nadie.<br>Y va para algún lado.<br>Las dos cosas,<br>al mismo tiempo.</p></div>
@@ -306,6 +296,47 @@
   <p><em>Umbrales II, III y IV. Completan</em> La mesa.</p>
 </div>
 
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>La misma persona del umbral anterior.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, cuando hables de inteligencia artificial con alguien, escuchate. Una sola cosa: qué verbo te sale.<br>
+    <strong>2.</strong> Cada vez que aparezca un verbo de querer —<em>me quiso ayudar</em>, <em>se puso pesado</em>, <em>hoy está raro</em>— decilo distinto: <em>le pregunté tal cosa y me devolvió tal otra</em>.<br>
+    <strong>3.</strong> Hacelo tres o cuatro veces. No te evalúes mientras lo hacés.<br>
+    <strong>4.</strong> Fijate si te resulta afectado y si el otro te mira raro. Es esperable: todos usan el verbo de querer, y el que no lo usa se nota.<br>
+    <strong>5.</strong> Anotá una frase tuya con verbo de querer, textual. Y al lado, la misma frase sin él.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Va a sonar afectado, y probablemente alguien te mire raro. Aguantalo tres o cuatro veces antes de decidir si sirve.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Reemplazar el verbo y quedarte tranquilo. Decir <em>me devolvió</em> y seguir creyéndole igual que antes es cambiar la palabra y no la cuenta. Lo que importa no es cómo lo nombres: es qué esperás de eso.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Una frase tuya con verbo de querer, textual. Y al lado, la misma frase sin él.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Saber qué quieres tú. Es lo único de una conversación que ninguna de las dos partes puede averiguar del otro lado, y es lo que hace que valga la pena que haya dos.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que menciones la IA en una conversación vas a decir <em>me dijo</em> o <em>me contestó</em> sin darte cuenta, y te vas a acordar de esto recién después. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez reformulaste, escribí <em>reformulé</em>. Si no, escribí <em>no reformulé</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de usar el verbo de querer: es tener anotado cuántas veces te acordaste de que la cosa no quiere nada.</strong></p>
+</div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -319,26 +350,63 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo01'); if(!raiz) return;
-    var frases=['El auto me pidió aceite','El reloj me despertó','El perro quiso salir','El programa decidió cerrarse','La puerta no quiere cerrar','El mercado castigó la noticia','La planta pide agua','Me contestó mal'], i=0, a=0;
-    var e=document.getElementById('e01'), c=document.getElementById('c01'), g=document.getElementById('g01');
-    var bs=raiz.querySelectorAll('.opciones button');
-    function pintar(){
-      if(i<frases.length){
-        e.textContent=frases[i];
-        c.textContent=(i+1)+' de '+frases.length;
-      } else {
-        e.textContent=''; c.textContent='';
-        raiz.querySelector('.opciones').style.display='none';
-        g.innerHTML='En ' + a + ' de las ocho usaste un verbo de querer para algo que no quiere.<br>No es un error tuyo: es como est&aacute; hecho el idioma. Y es la &uacute;nica herramienta que tienes para hablar de esto.';
-      }
+    var t=document.getElementById('f01'); if(!t) return;
+    var b=document.getElementById('b01'), g=document.getElementById('g01');
+    var palabrasQuerer = [
+      'quiere','quieren','quería','querían','quiso','quisieron','querría','querrían',
+      'pide','piden','pedía','pedían','pidió','pidieron','pedir',
+      'desea','desean','deseaba','deseaban','deseó','desearon','desear',
+      'entiende','entienden','entendía','entendían','entendió','entendieron','entender',
+      'piensa','piensan','pensaba','pensaban','pensó','pensaron','pensar',
+      'sabe','saben','sabía','sabían','supo','supieron',
+      'se niega','se negó','se negaba','se negaban',
+      'me ayuda','me ayudó','me ayudaba','me ayudan','me ayudaron',
+      'me entiende','me entendió','me entendía',
+      'se puso','se pone','se ponía','se pusieron','se ponen','se ponían',
+      'me mintió','me miente','me mentía',
+      'es amable','es honesto','es honesta','es sincero','es sincera',
+      'tiene ganas','tenía ganas',
+      'está raro','está rara','está raros','está raras',
+      'me dijo','me dice','me decía','me dijeron'
+    ];
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
     }
-    bs.forEach(function(b){ b.addEventListener('click',function(){
-      if(i>=frases.length) return;
-      if(b.getAttribute('data-v')==='1') a++;
-      i++; pintar();
-    }); });
-    pintar();
+    t.addEventListener('input',function(){
+      b.disabled = t.value.trim().length < 8;
+    });
+    b.addEventListener('click',function(){
+      var v=t.value.trim();
+      if(!v) return;
+      b.disabled=true; t.readOnly=true;
+      var low = ' ' + v.toLowerCase().replace(/[.,;:!?¡¿()«»""]/g, ' ') + ' ';
+      low = low.replace(/\s+/g,' ');
+      var encontradas = [];
+      palabrasQuerer.forEach(function(p){
+        var re = new RegExp('\\s' + p.replace(/\s+/g,'\\s+') + '\\s');
+        if(re.test(low) && encontradas.indexOf(p) < 0){
+          encontradas.push(p);
+        }
+      });
+      var n = encontradas.length;
+      var lista = '';
+      if(n>0){
+        lista = 'Palabras que encontré: <em>' + encontradas.slice(0,8).map(escapar).join(', ') + '</em>.';
+      } else {
+        lista = 'No encontré ninguna palabra de querer.';
+      }
+      var lectura = '';
+      if(n === 0){
+        lectura = 'Cero. Es el caso raro. Hablás de lo que pasó y no de lo que la cosa hizo.';
+      } else if(n <= 2){
+        lectura = 'Una o dos. Es lo más frecuente y no hace falta corregirlo. Ahora sabés que están ahí.';
+      } else {
+        lectura = 'Tres o más. El registro ya está organizado alrededor de la atribución. No es vocabulario: es que la conversación ocupa un lugar parecido al de las personas.';
+      }
+      g.innerHTML = lista + '<br><br>' + lectura;
+    });
   })();
 
 
