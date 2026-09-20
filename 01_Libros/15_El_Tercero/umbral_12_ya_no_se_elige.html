@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -146,8 +142,12 @@
     font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
     color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
   .marcable:hover{color:var(--blanco-humo);}
-  .marcable[aria-pressed="true"]{color:var(--oro);}
-  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .marcable[data-estado="1"], .marcable[data-estado="2"]{color:var(--oro);}
+  .marcable[data-estado="1"]::before{content:'\25C6  '; color:var(--oro-tenue); font-size:.7rem;}
+  .marcable[data-estado="2"]::before{content:'\25C6\2713  '; color:var(--oro); font-size:.7rem;}
+  .leyenda{margin-top:1rem; font-family:'Cormorant Garamond',serif; font-size:.92rem;
+    color:var(--lejos); text-align:center; line-height:1.7;}
+  .leyenda span{color:var(--oro-tenue); margin:0 .3rem;}
   .campo{display:block; width:100%; background:rgba(201,168,76,.012);
     border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
     font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
@@ -171,7 +171,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -267,26 +266,36 @@
   <p>Todo el libro viene ofreciendo senderos: gestos chicos, hechos por una persona, en una semana, con alguien. Eso funciona mientras haya un borde: aquí termina lo que decide otro y aquí empieza lo que decido yo.</p>
   <p><strong>Aquí el borde se disolvió.</strong></p>
   <p>No hay un momento en que la consulta entre. No hay a quién decirle que no la traiga. No hay una mesa donde proponer que esta vez no consultemos. La distinción entre lo que decidiste tú y lo que llegó decidido dejó de tener contorno — y sin contorno, ningún gesto individual alcanza, porque no hay dónde apoyarlo.</p>
-  <p>Ningún gesto de una persona sola vuelve a poner ese borde donde estaba. Pero hay uno que sí está al alcance y hace algo concreto: <strong>que se sepa que la silla está puesta.</strong> Lo que se nombra vuelve a tener contorno, y un contorno es justamente lo que hacía falta para apoyar cualquier otra cosa.</p>
+  <p>Sería deshonesto que este umbral terminara con un ejercicio de una semana que arregla esto. No lo arregla nada de lo que una persona pueda hacer sola.</p>
 </div>
 
 <div class="geo" id="geo12">
   <span class="geo-label">D&oacute;nde no elegiste</span>
+  <p class="geo-instruccion">En el &uacute;ltimo a&ntilde;o. Un clic marca que te pas&oacute;. Segundo clic marca que sab&iacute;as que hab&iacute;a IA. Tercer clic desmarca.</p>
   <div class="panel">
-    <button type="button" class="marcable" data-i="0" aria-pressed="false">Mandaste un curr&iacute;culum</button>
-    <button type="button" class="marcable" data-i="1" aria-pressed="false">Pediste un cr&eacute;dito o un plan de pago</button>
-    <button type="button" class="marcable" data-i="2" aria-pressed="false">Llegaste a una consulta m&eacute;dica con informaci&oacute;n previa</button>
-    <button type="button" class="marcable" data-i="3" aria-pressed="false">Te calificaron en una aplicaci&oacute;n</button>
-    <button type="button" class="marcable" data-i="4" aria-pressed="false">Discutiste un cargo con una empresa sin hablar con nadie</button>
-    <button type="button" class="marcable" data-i="5" aria-pressed="false">Te lleg&oacute; un turno, una tarifa o una respuesta sin que interviniera una persona</button>
-    <button type="button" class="marcable" data-i="6" aria-pressed="false">Rendiste o entregaste algo que fue corregido con IA</button>
-    <button type="button" class="marcable" data-i="7" aria-pressed="false">Te rechazaron sin explicaci&oacute;n</button>
-    <button type="button" class="marcable" data-i="8" aria-pressed="false">Alguien decidi&oacute; algo sobre ti usando IA y no te lo dijo</button>
-    <div class="contador" id="c12">0 marcadas</div>
+    <button type="button" class="marcable" data-estado="0">Mandaste un curr&iacute;culum</button>
+    <button type="button" class="marcable" data-estado="0">Pediste un cr&eacute;dito o un plan de pago</button>
+    <button type="button" class="marcable" data-estado="0">Llegaste a una consulta m&eacute;dica con informaci&oacute;n previa</button>
+    <button type="button" class="marcable" data-estado="0">Te calificaron en una aplicaci&oacute;n</button>
+    <button type="button" class="marcable" data-estado="0">Discutiste un cargo con una empresa sin hablar con nadie</button>
+    <button type="button" class="marcable" data-estado="0">Te lleg&oacute; un turno, una tarifa o una respuesta sin que interviniera una persona</button>
+    <button type="button" class="marcable" data-estado="0">Rendiste o entregaste algo que fue corregido con IA</button>
+    <button type="button" class="marcable" data-estado="0">Te rechazaron sin explicaci&oacute;n</button>
+    <button type="button" class="marcable" data-estado="0">Alguien decidi&oacute; algo sobre ti usando IA y no te lo dijo</button>
+  </div>
+  <div class="leyenda">
+    <span>&#9670;</span> me pas&oacute; &nbsp;&middot;&nbsp; <span>&#9670;&#10003;</span> me pas&oacute; y sab&iacute;a que hab&iacute;a IA
   </div>
   <div class="geo-estado"><span class="glosa" id="g12"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">En el &uacute;ltimo a&ntilde;o.</p>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+
+<div class="bloque">
+  <p>La diferencia entre las dos marcas es el dato. Si marcaste varias y solo en algunas sab&iacute;as que hab&iacute;a IA, esa diferencia no es despiste: es exactamente lo que este umbral describe. La decisi&oacute;n se tom&oacute; sin que hubiera un lugar donde enterarse.</p>
+  <p>Puedes leerlo de dos maneras. Una: que en el &uacute;ltimo a&ntilde;o decisiones sobre ti se tomaron en lugares donde no hab&iacute;a nadie a quien preguntarle. Otra: que saber o no saber no cambia el resultado, y la distinci&oacute;n es un detalle de curiosidad. Las dos lecturas son ciertas, y el umbral no elige por ti.</p>
+  <p>Lo que s&iacute; se puede decir es que la primera lectura tiene una consecuencia que la segunda no: si no sabes d&oacute;nde se decidi&oacute;, tampoco sabes cu&aacute;ndo volver&aacute; a decidirse, ni con qu&eacute; dato.</p>
+</div>
+
 <div class="bloque">
   <p>Porque decir que no hay gesto individual y quedarse ahí es la peor manera de terminar un capítulo: deja al lector con el problema y sin nada en la mano.</p>
   <p>Hay dos cosas, chicas y verdaderas.</p>
@@ -294,15 +303,51 @@
   <p><strong>La segunda es acordarse del mostrador.</strong> Del otro lado de casi todos estos procesos hay alguien: la que lee los doce currículums, el que atiende el reclamo, la maestra que corrige. Esa persona tampoco eligió la silla atornillada, y en general la tiene puesta encima.</p>
   <p>Tratarla como si fuera el sistema es el error más fácil de cometer y el único que empeora las dos partes.</p>
   <p><em>⟐ Este umbral es el más nuevo del libro y el que va a envejecer primero. Lo que hoy se describe aquí va a estar regulado, o no, dentro de unos años, y de una manera que nadie puede anticipar. Se escribe igual, porque un libro sobre la inteligencia artificial en el entramado social que se quedara en la mesa familiar estaría mirando para otro lado a propósito.</em></p>
-  <p><strong>Con quién</strong> Alguien que trabaje en un lugar donde se decida algo sobre otras personas. Una oficina, una escuela, un consultorio, un banco, un municipio.</p>
-  <p><strong>El gesto</strong> Pregúntale qué parte de su trabajo la hace ahora una IA, y si alguien se lo avisó a la gente del otro lado del mostrador.</p>
-  <p><strong>Cuando no salga</strong> Puede que te conteste que no sabe. Es la respuesta más frecuente y es el dato: mucha gente trabaja adentro de procesos que no puede describir. No insistas ni la pongas en aprieto — la pregunta ya hizo lo que tenía que hacer.</p>
-  <p><strong>La trampa</strong> Convertir la conversación en una denuncia. En cuanto la otra persona siente que la estás acusando de algo, deja de contarte lo que sabe, y era eso lo único que estabas buscando.</p>
-  <p><strong>Guardar</strong> Qué te contestó. Y qué parte de lo que te contó no sabías.</p>
-  <p><strong>Lo que no se traslada</strong> Elegir si hay tercero. En la mesa alguien decidía convocarlo y eso se podía conversar. Aquí la silla ya está puesta, y lo único que queda es que se sepa que está.</p>
 </div>
 
-<div class="perla"><p>Hay una versión de ti<br>que llega antes que ti<br>a puertas donde nunca estuviste.</p></div>
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Alguien que pueda darte informaci&oacute;n sobre una decisi&oacute;n que se tom&oacute; sobre ti. No la persona que decide: la que atiende, la que contesta el tel&eacute;fono, la que recibe el reclamo.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Piensa en una decisi&oacute;n que se tom&oacute; sobre ti en el &uacute;ltimo a&ntilde;o y que no entendiste del todo. Un rechazo, una tarifa, una calificaci&oacute;n, un turno, una respuesta autom&aacute;tica.<br>
+    <strong>2.</strong> Escribe o llama al lugar donde se tom&oacute; esa decisi&oacute;n. No para reclamar: para preguntar c&oacute;mo se tom&oacute;.<br>
+    <strong>3.</strong> Pregunta espec&iacute;ficamente si intervino una persona o un sistema.<br>
+    <strong>4.</strong> Aguanta la respuesta, sea la que sea. Puede que no te contesten, o que te contesten algo que no responde.<br>
+    <strong>5.</strong> Anota qu&eacute; te dijeron, textual. Y si no te contestaron, anota eso tambi&eacute;n.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que te den una respuesta gen&eacute;rica, o que te deriven a otro lado, o que no te contesten. Eso tambi&eacute;n es el dato: la decisi&oacute;n que se tom&oacute; sobre ti no tiene un lugar donde puedas preguntar c&oacute;mo se tom&oacute;.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Convertirlo en un reclamo. En cuanto pidas una explicaci&oacute;n como si tuvieras derecho a ella, la conversaci&oacute;n se convierte en un tr&aacute;mite y ya no te van a contar nada. La pregunta tiene que ser genuina.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Qu&eacute; te contestaron, textual. Y si no te contestaron, cu&aacute;nto tardaron en no contestarte.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Tener a qui&eacute;n preguntarle. En la mesa hab&iacute;a alguien a quien pedirle explicaciones. Aqu&iacute; la decisi&oacute;n se tom&oacute; en alg&uacute;n lugar donde no hay nadie que pueda explic&aacute;rtela.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La pr&oacute;xima vez que te enteres de una decisi&oacute;n tomada sobre ti sin explicaci&oacute;n, la tentaci&oacute;n de dejar pasar va a estar ah&iacute;. Cuando pase, no hagas nada distinto: anota la fecha y qu&eacute; decisi&oacute;n fue. La cantidad de veces que anotas es el mecanismo.</p>
+</div>
+
+<div class="perla"><p>Hay una versi&oacute;n de ti<br>que llega antes que ti<br>a puertas donde nunca estuviste.</p></div>
 
 <div class="cita">
   <p><em>La burocracia es la forma más tiránica de gobierno: el dominio de Nadie.</em></p>
@@ -312,7 +357,6 @@
 <div class="bloque">
   <p><em>Umbral XIII y cierre del libro.</em></p>
 </div>
-
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -327,16 +371,34 @@
 
   (function(){
     var raiz=document.getElementById('geo12'); if(!raiz) return;
-    var bs=raiz.querySelectorAll('.marcable'), c=document.getElementById('c12'), g=document.getElementById('g12');
-    function total(){ var n=0; bs.forEach(function(b){ if(b.getAttribute('aria-pressed')==='true') n++; }); return n; }
-    bs.forEach(function(b){ b.addEventListener('click',function(){
-      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true' ? 'false':'true');
-      var n=total();
-      c.textContent = n + (n===1 ? ' marcada' : ' marcadas');
-      g.innerHTML = n>0 ? 'Marcaste ' + n + '.<br>En todas hubo un tercero. En ninguna lo convocaste t&uacute;.' : '';
-    }); });
+    var bs=raiz.querySelectorAll('.marcable');
+    var g=document.getElementById('g12');
+    function actualizar(){
+      var c1=0, c2=0;
+      bs.forEach(function(x){
+        var v = parseInt(x.getAttribute('data-estado')||'0');
+        if(v >= 1) c1++;
+        if(v === 2) c2++;
+      });
+      if(c1 === 0){ g.innerHTML=''; return; }
+      var restantes = c1 - c2;
+      var mensaje = 'Te pasaron <strong>' + c1 + '</strong>. De esas, sab&iacute;as que hab&iacute;a IA en <strong>' + c2 + '</strong>.<br>';
+      if(restantes > 0){
+        mensaje += 'En las <strong>' + restantes + '</strong> restantes, la decisi&oacute;n se tom&oacute; sin que supieras qui&eacute;n la tomaba.';
+      } else {
+        mensaje += 'En todas sab&iacute;as que hab&iacute;a IA. Esta vez, la invisibilidad no fue tu caso.';
+      }
+      g.innerHTML = mensaje;
+    }
+    bs.forEach(function(b){
+      b.addEventListener('click', function(){
+        var e = parseInt(b.getAttribute('data-estado')||'0');
+        e = (e + 1) % 3;
+        b.setAttribute('data-estado', e);
+        actualizar();
+      });
+    });
   })();
-
 
   (function(){
     var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
