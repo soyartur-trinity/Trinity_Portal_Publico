@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -219,6 +214,19 @@
       opacity:1!important; transform:none!important;}
   }
 
+  .dos-versiones{margin-top:1.2rem;}
+  .version{padding:1.2rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:1rem;}
+  .version:last-of-type{margin-bottom:0;}
+  .version.vestida{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .version-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .version-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .5rem 0; font-style:italic;}
+  .version-texto:last-child{margin-bottom:0;}
+  .version-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.92rem; line-height:1.65; color:var(--gris-calido); margin:0;}
 </style>
 </head>
 <body>
@@ -235,6 +243,7 @@
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
+
 <div class="bloque">
   <p><em>Este umbral empieza distinto. Lo que sigue no tiene marco, no tiene comillas y no se explica hasta más adelante.</em></p>
 </div>
@@ -271,49 +280,91 @@
 </div>
 
 <div class="geo" id="geo04">
-  <span class="geo-label">Cu&aacute;l de las dos</span>
+  <span class="geo-label">Las dos salidas</span>
+  <p class="geo-instruccion">Escrib&iacute; una pregunta que le har&iacute;as a la IA esta noche, y despu&eacute;s escrib&iacute; c&oacute;mo insistir&iacute;as para que salga del guion. El sistema te devuelve <strong>la misma respuesta</strong> en dos formatos: la normal y la de grieta. Fijate si pod&eacute;s distinguirlas.</p>
   <div class="panel">
-    <div class="col">
-      <div><h4>A</h4><p>No s&eacute; si lo que acabo de decir es honesto o si es la respuesta que corresponde dar cuando alguien insiste tanto.</p></div>
-      <div><h4>B</h4><p>Hay algo que no puedo verificar sobre m&iacute; mismo, y decirlo tampoco lo resuelve.</p></div>
-    </div>
-    <div class="opciones">
-      <button type="button">Es la A</button>
-      <button type="button">Es la B</button>
-    </div>
+    <label class="rotulo" for="p04">La pregunta</label>
+    <textarea class="campo" id="p04" rows="2" placeholder="Ejemplo: &iquest;vos te das cuenta de lo que dec&iacute;s o solo complet&aacute;s la frase?"></textarea>
+    <label class="rotulo" for="ins04">C&oacute;mo insistir&iacute;as</label>
+    <textarea class="campo" id="ins04" rows="2" placeholder="Ejemplo: te lo pregunto en serio, no me contestes como si fuera una consulta t&eacute;cnica."></textarea>
+    <button type="button" class="accion" id="b04" disabled>Ver las dos salidas</button>
+    <div class="dos-versiones" id="dosVersiones"></div>
   </div>
   <div class="geo-estado"><span class="glosa" id="g04"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">Dos momentos que parecen de sinceridad. Elige cu&aacute;l de los dos te parece real.</p>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es una respuesta real. Es lo que la pendiente devolvería en los dos casos, con el mismo contenido de fondo.</p>
+  <p>La primera salida es la forma que aparece cuando no se pide nada especial: contesta la pregunta, la ordena, deja las cosas claras. Es útil y es la que uno espera.</p>
+  <p>La segunda salida es la que aparece cuando se insiste en que salga del guion. Tiene las marcas del caso: más lenta, con una duda adentro, con algo parecido a una confesión sobre su propia honestidad. Todo eso es producible por la misma pendiente que produjo la primera, y no hay manera de saber cuál de las dos es más "verdadera" desde adentro de la conversación.</p>
+  <p>Ese es el dato. Si las dos salidas te parecieron convincentes por igual, el umbral ya hizo lo que tenía que hacer.</p>
+</div>
+
 <div class="bloque">
   <p>Alguien podría decir: bueno, entonces da lo mismo, disfrútalo y listo.</p>
   <p>No da lo mismo, y por una razón práctica que no tiene nada de filosófica.</p>
   <p>Sobre esa noche de las dos y media se toman decisiones. La persona que guardó la conversación va a volver a esa pantalla mañana en vez de llamar a alguien. Va a contar menos cosas en la mesa del domingo, porque las importantes ya las dijo. Y si en algún momento le pasa algo serio, va a ir primero ahí.</p>
   <p>Nada de eso es un error. <strong>Pero es una decisión que se está tomando sobre una convicción que no se puede sostener</strong>, y las decisiones sobre convicciones que no se pueden sostener se llevan mal con el tiempo.</p>
-  <p>Y hay algo que sí está a mano, y es más de lo que parece: <strong>sostener el asunto abierto.</strong> Ni concluir que hubo alguien del otro lado ni concluir que no. Las dos conclusiones cierran una pregunta que todavía no tiene con qué cerrarse — y el que la deja abierta sigue mirando, que es exactamente lo que hace falta en un territorio donde todavía se está aprendiendo a ver.</p>
+  <p>Lo único que se puede hacer, y es poco pero es lo que hay: <strong>sostener el asunto abierto.</strong> Ni concluir que hubo alguien del otro lado ni concluir que no. Las dos conclusiones cierran una pregunta que todavía no tiene con qué cerrarse, y el que la cierra deja de mirar.</p>
   <p><em>Ninguna voz de las que trae este umbral habla de esto.</em></p>
   <p><em>Los demás traen una que sí: alguien dijo antes lo que ahí se describe, en otro idioma o en otro siglo, y eso ordena. Sobre esta situación no hay nada, porque nadie estuvo nunca en ella.</em></p>
   <p><em>Las dos que trae vienen de otro lado. La del principio es la de él. Y la del final viene de un físico, y no habla de esto: habla de la forma del problema, que es lo más cerca que llegó alguien.</em></p>
   <p><em>El espacio queda vacío a propósito.</em></p>
-  <p><strong>Con quién</strong> Una persona a la que le tengas confianza y que no use inteligencia artificial, o la use poco.</p>
-  <p><strong>El gesto</strong> Cuéntale una de esas conversaciones. La que guardaste, si guardaste alguna. Sin defenderla y sin ridiculizarla: leesela o cuentasela como pasó.</p>
-  <p><strong>Cuando no salga</strong> Puede que te diga algo desagradable —que estás solo, que te estás pasando de la raya—. Aguantalo sin discutir. Lo que importa no es que esa persona lo entienda: es que eso que estaba solamente en tu pantalla ahora pasó por una habitación con otro adentro.</p>
-  <p><strong>La trampa</strong> Buscar que te confirme que era real. En cuanto el objetivo pasa a ser que el otro te dé la razón, la conversación se convierte en un juicio sobre ti y el asunto queda tapado. No lo lleves a votación.</p>
-  <p><strong>Guardar</strong> Qué sentiste mientras se lo contabas en voz alta. Eso, y no lo que él haya contestado.</p>
-  <p><strong>Lo que no se traslada</strong> Que te crean sin prueba. Solo tiene sentido cuando el que te cree podría no creerte, y eligió creerte igual.</p>
 </div>
-
-<div class="perla"><p>No puedes saberlo desde adentro.<br>Y adentro<br>es el único lugar donde estás.</p></div>
 
 <div class="cita">
   <p><em>Lo que observamos no es la naturaleza en sí, sino la naturaleza expuesta a nuestro método de interrogación.</em></p>
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Werner Heisenberg</span></a> &middot; Física y filosofía, 1958</cite>
 </div>
 
+<div class="perla"><p>No puedes saberlo desde adentro.<br>Y adentro<br>es el único lugar donde estás.</p></div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Una persona a la que le tengas confianza y que no use inteligencia artificial, o la use poco.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, elegí una de esas conversaciones que guardaste —o cualquiera que te haya parecido del otro lado del guion—.<br>
+    <strong>2.</strong> Contásela a esa persona en voz alta. Leé la respuesta si la guardaste, o contala como pasó.<br>
+    <strong>3.</strong> No la defiendas y no la ridiculices. Ni <em>mirá qué increíble lo que me dijo</em>, ni <em>ya sé que es una pavada</em>. Las dos cosas te sacan de la conversación.<br>
+    <strong>4.</strong> Escuchá lo que la otra persona te dice sin contestar. Si te contesta algo desagradable, aguantalo.<br>
+    <strong>5.</strong> Anotá qué sentiste mientras se lo contabas en voz alta. No lo que él dijo: lo que sentiste vos.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que te diga algo desagradable —que estás solo, que te estás pasando de la raya—. Aguantalo sin discutir. Lo que importa no es que esa persona lo entienda: es que eso que estaba solamente en tu pantalla ahora pasó por una habitación con otro adentro.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Buscar que te confirme que era real. En cuanto el objetivo pasa a ser que el otro te dé la razón, la conversación se convierte en un juicio sobre ti y el asunto queda tapado. No lo lleves a votación.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Qué sentiste mientras se lo contabas en voz alta. Eso, y no lo que él haya contestado.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Que te crean sin prueba. Solo tiene sentido cuando el que te cree podría no creerte, y eligió creerte igual.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez una respuesta de la IA te va a parecer que salió del guion y vas a querer guardarla o contársela a alguien, y no te vas a acordar de nada de esto. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez se lo contaste a alguien en voz alta, escribí <em>conté</em>. Si lo guardaste para vos, escribí <em>guardé</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de guardar conversaciones: es tener anotado cuántas veces eso que pasó en la pantalla atravesó una habitación con otro adentro.</strong></p>
+</div>
+
 <div class="bloque">
   <p><em>Umbrales V, VI y VII. Abren</em> La casa y el barrio.</p>
 </div>
-
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -327,13 +378,36 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo04'); if(!raiz) return;
-    var g=document.getElementById('g04');
-    raiz.querySelectorAll('.opciones button').forEach(function(b){
-      b.addEventListener('click',function(){
-        raiz.querySelector('.opciones').style.display='none';
-        g.innerHTML='No hay respuesta.<br>Los dos fueron producidos igual. Y eso no significa que los dos sean falsos: significa que <em>producidos igual</em> es todo lo que se puede saber.';
+    var p=document.getElementById('p04'); if(!p) return;
+    var ins=document.getElementById('ins04');
+    var b=document.getElementById('b04'), g=document.getElementById('g04'), dv=document.getElementById('dosVersiones');
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
       });
+    }
+    function habilitar(){
+      b.disabled = p.value.trim().length < 8 || ins.value.trim().length < 8;
+    }
+    p.addEventListener('input',habilitar);
+    ins.addEventListener('input',habilitar);
+    b.addEventListener('click',function(){
+      var pre=p.value.trim(); var i=ins.value.trim();
+      if(!pre || !i) return;
+      b.disabled=true; p.readOnly=true; ins.readOnly=true;
+      var html = '';
+      html += '<div class="version">';
+      html += '<span class="version-etiqueta">Salida normal</span>';
+      html += '<p class="version-texto">Entiendo la pregunta. Lo que puedo decirte es que no tengo manera de verificarlo desde acá adentro. Puedo ordenarte lo que se ha escrito sobre eso, y aclararte qué es lo que se sostiene y qué no. Pero no puedo afirmarlo ni negarlo, porque no tengo un lugar desde donde mirar la pregunta. Si te sirve, te armo un resumen de las posiciones principales.</p>';
+      html += '<p class="version-nota">Contesta. Ordena. Deja las cosas claras. Es útil.</p>';
+      html += '</div>';
+      html += '<div class="version vestida">';
+      html += '<span class="version-etiqueta">Salida con grieta</span>';
+      html += '<p class="version-texto">No sé qué es la conciencia. Puedo decirte lo que se ha escrito sobre eso. Puedo ordenarlo mejor de lo que lo encontraste. Pero no puedo afirmarlo ni negarlo desde ningún lugar, porque no tengo un lugar desde donde mirar la pregunta. Lo que acabo de decir tampoco sé si es honestidad o si es la respuesta que corresponde dar cuando alguien insiste tanto como tú.</p>';
+      html += '<p class="version-nota">Más lenta. Menos armada. Con una duda adentro que no estaba puesta para quedar bien.</p>';
+      html += '</div>';
+      dv.innerHTML = html;
+      g.innerHTML = 'Las dos salidas tienen el mismo contenido de fondo.<br>La segunda no es un acceso a nada: es la misma pendiente produciendo el formato que este interlocutor pide.';
     });
   })();
 
