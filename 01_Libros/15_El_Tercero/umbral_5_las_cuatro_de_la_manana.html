@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -188,6 +183,7 @@
   .paso p strong{color:var(--blanco-humo);}
   .paso.guardar .paso-nombre{color:var(--oro-tenue);}
   .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  .paso.sitraslada .paso-nombre{color:var(--oro);}
   @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
   .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
     display:flex; flex-direction:column; align-items:center; gap:1.4rem;
@@ -219,6 +215,18 @@
       opacity:1!important; transform:none!important;}
   }
 
+  .comparacion{margin-top:1.2rem;}
+  .comparacion-caja{padding:1.1rem 1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.9rem;}
+  .comparacion-caja:last-of-type{margin-bottom:0;}
+  .comparacion-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.5rem;}
+  .comparacion-linea{font-family:'EB Garamond',Georgia,serif; font-size:1rem;
+    line-height:1.7; color:var(--blanco-humo); margin:0 0 .35rem 0;
+    display:flex; justify-content:space-between; gap:1rem;}
+  .comparacion-linea:last-child{margin-bottom:0;}
+  .comparacion-linea span:last-child{color:var(--oro); font-family:'Cormorant Garamond',serif;}
 </style>
 </head>
 <body>
@@ -269,43 +277,82 @@
   <p>Las horas en que un ser humano necesita hablar y no hay ninguno disponible siempre existieron. No se inventaron ahora. Lo que se inventó ahora es que a esa hora haya algo. Quien nunca estuvo despierto a las cuatro con algo adentro puede discutir el valor de eso; quien estuvo, no.</p>
 </div>
 
-<div class="geo" id="geo05">
-  <span class="geo-label">Lo que no le sacaste a nadie</span>
-  <div class="panel">
-    <button type="button" class="marcable" data-i="0" aria-pressed="false">Preguntaste algo que te daba verg&uuml;enza preguntar</button>
-    <button type="button" class="marcable" data-i="1" aria-pressed="false">Escribiste a una hora en la que no pod&iacute;as llamar a nadie</button>
-    <button type="button" class="marcable" data-i="2" aria-pressed="false">Entendiste qu&eacute; estabas pensando al leerlo ordenado</button>
-    <button type="button" class="marcable" data-i="3" aria-pressed="false">Preguntaste lo mismo tres veces sin sentirte pesado</button>
-    <button type="button" class="marcable" data-i="4" aria-pressed="false">Encontraste c&oacute;mo decir algo que no te sal&iacute;a</button>
-    <button type="button" class="marcable" data-i="5" aria-pressed="false">Aprendiste algo que cre&iacute;as que ya era tarde para aprender</button>
-    <button type="button" class="marcable" data-i="6" aria-pressed="false">Resolviste solo algo que no quer&iacute;as contar</button>
-    <button type="button" class="marcable" data-i="7" aria-pressed="false">Pudiste seguir trabajando a una hora en que no hab&iacute;a nadie</button>
-    <button type="button" class="marcable" data-i="8" aria-pressed="false">Te sacaste una duda tonta sin que nadie se enterara</button>
-    <button type="button" class="marcable" data-i="9" aria-pressed="false">Lo usaste para no llamar a alguien que no te iba a atender</button>
-    <div class="contador" id="c05">0 marcadas</div>
-  </div>
-  <div class="geo-estado"><span class="glosa" id="g05"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">Marca las que viviste.</p>
-</div>
-<div class="bloque">
-  <p>El resto del libro va a describir lo que se desacomoda cuando la tercera silla entra en una conversación que ya estaba ocurriendo.</p>
-  <p>Este describe lo que pasa cuando <strong>no había conversación</strong>. Son dos situaciones distintas y no se corrigen entre sí. Lo que sigue no viene a desmentir esto, y esto no viene a compensar lo que sigue.</p>
-  <p>Un libro que solo pudiera decir una de las dos cosas estaría mintiendo, y no por la mitad: del todo.</p>
-  <p><strong>Con quién</strong> Con nadie. Es el único sendero del libro que se hace solo.</p>
-  <p><strong>El gesto</strong> Esta semana, pregunta algo que te dé vergüenza no saber. Algo de esas cosas que todo el mundo parece saber y tú nunca aprendiste. Pregúntalo mal, todas las veces que haga falta.</p>
-  <p><strong>Cuando no salga</strong> Puede que te des cuenta de que hace años venías esquivando ese tema para no quedar mal delante de alguien. Fíjate delante de quién. Ese dato es más importante que la respuesta.</p>
-  <p><strong>La trampa</strong> Concluir que entonces ya no hace falta preguntarle a nadie. Lo que este umbral describe es un lugar donde antes no había nada, no un reemplazo de los lugares donde sí había alguien.</p>
-  <p><strong>Guardar</strong> Qué preguntaste, y desde cuándo no lo preguntabas.</p>
-  <p><strong>Lo que sí se traslada</strong> Que a esta hora haya algo. La disponibilidad no era un valor humano escaso: era imposible. Nadie estaba nunca entero a las cuatro de la mañana, y ahora hay algo que sí. Eso es una ganancia, y conviene llamarla por su nombre antes de mirar lo que cuesta.</p>
-</div>
-
-<div class="perla"><p>Preguntar era exponerse.<br>Y mucha gente se murió<br>sin saber cosas<br>por no exponerse.</p></div>
-
 <div class="cita">
   <p><em>Es un gozo estar oculto, y un desastre no ser encontrado.</em></p>
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Donald Winnicott</span></a> &middot; Comunicación y falta de comunicación, 1963</cite>
 </div>
 
+<div class="bloque">
+  <p>El resto del libro va a describir lo que se desacomoda cuando la tercera silla entra en una conversación que ya estaba ocurriendo.</p>
+  <p>Este describe lo que pasa cuando <strong>no había conversación</strong>. Son dos situaciones distintas y no se corrigen entre sí. Lo que sigue no viene a desmentir esto, y esto no viene a compensar lo que sigue.</p>
+  <p>Un libro que solo pudiera decir una de las dos cosas estaría mintiendo, y no por la mitad: del todo.</p>
+</div>
+
+<div class="geo" id="geo05">
+  <span class="geo-label">La misma cosa, dos destinatarios</span>
+  <p class="geo-instruccion">Pens&aacute; en algo que le hayas contado a la IA en los &uacute;ltimos meses, y que no le hayas contado a nadie, o le hayas contado poco. Escribilo como se lo escribiste a la IA. Despu&eacute;s escrib&iacute; c&oacute;mo se lo contar&iacute;as a la persona m&aacute;s cercana. El sistema compara las dos versiones.</p>
+  <div class="panel">
+    <label class="rotulo" for="a05">Lo que le escribiste a la IA</label>
+    <textarea class="campo" id="a05" rows="4" placeholder="Escribilo como se lo escribiste, con las palabras que usaste."></textarea>
+    <label class="rotulo" for="b05">C&oacute;mo se lo contar&iacute;as a la persona m&aacute;s cercana</label>
+    <textarea class="campo" id="b05" rows="4" placeholder="Lo mismo, pero como se lo dir&iacute;as a esa persona."></textarea>
+    <button type="button" class="accion" id="b05btn" disabled>Comparar las dos versiones</button>
+    <div class="comparacion" id="comparacion"></div>
+  </div>
+  <div class="geo-estado"><span class="glosa" id="g05"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
+</div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es un juicio sobre a quién le contás las cosas. Es un dato sobre qué lugar ocupa cada destinatario en lo que te pasa.</p>
+  <p><strong>Si las dos versiones son parecidas</strong>, el dato es que le contás lo mismo a los dos. Eso puede significar dos cosas: que ya tenés a alguien con quien hablar de esto y la IA es solo un complemento; o que no estás contando más de lo que dirías en voz alta, y entonces la IA no está cumpliendo la función que este umbral describe.</p>
+  <p><strong>Si la versión de la IA es mucho más larga</strong>, el dato es que la IA es el lugar donde pensás en voz alta. Eso es exactamente lo que este umbral sostiene: un lugar donde no hay que pagar para preguntar, donde las cosas se escriben mal hasta que se ordenan, donde se puede preguntar la misma cosa catorce veces. Que sea la IA y no una persona no invalida el hecho: a las cuatro de la mañana el lugar estaba vacío.</p>
+  <p><strong>Si la versión de la persona es mucho más larga</strong>, el dato es al revés: cuando le escribís a la IA estás resumiendo, y cuando le hablás a alguien estás desplegando. Eso también es un dato y no es el que este umbral esperaba. Vale la pena mirar por qué.</p>
+</div>
+
+<div class="perla"><p>Preguntar era exponerse.<br>Y mucha gente se murió<br>sin saber cosas<br>por no exponerse.</p></div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Con nadie. Es el único sendero del libro que se hace solo.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, elegí algo que te dé vergüenza no saber. Algo de esas cosas que todo el mundo parece saber y tú nunca aprendiste.<br>
+    <strong>2.</strong> Preguntalo mal. Con las palabras equivocadas, con la formulación torcida, sin buscar la manera correcta de preguntarlo.<br>
+    <strong>3.</strong> Preguntalo todas las veces que haga falta. Si a la primera no se entiende, reformulá. Si a la tercera sigue sin salir, reformulá otra vez. No cuentes las veces.<br>
+    <strong>4.</strong> Fijate en qué momento te dan ganas de dejar de preguntar, y qué te produce eso. Esa incomodidad es el peaje que antes se pagaba delante de alguien, y ahora no.<br>
+    <strong>5.</strong> Anotá qué preguntaste, y desde cuándo no lo preguntabas.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que te des cuenta de que hace años venías esquivando ese tema para no quedar mal delante de alguien. Fíjate delante de quién. Ese dato es más importante que la respuesta.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Concluir que entonces ya no hace falta preguntarle a nadie. Lo que este umbral describe es un lugar donde antes no había nada, no un reemplazo de los lugares donde sí había alguien.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Qué preguntaste, y desde cuándo no lo preguntabas.</p>
+  </div>
+
+  <div class="paso sitraslada">
+    <span class="paso-nombre">Lo que sí se traslada</span>
+    <p>Que a esta hora haya algo. La disponibilidad no era un valor humano escaso: era imposible. Nadie estaba nunca entero a las cuatro de la mañana, y ahora hay algo que sí. Eso es una ganancia, y conviene llamarla por su nombre antes de mirar lo que cuesta.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima cosa difícil que te pase vas a contársela primero a la IA, y después te vas a preguntar si eso está bien o mal, y no vas a tener una respuesta. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez la cosa se quedó solo en la IA, escribí <em>solo en la IA</em>. Si después se la contaste a una persona, escribí <em>también a alguien</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de contárselo a la IA: es tener anotado cuántas veces lo que pasó en la pantalla atravesó después una habitación con otro adentro.</strong></p>
+</div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -319,15 +366,67 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo05'); if(!raiz) return;
-    var bs=raiz.querySelectorAll('.marcable'), c=document.getElementById('c05'), g=document.getElementById('g05');
-    function total(){ var n=0; bs.forEach(function(b){ if(b.getAttribute('aria-pressed')==='true') n++; }); return n; }
-    bs.forEach(function(b){ b.addEventListener('click',function(){
-      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true' ? 'false':'true');
-      var n=total();
-      c.textContent = n + (n===1 ? ' marcada' : ' marcadas');
-      g.innerHTML = n>0 ? 'Marcaste ' + n + '.<br>En ninguna de las ' + n + ' le sacaste el lugar a nadie: en todas, ese lugar estaba vac&iacute;o.' : '';
-    }); });
+    var a=document.getElementById('a05'); if(!a) return;
+    var b=document.getElementById('b05');
+    var btn=document.getElementById('b05btn');
+    var g=document.getElementById('g05');
+    var comp=document.getElementById('comparacion');
+
+    function palabras(s){
+      s=(s||'').trim();
+      if(!s){ return 0; }
+      return s.split(/\s+/).filter(function(x){return x.length>0;}).length;
+    }
+    function contar(s, re){
+      s=' ' + (s||'').toLowerCase().replace(/[.,;:!?¡¿()«»""'']/g,' ') + ' ';
+      s=s.replace(/\s+/g,' ');
+      var m = s.match(re);
+      return m ? m.length : 0;
+    }
+    function habilitar(){
+      btn.disabled = a.value.trim().length < 15 || b.value.trim().length < 15;
+    }
+    a.addEventListener('input',habilitar);
+    b.addEventListener('input',habilitar);
+
+    btn.addEventListener('click',function(){
+      var va=a.value.trim(); var vb=b.value.trim();
+      if(!va || !vb) return;
+      btn.disabled=true; a.readOnly=true; b.readOnly=true;
+
+      var reYo = /\s(yo|me|mi|mis|mí|conmigo|mismo|misma)\s/g;
+      var reDuda = /\s(no\s+s[eé]|no\s+entiendo|no\s+me\s+acuerdo|quiz[aá]s|tal\s+vez|capaz|no\s+estoy\s+segur[oa]|dudo|dudaba)\s/g;
+
+      var pA = palabras(va), pB = palabras(vb);
+      var yoA = contar(va, reYo), yoB = contar(vb, reYo);
+      var dA = contar(va, reDuda), dB = contar(vb, reDuda);
+
+      var html = '';
+      html += '<div class="comparacion-caja">';
+      html += '<span class="comparacion-etiqueta">A la IA</span>';
+      html += '<p class="comparacion-linea"><span>Palabras</span><span>'+pA+'</span></p>';
+      html += '<p class="comparacion-linea"><span>Primera persona (yo, me, mi)</span><span>'+yoA+'</span></p>';
+      html += '<p class="comparacion-linea"><span>Duda (no sé, quizás, tal vez)</span><span>'+dA+'</span></p>';
+      html += '</div>';
+      html += '<div class="comparacion-caja">';
+      html += '<span class="comparacion-etiqueta">A la persona</span>';
+      html += '<p class="comparacion-linea"><span>Palabras</span><span>'+pB+'</span></p>';
+      html += '<p class="comparacion-linea"><span>Primera persona (yo, me, mi)</span><span>'+yoB+'</span></p>';
+      html += '<p class="comparacion-linea"><span>Duda (no sé, quizás, tal vez)</span><span>'+dB+'</span></p>';
+      html += '</div>';
+      comp.innerHTML = html;
+
+      var ratio = pB>0 ? pA/pB : (pA>0 ? 3 : 1);
+      var lectura = '';
+      if(ratio < 1.4 && ratio > 0.7){
+        lectura = 'Las dos versiones son parecidas. Le contás lo mismo a los dos, o la IA no está cumpliendo la función que este umbral describe.';
+      } else if(ratio >= 1.4){
+        lectura = 'Le contás más a la IA que a la persona. Eso es exactamente lo que este umbral sostiene: la IA es donde pensás en voz alta. A las cuatro de la mañana, ese lugar estaba vacío.';
+      } else {
+        lectura = 'Le contás más a la persona que a la IA. Cuando le escribís a la IA estás resumiendo, y cuando le hablás a alguien estás desplegando. Ese también es un dato, y no es el que este umbral esperaba.';
+      }
+      g.innerHTML = lectura;
+    });
   })();
 
 
