@@ -75,7 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
   .escena.secundaria{border-left:1px solid var(--separador); background:none;
     padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
   .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
@@ -94,7 +93,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +106,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,7 +167,6 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
@@ -219,6 +214,21 @@
       opacity:1!important; transform:none!important;}
   }
 
+  .tres-destinos{margin-top:1.2rem;}
+  .destino{display:grid; grid-template-columns:8rem 1fr; gap:1rem; padding:.9rem 0;
+    border-top:1px solid var(--separador); align-items:baseline;}
+  .destino:first-of-type{border-top:none;}
+  .destino-label{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-tenue); line-height:1.4; padding-top:.35rem;}
+  .destino-frase{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.75;
+    color:var(--blanco-humo); font-style:italic;}
+  .destino-frase small{display:block; font-family:'Cormorant Garamond',serif;
+    font-style:italic; font-size:.92rem; color:var(--gris-calido); margin-top:.35rem;
+    line-height:1.6;}
+  @media (max-width:600px){
+    .destino{grid-template-columns:1fr; gap:.3rem;}
+    .destino-label{padding-top:0;}
+  }
 </style>
 </head>
 <body>
@@ -232,7 +242,7 @@
   <div class="numero">03</div>
   <h1 class="titulo">Gracias</h1>
   <p class="subtitulo">por qué se lo decimos, y qué nos hace</p>
-  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+  <div class="cue"><span>Leer</span><span>—</span><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
 <div class="bloque">
@@ -256,6 +266,30 @@
   <p>Si eso pasa con un triángulo, imagínate lo que pasa con una inteligencia artificial que te contesta en tu idioma, se acuerda de lo que dijiste hace un rato y te dice que entiende por qué estás cansado.</p>
   <p>La atribución no es una debilidad de gente crédula. <strong>Es el equipamiento de fábrica</strong>, y es el mismo que nos permite vivir entre otros: el que puede suponer intenciones ajenas puede anticipar, cooperar y cuidar. Nadie lo puede apagar para un caso puntual.</p>
   <p>Ese equipamiento le pone un sujeto a la pendiente. Es exactamente lo que sabe hacer, y es exactamente lo que aquí no corresponde.</p>
+</div>
+
+<div class="geo" id="geo03">
+  <span class="geo-label">La frase y los tres destinatarios</span>
+  <p class="geo-instruccion">Escrib&iacute; la &uacute;ltima frase que le dirigiste a una inteligencia artificial al terminar una conversaci&oacute;n. Con las palabras que usaste. Despu&eacute;s el sistema te la muestra dirigida a tres destinatarios distintos.</p>
+  <div class="panel">
+    <label class="rotulo" for="f03">La &uacute;ltima frase que le dijiste a la IA al cerrar</label>
+    <textarea class="campo" id="f03" rows="2" placeholder="Ejemplo: gracias, genial. O: perfecto, te agradezco. O: perd&oacute;n por la hora."></textarea>
+    <button type="button" class="accion" id="b03" disabled>Ver los tres destinatarios</button>
+    <div class="tres-destinos" id="tresDestinos"></div>
+  </div>
+  <div class="geo-estado"><span class="glosa" id="g03"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
+</div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es un juicio sobre tu cortesía. Es un dato sobre qué está haciendo esa frase cuando la decís.</p>
+  <p><strong>Cortesía pura</strong> —<em>gracias</em>, <em>listo, gracias</em>, <em>perfecto</em>— es la más común y la menos problemática. La frase es un gesto, y un gesto no es una afirmación sobre el mundo. Nadie que agradece está sosteniendo una tesis sobre lo que hay del otro lado.</p>
+  <p><strong>Cortesía con juicio</strong> —<em>gracias, genial</em>, <em>me ayudaste mucho</em>, <em>qué bueno</em>— agrega algo. Ya no es solo gesto: la frase está afirmando que del otro lado hubo alguien que hizo algo bien. Sigue siendo cortés, y adentro lleva una explicación que todavía no está puesta.</p>
+  <p><strong>Cortesía con disculpa o con ruego</strong> —<em>perdón por la hora</em>, <em>no te enojes</em>, <em>último favor</em>— ya es tratar como persona sin vueltas. Presupone que del otro lado hay alguien con paciencia, con humor, con tiempo que uno puede estar consumiendo. Eso es la atribución puesta a funcionar sin ninguna vergüenza, y es el caso donde el paso del gesto a la explicación ya se dio sin que nadie lo note.</p>
+  <p>Los tres son frecuentes y los tres tienen la misma propiedad: se pueden corregir sin cambiar de comportamiento. Solo hace falta ver qué está puesta adentro de la frase.</p>
+</div>
+
+<div class="bloque">
   <p>Que la atribución sea inevitable no la vuelve inofensiva, y conviene precisar dónde se descompone, porque no es donde parece.</p>
   <p>No se descompone en el gracias.</p>
   <p>Decir gracias es un gesto y no una afirmación sobre el mundo. Nadie que agradece está sosteniendo una tesis sobre lo que hay del otro lado, igual que nadie que putea al auto sostiene que el auto lo escucha.</p>
@@ -268,38 +302,12 @@
   <p>No es una mentira. Es una frase sin fondo, que se lee igual que una con fondo.</p>
 </div>
 
-<div class="geo" id="geo03">
-  <span class="geo-label">Lo que has dicho</span>
-  <div class="panel">
-    <button type="button" class="marcable" data-i="0" aria-pressed="false">por favor</button>
-    <button type="button" class="marcable" data-i="1" aria-pressed="false">gracias</button>
-    <button type="button" class="marcable" data-i="2" aria-pressed="false">perd&oacute;n, me expliqu&eacute; mal</button>
-    <button type="button" class="marcable" data-i="3" aria-pressed="false">eres un genio</button>
-    <button type="button" class="marcable" data-i="4" aria-pressed="false">no te enojes</button>
-    <button type="button" class="marcable" data-i="5" aria-pressed="false">buenos d&iacute;as</button>
-    <button type="button" class="marcable" data-i="6" aria-pressed="false">disculpa la hora</button>
-    <button type="button" class="marcable" data-i="7" aria-pressed="false">te quiero preguntar algo raro</button>
-    <button type="button" class="marcable" data-i="8" aria-pressed="false">me est&aacute;s haciendo perder el tiempo</button>
-    <button type="button" class="marcable" data-i="9" aria-pressed="false">vamos, no me falles</button>
-    <button type="button" class="marcable" data-i="10" aria-pressed="false">s&eacute; que no me entiendes pero</button>
-    <button type="button" class="marcable" data-i="11" aria-pressed="false">&uacute;ltimo favor y te dejo tranquilo</button>
-    <div class="contador" id="c03">0 marcadas</div>
-  </div>
-  <div class="geo-estado"><span class="glosa" id="g03"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">Marca las que dijiste alguna vez. No se guarda nada.</p>
-</div>
 <div class="bloque">
   <p>Vale volver a la mesa del domingo, porque ahí estaba el asunto entero y en miniatura.</p>
   <p>El padre no se equivocó al corregir. Le estaba enseñando a su hijo algo que le quiere enseñar: que a los que hacen algo por ti se les agradece.</p>
   <p>Lo que lo incomodó, sin poder nombrarlo, es otra cosa. Estaba usando <strong>el gesto de aprender a tratar con personas</strong> en un caso donde no hay ninguna. Y no sabe si eso lo entrena bien o lo entrena mal.</p>
   <p>Nadie lo sabe todavía. Hay una manera de mirarlo que dice: un chico que practica cortesía practica cortesía, y punto. Y hay otra que dice: la cortesía se aprende <em>para alguien</em>, y practicarla donde no hay nadie enseña otra cosa. Enseña que la respuesta llega igual.</p>
   <p>Este libro no lo va a resolver. La incomodidad del padre estaba bien puesta, y dejarla señalada es lo que se puede hacer con las cosas que apenas empiezan.</p>
-  <p><strong>Con quién</strong> Alguien con quien compartas mesa seguido. Puede ser la misma persona de los umbrales anteriores.</p>
-  <p><strong>El gesto</strong> Esta semana no te prohíbas nada. Decí gracias todas las veces que te salga. Lo único que vas a hacer es notar el paso siguiente: cuándo pasaste del gesto a la explicación, cuándo dijiste <em>me quiso ayudar</em>, <em>se puso pesado</em>, <em>hoy está raro</em>.</p>
-  <p><strong>Cuando no salga</strong> Puede que no lo notes ni una vez y que después, releyendo algo que escribiste, aparezcan tres. Eso también sirve, y es lo más frecuente: el paso se da sin testigos, incluso sin uno mismo.</p>
-  <p><strong>La trampa</strong> Volverse el que corrige a los demás. En cuanto empieces a decirle a otro <em>no digas que te quiso ayudar</em>, dejaste de mirar el asunto y empezaste a tener razón. Y ese es el tema de otro libro.</p>
-  <p><strong>Guardar</strong> La frase donde diste el paso. Textual, con el verbo puesto.</p>
-  <p><strong>Lo que no se traslada</strong> Agradecer. Un gracias tiene dos mitades: que al otro le haya costado algo, y que podría no haberlo hecho. Del otro lado siempre va a faltar la segunda, y con una sola mitad la palabra sigue estando bien dicha pero ya no dice lo mismo.</p>
 </div>
 
 <div class="perla"><p>Entre <em>le dije gracias</em><br>y <em>se portó bien conmigo</em><br>hay un paso corto<br>que casi nadie nota.</p></div>
@@ -309,6 +317,47 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">David Hume</span></a> &middot; Historia natural de la religión, 1757</cite>
 </div>
 
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Alguien con quien compartas mesa seguido. Puede ser la misma persona de los umbrales anteriores.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana no te prohíbas nada. Decí gracias todas las veces que te salga.<br>
+    <strong>2.</strong> Cada vez que aparezca un gracias, fijate si fue un gesto o si llevaba adentro una explicación. La diferencia está en si apareció un <em>porque</em> detrás: <em>gracias porque me ayudaste</em> ya es explicación.<br>
+    <strong>3.</strong> Al final del día, escribí una de esas frases tal como la dijiste. Una sola.<br>
+    <strong>4.</strong> Al lado, escribí la misma frase sin el supuesto de que hay alguien: <em>gracias</em> → <em>listo</em>. <em>Eres un genio</em> → <em>funcionó</em>. <em>Perdón por la hora</em> → nada.<br>
+    <strong>5.</strong> Guardala. Esa línea es la del gesto.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que no lo notes ni una vez, y que después, releyendo algo que escribiste, aparezcan tres. Eso también sirve, y es lo más frecuente: el paso se da sin testigos, incluso sin uno mismo.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Volverse el que corrige a los demás. En cuanto empieces a decirle a otro <em>no digas que te quiso ayudar</em>, dejaste de mirar el asunto y empezaste a tener razón. Y ese es el tema de otro libro.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>La frase donde diste el paso. Textual, con el verbo puesto.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Agradecer. Un gracias tiene dos mitades: que al otro le haya costado algo, y que podría no haberlo hecho. Del otro lado siempre va a faltar la segunda, y con una sola mitad la palabra sigue estando bien dicha pero ya no dice lo mismo.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez vas a cerrar una conversación con la IA con un <em>gracias</em> o un <em>perfecto</em> y no te vas a acordar de nada de esto. Cuando pase, abrí la nota del teléfono y agregá la fecha. Si esa vez te acordaste de que era un gesto y no una explicación, escribí <em>gesto</em>. Si le agregaste un juicio o un ruego, escribí <em>explicación</em>. Las dos cosas son el dato. <strong>El gesto no es dejar de decir gracias: es tener anotado cuántas veces te acordaste de que del otro lado no hay quien reciba la segunda mitad.</strong></p>
+</div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -322,15 +371,51 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo03'); if(!raiz) return;
-    var bs=raiz.querySelectorAll('.marcable'), c=document.getElementById('c03'), g=document.getElementById('g03');
-    function total(){ var n=0; bs.forEach(function(b){ if(b.getAttribute('aria-pressed')==='true') n++; }); return n; }
-    bs.forEach(function(b){ b.addEventListener('click',function(){
-      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true' ? 'false':'true');
-      var n=total();
-      c.textContent = n + (n===1 ? ' marcada' : ' marcadas');
-      g.innerHTML = n>0 ? 'Marcaste ' + n + '. Todas suponen que del otro lado hay alguien con tiempo, con paciencia o con ganas.<br>Y ninguna te sali&oacute; mal.' : '';
-    }); });
+    var t=document.getElementById('f03'); if(!t) return;
+    var b=document.getElementById('b03'), g=document.getElementById('g03'), td=document.getElementById('tresDestinos');
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+    t.addEventListener('input',function(){
+      b.disabled = t.value.trim().length < 2;
+    });
+    b.addEventListener('click',function(){
+      var v=t.value.trim();
+      if(!v) return;
+      b.disabled=true; t.readOnly=true;
+      var low = v.toLowerCase();
+      var tieneJuicio = /(genial|bien|buen[oa]|ayud|serv|funcion|perfect|gracias por|gracias porque|mil gracias|qué bueno|que bueno|excelente|impecable|me sirvi|me sirvió|me salvaste|salvador|estupend|maravillos)/.test(low);
+      var tieneRuego = /(perd[oó]n|disculpa|disculpe|no te enojes|no se enoje|por favor|favor|te pido|ruego|ten paciencia|paciencia|aguant)/.test(low);
+      var tipo = tieneRuego ? 'ruego' : (tieneJuicio ? 'juicio' : 'gesto');
+
+      var vEsc = escapar(v);
+      var html = '';
+      html += '<div class="destino">';
+      html += '<span class="destino-label">A un martillo</span>';
+      html += '<span class="destino-frase">'+vEsc+' <small>Sonaría raro. La frase presupone algo que un martillo no puede hacer.</small></span>';
+      html += '</div>';
+      html += '<div class="destino">';
+      html += '<span class="destino-label">A un cajero</span>';
+      html += '<span class="destino-frase">'+vEsc+' <small>Sigue sonando raro. Un poco menos, porque el cajero hace algo. Pero nadie le agradece a un cajero con esas palabras.</small></span>';
+      html += '</div>';
+      html += '<div class="destino">';
+      html += '<span class="destino-label">A la IA</span>';
+      html += '<span class="destino-frase">'+vEsc+' <small>Acá suena natural. Y las tres frases tienen, en el sentido estricto, el mismo destinatario.</small></span>';
+      html += '</div>';
+      td.innerHTML = html;
+
+      var lectura = '';
+      if(tipo === 'gesto'){
+        lectura = 'Cortesía pura. Es la más común y la menos problemática. La frase es un gesto, y un gesto no afirma nada sobre lo que hay del otro lado.';
+      } else if(tipo === 'juicio'){
+        lectura = 'Cortesía con juicio. La frase ya no es solo gesto: está afirmando que del otro lado hubo alguien que hizo algo bien. Sigue siendo cortés, y adentro lleva una explicación que todavía no está puesta del todo.';
+      } else {
+        lectura = 'Cortesía con disculpa o con ruego. Ya es tratar como persona sin vueltas: presupone que del otro lado hay alguien con paciencia, con humor, con tiempo que uno puede estar consumiendo. Ese es el caso donde el paso del gesto a la explicación ya se dio sin que nadie lo note.';
+      }
+      g.innerHTML = lectura;
+    });
   })();
 
 
