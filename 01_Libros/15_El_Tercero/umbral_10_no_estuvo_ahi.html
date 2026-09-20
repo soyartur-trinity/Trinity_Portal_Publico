@@ -263,31 +263,27 @@
 </div>
 
 <div class="geo" id="geo10">
-  <span class="geo-label">Qui&eacute;n estaba</span>
+  <span class="geo-label">Lo que recuerda el otro</span>
+  <p class="geo-instruccion">Escribe un momento importante que hayas vivido con alguien. Despu&eacute;s, lo que crees que recuerda esa persona. El sistema compara las dos versiones.</p>
   <div class="panel">
-    <label class="rotulo" for="q100">Un momento importante, y qui&eacute;n estaba</label>
-    <textarea class="campo" id="q100" rows="1"></textarea>
-    <label class="rotulo" for="q101">Con qui&eacute;n lo hablaste despu&eacute;s</label>
-    <textarea class="campo" id="q101" rows="1"></textarea>
-    <label class="rotulo" for="q102">Otro momento importante, y qui&eacute;n estaba</label>
-    <textarea class="campo" id="q102" rows="1"></textarea>
-    <label class="rotulo" for="q103">Con qui&eacute;n lo hablaste despu&eacute;s</label>
-    <textarea class="campo" id="q103" rows="1"></textarea>
-    <button type="button" class="accion" id="b10" disabled>Listo</button>
+    <label class="rotulo" for="q100">Lo que recuerdas t&uacute;</label>
+    <textarea class="campo" id="q100" rows="4" placeholder="Escribe el momento con los detalles que te salgan."></textarea>
+    <label class="rotulo" for="q101">Lo que crees que recuerda la otra persona que estuvo</label>
+    <textarea class="campo" id="q101" rows="4" placeholder="Lo que imaginas que ella dir&iacute;a si le preguntaras."></textarea>
+    <button type="button" class="accion" id="b10" disabled>Comparar</button>
   </div>
   <div class="geo-estado"><span class="glosa" id="g10"></span></div>
   <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
 </div>
 <div class="bloque">
+  <p>El n&uacute;mero que acabas de ver no dice si recuerdas bien o mal. Dice cu&aacute;nto de tu versi&oacute;n es tuya y cu&aacute;nto le atribuyes al otro. Si la diferencia es grande, la memoria del otro es un territorio aparte, y lo que hay ah&iacute; no lo controlas. Si la diferencia es chica, puede ser que ya hayas incorporado su versi&oacute;n sin darte cuenta, o que el momento no haya sido tan compartido como parec&iacute;a.</p>
+  <p>Las dos lecturas son ciertas. El umbral no elige por ti.</p>
+</div>
+
+<div class="bloque">
   <p>No significa que hablar de eso con la IA esté mal, ni que sea inútil. Lo del velorio le sirvió, y le sirvió de verdad: ordenar algo revuelto a las once de la noche, cuando no hay a quién llamar, es exactamente lo que el umbral cinco describe y no se desdice aquí.</p>
   <p>Significa algo más acotado: que <strong>eso no reemplaza a nadie</strong>, y que hay una operación — acordarse de a dos— que no tiene ninguna versión disponible.</p>
   <p>Y hay una consecuencia práctica, que es la que conviene mirar: si toda la elaboración de lo que te pasa ocurre en un lugar donde nadie estuvo, dentro de unos años vas a tener una vida muy bien contada y muy poca gente con quien acordarte de ella.</p>
-  <p><strong>Con quién</strong> Alguien que haya estado contigo en algo importante. No hace falta que sea íntimo: alcanza con que haya estado.</p>
-  <p><strong>El gesto</strong> Llamalo y pregúntale qué se acuerda él de ese día. No le cuentes lo que te acuerdas tú primero: pregúntale a él, y aguanta lo que venga aunque no coincida con tu versión.</p>
-  <p><strong>Cuando no salga</strong> Puede que se acuerde de algo que a ti te deja mal parado, o que directamente contradiga cómo lo venías contando. Eso es el ejercicio, no un accidente del ejercicio. La memoria de a dos se corrige, y corregirse incomoda.</p>
-  <p><strong>La trampa</strong> Contarle tu versión primero y esperar que la confirme. En cuanto pusiste tu versión sobre la mesa, la del otro se acomoda a la tuya sin que ninguno de los dos lo decida, y quedaste con dos copias de lo mismo.</p>
-  <p><strong>Guardar</strong> Qué se acordaba él que tú no. Textual, con sus palabras.</p>
-  <p><strong>Lo que no se traslada</strong> Haber estado. Es lo único del inventario que no se puede conseguir después por ningún medio: o alguien estaba parado ahí, o no, y con el tiempo la lista de los que estaban solo se acorta.</p>
 </div>
 
 <div class="perla"><p>Vas a tener una vida<br>muy bien contada<br>y poca gente<br>con quien acordarte de ella.</p></div>
@@ -297,10 +293,47 @@
   <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Maurice Halbwachs</span></a> &middot; Los marcos sociales de la memoria, 1925</cite>
 </div>
 
-<div class="bloque">
-  <p><em>Umbrales XI y XII. Abren</em> El entramado. <em>Aquí la mesa se termina.</em></p>
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Alguien que haya estado contigo en algo importante. No hace falta que sea &iacute;ntimo: alcanza con que haya estado.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Elige a alguien que haya estado contigo en algo importante.<br>
+    <strong>2.</strong> Ll&aacute;malo y preg&uacute;ntale qu&eacute; se acuerda &eacute;l de ese d&iacute;a.<br>
+    <strong>3.</strong> No le cuentes lo que te acuerdas t&uacute; primero.<br>
+    <strong>4.</strong> Aguanta lo que venga, aunque no coincida con tu versi&oacute;n.<br>
+    <strong>5.</strong> Anota qu&eacute; se acordaba &eacute;l que t&uacute; no. Textual, con sus palabras.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que se acuerde de algo que a ti te deja mal parado, o que directamente contradiga c&oacute;mo lo ven&iacute;as contando. Eso es el ejercicio, no un accidente del ejercicio. La memoria de a dos se corrige, y corregirse incomoda.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Contarle tu versi&oacute;n primero y esperar que la confirme. En cuanto pusiste tu versi&oacute;n sobre la mesa, la del otro se acomoda a la tuya sin que ninguno de los dos lo decida, y quedaste con dos copias de lo mismo.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Qu&eacute; se acordaba &eacute;l que t&uacute; no. Textual, con sus palabras.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Haber estado. Es lo &uacute;nico del inventario que no se puede conseguir despu&eacute;s por ning&uacute;n medio: o alguien estaba parado ah&iacute;, o no, y con el tiempo la lista de los que estaban solo se acorta.</p>
+  </div>
 </div>
 
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La pr&oacute;xima vez que alguien que estuvo te corrija o te devuelva un detalle que no recordabas, la tentaci&oacute;n de discutirle va a estar ah&iacute;. Cuando pase, no hagas nada distinto: anota lo que dijo. La cantidad de veces que vuelves a preguntar es el mecanismo.</p>
+</div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
@@ -314,16 +347,26 @@
 <script>
 
   (function(){
-    var raiz=document.getElementById('geo10'); if(!raiz) return;
-    var cs=raiz.querySelectorAll('.campo'), b=document.getElementById('b10'), g=document.getElementById('g10');
-    function ver(){ var ok=true; cs.forEach(function(c){ if(!c.value.trim()) ok=false; }); b.disabled=!ok; }
-    cs.forEach(function(c){ c.addEventListener('input', ver); });
-    b.addEventListener('click',function(){
-      b.disabled=true; cs.forEach(function(c){ c.readOnly=true; });
-      g.innerHTML='Mira las cuatro respuestas.<br>Si el que estaba y el que lo escuch&oacute; despu&eacute;s no son la misma persona, eso es lo que este umbral describe. No se guard&oacute; nada.';
+    var t1=document.getElementById('q100'); if(!t1) return;
+    var t2=document.getElementById('q101');
+    var b=document.getElementById('b10'), g=document.getElementById('g10');
+    function ver(){ b.disabled = t1.value.trim().length < 30 || t2.value.trim().length < 15; }
+    t1.addEventListener('input', ver);
+    t2.addEventListener('input', ver);
+    b.addEventListener('click', function(){
+      var v1=t1.value.trim(), v2=t2.value.trim();
+      if(!v1 || !v2) return;
+      b.disabled=true; t1.readOnly=true; t2.readOnly=true;
+      var p1=v1.split(/\s+/).length;
+      var p2=v2.split(/\s+/).length;
+      var dif=p1-p2;
+      var porcentaje = p1 > 0 ? Math.round((p2/p1)*100) : 0;
+      g.innerHTML = 'Tu versi&oacute;n tiene <strong>' + p1 + '</strong> palabras.<br>' +
+        'Lo que crees que recuerda la otra persona tiene <strong>' + p2 + '</strong>.<br>' +
+        'La diferencia es de <strong>' + dif + '</strong> palabras.<br><br>' +
+        'Esa diferencia es lo que no sabes. La memoria de a dos no est&aacute; en tu cabeza.';
     });
   })();
-
 
   (function(){
     var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
