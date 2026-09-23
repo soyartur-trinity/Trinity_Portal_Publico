@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VIII &middot; La forma prestada | El tercero</title>
+<title>I &middot; El trabajo que apareció | La firma</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
 
@@ -75,10 +75,6 @@
     line-height:1.85; margin-bottom:1rem;}
   .escena p:last-child{margin-bottom:0;}
   .escena .apagado{color:var(--lejos);}
-  /* escena secundaria: misma familia, un grado más tenue y sin barra */
-  .escena.secundaria{border-left:1px solid var(--separador); background:none;
-    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
-  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
   .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
     margin:4rem 0; opacity:0; transition:opacity .8s ease;}
   .sep.visible{opacity:1;}
@@ -94,7 +90,6 @@
     text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
   .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
   .aviso p:last-child{margin-bottom:0;}
-  /* ── la cita con autor ── */
   .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
     opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
   .cita.visible{opacity:1; transform:none;}
@@ -108,12 +103,10 @@
   .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
   .cita cite a:hover{color:var(--oro);}
   .cita cite .obra{color:var(--blanco-humo);}
-  /* ── la frase de todos, última línea del umbral ── */
   .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
   .dicho.visible{opacity:1;}
   .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
     font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
-  /* ── interactivos ── */
   .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
     transition:opacity .9s ease, transform .9s ease;}
   .geo.visible{opacity:1; transform:none;}
@@ -171,12 +164,11 @@
   .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
     text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
     margin-top:.4rem;}
-  /* ── el sendero ── */
   .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
     position:relative; background:rgba(201,168,76,.022);
     opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
   .sendero.visible{opacity:1; transform:none;}
-  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+  .sendero::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
     background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
     letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
   .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
@@ -219,137 +211,165 @@
       opacity:1!important; transform:none!important;}
   }
 
+  .desglose{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .desglose.visible{opacity:1; transform:none;}
+  .desglose p{font-size:1rem; line-height:1.8; color:var(--blanco-humo); margin:0 0 .55rem;}
+  .desglose p:last-child{margin-bottom:0;}
 </style>
 </head>
 <body>
 <nav class="nav">
-  <a href="umbral_7_lo_que_cuesta.html">&larr; Lo que cuesta</a>
-  <span>VIII</span>
-  <a href="umbral_9_no_hay_primera_vez.html">No hay primera vez &rarr;</a>
+  <a href="umbral-00.html">&larr; La carta</a>
+  <span>I</span>
+  <a href="umbral-02.html">Quién revisa &rarr;</a>
 </nav>
 <header class="encabezado">
-  <span class="etiqueta">El tercero &middot; Umbral</span>
-  <div class="numero">08</div>
-  <h1 class="titulo">La forma prestada</h1>
-  <p class="subtitulo">sales con la frase perfecta, y nadie sabe nada de ti</p>
+  <span class="etiqueta">La firma &middot; Umbral</span>
+  <div class="numero">01</div>
+  <h1 class="titulo">El trabajo que apareció</h1>
+  <p class="subtitulo">cada cosa que ahorró trabajo creó uno nuevo que nadie repartió</p>
   <div class="cue"><span>Leer</span><div class="linea"></div></div>
 </header>
 <main class="wrap cuerpo">
-<div class="bloque">
-  <p>Tiene que mandar un mensaje difícil. De esos que uno empieza cuatro veces y borra cuatro veces, porque cada versión suena a reproche o a que está pidiendo perdón por algo que no hizo.</p>
-  <p>Lo escribe mal, entero, con toda la rabia adentro. Y se lo pasa a la IA.</p>
-  <p>Vuelve claro. Firme sin ser agresivo, cálido sin ser blando, ordenado. Es lo que él quería decir, dicho como él nunca lo habría podido decir.</p>
-  <p>Lo manda.</p>
-  <p>Le contestan bien. Mejor que nunca, incluso.</p>
-  <p>Y esa noche, en vez de alivio, tiene una incomodidad chiquita que no sabe dónde poner.</p>
-  <p>Se murió el padre de alguien. Le llegan cincuenta mensajes en dos días, y él los va leyendo con el teléfono en la mano, sentado en una silla del velorio.</p>
-  <p>Hay cinco que están muy bien escritos. Los mejores de todos: dicen lo que hay que decir, tienen la extensión justa, no meten la pata en ninguna parte.</p>
-  <p>Tres de esos cinco tienen la misma cadencia.</p>
-  <p>No idénticos —cada uno menciona algo distinto, un recuerdo, un detalle— pero el mismo ritmo, el mismo tipo de frase, el mismo lugar para la palabra difícil.</p>
-  <p>Él no piensa nada en ese momento. Los agradece a los cinco.</p>
-  <p>Semanas después se acuerda de dos mensajes. Uno era largo y desordenado y tenía una anécdota que no venía al caso. El otro decía cuatro palabras y estaba mal escrito.</p>
+
+<div class="escena">
+  <p>Lucrecia tiene sesenta y ocho años y se acuerda de cuando llegó la lavadora a su casa.</p>
+  <p>Fue en 1972 y fue una fiesta. Su madre lavaba a mano para siete personas, dos veces por semana, y eso le llevaba las mañanas enteras de los lunes y los jueves.</p>
+  <p>Con la lavadora, esas mañanas se liberaron.</p>
+  <p>Lo que Lucrecia recuerda, y que nadie cuenta nunca, es lo que pasó después. No enseguida: a lo largo de los años siguientes.</p>
+  <p>Se empezó a lavar mucho más seguido.</p>
+  <p>Antes, una camisa se usaba tres veces. Después, una vez. Antes había dos juegos de sábanas y se cambiaban cada quince días; después se cambiaron todas las semanas. Y aparecieron toallas, y camisetas, y ropa de cada chico para cada día.</p>
+  <p>La madre de Lucrecia terminó dedicándole a la ropa, en 1985, más o menos el mismo tiempo que en 1970. Con menos esfuerzo físico, eso sí — y esa parte fue una ganancia enorme y real.</p>
+  <p>Pero las mañanas de los lunes no volvieron nunca.</p>
 </div>
 
-<div class="perla"><p>Salió perfecto.<br>Y no se parece a ti.</p></div>
+<div class="perla"><p>La máquina no devolvió el tiempo.<br>Subió la cantidad de ropa limpia<br>que se considera normal.</p></div>
 
-<div class="bloque">
-  <p>Y hay que decirlo entero antes de la vuelta, porque es cierto y porque el umbral cinco lo estableció y no se desdice aquí.</p>
-  <p><strong>Le dio forma a lo que él tenía.</strong> El material era suyo: la rabia, la razón, el cansancio, la cosa que hacía dos meses no podía decir. La IA no la inventó ni la adivinó. La ordenó.</p>
-  <p>Y con la forma puesta, el mensaje salió y la conversación ocurrió. Sin eso, el mensaje se borraba por quinta vez y todo siguea como estaba.</p>
-  <p>Nada de lo que sigue toca eso.</p>
-  <p>Cuando le cuentas algo difícil a una persona y ella te devuelve una versión mejor de lo que dijiste, pasan dos cosas al mismo tiempo.</p>
-  <p>Una es que <strong>consigues la forma</strong>: alguien encontró las palabras que a ti no te salían.</p>
-  <p>La otra es que <strong>fuiste entendido</strong>: alguien escuchó eso, lo procesó con lo que sabe de ti, y decidió devolverte esa versión y no otra.</p>
-  <p>Las dos llegan tan pegadas que nadie las distingue nunca. No hace falta distinguirlas: llegan juntas siempre.</p>
-  <p>Ahora hay un lugar donde llega <strong>una sola.</strong> La forma, impecable. Y del otro lado no queda nadie sabiendo nada de ti.</p>
-  <p>Esa es la incomodidad chiquita de la primera escena, y no es culpa ni es ingratitud. Es un hueco donde antes había algo, y como nunca tuvo nombre, se siente y no se explica.</p>
-</div>
-
-<div class="perla"><p>La IA te devuelve la frase.<br>No te devuelve el acento.</p></div>
-
-<div class="bloque">
-  <p>Y aquí está lo que se pierde de verdad, que es más específico que <em>autenticidad</em> y bastante más concreto.</p>
-  <p><strong>Tu manera particular de decir mal las cosas era información sobre ti.</strong></p>
-  <p>El que da demasiadas vueltas antes de pedir algo está diciendo, sin querer, que pedir le cuesta. El que manda cuatro líneas secas cuando está mal está diciendo que está mal. La que escribe una carta de pésame desordenada, con una anécdota que no venía al caso, está diciendo que se acordó de algo y no pudo ordenarlo.</p>
-  <p>Nadie decide eso. Se filtra. Y el que recibe lo lee sin saber que lo está leyendo: no interpreta el contenido nada más, interpreta también <strong>el esfuerzo, el desorden y la torpeza</strong>, que son las marcas de que del otro lado hay alguien y no está entero.</p>
-  <p>La forma promedio limpia exactamente eso.</p>
-  <p>Por eso el que recibió cincuenta mensajes se acuerda de dos, y los dos estaban mal escritos. No porque el mal escrito sea mejor: porque el mal escrito <strong>tenía adentro a la persona que lo escribió.</strong></p>
-</div>
-
-<div class="geo" id="geo08">
-  <span class="geo-label">Lo que se pierde en el pulido</span>
-  <p class="geo-instruccion">Escribe un mensaje difícil que tengas pendiente. De una sola vez, sin corregir. Después el sistema te muestra cuántas marcas de esfuerzo hay en él.</p>
-  <div class="panel">
-    <textarea class="campo" id="q08" rows="5" placeholder="Escribe el mensaje como te salga. Sin pensarlo mucho."></textarea>
-    <button type="button" class="accion" id="b08" disabled>Ver qué se pierde</button>
-  </div>
-  <div class="geo-estado"><span class="glosa" id="g08"></span></div>
-  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
-</div>
-<div class="bloque">
-  <p>El número que acabas de ver no dice si escribes bien o mal. Dice cuánto de tu mensaje es esfuerzo visible. La forma promedio elimina ese esfuerzo, y al hacerlo elimina también la información de que del otro lado hay alguien que se está esforzando.</p>
-  <p>Puedes leerlo de dos maneras. Una: lo que se pierde cuando todo llega pulido, y nadie sabe ya cuánto costó decirlo. Otra: lo que se gana cuando no hay que mostrar el esfuerzo, y el mensaje llega limpio sin que nadie tenga que ver el desorden.</p>
-  <p>Las dos lecturas son ciertas. El umbral no elige por ti.</p>
+<div class="cita">
+  <p><em>Las tecnologías domésticas no redujeron el trabajo de la casa: redujeron el esfuerzo y aumentaron el estándar.</em></p>
+  <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Ruth Schwartz Cowan</span></a> &middot; More Work for Mother, 1983</cite>
 </div>
 
 <div class="bloque">
-  <p>Este umbral podría terminar en una moraleja fea —escribe mal, sé auténtico— y sería una estupidez, además de imposible.</p>
-  <p>Hay mensajes que hay que mandar bien. Un descargo laboral, una carta que va a leer un abogado, un pedido que se juega mucho en cómo está redactado. En todos esos casos la forma prestada es la herramienta correcta y usarla es sensatez, no traición.</p>
-  <p>Lo que conviene tener presente es más chico: <strong>saber cuál de los dos mensajes estás mandando.</strong></p>
-  <p>El que necesita ser eficaz, o el que necesita que alguien sepa cómo estás.</p>
-  <p>Porque el segundo, pulido, deja de servir para lo que servía. Llega perfecto, contestan bien, y nadie del otro lado se enteró de nada.</p>
+  <p>Cada herramienta que ahorra trabajo hace dos cosas: <strong>reduce el esfuerzo de cada unidad, y aumenta cuántas unidades se esperan.</strong> La segunda parte no la anuncia nadie y se instala sola, a lo largo de unos años, sin que nadie decida nada.</p>
+  <p>El correo electrónico hizo que escribir una carta costara un minuto en lugar de una hora. Nadie escribe hoy una carta por semana con el tiempo que le sobra: se escriben cuarenta mensajes por día.</p>
+  <p>El teléfono en el bolsillo hizo que estar disponible no costara nada. Y entonces se volvió obligatorio estar disponible.</p>
+  <p><strong>Ninguna de esas cosas fue una estafa.</strong> La lavadora es una de las mejores invenciones de la historia y nadie quiere volver atrás. El correo tampoco. Lo que pasa es que el beneficio se cobra en esfuerzo y el costo se cobra en expectativa, y son dos monedas distintas que nadie suma.</p>
 </div>
 
 <div class="cita">
-  <p><em>¿Cómo puedo saber lo que pienso hasta que veo lo que digo?</em></p>
-  <cite><a href="#" target="_blank" rel="noopener"><span class="obra">E. M. Forster</span></a> &middot; Aspectos de la novela, 1927</cite>
+  <p><em>La herramienta convivencial es aquella que amplía el radio de acción personal. La que no lo es, convierte al hombre en un accesorio de la máquina.</em></p>
+  <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Iván Illich</span></a> &middot; La convivencialidad, 1973</cite>
 </div>
 
+<div class="escena">
+  <p>En una oficina de logística, Fabián coordina a seis personas.</p>
+  <p>Desde el año pasado, los informes que antes le llevaban a cada uno medio día ahora se arman en cuarenta minutos. Eso es cierto y es enorme.</p>
+  <p>Lo que Fabián no sabía es que iba a aparecer un trabajo que antes no existía, y que cayó entero sobre él.</p>
+  <p>Hay que revisar.</p>
+  <p>Antes, lo que le llegaba de su equipo venía con los errores de siempre: un número mal copiado, una fecha corrida, una fuente vieja. Errores humanos, que tienen una característica útil — se parecen a algo y se buscan donde siempre están.</p>
+  <p>Ahora lo que le llega viene ordenado, bien redactado, con un aire de estar terminado. Y adentro puede haber un dato que no existe, dicho con la misma seguridad que los seis datos que sí existen.</p>
+  <p>El martes encontró dos cosas: un número que alguien había copiado mal, y una cifra que no era de ninguna parte y que nadie había puesto. Terminó a las nueve y cuarto de la noche.</p>
+</div>
+
+<div class="bloque">
+  <p>Fabián no puede revisar por encima. Tiene que revisar entero. <strong>Y revisar entero lleva más tiempo que revisar un borrador con cara de borrador.</strong></p>
+  <p>Los seis ganaron cuatro horas cada uno. Fabián perdió dos.</p>
+</div>
+
+<div class="perla"><p>El tiempo no se ahorró.<br>Se mudó de escritorio.</p></div>
+
+<div class="bloque">
+  <p>Y hay un detalle que lo vuelve peor y que conviene mirar: <strong>la tarea de revisar es invisible.</strong></p>
+  <p>Nadie ve las cuatro horas que Fabián pasa leyendo cosas que están bien. Si está todo correcto, no pasó nada. Si se le escapa algo, el error es suyo.</p>
+  <p>Es una tarea que solo se nota cuando falla, que es la peor clase de tarea que existe y la que menos reconocimiento produce.</p>
+  <p>Y no está en la descripción de ningún puesto.</p>
+</div>
+
+<div class="geo" id="geo01">
+  <span class="geo-label">Lo que revisas y no se cuenta</span>
+  <p class="geo-instruccion">Piensa en un día normal de esta semana. Ajusta cu&aacute;nto tiempo le pusiste a revisar, corregir o decidir si serv&iacute;a algo que no escribiste t&uacute;. El sistema calcula el total anual.</p>
+  <div class="panel">
+    <label class="rotulo" for="q01">Minutos por d&iacute;a</label>
+    <input type="range" id="q01" min="0" max="120" step="5" value="0" style="width:100%; accent-color:var(--oro-tenue);">
+    <div class="contador" id="c01">0 minutos</div>
+    <button type="button" class="accion" id="b01" disabled>Ver el total</button>
+  </div>
+  <div class="geo-estado"><span class="glosa" id="g01"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
+</div>
+
+<div class="bloque">
+  <p>El n&uacute;mero que acabas de producir no dice si trabajas mucho o poco. Dice cu&aacute;nto tiempo dedicas a algo que no figura en ninguna parte.</p>
+  <p>Puedes leerlo de dos maneras. Una: es una tarea que existe y no se cuenta, y por eso cae siempre sobre la misma persona. Otra: es un trabajo que eliges hacer porque te importa c&oacute;mo sale, y el n&uacute;mero no dice nada sobre si vale la pena.</p>
+  <p>Las dos lecturas son ciertas. El umbral no elige por ti.</p>
+  <p>Lo que s&iacute; se puede decir es que si ese tiempo lo pone siempre la misma persona, y esa persona no lo tiene anotado en ning&uacute;n lado, entonces est&aacute; haciendo una tarea sin nombre y sin reparto.</p>
+</div>
+
+<div class="bloque">
+  <p>Y ahora lo que este umbral tiene para dar, que no es una queja sobre la herramienta.</p>
+  <p><strong>El trabajo nuevo se puede nombrar, y nombrarlo es la mitad.</strong></p>
+  <p>Casi todo el problema de Fabián viene de que ese trabajo no tiene nombre. No figura en ningún lado, no se descuenta de nada, y él mismo lo vive como un fastidio personal en lugar de como una tarea.</p>
+  <p>En noviembre lo dijo en una reunión, y lo dijo sin queja, como un dato: que revisar le está llevando dos horas diarias, y que esas dos horas antes no existían.</p>
+  <p>No pasó nada mágico. Su jefe no le dio un ayudante.</p>
+  <p>Lo que sí pasó es que dejó de ser invisible, y tres meses después, cuando hubo que repartir tareas, alguien se acordó.</p>
+</div>
+
+<div class="perla"><p>Un trabajo con nombre se puede repartir.<br>Uno sin nombre lo hace siempre el mismo.</p></div>
+
 <div class="sendero">
-  <p class="rotulo" style="margin-bottom:1.4rem;">El sendero</p>
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
 
   <div class="paso">
     <span class="paso-nombre">Con quién</span>
-    <p>Alguien a quien le escribas seguido y que te importe.</p>
+    <p>Contigo primero. Despu&eacute;s, si sale, con quien comparte esa carga contigo en tu casa o en tu trabajo.</p>
   </div>
 
   <div class="paso guardar">
     <span class="paso-nombre">El gesto</span>
-    <p><strong>1.</strong> Esta semana, elige un mensaje que tengas que mandar y que no sea trivial.<br>
-    <strong>2.</strong> Escríbelo de una sola vez, sin borrar, sin corregir, sin pasarlo por ningún lado.<br>
-    <strong>3.</strong> Mándalo así, con las vueltas que le hayas dado, con la frase torcida, con el final que no cierra.<br>
-    <strong>4.</strong> Si te da vergüenza antes de mandarlo, espera cinco minutos y mándalo igual.<br>
-    <strong>5.</strong> Anota qué te contestaron. Y si la respuesta fue distinta de lo que te contestan cuando escribes pulido.</p>
+    <p><strong>1.</strong> Esta semana, elige un d&iacute;a concreto. No una semana: un d&iacute;a.<br>
+    <strong>2.</strong> Cuenta cu&aacute;nto tiempo pasaste revisando, corrigiendo o decidiendo si serv&iacute;a algo que no escribiste t&uacute;.<br>
+    <strong>3.</strong> No lo estimes. Anota los minutos reales, aunque sean aproximados.<br>
+    <strong>4.</strong> Al final del d&iacute;a, escribe ese n&uacute;mero en una nota.<br>
+    <strong>5.</strong> Y si en tu casa o en tu trabajo ese tiempo lo pone siempre la misma persona, dilo en voz alta una vez. Sin reproche, como un dato.</p>
   </div>
 
   <div class="paso">
     <span class="paso-nombre">Cuando no salga</span>
-    <p>Puede que lo releas después y te dé un poco de vergüenza. Es esperable, y es el ejercicio entero: esa vergüenza es la marca de que ahí adentro se ve algo tuyo. Los mensajes pulidos no dan vergüenza nunca, y por eso tampoco muestran nada.</p>
+    <p>Puede que te olvides de contar, o que al final del d&iacute;a no te acuerdes de cu&aacute;nto fue. No arruina el ejercicio: hacerlo una vez ya te da un orden de magnitud, que es todo lo que hace falta para notar que existe.</p>
   </div>
 
   <div class="paso">
     <span class="paso-nombre">La trampa</span>
-    <p>Escribirlo mal a propósito. Fabricar torpeza es más artificial que la forma prestada, y además se nota. Escríbelo como te salga, y si te sale bien, mándalo bien.</p>
+    <p>Convertirlo en una queja. En cuanto lo dices como reclamo, el otro se pone a la defensiva y el dato se pierde. La regla es una sola: se dice como un dato, no como un reproche, y no se insiste ese d&iacute;a.</p>
   </div>
 
   <div class="paso guardar">
     <span class="paso-nombre">Guardar</span>
-    <p>Qué te contestaron. Y si fue distinto de lo que te contestan cuando escribes pulido.</p>
+    <p>El n&uacute;mero del d&iacute;a, y qu&eacute; dijiste si lo dijiste. Textual, con tus palabras.</p>
   </div>
 
   <div class="paso traslada">
     <span class="paso-nombre">Lo que no se traslada</span>
-    <p>Que alguien entienda lo que dijiste mal. Conseguir la forma ya lo tienes resuelto y para siempre; que otro haya atravesado tu desorden y haya llegado igual a lo que querías decir es la otra mitad, y sigue necesitando a alguien del otro lado.</p>
+    <p>Que alguien note por ti que revisaste. La pr&oacute;xima vez que revises algo, si sale bien, nadie va a saber que lo revisaste. Si sale mal, todos lo van a saber. Nombrar el trabajo es lo &uacute;nico que rompe esa asimetr&iacute;a, y solo lo puede hacer el que lo hizo.</p>
   </div>
 </div>
 
 <div class="bloque">
-  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que tengas que mandar algo difícil, la tentación de pulirlo va a estar ahí, y probablemente caigas. Cuando caigas, no hagas nada distinto: vuelve a empezar. Escribe el mensaje de una sola vez y mándalo. La cantidad de veces que vuelves a empezar es el mecanismo.</p>
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La pr&oacute;xima vez que termines de revisar algo a las nueve y cuarto de la noche, la tentaci&oacute;n de no anotarlo va a estar ah&iacute;. Cuando pase, no hagas nada distinto: agrega el n&uacute;mero al final de la lista. La cantidad de d&iacute;as que anotas es el mecanismo.</p>
 </div>
+
+<div class="bloque">
+  <p><span class="rotulo">Quién hizo qué</span></p>
+</div>
+
+<div class="desglose"><p><em>El informe del martes: seis personas, cuarenta minutos cada una, con ayuda.</em></p><p><em>La revisión: Fabián, dos horas y diez.</em></p><p><em>El número mal copiado: una persona.</em></p><p><em>La cifra que no era de ninguna parte: la máquina.</em></p><p><em>La firma: Fabián, a las nueve y cuarto de la noche.</em></p></div>
 
 <div class="continuar">
   <span class="continuar-label">Siguiente</span>
-  <a href="umbral_9_no_hay_primera_vez.html"><span class="continuar-nombre">No hay primera vez</span>
+  <a href="umbral-02.html"><span class="continuar-nombre">Quién revisa</span>
     <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
   </a>
 </div>
@@ -357,61 +377,29 @@
 </main>
 <footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
 <script>
-
   (function(){
-    var t=document.getElementById('q08'); if(!t) return;
-    var b=document.getElementById('b08'), g=document.getElementById('g08');
-    var marcas = [
-      {patron:/\b(no sé|no se|quizás|quizas|tal vez|capaz|puede ser|puede que)\b/gi, tipo:'duda'},
-      {patron:/\b(perdón|perdon|disculpa|disculpe|perdona|perdone)\b/gi, tipo:'disculpa'},
-      {patron:/\b(bueno|este|eh|o sea|digamos|en realidad|mejor dicho)\b/gi, tipo:'muletilla'},
-      {patron:/\b(es que|lo que pasa es que|el tema es que)\b/gi, tipo:'explicación'},
-      {patron:/\b(un poquito|un ratito|un momentito|una cosita)\b/gi, tipo:'diminutivo'},
-      {patron:/\b(digo|quise decir|o sea que)\b/gi, tipo:'corrección'},
-      {patron:/\.\.\.|…/g, tipo:'frase inacabada'},
-      {patron:/\b(no sé si|no estoy seguro|no estoy segura)\b/gi, tipo:'vacilación'},
-      {patron:/\b(igual|de todos modos|de todas formas)\b/gi, tipo:'atenuante'}
-    ];
-    function contarRepeticiones(texto){
-      var palabras = texto.toLowerCase().split(/\s+/);
-      var repes = 0;
-      for(var i=1; i<palabras.length; i++){
-        if(palabras[i] === palabras[i-1] && palabras[i].length > 2) repes++;
-      }
-      return repes;
-    }
-    function analizar(texto){
-      var totalPalabras = texto.trim() ? texto.trim().split(/\s+/).length : 0;
-      var encontradas = [];
-      marcas.forEach(function(m){
-        var match = texto.match(m.patron);
-        if(match){
-          match.forEach(function(){ encontradas.push(m.tipo); });
-        }
-      });
-      var repes = contarRepeticiones(texto);
-      for(var i=0; i<repes; i++) encontradas.push('repetición');
-      return {total: totalPalabras, marcas: encontradas.length, tipos: encontradas};
-    }
-    t.addEventListener('input', function(){ b.disabled = t.value.trim().length < 20; });
-    b.addEventListener('click', function(){
-      var texto = t.value.trim();
-      if(!texto) return;
-      b.disabled = true; t.readOnly = true;
-      var res = analizar(texto);
-      var porcentaje = res.total > 0 ? Math.round((res.marcas / res.total) * 100) : 0;
-      var tiposUnicos = {};
-      res.tipos.forEach(function(tp){ tiposUnicos[tp] = (tiposUnicos[tp]||0)+1; });
-      var listaTipos = Object.keys(tiposUnicos).map(function(k){ return k + ' (' + tiposUnicos[k] + ')'; }).join(', ');
-      g.innerHTML = 'Tu mensaje tiene <strong>' + res.total + '</strong> palabras.<br>' +
-        'De esas, <strong>' + res.marcas + '</strong> son marcas de esfuerzo: ' + (listaTipos || 'ninguna') + '.<br>' +
-        'Eso es el <strong>' + porcentaje + '%</strong> de lo que escribiste.<br>' +
-        'La forma promedio elimina esas marcas. Y al hacerlo, elimina también la información de que del otro lado hay alguien que se está esforzando.';
+    var t=document.getElementById('q01'); if(!t) return;
+    var c=document.getElementById('c01'), b=document.getElementById('b01'), g=document.getElementById('g01');
+    t.addEventListener('input',function(){
+      var v=parseInt(t.value);
+      c.textContent = v===0 ? '0 minutos' : v + ' minutos';
+      b.disabled = v===0;
+    });
+    b.addEventListener('click',function(){
+      var v=parseInt(t.value);
+      b.disabled=true; t.disabled=true;
+      var anualMin = v * 5 * 48;
+      var anualHoras = Math.round(anualMin/60);
+      var dias = Math.round(anualHoras/8);
+      g.innerHTML='<strong>'+v+'</strong> minutos por d&iacute;a, cinco d&iacute;as por semana, cuarenta y ocho semanas al a&ntilde;o.<br>' +
+        'Son <strong>'+anualHoras+'</strong> horas al a&ntilde;o.<br>' +
+        'Son <strong>'+dias+'</strong> jornadas de trabajo completas.<br>' +
+        'Eso es lo que nadie te cuenta, y lo que ning&uacute;n puesto dice.';
     });
   })();
 
   (function(){
-    var sel='.bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho';
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.desglose,.geo';
     if(!('IntersectionObserver' in window)){
       document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
       return;
@@ -423,7 +411,6 @@
     },{threshold:.12});
     document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
   })();
-
 </script>
 </body>
 </html>
