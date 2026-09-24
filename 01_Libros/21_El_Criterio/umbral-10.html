@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X &middot; Cuando hay que irse | El criterio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+  .desglose{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .desglose.visible{opacity:1; transform:none;}
+  .desglose p{font-size:1rem; line-height:1.8; color:var(--blanco-humo); margin:0 0 .55rem;}
+  .desglose p:last-child{margin-bottom:0;}
+
+  .limite{display:grid; gap:1px; background:var(--separador); border:1px solid var(--separador); margin-top:1.2rem;}
+  .limite-fila{display:grid; grid-template-columns:1fr auto auto auto; gap:1px; background:var(--separador);}
+  .limite-fila p{margin:0; padding:1rem .9rem; background:var(--negro);
+    font-size:.98rem; line-height:1.55; color:var(--gris-calido);}
+  .limite-fila button{background:var(--negro); border:none; padding:.9rem .5rem;
+    font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--lejos); cursor:pointer; transition:all .3s ease;
+    min-width:3.8rem;}
+  .limite-fila button:hover{color:var(--blanco-humo);}
+  .limite-fila button.si{color:var(--oro); background:rgba(201,168,76,.06);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-09.html">&larr; El que la cambi&oacute;</a>
+  <span>X</span>
+  <a href="cierre.html">Tu nombre en algo &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">El criterio &middot; Umbral</span>
+  <div class="numero">10</div>
+  <h1 class="titulo">Cuando hay que irse</h1>
+  <p class="subtitulo">el l&iacute;mite, tan preciso como el del libro 19</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Diego tiene cuarenta y cuatro a&ntilde;os y trabaj&oacute; once en una misma empresa de seguros. Entr&oacute; como analista y lleg&oacute; a coordinador de un equipo de seis. No fue un trabajo que eligiera por vocaci&oacute;n: entr&oacute; por necesidad, se qued&oacute; por costumbre, y a los cinco a&ntilde;os descubri&oacute; que no le desagradaba.</p>
+  <p>Hace dos a&ntilde;os empez&oacute; un cambio lento en la empresa. No fue abrupto. Fue una serie de reglas nuevas que llegaron sin que nadie las anunciara como un cambio. Cambi&oacute; el sistema de evaluaci&oacute;n. Se agregaron tres formularios que Diego ten&iacute;a que llenar cada semana. Se ajust&oacute; la pol&iacute;tica de licencias. Se modific&oacute; la manera de asignar tareas, con un criterio que ven&iacute;a de la casa matriz y que Diego no terminaba de entender.</p>
+  <p>Diego empez&oacute; a sentir que su trabajo se volv&iacute;a cada vez m&aacute;s un ejercicio de cumplimiento. No pod&iacute;a decir <em>esto lo hago as&iacute; porque me parece mejor</em>, porque la respuesta era siempre <em>esto se hace as&iacute;, es la pol&iacute;tica</em>. Hab&iacute;a pasado de coordinar a un equipo a administrar un procedimiento.</p>
+</div>
+
+<div class="bloque">
+  <p>Lo que sigue es lo que Diego descubri&oacute; a los seis meses de empezar a notar esto, y es lo que da forma al umbral.</p>
+  <p><strong>Pod&iacute;a decir, en voz alta, cada una de las cosas que no decid&iacute;a.</strong> Lo probó. Con su jefe directo. Con un compa&ntilde;ero de otro equipo. Lo dijo una vez, sin queja, como un dato: <em>esta pol&iacute;tica de asignaci&oacute;n me hace imposible priorizar, porque no tengo margen para reordenar; el sistema me da las tareas y no puedo cambiarlas.</em></p>
+  <p>El jefe le dijo que entend&iacute;a. Que era as&iacute;. Que &eacute;l tampoco ten&iacute;a margen. Que hab&iacute;a que aguantar.</p>
+  <p>Diego lo dijo dos veces m&aacute;s en tres meses. En la tercera, el jefe le dijo algo distinto: que mejor dejara de plantearlo en las reuniones, porque estaba generando incomodidad en el equipo.</p>
+</div>
+
+<div class="perla"><p>El l&iacute;mite no es que no puedas cambiar nada.<br>Es que ya no puedas decirlo<br>en voz alta<br>dentro de la instituci&oacute;n.</p></div>
+
+<div class="bloque">
+  <p>Ese es el l&iacute;mite que este umbral viene a proponer, y es tan preciso como el del libro 19.</p>
+  <p>Mientras se pueda decir <em>esto lo aplico y no lo comparto</em>, hay algo que sostiene. La persona sigue siendo una persona adentro del puesto. El sistema sigue siendo un sistema, y el que trabaja en &eacute;l puede seguir vi&eacute;ndolo como algo externo, distinto de &eacute;l.</p>
+  <p>Cuando ya no se puede decir, se rompe algo m&aacute;s profundo. No es que el sistema cambie: <strong>es que el sistema empieza a incluir a la persona</strong>. La persona deja de poder distinguir entre lo que aplica y lo que es. El puesto pasa a ser su identidad.</p>
+  <p>Ese es el l&iacute;mite. No es el cansancio, no es el mal pago, no es el jefe dif&iacute;cil. Es la imposibilidad de seguir diciendo en voz alta qu&eacute; parte no decid&iacute;s vos.</p>
+</div>
+
+<div class="cita">
+  <p><em>Cuando ya no se puede decir en voz alta qu&eacute; parte no decidiste vos, no es que el trabajo haya empeorado. Es que empezaste a ser el trabajo.</em></p>
+  <cite><span class="obra">Formulaci&oacute;n de este libro</span></cite>
+</div>
+
+<div class="bloque">
+  <p>Diego sigui&oacute; un a&ntilde;o m&aacute;s. Lo intent&oacute; otras veces, con menos energ&iacute;a. Empez&oacute; a llenar los formularios sin leerlos del todo, a asignar las tareas que el sistema le daba sin discutirlas, a responder <em>ok</em> a las pol&iacute;ticas que le llegaban por correo. Cumpl&iacute;a. No estaba mal. Nadie le dec&iacute;a nada.</p>
+  <p>Pero empez&oacute; a notar una cosa que no hab&iacute;a notado antes. Cuando le preguntaban en una reuni&oacute;n por qu&eacute; hac&iacute;a las cosas as&iacute;, contestaba <em>porque es la pol&iacute;tica</em>. Y lo dec&iacute;a sin quejarse. Lo dec&iacute;a bien. Y despu&eacute;s, en su casa, no se acordaba exactamente de cu&aacute;l era la pol&iacute;tica que hab&iacute;a citado. Se acordaba solo de haberla citado.</p>
+  <p>Ese fue el momento en que se dio cuenta.</p>
+</div>
+
+<div class="escena secundaria">
+  <p>Diego renunci&oacute; tres meses despu&eacute;s. No por bronca. No por una pelea. No porque hubiera conseguido otra cosa mejor.</p>
+  <p>Se fue porque ya no pod&iacute;a decir, en voz alta, dentro de esa empresa, qu&eacute; parte de lo que hac&iacute;a no era suya. Y sab&iacute;a que si se quedaba dos a&ntilde;os m&aacute;s, iba a dejar de notar la diferencia.</p>
+</div>
+
+<div class="bloque">
+  <p>Y ahora las condiciones, porque esto se puede confundir con una salida f&aacute;cil.</p>
+  <p><strong>No es el primer d&iacute;a dif&iacute;cil.</strong> El l&iacute;mite no se alcanza en una mala semana. Se alcanza cuando la imposibilidad de decir se vuelve estable, cuando se intenta varias veces, y cuando el resultado es que cada vez se puede decir menos.</p>
+  <p><strong>No es la queja.</strong> Uno puede estar quej&aacute;ndose durante a&ntilde;os y no haber llegado al l&iacute;mite. Quejarse es seguir diciendo. Cuando uno deja de quejarse porque ya no vale la pena, ese puede ser el s&iacute;ntoma.</p>
+  <p><strong>No es que la instituci&oacute;n sea mala.</strong> Puede ser una instituci&oacute;n excelente, con buenas pr&aacute;cticas, que no admite el margen personal porque no forma parte de su dise&ntilde;o. Ese es el caso m&aacute;s com&uacute;n, y es el m&aacute;s dif&iacute;cil de ver.</p>
+  <p><strong>Y no es que irse sea la &uacute;nica salida.</strong> La mayor&iacute;a de la gente que alcanza el l&iacute;mite no se va ese mes. Se queda m&aacute;s tiempo, intenta otras cosas, negocia, ajusta. A veces encuentra una manera de decir dentro de la instituci&oacute;n. A veces no. Y cuando no, irse es una de las salidas posibles, no la &uacute;nica. Hay otras: cambiar de puesto, cambiar de &aacute;rea, cambiar de rol. Pero todas empiezan por reconocer que se lleg&oacute; al l&iacute;mite.</p>
+</div>
+
+<div class="cita">
+  <p><em>La libertad no consiste en hacer lo que uno quiere, sino en no hacer lo que no quiere.</em></p>
+  <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Jean-Jacques Rousseau</span></a> &middot; El contrato social, 1762</cite>
+</div>
+
+<div class="bloque">
+  <p>La frase de Rousseau entra aqu&iacute; en un sentido muy espec&iacute;fico. No se trata de que Diego pudiera hacer lo que quer&iacute;a: no pod&iacute;a, y no se fue por eso. Se fue porque ya no pod&iacute;a decir lo que no quer&iacute;a hacer. La libertad empieza por poder nombrar lo que uno no quiere, y sigue por poder decirlo.</p>
+</div>
+
+<div class="perla grave"><p>El d&iacute;a en que dejes de poder decir<br>qu&eacute; parte no decidiste vos,<br>esa parte va a empezar a ser tuya.<br>Y va a ser tarde para notarlo.</p></div>
+
+<div class="geo" id="geo10">
+  <span class="geo-label">El l&iacute;mite</span>
+  <p class="geo-instruccion">Abajo hay cinco situaciones. Marc&aacute; cu&aacute;les crees que indican que alguien lleg&oacute; al l&iacute;mite, y cu&aacute;les no.</p>
+  <div class="panel">
+    <div class="limite" id="lm10">
+      <div class="limite-fila" data-i="0">
+        <p>Se queja del trabajo todas las semanas.</p>
+        <button type="button" data-v="0">No</button>
+        <button type="button" data-v="1">S&iacute;</button>
+      </div>
+      <div class="limite-fila" data-i="1">
+        <p>Dej&oacute; de quejarse hace meses.</p>
+        <button type="button" data-v="0">No</button>
+        <button type="button" data-v="1">S&iacute;</button>
+      </div>
+      <div class="limite-fila" data-i="2">
+        <p>Dice <em>es la pol&iacute;tica</em> sin poder explicar qu&eacute; pol&iacute;tica es.</p>
+        <button type="button" data-v="0">No</button>
+        <button type="button" data-v="1">S&iacute;</button>
+      </div>
+      <div class="limite-fila" data-i="3">
+        <p>Pidi&oacute; un aumento y no se lo dieron.</p>
+        <button type="button" data-v="0">No</button>
+        <button type="button" data-v="1">S&iacute;</button>
+      </div>
+      <div class="limite-fila" data-i="4">
+        <p>Cuando intenta decir lo que no decide, alguien le pide que deje de plantearlo.</p>
+        <button type="button" data-v="0">No</button>
+        <button type="button" data-v="1">S&iacute;</button>
+      </div>
+    </div>
+    <button type="button" class="accion" id="b10" style="margin-top:1.4rem;" disabled>Ver resultado</button>
+  </div>
+  <div class="geo-estado"><span class="glosa" id="g10"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
+</div>
+
+<div class="bloque">
+  <p>El l&iacute;mite no est&aacute; en las situaciones obvias. Ni en la queja sostenida, ni en el salario, ni en el cansancio acumulado. Est&aacute; en tres cosas concretas:</p>
+  <p><strong>Dejar de quejarse,</strong> que suele ser un s&iacute;ntoma m&aacute;s grave que quejarse mucho. La queja sostiene la separaci&oacute;n entre uno y el trabajo. Cuando desaparece, es porque la separaci&oacute;n se cerr&oacute;.</p>
+  <p><strong>Repetir la f&oacute;rmula sin contenido.</strong> Decir <em>es la pol&iacute;tica</em> sin poder explicar cu&aacute;l. Eso indica que la persona ya no est&aacute; aplicando un criterio que reconoce como externo: est&aacute; haciendo suyas las palabras del sistema sin darse cuenta.</p>
+  <p><strong>Que le pidan dejar de plantearlo.</strong> Cuando el intento de decir lo que no se decide es recibido como una molestia, la instituci&oacute;n est&aacute; cerrando el &uacute;ltimo espacio donde el margen era visible.</p>
+  <p>Las otras dos &mdash;quejarse mucho y no recibir aumento&mdash; no indican el l&iacute;mite. Pueden doler mucho, pero mientras la persona siga diciendo en voz alta qu&eacute; parte no decidi&oacute;, el margen sigue existiendo.</p>
+</div>
+
+<div class="cita">
+  <p><em>Lo que resiste, no vive.</em></p>
+  <cite><a href="#" target="_blank" rel="noopener"><span class="obra">Atribuida a Bertolt Brecht</span></a> &middot; formulaci&oacute;n corriente</cite>
+</div>
+
+<div class="bloque">
+  <p>La frase es dura y es exacta. Diego, mientras se quejaba, resist&iacute;a. En el momento en que dej&oacute; de quejarse, dej&oacute; de resistir. Y en el momento en que dej&oacute; de resistir, empez&oacute; a fundirse con el sistema. Ese es el proceso que este umbral viene a mostrar: no es un solo d&iacute;a, es un proceso lento que casi nadie nota mientras le pasa.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con qui&eacute;n</span>
+    <p>Contigo. Este es el tercer gesto del libro que no se hace delante de nadie.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, eleg&iacute; un lugar &mdash;tu trabajo, una actividad, un grupo&mdash; donde apliques criterios que no elegiste.<br>
+    <strong>2.</strong> Escrib&iacute; en un papel dos l&iacute;neas. La primera: <em>de este lugar, lo que no decid&iacute; yo es ___.</em> La segunda: <em>lo que s&iacute; decid&iacute; es ___.</em><br>
+    <strong>3.</strong> Si la segunda l&iacute;nea te queda vac&iacute;a, ese es el dato. Si pod&eacute;s escribir algo concreto y verdadero, tambi&eacute;n.<br>
+    <strong>4.</strong> Guard&aacute; el papel. Volv&eacute; a leerlo en un mes. Las dos l&iacute;neas pueden cambiar.<br>
+    <strong>5.</strong> No tomes ninguna decisi&oacute;n esta semana. El gesto no es irse: es saber d&oacute;nde est&aacute;s parado.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que la segunda l&iacute;nea te cueste. Puede que escribas algo y al mes siguiente te des cuenta de que eso que escribiste no era verdad. Est&aacute; bien: el ejercicio no busca una respuesta exacta. Busca notar que hay una segunda l&iacute;nea, aunque sea corta, aunque sea discutible, aunque sea peque&ntilde;a. Mientras haya una segunda l&iacute;nea, el margen existe.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Usar el ejercicio para justificar una decisi&oacute;n que ya tomaste. Si ya est&aacute;s pensando en irte, el ejercicio no es para eso. El ejercicio es para saber d&oacute;nde est&aacute;s. Si el resultado coincide con la decisi&oacute;n que ya tomaste, perfecto. Si no coincide, mejor, porque significa que todav&iacute;a hay algo ah&iacute; que no hab&iacute;as visto.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>Las dos l&iacute;neas, en un papel. Y la fecha. Para volver a leerlas en un mes.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Volver a tener margen despu&eacute;s de haberlo perdido. Una vez que uno dej&oacute; de poder decir qu&eacute; parte no decidi&oacute;, es muy dif&iacute;cil recuperarlo en el mismo lugar. No imposible, pero muy dif&iacute;cil. Por eso el gesto no es para recuperarlo: es para saber si lo ten&eacute;s todav&iacute;a.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La pr&oacute;xima vez que digas <em>es la pol&iacute;tica</em>, la tentaci&oacute;n de no preguntarte cu&aacute;l es la pol&iacute;tica va a estar ah&iacute;. Cuando pase, no hagas nada distinto: anot&aacute; la frase y segu&iacute;. La cantidad de veces que anot&aacute;s es el mecanismo.</p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">De d&oacute;nde ven&iacute;a</span>El l&iacute;mite que alcanz&oacute; Diego.</p>
+</div>
+
+<div class="desglose"><p><em>El cambio de sistema de evaluaci&oacute;n: pol&iacute;tica de la casa matriz, aplicada a todas las filiales en 2023.</em></p><p><em>Los tres formularios semanales: decisi&oacute;n del &aacute;rea de procesos de la filial, en 2023, adaptando la pol&iacute;tica global al contexto local.</em></p><p><em>La nueva pol&iacute;tica de licencias: pol&iacute;tica general del grupo, entrada en vigencia en enero de 2024.</em></p><p><em>El sistema de asignaci&oacute;n de tareas: implementado en marzo de 2024 por el &aacute;rea de operaciones, con un criterio que optimiza la carga, no la prioridad. Ninguna persona en la empresa puede modificarlo. Nadie en la empresa sabe exactamente qui&eacute;n lo dise&ntilde;&oacute;.</em></p><p><em>Los intentos de Diego por decir lo que no decid&iacute;a: cuatro a lo largo de ocho meses. En el cuarto, alguien le pidi&oacute; que dejara de plantearlo.</em></p><p><em>La renuncia de Diego: tres meses despu&eacute;s. No por bronca. Porque ya no pod&iacute;a decir.</em></p></div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="cierre.html"><span class="continuar-nombre">Tu nombre en algo</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var raiz=document.getElementById('lm10'); if(!raiz) return;
+    var filas=raiz.querySelectorAll('.limite-fila');
+    var btn=document.getElementById('b10'), g=document.getElementById('g10');
+    var respuestas = {};
+    var correctas = {0:'0', 1:'1', 2:'1', 3:'0', 4:'1'};
+    filas.forEach(function(f){
+      var i = f.getAttribute('data-i');
+      f.querySelectorAll('button').forEach(function(b){
+        b.addEventListener('click', function(){
+          respuestas[i] = b.getAttribute('data-v');
+          f.querySelectorAll('button').forEach(function(o){ o.classList.remove('si'); });
+          b.classList.add('si');
+          btn.disabled = Object.keys(respuestas).length < filas.length;
+        });
+      });
+    });
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      raiz.querySelectorAll('button').forEach(function(x){ x.disabled = true; });
+      var aciertos = 0;
+      Object.keys(respuestas).forEach(function(k){
+        if(respuestas[k] === correctas[k]) aciertos++;
+      });
+      var lectura = '';
+      if(aciertos >= 4){
+        lectura = 'Acertaste ' + aciertos + ' de 5. El l&iacute;mite no est&aacute; en el dolor ni en el cansancio: est&aacute; en dejar de poder decir qu&eacute; parte no decidiste vos. Quejarse mucho y no recibir aumento no indican el l&iacute;mite. Dejar de quejarse, repetir la f&oacute;rmula sin contenido, y que te pidan no plantearlo s&iacute;.';
+      } else if(aciertos >= 2){
+        lectura = 'Acertaste ' + aciertos + ' de 5. La confusi&oacute;n t&iacute;pica es asociar el l&iacute;mite con el sufrimiento visible (queja, salario, cansancio). El l&iacute;mite est&aacute; en otra parte: en el momento en que la persona ya no puede distinguir qu&eacute; parte del trabajo no es suya.';
+      } else {
+        lectura = 'Acertaste ' + aciertos + ' de 5. Es contraintuitivo: el l&iacute;mite no se ve desde afuera. Alguien que se queja todas las semanas puede estar lejos del l&iacute;mite. Alguien que ya no se queja puede estar en el l&iacute;mite desde hace meses.';
+      }
+      g.innerHTML = '<strong>' + aciertos + '</strong> de 5<br>' + lectura;
+    });
+  })();
+
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.desglose,.geo';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
