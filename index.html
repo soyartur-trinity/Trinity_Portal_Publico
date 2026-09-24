@@ -236,9 +236,9 @@
         }
 
         /* Libro 20 — La firma (el trazo que solo alguien puede hacer) */
-        .libro-card.firma { border-color: #5a4828; }
-        .libro-card.firma::before { background: radial-gradient(ellipse 70% 55% at 50% 42%, rgba(201,168,76,0.06) 0%, transparent 70%); }
-        .libro-card.firma::after {
+        .libro-card.ayudante { border-color: #5a4828; }
+        .libro-card.ayudante::before { background: radial-gradient(ellipse 70% 55% at 50% 42%, rgba(201,168,76,0.06) 0%, transparent 70%); }
+        .libro-card.ayudante::after {
             content: '';
             position: absolute;
             right: -18px; bottom: -30px;
@@ -246,7 +246,7 @@
             background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Cpath%20d%3D%27M%2018%2060%20Q%2024%2030%2032%2052%20Q%2038%2068%2044%2050%20Q%2050%2032%2058%2052%20Q%2064%2066%2072%2048%20Q%2076%2040%2082%2058%27%20fill%3D%27none%27%20stroke%3D%27rgba%28201%2C168%2C76%2C0.18%29%27%20stroke-width%3D%271.1%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M%2018%2072%20L%2082%2072%27%20fill%3D%27none%27%20stroke%3D%27rgba%28201%2C168%2C76%2C0.10%29%27%20stroke-width%3D%270.8%27%2F%3E%3Ccircle%20cx%3D%2782%27%20cy%3D%2772%27%20r%3D%272.2%27%20fill%3D%27rgba%28201%2C168%2C76%2C0.22%29%27%2F%3E%3C%2Fsvg%3E") no-repeat center;
             background-size: contain; pointer-events: none; opacity: 0.95;
         }
-        .libro-card.firma:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.17); border-color: #c9a84c; }
+        .libro-card.ayudante:hover { box-shadow: 0 10px 40px rgba(201,168,76,0.17); border-color: #c9a84c; }
 
         /* Libro 21 — El criterio (la cadena: eslabones que nadie firmó) */
         .libro-card.criterio { border-color: #4a5560; }
@@ -271,7 +271,7 @@
         .atravesar-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
         .cultivar-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #5a4828; letter-spacing: 0.05em; }
         .volvercentro-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #6a5535; letter-spacing: 0.05em; }
-        .firma-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #6a5535; letter-spacing: 0.05em; }
+        .ayudante-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #6a5535; letter-spacing: 0.05em; }
         .criterio-badge { background: #0d0c0b; color: #a8b0b8; border: 1px solid #4a5560; letter-spacing: 0.05em; }
 
         .nota-autoria { background: rgba(111,78,144,0.10); border-left: 2px solid var(--violeta);
@@ -456,11 +456,11 @@
             <span class="estado violeta-badge">&#10192; Nuevo &middot; Once umbrales</span>
         </a>
 
-        <a href="01_Libros/20_La_Firma/index.html" class="libro-card firma">
+        <a href="01_Libros/20_El_Ayudante/index.html" class="libro-card ayudante">
             <div class="libro-numero">Libro 20 &middot; Lo que est&aacute; al lado III</div>
-            <h2 class="libro-titulo">La firma</h2>
-            <p class="libro-descripcion">Apareci&oacute; trabajo nuevo y nadie lo reparti&oacute;. Nueve umbrales sobre lo que queda cuando todo lo dem&aacute;s se automatiza: no lo que solo t&uacute; puedes producir, sino de lo que te haces cargo. Cierra el movimiento.</p>
-            <span class="estado firma-badge">&#10192; Nuevo &middot; Nueve umbrales</span>
+            <h2 class="libro-titulo">El ayudante</h2>
+            <p class="libro-descripcion">Lleg&oacute; para ahorrar trabajo y trajo uno nuevo que nadie reparti&oacute;: revisar, corregir, decidir si sirve. Nueve umbrales sobre qu&eacute; cambi&oacute; adentro de una casa &mdash; y sobre la &uacute;nica pregunta que no envejece: qui&eacute;n se hace cargo. Cierra el movimiento.</p>
+            <span class="estado ayudante-badge">&#10192; Nuevo &middot; Nueve umbrales</span>
         </a>
 
         <a href="01_Libros/21_El_Criterio/index.html" class="libro-card criterio">
