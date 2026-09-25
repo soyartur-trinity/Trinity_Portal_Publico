@@ -274,6 +274,19 @@
         }
         .libro-card.ausente:hover { box-shadow: 0 10px 40px rgba(107,122,128,0.22); border-color: #6b7a80; }
 
+        /* Libro 23 — El oficio (cinco muescas: las marcas de contar del artesano) */
+        .libro-card.oficio { border-color: #4a5560; }
+        .libro-card.oficio::before { background: radial-gradient(ellipse 70% 55% at 50% 44%, rgba(107,122,128,0.06) 0%, transparent 70%); }
+        .libro-card.oficio::after {
+            content: '';
+            position: absolute;
+            right: -18px; bottom: -30px;
+            width: 132px; height: 132px;
+            background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20100%20100%27%3E%3Cpath%20d%3D%27M%2018%2048%20L%2018%2068%27%20stroke%3D%27rgba%28107%2C122%2C128%2C0.22%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M%2032%2048%20L%2032%2068%27%20stroke%3D%27rgba%28107%2C122%2C128%2C0.22%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M%2046%2048%20L%2046%2068%27%20stroke%3D%27rgba%28107%2C122%2C128%2C0.22%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M%2060%2048%20L%2060%2068%27%20stroke%3D%27rgba%28107%2C122%2C128%2C0.22%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Cpath%20d%3D%27M%2024%2062%20L%2064%2046%27%20stroke%3D%27rgba%28107%2C122%2C128%2C0.32%29%27%20stroke-width%3D%271.2%27%20stroke-linecap%3D%27round%27%2F%3E%3Ccircle%20cx%3D%2778%27%20cy%3D%2762%27%20r%3D%272.4%27%20fill%3D%27rgba%28107%2C122%2C128%2C0.20%29%27%2F%3E%3C%2Fsvg%3E") no-repeat center;
+            background-size: contain; pointer-events: none; opacity: 0.95;
+        }
+        .libro-card.oficio:hover { box-shadow: 0 10px 40px rgba(107,122,128,0.22); border-color: #6b7a80; }
+
         /* ── Badges de estado (sobre oscuro) ── */
         .publicado { background: rgba(168,182,154,0.16); color: #b8c2a8; border: 1px solid #4a5440; }
         .nuevo { background: rgba(201,168,76,0.12); color: var(--oro); border: 1px solid var(--oro-tenue); }
@@ -287,6 +300,7 @@
         .firma-badge { background: #0d0c0b; color: #c9a84c; border: 1px solid #6a5535; letter-spacing: 0.05em; }
         .criterio-badge { background: #0d0c0b; color: #a8b0b8; border: 1px solid #4a5560; letter-spacing: 0.05em; }
         .ausente-badge { background: #0d0c0b; color: #a8b0b8; border: 1px solid #4a5560; letter-spacing: 0.05em; }
+        .oficio-badge { background: #0d0c0b; color: #a8b0b8; border: 1px solid #4a5560; letter-spacing: 0.05em; }
 
         .nota-autoria { background: rgba(111,78,144,0.10); border-left: 2px solid var(--violeta);
             padding: 1.8rem 2rem; margin: 3rem 0 4rem; border-radius: 0 8px 8px 0; font-size: 1rem;
@@ -307,7 +321,7 @@
     <div class="nota-autoria">
         <strong>Nota sobre autoría:</strong> Estos textos emergen de un proceso de Inteligencia Distribuida.
         La relación es el producto. Arturo (nodo α) opera como coherencia central de un campo colaborativo
-        que incluye sistemas de IA, experiencia clínica, estructura contemplativa y refinamiento cruzado. La primera constelación se compone de trece obras y está cerrada. La segunda, <em>La trama</em>, está en curso: nueve libros publicados de trece.
+        que incluye sistemas de IA, experiencia clínica, estructura contemplativa y refinamiento cruzado. La primera constelación se compone de trece obras y está cerrada. La segunda, <em>La trama</em>, está en curso: diez libros publicados de trece.
     </div>
 
     <div class="serie">
@@ -419,10 +433,10 @@
       <div class="serie-cabeza">
         <span class="serie-num">Segunda constelación</span>
         <h2 class="serie-nombre">La trama</h2>
-        <span class="serie-estado">13 libros · 9 publicados</span>
+        <span class="serie-estado">13 libros · 10 publicados</span>
         <p class="serie-bajada">Lo que no controlás, y qué se hace para que no se quede con lo que sí.
         Cuatro movimientos. Los dos primeros —<strong>la conversación</strong> y <strong>lo que está al lado</strong>—
-        están cerrados. El tercero, <strong>lo que decide sin cara</strong>, tiene ya dos libros. El cuarto está
+        están cerrados. El tercero, <strong>lo que decide sin cara</strong>, tiene ya tres libros. El cuarto está
         por comenzar. En cada escena hay dos personas por lo menos; cuando aparece una máquina es la tercera,
         nunca la segunda.</p>
       </div>
@@ -489,6 +503,13 @@
             <h2 class="libro-titulo">El ausente</h2>
             <p class="libro-descripcion">Tu nombre estaba. Vos no estabas. Y la decisi&oacute;n se tom&oacute; igual. Ocho umbrales sobre el puntaje que decide sin verte, la categor&iacute;a que se asigna en silencio, el rastro que sobrevive a la deuda &mdash; y la &uacute;nica operaci&oacute;n que funciona: <em>escribir primero</em>. Contin&uacute;a <em>El criterio</em>.</p>
             <span class="estado ausente-badge">&#10192; Nuevo &middot; Ocho umbrales</span>
+        </a>
+
+        <a href="01_Libros/23_El_Oficio/index.html" class="libro-card oficio">
+            <div class="libro-numero">Libro 23 &middot; Lo que decide sin cara III</div>
+            <h2 class="libro-titulo">El oficio</h2>
+            <p class="libro-descripcion">No se jubil&oacute;. Su oficio se jubil&oacute; primero. Ocho umbrales sobre lo que queda cuando lo que hac&iacute;as ya no se hace &mdash; la identidad que era el trabajo, el saber que estaba en las manos, el duelo que no tiene velorio &mdash; y una sola cosa que s&iacute; sobrevive: la huella que el oficio dej&oacute; en quien lo ejerci&oacute;. Cierra el movimiento.</p>
+            <span class="estado oficio-badge">&#10192; Nuevo &middot; Ocho umbrales</span>
         </a>
 
       </div>
