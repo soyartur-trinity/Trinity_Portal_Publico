@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IV &middot; La oferta | El oficio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+  /* comparar interactivo 04 */
+  .comparar{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador); border:1px solid var(--separador); margin-top:1.2rem;}
+  .comparar > div{background:var(--negro); padding:1.2rem 1rem;}
+  .comparar h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.84rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.7rem; text-align:center;}
+  .comparar p{font-size:.96rem; line-height:1.7; color:var(--gris-calido); margin:0 0 .6rem; font-style:italic;}
+  .comparar .rotulo-lado{font-family:'Cormorant Garamond',serif; font-size:.68rem;
+    letter-spacing:.2em; text-transform:uppercase; color:var(--lejos); display:block; margin-top:.9rem; margin-bottom:.4rem;}
+  .comparar-botones{display:grid; gap:1px; background:var(--separador); border:1px solid var(--separador); margin-top:1rem; grid-template-columns:1fr 1fr;}
+  .comparar-botones button{background:var(--negro); border:none; padding:1rem .8rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease;}
+  .comparar-botones button:hover, .comparar-botones button:focus-visible{color:var(--oro);}
+  .comparar-botones button.si{color:var(--oro); background:rgba(201,168,76,.06);}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-03.html">&larr; El último que lo hacía</a>
+  <span>IV</span>
+  <a href="umbral-05.html">El duelo que no se hace &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">El oficio &middot; Umbral</span>
+  <div class="numero">04</div>
+  <h1 class="titulo">La oferta</h1>
+  <p class="subtitulo">cuando llega el trabajo nuevo. No es mejor ni peor: es otro</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Gustavo tiene cincuenta y un años y fue fotógrafo de estudio durante veinte. Estudio propio, en el centro de una ciudad del interior. Retratos, bodas, libros de quince años, comuniones, carnets de todo el mundo. Tenía un laboratorio propio donde revelaba y copiaba. Sabía hacer cosas con la luz que ya casi nadie sabe hacer. Su archivo tiene más de cuatro mil negativos, ordenados por año y por apellido.</p>
+  <p>En 2010 empezó a bajar. Primero se dejaron de encargar los carnets. Después las bodas: las parejas empezaron a contratar a un amigo con una cámara linda. Después los retratos: nadie iba al estudio a que le sacaran una foto. En 2014 cerró el local. En 2016 vendió el laboratorio.</p>
+  <p>Hoy Gustavo trabaja en una empresa que hace fotos de producto para catálogos online. Se llama <em>content creator</em> en su contrato. Fotografía miles de objetos por semana: zapatillas, mates, cargadores de celular. No tiene que pensar la luz, porque la luz es siempre la misma: un softbox a la izquierda, otro a la derecha, fondo blanco. No tiene que componer, porque la composición es siempre la misma: el objeto centrado. No tiene que esperar el momento, porque el momento es siempre ahora.</p>
+  <p>Cobra más que antes. Trabaja menos horas. Tiene obra social. Dice que está bien.</p>
+  <p>Y sin embargo, cuando le preguntan si le gusta, contesta que sí, que es un trabajo tranquilo. Y después de un rato, si la conversación sigue, cuenta algo de cuando tenía el estudio.</p>
+</div>
+
+<div class="perla"><p>El trabajo nuevo es mejor.<br>Y no es el mismo.<br>Las dos cosas son verdad.</p></div>
+
+<div class="bloque">
+  <p>Esto es lo que el umbral viene a trabajar, y es la parte del libro donde hay que caminar con cuidado, porque el terreno está lleno de lugares comunes.</p>
+  <p><strong>El trabajo nuevo no es peor que el viejo.</strong></p>
+  <p>Gustavo cobra más, trabaja menos, tiene estabilidad. Su vida material mejoró. Podría, si quisiera, contar su historia como una historia de superación: el fotógrafo que se adaptó al cambio y encontró un nuevo lugar en el mundo. No es una mentira. Es un relato verdadero.</p>
+  <p>Y hay otro relato verdadero, que es el que a Gustavo le sale cuando la conversación sigue: el del fotógrafo de estudio que ya no existe. Que no vuelve. Que no va a volver.</p>
+  <p>Los dos relatos son ciertos. Los dos relatos conviven en la misma persona, sin contradicción, aunque parezcan contradictorios desde afuera. Lo que hace el umbral es sostener los dos a la vez, sin que uno tape al otro.</p>
+</div>
+
+<div class="bloque">
+  <p>Y hay algo más específico todavía, que es la parte más difícil de explicar a quien no lo vivió.</p>
+  <p><strong>El trabajo nuevo no pide lo que el oficio pedía.</strong></p>
+  <p>Cuando Gustavo hacía retratos, tenía que decidir cosas que hoy no decide. Cuánta luz, de qué lado, qué distancia, qué momento de la cara del otro. Tenía que esperar. Tenía que mirar. Tenía que equivocarse y volver a hacer. Cada foto era una decisión.</p>
+  <p>Hoy no decide nada de eso. La luz está puesta, la composición está fijada, el momento es el mismo. Lo único que decide es cuándo apretar el botón. Y eso, en la práctica, no es una decisión: es una acción.</p>
+  <p>Entonces hay algo que Gustavo no hace más, y que no es una tarea: <strong>es una facultad</strong>. La de decidir la forma de lo que sale. La de elegir la luz y el momento. La de equivocarse en el ejercicio de esa elección. El trabajo nuevo no pide eso. Y si un trabajo no lo pide, esa facultad deja de ejercerse, y lo que no se ejerce se atrofia.</p>
+  <p>Eso es lo que Gustavo no sabe decir del todo, y es lo que el libro viene a nombrar: no perdió el oficio. Perdió el ejercicio del oficio. Y con el ejercicio, empieza a perder también la capacidad.</p>
+</div>
+<div class="bloque">
+  <p>Y hay algo más que este umbral tiene que decir, para que no se lea como una queja contra el trabajo nuevo.</p>
+  <p><strong>El trabajo nuevo también exige cosas que el oficio viejo no pedía.</strong></p>
+  <p>Gustavo, en la empresa de fotos de producto, aprendió a trabajar con ritmo industrial. Aprende a sostener la atención durante ocho horas seguidas con pocos segundos por objeto. Aprendió a coordinar con un equipo en tiempo real. Aprendió a usar herramientas digitales que su oficio viejo no pedía. Aprendió a aceptar que su trabajo se mida por cantidad de piezas y no por calidad del resultado.</p>
+  <p>Nada de eso es poco. Y todo eso no existía en su oficio de antes. Cambió un conjunto de facultades por otro. No hay comparación: hay sustitución. Y el problema no es el cambio. El problema es que <strong>lo que se sustituye no vuelve</strong>. Las facultades que deja de ejercer, las deja de tener.</p>
+</div>
+
+<div class="perla grave"><p>No se pierde el oficio<br>el día que se cierra el local.<br>Se pierde cuando el trabajo nuevo<br>deja de pedirlo.</p></div>
+
+<div class="escena secundaria">
+  <p>Un domingo, la hija de Gustavo le pidió que le sacara una foto. No con el celular: con la cámara de él. Una cámara vieja que todavía conserva. La hija quería una foto "como las de antes".</p>
+  <p>Gustavo sacó la cámara, la miró, y la dejó sobre la mesa. Le dijo que mejor usaran el celular, que la cámara vieja ya no tiene baterías, que hay que ir a comprarlas, que es un lío. La hija usó el celular. La foto salió bien.</p>
+  <p>Lo que Gustavo no le dijo, porque tampoco se lo dijo a sí mismo, es que la cámara vieja funcionaba perfectamente. Lo que no funcionaba era él con la cámara vieja. En cinco años de fotografiar zapatillas, había perdido la mano para mirar por el visor. Ya no sabía qué hacer con una persona delante.</p>
+</div>
+
+
+<div class="cita">
+  <p><em>El proceso no destruye por capricho: destruye porque está creando, y crea sobre lo que destruye.</em></p>
+  <cite><span class="obra">Joseph Schumpeter</span> &middot; Capitalismo, socialismo y democracia, 1942<br><small>(paráfrasis de la destrucción creadora)</small></cite>
+</div>
+<div class="puerta"><a href="../20_El_Ayudante/index.html">&#10192; <em>&#10192; Que el trabajo que aparece no lo reparte nadie y que lo que queda cuando todo se automatiza es la firma, se aborda en <strong>El ayudante</strong>. El libro entero,</em></a></div>
+
+<div class="geo" id="geo04">
+  <span class="geo-label">Qué pedía el viejo trabajo</span>
+  <p class="geo-instruccion">Piensa en un trabajo que hayas tenido hace años y en el trabajo que tienes hoy. Abajo hay cuatro facultades que el trabajo viejo podía pedir. Marca cuál te pedía el viejo y cuál te pide el nuevo.</p>
+  <div class="panel">
+    <div class="comparar">
+      <div>
+        <h4>Antes</h4>
+        <p>Decidir la forma de lo que sale</p>
+        <p>Esperar el momento</p>
+        <p>Equivocarse y rehacer</p>
+        <p>Responder con el cuerpo</p>
+      </div>
+      <div>
+        <h4>Ahora</h4>
+        <p>Decidir la forma de lo que sale</p>
+        <p>Esperar el momento</p>
+        <p>Equivocarse y rehacer</p>
+        <p>Responder con el cuerpo</p>
+      </div>
+    </div>
+    <div class="comparar-botones" id="cm04">
+      <button type="button" data-v="A" data-fila="0">Antes</button>
+      <button type="button" data-v="H" data-fila="0">Ahora</button>
+      <button type="button" data-v="A" data-fila="1">Antes</button>
+      <button type="button" data-v="H" data-fila="1">Ahora</button>
+      <button type="button" data-v="A" data-fila="2">Antes</button>
+      <button type="button" data-v="H" data-fila="2">Ahora</button>
+      <button type="button" data-v="A" data-fila="3">Antes</button>
+      <button type="button" data-v="H" data-fila="3">Ahora</button>
+    </div>
+    <button type="button" class="accion" title="Pulsa después de responder" id="b04" style="margin-top:1.4rem;" disabled>Ver resultado</button>
+  </div>
+  <div class="geo-estado"><span class="glosa" id="g04"><em style="opacity:.42;font-style:italic;">Marca una opción en cada fila y pulsa &laquo;Ver resultado&raquo;. La respuesta aparece aquí.</em></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
+</div>
+
+<div class="bloque">
+  <p>El ejercicio mide una sola cosa: <strong>cuántas de esas cuatro facultades se perdieron</strong>. La mayoría de la gente se da cuenta, mientras lo hace, de que el trabajo nuevo pide menos de esas cosas. No siempre menos: hay trabajos nuevos que piden muchísimo. Pero en los trabajos donde el oficio viejo se reemplazó por un sistema industrial, la pérdida suele ser alta.</p>
+  <p>El dato del ejercicio no es si elegiste bien. Es lo que sentiste mientras elegías. Casi todo el mundo, al marcar la segunda o la tercera, se da cuenta de que estaba aplicando al trabajo nuevo la memoria del trabajo viejo. Y que la memoria del trabajo viejo no le sirve para hacer bien el trabajo nuevo. Esa distancia es el oficio que ya no está.</p>
+</div>
+<div class="cita">
+  <p><em>Quien tiene oficio, tiene beneficio.</em></p>
+  <cite><span class="obra">Refrán</span> &middot; documentado en castellano desde el siglo XVI<br><small>(atribución a cotejar)</small></cite>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con quién</span>
+    <p>Contigo. Y si conoces a alguien que haya cambiado de oficio, con esa persona.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, piensa en un trabajo que hayas tenido hace años y que ya no tienes. No el que perdiste: el que cambiaste.<br>
+    <strong>2.</strong> Elige una sola facultad que ese trabajo viejo te pedía. No una tarea: una facultad. La de decidir algo, la de esperar algo, la de improvisar algo.<br>
+    <strong>3.</strong> Pregúntate si tu trabajo de hoy te pide esa misma facultad. Anota la respuesta en una línea.<br>
+    <strong>4.</strong> Si no te la pide, haz un pequeño ejercicio de esa facultad esta semana, fuera del trabajo. No para volver: para no perderla del todo.<br>
+    <strong>5.</strong> Anota cómo te fue. Casi siempre sale mal. Está bien: significa que la facultad todavía se puede recuperar. Cuando no sale mal, es que ya se perdió.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que no se te ocurra ninguna facultad del trabajo viejo, o que el trabajo nuevo te pida cosas tan distintas que la comparación no aplique. Está bien. En ese caso el gesto es solo identificar que hubo algo que cambió: que no es el mismo conjunto de facultades que antes. Eso, que parece poco, es lo que muchos no llegan a notar.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Convertirlo en un lamento por el oficio viejo. En cuanto el gesto suena a <em>antes era mejor</em>, se arruina. El trabajo nuevo es probablemente mejor en muchas cosas. El gesto no es para comparar: es para <strong>notar qué dejaste de ejercer y qué sigues teniendo</strong>. Sin eso, se pierde sin darse cuenta.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>La facultad que elegiste. Si el trabajo actual te la pide. Y cómo te fue cuando la ejerciste fuera del trabajo.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Recuperar el oficio. No vuelve. La facultad sí se puede sostener con ejercicios chicos, pero el oficio como forma de vida no se recupera: el mundo donde ese oficio tenía lugar ya no existe. Lo que se puede hacer es <strong>no perder todas las facultades al mismo tiempo</strong>. Sostener una, dos, las que importen. Eso alcanza para que, si en algún momento hace falta, algo del oficio esté ahí.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima vez que ejercites algo que sabías hacer hace años, la tentación de notar que ya no te sale igual va a estar ahí. Cuando pase, no hagas nada distinto: anota qué facultad era. La cantidad de veces que anotas es el mecanismo.</p>
+</div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-05.html"><span class="continuar-nombre">El duelo que no se hace</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal Público Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var raiz=document.getElementById('cm04'); if(!raiz) return;
+    var botones=raiz.querySelectorAll('button');
+    var btn=document.getElementById('b04'), g=document.getElementById('g04');
+    var respuestas = {0:null, 1:null, 2:null, 3:null};
+    botones.forEach(function(b){
+      b.addEventListener('click', function(){
+        var fila = b.getAttribute('data-fila');
+        respuestas[fila] = b.getAttribute('data-v');
+        botones.forEach(function(o){
+          if(o.getAttribute('data-fila') === fila) o.classList.remove('si');
+        });
+        b.classList.add('si');
+        var completas = Object.keys(respuestas).filter(function(k){ return respuestas[k] !== null; }).length;
+        btn.disabled = completas < 4;
+      });
+    });
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      botones.forEach(function(x){ x.disabled = true; });
+      var antes=0, ahora=0;
+      Object.keys(respuestas).forEach(function(k){
+        if(respuestas[k]==='A') antes++;
+        else ahora++;
+      });
+      var lectura = '';
+      if(ahora === 0){
+        lectura = 'Marcaste las cuatro facultades como del trabajo viejo. Eso significa que el trabajo nuevo no te pide ninguna de esas cosas. Ese es el punto del umbral: no perdiste el oficio, dejaste de ejercerlo. Y lo que no se ejerce se atrofia.';
+      } else if(ahora <= 1){
+        lectura = 'Marcaste <strong>' + ahora + '</strong> de las cuatro como del trabajo nuevo. La mayoría de las facultades del oficio viejo no se piden en el trabajo actual. Cada una de esas representa una capacidad que dejas de ejercer. No se pierde de un día para otro: se pierde por falta de uso.';
+      } else if(ahora <= 2){
+        lectura = 'Marcaste <strong>' + ahora + '</strong> de las cuatro como del trabajo nuevo. Es un reparto intermedio. El trabajo actual pide algunas de las facultades viejas, y no pide otras. Las que pide siguen vivas. Las otras, con el tiempo, se van a ir apagando.';
+      } else {
+        lectura = 'Marcaste <strong>' + ahora + '</strong> de las cuatro como del trabajo nuevo. Curioso: el trabajo actual te pide casi las mismas facultades que el viejo. Eso significa que el cambio no fue un desarme del oficio: fue un traslado. No todo cambio de trabajo implica pérdida de oficio.';
+      }
+      g.innerHTML = '<strong>' + antes + '</strong> antes &middot; <strong>' + ahora + '</strong> ahora<br>' + lectura;
+    });
+  })();
+
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.desglose,.geo,.sendero';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
