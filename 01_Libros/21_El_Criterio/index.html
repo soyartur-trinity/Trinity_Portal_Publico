@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Criterio &middot; Libro XXI | Portal Trinity</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .portada{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; padding:5rem 2rem; position:relative; overflow:hidden; text-align:center;}
+  .anillo{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); border-radius:50%;
+    border:1px solid rgba(201,168,76,0.05); pointer-events:none; animation:respirar 7s ease-in-out infinite;}
+  .anillo:nth-child(1){width:180px;height:180px;animation-delay:0s;}
+  .anillo:nth-child(2){width:340px;height:340px;animation-delay:2.3s;}
+  .anillo:nth-child(3){width:520px;height:520px;animation-delay:4.6s;}
+  .volver-portal{position:absolute; top:2rem; left:1.6rem; z-index:3;
+    font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.25em; text-transform:uppercase;
+    color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;
+    opacity:0; animation:aparecer 1s ease forwards .5s;}
+  .volver-portal:hover{color:var(--oro-tenue);}
+  .portal-label{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .3s; position:relative; z-index:1;}
+  .movimiento{font-family:'Cormorant Garamond',serif; font-size:.78rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo); margin-bottom:1.4rem;
+    opacity:0; animation:aparecer 1.2s ease forwards .6s; position:relative; z-index:1;}
+  .titulo-principal{font-family:'Cormorant Garamond',serif; font-size:clamp(3.4rem,14vw,7rem);
+    font-weight:300; color:var(--oro); letter-spacing:.06em; line-height:1; margin-bottom:.8rem;
+    opacity:0; animation:aparecer 1.4s ease forwards .9s; position:relative; z-index:1;}
+  .subtitulo-libro{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1rem,2.6vw,1.25rem); color:var(--oro-tenue); letter-spacing:.06em; margin-bottom:2.6rem;
+    opacity:0; animation:aparecer 1.4s ease forwards 1.1s; position:relative; z-index:1; max-width:28rem;}
+  .frase-entrada{font-family:'Cormorant Garamond',serif; font-size:clamp(1.35rem,3.4vw,1.85rem);
+    font-style:italic; font-weight:300; color:var(--blanco-humo); line-height:1.6; max-width:32rem;
+    margin-bottom:4.5rem; opacity:0; animation:aparecer 1.4s ease forwards 1.5s; position:relative; z-index:1;}
+  .boton-entrada{display:inline-flex; flex-direction:column; align-items:center; gap:.8rem;
+    text-decoration:none; opacity:0; animation:aparecer 1s ease forwards 2.1s; position:relative; z-index:1;}
+  .boton-texto{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-tenue); transition:color .3s ease;}
+  .boton-entrada:hover .boton-texto{color:var(--oro);}
+  .boton-circulo{width:54px; height:54px; border-radius:50%; border:1px solid var(--oro-tenue);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;
+    background:rgba(201,168,76,0.04);}
+  .boton-entrada:hover .boton-circulo{border-color:var(--oro); background:rgba(201,168,76,0.08);}
+  .boton-flecha{font-size:1.2rem; color:var(--oro-tenue); transition:all .3s ease;}
+  .antes{padding:6rem 2rem; border-top:1px solid var(--separador);}
+  .antes-contenido{max-width:600px; margin:0 auto;}
+  .antes-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:2.6rem;}
+  .antes p{color:var(--gris-calido); font-size:clamp(1.1rem,1.9vw,1.22rem); line-height:2; margin-bottom:1.4rem;}
+  .antes p strong{color:var(--blanco-humo); font-weight:500;}
+  .antes p em{color:var(--blanco-humo);}
+  .clinica{margin:3.4rem auto 0; max-width:600px; padding:1.8rem 1.6rem;
+    border:1px solid var(--separador); background:rgba(107,122,128,.03);}
+  .clinica-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:1rem;}
+  .clinica p{font-size:1.06rem; line-height:1.85; margin-bottom:.9rem;}
+  .clinica p:last-child{margin-bottom:0;}
+  .mapa{padding:5rem 2rem 6rem;}
+  .mapa-contenido{max-width:640px; margin:0 auto;}
+  .mapa-titulo{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); text-align:center; display:block; margin-bottom:3rem;}
+  .umbral-link{display:flex; gap:1.6rem; align-items:flex-start; padding:1.6rem 0;
+    border-bottom:1px solid var(--separador); text-decoration:none; position:relative; transition:all .3s ease;}
+  .umbral-link:first-of-type{border-top:1px solid var(--separador);}
+  .umbral-link::before{content:''; position:absolute; left:0; top:0; bottom:0; width:0;
+    background:rgba(201,168,76,0.03); transition:width .4s ease;}
+  .umbral-link:hover::before{width:100%;}
+  .umbral-num{font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,4.4vw,2.3rem); font-weight:300;
+    color:var(--oro-polvo); line-height:1; flex-shrink:0; width:3rem; text-align:right; padding-top:.25rem;
+    transition:color .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-num{color:var(--oro-tenue);}
+  .umbral-info{flex:1; position:relative; z-index:1;}
+  .umbral-nombre{font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,3vw,1.5rem); font-weight:400;
+    color:var(--blanco-humo); display:block; margin-bottom:.4rem; line-height:1.2; transition:color .3s ease;}
+  .umbral-link:hover .umbral-nombre{color:var(--oro);}
+  .umbral-descripcion{font-size:1.05rem; font-style:italic; color:var(--gris-calido); line-height:1.6;
+    font-family:'Cormorant Garamond',serif;}
+  .umbral-flecha{font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--oro-polvo);
+    flex-shrink:0; margin-top:.3rem; transition:all .3s ease; position:relative; z-index:1;}
+  .umbral-link:hover .umbral-flecha{color:var(--oro-tenue); transform:translateX(4px);}
+  .pie{padding:3rem 2rem 4rem; text-align:center; border-top:1px solid var(--separador);}
+  .pie-volver{display:inline-block; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.25em; text-transform:uppercase; color:var(--oro-tenue); text-decoration:none;
+    padding:.8rem 1.8rem; border:1px solid var(--separador); transition:all .3s ease; margin-bottom:1.6rem;}
+  .pie-volver:hover{border-color:var(--oro-tenue); color:var(--oro); background:rgba(201,168,76,0.04);}
+  .pie-firma{font-family:'Cormorant Garamond',serif; font-size:.78rem; color:var(--oro-polvo);
+    letter-spacing:.12em; display:block;}
+  @keyframes aparecer{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+  @keyframes respirar{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.4;}
+    50%{transform:translate(-50%,-50%) scale(1.06);opacity:.08;}}
+  @media (max-width:600px){
+    .mapa, .antes{padding-left:1.4rem; padding-right:1.4rem;}
+    .umbral-link{gap:1.1rem;} .umbral-num{width:2.4rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .anillo{animation:none;}
+  }
+
+</style>
+</head>
+<body>
+
+<section class="portada">
+  <div class="anillo"></div><div class="anillo"></div><div class="anillo"></div>
+  <a href="../../index.html" class="volver-portal">&larr; Portal Trinity</a>
+  <span class="portal-label">La trama &middot; segunda constelación</span>
+  <span class="movimiento">Lo que decide sin cara &middot; I</span>
+  <h1 class="titulo-principal">El criterio</h1>
+  <p class="subtitulo-libro">cuando la decisión es tuya y no la tomaste</p>
+  <p class="frase-entrada">Te dan el criterio.<br>Te piden que lo apliques.<br>Y el que queda en la puerta<br>eres tú.</p>
+  <a href="umbral-00.html" class="boton-entrada">
+    <span class="boton-texto">Entrar</span>
+    <div class="boton-circulo"><span class="boton-flecha">&darr;</span></div>
+  </a>
+</section>
+
+<section class="antes">
+  <div class="antes-contenido">
+    <span class="antes-titulo">Antes de empezar</span>
+    <p>Este libro abre el tercer movimiento de la constelación, y el gradiente da un salto.</p>
+    <p>Los libros anteriores siempre tuvieron a alguien enfrente. Un jefe, un hermano, una mesa, una institución con nombre y apellido. Se podía preguntar <em>&iquest;quién hizo esto?</em> y esperar una respuesta. A partir de acá ya no. Lo que este libro trabaja es <strong>la decisión que se toma en algún lugar y no tiene autor</strong>. Y empieza por el caso más incómodo de todos: <strong>cuando el que decide sin cara eres tú.</strong></p>
+    <p>Vas a encontrar gente de los dos lados del mismo mostrador. El que atiende y el que pide. El que aplica el criterio y el que lo recibe. Ninguno de los dos lo eligió. Y los dos se van a casa pensando que el otro es el problema.</p>
+    <p>El libro tiene tres piezas que le dan forma a todo. La primera: una cadena de gente razonable puede producir una decisión que ninguno de ellos habría tomado. No hace falta mala intención en ningún punto &mdash; alcanza con que cada uno haga bien su parte.</p>
+    <p>La segunda: <strong>ejecutar, avalar y decidir</strong> se ven igual desde afuera y son tres cosas distintas. Casi todo el daño viene de llamar ejecución a lo que fue aval.</p>
+    <p>Y la tercera, que es la que le da al libro su esperanza: <strong>toda regla tuvo un origen modesto</strong>. No la creó una voluntad: la creó alguien resolviendo un problema concreto, con la información que tenía, para un caso que ya no existe. La vida se la dio el tiempo y la falta de revisión. Y eso significa que <strong>lo que no tiene dueño tampoco tiene defensor</strong>.</p>
+    <p>Cada umbral cierra con un bloque nuevo, <strong>De dónde venía</strong>, que rastrea el origen de la regla que apareció en la escena. Casi siempre se llega a algo modesto. Casi nunca a una voluntad.</p>
+    <p>Y cada umbral tiene su gesto. No un principio: un gesto. Algo que se hace una vez, en una semana. Después del gesto hay un bloque breve, <strong>Y si vuelve</strong>, para cuando no sale a la primera. Porque el mecanismo no es no fallar: es volver a empezar.</p>
+  </div>
+  <div class="clinica">
+    <span class="clinica-label">Una advertencia que no es formalidad</span>
+    <p>Si hace meses que aplicas criterios que no elegiste y eso te tiene mal, y no puedes decir en voz alta en tu trabajo qué parte no decidiste tú, este libro no alcanza. Eso se habla con alguien, y conviene no demorarlo.</p>
+    <p>Y si en algún momento apareció la idea de no querer estar, eso necesita atención esta semana. Responde bien al tratamiento.</p>
+  </div>
+</section>
+
+<section class="mapa">
+  <div class="mapa-contenido">
+    <span class="mapa-titulo">Los umbrales</span>
+<a href="umbral-00.html" class="umbral-link">
+  <span class="umbral-num">0</span>
+  <span class="umbral-info"><span class="umbral-nombre">El que dice que no</span><span class="umbral-descripcion">Una negativa en un mostrador, contada desde los dos lados.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-01.html" class="umbral-link">
+  <span class="umbral-num">I</span>
+  <span class="umbral-info"><span class="umbral-nombre">Ejecutar, avalar, decidir</span><span class="umbral-descripcion">Tres cosas que desde afuera se ven igual.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-02.html" class="umbral-link">
+  <span class="umbral-num">II</span>
+  <span class="umbral-info"><span class="umbral-nombre">El margen</span><span class="umbral-descripcion">Casi nadie lo midió, y casi todos lo suponen cero.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-03.html" class="umbral-link">
+  <span class="umbral-num">III</span>
+  <span class="umbral-info"><span class="umbral-nombre">El criterio de 2014</span><span class="umbral-descripcion">El rastreo completo de una regla hasta su origen.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-04.html" class="umbral-link">
+  <span class="umbral-num">IV</span>
+  <span class="umbral-info"><span class="umbral-nombre">Nadie firmó esto</span><span class="umbral-descripcion">Cinco personas razonables, un resultado que ninguna habría tomado.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-05.html" class="umbral-link">
+  <span class="umbral-num">V</span>
+  <span class="umbral-info"><span class="umbral-nombre">El amparo</span><span class="umbral-descripcion">&laquo;Yo no puedo hacer nada&raquo;: cuándo es cierto y cuándo es cómodo.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-06.html" class="umbral-link">
+  <span class="umbral-num">VI</span>
+  <span class="umbral-info"><span class="umbral-nombre">Explicar lo que no compartís</span><span class="umbral-descripcion">Separar lo que decidió el sistema de lo que decidí yo.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-07.html" class="umbral-link">
+  <span class="umbral-num">VII</span>
+  <span class="umbral-info"><span class="umbral-nombre">Lo que llega del otro lado</span><span class="umbral-descripcion">El daño no es el rechazo: es quedarse sin saber contra qué se está.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-08.html" class="umbral-link">
+  <span class="umbral-num">VIII</span>
+  <span class="umbral-info"><span class="umbral-nombre">El que señala</span><span class="umbral-descripcion">No la cambia: la hace visible. Y eso es casi todo.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-09.html" class="umbral-link">
+  <span class="umbral-num">IX</span>
+  <span class="umbral-info"><span class="umbral-nombre">El que la cambió</span><span class="umbral-descripcion">Existe. Tiene nombre. Y le costó menos de lo que todos suponían.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="umbral-10.html" class="umbral-link">
+  <span class="umbral-num">X</span>
+  <span class="umbral-info"><span class="umbral-nombre">Cuando hay que irse</span><span class="umbral-descripcion">El límite, tan preciso como el del libro 19.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+<a href="cierre.html" class="umbral-link">
+  <span class="umbral-num">&#10192;</span>
+  <span class="umbral-info"><span class="umbral-nombre">Tu nombre en algo</span><span class="umbral-descripcion">Cierre: firmar lo que no decidiste, y decirlo.</span></span>
+  <span class="umbral-flecha">&rarr;</span>
+</a>
+  </div>
+</section>
+
+<footer class="pie">
+  <a href="../../index.html" class="pie-volver">Volver al Portal</a>
+  <span class="pie-firma">Lic. Arturo Rodríguez &middot; Campo Trinity</span>
+</footer>
+
+</body>
+</html>
