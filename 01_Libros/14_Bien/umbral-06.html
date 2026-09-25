@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VI &middot; Contestar para terminar | Bien</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+  /* ── las cuatro maneras de cerrar ── */
+  .cerradores{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.3rem 1.1rem;}
+  .cerradores-instruccion{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.98rem; line-height:1.6; color:var(--gris-calido); margin:0 0 1.2rem 0;}
+  .cerrador-fila{padding:.9rem .4rem; border-bottom:1px solid var(--separador);}
+  .cerrador-fila:last-of-type{border-bottom:none;}
+  .cerrador-cabecera{display:flex; align-items:baseline; gap:.7rem; margin-bottom:.6rem;}
+  .cerrador-nombre{font-family:'Cormorant Garamond',serif; font-size:1.04rem;
+    color:var(--blanco-humo); letter-spacing:.02em;}
+  .cerrador-cuando{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.9rem; color:var(--gris-calido);}
+  .cerrador-opciones{display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .cerrador-btn{background:var(--negro); border:none; padding:.7rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .cerrador-btn:hover, .cerrador-btn:focus-visible{color:var(--blanco-humo);}
+  .cerrador-btn[aria-pressed="true"][data-v="mucho"]{color:var(--oro); background:rgba(201,168,76,.06);}
+  .cerrador-btn[aria-pressed="true"][data-v="poco"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .cerrador-btn[aria-pressed="true"][data-v="nunca"]{color:var(--lejos); background:rgba(42,36,24,.4);}
+  .cerrador-resultado{margin-top:1.3rem; padding:1.2rem 1.1rem; border:1px solid var(--oro-polvo);
+    background:rgba(201,168,76,.03);}
+  .cerrador-resultado-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.62rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .cerrador-resultado-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.04rem;
+    line-height:1.8; color:var(--blanco-humo); margin:0 0 .7rem 0;}
+  .cerrador-resultado-texto:last-child{margin-bottom:0;}
+  .cerrador-resultado-texto strong{color:var(--oro); font-weight:500; font-style:italic;}
+  .cerrador-resultado-enlugar{font-family:'Cormorant Garamond',serif;
+    font-size:.98rem; line-height:1.7; color:var(--gris-calido); margin-top:.8rem;
+    padding-top:.8rem; border-top:1px solid var(--separador);}
+  .cerrador-resultado-enlugar em{color:var(--oro); font-style:italic;}
+  @media (max-width:600px){
+    .cerrador-opciones{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-05.html">&larr; Tener razón</a>
+  <span>VI</span>
+  <a href="umbral-07.html">Callar &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">Bien &middot; Umbral</span>
+  <div class="numero">06</div>
+  <h1 class="titulo">Contestar para terminar</h1>
+  <p class="subtitulo">el que cambia de tema no se está yendo: se está salvando</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Lucía cuenta algo.</p>
+  <p>No es nada grave. Está diciendo que hace unas semanas se levanta con la sensación de que le está pasando a otra la vida que tiene, y lo dice mal, dando vueltas, sin llegar.</p>
+  <p>Alicia la escucha treinta segundos y dice:</p>
+  <p><span class="apagado">—A tu edad yo también andaba así. Se te va a acomodar.</span></p>
+  <p>Y después, enseguida, le pregunta si arregló lo del auto.</p>
+  <p>Lucía contesta lo del auto.</p>
+</div>
+
+<div class="bloque">
+  <p>La conversación sigue tranquila, terminan de cenar, se despiden bien. Y Lucía se va caminando con una certeza nueva y equivocada: que a su madre eso no le interesa.</p>
+  <p>Lo que pasó fue otra cosa.</p>
+  <p>Alicia sintió, en el segundo cuatro, algo bastante físico: su hija estaba contándole algo sin arreglo y ella no tenía nada que darle. Ninguna respuesta, ningún consejo que sirviera, ninguna manera de que eso se terminara esa noche.</p>
+  <p>Y esa sensación es insoportable durante unos segundos. Entonces hizo lo único que estaba a mano: le cerró la escena con una frase que sonaba a alivio, y cambió de tema para que la incomodidad terminara.</p>
+</div>
+
+<div class="perla"><p>El que cambia de tema<br>no está midiendo lo que le cuentas.<br>Se está sacando de encima<br>lo que le produjo.</p></div>
+
+<div class="bloque">
+  <p>Hay cuatro maneras de cerrar una escena y todas parecen otra cosa.</p>
+  <p><strong>El chiste.</strong> Es la más rápida y la más querida. Descomprime en medio segundo, todos se ríen, y el que estaba contando entiende que ya está.</p>
+  <p><strong>La solución en el segundo renglón.</strong> Aparece antes de que el otro termine, y no es para que la use. Es para que la escena cambie de plano: mientras se discute una propuesta, ya no hay nadie contando nada.</p>
+  <p><strong>El ejemplo propio.</strong> <em>A mí me pasó algo parecido.</em> Se dice para acompañar y funciona al revés: le saca el turno al que estaba hablando. En dos minutos, el que había empezado está escuchando la historia del otro.</p>
+  <p><strong>El consuelo anticipado.</strong> <em>Se te va a acomodar</em>, <em>seguro que no es nada</em>, <em>vas a ver que se pasa.</em> Es el más cariñoso y el que más cierra, porque contradecirlo obliga a insistir en que uno está mal, y casi nadie insiste.</p>
+</div>
+
+<div class="bloque">
+  <p>Las cuatro se hacen con buena intención. Ninguna es desinterés. Y del otro lado, las cuatro se leen exactamente igual: <strong>a esta persona no le interesa lo mío.</strong></p>
+  <p>Ahí está el desencuentro, y es de los que duran años.</p>
+  <p>Uno cierra por incomodidad. El otro lee desinterés. Ninguno de los dos se entera de lo que pasó, y la próxima vez el que contaba no cuenta, y el que cerró piensa que el otro se volvió reservado.</p>
+</div>
+
+<div class="puerta"><a href="../01_Empatia_Humana/index.html">&#10192; <em>&#10192; Qué se interpone exactamente entre querer acompañar y poder hacerlo —eso que aparece en el segundo cuatro y empuja a cerrar— se trabaja en <strong>Empatía Humana &middot; Capítulo 3, Barreras a la Empatía</strong>. El libro entero,</em></a></div>
+
+<div class="cita">
+  <p><em>La mayoría no escucha con la intención de comprender: escucha con la intención de responder.</em></p>
+  <cite><span class="obra">Stephen Covey</span> &middot; Los 7 hábitos de la gente altamente efectiva, 1989</cite>
+</div>
+
+<div class="bloque">
+  <p>Ahora lo que sí está al alcance, que es chico y no requiere haberse vuelto una persona serena.</p>
+  <p><strong>Cerrar y volver.</strong></p>
+  <p>Nadie va a dejar de cerrar escenas. La incomodidad aparece igual, la frase sale sola, y pedirse no tenerla es pedirse otra biología. Lo que sí se puede es más fácil: <strong>volver después.</strong></p>
+  <p>No en el momento —en el momento ya se cerró, y forzarlo lo empeora—. Al rato, o al día siguiente, con una frase de nueve palabras: <em>ayer me contaste algo y te cambié de tema. Cuéntame.</em></p>
+  <p>Eso hace dos cosas a la vez. Reabre la escena, y además deja claro que el cierre no fue desinterés — que es justamente la lectura que el otro se llevó puesta.</p>
+</div>
+
+<div class="escena">
+  <p>Alicia lo hizo el domingo.</p>
+  <p>Llamó a Lucía por otra cosa y en algún momento le dijo que el jueves le había contestado cualquiera, que se había asustado un poco, y que quería escuchar bien eso de la vida que le está pasando a otra.</p>
+  <p>Lucía lloró un poco y después se lo contó entero, que le llevó veinte minutos y siguió sin tener forma.</p>
+</div>
+
+<div class="cita">
+  <p><em>Más vale tarde que nunca.</em></p>
+  <cite><span class="obra">Refrán</span> &middot; documentado en castellano desde el siglo XVI<br><small>(atribución a cotejar)</small></cite>
+</div>
+
+<div class="bloque">
+  <p>Es un refrán gastado y aquí es literal: una escena cerrada se puede reabrir, y se reabre casi siempre. No hay ventana que se cierre esa noche para siempre. Eso es más de lo que la mayoría cree tener.</p>
+</div>
+
+<div class="bloque">
+  <p>Y del lado del que cuenta hay algo igual de chico.</p>
+  <p>Cuando te cierren la escena, no te ofendas y no te retires. La lectura automática —<em>no le interesa</em>— es casi siempre falsa y es la que arruina el vínculo.</p>
+  <p>Lo que se puede hacer es una frase, en el momento, sin reproche: <em>no te estoy pidiendo que me lo resuelvas.</em></p>
+  <p>Al que cerró eso lo libera de golpe. Buena parte de lo que lo empujó a cambiar de tema era la obligación de resolver algo irresoluble; si le sacas esa obligación, muchas veces se queda.</p>
+</div>
+
+<div class="perla"><p>No te pido que lo arregles<br>es la frase que más escenas<br>mantiene abiertas.</p></div>
+
+<div class="geo">
+  <span class="geo-label">Las cuatro maneras de cerrar</span>
+  <p class="geo-instruccion">Marca, para cada una de las cuatro maneras, si la usas mucho, poco o nunca cuando alguien te está contando algo. Responde por lo que haces, no por lo que crees que haces. El sistema te va a decir cuál usas más y qué hacer en su lugar.</p>
+  <div class="panel">
+    <div class="cerradores" id="cerradores">
+      <p class="cerradores-instruccion">Cuando alguien te está contando algo que no tiene arreglo, tú...</p>
+
+      <div class="cerrador-fila" data-c="chiste">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le haces un chiste</span>
+          <span class="cerrador-cuando">descomprime y cierra en medio segundo</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+      <div class="cerrador-fila" data-c="solucion">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le das una solución</span>
+          <span class="cerrador-cuando">aparece antes de que termine de contar</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+      <div class="cerrador-fila" data-c="ejemplo">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le cuentas algo tuyo parecido</span>
+          <span class="cerrador-cuando">le saca el turno sin que se note</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+      <div class="cerrador-fila" data-c="consuelo">
+        <div class="cerrador-cabecera">
+          <span class="cerrador-nombre">Le dices que se va a acomodar</span>
+          <span class="cerrador-cuando">el más cariñoso y el que más cierra</span>
+        </div>
+        <div class="cerrador-opciones">
+          <button class="cerrador-btn" data-v="mucho" aria-pressed="false">Mucho</button>
+          <button class="cerrador-btn" data-v="poco" aria-pressed="false">Poco</button>
+          <button class="cerrador-btn" data-v="nunca" aria-pressed="false">Nunca</button>
+        </div>
+      </div>
+
+    </div>
+    <div id="cerradorResultado"></div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es un juicio sobre tu manera de escuchar. Es un dato sobre tu cierre más frecuente.</p>
+  <p>Si marcaste <em>mucho</em> en una sola, esa es tu puerta de salida por defecto y probablemente la uses sin darte cuenta. La frase que hay que volver a decir después —<em>ayer te cambié de tema, cuéntame</em>— se apoya justo en reconocer cuál de las cuatro es la tuya.</p>
+  <p>Si marcaste <em>mucho</em> en dos o tres, el dato es que tienes más de una salida y las alternas. Eso no es peor: es más difícil de ver desde adentro. La frase para volver a abrir sigue siendo la misma, y sirve para las tres.</p>
+  <p>Y si marcaste <em>nunca</em> en las cuatro, hay dos lecturas posibles. La primera: que efectivamente dejas hablar hasta el final, y entonces ya estás haciendo lo que el umbral pide. La segunda —y conviene considerarla—: que no reconociste ninguna de las cuatro porque no te acuerdas de la última vez que alguien te contó algo que no tenía arreglo. Eso también es un dato.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe la manera de cerrar que marcaste como <em>mucho</em>. Si marcaste dos o tres, elige la que más te suene. Pon la fecha debajo.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Vas a cerrar una escena con esa manera, en los próximos días, con alguien. No intentes impedirlo: no se puede. Lo único que hay que hacer es notarlo, aunque sea dos minutos tarde.</p></div>
+  <div class="paso"><span class="paso-nombre">Vuelve al rato o al día siguiente</span><p>Con la frase completa: <em>ayer te conté algo y te cambié de tema. Cuéntame.</em> Nueve palabras. Si te olvidaste de la frase exacta, improvisa algo parecido — lo que importa no es la fórmula, es volver.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al terminar</span><p>Anota en la nota dos cosas: la fecha del retorno y una sola palabra sobre qué pasó. <em>Contó</em>, <em>no contó</em>, <em>raro</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo repitas esa semana</span><p>No vuelvas a mencionar el tema. Si el otro quiere seguir, va a seguir él. Si no, ya está: la escena se reabrió y quedó reabierta. Reabrirlo dos veces la semana siguiente lo convierte en campaña.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima semana vas a cerrar otra escena y no te vas a acordar hasta dos días después, o directamente no te vas a acordar. Cuando pase, abre la nota y agrega la fecha. Si volviste, escribe <em>vuelve</em>. Si no, escribe <em>no vuelve</em>. Las dos cosas son el dato. <strong>El gesto no es no cerrar nunca: es tener anotado cuántas veces volviste y cuántas no.</strong></p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Como se habría dicho</span>Lo que Lucía no dijo, puesto en la forma que no llegó a encontrar:</p>
+</div>
+
+<div class="escena secundaria">
+  <p><em>No sé qué me pasa y no quiero que me lo arregles. Quiero contártelo mal, hasta el final, y que después hablemos del auto.</em></p>
+</div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-07.html"><span class="continuar-nombre">Callar</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal Público Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // las cuatro maneras de cerrar
+    var filas=document.querySelectorAll('#cerradores .cerrador-fila');
+    var salida=document.getElementById('cerradorResultado');
+
+    var nombres={
+      chiste:'el chiste',
+      solucion:'la solución en el segundo renglón',
+      ejemplo:'el ejemplo propio',
+      consuelo:'el consuelo anticipado'
+    };
+    var enLugar={
+      chiste:'Cuando alguien te esté contando algo, en vez del chiste prueba una sola pregunta: <em>¿desde cuándo?</em>. Con eso ya alcanza para que la escena siga abierta treinta segundos más.',
+      solucion:'Cuando aparezca la solución, aguantala. La solución va a seguir siendo útil mañana; la escena no. En vez de proponer algo, pregunta por el detalle más chico que te hayan dado.',
+      ejemplo:'Si vas a contar algo tuyo parecido, hacelo recién cuando el otro haya terminado. Antes de eso, tu historia le saca el turno a la suya. El ejemplo propio funciona al final, no en el medio.',
+      consuelo:'El consuelo anticipado se reemplaza por una pregunta chica: <em>¿qué es lo peor de todo esto?</em>. El consuelo cierra porque obliga a contradecirlo; la pregunta abre porque se puede contestar en dos palabras.'
+    };
+
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.cerrador-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          calcular();
+        });
+      });
+    });
+
+    function calcular(){
+      var hechas=document.querySelectorAll('#cerradores .cerrador-fila[data-eleccion]');
+      if(hechas.length<filas.length){ salida.innerHTML=''; return; }
+
+      var muchos=[], pocos=[], ninguno=[];
+      hechas.forEach(function(f){
+        if(f.dataset.eleccion==='mucho'){ muchos.push(f.dataset.c); }
+        else if(f.dataset.eleccion==='poco'){ pocos.push(f.dataset.c); }
+        else { ninguno.push(f.dataset.c); }
+      });
+
+      var html='';
+      html+='<div class="cerrador-resultado">';
+      html+='<span class="cerrador-resultado-etiqueta">Lo que dice el umbral</span>';
+
+      if(muchos.length===0 && ninguno.length===4){
+        html+='<p class="cerrador-resultado-texto">Las cuatro en <strong>nunca</strong>. Hay dos lecturas. La primera: efectivamente dejas hablar hasta el final, y ya estás haciendo lo que el umbral pide. La segunda: no reconociste ninguna porque no te acordás de la última vez que alguien te contó algo que no tenía arreglo. Solo tú sabes cuál es.</p>';
+      } else if(muchos.length===0){
+        html+='<p class="cerrador-resultado-texto">Ninguna en <strong>mucho</strong>. Las cuatro son salidas posibles y ninguna es tu puerta por defecto. El dato es que puedes elegir; el gesto es notarlo cuando alguna aparezca, porque aparecer va a aparecer.</p>';
+      } else if(muchos.length===1){
+        var c=muchos[0];
+        html+='<p class="cerrador-resultado-texto">Tu puerta de salida por defecto es <strong>'+nombres[c]+'</strong>. Casi siempre se usa sin darse cuenta. La frase para volver a abrir —<em>ayer te cambié de tema, cuéntame</em>— se apoya en reconocer cuál es la tuya.</p>';
+        html+='<div class="cerrador-resultado-enlugar">'+enLugar[c]+'</div>';
+      } else {
+        var lista=muchos.map(function(c){return nombres[c];}).join(', ');
+        html+='<p class="cerrador-resultado-texto">Marcaste <strong>mucho</strong> en más de una: '+lista+'. Eso significa que tienes varias salidas y las alternas. No es peor: es más difícil de ver desde adentro.</p>';
+        html+='<div class="cerrador-resultado-enlugar">La frase para volver a abrir sigue siendo la misma y sirve para las '+muchos.length+': <em>ayer te conté algo y te cambié de tema. Cuéntame.</em></div>';
+      }
+
+      html+='</div>';
+      salida.innerHTML=html;
+    }
+  })();
+</script>
+</body>
+</html>

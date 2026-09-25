@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V &middot; Tener razón | Bien</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'la próxima vez'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+  /* ── el examinador de frases de repertorio ── */
+  .examinador{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.4rem 1.2rem;}
+  .examinador label{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.9rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .examinador textarea{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.75rem .9rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical; min-height:3.4rem;}
+  .examinador textarea::placeholder{color:var(--lejos); font-style:italic;}
+  .examinador textarea:focus{border-color:var(--oro-polvo);}
+  .examinador .accion{margin-top:.9rem;}
+  .examinacion{margin-top:1.4rem;}
+  .examinacion-caja{padding:1.1rem 1.1rem; border:1px solid var(--separador);
+    background:rgba(201,168,76,.014); margin-bottom:.9rem;}
+  .examinacion-caja:last-of-type{margin-bottom:0;}
+  .examinacion-etiqueta{display:block; font-family:'Cormorant Garamond',serif;
+    font-size:.6rem; letter-spacing:.36em; text-transform:uppercase;
+    color:var(--oro-tenue); margin-bottom:.6rem;}
+  .examinacion-texto{font-family:'EB Garamond',Georgia,serif; font-size:1.02rem;
+    line-height:1.75; color:var(--blanco-humo); margin:0 0 .4rem 0;}
+  .examinacion-texto:last-child{margin-bottom:0;}
+  .examinacion-texto em{color:var(--oro); font-style:italic;}
+  .examinacion-nota{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:.94rem; line-height:1.6; color:var(--gris-calido); margin:0;}
+  .examinacion-palabras{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.7rem;}
+  .examinacion-palabra{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1rem; color:var(--oro); padding:.15rem .55rem; border:1px solid var(--oro-polvo);
+    border-radius:2px; line-height:1.5;}
+  .examinacion-palabra small{display:block; font-style:normal; font-size:.7rem;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--oro-polvo);
+    text-align:center; margin-top:.1rem;}
+  .examinacion-num{font-family:'Cormorant Garamond',serif; font-size:1.8rem;
+    color:var(--oro); display:block; margin-bottom:.3rem; letter-spacing:.06em;}
+  .examinacion-caja.antiguedad{border-color:var(--oro-polvo); background:rgba(201,168,76,.03);}
+  .examinacion-caja.antiguedad .examinacion-texto{font-size:1.06rem;}
+  .examinacion-pregunta{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.06rem; line-height:1.65; color:var(--oro); margin-top:.4rem;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-04.html">&larr; La pregunta</a>
+  <span>V</span>
+  <a href="umbral-06.html">Contestar para terminar &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">Bien &middot; Umbral</span>
+  <div class="numero">05</div>
+  <h1 class="titulo">Tener razón</h1>
+  <p class="subtitulo">lo que se dice bien ya estaba pensado</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Una mesa de cuatro. Se discute algo que importa poco y se discute en serio.</p>
+  <p>Uno de los cuatro tiene la frase.</p>
+  <p>La tiene entera, con las palabras justas, una imagen que se entiende al toque y un final que da ganas de asentir. La dice. Se termina la discusión. Todos se van con la impresión de que ese tenía razón.</p>
+  <p>Y no dijo nada nuevo. Esa frase existía antes de la conversación: la trajo puesta. La había dicho otras veces, en otras mesas, y cada vez le salió un poco mejor.</p>
+</div>
+
+<div class="escena">
+  <p>En la misma mesa había alguien pensando de verdad.</p>
+  <p>Se le notaba. Empezó tres veces. Se contradijo. Dijo <em>no, espera, no es eso</em>. Se quedó callado en la mitad de una frase buscando una palabra que no apareció.</p>
+  <p>Perdió.</p>
+  <p>Y la próxima vez no va a hablar.</p>
+</div>
+
+<div class="perla"><p>Lo que se dice bien<br>ya estaba pensado.<br>Lo que se está pensando<br>se dice mal.</p></div>
+
+<div class="bloque">
+  <p>Pensar delante de otro es feo de ver. Tiene retrocesos, correcciones, frases abandonadas a la mitad y silencios largos en los que el que escucha no sabe si el otro sigue ahí. Siempre fue un proceso torpe.</p>
+  <p>Lo que cambió no es eso. Es que casi no quedan lugares donde eso pueda pasar sin costo.</p>
+  <p>Toda conversación de más de dos personas tiene un premio, y el premio se lo lleva la fluidez. No la razón: la fluidez. El que habla parejo, sin dudar, con la frase redonda, se lleva la mesa — y la mesa cree que se la llevó por tener razón, cuando se la llevó por tener la frase lista.</p>
+</div>
+
+<div class="bloque">
+  <p>Y hay una consecuencia de esto que se ve en cualquier familia: <strong>el que tiene razón en la mesa suele ser el mismo siempre.</strong></p>
+  <p>No porque acierte más. Porque es el único que llega con material preparado. Los demás traen ideas a medio hacer, que es lo que uno trae cuando está pensando de verdad, y las ideas a medio hacer no compiten contra una frase de repertorio.</p>
+  <p>Lucía dejó de discutir con el hermano de su madre hace ocho años. Él cree que la convenció. Ella dejó de hablar.</p>
+</div>
+
+<div class="puerta"><a href="../04_Asertividad_Consciente/index.html">&#10192; <em>&#10192; Qué voz interna se activa exactamente en el segundo en que uno decide no volver a hablar en esa mesa es el asunto de <strong>Asertividad consciente &middot; Capítulo 1, Las voces que sabotean tu asertividad</strong>. El libro entero,</em></a></div>
+
+<div class="cita">
+  <p><em>La duda no es un estado agradable, pero la certeza es absurda.</em></p>
+  <cite><span class="obra">Voltaire</span> &middot; carta a Federico II, 1767</cite>
+</div>
+
+<div class="bloque">
+  <p>Ahora la parte que tiene que ver con este libro, porque hasta aquí parece un asunto de discusiones y no lo es.</p>
+  <p>El que no puede contar lo que le pasa está exactamente en la posición del que piensa en voz alta. Lo que trae no tiene forma, se va a decir mal, va a dar vueltas y no va a llegar a ninguna conclusión.</p>
+  <p>Y una mesa que premia la fluidez le está avisando, todo el tiempo y sin decírselo, que eso ahí no entra.</p>
+  <p>Por eso las cosas importantes no se dicen en la mesa. Se dicen en el auto, en la fregadero, en la acera — en los lugares donde no hay premio y no hay comparación.</p>
+</div>
+
+<div class="bloque">
+  <p>Y hay algo más chico y más útil, disponible para el que está del otro lado.</p>
+  <p><strong>Cuando alguien empieza mal, no lo ayudes a terminar.</strong></p>
+  <p>La tentación es completarle la frase. Uno lo hace por amabilidad: el otro está trabado, uno ve para dónde va, se lo acerca. Y en ese momento la frase deja de ser suya. El que estaba pensando acepta la versión ajena porque es mejor que la que él tenía, y se queda sin pensar lo que estaba por pensar.</p>
+  <p>Un silencio de cuatro segundos alcanza casi siempre. Se hacen largos y no lo son.</p>
+  <p>Ernesto hizo eso con Julio sin saber que lo hacía. Julio empezó tres veces a decirle algo y las tres se detuvo. Ernesto no completó ninguna. A la cuarta, Julio lo dijo con sus propias palabras, que eran peores que las que Ernesto tenía preparadas, y eran las que había que decir.</p>
+</div>
+
+<div class="perla"><p>El que completa la frase del otro<br>se queda con la frase.</p></div>
+
+<div class="cita">
+  <p><em>Lo que es simple es siempre falso; lo que no lo es, es inutilizable.</em></p>
+  <cite><span class="obra">Paul Valéry</span> &middot; Malas ideas y otras, 1942</cite>
+</div>
+
+<div class="bloque">
+  <p>Y esto se puede devolver, que es lo mejor que tiene.</p>
+  <p>Cualquiera puede volverse, en una mesa, el que hace lugar para el que está pensando. No hace falta autoridad ni un discurso sobre la escucha: alcanza con mirar al que se trabó y esperar, cuando todos los demás ya pasaron al tema siguiente. Es un gesto de dos segundos y lo nota la persona exacta a la que estaba dirigido.</p>
+  <p>Y esa persona vuelve a hablar la próxima vez.</p>
+</div>
+
+<div class="geo">
+  <span class="geo-label">El examinador de frases de repertorio</span>
+  <p class="geo-instruccion">Escribe una frase que tengas preparada y uses seguido — en discusiones, en sobremesas, cuando alguien te contradice. El sistema te va a decir cuántas palabras tiene, cuáles repetís, y te va a hacer una pregunta sobre la antigüedad.</p>
+  <div class="panel">
+    <div class="examinador">
+      <label for="frasePropia">La frase que tienes preparada</label>
+      <textarea id="frasePropia" placeholder="Escribila tal cual la dices, con las palabras que usas."></textarea>
+      <button class="accion" id="btnExaminar" disabled>Examinar</button>
+      <div class="examinacion" id="examinacion"></div>
+    </div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p>Lo que acabas de producir no es una crítica a la frase. Es un dato sobre el repertorio.</p>
+  <p>Una frase de menos de doce palabras que se dice seguido es casi siempre una herramienta: sirve para cerrar un tema, para orientar una discusión, para no seguir discutiendo algo que no vale la pena. No todas las frases cortas son de repertorio: la mayoría son funcionales y hacen su trabajo.</p>
+  <p>Una frase de más de veinticinco palabras que se dice seguido ya no es una herramienta: es una pieza. Tiene estructura, tiene final, tiene la forma de un argumento cerrado. Ese tipo de frase solo se usa en ciertos contextos —discusiones, sobremesas, cuando alguien contradice— y no aparece cuando uno está pensando algo nuevo.</p>
+  <p>Y una frase que tiene palabras que se repiten adentro —un estribillo, una construcción que vuelve— es la más delatora de todas. El estribillo es el sello de la pieza: no aparece en el pensamiento espontáneo, aparece cuando alguien ya decidió qué quiere decir y está armando la frase para decirlo.</p>
+  <p>La pregunta de la antigüedad es la más importante del interactivo y no la puede contestar el sistema. Es la única que mide lo que el umbral mide: si la frase es de hoy o de hace años. Una pieza nueva puede ser pensamiento en voz alta. Una pieza vieja es repertorio.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">La próxima vez</p>
+  <div class="paso"><span class="paso-nombre">Antes de dormir</span><p>Abre la nota del teléfono. Escribe, con tus palabras, la frase que tienes preparada. La que usas cuando alguien te contradice en una mesa. Tal cual la dices.</p></div>
+  <div class="paso"><span class="paso-nombre">Debajo</span><p>Escribe una sola línea: la primera vez que la dijiste, si te acuerdas. Si no te acuerdas, escribe <em>no me acuerdo</em>, y eso también es un dato.</p></div>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Va a haber una discusión en la que ibas a decirla. No la digas. Una vez, para ver qué pasa en la mesa cuando el lugar queda vacío. No busques decir otra cosa en su lugar: deja el silencio.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Al volver</span><p>Anota en la nota dos cosas: la fecha y una sola palabra sobre qué pasó cuando no la dijiste. <em>Nada</em>, <em>raro</em>, <em>alguien habló</em>, <em>silencio</em>. Una sola.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No evalúes</span><p>No vuelvas a la nota a decidir si la frase era buena o mala. Esa evaluación la hace el que quiere tener razón. Tú solo anotas qué pasó cuando no la dijiste.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La próxima discusión vas a decirla sin darte cuenta, y te vas a acordar de esto dos minutos después. Cuando pase, abre la nota y agrega la fecha. Si esa vez la dijiste, escribe <em>dicha</em>. Si la dejaste pasar, escribe <em>no dicha</em>. Las dos cosas son el dato. <strong>El gesto no es no decirla nunca: es tener anotado cuántas veces la dijiste y cuántas veces no.</strong></p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Como se habría dicho</span>Lo que no dijo el que perdió la mesa:</p>
+</div>
+
+<div class="escena secundaria">
+  <p><em>No lo tengo claro. Lo estoy pensando mientras lo digo y me va a salir mal. Ten paciencia un minuto.</em></p>
+</div>
+
+<div class="bloque">
+  <p>Dieciocho palabras que abren una puerta en cualquier mesa, y casi nadie las usa porque parece que uno queda mal. Queda mal tres segundos.</p>
+</div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-06.html"><span class="continuar-nombre">Contestar para terminar</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal Público Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.sep,.aviso,.continuar,.cita,.dicho,.geo,.sendero';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // el examinador de frases de repertorio
+    var campo=document.getElementById('frasePropia');
+    var btn=document.getElementById('btnExaminar');
+    var salida=document.getElementById('examinacion');
+
+    // Palabras vacías del castellano que no se consideran estribillo.
+    var vacias={
+      'a':1,'al':1,'algo':1,'algunas':1,'algunos':1,'ante':1,'antes':1,'como':1,'con':1,
+      'contra':1,'cual':1,'cuando':1,'de':1,'del':1,'desde':1,'donde':1,'dos':1,'el':1,
+      'él':1,'ella':1,'ellas':1,'ellos':1,'en':1,'entre':1,'era':1,'es':1,'esa':1,'ese':1,
+      'eso':1,'esta':1,'está':1,'estas':1,'este':1,'esto':1,'estos':1,'fue':1,'ha':1,
+      'hacia':1,'hasta':1,'hay':1,'la':1,'las':1,'le':1,'les':1,'lo':1,'los':1,'más':1,
+      'me':1,'menos':1,'mi':1,'mis':1,'mucho':1,'muy':1,'nada':1,'ni':1,'no':1,'nos':1,
+      'o':1,'os':1,'otra':1,'otro':1,'para':1,'pero':1,'poco':1,'por':1,'porque':1,
+      'que':1,'qué':1,'quien':1,'quién':1,'se':1,'sin':1,'sobre':1,'su':1,'sus':1,
+      'tal':1,'también':1,'tan':1,'te':1,'tiene':1,'toda':1,'todas':1,'todo':1,'todos':1,
+      'tu':1,'tus':1,'un':1,'una':1,'uno':1,'unos':1,'y':1,'ya':1,'yo':1
+    };
+
+    function palabras(s){
+      s=(s||'').trim();
+      if(!s){ return []; }
+      return s.split(/\s+/);
+    }
+    function contar(s){
+      return palabras(s).length;
+    }
+    function limpiar(s){
+      return s.replace(/[.,;:¡!¿?"'«»()[\]—–\-]/g,' ').replace(/\s+/g,' ').trim();
+    }
+    function estribillos(texto){
+      var t=limpiar(texto).toLowerCase();
+      var arr=palabras(t);
+      var cuenta={};
+      arr.forEach(function(p){
+        if(p.length<4){ return; }
+        if(vacias[p]){ return; }
+        cuenta[p]=(cuenta[p]||0)+1;
+      });
+      var res=[];
+      Object.keys(cuenta).forEach(function(k){
+        if(cuenta[k]>=2){ res.push({p:k,n:cuenta[k]}); }
+      });
+      res.sort(function(a,b){ return b.n-a.n; });
+      return res;
+    }
+
+    function escapar(s){
+      return String(s).replace(/[&<>"']/g,function(c){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      });
+    }
+
+    campo.addEventListener('input',function(){
+      btn.disabled = contar(campo.value)<2;
+    });
+
+    btn.addEventListener('click',function(){
+      var frase=campo.value.trim();
+      if(!frase){ salida.innerHTML=''; return; }
+      var n=contar(frase);
+      var est=estribillos(frase);
+
+      var html='';
+
+      // Caja 1: la frase, con conteo de palabras
+      html+='<div class="examinacion-caja">';
+      html+='<span class="examinacion-etiqueta">Tu frase</span>';
+      html+='<span class="examinacion-num">'+n+' palabras</span>';
+      html+='<p class="examinacion-texto"><em>'+escapar(frase)+'</em></p>';
+      html+='</div>';
+
+      // Caja 2: lectura según longitud
+      var lectura='';
+      if(n<12){
+        lectura='Menos de doce palabras. Casi siempre es una <strong>herramienta</strong>: sirve para cerrar un tema, para orientar una discusión, para no seguir discutiendo algo que no vale la pena. La mayoría de las frases cortas no son repertorio, son función.';
+      } else if(n<25){
+        lectura='Entre doce y veinticinco palabras. Es una <strong>pieza corta</strong>. Tiene estructura, tiene final, tiene la forma de un argumento cerrado. Se usa en discusiones y sobremesas, y no aparece cuando uno está pensando algo nuevo.';
+      } else {
+        lectura='Más de veinticinco palabras. Es una <strong>pieza</strong> en sentido estricto. Tiene estructura, tiene remate, tiene la forma completa de un argumento cerrado. No es una frase que uno dice: es una frase que uno despliega.';
+      }
+      html+='<div class="examinacion-caja">';
+      html+='<span class="examinacion-etiqueta">Cómo suena</span>';
+      html+='<p class="examinacion-texto">'+lectura+'</p>';
+      html+='</div>';
+
+      // Caja 3: estribillos
+      if(est.length){
+        html+='<div class="examinacion-caja">';
+        html+='<span class="examinacion-etiqueta">Estribillo</span>';
+        html+='<p class="examinacion-texto">Hay '+est.length+(est.length===1?' palabra que se repite':' palabras que se repiten')+' adentro de la frase.';
+        html+=' El estribillo es el sello de la pieza: no aparece en el pensamiento espontáneo, aparece cuando alguien ya decidió qué quiere decir y está armando la frase para decirlo.</p>';
+        html+='<div class="examinacion-palabras">';
+        est.forEach(function(e){
+          html+='<span class="examinacion-palabra">'+escapar(e.p)+'<small>'+e.n+'×</small></span>';
+        });
+        html+='</div>';
+        html+='</div>';
+      } else {
+        html+='<div class="examinacion-caja">';
+        html+='<span class="examinacion-etiqueta">Estribillo</span>';
+        html+='<p class="examinacion-texto">Ninguna palabra se repite adentro de la frase. Eso es una buena señal para una herramienta y una señal neutra para una pieza: hay piezas que se sostienen sin estribillo y funcionan igual.</p>';
+        html+='</div>';
+      }
+
+      // Caja 4: antigüedad
+      html+='<div class="examinacion-caja antiguedad">';
+      html+='<span class="examinacion-etiqueta">La pregunta que no puede contestar el sistema</span>';
+      html+='<p class="examinacion-pregunta">¿Cuándo la dijiste por primera vez?</p>';
+      html+='<p class="examinacion-nota">Si te acordás y fue hace más de un año, ya es repertorio. Si fue la semana pasada, todavía puede ser pensamiento en voz alta. Si no te acordás, también es un dato: las frases de las que uno no recuerda el origen llevan tiempo ahí.</p>';
+      html+='</div>';
+
+      salida.innerHTML=html;
+    });
+  })();
+</script>
+</body>
+</html>
