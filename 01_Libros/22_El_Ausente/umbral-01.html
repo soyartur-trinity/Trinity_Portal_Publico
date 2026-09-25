@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I &middot; El puntaje | El ausente</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el gesto'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+  .desglose{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .desglose.visible{opacity:1; transform:none;}
+  .desglose p{font-size:1rem; line-height:1.8; color:var(--blanco-humo); margin:0 0 .55rem;}
+  .desglose p:last-child{margin-bottom:0;}
+
+  /* simulador de puntaje para el interactivo 01 */
+  .puntaje-panel{display:grid; gap:1.2rem; margin-top:1rem;}
+  .puntaje-fila{display:grid; grid-template-columns:1fr; gap:.4rem;}
+  .puntaje-fila .rotulo{margin-bottom:0;}
+  .puntaje-fila input[type="range"]{width:100%; accent-color:var(--oro-tenue);}
+  .puntaje-fila .contador{text-align:left; margin-top:.2rem;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-00.html">&larr; El expediente</a>
+  <span>I</span>
+  <a href="umbral-02.html">La categor&iacute;a &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">El ausente &middot; Umbral</span>
+  <div class="numero">01</div>
+  <h1 class="titulo">El puntaje</h1>
+  <p class="subtitulo">cuando la decisi&oacute;n es un n&uacute;mero</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Ramiro tiene treinta y nueve a&ntilde;os y una casa propia en un barrio del conurbano. Vive ah&iacute; desde hace ocho a&ntilde;os, con la pareja y dos hijos. Paga el cr&eacute;dito hipotecario en t&eacute;rmino.</p>
+  <p>En abril pidi&oacute; un pr&eacute;stamo personal. No era grande: quer&iacute;a comprar una camioneta usada para el trabajo. Se lo rechazaron autom&aacute;ticamente, en menos de veinticuatro horas, por la p&aacute;gina web.</p>
+  <p>Ramiro no entiende. Tiene recibo de sueldo. Tiene una propiedad. Nunca dej&oacute; una deuda sin pagar. Cuando pidi&oacute; la hipoteca ocho a&ntilde;os atr&aacute;s, se la dieron sin problema.</p>
+  <p>Lo que Ramiro no sabe es que hay un n&uacute;mero. Lo calcula un sistema. El sistema revisa tu historial de pagos, tus deudas actuales, d&oacute;nde viv&iacute;s, cu&aacute;nto gan&aacute;s, qu&eacute; tel&eacute;fono ten&eacute;s, qu&eacute; banco us&aacute;s, qu&eacute; gastos tiene tu tarjeta. Y te asigna un n&uacute;mero entre cero y mil. Si tu n&uacute;mero est&aacute; por encima de un umbral, el pr&eacute;stamo se aprueba. Si est&aacute; por debajo, se rechaza autom&aacute;ticamente.</p>
+  <p>El n&uacute;mero de Ramiro est&aacute; por debajo. Nadie se lo dijo. Nadie se lo va a decir. No puede verlo, no puede corregirlo, no puede discutirlo. Existe, est&aacute; calculado con sus datos, y decidi&oacute; por &eacute;l antes de que &eacute;l preguntara.</p>
+</div>
+
+<div class="perla"><p>Tu historia convertida en n&uacute;mero.<br>Y el n&uacute;mero decidiendo<br>en lugares donde no est&aacute;s.</p></div>
+
+<div class="bloque">
+  <p>El puntaje es la forma m&aacute;s pura de lo que este libro trabaja, y por eso es el primer umbral del libro y no el tercero.</p>
+  <p>Un puntaje es un <strong>resumen</strong>. Toma todo lo que se sabe de vos &mdash;tus pagos, tus deudas, tus ingresos, tu barrio, tu tel&eacute;fono&mdash; y lo reduce a un solo n&uacute;mero. Ese n&uacute;mero no dice qui&eacute;n sos. Dice c&oacute;mo te parec&eacute;s a otros. Y sobre esa semejanza, act&uacute;a.</p>
+  <p>Hay dos cosas que conviene separar, porque en la pr&aacute;ctica se confunden:</p>
+  <p><strong>El dato.</strong> Un dato sobre vos puede ser verdadero o falso, pero es una afirmaci&oacute;n sobre algo concreto. Pagaste tarde en marzo. Ten&eacute;s un cr&eacute;dito activo. Gan&aacute;s tanto. Los datos se pueden corregir.</p>
+  <p><strong>El puntaje.</strong> El puntaje no es un dato. Es una interpretaci&oacute;n autom&aacute;tica de muchos datos a la vez. No se puede corregir porque no dice nada que sea falso: dice algo que es verdadero en promedio y falso en tu caso particular.</p>
+  <p>Ramiro no puede pedir que le corrijan el puntaje porque no hay nada err&oacute;neo en &eacute;l. Lo que hay es una categor&iacute;a: <em>parecido a otros que no pagaron</em>. Y sobre esa categor&iacute;a, alguien &mdash;nada m&aacute;s y nadie menos que un algoritmo&mdash; actu&oacute;.</p>
+</div>
+
+<div class="bloque">
+  <p>Y ac&aacute; est&aacute; la parte que hay que decir en voz alta, porque es lo que hace este umbral dif&iacute;cil de vivir y dif&iacute;cil de contar.</p>
+  <p><strong>El puntaje funciona.</strong></p>
+  <p>No es un error del sistema. No es una falla. No es una m&aacute;quina que se equivoca. Es una tecnolog&iacute;a que predice mejor que la mayor&iacute;a de los empleados humanos que hac&iacute;an ese trabajo antes. Reduce el riesgo del banco. Reduce el tiempo de decisi&oacute;n. Reduce el costo de evaluar a cada persona una por una.</p>
+  <p>Si el banco volviera al criterio del gerente que miraba a Ramiro a los ojos y decid&iacute;a, <strong>ser&iacute;a peor</strong>. El gerente tendr&iacute;a sesgos m&aacute;s grandes, menos consistencia, y decisiones tomadas por cansancio despu&eacute;s de la octava entrevista del d&iacute;a.</p>
+  <p>El puntaje funciona. Y sin embargo, sobre Ramiro, decidi&oacute; algo que &eacute;l no puede discutir con nadie.</p>
+  <p>Esa es la forma exacta del problema. No hay villano. Hay una tecnolog&iacute;a que hace bien lo que hace, y un sujeto que queda afuera de la escena donde se decide sobre &eacute;l.</p>
+</div>
+
+<div class="cita">
+  <p><em>Un sistema que acierta en promedio puede equivocarse en cada caso particular sin que eso cuente como error.</em></p>
+  <cite><span class="obra">Formulaci&oacute;n de este libro</span></cite>
+</div>
+
+<div class="bloque">
+  <p>Hay una consecuencia concreta, y es lo que el lector tiene que poder ver antes de pasar al umbral siguiente.</p>
+  <p><strong>El puntaje borra el caso particular.</strong></p>
+  <p>Ramiro pag&oacute; siempre en t&eacute;rmino. Pero el puntaje no lo dice. Dice: <em>parecido a otros que en promedio no pagaron</em>. Y esa clasificaci&oacute;n no admite excepciones, porque el sistema que la produjo no fue dise&ntilde;ado para admitirlas. Las excepciones no escalan.</p>
+  <p>Y hay algo peor, que es lo que el libro va a trabajar en el umbral siguiente: <strong>el puntaje de Ramiro no es solo para ese pr&eacute;stamo</strong>. Es para todos los pr&eacute;stamos que pida en los pr&oacute;ximos cinco a&ntilde;os. Es para el alquiler de un departamento en otra ciudad. Es para la compra de un electrodom&eacute;stico en cuotas. Es para la tarjeta nueva que pida en tres a&ntilde;os.</p>
+  <p>El n&uacute;mero que hoy rechaz&oacute; su cr&eacute;dito va a estar decidiendo por &eacute;l durante a&ntilde;os. En lugares que todav&iacute;a no conoce. Sin que &eacute;l se entere.</p>
+</div>
+
+<div class="perla grave"><p>El n&uacute;mero no cambia.<br>Cambian los lugares<br>donde el n&uacute;mero decide.</p></div>
+
+<div class="geo" id="geo01">
+  <span class="geo-label">El puntaje</span>
+  <p class="geo-instruccion">Pens&aacute; en una decisi&oacute;n real que te afect&oacute; en el &uacute;ltimo a&ntilde;o &mdash;un rechazo, una aprobaci&oacute;n, una categor&iacute;a&mdash;. Ajust&aacute; cu&aacute;ntos datos distintos crees que pudo haber usado el sistema para tomar esa decisi&oacute;n. El sistema te muestra qu&eacute; porcentaje de ellos podr&iacute;as verificar vos.</p>
+  <div class="panel">
+    <div class="puntaje-panel">
+      <div class="puntaje-fila">
+        <span class="rotulo">Datos que crees que el sistema us&oacute; (n&uacute;mero)</span>
+        <input type="range" id="q01" min="1" max="30" step="1" value="10">
+        <div class="contador" id="c01">10 datos</div>
+      </div>
+      <button type="button" class="accion" id="b01" disabled>Ver el problema</button>
+    </div>
+  </div>
+  <div class="geo-estado"><span class="glosa" id="g01"></span></div>
+  <p class="geo-instruccion" style="margin-top:1rem;font-size:.94rem;">No se guarda nada.</p>
+</div>
+
+<div class="bloque">
+  <p>El n&uacute;mero que acabas de producir no dice cu&aacute;ntos datos us&oacute; el sistema. No se puede saber. Dice cu&aacute;ntos datos <strong>crees</strong> que us&oacute;, que es lo &uacute;nico que el lector tiene.</p>
+  <p>Y la proporci&oacute;n que el ejercicio deja ver es siempre la misma: <strong>una parte muy chica de esos datos est&aacute; a tu alcance verificar</strong>. De treinta datos posibles, quiz&aacute;s cinco o seis figuren en un informe de cr&eacute;dito que pod&eacute;s pedir. Los otros veinticuatro est&aacute;n en alg&uacute;n lugar, actuando, sin que tengas acceso.</p>
+  <p>La pregunta no es <em>&iquest;c&oacute;mo hago para verlos?</em>. La pregunta es <em>&iquest;qu&eacute; hago con saber que existen?</em>. El resto del libro trabaja esa pregunta.</p>
+</div>
+
+<div class="escena secundaria">
+  <p>Ramiro, despu&eacute;s del rechazo, hizo tres cosas.</p>
+  <p>Primero pidi&oacute; un informe de cr&eacute;dito en el banco central. Le lleg&oacute; un PDF con datos b&aacute;sicos. Nada del puntaje.</p>
+  <p>Segundo, pidi&oacute; en otra entidad, con las mismas condiciones. Se lo rechazaron tambi&eacute;n. Despu&eacute;s supo, sin que nadie se lo dijera directamente, que las entidades comparten la misma l&oacute;gica.</p>
+  <p>Tercero, pidi&oacute; el pr&eacute;stamo a trav&eacute;s de una cooperativa del barrio, que eval&uacute;a a mano. Se lo dieron en dos semanas, con una tasa un poco m&aacute;s alta, y un requisito: que fuera con un fiador.</p>
+  <p>No es la soluci&oacute;n. Es una salida. Lo pr&eacute;stamo que el sistema rechaz&oacute; por puntaje, la cooperativa lo aprob&oacute; por confianza. Es la operaci&oacute;n que el libro va a proponer cuando el sistema no sea alcanzable: <strong>construir un lugar donde tu versi&oacute;n sea la que vos pusiste</strong>.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+
+  <div class="paso">
+    <span class="paso-nombre">Con qui&eacute;n</span>
+    <p>Contigo. La segunda parte del gesto se hace con quien te conoce desde hace a&ntilde;os.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">El gesto</span>
+    <p><strong>1.</strong> Esta semana, ped&iacute; tu informe de cr&eacute;dito. La mayor&iacute;a de los pa&iacute;ses tiene un organismo p&uacute;blico o privado que te lo da gratuitamente una vez al a&ntilde;o.<br>
+    <strong>2.</strong> Leelo entero, aunque no lo entiendas. Busc&aacute; tres cosas: <em>tu categor&iacute;a</em>, <em>tu historial</em>, <em>tus deudas activas</em>.<br>
+    <strong>3.</strong> Eleg&iacute; una persona que te conozca desde hace a&ntilde;os y contale lo que dice el informe. No lo que pens&aacute;s del informe: lo que dice, literal.<br>
+    <strong>4.</strong> Escuch&aacute; qu&eacute; te dice. Casi siempre la persona que te conoce va a decir <em>eso no sos vos</em>. Eso tambi&eacute;n es informaci&oacute;n: significa que hay dos versiones.<br>
+    <strong>5.</strong> Anot&aacute; una sola l&iacute;nea: en qu&eacute; se parecen y en qu&eacute; no se parecen la versi&oacute;n del informe y la versi&oacute;n que esa persona tiene de vos.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">Cuando no salga</span>
+    <p>Puede que el informe no llegue, o que llegue en un idioma complicado, o que no diga casi nada. Est&aacute; bien. El gesto no busca un dato: busca que hayas visto, aunque sea una vez, qu&eacute; dice un sistema sobre vos. Si no llega, contale a la persona lo que no pudiste conseguir. Eso tambi&eacute;n es el gesto.</p>
+  </div>
+
+  <div class="paso">
+    <span class="paso-nombre">La trampa</span>
+    <p>Convertirlo en una obsesi&oacute;n por corregir el puntaje. Se puede corregir si hay errores, pero casi nunca hay. La mayor&iacute;a de las veces el puntaje es un reflejo correcto de los datos &mdash;aunque los datos no te reflejen a vos&mdash;. El gesto no es para mejorarlo: es para verlo.</p>
+  </div>
+
+  <div class="paso guardar">
+    <span class="paso-nombre">Guardar</span>
+    <p>En qu&eacute; se parecen y en qu&eacute; no se parecen la versi&oacute;n del informe y la versi&oacute;n que esa persona tiene de vos. Una sola l&iacute;nea.</p>
+  </div>
+
+  <div class="paso traslada">
+    <span class="paso-nombre">Lo que no se traslada</span>
+    <p>Que alguien que te conoce sea el que decide en tu lugar. La mayor&iacute;a de las decisiones sobre tu vida ya no las toma el gerente que te conoce. Las toma un sistema que nunca te vio. Aprender a vivir con eso no es resignaci&oacute;n: es reconocer d&oacute;nde est&aacute; el poder, para saber qu&eacute; se puede hacer con lo que s&iacute; est&aacute; a mano.</p>
+  </div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. La pr&oacute;xima vez que recibas un rechazo autom&aacute;tico, la tentaci&oacute;n de pensar que hay un error va a estar ah&iacute;. Casi nunca hay error. Cuando pase, no hagas nada distinto: anot&aacute; la fecha y a qui&eacute;n le habr&iacute;as pedido la raz&oacute;n si pudieras. La cantidad de veces que anot&aacute;s es el mecanismo.</p>
+</div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-02.html"><span class="continuar-nombre">La categor&iacute;a</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var t=document.getElementById('q01'); if(!t) return;
+    var c=document.getElementById('c01'), b=document.getElementById('b01'), g=document.getElementById('g01');
+    t.addEventListener('input', function(){
+      c.textContent = t.value + (t.value === '1' ? ' dato' : ' datos');
+      b.disabled = false;
+    });
+    t.addEventListener('input', function(){ b.disabled = false; });
+    b.addEventListener('click', function(){
+      var n = parseInt(t.value);
+      b.disabled = true; t.disabled = true;
+      var alcanzables = Math.max(3, Math.min(7, Math.round(n * 0.2)));
+      var noAlcanzables = n - alcanzables;
+      var pct = Math.round((alcanzables / n) * 100);
+      var lectura = '';
+      if(pct <= 20){
+        lectura = 'Ves, como mucho, el <strong>' + pct + '%</strong> de lo que el sistema us&oacute;. Eso no es pesimismo: es la estructura. Los datos que deciden sobre vos no est&aacute;n dise&ntilde;ados para que los veas. Est&aacute;n dise&ntilde;ados para que el sistema decida r&aacute;pido.';
+      } else if(pct <= 40){
+        lectura = 'Ves, aproximadamente, el <strong>' + pct + '%</strong> de lo que el sistema us&oacute;. La proporci&oacute;n sigue siendo baja, pero ya hay algo que se puede mirar. Eso es todo lo que hay.';
+      } else {
+        lectura = 'Ves, m&aacute;s o menos, el <strong>' + pct + '%</strong> de lo que el sistema us&oacute;. Probablemente sea menos de lo que calculaste. Casi nadie estima bien cu&aacute;ntos datos ajenos est&aacute;n en juego.';
+      }
+      g.innerHTML = '<strong>' + alcanzables + '</strong> verificables &middot; <strong>' + noAlcanzables + '</strong> fuera de tu alcance<br>' + lectura;
+    });
+  })();
+
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.desglose,.geo';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
