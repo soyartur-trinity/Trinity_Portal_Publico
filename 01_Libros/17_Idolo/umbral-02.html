@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>II &middot; El que lo recibe | Ídolo</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+
+  .dicho{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .dicho.visible{opacity:1; transform:none;}
+  .dicho p{font-size:1.06rem; line-height:1.75; color:var(--blanco-humo); margin:0;}
+
+  /* ── las cuatro señales de la sala ── */
+  .senales{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.2rem;}
+  .senal-fila{padding:1rem .4rem; border-bottom:1px solid var(--separador);}
+  .senal-fila:last-of-type{border-bottom:none;}
+  .senal-pregunta{display:block; font-family:'EB Garamond',Georgia,serif;
+    font-size:1.02rem; line-height:1.6; color:var(--blanco-humo); margin-bottom:.7rem;}
+  .senal-opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--separador); border:1px solid var(--separador);}
+  .senal-btn{background:var(--negro); border:none; padding:.65rem .5rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.92rem;
+    color:var(--lejos); cursor:pointer; transition:all .25s ease; line-height:1.3;}
+  .senal-btn:hover, .senal-btn:focus-visible{color:var(--blanco-humo);}
+  .senal-btn[aria-pressed="true"][data-v="si"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .senal-btn[aria-pressed="true"][data-v="no"]{color:var(--blanco-humo); background:rgba(107,122,128,.04);}
+  .senal-resultado{margin-top:1.3rem; text-align:center; min-height:2.6rem;
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.02rem,2.6vw,1.22rem); line-height:1.55;}
+  .senal-resultado strong{color:var(--oro); font-weight:400; font-style:normal;}
+  @media (max-width:600px){
+    .senal-opciones{grid-template-columns:1fr;}
+    .senal-pregunta{font-size:.98rem;}
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-01.html">&larr; El préstamo</a>
+  <span>II</span>
+  <a href="umbral-03.html">Temer es atribuir &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">Ídolo &middot; Umbral</span>
+  <div class="numero">02</div>
+  <h1 class="titulo">El que lo recibe</h1>
+  <p class="subtitulo">un préstamo, desde adentro, se siente igual que tener razón</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Sandra propuso en marzo unificar los dos informes en una sola reunión los lunes.</p>
+  <p>Lo explicó en diez minutos, con los motivos. Cuando terminó hubo unos segundos de nada y Ariadna dijo que le parecía bien. Los demás asintieron. Salieron a horario.</p>
+  <p>Cuatro de las once personas de esa sala sabían que no iba a funcionar.</p>
+  <p>Lo sabían por algo concreto y bastante aburrido: el equipo de operaciones cierra sus números los martes, y ponerlos a informar los lunes significaba informar sobre la semana anterior a la anterior. Es un dato que cualquiera de los cuatro podía decir en veinte segundos.</p>
+  <p>Ninguno lo dijo.</p>
+  <p>En junio se cayó. Tres semanas para volver atrás, un cliente molesto y una discusión con el área de sistemas.</p>
+  <p>Sandra estuvo un fin de semana entero pensando qué había pasado, y llegó a una conclusión: <strong>no lo había explicado bien.</strong></p>
+</div>
+
+<div class="perla"><p>Los cuatro lo sabían.<br>Ella concluyó que hablaba mal.<br>Ninguna de las dos cosas era el problema.</p></div>
+
+<div class="bloque">
+  <p>Lo que hay que ver es que Sandra no hizo nada para que pasara esto. No es autoritaria, no grita, no castiga las opiniones. Si alguien le dijera que en su equipo no se la contradice, le parecería una acusación injusta.</p>
+  <p>Y tendría razón, porque ella no lo pidió.</p>
+  <p>El préstamo se armó solo, como se arman todos, por acumulación de cosas chicas. Ella acertó bastante seguido los primeros meses. Dos veces defendió al equipo frente a la dirección. Una vez, sin querer, contestó con impaciencia a alguien que la contradijo un jueves a las siete de la tarde.</p>
+  <p>Nada de eso alcanza para explicarlo. Todo junto sí.</p>
+</div>
+
+<div class="bloque">
+  <p>Y ahora la parte que vuelve a esto tan difícil de detectar desde adentro:</p>
+  <p><strong>Un préstamo recibido se siente exactamente igual que tener razón.</strong></p>
+  <p>Del lado de Sandra, los dos años se ven así: propone, no hay objeciones, sale. Eso es indistinguible de lo que se ve cuando uno realmente acierta. No hay ninguna señal que los diferencie.</p>
+  <p>Las señales existen, pero son de otro orden y hay que buscarlas a propósito.</p>
+  <p><strong>Las reuniones se acortaron.</strong> Nadie las acorta a propósito: se acortan cuando ya no hay nada que discutir.</p>
+  <p><strong>Las objeciones llegan por privado y después.</strong> <em>Oye, una cosa, quizá no sea nada</em> — dicho en el pasillo, dos días más tarde, por alguien que en la sala no dijo nada.</p>
+  <p><strong>Aparece un traductor.</strong> Ariadna es la que dice que le parece bien. Siempre es la misma persona y siempre la primera, y en algún momento el resto empezó a esperarla.</p>
+  <p><strong>Y las malas noticias llegan tarde.</strong> Esta es la peor de las cuatro y la que cuesta dinero: los problemas se le informan a Sandra cuando ya no se pueden ocultar.</p>
+</div>
+
+<div class="cita">
+  <p><em>El emperador iba desnudo, y todo el pueblo lo aclamaba.</em></p>
+  <cite><span class="obra">Hans Christian Andersen</span> &middot; El traje nuevo del emperador, 1837</cite>
+</div>
+
+<div class="bloque">
+  <p>El cuento se lee siempre como una sátira sobre la vanidad del emperador. Hace algo más interesante si se lo mira del otro lado: <strong>el emperador era el único que no tenía manera de enterarse.</strong> Todos los demás sabían. Él estaba adentro de la única posición desde la cual no se veía.</p>
+</div>
+
+<div class="escena">
+  <p>En agosto entró Valeria, que llevaba dos meses en la empresa.</p>
+  <p>Sandra propuso algo en una reunión y Valeria dijo, sin ninguna intención, que eso chocaba con el cierre de operaciones.</p>
+  <p>Lo dijo como se dice un dato.</p>
+  <p>Y a Sandra le pasó algo antes de pensar nada: una cosa en el pecho, corta, parecida al fastidio. Duró dos segundos. Después contestó bien, agradeció, y el punto se corrigió.</p>
+</div>
+
+<div class="bloque">
+  <p>Esos dos segundos son lo más importante de este umbral.</p>
+  <p><strong>El que recibe el préstamo lo defiende sin haberlo decidido.</strong> No hace falta mala fe ni soberbia: el cuerpo protege una posición cómoda antes de que la cabeza opine. Y basta con que ese fastidio se note una vez —un gesto, medio segundo de silencio— para que la sala aprenda que ahí no se entra.</p>
+  <p>Sandra no lo notó. Los otros diez, sí.</p>
+</div>
+
+<div class="cita">
+  <p><em>Todo adulador vive a costa del que lo escucha.</em></p>
+  <cite><span class="obra">Jean de La Fontaine</span> &middot; El cuervo y el zorro, Fábulas, 1668</cite>
+</div>
+
+<div class="puerta"><a href="../04_Asertividad_Consciente/index.html">&#10192; <em>&#10192; Qué se necesita para sostener una posición propia dentro de una estructura donde no conviene tenerla —y cómo se pide de vuelta la discusión sin que suene a debilidad— se trabaja en <strong>Asertividad consciente &middot; Capítulo 6, Asertividad en el entorno laboral</strong>. El libro entero,</em></a></div>
+
+<div class="bloque">
+  <p>Y ahora lo que este umbral tiene para dar, que es una sola cosa y no requiere que nadie confiese nada.</p>
+  <p><strong>Las cuatro señales se pueden mirar.</strong></p>
+  <p>No se puede preguntar <em>¿ustedes me tienen miedo?</em>, porque a esa pregunta se le contesta que no, y encima con cariño.</p>
+  <p>Lo que sí se puede es contar. Cuánto duran las reuniones ahora comparado con hace dos años. Cuántas objeciones llegaron por privado el último mes. Si hay alguien que habla primero siempre. Cuánto tardó la última mala noticia en llegar.</p>
+  <p>Son cuatro datos y se sacan en veinte minutos.</p>
+  <p>Sandra los sacó en septiembre, después de lo de Valeria, y el que la volteó fue el tercero: se dio cuenta de que hacía dos años que las reuniones empezaban con Ariadna.</p>
+  <p>No era un descubrimiento sobre Ariadna. Era sobre ella.</p>
+</div>
+
+<div class="perla"><p>No se pregunta.<br>Se cuenta.</p></div>
+
+<div class="geo">
+  <span class="geo-label">Las cuatro señales de tu sala</span>
+  <p class="geo-instruccion">Piensa en el grupo donde tu palabra pesa más: un equipo, un aula, una mesa familiar. Marca lo que pasa hoy. No lo que pasaba hace dos años: lo de hoy.</p>
+  <div class="panel">
+    <div class="senales" id="senales">
+      <div class="senal-fila" data-senal="duracion">
+        <span class="senal-pregunta">1. ¿Las conversaciones donde tú propones duran menos que hace un año?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, duran menos</button>
+          <button class="senal-btn" data-v="no">No, igual o más</button>
+        </div>
+      </div>
+      <div class="senal-fila" data-senal="privado">
+        <span class="senal-pregunta">2. ¿Las objeciones te llegan por privado, después de la reunión?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, casi todas</button>
+          <button class="senal-btn" data-v="no">No, llegan en el momento</button>
+        </div>
+      </div>
+      <div class="senal-fila" data-senal="traductor">
+        <span class="senal-pregunta">3. ¿Hay alguien que siempre habla primero y dice que le parece bien?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, siempre la misma persona</button>
+          <button class="senal-btn" data-v="no">No, cambia</button>
+        </div>
+      </div>
+      <div class="senal-fila" data-senal="tarde">
+        <span class="senal-pregunta">4. ¿La última mala noticia te llegó cuando ya no se podía hacer nada?</span>
+        <div class="senal-opciones">
+          <button class="senal-btn" data-v="si">Sí, ya era tarde</button>
+          <button class="senal-btn" data-v="no">No, llegó a tiempo</button>
+        </div>
+      </div>
+    </div>
+    <div class="senal-resultado" id="senalResultado"></div>
+  </div>
+</div>
+
+<div class="bloque">
+  <p>El número que acabas de producir no es un diagnóstico. Es un inventario.</p>
+  <p>Puede querer decir tres cosas, y solo tú sabes cuál.</p>
+  <p>La primera: que las cuatro señales apunten al mismo lado porque <strong>la sala efectivamente está prestando</strong>, y no lo habías visto desde adentro. La segunda: que aparezcan una o dos y sean <strong>rasgos de la dinámica normal</strong> de cualquier grupo, sin que eso signifique nada grave. La tercera, que es la que más cuesta admitir: que la señal que marcaste sea precisamente <strong>la que ya sabías</strong> y nunca contaste.</p>
+  <p>Ninguna de las tres se resuelve en este umbral. Lo único que hace el inventario es sacarte del lugar del emperador: dejarte ver la sala desde el único sitio donde no se veía.</p>
+</div>
+
+<div class="sendero">
+  <p class="rotulo" style="margin-bottom:1.4rem;">El gesto</p>
+  <div class="paso"><span class="paso-nombre">Esta semana</span><p>Cuenta una sola de las cuatro señales, la que hayas marcado con más seguridad. Un dato por día, en la nota del teléfono, con la fecha.</p></div>
+  <div class="paso"><span class="paso-nombre">Tres días seguidos</span><p>Anota, cada vez que termines una conversación donde propusiste algo, cuánto duró. Tres números y listo. Nada más.</p></div>
+  <div class="paso"><span class="paso-nombre">El cuarto día</span><p>Mira los tres números. Compara el primero con el tercero. Si bajaron, ya tienes el dato. Si subieron o quedaron igual, también.</p></div>
+  <div class="paso guardar"><span class="paso-nombre">Debajo</span><p>Escribe la fecha del último día y una sola palabra que describa lo que viste. Una. Sin explicación.</p></div>
+  <div class="paso traslada"><span class="paso-nombre">No lo cuentes</span><p>No le digas a nadie de la sala que estás contando. Ni al traductor, ni a tu jefe, ni a un amigo del trabajo. La nota queda para ti.</p></div>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Y si vuelve</span>Va a volver. Dentro de un mes vas a proponer algo y las reuniones van a durar lo de siempre, o menos, y no vas a acordarte de haber contado nada. Cuando pase, no rehagas el análisis: abre la nota, agrega la fecha y vuelve a contar tres días. Si los números son los mismos, el dato es que no cambió nada. Si bajaron otra vez, el dato es ese. <strong>El gesto no es resolver: es tener el número cada vez que se pregunta.</strong></p>
+</div>
+
+<div class="bloque">
+  <p><span class="rotulo">Quién lo dijo</span></p>
+</div>
+
+<div class="dicho"><p><em>Unifiquemos los dos informes en una sola reunión los lunes.</em></p></div>
+
+<div class="bloque">
+  <p>Diez palabras. Es una propuesta razonable de alguien pensando en voz alta, con un error de calendario adentro que cuatro personas podían ver.</p>
+  <p>Dicha por otro, se habría corregido en la misma reunión.</p>
+</div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-03.html"><span class="continuar-nombre">Temer es atribuir</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal Público Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.dicho,.geo,.sendero';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+
+    // las cuatro señales
+    var filas=document.querySelectorAll('#senales .senal-fila');
+    var res=document.getElementById('senalResultado');
+    filas.forEach(function(fila){
+      var btns=fila.querySelectorAll('.senal-btn');
+      btns.forEach(function(b){
+        b.addEventListener('click',function(){
+          btns.forEach(function(o){o.setAttribute('aria-pressed','false');});
+          b.setAttribute('aria-pressed','true');
+          fila.dataset.eleccion=b.dataset.v;
+          calcular();
+        });
+      });
+    });
+    function calcular(){
+      var hechas=document.querySelectorAll('#senales .senal-fila[data-eleccion]');
+      if(hechas.length<filas.length){ res.innerHTML=''; return; }
+      var presentes=[];
+      var nombres={duracion:'reuniones más cortas',privado:'objeciones en privado',traductor:'un traductor fijo',tarde:'malas noticias tardías'};
+      var traductor=false, tarde=false;
+      hechas.forEach(function(f){
+        if(f.dataset.eleccion==='si'){
+          presentes.push(nombres[f.dataset.senal]);
+          if(f.dataset.senal==='traductor'){ traductor=true; }
+          if(f.dataset.senal==='tarde'){ tarde=true; }
+        }
+      });
+      var n=presentes.length;
+      if(n===0){
+        res.innerHTML='Ninguna de las cuatro. Es posible, y también es poco frecuente. Vuelve a mirar la tercera y la cuarta en una semana: son las que más tardan en notarse desde adentro.';
+        return;
+      }
+      var txt='Presentes: <strong>'+presentes.join(', ')+'</strong>.';
+      if(traductor && tarde){
+        txt+=' Es la combinación más clara: alguien te traduce y las malas noticias te llegan tarde. Las dos se refuerzan.';
+      } else if(traductor){
+        txt+=' El traductor fijo es la señal más estable de las cuatro: cambia poco y no se disfraza.';
+      } else if(tarde){
+        txt+=' Las malas noticias tardías son la única de las cuatro que cuesta dinero.';
+      }
+      res.innerHTML=txt;
+    }
+  })();
+</script>
+</body>
+</html>
