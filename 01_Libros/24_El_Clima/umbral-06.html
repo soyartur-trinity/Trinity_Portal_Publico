@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VI &middot; La otra cara | El clima</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --negro:#0d0c0b; --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#8a6f35; --oro-polvo:#3a2e18;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#2a2418;
+    --lejos:#6b6560; --brasa:#c46a3a; --frio:#6b7a80;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(13,12,11,.82); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  /* escena secundaria: misma familia, un grado más tenue y sin barra */
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  /* ── la cita con autor ── */
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  /* ── la frase de todos, última línea del umbral ── */
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  /* ── interactivos ── */
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  /* ── el sendero ── */
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+
+  .antes{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .antes.visible{opacity:1; transform:none;}
+  .antes p{font-size:1.02rem; line-height:1.78; color:var(--blanco-humo); margin:0 0 .7rem;}
+  .antes p:last-child{margin-bottom:0;}
+
+  .trajo{max-width:34rem; margin:2.8rem auto 1rem; padding:1.2rem 1.4rem;
+    border-left:2px solid rgba(201,168,76,.26); background:rgba(255,255,255,.016);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .trajo.visible{opacity:1; transform:none;}
+  .trajo p{font-size:1rem; line-height:1.85; color:var(--blanco-humo); margin:0 0 .6rem;}
+  .trajo p:last-child{margin-bottom:0;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-05.html">&larr; El clima de un lugar</a>
+  <span>VI</span>
+  <a href="umbral-07.html">Entrar y salir &rarr;</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">El clima &middot; Umbral</span>
+  <div class="numero">06</div>
+  <h1 class="titulo">La otra cara</h1>
+  <p class="subtitulo">el clima donde est&aacute; prohibido estar mal</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="escena">
+  <p>Hay una empresa mediana donde entrar es agradable. Las paredes tienen frases. Hay una cocina con fruta. Los lunes empiezan con una reuni&oacute;n corta y de pie donde cada uno dice algo bueno de la semana anterior.</p>
+  <p>Valeria entr&oacute; hace dos a&ntilde;os y al principio le pareci&oacute; el mejor lugar donde hab&iacute;a trabajado.</p>
+  <p>En marzo le diagnosticaron algo a su padre. Nada terminal, pero largo, con estudios y esperas.</p>
+  <p>Un lunes, en la reuni&oacute;n de pie, cuando le toc&oacute;, dijo que estaba con un tema familiar y que la semana hab&iacute;a sido dura.</p>
+  <p>Hubo cuatro segundos de silencio.</p>
+  <p>Despu&eacute;s alguien dijo que seguro se iba a solucionar, otro le dijo que mandara fuerza, y el que coordinaba dijo que bueno, que qu&eacute; bueno que lo compartiera, y pas&oacute; al siguiente.</p>
+  <p>A los diez minutos una compa&ntilde;era le escribi&oacute; por mensaje para preguntarle en privado.</p>
+  <p>Valeria contest&oacute; que estaba todo bien.</p>
+  <p>Y no volvi&oacute; a decir nada en una reuni&oacute;n de pie durante catorce meses.</p>
+</div>
+
+<div class="perla"><p>Nadie la call&oacute;.<br>Cuatro segundos de silencio<br>alcanzaron.</p></div>
+
+<div class="bloque">
+  <p>Hasta ac&aacute; el clima descrito fue el cargado: gente que trae lo que pesa y lo multiplica. Y la conclusi&oacute;n f&aacute;cil ser&iacute;a que el problema es lo negativo, y la soluci&oacute;n, un ambiente positivo.</p>
+  <p><strong>Es falso, y la empresa de Valeria lo demuestra.</strong></p>
+  <p>Ah&iacute; no hay queja. Hay fruta, frases en las paredes y una reuni&oacute;n donde se dice algo bueno. Y produce el mismo da&ntilde;o que la oficina de Paula, por el camino contrario.</p>
+  <p><strong>Los dos climas proh&iacute;ben la misma cosa: decir lo que pasa.</strong></p>
+  <p>En un lugar donde todo es queja no se puede estar bien. El que llega contento y lo dice rompe algo; aprende r&aacute;pido a bajar el tono, y en tres semanas tampoco cuenta lo que le sali&oacute; bien.</p>
+  <p>En un lugar donde todo tiene que estar bien no se puede estar mal. El que llega con algo pesado y lo dice rompe algo; aprende r&aacute;pido a decir que est&aacute; todo bien.</p>
+  <p><strong>Dos reglas opuestas. La misma consecuencia: hay una mitad de la vida que no entra.</strong></p>
+</div>
+
+<div class="cita">
+  <p><em>El pensamiento positivo obligatorio no es un consuelo: es una exigencia m&aacute;s. Quien no logra mantenerlo termina sinti&eacute;ndose responsable tambi&eacute;n de eso.</em></p>
+  <cite><span class="obra">Barbara Ehrenreich</span> &middot; Sonr&iacute;e o muere, 2009<br><small>(par&aacute;frasis de la tesis del libro)</small></cite>
+</div>
+
+<div class="bloque">
+  <p>El segundo clima tiene una caracter&iacute;stica que lo vuelve peor de tratar: <strong>es irreprochable.</strong></p>
+  <p>Al clima de queja se le puede se&ntilde;alar algo. Alguien puede decir que ah&iacute; se habla siempre de lo malo, y todos entienden de qu&eacute; habla.</p>
+  <p>&iquest;Qu&eacute; se le se&ntilde;ala a un lugar que tiene fruta y donde la gente es amable?</p>
+  <p>El que dice que ah&iacute; no se puede estar mal queda como el amargado que no valora lo que tiene. <strong>No hay ninguna acusaci&oacute;n disponible</strong>, y por eso nadie la hace, y por eso el clima no se mira nunca.</p>
+</div>
+
+<div class="perla"><p>A la queja se la puede nombrar.<br>A la alegr&iacute;a obligatoria<br>no se la puede acusar de nada.</p></div>
+
+<div class="bloque">
+  <p>Y conviene decir de d&oacute;nde sale, porque no sale de la mala fe.</p>
+  <p>Casi siempre sale de una intenci&oacute;n buena y de una experiencia mala: alguien pas&oacute; por un lugar pesado y no quiere repetirlo. La fruta y las frases son una reacci&oacute;n, y la reacci&oacute;n es comprensible.</p>
+  <p>Lo que se pierde de vista es que <strong>un clima no se corrige con su opuesto.</strong> Se corrige con permiso, y el permiso no tiene signo: es que se pueda decir lo que hay.</p>
+  <p>Un lugar sano no es uno donde se hable de cosas buenas. Es uno donde alguien puede decir que la semana fue dura <strong>y que eso no produzca cuatro segundos de silencio.</strong></p>
+</div>
+
+<div class="cita">
+  <p><em>Toda forma de convivencia produce, adem&aacute;s de lo que dice, lo que no se puede decir en ella. Y lo que no se puede decir no desaparece: circula por debajo y aparece en otro lado.</em></p>
+  <cite><span class="obra">Formulaci&oacute;n de este libro</span></cite>
+</div>
+
+<div class="bloque">
+  <p>Lo que Valeria no dijo en la reuni&oacute;n de pie no se evapor&oacute;. Lo cont&oacute;, durante catorce meses, en el estacionamiento, a una sola persona, en voz baja, y siempre pidiendo disculpas por contarlo.</p>
+  <p>Y ah&iacute; s&iacute; se volvi&oacute; queja, con todas las propiedades del umbral anterior: repetida, sin destinatario que pudiera hacer nada, sin bajar nunca de intensidad.</p>
+  <p><strong>El clima positivo no elimin&oacute; la queja. La mand&oacute; al estacionamiento.</strong></p>
+</div>
+
+<div class="puerta"><a href="../03_Encuentro_Real/index.html">&#10192; <em>Por qu&eacute; nadie aprendi&oacute; a quedarse cuando aparece algo inc&oacute;modo, y qu&eacute; se pierde cada vez que se lo resuelve r&aacute;pido, se trabaja en <strong>Encuentro real &middot; Nadie ense&ntilde;&oacute; a habitar la incomodidad</strong>. El libro entero,</em></a></div>
+
+<div class="bloque">
+  <p>Ahora, la distinci&oacute;n que evita que esto se lea como un ataque contra la gente alegre.</p>
+  <p><strong>Hay lugares realmente livianos, y no son esto.</strong></p>
+  <p>La diferencia se ve en una prueba sola: <strong>qu&eacute; pasa cuando alguien dice algo pesado.</strong></p>
+  <p>En un lugar liviano de verdad, alguien dice que la semana fue dura, los dem&aacute;s lo registran, alguien pregunta, y despu&eacute;s la conversaci&oacute;n sigue. No hubo silencio, y tampoco se convirti&oacute; en el tema de la ma&ntilde;ana. Entr&oacute;, ocup&oacute; lo que ten&iacute;a que ocupar, y pas&oacute;.</p>
+  <p>En un lugar de alegr&iacute;a obligatoria, eso produce incomodidad y se resuelve r&aacute;pido con una frase de aliento. La frase de aliento es la herramienta espec&iacute;fica de este clima, y conviene mirarla: <em>ya va a pasar</em>, <em>todo sucede por algo</em>, <em>manda fuerza</em>, <em>hay que estar bien</em>.</p>
+  <p>Ninguna es falsa. Todas cierran. <strong>Son maneras amables de decir: hasta ac&aacute;.</strong></p>
+</div>
+
+<div class="bloque">
+  <p>Y hay algo m&aacute;s, que vuelve a los dos climas parientes y no opuestos: <strong>pueden convivir.</strong></p>
+  <p>En la misma casa. Una familia donde se habla todo el d&iacute;a de lo que anda mal del pa&iacute;s, del barrio, de la salud, de los precios &mdash; y donde no se puede decir que uno est&aacute; triste.</p>
+  <p>Y en la misma persona. Alguien que en la oficina sostiene el tono pesado y en su casa no permite que nadie est&eacute; mal, porque <em>bastante tengo con lo de afuera</em>.</p>
+  <p>No son dos continentes lejanos. Son dos maneras de que no entre lo que efectivamente est&aacute; pasando.</p>
+</div>
+
+<div class="escena secundaria">
+  <p>Valeria hizo algo en junio del a&ntilde;o siguiente, chico y sin ninguna estrategia.</p>
+  <p>En la reuni&oacute;n de pie, cuando le toc&oacute;, dijo que la semana hab&iacute;a estado dif&iacute;cil y que no quer&iacute;a contar por qu&eacute;, pero que prefer&iacute;a decirlo.</p>
+  <p>Y despu&eacute;s se qued&oacute; callada, sin explicar m&aacute;s.</p>
+  <p>Hubo silencio otra vez. Pero esta vez nadie dijo ninguna frase de aliento, porque ella no hab&iacute;a abierto ning&uacute;n problema para que lo cerraran.</p>
+  <p>El que coordinaba pas&oacute; al siguiente.</p>
+  <p>Y al martes siguiente, otra persona dijo que ven&iacute;a con una semana complicada y tampoco explic&oacute;.</p>
+</div>
+
+<div class="perla grave"><p>No cambi&oacute; el clima.<br>Mostr&oacute; que se pod&iacute;a decir<br>sin pedir nada a cambio.</p></div>
+
+<div class="bloque">
+  <p><span class="rotulo">La pr&oacute;xima vez</span>Piensa en un lugar donde est&eacute;s seguido y hazte la pregunta al rev&eacute;s de la del umbral anterior:</p>
+  <p><strong>&iquest;Qu&eacute; no se puede decir ah&iacute;?</strong></p>
+  <p>En algunos lugares no se puede decir que algo sali&oacute; bien. En otros no se puede decir que est&aacute;s cansado. En otros no se puede decir que algo no te gust&oacute;.</p>
+  <p>Si la respuesta te viene enseguida, ese lugar tiene un clima y t&uacute; ya lo conoc&iacute;as sin haberlo pensado nunca.</p>
+</div>
+
+<div class="trajo"><span class="rotulo">Qui&eacute;n lo trajo</span><p><em>La fruta y las frases las puso alguien que hab&iacute;a trabajado en un lugar pesado.</em></p><p><em>El diagn&oacute;stico del padre era de Valeria y era de marzo.</em></p><p><em>Los cuatro segundos de silencio no los puso ninguno de los doce que estaban.</em></p><p><em>Y lo que Valeria cont&oacute; en el estacionamiento durante catorce meses empez&oacute; siendo una noticia y termin&oacute; siendo otra cosa.</em></p></div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-07.html"><span class="continuar-nombre">Entrar y salir</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">&darr;</span></div>
+  </a>
+</div>
+
+</main>
+<footer class="pie"><span>Portal P&uacute;blico Trinity &middot; La trama</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.trajo,.sendero';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
