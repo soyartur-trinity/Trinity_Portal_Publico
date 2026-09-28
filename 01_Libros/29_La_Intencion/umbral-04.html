@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IV · Sembrar | La intención</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --fondo:#0c1220; --negro:var(--fondo); --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#a88a4e; --oro-polvo:#9a8352;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#1f2a3d;
+    --lejos:#8d8a86; --brasa:#c46a3a; --frio:#8a9aa3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(12,18,32,.86); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+
+  .antes{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .antes.visible{opacity:1; transform:none;}
+  .antes p{font-size:1.02rem; line-height:1.78; color:var(--blanco-humo); margin:0 0 .7rem;}
+  .antes p:last-child{margin-bottom:0;}
+
+  .operacion{margin:5rem auto 3rem; max-width:28rem; padding:2.6rem 1.9rem;
+    border:1px solid var(--oro-polvo); background:rgba(201,168,76,.028);
+    text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .operacion.visible{opacity:1; transform:none;}
+  .operacion::before{content:'la operaci\00F3n'; position:absolute; top:-.7rem; left:50%;
+    transform:translateX(-50%); padding:0 .8rem; background:var(--negro);
+    font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue);}
+  .operacion p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    color:var(--blanco-humo); font-size:clamp(1.15rem,2.8vw,1.42rem); line-height:1.75;
+    margin-bottom:1.2rem;}
+  .operacion p:last-child{margin-bottom:0; color:var(--gris-calido);}
+  .final{margin:4.5rem auto 0; max-width:25rem; text-align:center;
+    opacity:0; transition:opacity 1.2s ease;}
+  .final.visible{opacity:1;}
+  .final p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    color:var(--oro-tenue); font-size:clamp(1rem,2.4vw,1.14rem); line-height:1.75; margin-bottom:.7rem;}
+  .final p strong{color:var(--oro); font-style:normal; font-weight:400;
+    letter-spacing:.14em; text-transform:uppercase; font-size:.72rem;}
+
+  .umbral{display:grid; grid-template-columns:3.2rem 1fr 1.4rem; align-items:baseline; gap:1rem;
+    padding:1.15rem .4rem; border-bottom:1px solid var(--separador); text-decoration:none;
+    transition:all .3s ease;}
+  .umbral:hover{background:rgba(201,168,76,.03);}
+  .u-num{font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--oro-polvo);
+    letter-spacing:.1em; text-align:right;}
+  .umbral:hover .u-num{color:var(--oro-tenue);}
+  .u-txt{font-size:1.02rem; line-height:1.7; color:var(--gris-calido);}
+  .u-txt strong{color:var(--blanco-humo); font-weight:500; display:block;
+    font-family:'Cormorant Garamond',serif; font-size:1.28rem; letter-spacing:.02em;}
+  .umbral:hover .u-txt strong{color:var(--oro);}
+  .u-flecha{color:var(--oro-polvo); text-align:right;}
+  .tramo{font-family:'Cormorant Garamond',serif; font-weight:400; font-style:italic;
+    font-size:clamp(1.35rem,3.4vw,1.6rem); color:var(--oro); letter-spacing:.03em;
+    margin:4.2rem 0 1.6rem; line-height:1.3;}
+  .cita p.traduccion{font-family:'EB Garamond',Georgia,serif; font-style:normal; font-weight:400;
+    font-size:clamp(1.04rem,1.8vw,1.14rem); color:var(--gris-calido); line-height:1.8;}
+  .perla p + p{margin-top:1.4rem;}
+  .verso p{margin-bottom:.2rem;}
+  sup.ref{font-size:.62em; line-height:0; margin-left:.12em;}
+  sup.ref a{color:var(--oro-tenue); text-decoration:none; font-family:'Cormorant Garamond',serif;}
+  sup.ref a:hover{color:var(--oro);}
+  .notas{margin:5rem 0 1rem; padding-top:2.2rem; border-top:1px solid var(--separador);}
+  .notas h2{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.72rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--oro-polvo); margin-bottom:1.3rem;}
+  .notas ol{padding-left:1.4rem;}
+  .notas li{font-size:.95rem; line-height:1.75; color:var(--gris-calido); margin-bottom:.8rem;}
+  .notas li::marker{color:var(--oro-polvo); font-family:'Cormorant Garamond',serif;}
+  .notas li em{color:var(--blanco-humo);}
+  .promesa{margin:1rem 0 4.5rem;}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="umbral-03.html">← La raíz oculta</a>
+  <span>IV</span>
+  <a href="umbral-05.html">Lo que surge se examina →</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">La intención · Umbral</span>
+  <div class="numero">04</div>
+  <h1 class="titulo">Sembrar</h1>
+  <p class="subtitulo">lo que sabían los que esperaban la cosecha</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="bloque">
+  <p>La persistencia prepara. No garantiza.</p>
+  <p>Quienes vivieron de la tierra lo tenían claro sin necesidad de decirlo. Se siembra, se riega, se quita la maleza, y se espera. Nadie puede hacer que una planta crezca más rápido. Solo se puede cuidar que tenga lo que necesita, y no estorbarla.</p>
+</div>
+
+<h2 class="tramo">El campesino que ayudó a crecer</h2>
+
+<div class="bloque">
+  <p>Hace unos dos mil trescientos años, el filósofo chino Mencio contó una historia sobre un campesino del reino de Song.</p>
+  <p>El hombre estaba preocupado porque sus brotes de cereal no crecían lo bastante rápido. Entonces fue al campo y tiró de cada uno, un poco hacia arriba, para ayudarlos. Volvió a su casa agotado y le dijo a su familia:</p>
+  <p>—Hoy estoy cansado. Estuve ayudando a crecer a los brotes.</p>
+  <p>Su hijo corrió al campo a mirar. Todos los brotes se habían secado.</p>
+  <p>Mencio agregó que en el mundo hay pocos que no hagan lo mismo. Algunos creen que cuidar no sirve de nada y abandonan el campo: no quitan la maleza. Otros quieren ayudar a crecer, y tiran de los brotes. Lo primero no sirve. Lo segundo, además, hace daño.<sup class="ref"><a href="#nota-1">1</a></sup></p>
+</div>
+
+<div class="perla"><p>Nadie hace crecer una planta<br>tirando de ella.</p></div>
+
+<h2 class="tramo">La teja y el espejo</h2>
+
+<div class="bloque">
+  <p>La tradición zen conserva dos historias que parecen contradecirse.</p>
+  <p>La primera es la de Mazu, un monje joven que pasaba días enteros sentado en meditación, con una determinación que impresionaba a todos. Su maestro, Nanyue, se sentó cerca de él con una teja y empezó a frotarla contra una piedra.</p>
+  <p>—¿Qué haces? —le preguntó Mazu.</p>
+  <p>—La pulo para hacer un espejo.</p>
+  <p>—¿Cómo vas a hacer un espejo puliendo una teja?</p>
+  <p>—¿Y cómo vas a hacerte buda sentándote a meditar?<sup class="ref"><a href="#nota-2">2</a></sup></p>
+  <p>Nanyue no le decía que dejara de meditar. Le decía que no confundiera el esfuerzo con el resultado. Mazu llegó a ser uno de los grandes maestros de su tradición. Sus años no se perdieron: lo que cambió fue la dirección.</p>
+</div>
+
+<h2 class="tramo">El leñador</h2>
+
+<div class="bloque">
+  <p>La segunda historia es la de Huineng, un joven pobre y analfabeto que vendía leña en el mercado de una ciudad del sur de China. Un día, mientras entregaba su carga, oyó a un hombre recitar un sutra. Al escuchar una sola frase, algo se le abrió por dentro.</p>
+  <p>Viajó hasta un monasterio lejano. Como no sabía leer, lo mandaron a la cocina, a descascarar arroz. Estuvo ocho meses ahí.</p>
+  <p>Cuando el maestro pidió a sus discípulos que escribieran un poema que mostrara lo que habían comprendido, el monje más avanzado escribió que la mente es como un espejo brillante que hay que limpiar sin descanso para que no se le pegue el polvo. Huineng, que no sabía escribir, pidió que alguien anotara el suyo:</p>
+</div>
+
+<div class="cita"><p><em>Desde el origen no hay árbol del despertar,</em><br><em>ni hay soporte de espejo brillante.</em><br><em>Si desde el origen no existe una sola cosa,</em><br><em>¿dónde podría posarse el polvo?</em><sup class="ref"><a href="#nota-3">3</a></sup></p></div>
+
+<div class="bloque">
+  <p>Huineng llegó a ser el Sexto Patriarca del zen.</p>
+</div>
+
+<h2 class="tramo">Sin contradicción</h2>
+
+<div class="bloque">
+  <p>Las dos historias no se contradicen. Mazu muestra que los años de esfuerzo no garantizan nada. Huineng muestra que la falta de esfuerzo no lo impide.</p>
+  <p>Pero ninguna dice que no haga falta sembrar. Mazu siguió practicando toda su vida. Huineng, después de aquella frase en el mercado, caminó hasta un monasterio y pasó ocho meses descascarando arroz. Uno sembró antes; el otro, después. Ninguno tiró de los brotes.</p>
+</div>
+
+<h2 class="tramo">Los abuelos</h2>
+
+<div class="bloque">
+  <p>En Pont Trentaz, el pueblo de los Alpes donde vivía Serafina, los ancianos respondieron que lo que más disfrutaban era lo mismo que hacían para vivir. Sus hijos respondieron parecido. Los nietos, que habían crecido con otras opciones, contestaron distinto.<sup class="ref"><a href="#nota-4">4</a></sup></p>
+  <p>Los abuelos sabían algo que no estaba escrito en ningún lado: cómo sostener un trabajo durante años sin que les devolviera nada inmediato, y encontrarle gusto igual. No era resignación. Era una manera de estar en el tiempo.</p>
+  <p>Eso no se hereda solo. Hay que ir a buscarlo.</p>
+</div>
+
+<h2 class="tramo">Tú también</h2>
+
+<div class="bloque">
+  <p>Piensa en alguien mayor de tu familia, o de tu barrio, que haya hecho algo durante años sin esperar que diera fruto enseguida. Una huerta, un oficio, un instrumento, una costumbre sostenida cada mañana.</p>
+  <p>Lo que esa persona sabe no está en los libros ni en las pantallas. Está en cómo se levanta, en cómo repite, en cómo espera sin impacientarse. Vale la pena preguntarle. Y más todavía, mirarla hacer.</p>
+  <p>La persistencia que parece faltarnos no se perdió. Quedó en otras manos, esperando que alguien vuelva a pedirla.</p>
+</div>
+
+<div class="perla"><p>Sembrar no garantiza la cosecha.<br>No sembrar garantiza que no la haya.</p></div>
+
+<div class="puerta"><a href="../12_Cultivar/umbral_5_la_paciencia.html">⟐ <em>Sostener sin que te devuelvan nada tiene su umbral en <strong>Cultivar</strong>, Libro XII: La paciencia, Umbral V.</em></a></div>
+
+<div class="puerta"><a href="../27_El_Instante/umbral-05.html">⟐ <em>El pueblo donde el contento era el clima de un lugar, y los nietos que contestaron distinto, está en <strong>El instante</strong>, Libro XXVII: Lo que pasa alrededor, Umbral V.</em></a></div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-05.html"><span class="continuar-nombre">Lo que surge se examina</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">↓</span></div>
+  </a>
+</div>
+
+<section class="notas" aria-label="Notas"><h2>Notas</h2><ol><li id="nota-1"><em>Mencio</em>, 2A:2. Traducción propia a partir de la versión de James Legge (1861).</li><li id="nota-2">Relato recogido en la <em>Transmisión de la lámpara</em> (<em>Jingde Chuandeng Lu</em>, 1004). Paráfrasis.</li><li id="nota-3"><em>Sutra del estrado</em> (<em>Liuzu Tanjing</em>), atribuido a Huineng. Traducción propia.</li><li id="nota-4">Mihaly Csikszentmihalyi, <em>Flow</em> (1990), capítulo sobre el trabajo. Paráfrasis.</li></ol></section>
+
+</main>
+<footer class="pie"><span>Portal Público Trinity · El campo</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.operacion,.final';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
