@@ -278,6 +278,17 @@
   .notas li::marker{color:var(--oro-polvo); font-family:'Cormorant Garamond',serif;}
   .notas li em{color:var(--blanco-humo);}
   .promesa{margin:1rem 0 4.5rem;}
+
+  /* lectura en teléfono: tipografía algo mayor (sep 2026) */
+  html{font-size:106.25%;}
+  @media (max-width:640px){
+    html{font-size:112.5%;}
+    .wrap{padding:0 1.15rem;}
+    .etiqueta,.cue span,.continuar-label,.pie span,.aviso-label,.notas h2,.final p strong{font-size:.74rem;}
+    .nav a,.nav span{letter-spacing:.2em;}
+    .notas li{font-size:1rem;}
+    .puerta a{font-size:1.04rem;}
+  }
 </style>
 </head>
 <body>
