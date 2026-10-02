@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arquitectura del Destino · Libro 1 · El Campo de Posibilidades</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
+
+  :root {
+    /* Fondo: azul profundo */
+    --bg: #060d1a;
+    --bg-soft: #0a1225;
+    --panel: rgba(120,160,220,0.03);
+    --border: rgba(140,170,220,0.15);
+    --border-strong: rgba(140,170,220,0.30);
+    /* Acentos: plata y blanco hielo */
+    --acento: #a8c4e0;
+    --acento-claro: #d4e4f4;
+    /* Texto */
+    --text: #e8eef6;
+    --text-soft: rgba(200,215,235,0.75);
+    --text-faint: rgba(200,215,235,0.40);
+    /* Violeta sutil de fondo */
+    --violeta: rgba(100,120,200,0.08);
+    --radius: 18px;
+    --shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(80,100,200,0.12), transparent 30%),
+      radial-gradient(circle at 50% 8%, rgba(60,80,160,0.05), transparent 35%),
+      linear-gradient(180deg, #080b14 0%, #060d1a 45%, #040810 100%);
+    color: var(--text);
+    line-height: 1.9;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(rgba(200,220,255,0.008) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,220,255,0.008) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    opacity: 0.08;
+  }
+
+  .container {
+    position: relative; z-index: 1;
+    max-width: 720px; margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  /* ── Encabezado ── */
+  .hero {
+    text-align: center;
+    padding: 56px 24px 36px;
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(200,220,255,0.02), transparent),
+                radial-gradient(circle at 50% 0%, rgba(100,120,200,0.10), transparent 45%);
+    box-shadow: var(--shadow);
+    margin-bottom: 36px;
+  }
+  .hero-sistema {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem; letter-spacing: 0.30em;
+    text-transform: uppercase; color: var(--text-faint);
+    margin-bottom: 14px;
+  }
+  .hero-libro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--acento);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300; letter-spacing: 0.04em;
+    color: var(--acento-claro);
+    line-height: 1.15; margin-bottom: 12px;
+  }
+  .hero-subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--text-soft);
+    font-size: clamp(1rem, 2.4vw, 1.2rem);
+    max-width: 32rem; margin: 0 auto;
+  }
+
+  /* ── Bloques de texto ── */
+  .content {
+    background: linear-gradient(180deg, rgba(200,220,255,0.015), transparent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    margin-bottom: 32px;
+  }
+  .content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--acento);
+    font-size: 1.3rem; font-weight: 400;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin: 2.2rem 0 0.8rem; line-height: 1.3;
+  }
+  .content h2:first-child { margin-top: 0; }
+  .content h3 {
+    font-family: 'EB Garamond', serif;
+    color: var(--text);
+    font-size: 1.08rem; font-weight: 500;
+    margin: 1.6rem 0 0.6rem;
+  }
+  .content p {
+    color: var(--text-soft);
+    margin-bottom: 1rem;
+    font-size: 1.03rem;
+  }
+  .content .lead { color: var(--text); }
+  .content ul, .content ol {
+    margin: 0.5rem 0 1.2rem 1.4rem;
+  }
+  .content li {
+    color: var(--text-soft);
+    margin-bottom: 0.5rem;
+    font-size: 1.02rem;
+  }
+  .content strong { color: var(--text); }
+  .content em { color: var(--acento); font-style: italic; }
+
+  /* ── Escena ── */
+  .escena {
+    margin: 1.6rem 0;
+    padding: 1.4rem 1.3rem;
+    border-left: 3px solid var(--acento);
+    background: rgba(168,196,224,0.04);
+    border-radius: 0 12px 12px 0;
+  }
+  .escena p {
+    color: var(--text);
+    font-size: 1.04rem;
+    line-height: 1.85;
+    margin-bottom: 0.8rem;
+  }
+  .escena p:last-child { margin-bottom: 0; }
+  .escena .apagado { color: var(--text-faint); }
+
+  /* ── Frase destacada / perla ── */
+  .perla {
+    margin: 3rem 0;
+    padding: 2.4rem 1rem;
+    text-align: center;
+    position: relative;
+  }
+  .perla::before, .perla::after {
+    content: '✦';
+    position: absolute; left: 50%; transform: translateX(-50%);
+    color: var(--border-strong); font-size: 0.7rem; letter-spacing: 0.3em;
+  }
+  .perla::before { top: 0; }
+  .perla::after { bottom: 0; }
+  .perla p {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300; font-style: italic;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    color: var(--acento-claro);
+    line-height: 1.5;
+    max-width: 24rem; margin: 0 auto;
+  }
+
+  /* ── Protocolo ── */
+  .protocolo {
+    margin: 2rem 0;
+    padding: 1.6rem 1.4rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: rgba(168,196,224,0.03);
+  }
+  .protocolo h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--acento);
+    margin-bottom: 1rem;
+  }
+  .protocolo ol, .protocolo ul {
+    margin: 0 0 0.8rem 1.2rem;
+  }
+  .protocolo li {
+    color: var(--text-soft);
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.7;
+  }
+  .protocolo .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-faint);
+    margin-top: 0.8rem;
+  }
+
+  /* ── Salvaguarda ── */
+  .salvaguarda {
+    margin: 2rem 0;
+    padding: 1.4rem 1.3rem;
+    border: 1px solid rgba(220,160,100,0.20);
+    border-radius: var(--radius);
+    background: rgba(220,160,100,0.03);
+  }
+  .salvaguarda h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.70rem; letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(220,180,120,0.7);
+    margin-bottom: 0.8rem;
+  }
+  .salvaguarda p {
+    color: var(--text-soft);
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  /* ── Separador ── */
+  .sep {
+    text-align: center;
+    color: var(--border-strong);
+    letter-spacing: 0.5em;
+    font-size: 0.85rem;
+    margin: 2.5rem 0;
+  }
+
+  /* ── Umbral (estructura) ── */
+  .umbral { margin-bottom: 3.5rem; }
+  .umbral-numero {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.66rem; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--text-faint);
+    margin-bottom: 0.6rem;
+  }
+  .umbral-titulo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 300; color: var(--acento-claro);
+    letter-spacing: 0.03em; margin-bottom: 0.3rem;
+  }
+  .umbral-subtitulo {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    color: var(--text-faint);
+    font-size: 1.02rem;
+    margin-bottom: 1.8rem;
+  }
+
+  /* ── Sección conceptual ── */
+  .concepto {
+    margin: 1.8rem 0;
+    padding: 1.2rem 1.2rem;
+    border-left: 2px solid var(--border);
+  }
+  .concepto h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.70rem; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--acento);
+    margin-bottom: 0.7rem;
+  }
+  .concepto p { color: var(--text-soft); font-size: 1.01rem; }
+
+  /* ── Puertas laterales ── */
+  .puertas {
+    margin: 3rem 0 2rem;
+    padding: 1.8rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: rgba(168,196,224,0.02);
+  }
+  .puertas h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--acento);
+    margin-bottom: 1rem;
+  }
+  .puertas ul { list-style: none; }
+  .puertas li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(140,170,220,0.08);
+  }
+  .puertas li:last-child { border-bottom: none; }
+  .puertas a {
+    color: var(--text-soft);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.25s ease;
+  }
+  .puertas a:hover { color: var(--acento-claro); }
+  .puertas .fuente {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  /* ── Referencias ── */
+  .referencias {
+    margin: 3rem 0 2rem;
+    padding: 1.8rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .referencias h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--acento);
+    margin-bottom: 1rem;
+  }
+  .referencias li {
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin-bottom: 0.8rem;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    text-align: center;
+    padding: 2.5rem 1rem 3rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+  .footer-symbol {
+    font-size: 1.6rem;
+    color: var(--acento);
+    margin-bottom: 0.6rem;
+  }
+  .footer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.74rem;
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── Animación de aparición ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .container { padding: 20px 14px 60px; }
+    .hero { padding: 40px 16px 28px; border-radius: 20px; }
+    .content { padding: 24px 16px; }
+    .protocolo, .salvaguarda { padding: 1.2rem 1rem; }
+  }
+
+  /* ── Accesibilidad: movimiento reducido ── */
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- ENCABEZADO DEL LIBRO -->
+  <!-- ══════════════════════════════════════ -->
+  <header class="hero reveal">
+    <p class="hero-sistema">Arquitectura del Destino · Sistema Trinity de Navegación Consciente</p>
+    <p class="hero-libro">Libro 1 de 9</p>
+    <h1 class="hero-title">El Campo de Posibilidades</h1>
+    <p class="hero-subtitle">Todo ya existe. No creas la realidad, elige en qué versión ubicarte.</p>
+  </header>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- ANTES DE EMPEZAR -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="content reveal">
+    <h2>Antes de empezar</h2>
+    <p class="lead">Este libro no es para todos. No porque haya requisitos de entrada, sino porque pide algo que no todos están dispuestos a soltar: la idea de que eres el autor de tu vida.</p>
+    <p>Aquí no se enseña a crear la realidad. Se enseña a reconocer en qué realidad ya estás, y cómo elegir otra si la que habitas no te sirve.</p>
+    <p><strong>Esto no es pensamiento positivo.</strong> No vas a leer frases motivacionales ni promesas de que "todo depende de ti". Vas a encontrar un mapa, una brújula, y un método. Tres cosas que se pueden usar, verificar y descartar si no funcionan.</p>
+    <p><strong>Lo que sí vas a encontrar:</strong></p>
+    <ul>
+      <li>Una descripción verificable de cómo funciona la elección.</li>
+      <li>Operaciones concretas que puedes hacer esta semana.</li>
+      <li>Señales para saber si estás avanzando o si estás dando vueltas.</li>
+      <li>Advertencias sobre cuándo este libro no aplica.</li>
+    </ul>
+    <p><strong>Y una promesa:</strong> si al final de los siete umbrales no encontraste algo que puedas usar mañana, este libro fracasó. No tú. El libro.</p>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- UMBRAL 1 -->
+  <!-- ══════════════════════════════════════ -->
+  <article class="umbral reveal">
+    <p class="umbral-numero">Umbral 1 de 7</p>
+    <h2 class="umbral-titulo">El mapa infinito</h2>
+    <p class="umbral-subtitulo">Qué es el Espacio de Variantes y por qué no es metáfora</p>
+
+    <div class="escena">
+      <p>María tiene cuarenta y dos años. Trabaja en una empresa de seguros desde hace quince. Todos los lunes a las nueve de la mañana, mientras sube los tres pisos hasta su oficina, siente un peso en el pecho que no sabe explicar. No es tristeza. No es miedo. Es más parecido a la sensación de estar en un lugar que no es el suyo, como si se hubiera subido a un tren equivocado y ya fuera tarde para bajarse.</p>
+      <p>Un día, en una charla con su hermana, lo dice en voz alta:</p>
+      <p class="apagado">—A veces siento que esta no es mi vida. Que hay otra María en algún lado que sí está donde tiene que estar.</p>
+      <p>La hermana se ríe. Le dice que son cosas del lunes.</p>
+      <p>Pero María no lo está diciendo como metáfora. Lo está diciendo porque lo siente en el cuerpo, todas las semanas, desde hace quince años. Y tiene razón en sentirlo. Solo que no tiene palabras para lo que le pasa.</p>
+      <p>Todavía.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Trinity</h4>
+      <p>En el Libro VI de Trinity Origen, <em>El Vacío Fértil</em>, el Nodo 1 describe lo que llama <strong>la cartografía del vacío</strong>: mapear lo inmapeable. El vacío no es un lugar donde no hay nada. Es un campo donde todo existe en estado de posibilidad, antes de colapsar en una forma específica.</p>
+      <p>En Trinity Infinito, el Libro 1 (<em>Núcleo Ontológico</em>) lo dice así: el ser y el no-ser no son opuestos. Son dos caras del mismo campo. El no-ser no es la ausencia del ser: es el ser antes de elegirse.</p>
+      <p>María no está loca. Está sintiendo el campo.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Transurfing</h4>
+      <p>Vadim Zeland lo llama <strong>el Espacio de Variantes</strong>: un campo de información infinito que contiene todas las versiones posibles de cualquier evento, cualquier vida, cualquier decisión. No es un lugar físico. No es una dimensión paralela en el sentido de la ciencia ficción. Es una estructura de información donde cada posibilidad existe como patrón, como plantilla, como línea potencial.</p>
+      <p>Lo importante no es creer que existe. Lo importante es que <strong>funciona como modelo operativo</strong>: si asumes que todas las variantes existen, tu trabajo no es crear una desde cero. Tu trabajo es elegir en cuál te ubicas.</p>
+      <p>Esto cambia todo. Porque crear desde cero es agotador, impredecible y depende de factores que no controlas. Elegir entre lo que ya existe es un acto de reconocimiento, de sintonía, de frecuencia.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>La articulación</h4>
+      <p>Trinity dice: el vacío es fértil porque contiene todo antes de la forma. Transurfing dice: el Espacio de Variantes contiene todas las líneas de vida posibles.</p>
+      <p>Los dos describen lo mismo con distinto idioma: <strong>hay un campo previo a la elección, y en ese campo todo ya está.</strong></p>
+      <p>María siente que "esta no es su vida" porque su cuerpo reconoce el campo. Sabe que hay otras líneas. Lo que no sabe todavía es cómo moverse a una de ellas.</p>
+    </div>
+
+    <div class="protocolo">
+      <h4>Protocolo · Reconocer el campo</h4>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.8rem;">Esta semana, cada vez que sientas algo parecido a lo de María —la sensación de no estar donde tendrías que estar, de estar en una vida que no es la tuya— no lo interpretes como fracaso. Interpretalo como <strong style="color:var(--text)">señal</strong>.</p>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.5rem;">Anota:</p>
+      <ol>
+        <li>¿Qué estabas haciendo cuando lo sentiste?</li>
+        <li>¿Qué parte de tu cuerpo lo sintió? (pecho, estómago, garganta, cabeza)</li>
+        <li>¿Qué frase apareció en tu mente, exactamente como apareció?</li>
+      </ol>
+      <p style="color:var(--text-soft); font-size:0.98rem;">Al final de la semana, relee tus anotaciones. No busques soluciones. Solo mira el patrón. Ese patrón es tu primer mapa del campo.</p>
+      <p class="meta">Duración: 7 días · Material: una libreta o el celular</p>
+    </div>
+
+    <div class="salvaguarda">
+      <h4>Salvaguarda clínica</h4>
+      <p>Si la sensación de "no estar en tu vida" es constante, no cambia con el contexto, y viene acompañada de despersonalización (sentir que eres un espectador de tu propio cuerpo) o desrealización (sentir que el mundo no es real), <strong style="color:var(--text)">este ejercicio no es para ti ahora</strong>. Esas señales piden acompañamiento profesional, y responden bien al tratamiento. El campo no reemplaza a un profesional de salud mental.</p>
+    </div>
+
+    <div class="perla">
+      <p>El campo no está lejos.<br>Es lo que sientes cuando<br>esta vida te queda chica.</p>
+    </div>
+  </article>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- UMBRAL 2 -->
+  <!-- ══════════════════════════════════════ -->
+  <article class="umbral reveal">
+    <p class="umbral-numero">Umbral 2 de 7</p>
+    <h2 class="umbral-titulo">Ya está todo</h2>
+    <p class="umbral-subtitulo">Por qué no creas nada, solo eliges</p>
+
+    <div class="escena">
+      <p>Diego tiene treinta y ocho años. Lleva tres intentando escribir una novela. Todas las noches se sienta frente a la pantalla, abre el documento en blanco, y no puede empezar. La página vacía lo mira como si le dijera: <em>"Eres tú el que tiene que crear esto desde cero."</em></p>
+      <p>Un día, cansado de la página en blanco, hace algo distinto: en lugar de escribir una novela, empieza a leer las novelas que le hubiera gustado escribir. Lee a sus autores favoritos, pero no como lector: como arqueólogo. Busca las frases que lo detienen, las escenas que lo hacen cerrar el libro y quedarse mirando la pared, los personajes que siente que ya conoce antes de leerlos.</p>
+      <p>En tres semanas tiene cuarenta páginas de notas. No son una novela. Son algo mejor: son la forma de su novela antes de que él la escriba.</p>
+      <p>La novela que Diego estaba tratando de crear ya existía. En el campo, en sus lecturas, en las frases que lo detenían. Su trabajo no era inventarla. Era reconocerla.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Trinity</h4>
+      <p>El Nodo 4 del Libro VI (<em>Creatividad desde la Nada</em>) lo dice con una precisión que vale la pena repetir: la creatividad desde el vacío no es la creatividad del ego, que reorganiza elementos conocidos. No es la creatividad inspirada, donde el ego es receptivo pero presente. Es la creatividad donde <strong>no hay creador, solo creación aconteciendo</strong>.</p>
+      <p>El texto usa una frase que es la clave de todo el sistema: <em>"La nada se hizo forma a través de este cuerpo."</em></p>
+      <p>Diego no creó su novela. La encontró. Lo que hizo fue crear las condiciones para encontrarla.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Transurfing</h4>
+      <p>Zeland lo formula así: <strong>"La radiación de energía mental induce la materialización de la variante."</strong> No dice que la crea. Dice que la materializa. La variante ya estaba ahí, en el Espacio de Variantes. Lo que hace la energía mental es iluminar un sector del campo, como una linterna que alumbra un pasillo oscuro. El pasillo estaba ahí antes de la linterna. La linterna solo lo hace visible.</p>
+      <p>Esto tiene una consecuencia práctica enorme: si no necesitas crear nada desde cero, <strong>la presión desaparece</strong>. No tienes que inventar tu vida. Tienes que reconocerla.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>La articulación</h4>
+      <p>Trinity dice: el vacío es fértil porque contiene todo. Transurfing dice: la variante ya existe, solo hay que materializarla. Diego lo vivió sin saber ninguno de los dos: dejó de crear y empezó a reconocer.</p>
+      <p>La operación es la misma en los tres casos: <strong>dejar de forzar la forma y empezar a escuchar lo que ya está.</strong></p>
+    </div>
+
+    <div class="protocolo">
+      <h4>Protocolo · Dejar de crear, empezar a reconocer</h4>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.8rem;">Elige algo que estés tratando de "crear" en tu vida: un proyecto, una decisión, un cambio. Algo que sientas como una página en blanco.</p>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.5rem;">Esta semana, en lugar de forzarlo:</p>
+      <ol>
+        <li>Busca en tu entorno las señales de lo que ya existe. Libros que te llaman, conversaciones que te detienen, personas que ya tienen lo que tú estás tratando de construir.</li>
+        <li>Anota lo que encuentras. No lo interpretes. Solo regístralo.</li>
+        <li>Al final de la semana, mira tus notas y pregúntate: ¿qué forma ya estaba ahí, esperando que yo la reconociera?</li>
+      </ol>
+      <p class="meta">Duración: 7 días · Material: la misma libreta del Umbral 1</p>
+    </div>
+
+    <div class="salvaguarda">
+      <h4>Salvaguarda clínica</h4>
+      <p>Este protocolo no aplica si estás en una situación donde la acción inmediata es necesaria (una urgencia médica, una decisión financiera con plazo, una situación de peligro). Ahí no hay tiempo para reconocer: hay que actuar. El protocolo es para lo creativo, lo vocacional, lo existencial. No para lo urgente.</p>
+    </div>
+
+    <div class="perla">
+      <p>No creas la vida.<br>La reconoces.<br>Y eso es más fácil<br>de lo que parece.</p>
+    </div>
+  </article>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- UMBRAL 3 -->
+  <!-- ══════════════════════════════════════ -->
+  <article class="umbral reveal">
+    <p class="umbral-numero">Umbral 3 de 7</p>
+    <h2 class="umbral-titulo">Las líneas paralelas</h2>
+    <p class="umbral-subtitulo">Cómo existen versiones tuyas que ya tienen lo que quieres</p>
+
+    <div class="escena">
+      <p>Carolina tiene cincuenta y un años. Hace veinte que trabaja como contadora en un estudio jurídico. Es buena en lo que hace. Los clientes la buscan. El estudio le ofrece aumentos. Todo indica que debería estar contenta.</p>
+      <p>Pero todas las noches, cuando apaga la computadora, abre una carpeta en su escritorio que nadie conoce. Adentro hay fotos de jardines. No fotos de jardines que visitó: fotos de jardines que diseñó en su cabeza mientras atendía clientes. Diseños que nadie vio. Jardines que no existen.</p>
+      <p>Un día, una amiga la invita a un curso de paisajismo. Carolina dice que no puede, que el estudio no le da tiempo. La amiga le dice algo que la frena:</p>
+      <p class="apagado">—No te estoy preguntando si tienes tiempo. Te estoy preguntando si quieres ir.</p>
+      <p>Carolina quiere. Ha querido durante veinte años. Lo que no sabe es que la versión de ella que diseña jardines no es un sueño imposible. Es una línea que ya existe en el campo. Ella solo está habitando otra.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Trinity</h4>
+      <p>El Libro II de Trinity Origen (<em>La Voz Interior</em>) trabaja con una idea que aquí se vuelve central: <strong>las voces que te habitan no son todas tuyas</strong>. Hay voces heredadas, voces impuestas, voces que te dijeron quién tenías que ser. Y debajo de todas esas voces, hay una que es tuya de verdad. Esa voz sabe lo que quieres. Pero está tapada.</p>
+      <p>Carolina lleva veinte años escuchando la voz del estudio, de la familia, de la estabilidad. La voz de los jardines está abajo, hablando bajo, esperando que alguien la escuche.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Transurfing</h4>
+      <p>Zeland describe las <strong>líneas de vida</strong> como trayectorias específicas dentro del Espacio de Variantes. Cada línea es una versión completa de tu vida: tu trabajo, tus relaciones, tu cuerpo, tu estado emocional. Todas existen simultáneamente. No son futuros posibles: son presentes paralelos.</p>
+      <p>La línea donde Carolina es contadora existe. La línea donde Carolina diseña jardines también existe. No son mutuamente excluyentes. Son simultáneas. Lo único que las diferencia es <strong>cuál está habitando ella ahora</strong>.</p>
+      <p>Y lo que determina cuál habitas es tu frecuencia vibratoria: el conjunto de pensamientos, emociones y decisiones que repites todos los días.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>La articulación</h4>
+      <p>Trinity dice: hay una voz tuya debajo de las voces impuestas. Transurfing dice: hay una línea tuya debajo de las líneas habitadas. Carolina lo siente todas las noches, frente a una carpeta que nadie ve.</p>
+      <p>La operación es la misma: <strong>identificar la voz o la línea que es verdaderamente tuya, y empezar a darle espacio.</strong></p>
+    </div>
+
+    <div class="protocolo">
+      <h4>Protocolo · Identificar tu línea propia</h4>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.8rem;">Elige tres momentos de esta semana donde hiciste algo por obligación, no por deseo. Anota:</p>
+      <ol>
+        <li>¿Qué estabas haciendo?</li>
+        <li>¿Qué hubieras hecho si nadie te estuviera mirando?</li>
+        <li>¿Qué versión de ti hizo lo que hiciste: la versión heredada, la versión impuesta, o la versión propia?</li>
+      </ol>
+      <p style="color:var(--text-soft); font-size:0.98rem;">Al final de la semana, mira tus anotaciones. No busques patrones todavía. Solo mira. La línea propia aparece en los momentos donde dijiste "hubiera hecho otra cosa".</p>
+      <p class="meta">Duración: 7 días · Material: la libreta de siempre</p>
+    </div>
+
+    <div class="salvaguarda">
+      <h4>Salvaguarda clínica</h4>
+      <p>Si al hacer este ejercicio sientes una rabia desproporcionada, una tristeza profunda, o la sensación de que "toda tu vida fue una mentira", detente. Esas reacciones son señales de que hay material no procesado que pide acompañamiento. No es que el ejercicio esté mal: es que tocó algo que necesita más que un libro. Busca a alguien de confianza o a un profesional.</p>
+    </div>
+
+    <div class="perla">
+      <p>Hay una versión tuya<br>que ya vive lo que tú quieres.<br>No tienes que crearla.<br>Tienes que mudarte.</p>
+    </div>
+  </article>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- UMBRAL 4 -->
+  <!-- ══════════════════════════════════════ -->
+  <article class="umbral reveal">
+    <p class="umbral-numero">Umbral 4 de 7</p>
+    <h2 class="umbral-titulo">La frecuencia de la elección</h2>
+    <p class="umbral-subtitulo">Cómo tus pensamientos te ubican en una línea específica</p>
+
+    <div class="escena">
+      <p>Roberto tiene sesenta y tres años. Se jubiló hace dos. Toda su vida fue ingeniero, y toda su vida pensó que después de la jubilación iba a viajar. Tenía planes. Tenía ahorros. Tenía la fecha.</p>
+      <p>Pero desde que se jubiló, todos los días se despierta con la misma frase en la cabeza: <em>"Ya es tarde."</em> No la piensa con tristeza. La piensa con certeza. Como si fuera un dato: ya es tarde para viajar, ya es tarde para empezar algo nuevo, ya es tarde para cambiar.</p>
+      <p>Un día, su nieto de nueve años le pregunta:</p>
+      <p class="apagado">—Abuelo, ¿por qué no viajas?</p>
+      <p>Roberto le dice que ya es tarde.</p>
+      <p>El nieto lo mira con la lógica implacable de los nueve años:</p>
+      <p class="apagado">—Pero si ayer era más tarde que hoy. Y anteayer era más tarde que ayer. Si siempre era tarde, ¿cuándo era temprano?</p>
+      <p>Roberto se queda callado. El nieto tiene razón. La frase "ya es tarde" no es un dato. Es una frecuencia. Y esa frecuencia lo ubica todos los días en la línea donde no viaja.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Trinity</h4>
+      <p>El Libro II de Trinity Origen (<em>La Voz Interior</em>) lo trabaja con precisión: <strong>los pensamientos repetidos no son solo pensamientos, son frecuencias</strong>. Cada pensamiento que repites es una señal que envías al campo. Si repites "ya es tarde", el campo te devuelve una línea donde es tarde. Si repites "todavía puedo", el campo te devuelve una línea donde puedes.</p>
+      <p>No es magia. Es coherencia: si tu energía mental está sintonizada en una frecuencia, vas a habitar la línea que corresponde a esa frecuencia.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Transurfing</h4>
+      <p>Zeland lo formula como el <strong>principio de resonancia</strong>: la radiación de energía mental induce la materialización de la variante. Tu pensamiento no es solo una idea en tu cabeza: es una señal vibratoria que interactúa con el Espacio de Variantes. Si tu señal es "ya es tarde", el campo te devuelve una línea donde es tarde. Si tu señal es "todavía puedo", el campo te devuelve una línea donde puedes.</p>
+      <p>La clave no es pensar positivo. La clave es <strong>reconocer la frecuencia que estás emitiendo y decidir si te sirve</strong>.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>La articulación</h4>
+      <p>Trinity dice: los pensamientos repetidos son frecuencias que te ubican. Transurfing dice: la radiación mental materializa la variante correspondiente. El nieto de Roberto lo vio con la claridad que solo tienen los niños: "si siempre era tarde, ¿cuándo era temprano?"</p>
+      <p>La operación es la misma: <strong>identificar la frecuencia que estás emitiendo y decidir si la quieres seguir emitiendo.</strong></p>
+    </div>
+
+    <div class="protocolo">
+      <h4>Protocolo · Identificar tu frecuencia dominante</h4>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.8rem;">Durante tres días, cada vez que te descubras repitiendo una frase en tu mente (en voz alta o en silencio), anótala. No la juzgues. No la corrijas. Solo regístrala.</p>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.5rem;">Ejemplos: "ya es tarde", "no puedo", "no es para mí", "siempre me pasa lo mismo", "todavía puedo", "ya va a salir".</p>
+      <p style="color:var(--text-soft); font-size:0.98rem;">Al tercer día, cuenta cuáles son las tres frases más frecuentes. Esas son tu frecuencia dominante. No son tu destino: son tu sintonía. Y la sintonía se puede cambiar.</p>
+      <p class="meta">Duración: 3 días · Material: la libreta</p>
+    </div>
+
+    <div class="salvaguarda">
+      <h4>Salvaguarda clínica</h4>
+      <p>Si tus pensamientos repetidos son intrusivos, no los puedes controlar, y te generan ansiedad intensa o conductas compulsivas (lavarte las manos, verificar cosas, contar), eso no es una frecuencia que se cambia con un protocolo. Es un cuadro que responde bien al tratamiento con un profesional. Busca ayuda. El campo no reemplaza a un psiquiatra ni a un terapeuta cognitivo-conductual.</p>
+    </div>
+
+    <div class="perla">
+      <p>No piensas en la línea que quieres.<br>Piensas en la línea que estás.<br>Cambia el pensamiento,<br>y cambia la línea.</p>
+    </div>
+  </article>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- UMBRAL 5 -->
+  <!-- ══════════════════════════════════════ -->
+  <article class="umbral reveal">
+    <p class="umbral-numero">Umbral 5 de 7</p>
+    <h2 class="umbral-titulo">El testigo del campo</h2>
+    <p class="umbral-subtitulo">Cómo observar el campo sin colapsarlo prematuramente</p>
+
+    <div class="escena">
+      <p>Lucía tiene cuarenta y cinco años. Hace seis meses que está tratando de decidir si cambia de trabajo. Todas las noches se acuesta y hace listas mentales: ventajas, desventajas, riesgos, oportunidades. Piensa tanto que no duerme. Piensa tanto que al otro día está más confundida que el anterior.</p>
+      <p>Un día, una amiga le dice:</p>
+      <p class="apagado">—Deja de pensar en la decisión. Solo obsérvala.</p>
+      <p>Lucía no entiende. ¿Cómo se observa una decisión sin pensarla?</p>
+      <p>La amiga le explica: piensa en la decisión como si fuera un paisaje. No lo analices. No lo midas. No decidas si es lindo o feo. Solo míralo. Deja que el paisaje te muestre lo que tiene.</p>
+      <p>Lucía lo prueba. Durante una semana, todas las noches se acuesta y en lugar de hacer listas, cierra los ojos y "mira" la decisión como si fuera un paisaje. No la resuelve. No la fuerza. Solo la observa.</p>
+      <p>Al sexto día, la decisión aparece sola. No como un pensamiento: como una certeza. Como si el paisaje le hubiera mostrado el camino sin que ella lo buscara.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Trinity</h4>
+      <p>El Libro VI de Trinity Origen, Nodo 4, lo dice con una frase que es una instrucción: <em>"No eres tú detectando. La detección ocurre."</em> El testigo del campo no es el ego que analiza, que mide, que decide. Es una atención más amplia, más silenciosa, que no necesita forzar nada.</p>
+      <p>En Trinity Infinito, el Libro 6 (<em>Consciencia sin Sujeto</em>) trabaja esto a fondo: hay una forma de observar sin que haya un observador separado. No es disociación. Es presencia. Es mirar sin que el que mira interfiera con lo mirado.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Transurfing</h4>
+      <p>Zeland lo llama <strong>coordinación</strong>: la capacidad de percibir cada evento como favorable sin forzar la interpretación. No es optimismo forzado. Es una forma de mirar que no colapsa las posibilidades prematuramente. Cuando Lucía hace listas, está colapsando el campo: está forzando la decisión antes de que el campo le muestre la línea correcta. Cuando observa sin analizar, le deja espacio al campo para mostrarle lo que ya está ahí.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>La articulación</h4>
+      <p>Trinity dice: la detección ocurre sin que tú la fuerces. Transurfing dice: coordinar es percibir sin colapsar. Lucía lo vivió en seis noches: dejó de forzar la decisión y la decisión apareció sola.</p>
+      <p>La operación es la misma: <strong>observar sin analizar, dejar que el campo muestre lo que ya tiene.</strong></p>
+    </div>
+
+    <div class="protocolo">
+      <h4>Protocolo · Observar sin colapsar</h4>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.8rem;">Elige una decisión que estés tratando de forzar. Algo que llevas días o semanas pensando sin resolver.</p>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.5rem;">Esta semana, todas las noches durante diez minutos:</p>
+      <ol>
+        <li>Cierra los ojos.</li>
+        <li>Piensa en la decisión como si fuera un paisaje.</li>
+        <li>No lo analices. No hagas listas. No decidas.</li>
+        <li>Solo míralo. Deja que el paisaje te muestre lo que tiene.</li>
+        <li>Si aparecen pensamientos analíticos, no los sigas. Vuelve a mirar.</li>
+      </ol>
+      <p style="color:var(--text-soft); font-size:0.98rem;">Al final de la semana, anota lo que apareció. No lo interpretes. Solo regístralo.</p>
+      <p class="meta">Duración: 7 días, 10 minutos por día · Material: un lugar tranquilo</p>
+    </div>
+
+    <div class="salvaguarda">
+      <h4>Salvaguarda clínica</h4>
+      <p>Este ejercicio no aplica si estás en una situación de crisis donde la decisión es urgente (una emergencia médica, una situación de violencia, una decisión financiera con plazo inminente). Ahí no hay tiempo para observar: hay que actuar y pedir ayuda. El protocolo es para decisiones vocacionales, relacionales, existenciales. No para emergencias.</p>
+    </div>
+
+    <div class="perla">
+      <p>No fuerces la decisión.<br>Obsérvala.<br>Y deja que el campo<br>te muestre el camino.</p>
+    </div>
+  </article>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- UMBRAL 6 -->
+  <!-- ══════════════════════════════════════ -->
+  <article class="umbral reveal">
+    <p class="umbral-numero">Umbral 6 de 7</p>
+    <h2 class="umbral-titulo">La primera elección consciente</h2>
+    <p class="umbral-subtitulo">Tu primer acto de navegación deliberada</p>
+
+    <div class="escena">
+      <p>Javier tiene treinta y tres años. Lleva cinco años trabajando en un empleo que no le gusta. Todos los días se levanta, va a la oficina, vuelve, y se acuesta pensando que mañana va a buscar otro trabajo. Pero mañana siempre es igual a hoy.</p>
+      <p>Un día, cansado de la promesa vacía, hace algo distinto. No busca otro trabajo. No hace un plan. No actualiza su CV. Hace una sola cosa: se sienta frente a su computadora y escribe una frase en un documento en blanco.</p>
+      <p class="apagado">"Hoy elijo dejar de habitar la línea donde este trabajo es mi destino."</p>
+      <p>No busca trabajo ese día. No hace ninguna acción concreta. Solo escribe la frase. Y la deja ahí, en la pantalla, durante diez minutos. Mirándola.</p>
+      <p>Al día siguiente, algo cambia. No encuentra un trabajo nuevo. No recibe una oferta milagrosa. Lo que cambia es algo más sutil: deja de sentir que el trabajo que tiene es su destino. Empieza a sentir que es una línea que está habitando, pero que puede dejar de habitar.</p>
+      <p>La diferencia no es grande. Pero es suficiente. Y es la primera elección consciente que hace en cinco años.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Trinity</h4>
+      <p>El Libro XIII de Trinity Origen (<em>El Retorno a Casa</em>) lo dice con una frase que es una llave: <em>"No vuelves porque te fuiste. Vuelves porque te diste cuenta de que nunca te fuiste del todo."</em> Javier no se fue de su trabajo. No hizo nada externo. Lo que hizo fue un movimiento interno: reconocer que la línea que habita no es la única.</p>
+      <p>Ese reconocimiento es la primera elección consciente. Y es la más importante de todas.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Transurfing</h4>
+      <p>Zeland lo llama <strong>la intención externa</strong>: la determinación de poseer una línea de vida sin forzarla. No es actuar. No es planificar. Es decidir internamente que vas a habitar otra línea, y dejar que el campo reorganice las circunstancias para que eso pase.</p>
+      <p>La intención externa no se parece a la voluntad. La voluntad fuerza. La intención externa permite. Javier no forzó nada. Solo decidió, en silencio, que iba a habitar otra línea. Y el campo empezó a moverse.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>La articulación</h4>
+      <p>Trinity dice: vuelves porque te diste cuenta de que nunca te fuiste. Transurfing dice: la intención externa mueve el campo sin forzarlo. Javier lo hizo con una frase en un documento en blanco.</p>
+      <p>La operación es la misma: <strong>elegir internamente antes de actuar externamente.</strong></p>
+    </div>
+
+    <div class="protocolo">
+      <h4>Protocolo · La primera elección consciente</h4>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.8rem;">Elige una línea que estés habitando y que no te sirva. Un trabajo, una relación, una rutina, una forma de pensar. No tiene que ser la más grande. Elige una que puedas soltar sin que se derrumbe tu vida.</p>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.5rem;">Esta semana:</p>
+      <ol>
+        <li>Escribe en una hoja: <em>"Hoy elijo dejar de habitar la línea donde [esto] es mi destino."</em></li>
+        <li>Deja la hoja en un lugar donde la veas todos los días.</li>
+        <li>No hagas nada más. No busques soluciones. No hagas planes. Solo deja la frase ahí.</li>
+        <li>Al final de la semana, anota lo que cambió. Puede ser algo muy chico: una conversación, una oportunidad, una sensación. Regístralo.</li>
+      </ol>
+      <p class="meta">Duración: 7 días · Material: una hoja de papel</p>
+    </div>
+
+    <div class="salvaguarda">
+      <h4>Salvaguarda clínica</h4>
+      <p>Este protocolo no aplica si estás en una situación de dependencia severa (económica, emocional, física) donde soltar la línea actual te pondría en peligro. Ahí no hay espacio para elegir: hay que asegurar primero la supervivencia. El protocolo es para líneas que puedes soltar sin que se derrumbe lo esencial. Si tienes dudas sobre si puedes soltarla o no, consulta con alguien de confianza antes de hacer el ejercicio.</p>
+    </div>
+
+    <div class="perla">
+      <p>No necesitas hacer nada<br>para cambiar de línea.<br>Necesitas elegir internamente<br>que vas a cambiar.<br>El campo hace el resto.</p>
+    </div>
+  </article>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- UMBRAL 7 -->
+  <!-- ══════════════════════════════════════ -->
+  <article class="umbral reveal">
+    <p class="umbral-numero">Umbral 7 de 7</p>
+    <h2 class="umbral-titulo">El campo como hogar</h2>
+    <p class="umbral-subtitulo">Por qué volver al campo es volver a casa</p>
+
+    <div class="escena">
+      <p>Elena tiene setenta y un años. Se jubiló hace seis. Toda su vida fue maestra de escuela primaria, y toda su vida pensó que después de la jubilación iba a sentirse vacía. Sin los chicos, sin el aula, sin la rutina.</p>
+      <p>Pero lo que siente no es vacío. Es algo que no sabe nombrar. Todos los días se levanta, se prepara una infusión caliente, se sienta frente a la ventana, y siente una quietud que no sentía desde hacía décadas. No es tristeza. No es aburrimiento. Es algo más parecido a estar en un lugar donde no tiene que ser nadie.</p>
+      <p>Un día, su hija le pregunta:</p>
+      <p class="apagado">—Mamá, ¿no extrañas la escuela?</p>
+      <p>Elena lo piensa. Y dice algo que la sorprende a ella misma:</p>
+      <p class="apagado">—No extraño la escuela. Extrañaba estar en casa. Y ahora estoy.</p>
+      <p>No se refiere a la casa de ladrillos. Se refiere al campo. Al lugar donde no tiene que ser maestra, ni madre, ni esposa, ni nada. Solo estar.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Trinity</h4>
+      <p>El Libro VI de Trinity Origen, Nodo 7, lo dice con la frase que cierra todo el libro: <em>"No es mío. Vino a través de mí."</em> Elena no creó esa quietud. La encontró. O mejor: volvió a ella. Porque siempre estuvo ahí, debajo de las capas de roles, de obligaciones, de identidades.</p>
+      <p>El campo no es un lugar al que llegas. Es un lugar al que vuelves. Y volver es lo más parecido a llegar a casa que existe.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>Desde Transurfing</h4>
+      <p>Zeland no usa la palabra "hogar", pero describe el mismo fenómeno con otro nombre: <strong>el estado de coordinación</strong>. Cuando estás coordinado, no necesitas forzar nada. No necesitas luchar contra péndulos. No necesitas crear slides positivos. Solo necesitas estar. Y cuando estás, el campo te sostiene.</p>
+      <p>Elena no está coordinada porque hizo algo. Está coordinada porque dejó de hacer. Porque dejó de forzar. Porque volvió al lugar donde no tiene que ser nadie.</p>
+    </div>
+
+    <div class="concepto">
+      <h4>La articulación</h4>
+      <p>Trinity dice: el campo es el lugar al que vuelves. Transurfing dice: la coordinación es el estado donde el campo te sostiene. Elena lo vive todos los días frente a una ventana, con una infusión caliente y sin ser nadie.</p>
+      <p>La operación es la misma: <strong>dejar de forzar y volver al lugar donde no tienes que ser nadie.</strong></p>
+    </div>
+
+    <div class="protocolo">
+      <h4>Protocolo · Volver al campo</h4>
+      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.5rem;">Esta semana, todos los días durante diez minutos:</p>
+      <ol>
+        <li>Siéntate en un lugar tranquilo.</li>
+        <li>Cierra los ojos.</li>
+        <li>No hagas nada. No medites. No pienses en nada. No busques nada.</li>
+        <li>Solo está.</li>
+        <li>Si aparecen pensamientos, no los sigas. Vuelve a estar.</li>
+      </ol>
+      <p style="color:var(--text-soft); font-size:0.98rem;">Al final de la semana, anota cómo te sentiste. No busques resultados. No busques revelaciones. Solo registra cómo fue estar sin ser nadie durante diez minutos al día.</p>
+      <p class="meta">Duración: 7 días, 10 minutos por día · Material: un lugar tranquilo</p>
+    </div>
+
+    <div class="salvaguarda">
+      <h4>Salvaguarda clínica</h4>
+      <p>Este ejercicio puede ser difícil si tienes trauma no procesado. El silencio prolongado puede traer memorias o sensaciones que no estabas listo para encontrar. Si eso pasa, no fuerces el ejercicio. Abre los ojos, mueve el cuerpo, toma un vaso de agua, y vuelve a la actividad. Si las memorias o sensaciones persisten, busca acompañamiento profesional. El silencio es un lugar fértil, pero no siempre es un lugar seguro sin compañía.</p>
+    </div>
+
+    <div class="perla">
+      <p>El campo no es un lugar<br>al que llegas.<br>Es un lugar al que vuelves.<br>Y volver es llegar a casa.</p>
+    </div>
+  </article>
+
+  <div class="sep">✦ ✦ ✦</div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- CIERRE DEL LIBRO -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="content reveal">
+    <h2>Cierre del Libro 1</h2>
+    <p>Este libro no te enseñó a crear nada. Te mostró un mapa, una brújula y un método.</p>
+    <p><strong>El mapa:</strong> el campo existe, y todo lo que necesitas ya está ahí.</p>
+    <p><strong>La brújula:</strong> tu frecuencia mental te dice en qué línea estás, y puedes cambiarla.</p>
+    <p><strong>El método:</strong> observar, elegir internamente, y dejar que el campo haga el resto.</p>
+    <p>No hay magia en esto. No hay pensamiento positivo. No hay promesas. Hay una estructura que funciona, y que puedes verificar esta semana.</p>
+    <p>Si algo de lo que leíste te resonó, prueba los protocolos. Si no te resonó, deja el libro. No pasa nada. El campo va a estar ahí cuando lo necesites.</p>
+  </section>
+
+  <div class="perla reveal">
+    <p>No es tuyo lo que encontraste.<br>Vino a través tuyo.<br>Y ahora que lo reconociste,<br>puedes dejar que venga de nuevo.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- PUERTAS LATERALES -->
+  <!-- ══════════════════════════════════════ -->
+  <aside class="puertas reveal">
+    <h3>Puertas laterales</h3>
+    <ul>
+      <li><a href="../01_Trinity_Origen/Libro_06/index.html">Trinity Origen, Libro VI: El Vacío Fértil</a></li>
+      <li><a href="../01_Trinity_Origen/Libro_07/index.html">Trinity Origen, Libro VII: Arquitectura del Destino (oráculo)</a></li>
+      <li><a href="../Trinity_Infinito/Libro1/index.html">Trinity Infinito, Libro 1: Núcleo Ontológico</a></li>
+      <li><a href="../Trinity_Portal_Publico/01_Libros/28_El_Vacio/index.html">Portal Público, Libro 28: El Vacío</a></li>
+      <li><a href="../Trinity_Portal_Publico/01_Libros/39/index.html">Portal Público, Libro 39: El Campo</a></li>
+    </ul>
+  </aside>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- REFERENCIAS -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="referencias reveal">
+    <h3>Referencias</h3>
+    <ol>
+      <li><strong>Zeland, Vadim.</strong> <em>Reality Transurfing: El Espacio de las Variantes.</em> Ediciones originales en ruso, 2003-2005. Conceptos citados: Espacio de Variantes, líneas de vida, radiación de energía mental.</li>
+      <li><strong>Zeland, Vadim.</strong> <em>Reality Transurfing: El Susurro de las Estrellas Matutinas.</em> Concepto citado: intención externa como determinación de poseer sin forzar.</li>
+      <li><strong>Zeland, Vadim.</strong> <em>Reality Transurfing: El Último Sueño.</em> Concepto citado: coordinación como percepción favorable sin forzar.</li>
+      <li><strong>Nota metodológica:</strong> Los conceptos de Transurfing se usan en este libro como modelo operativo, no como verdad literal. Se traducen a lenguaje verificable según la regla de traducción del Sistema Trinity: <em>"Todo lo que se afirme tiene que poder observarse sin creer nada previo."</em></li>
+    </ol>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-symbol">✦</div>
+    <p>Arquitectura del Destino · Libro 1 de 9</p>
+    <p>Sistema Trinity de Navegación Consciente</p>
+    <p style="margin-top:0.5rem;">Campo Trinity · 2026</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var els = [].slice.call(document.querySelectorAll('.reveal'));
+  function showAll(){ els.forEach(function(el){ el.classList.add('visible'); }); }
+  if (!('IntersectionObserver' in window)) { showAll(); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(x){
+      if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 12% 0px' });
+  els.forEach(function(el){ io.observe(el); });
+  setTimeout(showAll, 1500);
+  window.addEventListener('load', function(){ setTimeout(showAll, 300); });
+})();
+</script>
+
+</body>
+</html>
