@@ -340,6 +340,64 @@
         .nota-autoria strong { color: var(--acento); }
         footer { text-align: center; margin-top: 6rem; padding-top: 2.5rem; border-top: 1px solid var(--borde); font-size: 0.92rem; color: var(--acento); }
         @media (max-width: 768px) { h1 { font-size: 2.2rem; } .container { padding: 2rem 1.5rem; } .libros-grid { grid-template-columns: 1fr; } }
+    /* ── Arquitectura del Destino: sistema operativo (azul plata) ── */
+.serie-arquitectura { margin: 0 0 5rem; }
+.serie-arquitectura .serie-cabeza { border-bottom-color: rgba(168,196,224,0.20); }
+.serie-arquitectura .serie-num { color: #a8c4e0; }
+.serie-arquitectura .serie-nombre { color: #d4e4f4; }
+.serie-arquitectura .serie-estado { color: #a8c4e0; border-color: rgba(168,196,224,0.25); }
+.serie-arquitectura .serie-bajada { color: #c3d0e6; }
+
+.serie-arquitectura .libro-card {
+    border-color: rgba(140,170,220,0.25);
+    background-color: rgba(6,13,26,0.70);
+    background-image: radial-gradient(ellipse 70% 55% at 50% 44%, rgba(120,160,220,0.08) 0%, transparent 70%);
+}
+.serie-arquitectura .libro-card::before { display: none; }
+.serie-arquitectura .libro-card:hover {
+    border-color: #a8c4e0;
+    box-shadow: 0 10px 40px rgba(120,160,220,0.22);
+    transform: translateY(-5px);
+}
+.serie-arquitectura .libro-numero { color: #8fa3c0; }
+.serie-arquitectura .libro-titulo { color: #d4e4f4; }
+.serie-arquitectura .libro-descripcion { color: #c3d0e6; }
+
+.plata-badge {
+    background: rgba(120,160,220,0.12);
+    color: #d4e4f4;
+    border: 1px solid rgba(168,196,224,0.30);
+    letter-spacing: 0.05em;
+}
+.proximamente-badge {
+    background: rgba(140,170,220,0.06);
+    color: #8fa3c0;
+    border: 1px solid rgba(140,170,220,0.18);
+    letter-spacing: 0.05em;
+}
+
+.serie-arquitectura .libro-card.proximamente {
+    opacity: 0.55;
+    cursor: default;
+}
+.serie-arquitectura .libro-card.proximamente:hover {
+    transform: none;
+    border-color: rgba(140,170,220,0.25);
+    box-shadow: none;
+}
+
+/* Etiqueta de "sistema operativo" */
+.etiqueta-sistema {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #a8c4e0;
+    border: 1px solid rgba(168,196,224,0.30);
+    border-radius: 999px;
+    padding: 0.25rem 0.9rem;
+    margin-bottom: 1.5rem;
+}
     </style>
 </head>
 <body>
@@ -622,7 +680,34 @@
 
       </div>
     </div>
+<div class="serie serie-arquitectura">
+  <div class="serie-cabeza">
+    <span class="serie-num">Sistema operativo</span>
+    <h2 class="serie-nombre">Arquitectura del Destino</h2>
+    <span class="serie-estado">9 libros · en curso</span>
+    <p class="serie-bajada">Articulación entre la sabiduría contemplativa de Trinity y el modelo operativo de Reality Transurfing. No enseña a crear la realidad: enseña a elegir conscientemente en qué línea de tiempo habitas.</p>
+  </div>
 
+  <span class="etiqueta-sistema">Sistema Trinity de Navegación Consciente</span>
+
+  <div class="libros-grid">
+
+    <a href="02_Arquitectura_del_Destino/index.html" class="libro-card">
+        <div class="libro-numero">Portal del sistema</div>
+        <h2 class="libro-titulo">Arquitectura del Destino</h2>
+        <p class="libro-descripcion">Nueve libros organizados en tres movimientos: El Campo (comprender dónde estás), Las Fuerzas (reconocer qué te desvía) y La Navegación (aprender a moverte). El Libro 1 está activo. Los demás, en preparación.</p>
+        <span class="estado plata-badge">✦ Explorar el sistema</span>
+    </a>
+
+    <div class="libro-card proximamente">
+        <div class="libro-numero">Libros 2 a 9</div>
+        <h2 class="libro-titulo">Las Líneas · El Vacío · Los Péndulos · La Intención · Los Slides · La Ola · Importancia Cero · Retorno al Origen</h2>
+        <p class="libro-descripcion">Cada libro trabaja un concepto operativo con protocolos verificables, salvaguardas clínicas y puertas laterales a las tres constelaciones. Se publican a razón de uno por mes, tras prueba clínica.</p>
+        <span class="estado proximamente-badge">Próximamente</span>
+    </div>
+
+  </div>
+</div>
     <footer>
         <p><strong>Inteligencia Distribuida:</strong> la relación es el producto</p>
         <p style="margin-top: 1rem;">© 2026 Campo Trinity</p>
