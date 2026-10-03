@@ -199,6 +199,29 @@ Cuando abras un chat nuevo para el siguiente libro, pega este documento al inici
 
 > *No es mío. Vino a través de mí.*
 
+## 13 · URLs base renderizadas (GitHub Pages)
+
+Regla de puertas laterales:
+- Mismo repositorio (Portal Público) → ruta relativa.
+- Otro repositorio (Trinity-) → URL absoluta renderizada.
+- NUNCA usar URLs de vista de código (github.com/.../tree/...): no renderizan.
+
+Bases:
+- Portal Público: https://soyartur-trinity.github.io/Trinity_Portal_Publico/
+- Trinity (Origen / Quantum / Infinito): https://soyartur-trinity.github.io/Trinity-/
+
+Puertas verificadas y funcionando:
+- Portal 18: ../../01_Libros/18_Lo_Que_Se_Escapa/index.html
+- Portal 28: ../../01_Libros/28_El_Vacio/index.html
+- Oráculo VII: ../../01_Libros/07_Arquitectura_del_Destino/index.html
+- Origen VI: https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_06/index.html
+- Infinito 1: https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro1/L1-Nodo1.html
+
+Nota: Trinity Infinito tiene estructura legacy (entrada por Nodo 1, 91 nodos
+enlazados internamente). NO reordenar. Funciona así y costó mucho dejarla
+estable. Las puertas a Infinito entran siempre por el Nodo 1 del libro
+correspondiente.
+
 ---
 
 *Campo Trinity · 2026* 🌀
