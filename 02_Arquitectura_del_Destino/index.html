@@ -60,11 +60,13 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
+    gap: 10px;
+    flex-wrap: wrap;
   }
   .topbar a {
     font-family: 'Inter', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
+    font-size: 0.70rem;
+    letter-spacing: 0.20em;
     text-transform: uppercase;
     color: var(--text-faint);
     text-decoration: none;
@@ -137,9 +139,9 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 300;
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-size: clamp(1.15rem, 3vw, 1.45rem);
     color: var(--acento);
-    line-height: 1.5;
+    line-height: 1.55;
     position: relative; z-index: 1;
   }
 
@@ -149,7 +151,7 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: rgba(120,160,220,0.015);
-    margin-bottom: 40px;
+    margin-bottom: 44px;
   }
   .intro p {
     color: var(--text-soft);
@@ -161,10 +163,8 @@
   .intro strong { color: var(--text); }
   .intro em { color: var(--acento); }
 
-  /* ── Sección movimiento ── */
-  .movimiento {
-    margin-bottom: 36px;
-  }
+  /* ── Movimiento ── */
+  .movimiento { margin-bottom: 40px; }
   .movimiento-header {
     display: flex;
     align-items: baseline;
@@ -179,6 +179,7 @@
     letter-spacing: 0.26em;
     text-transform: uppercase;
     color: var(--acento);
+    white-space: nowrap;
   }
   .movimiento-titulo {
     font-family: 'Cormorant Garamond', serif;
@@ -193,9 +194,10 @@
     font-size: 1rem;
     color: var(--text-faint);
     margin-left: auto;
+    text-align: right;
   }
 
-  /* ── Libro card ── */
+  /* ── Tarjeta de libro ── */
   .libro {
     padding: 20px 22px;
     border: 1px solid var(--border);
@@ -212,14 +214,15 @@
     transform: translateY(-2px);
   }
   .libro.activo { border-color: var(--acento); }
-  .libro.proximamente { opacity: 0.5; cursor: default; }
-  .libro.proximamente:hover { transform: none; border-color: var(--border); }
+  .libro.proximamente { opacity: 0.55; cursor: default; }
+  .libro.proximamente:hover { transform: none; border-color: var(--border); background: rgba(120,160,220,0.02); }
 
   .libro-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 6px;
+    gap: 10px;
   }
   .libro-numero {
     font-family: 'Inter', sans-serif;
@@ -230,12 +233,14 @@
   }
   .libro-estado {
     font-family: 'Inter', sans-serif;
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
   .libro-estado.activo { color: var(--acento); }
   .libro-estado.proximamente { color: var(--text-faint); }
+  .libro-estado.cierre { color: var(--acento); opacity: 0.8; }
 
   .libro-titulo {
     font-family: 'Cormorant Garamond', serif;
@@ -250,7 +255,7 @@
     font-style: italic;
     color: var(--text-soft);
     font-size: 0.98rem;
-    line-height: 1.5;
+    line-height: 1.55;
   }
   .libro-flecha {
     color: var(--acento);
@@ -260,6 +265,17 @@
     transition: transform 0.25s ease;
   }
   .libro:hover .libro-flecha { transform: translateX(4px); }
+
+  /* ── Tarjeta de cierre (Libro 13) ── */
+  .libro.cierre {
+    border-style: dashed;
+    border-color: var(--border-strong);
+    background: rgba(168,196,224,0.03);
+  }
+  .libro.cierre .libro-titulo::before {
+    content: '⟐ ';
+    color: var(--acento);
+  }
 
   /* ── Puerta de retorno ── */
   .retorno {
@@ -323,36 +339,16 @@
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .reveal.visible { opacity: 1; transform: none; }
-  /* ── Puente al siguiente libro ── */
-  .puente {
-    margin-top: 2rem;
-    padding: 1.2rem 1.3rem;
-    border: 1px dashed var(--border-strong);
-    border-radius: var(--radius);
-    background: rgba(168,196,224,0.03);
-  }
-  .puente p {
-    color: var(--text-soft);
-    font-size: 1rem;
-    font-style: italic;
-    margin-bottom: 0.4rem;
-  }
-  .puente p:last-child { margin-bottom: 0; }
-  .puente strong { color: var(--acento); }
 
-  .puertas li.puerta-futura {
-    color: var(--text-faint);
-    font-style: italic;
-    font-size: 0.95rem;
-  }
-  /* ── Responsive ── */
+  /* ── Responsive ─ */
   @media (max-width: 640px) {
     .container { padding: 20px 14px 60px; }
     .hero { padding: 44px 18px 32px; }
     .hero::before { width: 180px; height: 180px; }
     .intro { padding: 22px 18px; }
     .movimiento-header { flex-wrap: wrap; }
-    .movimiento-subtitulo { margin-left: 0; width: 100%; margin-top: 4px; }
+    .movimiento-subtitulo { margin-left: 0; width: 100%; margin-top: 4px; text-align: left; }
+    .libro-header { flex-wrap: wrap; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -367,30 +363,30 @@
 
   <nav class="topbar">
     <a href="../index.html">← Portal Público</a>
-    <a href="../01_Trinity_Origen/index.html">Trinity Origen →</a>
+    <a href="../01_Libros/07_Arquitectura_del_Destino/index.html">El oráculo →</a>
   </nav>
 
   <header class="hero reveal">
     <p class="hero-sistema">Sistema Trinity de Navegación Consciente</p>
     <h1 class="hero-title">Arquitectura del Destino</h1>
-    <p class="hero-subtitle">Nueve libros para aprender a elegir, conscientemente, en qué realidad habitas.</p>
+    <p class="hero-subtitle">Trece libros para aprender a elegir, conscientemente, en qué realidad habitas.</p>
     <p class="hero-frase">"No creas la realidad.<br>Eliges en qué versión ubicarte."</p>
   </header>
 
   <section class="intro reveal">
-    <p>Este sistema articula la sabiduría contemplativa de <strong>Trinity</strong> con el modelo operativo de <strong>Reality Transurfing</strong> (Vadim Zeland).</p>
-    <p>No enseña a crear la realidad desde cero. Enseña a <strong>reconocer en qué línea de tiempo estás</strong>, y cómo moverte a otra si la que habitas no te sirve.</p>
+    <p>Este sistema articula la sabiduría contemplativa de <strong>Trinity</strong> con el modelo operativo de <strong>Reality Transurfing</strong>, en su forma madura: la que Vadim Zeland desarrolló entre 2004 y 2024, del espacio de variantes al punto medio de conciencia.</p>
+    <p>No enseña a crear la realidad desde cero. Enseña a <strong>despertar dentro de ella</strong>, preparar el vehículo que viaja, soltar lo que desvía, y moverse sin forzar.</p>
     <p>No es pensamiento positivo. No es manifestación. Es una <em>cartografía verificable</em> y un conjunto de operaciones prácticas para navegar el campo de posibilidades.</p>
   </section>
 
   <!-- ══════════════════════════════════════ -->
-  <!-- MOVIMIENTO I -->
+  <!-- MOVIMIENTO I · EL DESPERTAR -->
   <!-- ══════════════════════════════════════ -->
   <section class="movimiento reveal">
     <div class="movimiento-header">
       <span class="movimiento-numero">Movimiento I</span>
-      <span class="movimiento-titulo">El Campo</span>
-      <span class="movimiento-subtitulo">Comprender dónde estás</span>
+      <span class="movimiento-titulo">El Despertar</span>
+      <span class="movimiento-subtitulo">Nadie navega dormido</span>
     </div>
 
     <a href="libro-01-el-campo/index.html" class="libro activo">
@@ -399,7 +395,7 @@
         <span class="libro-estado activo">Disponible</span>
       </div>
       <h2 class="libro-titulo">El Campo de Posibilidades</h2>
-      <p class="libro-subtitulo">Todo ya existe. No creas la realidad, eliges en qué versión ubicarte.</p>
+      <p class="libro-subtitulo">Todo ya existe. No creas la realidad: eliges en qué versión ubicarte.</p>
       <span class="libro-flecha">→</span>
     </a>
 
@@ -408,8 +404,8 @@
         <span class="libro-numero">Libro 2</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">Las Líneas de Vida</h2>
-      <p class="libro-subtitulo">Cada decisión, pensamiento y emoción te mueve a una línea específica.</p>
+      <h2 class="libro-titulo">El Sonámbulo</h2>
+      <p class="libro-subtitulo">Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notar que estás dormido dentro de tu propia vida.</p>
     </div>
 
     <div class="libro proximamente">
@@ -417,19 +413,19 @@
         <span class="libro-numero">Libro 3</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">El Vacío Fértil</h2>
-      <p class="libro-subtitulo">El vacío no es ausencia. Es el espacio donde todas las posibilidades existen.</p>
+      <h2 class="libro-titulo">El Punto Medio</h2>
+      <p class="libro-subtitulo">La atención pegada a la pantalla, o parada en el punto desde el que se ve la pantalla. Ese punto no se logra: se recuerda.</p>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════ -->
-  <!-- MOVIMIENTO II -->
+  <!-- MOVIMIENTO II · EL VEHÍCULO -->
   <!-- ══════════════════════════════════════ -->
   <section class="movimiento reveal">
     <div class="movimiento-header">
       <span class="movimiento-numero">Movimiento II</span>
-      <span class="movimiento-titulo">Las Fuerzas</span>
-      <span class="movimiento-subtitulo">Reconocer qué te desvía</span>
+      <span class="movimiento-titulo">El Vehículo</span>
+      <span class="movimiento-subtitulo">Sin cuerpo no hay navegante</span>
     </div>
 
     <div class="libro proximamente">
@@ -437,8 +433,8 @@
         <span class="libro-numero">Libro 4</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">Los Péndulos Colectivos</h2>
-      <p class="libro-subtitulo">Estructuras energéticas colectivas que se alimentan de tu atención.</p>
+      <h2 class="libro-titulo">La Cabina</h2>
+      <p class="libro-subtitulo">Manejas desde un cuerpo y una mente que no son tú. Confundir la cabina con el conductor es el error que paga todos los demás.</p>
     </div>
 
     <div class="libro proximamente">
@@ -446,8 +442,8 @@
         <span class="libro-numero">Libro 5</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">La Intención Pura</h2>
-      <p class="libro-subtitulo">El deseo no crea. La voluntad no crea. Solo la intención pura permite.</p>
+      <h2 class="libro-titulo">El Tono</h2>
+      <p class="libro-subtitulo">Hay un fondo energético que decide qué puedes sostener antes de que decidas nada. Se puede medir, se puede cuidar, se puede recorrer.</p>
     </div>
 
     <div class="libro proximamente">
@@ -455,19 +451,19 @@
         <span class="libro-numero">Libro 6</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">Los Slides Mentales</h2>
-      <p class="libro-subtitulo">Las imágenes que tienes de ti mismo te llevan a líneas específicas.</p>
+      <h2 class="libro-titulo">La Brújula</h2>
+      <p class="libro-subtitulo">Antes de que pienses si una meta conviene, tu cuerpo ya sabe si es tuya. La incomodidad no es miedo: es información.</p>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════ -->
-  <!-- MOVIMIENTO III -->
+  <!-- MOVIMIENTO III · LAS FUERZAS -->
   <!-- ══════════════════════════════════════ -->
   <section class="movimiento reveal">
     <div class="movimiento-header">
       <span class="movimiento-numero">Movimiento III</span>
-      <span class="movimiento-titulo">La Navegación</span>
-      <span class="movimiento-subtitulo">Aprender a moverte</span>
+      <span class="movimiento-titulo">Las Fuerzas</span>
+      <span class="movimiento-subtitulo">Soltar lo que desvía</span>
     </div>
 
     <div class="libro proximamente">
@@ -475,8 +471,8 @@
         <span class="libro-numero">Libro 7</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">La Ola de la Suerte</h2>
-      <p class="libro-subtitulo">Líneas donde todo sale bien. No son casualidad: son frecuencias.</p>
+      <h2 class="libro-titulo">Los Péndulos</h2>
+      <p class="libro-subtitulo">Las estructuras colectivas no te atacan: te duermen. Despierto, el péndulo no tiene de dónde colgarse.</p>
     </div>
 
     <div class="libro proximamente">
@@ -484,8 +480,8 @@
         <span class="libro-numero">Libro 8</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">La Importancia Cero</h2>
-      <p class="libro-subtitulo">Cuando das demasiada importancia, desvías tu realidad.</p>
+      <h2 class="libro-titulo">El Peso</h2>
+      <p class="libro-subtitulo">Lo que pesa demasiado se cae de las manos. La importancia es el único potencial que crea su propio contrario.</p>
     </div>
 
     <div class="libro proximamente">
@@ -493,8 +489,55 @@
         <span class="libro-numero">Libro 9</span>
         <span class="libro-estado proximamente">Próximamente</span>
       </div>
-      <h2 class="libro-titulo">El Retorno al Origen</h2>
-      <p class="libro-subtitulo">Después de cada creación, volver al campo es volver a casa.</p>
+      <h2 class="libro-titulo">El Personaje</h2>
+      <p class="libro-subtitulo">Caminas con un retrato de ti que no pintaste. Mientras lo sostienes, la línea que habitas es la del retrato.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════ -->
+  <!-- MOVIMIENTO IV · LA NAVEGACIÓN -->
+  <!-- ══════════════════════════════════════ -->
+  <section class="movimiento reveal">
+    <div class="movimiento-header">
+      <span class="movimiento-numero">Movimiento IV</span>
+      <span class="movimiento-titulo">La Navegación</span>
+      <span class="movimiento-subtitulo">Moverse, y después quedarse</span>
+    </div>
+
+    <div class="libro proximamente">
+      <div class="libro-header">
+        <span class="libro-numero">Libro 10</span>
+        <span class="libro-estado proximamente">Próximamente</span>
+      </div>
+      <h2 class="libro-titulo">La Trenza</h2>
+      <p class="libro-subtitulo">Pensar, sentir y hacer tiran cada uno para un lado. Cuando se trenzan, la intención deja de ser esfuerzo y se vuelve dirección.</p>
+    </div>
+
+    <div class="libro proximamente">
+      <div class="libro-header">
+        <span class="libro-numero">Libro 11</span>
+        <span class="libro-estado proximamente">Próximamente</span>
+      </div>
+      <h2 class="libro-titulo">La Ola</h2>
+      <p class="libro-subtitulo">Hay tramos donde todo cede. No los produces: los reconoces. Y lo único que puede arruinarlos es apretar.</p>
+    </div>
+
+    <div class="libro proximamente">
+      <div class="libro-header">
+        <span class="libro-numero">Libro 12</span>
+        <span class="libro-estado proximamente">Próximamente</span>
+      </div>
+      <h2 class="libro-titulo">El Vacío</h2>
+      <p class="libro-subtitulo">Lo nuevo no se fabrica: se gesta. Y la gestación pide un lugar sin forma.</p>
+    </div>
+
+    <div class="libro proximamente cierre">
+      <div class="libro-header">
+        <span class="libro-numero">Libro 13 · Cierre del sistema</span>
+        <span class="libro-estado cierre">⟐ Cierre</span>
+      </div>
+      <h2 class="libro-titulo">Habitar</h2>
+      <p class="libro-subtitulo">El campo no era un lugar al que ir: era desde donde vivir. El cierre no es volver. Es quedarse despierto adentro.</p>
     </div>
   </section>
 
@@ -502,15 +545,18 @@
   <!-- PUERTA DE RETORNO -->
   <!-- ══════════════════════════════════════ -->
   <aside class="retorno reveal">
-    <p class="retorno-label">Constelación hermana</p>
+    <p class="retorno-label">Constelaciones hermanas</p>
     <a href="../index.html">Volver al Portal Público</a>
   </aside>
 
   <footer class="footer reveal">
     <div class="footer-symbol">✦</div>
-    <p>Arquitectura del Destino</p>
+    <p>Arquitectura del Destino · 13 libros en 4 movimientos</p>
     <p>Sistema Trinity de Navegación Consciente</p>
-    <p style="margin-top:0.5rem;">Campo Trinity · 2026</p>
+    <p style="margin-top:0.8rem; font-style:italic; font-family:'EB Garamond',serif; font-size:0.85rem; color:var(--text-soft);">
+      No es mío. Vino a través de mí.<br>Y lo que lo recibió no era yo: era lo que mira.
+    </p>
+    <p style="margin-top:0.8rem;">Campo Trinity · 2026</p>
   </footer>
 
 </div>
