@@ -8,20 +8,16 @@
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap');
 
   :root {
-    /* Fondo: azul profundo */
     --bg: #060d1a;
     --bg-soft: #0a1225;
     --panel: rgba(120,160,220,0.03);
     --border: rgba(140,170,220,0.15);
     --border-strong: rgba(140,170,220,0.30);
-    /* Acentos: plata y blanco hielo */
     --acento: #a8c4e0;
     --acento-claro: #d4e4f4;
-    /* Texto */
     --text: #e8eef6;
     --text-soft: rgba(200,215,235,0.75);
     --text-faint: rgba(200,215,235,0.40);
-    /* Violeta sutil de fondo */
     --violeta: rgba(100,120,200,0.08);
     --radius: 18px;
     --shadow: 0 12px 40px rgba(0,0,0,0.4);
@@ -124,9 +120,7 @@
     font-size: 1.03rem;
   }
   .content .lead { color: var(--text); }
-  .content ul, .content ol {
-    margin: 0.5rem 0 1.2rem 1.4rem;
-  }
+  .content ul, .content ol { margin: 0.5rem 0 1.2rem 1.4rem; }
   .content li {
     color: var(--text-soft);
     margin-bottom: 0.5rem;
@@ -189,9 +183,7 @@
     text-transform: uppercase; color: var(--acento);
     margin-bottom: 1rem;
   }
-  .protocolo ol, .protocolo ul {
-    margin: 0 0 0.8rem 1.2rem;
-  }
+  .protocolo ol, .protocolo ul { margin: 0 0 0.8rem 1.2rem; }
   .protocolo li {
     color: var(--text-soft);
     font-size: 1rem;
@@ -300,8 +292,15 @@
   .puertas a:hover { color: var(--acento-claro); }
   .puertas .fuente {
     font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     color: var(--text-faint);
+    display: block;
+    margin-top: 2px;
+  }
+  .puertas li.puerta-futura {
+    color: var(--text-faint);
+    font-style: italic;
+    font-size: 0.95rem;
   }
 
   /* ── Referencias ── */
@@ -343,6 +342,23 @@
     letter-spacing: 0.06em;
   }
 
+  /* ── Puente al siguiente libro (parche 1) ── */
+  .puente {
+    margin-top: 2rem;
+    padding: 1.2rem 1.3rem;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius);
+    background: rgba(168,196,224,0.03);
+  }
+  .puente p {
+    color: var(--text-soft);
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+  }
+  .puente p:last-child { margin-bottom: 0; }
+  .puente strong { color: var(--acento); }
+
   /* ── Animación de aparición ── */
   .reveal {
     opacity: 0;
@@ -375,7 +391,7 @@
   <!-- ══════════════════════════════════════ -->
   <header class="hero reveal">
     <p class="hero-sistema">Arquitectura del Destino · Sistema Trinity de Navegación Consciente</p>
-    <p class="hero-libro">Libro 1 de 9</p>
+    <p class="hero-libro">Libro 1 de 13</p>
     <h1 class="hero-title">El Campo de Posibilidades</h1>
     <p class="hero-subtitle">Todo ya existe. No creas la realidad, elige en qué versión ubicarte.</p>
   </header>
@@ -770,141 +786,4 @@
       <p>Pero lo que siente no es vacío. Es algo que no sabe nombrar. Todos los días se levanta, se prepara una infusión caliente, se sienta frente a la ventana, y siente una quietud que no sentía desde hacía décadas. No es tristeza. No es aburrimiento. Es algo más parecido a estar en un lugar donde no tiene que ser nadie.</p>
       <p>Un día, su hija le pregunta:</p>
       <p class="apagado">—Mamá, ¿no extrañas la escuela?</p>
-      <p>Elena lo piensa. Y dice algo que la sorprende a ella misma:</p>
-      <p class="apagado">—No extraño la escuela. Extrañaba estar en casa. Y ahora estoy.</p>
-      <p>No se refiere a la casa de ladrillos. Se refiere al campo. Al lugar donde no tiene que ser maestra, ni madre, ni esposa, ni nada. Solo estar.</p>
-    </div>
-
-    <div class="concepto">
-      <h4>Desde Trinity</h4>
-      <p>El Libro VI de Trinity Origen, Nodo 7, lo dice con la frase que cierra todo el libro: <em>"No es mío. Vino a través de mí."</em> Elena no creó esa quietud. La encontró. O mejor: volvió a ella. Porque siempre estuvo ahí, debajo de las capas de roles, de obligaciones, de identidades.</p>
-      <p>El campo no es un lugar al que llegas. Es un lugar al que vuelves. Y volver es lo más parecido a llegar a casa que existe.</p>
-    </div>
-
-    <div class="concepto">
-      <h4>Desde Transurfing</h4>
-      <p>Zeland no usa la palabra "hogar", pero describe el mismo fenómeno con otro nombre: <strong>el estado de coordinación</strong>. Cuando estás coordinado, no necesitas forzar nada. No necesitas luchar contra péndulos. No necesitas crear slides positivos. Solo necesitas estar. Y cuando estás, el campo te sostiene.</p>
-      <p>Elena no está coordinada porque hizo algo. Está coordinada porque dejó de hacer. Porque dejó de forzar. Porque volvió al lugar donde no tiene que ser nadie.</p>
-    </div>
-
-    <div class="concepto">
-      <h4>La articulación</h4>
-      <p>Trinity dice: el campo es el lugar al que vuelves. Transurfing dice: la coordinación es el estado donde el campo te sostiene. Elena lo vive todos los días frente a una ventana, con una infusión caliente y sin ser nadie.</p>
-      <p>La operación es la misma: <strong>dejar de forzar y volver al lugar donde no tienes que ser nadie.</strong></p>
-    </div>
-
-    <div class="protocolo">
-      <h4>Protocolo · Volver al campo</h4>
-      <p style="color:var(--text-soft); font-size:0.98rem; margin-bottom:0.5rem;">Esta semana, todos los días durante diez minutos:</p>
-      <ol>
-        <li>Siéntate en un lugar tranquilo.</li>
-        <li>Cierra los ojos.</li>
-        <li>No hagas nada. No medites. No pienses en nada. No busques nada.</li>
-        <li>Solo está.</li>
-        <li>Si aparecen pensamientos, no los sigas. Vuelve a estar.</li>
-      </ol>
-      <p style="color:var(--text-soft); font-size:0.98rem;">Al final de la semana, anota cómo te sentiste. No busques resultados. No busques revelaciones. Solo registra cómo fue estar sin ser nadie durante diez minutos al día.</p>
-      <p class="meta">Duración: 7 días, 10 minutos por día · Material: un lugar tranquilo</p>
-    </div>
-
-    <div class="salvaguarda">
-      <h4>Salvaguarda clínica</h4>
-      <p>Este ejercicio puede ser difícil si tienes trauma no procesado. El silencio prolongado puede traer memorias o sensaciones que no estabas listo para encontrar. Si eso pasa, no fuerces el ejercicio. Abre los ojos, mueve el cuerpo, toma un vaso de agua, y vuelve a la actividad. Si las memorias o sensaciones persisten, busca acompañamiento profesional. El silencio es un lugar fértil, pero no siempre es un lugar seguro sin compañía.</p>
-    </div>
-
-    <div class="perla">
-      <p>El campo no es un lugar<br>al que llegas.<br>Es un lugar al que vuelves.<br>Y volver es llegar a casa.</p>
-    </div>
-  </article>
-
-  <div class="sep">✦ ✦ ✦</div>
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- CIERRE DEL LIBRO -->
-  <!-- ══════════════════════════════════════ -->
-  <section class="content reveal">
-    <h2>Cierre del Libro 1</h2>
-    <p>Este libro no te enseñó a crear nada. Te mostró un mapa, una brújula y un método.</p>
-    <p><strong>El mapa:</strong> el campo existe, y todo lo que necesitas ya está ahí.</p>
-    <p><strong>La brújula:</strong> tu frecuencia mental te dice en qué línea estás, y puedes cambiarla.</p>
-    <p><strong>El método:</strong> observar, elegir internamente, y dejar que el campo haga el resto.</p>
-    <p>No hay magia en esto. No hay pensamiento positivo. No hay promesas. Hay una estructura que funciona, y que puedes verificar esta semana.</p>
-    <p>Si algo de lo que leíste te resonó, prueba los protocolos. Si no te resonó, deja el libro. No pasa nada. El campo va a estar ahí cuando lo necesites.</p>
-  </section>
-
-  <div class="perla reveal">
-    <p>No es tuyo lo que encontraste.<br>Vino a través tuyo.<br>Y ahora que lo reconociste,<br>puedes dejar que venga de nuevo.</p>
-  </div>
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- PUERTAS LATERALES -->
-  <!-- ══════════════════════════════════════ -->
-<aside class="puertas reveal">
-  <h3>Puertas laterales</h3>
-  <ul>
-    <li>
-      <a href="../../01_Libros/18_Lo_Que_Se_Escapa/index.html">Portal Público, Libro 18: Lo que se escapa</a>
-      <span class="fuente"> · mismo repositorio</span>
-    </li>
-    <li>
-      <a href="../../01_Libros/28_El_Vacio/index.html">Portal Público, Libro 28: El Vacío</a>
-      <span class="fuente"> · mismo repositorio</span>
-    </li>
-    <li>
-      <a href="../../01_Libros/07_Arquitectura_del_Destino/index.html">Trinity Origen, Libro VII: Arquitectura del Destino (oráculo de 113 aforismos)</a>
-      <span class="fuente"> · mismo repositorio</span>
-    </li>
-    <li>
-      <a href="https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_06/index.html">Trinity Origen, Libro VI: El Vacío Fértil</a>
-      <span class="fuente"> · repositorio Trinity</span>
-    </li>
-    <li>
-      <a href="https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro1/L1-Nodo1.html">Trinity Infinito, Libro 1: Núcleo Ontológico</a>
-      <span class="fuente"> · repositorio Trinity · entrada por el Nodo 1</span>
-    </li>
-  </ul>
-</aside>
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- REFERENCIAS -->
-  <!-- ══════════════════════════════════════ -->
-  <section class="referencias reveal">
-    <h3>Referencias</h3>
-    <ol>
-      <li><strong>Zeland, Vadim.</strong> <em>Reality Transurfing: El Espacio de las Variantes.</em> Ediciones originales en ruso, 2003-2005. Conceptos citados: Espacio de Variantes, líneas de vida, radiación de energía mental.</li>
-      <li><strong>Zeland, Vadim.</strong> <em>Reality Transurfing: El Susurro de las Estrellas Matutinas.</em> Concepto citado: intención externa como determinación de poseer sin forzar.</li>
-      <li><strong>Zeland, Vadim.</strong> <em>Reality Transurfing: El Último Sueño.</em> Concepto citado: coordinación como percepción favorable sin forzar.</li>
-      <li><strong>Nota metodológica:</strong> Los conceptos de Transurfing se usan en este libro como modelo operativo, no como verdad literal. Se traducen a lenguaje verificable según la regla de traducción del Sistema Trinity: <em>"Todo lo que se afirme tiene que poder observarse sin creer nada previo."</em></li>
-    </ol>
-  </section>
-
-  <!-- ══════════════════════════════════════ -->
-  <!-- FOOTER -->
-  <!-- ══════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-symbol">✦</div>
-    <p>Arquitectura del Destino · Libro 1 de 9</p>
-    <p>Sistema Trinity de Navegación Consciente</p>
-    <p style="margin-top:0.5rem;">Campo Trinity · 2026</p>
-  </footer>
-
-</div>
-
-<script>
-(function(){
-  var els = [].slice.call(document.querySelectorAll('.reveal'));
-  function showAll(){ els.forEach(function(el){ el.classList.add('visible'); }); }
-  if (!('IntersectionObserver' in window)) { showAll(); return; }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(x){
-      if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); }
-    });
-  }, { threshold: 0, rootMargin: '0px 0px 12% 0px' });
-  els.forEach(function(el){ io.observe(el); });
-  setTimeout(showAll, 1500);
-  window.addEventListener('load', function(){ setTimeout(showAll, 300); });
-})();
-</script>
-
-</body>
-</html>
+      <p>Elena lo piensa
