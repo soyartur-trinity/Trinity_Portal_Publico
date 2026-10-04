@@ -7,51 +7,59 @@
 
 ### Qué es este sistema
 
-**Arquitectura del Destino** es un sistema de nueve libros que articula la sabiduría contemplativa de la constelación **Trinity** con el modelo operativo de **Reality Transurfing** (Vadim Zeland).
+**Arquitectura del Destino** es un sistema de trece libros que articula la sabiduría contemplativa de la constelación **Trinity** con el modelo operativo de **Reality Transurfing**, en su forma madura: la que Vadim Zeland desarrolló entre 2004 y 2024, del espacio de variantes al punto medio de conciencia.
 
-No enseña a crear la realidad desde cero. Enseña a reconocer en qué línea de tiempo estás habitando y cómo moverte conscientemente a otra.
+No enseña a crear la realidad desde cero. Enseña a despertar dentro de ella, preparar el vehículo que viaja, soltar lo que desvía, y moverse sin forzar.
 
 ### Para quién es
 
-Para quien ya intuyó que **el destino no es algo que te pasa, sino algo que eliges** —consciente o inconscientemente— cada día, y quiere aprender a elegir con los ojos abiertos.
+Para quien ya intuyó que el destino no es algo que te pasa, sino algo que eliges —consciente o inconscientemente— cada día, y quiere aprender a elegir con los ojos abiertos.
 
 No es un manual de autoayuda. No es pensamiento positivo. No es manifestación. Es una cartografía verificable y un conjunto de operaciones prácticas para navegar el campo de posibilidades.
 
-### Los nueve libros
+### Los trece libros
 
-#### Movimiento I · El Campo *(comprender dónde estás)*
+#### Movimiento I · El Despertar — *nadie navega dormido*
 
-1. **El Campo de Posibilidades** — Todo ya existe. No creas la realidad, eliges en qué versión ubicarte.
-2. **Las Líneas de Vida** — Cada decisión, pensamiento y emoción te mueve a una línea específica.
-3. **El Vacío Fértil** — El vacío no es ausencia. Es el espacio donde todas las posibilidades existen.
+1. **El Campo de Posibilidades** — Todo ya existe. No creas la realidad: eliges en qué versión ubicarte.
+2. **El Sonámbulo** — Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notarlo.
+3. **El Punto Medio** — La atención pegada a la pantalla, o parada en el punto desde el que se ve.
 
-#### Movimiento II · Las Fuerzas *(reconocer qué te desvía)*
+#### Movimiento II · El Vehículo — *sin cuerpo no hay navegante*
 
-4. **Los Péndulos Colectivos** — Estructuras energéticas colectivas que se alimentan de tu atención.
-5. **La Intención Pura** — El deseo no crea. La voluntad no crea. Solo la intención pura permite.
-6. **Los Slides Mentales** — Las imágenes que tienes de ti mismo te llevan a líneas específicas.
+4. **La Cabina** — Manejas desde un cuerpo y una mente que no son tú.
+5. **El Tono** — El fondo energético que decide qué puedes sostener antes de que decidas nada.
+6. **La Brújula** — Antes de que pienses si una meta conviene, tu cuerpo ya sabe si es tuya.
 
-#### Movimiento III · La Navegación *(aprender a moverte)*
+#### Movimiento III · Las Fuerzas — *soltar lo que desvía*
 
-7. **La Ola de la Suerte** — Líneas de tiempo donde todo sale bien. No son casualidad: son frecuencias.
-8. **La Importancia Cero** — Cuando das demasiada importancia, desvías tu realidad.
-9. **El Retorno al Origen** — Después de cada creación, volver al campo es volver a casa.
+7. **Los Péndulos** — Las estructuras colectivas no te atacan: te duermen.
+8. **El Peso** — Lo que pesa demasiado se cae de las manos.
+9. **El Personaje** — Caminas con un retrato de ti que no pintaste.
+
+#### Movimiento IV · La Navegación — *moverse, y después quedarse*
+
+10. **La Trenza** — Cuando pensar, sentir y hacer se alinean, la intención se vuelve dirección.
+11. **La Ola** — Hay tramos donde todo cede. No los produces: los reconoces.
+12. **El Vacío** — Lo nuevo no se fabrica: se gesta.
+13. **⟐ Habitar** — El campo no era un lugar al que ir: era desde donde vivir.
 
 ### Conexión con otras constelaciones
 
 | Constelación | Función |
 |---|---|
 | **Trinity Origen** (13 libros) | La fuente primordial. Sabiduría contemplativa. |
-| **Trinity Quantum** (13 libros) | Física aplicada a la consciencia. |
+| **Trinity Quantum** (13 libros) | Física aplicada a la consciencia. Inspiración, no estructura. |
 | **Trinity Infinito** (13 libros) | Disolución del yo. Lo que hay más allá. |
 | **Portal Público** (39 libros) | Fenomenología cotidiana para gente común. |
-| **Arquitectura del Destino** (9 libros) | Sistema operativo para navegar el campo. |
+| **Arquitectura del Destino** (13 libros) | Sistema operativo para navegar el campo. |
 
 ### Regla de traducción
 
 > *Todo lo que se afirme tiene que poder observarse sin creer nada previo.*
+> *Lo que no se puede traducir a una experiencia observable, no entra.*
 
-Los conceptos místicos de Transurfing se traducen a lenguaje verificable. Lo que no se puede traducir, no entra.
+Los conceptos de Transurfing se traducen a lenguaje verificable en todas sus etapas. El diccionario completo vive en `maestro.md`.
 
 ### Método de escritura
 
@@ -60,21 +68,23 @@ Los conceptos místicos de Transurfing se traducen a lenguaje verificable. Lo qu
 - Testimonios con nombre y fuente.
 - Operaciones prácticas verificables (protocolos, checklists, diarios).
 - Salvaguardas clínicas específicas en cada umbral.
-- Puertas laterales a libros de Trinity Origen, Trinity Infinito y Portal Público.
-- Referencias a Zeland al final de cada libro, separadas de las puertas laterales.
+- Puertas laterales a libros de Trinity y del Portal Público.
+- Referencias a Zeland al final de cada libro, citando etapa y obra.
 
 ### Estado actual
 
-- **Libro 1 · El Campo de Posibilidades** ✅ Completo
-- Libros 2 a 9 · En preparación
+- **Libro 1 · El Campo de Posibilidades** ✅ completo y en prueba clínica
+- **Libro 2 · El Sonámbulo** 🚧 próximo
+- Libros 3 a 13 · en preparación
 
 ### Autoría
 
-Este sistema no tiene autor único. El material clínico, los criterios y la voz final son de **Arturo Rodríguez**. La interlocución con sistemas de inteligencia artificial funciona como espejo exigente, con fricción, desacuerdo y propuestas que se descartan. El resultado final vuelve al autor, que corrige lo que no suena a él antes de probarlo en consultorio.
+Este sistema no tiene autor único. El material clínico, los criterios y la voz final son de **Arturo Rodríguez**. La interlocución con sistemas de inteligencia artificial funciona como espejo exigente, con fricción, desacuerdo y propuestas que se descartan. El resultado vuelve al autor, que corrige lo que no suena a él antes de probarlo en consultorio.
 
 La frase que atraviesa toda la obra:
 
 > *No es mío. Vino a través de mí.*
+> *Y lo que lo recibió no era yo: era lo que mira.*
 
 ### Licencia
 
