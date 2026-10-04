@@ -323,7 +323,28 @@
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
   .reveal.visible { opacity: 1; transform: none; }
+  /* ── Puente al siguiente libro ── */
+  .puente {
+    margin-top: 2rem;
+    padding: 1.2rem 1.3rem;
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius);
+    background: rgba(168,196,224,0.03);
+  }
+  .puente p {
+    color: var(--text-soft);
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 0.4rem;
+  }
+  .puente p:last-child { margin-bottom: 0; }
+  .puente strong { color: var(--acento); }
 
+  .puertas li.puerta-futura {
+    color: var(--text-faint);
+    font-style: italic;
+    font-size: 0.95rem;
+  }
   /* ── Responsive ── */
   @media (max-width: 640px) {
     .container { padding: 20px 14px 60px; }
