@@ -1,9 +1,8 @@
-# Documento Maestro
+# Documento Maestro · v2
 ## Arquitectura del Destino · Sistema Trinity de Navegación Consciente
 
 *Documento de estado para mantener coherencia entre sesiones y entre interlocutores IA.*
-
-*Última actualización: octubre 2026*
+*Versión 2 · octubre 2026 · incorpora la evolución madura de Zeland (2010-2024).*
 
 ---
 
@@ -18,209 +17,198 @@
 
 ---
 
-## 2 · Lo que este sistema NO es
+## 2 · Lo que este sistema NO es / SÍ es
 
-- No es magia ni manifestación new age.
-- No es pensamiento positivo.
-- No es control total de la realidad.
-- No es una receta para obtener lo que quieres.
+**NO es:** magia ni manifestación new age · pensamiento positivo · control total de la realidad · receta para obtener lo que quieres.
 
-## 3 · Lo que este sistema SÍ es
-
-- Una cartografía verificable de cómo funciona la elección.
-- Un conjunto de operaciones prácticas para reducir la interferencia egoica.
-- Un método para reconocer en qué línea de tiempo estás y cómo moverte a otra.
-- Una articulación entre sabiduría contemplativa (Trinity) y física aplicada (Transurfing).
+**SÍ es:** una cartografía verificable de cómo funciona la elección · operaciones prácticas para reducir la interferencia egoica · un método para reconocer en qué línea estás y cómo moverte · la articulación entre Trinity y el Transurfing maduro de Zeland (2004-2024).
 
 ---
 
-## 4 · Estructura de los nueve libros
+## 3 · Estado actual
 
-### Movimiento I · El Campo *(comprender dónde estás)*
+- **Libro 1 · El Campo de Posibilidades** ✅ completo, anclado, en prueba clínica.
+- **Libro 2 · El Sonámbulo** 🚧 próximo a escribir (primer libro del mapa v2).
+- Libros 3 a 13 ⏳ pendientes.
+- Portal del sistema (`index.html`) regenerado con 4 movimientos y 13 tarjetas.
 
-| # | Libro | Tesis |
-|---|---|---|
-| 1 | **El Campo de Posibilidades** ✅ | Todo ya existe. No creas la realidad, eliges en qué versión ubicarte. |
-| 2 | **Las Líneas de Vida** 🚧 | Cada decisión, pensamiento y emoción te mueve a una línea específica. |
-| 3 | **El Vacío Fértil** ⏳ | El vacío no es ausencia. Es el espacio donde todas las posibilidades existen. |
+---
 
-### Movimiento II · Las Fuerzas *(reconocer qué te desvía)*
+## 4 · Estructura: 13 libros en 4 movimientos (mapa v2)
 
-| # | Libro | Tesis |
-|---|---|---|
-| 4 | **Los Péndulos Colectivos** ⏳ | Estructuras energéticas colectivas que se alimentan de tu atención. |
-| 5 | **La Intención Pura** ⏳ | El deseo no crea. La voluntad no crea. Solo la intención pura permite. |
-| 6 | **Los Slides Mentales** ⏳ | Las imágenes que tienes de ti mismo te llevan a líneas específicas. |
-
-### Movimiento III · La Navegación *(aprender a moverte)*
+### Movimiento I · El Despertar — *nadie navega dormido*
 
 | # | Libro | Tesis |
 |---|---|---|
-| 7 | **La Ola de la Suerte** ⏳ | Líneas donde todo sale bien. No son casualidad: son frecuencias. |
-| 8 | **La Importancia Cero** ⏳ | Cuando das demasiada importancia, desvías tu realidad. |
-| 9 | **El Retorno al Origen** ⏳ | Después de cada creación, volver al campo es volver a casa. |
+| 1 | **El Campo de Posibilidades** ✅ | Todo ya existe. No creas la realidad: eliges en qué versión ubicarte. |
+| 2 | **El Sonámbulo** 🚧 | Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notar que estás dormido dentro de tu propia vida. |
+| 3 | **El Punto Medio** ⏳ | La atención pegada a la pantalla, o parada en el punto desde el que se ve. Ese punto no se logra: se recuerda. |
+
+### Movimiento II · El Vehículo — *sin cuerpo no hay navegante*
+
+| # | Libro | Tesis |
+|---|---|---|
+| 4 | **La Cabina** ⏳ | Manejas desde un cuerpo y una mente que no son tú. Confundir la cabina con el conductor es el error que paga todos los demás. |
+| 5 | **El Tono** ⏳ | Hay un fondo energético que decide qué puedes sostener antes de que decidas nada. Se mide, se cuida, se recorre. |
+| 6 | **La Brújula** ⏳ | Antes de que pienses si una meta conviene, tu cuerpo ya sabe si es tuya. La incomodidad no es miedo: es información. |
+
+### Movimiento III · Las Fuerzas — *soltar lo que desvía*
+
+| # | Libro | Tesis |
+|---|---|---|
+| 7 | **Los Péndulos** ⏳ | Las estructuras colectivas no te atacan: te duermen. Despierto, el péndulo no tiene de dónde colgarse. |
+| 8 | **El Peso** ⏳ | Lo que pesa demasiado se cae de las manos. La importancia es el único potencial que crea su propio contrario. |
+| 9 | **El Personaje** ⏳ | Caminas con un retrato de ti que no pintaste. Mientras lo sostienes, la línea que habitas es la del retrato. |
+
+### Movimiento IV · La Navegación — *moverse, y después quedarse*
+
+| # | Libro | Tesis |
+|---|---|---|
+| 10 | **La Trenza** ⏳ | Pensar, sentir y hacer tiran cada uno para un lado. Cuando se trenzan, la intención deja de ser esfuerzo y se vuelve dirección. |
+| 11 | **La Ola** ⏳ | Hay tramos donde todo cede. No los produces: los reconoces. Lo único que puede arruinarlos es apretar. |
+| 12 | **El Vacío** ⏳ | Lo nuevo no se fabrica: se gesta. Y la gestación pide un lugar sin forma. |
+| 13 | **⟐ Habitar** ⏳ | El campo no era un lugar al que ir: era desde donde vivir. El cierre no es volver: es quedarse despierto adentro. |
 
 *Estado: ✅ completo · 🚧 en progreso · ⏳ pendiente*
 
+**Nota de linaje:** el mapa v2 reemplaza al v1 (9 libros). Nada del v1 se perdió: se reubicó (ver sección 9). Los cinco libros nuevos (2, 3, 4, 5, 6) son la capa que aportó el Zeland maduro: el despertar fino y el vehículo.
+
 ---
 
-## 5 · Estructura interna de cada libro
+## 5 · Estructura interna de cada libro (7 umbrales)
 
-Cada libro tiene **7 umbrales** con esta estructura fija:
+1. **Escena / Problema** — algo concreto que le pasa a alguien.
+2. **Desde Trinity** — la sabiduría contemplativa que lo explica.
+3. **Desde Transurfing** — el modelo operativo que lo opera (citando la etapa de Zeland que corresponda).
+4. **La articulación** — cómo se encuentran ambos.
+5. **Operación práctica** — protocolo, checklist o diario para esta semana.
+6. **Salvaguarda clínica** — cuándo esto no aplica.
+7. **Cierre** — una frase para llevar.
 
-1. **Escena / Problema** — Algo concreto que le pasa a alguien.
-2. **Desde Trinity** — La sabiduría contemplativa que lo explica.
-3. **Desde Transurfing** — La física aplicada que lo opera.
-4. **La articulación** — Cómo se encuentran ambos.
-5. **Operación práctica** — Protocolo, checklist o diario para esta semana.
-6. **Salvaguarda clínica** — Cuándo esto no aplica.
-7. **Cierre** — Una frase para llevar.
-
-Más:
-- **Puertas laterales:** enlaces interactivos a otros libros de Trinity Origen, Trinity Infinito y Portal Público.
-- **Referencias:** citas de Zeland al final, separadas de las puertas laterales.
+Más: **puertas laterales** (enlaces a otros libros Trinity/Portal) y **referencias** (citas de Zeland al final, separadas de las puertas).
 
 ---
 
 ## 6 · Reglas de escritura
 
-### Lingüísticas
-- **Español neutro con tuteo.** Sin voseo ni regionalismos.
-- "eliges" no "elegís" · "cierra" no "cerrá" · "anota" no "anotá".
-- Evitar localismos: "una infusión caliente" en lugar de "mate".
-- "aquí" en lugar de "acá".
+**Lingüísticas:** español neutro con tuteo. Sin voseo ni regionalismos. "eliges" no "elegís" · "cierra" no "cerrá" · "anota" no "anotá" · "aquí" no "acá" · "una infusión caliente" no "mate".
 
-### Fuentes
-- **Trinity Origen:** fuente principal para sabiduría contemplativa.
-- **Trinity Infinito:** fuente para lo abstracto (consciencia sin sujeto, vacuidad luminosa).
-- **Portal Público:** fuente para fenomenología cotidiana.
-- **Reality Transurfing (Zeland):** fuente para modelo operativo.
-- **Trinity Quantum:** descartada como fuente estructural (usada solo como inspiración, evita el ropaje de física cuántica forzado).
+**Fuentes:** Trinity Origen (contemplativo) · Trinity Infinito (abstracto) · Portal Público (fenomenología) · Zeland todas las etapas, citando año y obra. Trinity Quantum: solo inspiración, nunca estructura.
 
-### Testimonios
-- Con nombre y fuente.
-- Lo anónimo no entra, salvo como caso breve del propio umbral.
-- Se priorizan voces de campos distintos: músico, físico, deportista, contemplativo, artesano.
+**Testimonios:** con nombre y fuente. Lo anónimo no entra salvo caso breve del propio umbral. Voces de campos distintos: músico, físico, deportista, contemplativo, artesano.
 
-### Operaciones prácticas
-- Deben ser verificables esta semana.
-- Con duración y material definidos.
-- Nunca más de tres pasos principales.
+**Operaciones:** verificables esta semana, con duración y material definidos, nunca más de tres pasos principales.
 
 ---
 
-## 7 · Regla de traducción
+## 7 · Regla de traducción y diccionario ampliado
 
 > **Todo lo que se afirme tiene que poder observarse sin creer nada previo.**
+> Regla nueva del mapa v2: lo que no se puede traducir a una experiencia observable no entra. Ni siquiera si lo dice Zeland. Ni siquiera si lo dice Trinity.
 
-Si una frase no se puede traducir a lenguaje laico sin perder nada esencial, la frase no entra.
-
-**Traducciones acordadas:**
-
-| Concepto Transurfing | Traducción al lenguaje Trinity |
+| Zeland (todas las etapas) | Traducción laica en Arquitectura |
 |---|---|
 | Espacio de Variantes | El campo donde todas las posibilidades ya existen |
 | Líneas de vida | Versiones simultáneas de tu vida |
-| Péndulos | Estructuras colectivas que se alimentan de tu atención |
-| Intención externa | Determinación de poseer sin forzar |
-| Intención pura | Unidad de alma y mente |
-| Slides | Imágenes mentales que te ubican en una línea |
+| Modo Bot | El sonámbulo · el piloto automático |
+| Avatar | El traje · la cabina · el vehículo |
+| Espíritu / Fuente | Lo que mira · el testigo · lo que dispone sin forzar |
+| Punto medio de conciencia | El punto medio |
+| Trenza de intención | La trenza (pensar · sentir · hacer) |
+| Masaje energético | El recorrido de la atención por el cuerpo |
+| Incomodidad del alma | La brújula · el no del cuerpo |
+| Nutrición del Avatar | El tono · lo que sostiene |
+| Iluminar el cuadro | Ver el cuadro sin meterse en él |
+| Slides | El personaje · el retrato |
+| Péndulos | Estructuras colectivas que se alimentan de tu reacción |
+| Importancia / potencial excesivo | El peso |
 | Coordinación | Observar sin colapsar |
-| Ola de la suerte | Conjunto de líneas favorables |
-| Potencial excesivo | Importancia que desvía la realidad |
+| Ola de la suerte | La ola · tramos donde todo cede |
+| Que la realidad te quiera | No forzar · dejar que venga |
+| Despertar en el sueño | Notar que es sueño sin salir de él |
 
 ---
 
-## 8 · Paleta visual
+## 8 · Paleta visual y tipografía
 
-**Constelación Arquitectura del Destino:**
-
-- **Fondo:** azul profundo (`#060d1a`)
-- **Acento principal:** plata/hielo (`#a8c4e0`)
-- **Acento claro:** blanco frío (`#d4e4f4`)
-- **Texto:** blanco con matiz frío (`#e8eef6`)
-- **Bordes:** azul acero (`rgba(140,170,220,0.15)`)
-- **Salvaguardas:** borde ámbar suave (para distinguirlas)
-
-**Tipografía:**
-- Títulos: Cormorant Garamond (coherencia con Trinity)
-- Cuerpo: EB Garamond
-- Protocolos y elementos operativos: Inter sans-serif (diferenciación visual)
+- Fondo azul profundo `#060d1a` · acento plata `#a8c4e0` · acento claro `#d4e4f4` · texto `#e8eef6` · bordes `rgba(140,170,220,0.15)` · salvaguardas con borde ámbar suave.
+- Títulos: Cormorant Garamond · cuerpo: EB Garamond · protocolos y operativos: Inter sans-serif.
+- Cierre de sistema (Libro 13): borde punteado y marca ⟐.
 
 ---
 
 ## 9 · Decisiones tomadas
 
-- **Nombre:** Arquitectura del Destino · Sistema Trinity de Navegación Consciente
-- **Conexión con Libro VII de Trinity Origen:** el oráculo muestra el paisaje, este sistema da los planos.
-- **Formato:** HTML interactivo con protocolos, checklists y diarios.
-- **Método de trabajo:** un libro por sesión de IA, un chat por libro.
-- **Prueba clínica primero:** cada libro se prueba con pacientes antes de avanzar al siguiente.
-- **Ritmo:** un libro por mes (nueve meses para el sistema completo).
-- **Ubicación en el repositorio:** `02_Arquitectura_del_Destino` (reemplazando `02_Manual_del_Operador`).
-- **Estructura interna:** cada libro en su carpeta `libro-NN-nombre/` con `index.html`.
+- Nombre: **Arquitectura del Destino · Sistema Trinity de Navegación Consciente**.
+- Mapa v2 de 13 libros en 4 movimientos reemplaza al v1 de 9. Absorción del v1: Líneas de Vida → libros 1, 6 y 11 · Vacío Fértil → 12 · Péndulos → 7 · Intención Pura → 10 · Slides → 9 · Ola → 11 · Importancia Cero → 8 · Retorno → 13.
+- Conexión con el oráculo (Portal, Libro 7): el oráculo muestra el paisaje; el sistema da los planos.
+- Formato HTML interactivo con protocolos, checklists y diarios.
+- Un libro por chat · un libro por mes · prueba clínica entre libros.
+- Orden de escritura: Libro 2 (El Sonámbulo) primero, por ser el más verificable en consultorio.
+- Ubicación: `02_Arquitectura_del_Destino/`, cada libro en `libro-NN-nombre/index.html`.
 
 ---
 
-## 10 · Estado de avance
+## 10 · Puertas laterales: reglas y URLs verificadas
+
+**Reglas:** mismo repositorio → ruta relativa · otro repositorio → URL absoluta renderizada de GitHub Pages · NUNCA URLs de vista de código (`github.com/.../tree/...`) · Trinity Infinito siempre entra por el Nodo 1 (estructura legacy, NO reordenar).
+
+**Bases renderizadas:**
+- Portal Público: `https://soyartur-trinity.github.io/Trinity_Portal_Publico/`
+- Trinity: `https://soyartur-trinity.github.io/Trinity-/`
+
+**Puertas verificadas en el Libro 1:**
+- `../../01_Libros/18_Lo_Que_Se_Escapa/index.html`
+- `../../01_Libros/28_El_Vacio/index.html`
+- `../../01_Libros/07_Arquitectura_del_Destino/index.html`
+- `https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_06/index.html`
+- `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro1/L1-Nodo1.html`
+
+---
+
+## 11 · Salvaguardas
+
+**Generales:** el sistema no reemplaza tratamiento psiquiátrico ni psicoterapia · no aplica en crisis agudas · vigilar inflación espiritual, bypass espiritual y disociación.
+
+**Nuevas de la capa madura (mapa v2):**
+- Despertar / Modo Bot ≠ disociación ni despersonalización.
+- Punto medio ≠ frialdad ni evitación emocional.
+- Cabina ≠ negación del cuerpo ni del tratamiento médico.
+- Tono ≠ ortorexia ni obsesión de medición.
+- Brújula ≠ impulso maníaco ni ansiedad etiquetada como intuición.
+- Vacío ≠ evasión del duelo ni disociación.
+- Habitar ≠ retiro del mundo ni abandono de vínculos.
+
+---
+
+## 12 · Estado de archivos
 
 | Archivo | Estado |
 |---|---|
-| `README.md` | ✅ Subido |
-| `index.html` (portal) | ✅ Subido |
-| `maestro.md` | ✅ Subido |
-| `libro-01-el-campo/index.html` | ✅ Subido |
-| `libro-02-las-lineas/index.html` | ⏳ Pendiente |
-| `libro-03-el-vacio-fertil/index.html` | ⏳ Pendiente |
-| `libro-04-los-pendulos/index.html` | ⏳ Pendiente |
-| `libro-05-la-intencion/index.html` | ⏳ Pendiente |
-| `libro-06-los-slides/index.html` | ⏳ Pendiente |
-| `libro-07-la-ola-de-la-suerte/index.html` | ⏳ Pendiente |
-| `libro-08-la-importancia-cero/index.html` | ⏳ Pendiente |
-| `libro-09-el-retorno-al-origen/index.html` | ⏳ Pendiente |
+| `README.md` | ✅ v2 |
+| `index.html` (portal, 13 tarjetas) | ✅ v2 |
+| `maestro.md` | ✅ v2 |
+| `libro-01-el-campo/index.html` | ✅ con parche de puente y puerta reservada |
+| `libro-02-el-sonambulo/index.html` | ⏳ próximo |
+| `libro-03` a `libro-13` | ⏳ pendientes |
 
 ---
 
-## 11 · Instrucciones para retomar en nueva sesión
+## 13 · Instrucciones para retomar en nueva sesión
 
-Cuando abras un chat nuevo para el siguiente libro, pega este documento al inicio. Yo retomo exactamente donde quedamos, sin repetir decisiones ya tomadas.
+Pegar este documento al inicio del chat. Primer mensaje sugerido:
 
-**Orden de trabajo:**
-1. Desarrollo del libro en Markdown primero.
-2. Revisión y ajustes de contenido.
-3. Conversión a HTML con la paleta acordada.
-4. Subida al repositorio en la carpeta correspondiente.
-5. Prueba clínica con pacientes.
-6. Ajustes finales basados en la prueba.
+> "Continuamos con el Libro 2 de Arquitectura del Destino: El Sonámbulo. Tesis: casi todo lo que hiciste hoy lo hizo un programa. Desarrolla los 7 umbrales en Markdown primero."
+
+**Flujo:** Markdown → revisión → HTML con paleta → subida a `libro-02-el-sonambulo/` → prueba clínica → ajustes → activar la puerta reservada en el Libro 1 → actualizar estado aquí.
 
 ---
 
-## 12 · Frase que atraviesa todo
+## 14 · La frase del sistema
 
 > *No es mío. Vino a través de mí.*
-
-## 13 · URLs base renderizadas (GitHub Pages)
-
-Regla de puertas laterales:
-- Mismo repositorio (Portal Público) → ruta relativa.
-- Otro repositorio (Trinity-) → URL absoluta renderizada.
-- NUNCA usar URLs de vista de código (github.com/.../tree/...): no renderizan.
-
-Bases:
-- Portal Público: https://soyartur-trinity.github.io/Trinity_Portal_Publico/
-- Trinity (Origen / Quantum / Infinito): https://soyartur-trinity.github.io/Trinity-/
-
-Puertas verificadas y funcionando:
-- Portal 18: ../../01_Libros/18_Lo_Que_Se_Escapa/index.html
-- Portal 28: ../../01_Libros/28_El_Vacio/index.html
-- Oráculo VII: ../../01_Libros/07_Arquitectura_del_Destino/index.html
-- Origen VI: https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_06/index.html
-- Infinito 1: https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro1/L1-Nodo1.html
-
-Nota: Trinity Infinito tiene estructura legacy (entrada por Nodo 1, 91 nodos
-enlazados internamente). NO reordenar. Funciona así y costó mucho dejarla
-estable. Las puertas a Infinito entran siempre por el Nodo 1 del libro
-correspondiente.
+> *Y lo que lo recibió no era yo:*
+> *era lo que mira.*
 
 ---
 
