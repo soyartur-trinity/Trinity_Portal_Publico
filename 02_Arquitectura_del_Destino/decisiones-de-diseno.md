@@ -171,7 +171,14 @@ Primera lectura en círculo de confianza. Devolución clínica antes de ampliaci
 
 Esta sección se actualiza cada vez que aparece una decisión nueva:
 
-- [ ] (vacía — agregar decisiones futuras aquí)
+### Nomenclatura de archivos (decisión de octubre 2026)
+
+Cada libro vive en su carpeta (`libro-NN-slug/`) y su archivo principal se llama
+`LNN.html` (L01.html, L02.html ... L13.html), con cero inicial para preservar
+el orden alfabético. Se abandona el uso de `index.html` dentro de las carpetas
+de libro para evitar confusión con los index de los portales.
+Consecuencia: toda URL a un libro incluye el nombre del archivo
+(ej. `.../libro-01-el-campo/L01.html`).
 
 ---
 
