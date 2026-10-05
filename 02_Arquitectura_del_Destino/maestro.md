@@ -188,8 +188,8 @@ Más: **puertas laterales** (enlaces a otros libros Trinity/Portal) y **referenc
 | `README.md` | ✅ v2 |
 | `index.html` (portal, 13 tarjetas) | ✅ v2 |
 | `maestro.md` | ✅ v2 |
-| `libro-01-el-campo/index.html` | ✅ con parche de puente y puerta reservada |
-| `libro-02-el-sonambulo/index.html` | ⏳ próximo |
+| `libro-01-el-campo/L01.html` | ✅ completo, en prueba clínica |
+| `libro-02-el-sonambulo/L02.html` | ⏳ próximo |
 | `libro-03` a `libro-13` | ⏳ pendientes |
 
 ---
