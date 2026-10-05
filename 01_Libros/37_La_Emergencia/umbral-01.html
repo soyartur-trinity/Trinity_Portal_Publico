@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I · Las violetas | La emergencia</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --fondo:#0c1220; --negro:var(--fondo); --oro:#c9a84c; --ambar:#d4a843;
+    --oro-tenue:#a88a4e; --oro-polvo:#9a8352;
+    --blanco-humo:#e8e0d0; --gris-calido:#9a9080; --separador:#1f2a3d;
+    --lejos:#8d8a86; --brasa:#c46a3a; --frio:#8a9aa3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--negro); color:var(--blanco-humo);
+    font-family:'EB Garamond',Georgia,serif; font-size:21px; line-height:1.95;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;}
+  ::selection{background:rgba(201,168,76,0.18);}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:1px solid var(--oro-tenue); outline-offset:3px;}
+
+  .nav{position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:1.1rem 1.6rem; background:rgba(12,18,32,.86); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--separador);}
+  .nav a, .nav span{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.26em;
+    text-transform:uppercase; color:var(--oro-polvo); text-decoration:none; transition:color .3s ease;}
+  .nav a:hover, .nav a:focus-visible{color:var(--oro-tenue);}
+  .wrap{position:relative; z-index:1; max-width:660px; margin:0 auto; padding:0 1.6rem;}
+  .encabezado{min-height:100vh; display:flex; flex-direction:column; align-items:center;
+    justify-content:center; text-align:center; padding:7rem 1.6rem 5rem; position:relative; overflow:hidden;}
+  .etiqueta{font-family:'Cormorant Garamond',serif; font-size:.7rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--oro-tenue); margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.1s ease forwards .3s;}
+  .numero{font-family:'Cormorant Garamond',serif; font-size:clamp(4.5rem,18vw,9rem);
+    font-weight:300; color:var(--oro-polvo); line-height:.8; margin-bottom:1.6rem;
+    opacity:0; animation:subir 1.2s ease forwards .5s;}
+  .titulo{font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,7vw,3.4rem);
+    font-weight:300; color:var(--oro); letter-spacing:.04em; margin-bottom:.9rem;
+    opacity:0; animation:subir 1.2s ease forwards .8s;}
+  .subtitulo{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gris-calido);
+    font-size:clamp(1rem,2.4vw,1.25rem); letter-spacing:.08em; margin-bottom:4rem;
+    opacity:0; animation:subir 1.2s ease forwards 1.1s;}
+  .cue{display:flex; flex-direction:column; align-items:center; gap:.6rem;
+    opacity:0; animation:subir 1s ease forwards 1.8s;}
+  .cue span{font-family:'Cormorant Garamond',serif; font-size:.62rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .cue .linea{width:1px; height:44px; background:linear-gradient(var(--oro-tenue),transparent);}
+  .cuerpo{padding:2rem 0 7rem;}
+  .bloque{margin-bottom:2.8rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .bloque.visible{opacity:1; transform:none;}
+  .cuerpo p{color:var(--gris-calido); font-size:clamp(1.12rem,1.8vw,1.24rem);
+    line-height:2; margin-bottom:1.5rem;}
+  .cuerpo p strong{color:var(--blanco-humo); font-weight:500;}
+  .cuerpo p em{color:var(--blanco-humo);}
+  .perla{margin:5.5rem 0; padding:3.2rem 1.2rem; text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1.2s ease, transform 1.2s ease;}
+  .perla.visible{opacity:1; transform:none;}
+  .perla::before, .perla::after{content:'\27D0'; position:absolute; left:50%;
+    transform:translateX(-50%); color:var(--oro-polvo); font-size:.8rem; letter-spacing:.4em;}
+  .perla::before{top:0;} .perla::after{bottom:0;}
+  .perla p{font-family:'Cormorant Garamond',serif; font-weight:300; font-style:italic;
+    font-size:clamp(1.65rem,4.6vw,2.35rem); color:var(--oro); line-height:1.45;
+    max-width:26rem; margin:0 auto;}
+  .perla.grave p{color:var(--blanco-humo);}
+  .escena{margin:3rem 0 3.4rem; padding:2rem 1.7rem; border-left:2px solid var(--oro-polvo);
+    background:rgba(201,168,76,.017);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .escena.visible{opacity:1; transform:none;}
+  .escena p{color:var(--blanco-humo); font-size:clamp(1.08rem,1.8vw,1.18rem);
+    line-height:1.85; margin-bottom:1rem;}
+  .escena p:last-child{margin-bottom:0;}
+  .escena .apagado{color:var(--lejos);}
+  
+  .escena.secundaria{border-left:1px solid var(--separador); background:none;
+    padding:1.6rem 1.5rem; margin:2.6rem 0 3rem;}
+  .escena.secundaria p{color:var(--gris-calido); font-size:clamp(1.04rem,1.7vw,1.13rem);}
+  .sep{text-align:center; color:var(--oro-polvo); letter-spacing:.5em; font-size:.85rem;
+    margin:4rem 0; opacity:0; transition:opacity .8s ease;}
+  .sep.visible{opacity:1;}
+  .puerta{margin:-.4rem 0 2.6rem; padding-left:1.1rem; border-left:1px solid var(--separador);}
+  .puerta a{font-family:'Cormorant Garamond',serif; font-style:italic; font-size:.98rem;
+    color:var(--oro-tenue); text-decoration:none; transition:color .3s ease; line-height:1.6;}
+  .puerta a:hover{color:var(--oro);}
+  .aviso{margin:3.4rem 0; padding:1.7rem 1.5rem; border:1px solid var(--separador);
+    background:rgba(107,122,128,.03);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .aviso.visible{opacity:1; transform:none;}
+  .aviso-label{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--frio); display:block; margin-bottom:.9rem;}
+  .aviso p{font-size:1.05rem; line-height:1.85; margin-bottom:1rem; color:var(--gris-calido);}
+  .aviso p:last-child{margin-bottom:0;}
+  
+  .cita{margin:4.6rem 0; padding:0 0 0 1.8rem; border-left:1px solid var(--oro-polvo);
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .cita.visible{opacity:1; transform:none;}
+  .cita p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    font-size:clamp(1.24rem,3vw,1.5rem); color:var(--blanco-humo); line-height:1.62;
+    margin-bottom:1.1rem;}
+  .cita p:last-of-type{margin-bottom:1.5rem;}
+  .cita cite{display:block; font-style:normal; font-family:'Cormorant Garamond',serif;
+    font-size:.72rem; letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    text-align:right; line-height:1.9;}
+  .cita cite a{color:var(--oro-tenue); text-decoration:none; transition:color .3s ease;}
+  .cita cite a:hover{color:var(--oro);}
+  .cita cite .obra{color:var(--blanco-humo);}
+  
+  .dicho{margin:2.4rem 0 0; text-align:center; opacity:0; transition:opacity 1s ease;}
+  .dicho.visible{opacity:1;}
+  .dicho p{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:1.02rem; color:var(--oro-polvo); letter-spacing:.04em;}
+  
+  .geo{margin:4rem 0 4.5rem; opacity:0; transform:translateY(26px);
+    transition:opacity .9s ease, transform .9s ease;}
+  .geo.visible{opacity:1; transform:none;}
+  .geo-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue); display:block; text-align:center;
+    margin-bottom:.4rem;}
+  .geo-instruccion{text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gris-calido); font-size:1.02rem; margin-bottom:1.5rem;}
+  .panel{border:1px solid var(--separador); background:rgba(201,168,76,.012); padding:1.7rem 1.4rem;}
+  .geo-estado{text-align:center; min-height:3.4rem; margin:1.3rem 0 .2rem;}
+  .geo-estado .glosa{font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ambar);
+    font-size:clamp(1.05rem,2.8vw,1.3rem); line-height:1.5;}
+  .opciones{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador); margin-top:1.2rem;}
+  .opciones button{background:var(--negro); border:none; padding:.95rem .7rem;
+    font-family:'EB Garamond',Georgia,serif; font-style:italic; font-size:.96rem;
+    color:var(--gris-calido); cursor:pointer; transition:all .3s ease; line-height:1.4;}
+  .opciones button:hover, .opciones button:focus-visible{color:var(--oro);}
+  .opciones button[aria-pressed="true"]{color:var(--oro); background:rgba(201,168,76,.05);}
+  .col{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--separador);
+    border:1px solid var(--separador);}
+  .col > div{background:var(--negro); padding:1.3rem 1.1rem;}
+  .col h4{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.88rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-tenue);
+    margin-bottom:.9rem; text-align:center;}
+  .col li{list-style:none; font-size:1rem; line-height:1.75; color:var(--gris-calido);
+    margin-bottom:.45rem;}
+  .marcable{display:block; width:100%; text-align:left; background:none; border:none;
+    border-bottom:1px solid rgba(42,36,24,.7); padding:.62rem .2rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.02rem; line-height:1.55;
+    color:var(--gris-calido); cursor:pointer; transition:all .28s ease;}
+  .marcable:hover{color:var(--blanco-humo);}
+  .marcable[aria-pressed="true"]{color:var(--oro);}
+  .marcable[aria-pressed="true"]::before{content:'\27D0  '; color:var(--oro-tenue); font-size:.7rem;}
+  .campo{display:block; width:100%; background:rgba(201,168,76,.012);
+    border:1px solid var(--separador); padding:.85rem .9rem; margin-bottom:1.1rem;
+    font-family:'EB Garamond',Georgia,serif; font-size:1.04rem; line-height:1.7;
+    color:var(--blanco-humo); resize:vertical;}
+  .campo::placeholder{color:var(--lejos); font-style:italic;}
+  .campo:focus{border-color:var(--oro-polvo);}
+  .rotulo{font-family:'Cormorant Garamond',serif; font-size:.94rem; color:var(--gris-calido);
+    display:block; margin-bottom:.5rem;}
+  .accion{display:block; width:100%; background:var(--negro); border:1px solid var(--separador);
+    padding:.9rem .5rem; font-family:'Cormorant Garamond',serif; font-size:.72rem;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--oro-polvo);
+    cursor:pointer; transition:all .3s ease;}
+  .accion:hover:not(:disabled), .accion:focus-visible:not(:disabled){color:var(--oro-tenue);
+    border-color:var(--oro-polvo);}
+  .accion:disabled{color:#241d12; cursor:not-allowed;}
+  .veredicto{font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.1rem,2.9vw,1.34rem); color:var(--ambar); line-height:1.6;
+    text-align:center; margin-top:1.4rem; animation:entrar .6s ease;}
+  .veredicto strong{color:var(--oro); font-weight:400; font-style:normal;}
+  .apagandose{color:var(--lejos); transition:opacity 2.4s ease, color 2.4s ease;}
+  .contador{font-family:'Cormorant Garamond',serif; font-size:.72rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--oro-polvo); text-align:right; display:block;
+    margin-top:.4rem;}
+  
+  .sendero{margin:4.5rem 0 3rem; padding:2.4rem 1.8rem 2rem; border:1px solid var(--oro-polvo);
+    position:relative; background:rgba(201,168,76,.022);
+    opacity:0; transform:translateY(26px); transition:opacity .9s ease, transform .9s ease;}
+  .sendero.visible{opacity:1; transform:none;}
+  .sendero::before{content:'el sendero'; position:absolute; top:-.7rem; left:1.4rem; padding:0 .6rem;
+    background:var(--negro); font-family:'Cormorant Garamond',serif; font-size:.66rem;
+    letter-spacing:.4em; text-transform:uppercase; color:var(--oro-tenue);}
+  .paso{display:grid; grid-template-columns:8.4rem 1fr; gap:1.2rem; padding:1.1rem 0;
+    border-top:1px solid var(--separador);}
+  .paso:first-of-type{border-top:none; padding-top:.2rem;}
+  .paso-nombre{font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:400;
+    color:var(--oro); letter-spacing:.04em; padding-top:.25rem; line-height:1.4;}
+  .paso p{margin-bottom:0; font-size:1.06rem; line-height:1.85; color:var(--gris-calido);}
+  .paso p strong{color:var(--blanco-humo);}
+  .paso.guardar .paso-nombre{color:var(--oro-tenue);}
+  .paso.traslada .paso-nombre{color:var(--oro-tenue);}
+  @media (max-width:600px){ .paso{grid-template-columns:1fr; gap:.3rem;} .paso-nombre{padding-top:0;} }
+  .continuar{margin-top:5rem; padding-top:3rem; border-top:1px solid var(--separador);
+    display:flex; flex-direction:column; align-items:center; gap:1.4rem;
+    opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .continuar.visible{opacity:1; transform:none;}
+  .continuar-label{font-family:'Cormorant Garamond',serif; font-size:.66rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  .continuar a{text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:.8rem;}
+  .continuar-nombre{font-family:'Cormorant Garamond',serif; font-weight:300;
+    font-size:clamp(1.25rem,3vw,1.6rem); color:var(--blanco-humo); transition:color .3s ease;}
+  .continuar a:hover .continuar-nombre{color:var(--oro);}
+  .continuar-circulo{width:48px; height:48px; border-radius:50%; border:1px solid var(--oro-polvo);
+    display:flex; align-items:center; justify-content:center; transition:all .3s ease;}
+  .continuar a:hover .continuar-circulo{border-color:var(--oro-tenue);}
+  .continuar-flecha{color:var(--oro-polvo); transition:all .3s ease;}
+  .pie{text-align:center; padding:3rem 1.6rem 4rem; border-top:1px solid var(--separador);}
+  .pie span{font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--oro-polvo);}
+  @keyframes subir{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  @keyframes entrar{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media (max-width:600px){
+    .wrap{padding:0 1.3rem;} .perla{padding:2.6rem .4rem;}
+    .opciones{grid-template-columns:1fr;} .col{grid-template-columns:1fr;}
+    .cita{padding-left:1.2rem;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.01ms!important; transition-duration:.01ms!important;}
+    .bloque,.perla,.escena,.sep,.geo,.aviso,.sendero,.continuar,.cita,.dicho{
+      opacity:1!important; transform:none!important;}
+  }
+
+
+  .antes{max-width:34rem; margin:2.6rem auto; padding:1.1rem 1.3rem;
+    border-left:2px solid rgba(201,168,76,.28); background:rgba(255,255,255,.018);
+    opacity:0; transform:translateY(12px); transition:all .9s ease;}
+  .antes.visible{opacity:1; transform:none;}
+  .antes p{font-size:1.02rem; line-height:1.78; color:var(--blanco-humo); margin:0 0 .7rem;}
+  .antes p:last-child{margin-bottom:0;}
+
+  .operacion{margin:5rem auto 3rem; max-width:28rem; padding:2.6rem 1.9rem;
+    border:1px solid var(--oro-polvo); background:rgba(201,168,76,.028);
+    text-align:center; position:relative;
+    opacity:0; transform:translateY(26px); transition:opacity 1s ease, transform 1s ease;}
+  .operacion.visible{opacity:1; transform:none;}
+  .operacion::before{content:'la operaci\00F3n'; position:absolute; top:-.7rem; left:50%;
+    transform:translateX(-50%); padding:0 .8rem; background:var(--negro);
+    font-family:'Cormorant Garamond',serif; font-size:.64rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--oro-tenue);}
+  .operacion p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    color:var(--blanco-humo); font-size:clamp(1.15rem,2.8vw,1.42rem); line-height:1.75;
+    margin-bottom:1.2rem;}
+  .operacion p:last-child{margin-bottom:0; color:var(--gris-calido);}
+  .final{margin:4.5rem auto 0; max-width:25rem; text-align:center;
+    opacity:0; transition:opacity 1.2s ease;}
+  .final.visible{opacity:1;}
+  .final p{font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:300;
+    color:var(--oro-tenue); font-size:clamp(1rem,2.4vw,1.14rem); line-height:1.75; margin-bottom:.7rem;}
+  .final p strong{color:var(--oro); font-style:normal; font-weight:400;
+    letter-spacing:.14em; text-transform:uppercase; font-size:.72rem;}
+
+  .umbral{display:grid; grid-template-columns:3.2rem 1fr 1.4rem; align-items:baseline; gap:1rem;
+    padding:1.15rem .4rem; border-bottom:1px solid var(--separador); text-decoration:none;
+    transition:all .3s ease;}
+  .umbral:hover{background:rgba(201,168,76,.03);}
+  .u-num{font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--oro-polvo);
+    letter-spacing:.1em; text-align:right;}
+  .umbral:hover .u-num{color:var(--oro-tenue);}
+  .u-txt{font-size:1.02rem; line-height:1.7; color:var(--gris-calido);}
+  .u-txt strong{color:var(--blanco-humo); font-weight:500; display:block;
+    font-family:'Cormorant Garamond',serif; font-size:1.28rem; letter-spacing:.02em;}
+  .umbral:hover .u-txt strong{color:var(--oro);}
+  .u-flecha{color:var(--oro-polvo); text-align:right;}
+  .tramo{font-family:'Cormorant Garamond',serif; font-weight:400; font-style:italic;
+    font-size:clamp(1.35rem,3.4vw,1.6rem); color:var(--oro); letter-spacing:.03em;
+    margin:4.2rem 0 1.6rem; line-height:1.3;}
+  .cita p.traduccion{font-family:'EB Garamond',Georgia,serif; font-style:normal; font-weight:400;
+    font-size:clamp(1.04rem,1.8vw,1.14rem); color:var(--gris-calido); line-height:1.8;}
+  .perla p + p{margin-top:1.4rem;}
+  .verso p{margin-bottom:.2rem;}
+  sup.ref{font-size:.62em; line-height:0; margin-left:.12em;}
+  sup.ref a{color:var(--oro-tenue); text-decoration:none; font-family:'Cormorant Garamond',serif;}
+  sup.ref a:hover{color:var(--oro);}
+  .notas{margin:5rem 0 1rem; padding-top:2.2rem; border-top:1px solid var(--separador);}
+  .notas h2{font-family:'Cormorant Garamond',serif; font-weight:400; font-size:.72rem; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--oro-polvo); margin-bottom:1.3rem;}
+  .notas ol{padding-left:1.4rem;}
+  .notas li{font-size:.95rem; line-height:1.75; color:var(--gris-calido); margin-bottom:.8rem;}
+  .notas li::marker{color:var(--oro-polvo); font-family:'Cormorant Garamond',serif;}
+  .notas li em{color:var(--blanco-humo);}
+  .promesa{margin:1rem 0 4.5rem;}
+
+  /* lectura en teléfono: tipografía algo mayor (sep 2026) */
+  html{font-size:106.25%;}
+  @media (max-width:640px){
+    html{font-size:112.5%;}
+    .wrap{padding:0 1.15rem;}
+    .etiqueta,.cue span,.continuar-label,.pie span,.aviso-label,.notas h2,.final p strong{font-size:.74rem;}
+    .nav a,.nav span{letter-spacing:.2em;}
+    .notas li{font-size:1rem;}
+    .puerta a{font-size:1.04rem;}
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html">← La emergencia</a>
+  <span>I</span>
+  <a href="umbral-02.html">Más es distinto →</a>
+</nav>
+<header class="encabezado">
+  <span class="etiqueta">La emergencia · Umbral</span>
+  <div class="numero">01</div>
+  <h1 class="titulo">Las violetas</h1>
+  <p class="subtitulo">el tiempo de las ideas</p>
+  <div class="cue"><span>Leer</span><div class="linea"></div></div>
+</header>
+<main class="wrap cuerpo">
+
+<div class="bloque">
+  <p>El libro anterior terminó preguntando qué pasa cuando lo que aparece no es de nadie. Cuando la misma idea surge en varios lugares a la vez, sin aviso, y nadie puede decir que la trajo.</p>
+  <p>La respuesta más bella la dio un maestro de matemática de Transilvania, en una carta a su hijo. Pero antes hay que contar lo que el hijo le había escrito a él.</p>
+</div>
+
+<h2 class="tramo">Una carta desde Temesvár</h2>
+
+<div class="bloque">
+  <p>En noviembre de 1823, János Bolyai tenía veintiún años y era subteniente de ingenieros militares en Temesvár, la actual Timișoara. Su padre, Farkas, enseñaba matemática en un colegio de Marosvásárhely y había gastado buena parte de su vida intentando demostrar el quinto postulado de Euclides, el de las paralelas. No lo consiguió. Cuando supo que su hijo se estaba internando en el mismo problema, le rogó que lo abandonara.</p>
+  <p>János no lo abandonó. Se atrevió a algo distinto de lo que habían intentado otros antes que él: suponer que el postulado no se cumplía, y ver si de esa suposición salía una geometría coherente. Salió. El 3 de noviembre le escribió a su padre una carta escrita con prisa, con agregados en los márgenes, donde se leía esta frase:</p>
+</div>
+
+<div class="cita"><p><em>semmiből egy új, más világot teremtettem; mindaz, valamit eddig küldöttem, csak kártyaház a toronyhoz képest.</em></p><p class="traduccion">De la nada he creado un mundo nuevo, otro. Todo lo que le mandé hasta ahora es un castillo de naipes al lado de una torre.<sup class="ref"><a href="#nota-1">1</a></sup></p></div>
+
+<div class="bloque">
+  <p>Lo que János ignoraba es que, en el otro extremo de Europa, en Kazán, un profesor llamado Nikolái Lobachevski estaba levantando la misma torre. La había presentado en su universidad en 1826 y la publicó en 1829. Bolyai se enteró casi veinte años después, cuando llegó a sus manos un ejemplar de las <em>Investigaciones geométricas</em> del ruso, y se asombró de que otro hubiera alcanzado los mismos resultados por un camino distinto.<sup class="ref"><a href="#nota-2">2</a></sup></p>
+</div>
+
+<h2 class="tramo">Como en primavera</h2>
+
+<div class="bloque">
+  <p>Con el tiempo, el padre dejó de oponerse. Convencido ya del hallazgo, le escribió al hijo una frase que todavía se cita:</p>
+</div>
+
+<div class="cita"><p><em>Manche Dinge haben gleichsam eine Epoche, wo sie dann an mehreren Orten aufgefunden werden, gleichwie im Früling die Veilchen mehrwärts ans Licht kommen.</em></p><p class="traduccion">Hay cosas que tienen, por así decirlo, su época, y entonces se las encuentra en varios lugares, como en primavera las violetas salen a la luz por todas partes.<sup class="ref"><a href="#nota-3">3</a></sup></p></div>
+
+<div class="bloque">
+  <p>János publicó su geometría en 1832, en un apéndice de veinticuatro páginas al final de un libro de su padre. Un traductor norteamericano las llamaría, a fines de ese siglo, las dos docenas más extraordinarias de la historia del pensamiento.</p>
+  <p>La imagen del padre dice más que muchas teorías. Nadie siembra las violetas del bosque. No se ponen de acuerdo para florecer. Asoman cuando la tierra y la luz lo permiten, y por eso aparecen en muchos sitios a la vez.</p>
+</div>
+
+<h2 class="tramo">Ciento cuarenta y ocho</h2>
+
+<div class="bloque">
+  <p>Un siglo más tarde, aquella intuición se volvió una lista. En 1922, dos sociólogos estadounidenses, William Ogburn y Dorothy Thomas, publicaron un artículo cuyo título ya era una pregunta: si los inventos son inevitables. Para responderla reunieron ciento cuarenta y ocho descubrimientos e invenciones hechos por separado, por dos o más personas, casi al mismo tiempo.<sup class="ref"><a href="#nota-4">4</a></sup></p>
+  <p>Cuatro décadas después, Robert K. Merton, sociólogo de la Universidad de Columbia, fue más lejos e invirtió el asombro. Lo que pide explicación, sostuvo, no es el hallazgo múltiple sino el solitario. Todos los descubrimientos son, en principio, múltiples, incluso los que parecen haber ocurrido una sola vez.</p>
+  <p>Dio un ejemplo que todavía impresiona. El físico inglés Henry Cavendish dejó sin publicar muchos de sus hallazgos, y nadie los conoció tras su muerte. Sin embargo, otros los hicieron de nuevo. Y propuso una manera de entender el genio que desarma cualquier vanidad: es aquel cuya obra, de no haber existido él, otros habrían terminado por redescubrir.<sup class="ref"><a href="#nota-5">5</a></sup></p>
+  <p>La persona no desaparece en esta mirada. Deja de ser el origen. Es el lugar por donde la idea sale a la luz cuando le llega la hora.</p>
+</div>
+
+<h2 class="tramo">Treinta y cinco años</h2>
+
+<div class="bloque">
+  <p>A veces la violeta asoma antes de tiempo, y nadie la ve.</p>
+  <p>En 1865, un fraile agustino de Brünn, en Moravia, presentó ante la sociedad de ciencias naturales de su ciudad los resultados de años de cruzar plantas. Se llamaba Gregor Mendel. Al año siguiente publicó su trabajo y lo envió a instituciones y botánicos de toda Europa. Casi nadie le prestó atención.</p>
+  <p>En 1900, tres botánicos que trabajaban cada uno por su lado, Hugo de Vries en Ámsterdam, Carl Correns en Tubinga y Erich von Tschermak en Viena, llegaron a los mismos resultados. Sus tres trabajos aparecieron con pocos meses de diferencia. Solo entonces encontraron, olvidado en las bibliotecas, el artículo del fraile que lo había visto primero.<sup class="ref"><a href="#nota-6">6</a></sup></p>
+  <p>Treinta y cinco años de silencio, y después tres voces casi juntas. La idea de Mendel no estaba equivocada: le faltaba un suelo. Hacían falta otras preguntas, otros conocimientos, gente preparada para leerla. Cuando esa tierra estuvo lista, brotó en tres jardines a la vez, y de paso devolvió a la luz al primero.</p>
+</div>
+
+<div class="perla"><p>Ninguna idea tiene prisa.<br>Espera su primavera.</p></div>
+
+<h2 class="tramo">El sobre lacrado</h2>
+
+<div class="bloque">
+  <p>A comienzos de 1877, un poeta francés redactó una nota breve con un título largo: <em>Procedimiento de registro y reproducción de los fenómenos percibidos por el oído</em>. Se llamaba Charles Cros. Era amigo de Verlaine y de Rimbaud, publicaba versos en revistas como <em>Le Chat Noir</em> y, además, inventaba por su cuenta, sin diploma ni laboratorio.</p>
+  <p>La nota describía una máquina para guardar la voz y devolverla. Cros la llamó paleófono: voz del pasado. No tenía dinero para construirla, así que hizo lo que en Francia se hacía para dejar constancia de una idea: la puso en un sobre lacrado y la depositó en la Academia de Ciencias. Era el 30 de abril de 1877. Semanas después, del otro lado del océano, Thomas Edison llegó por su cuenta a la conclusión de que podía construir un aparato capaz de registrar la voz humana y reproducirla cuando se quisiera. El estadounidense tenía taller y medios. Cros, no. El sobre se abrió el 3 de diciembre de ese año, y aquella máquina nunca se construyó.<sup class="ref"><a href="#nota-7">7</a></sup></p>
+  <p>No era la primera vez que le pasaba. Ocho años antes, el 7 de mayo de 1869, Cros había presentado en una reunión de la Sociedad Francesa de Fotografía un procedimiento para captar los colores. Ese mismo día, en esa misma sesión, otro inventor, Louis Ducos du Hauron, anunció una solución casi idéntica. Ninguno sabía del otro. Los dos habían llegado a un principio muy parecido al que sostiene casi toda la fotografía moderna en color.<sup class="ref"><a href="#nota-8">8</a></sup></p>
+  <p>Dos veces en su vida, Cros estuvo justo donde una idea iba a aparecer. Casi nadie recuerda que fue un poeta quien imaginó la grabación del sonido. Pero en Francia, la academia fundada en 1947 para premiar los mejores discos lleva su nombre.<sup class="ref"><a href="#nota-9">9</a></sup> La voz del pasado, al final, quedó guardada.</p>
+</div>
+
+<div class="perla"><p>Mientras uno guarda una idea en un sobre,<br>otro, lejos, la está pensando.</p></div>
+
+<h2 class="tramo">Tú también</h2>
+
+<div class="bloque">
+  <p>Te habrá pasado. Se te ocurre algo, un negocio, una manera de ordenar la casa, el título de una canción, y a los pocos días lo encuentras hecho, o lo escuchas en boca de alguien que no te conoce. La primera reacción es la decepción: otro llegó antes.</p>
+  <p>Hay otra forma de leerlo. Si apareció en dos lugares, no era un capricho tuyo. Estaba en el aire, y tú estabas lo bastante atento para recibirlo.</p>
+</div>
+
+<div class="perla"><p>Que otro haya llegado al mismo sitio<br>no te quita nada:<br>confirma que el lugar existe.</p></div>
+
+<div class="puerta"><a href="../25_La_Herencia/umbral-08.html">⟐ <em>Dos personas que no se conocían, la misma idea el mismo año, y la idea sin dueño que aparece en una conversación, tienen su umbral en <strong>La herencia</strong>, Libro XXV: Lo que no heredó nadie, Umbral VIII.</em></a></div>
+
+<div class="puerta"><a href="../27_El_Instante/umbral-02.html">⟐ <em>El naturalista que vio la selección natural en medio de una fiebre, en una isla del otro lado del mundo, está en <strong>El instante</strong>, Libro XXVII: Lo que llegó sin que nadie lo trajera, Umbral II.</em></a></div>
+
+<div class="continuar">
+  <span class="continuar-label">Siguiente</span>
+  <a href="umbral-02.html"><span class="continuar-nombre">Más es distinto</span>
+    <div class="continuar-circulo"><span class="continuar-flecha">↓</span></div>
+  </a>
+</div>
+
+<section class="notas" aria-label="Notas"><h2>Notas</h2><ol><li id="nota-1">János Bolyai, carta a Farkas Bolyai, Temesvár, 3 de noviembre de 1823. Texto húngaro con grafía modernizada; traducción propia. Transcripción y facsímil en MacTutor History of Mathematics (Universidad de St Andrews), «Temesvár letter from János to Farkas Bolyai».</li><li id="nota-2"><em>Encyclopaedia Britannica</em>, «János Bolyai»; sobre la presentación de 1826, «János Bolyai, Carl Friedrich Gauss, Nikolai Lobachevsky and the New Geometry: Foreword» (arXiv, 2023); sobre el ejemplar de 1848 y el asombro de Bolyai, «Notes on Bolyai's Appendix» (arXiv, 2023). Paráfrasis.</li><li id="nota-3">Farkas Bolyai, carta a su hijo János, según la versión alemana recogida por MacTutor History of Mathematics, que la fecha en la primavera de 1825. Traducción propia. La frase sobre las veinticuatro páginas es de George Bruce Halsted, introducción del traductor a János Bolyai, <em>The Science Absolute of Space</em> (1896), p. xviii. Paráfrasis.</li><li id="nota-4">William F. Ogburn y Dorothy Thomas, «Are Inventions Inevitable? A Note on Social Evolution», <em>Political Science Quarterly</em> 37, n.º 1 (1922): 83-98. Paráfrasis.</li><li id="nota-5">Robert K. Merton, «Singletons and Multiples in Scientific Discovery: A Chapter in the Sociology of Science», <em>Proceedings of the American Philosophical Society</em> 105, n.º 5 (1961): 470-486, pp. 477-478. Paráfrasis. La definición del genio, según John Hedley Brooke, «Photo-finish», <em>London Review of Books</em> 7, n.º 9 (1985), que objeta además que, para contar tantos casos, Merton reunió bajo un mismo nombre hallazgos parecidos pero no idénticos.</li><li id="nota-6">Gregor Mendel, «Versuche über Pflanzen-Hybriden» (1866). Sobre su recepción y los tres trabajos de 1900: Boris Vyskot y Jiří Široký, «Bicentennial of Gregor Johann Mendel's Birth: Mendel's Work Still Addresses Geneticists in 2022», <em>Frontiers in Plant Science</em> 13 (2022): 969745. Paráfrasis. Se discute cuánto había comprendido Tschermak antes de leer a Mendel.</li><li id="nota-7">National Park Service, «Origins of Sound Recording: Charles Cros»; <em>Comptes rendus hebdomadaires des séances de l'Académie des sciences</em> 85, n.º 23 (sesión del 3 de diciembre de 1877): 1082-1083. Paráfrasis.</li><li id="nota-8">The Metropolitan Museum of Art, ficha de <em>Les couleurs en photographie: causerie</em>. Paráfrasis.</li><li id="nota-9">Universidad de Melbourne, Biblioteca, «Les Éditions de l'Oiseau-Lyre and the Grand Prix du Disque». Paráfrasis.</li></ol></section>
+
+</main>
+<footer class="pie"><span>Portal Público Trinity · El campo</span></footer>
+<script>
+  (function(){
+    var sel='.bloque,.perla,.escena,.aviso,.continuar,.cita,.puerta,.operacion,.final';
+    if(!('IntersectionObserver' in window)){
+      document.querySelectorAll(sel).forEach(function(el){el.classList.add('visible');});
+      return;
+    }
+    var obs=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:.12});
+    document.querySelectorAll(sel).forEach(function(el){obs.observe(el);});
+  })();
+</script>
+</body>
+</html>
