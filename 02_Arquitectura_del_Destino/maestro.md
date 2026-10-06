@@ -1,206 +1,313 @@
-Tercera constelación · El campo
-Traslado al chat siguiente
-Estado al 4 de octubre de 2026. Reemplaza al Traslado v2 del 3 de octubre. Leer primero. Después, el Registro del ciclo 27-36. Los demás documentos amplían.
+[maestro.md](https://github.com/user-attachments/files/33130641/maestro.md)
+# Documento Maestro · v3
+## Arquitectura del Destino · Sistema Trinity de Navegación Consciente
 
-0 · Qué subir al chat nuevo
-Este Traslado v3.
-Registro del ciclo 27-36 (TerceraconstelacionRegistrodelciclo_27-36.md): voces, tramos, notas, puertas, operaciones y «Lo que sigue» de cada umbral, regenerado de los libros publicados.
-El contento v2 (TerceraconstelacionElcontentov2.md): corrige los nombres del 33 al 36, trae el arco de operaciones tal como quedó y marca qué voces previstas para el 37 al 39 ya están usadas.
-Mapa v2, si está a mano. En este chat no estuvo: lo que gastó el 26 se leyó directamente en el repositorio.
-Bibliografía maestra v2 (TerceraconstelacionBibliografiamaestrav2.md): todas las fuentes citadas del 27 al 36, con su estado y dónde se usó cada una, más las reservas sin usar.
-Banco de testimonios v3 (TerceraconstelacionBancodetestimonios_v3.md), versión unificada: las fichas originales con dónde se usó cada una, las fichas nuevas del 27 al 36, los escalones sin fama, las voces que conviene dejar descansar y las reservas para el 37 al 39.
-generadorlibrosEl_campo.py, la versión entregada con el 36.
-El Método v3, si está a mano.
-Y el enlace al repositorio: https://github.com/soyartur-trinity/Trinity_Portal_Publico/tree/main/01_Libros
+*Documento de estado para mantener la coherencia entre sesiones. Es la brújula del sistema: donde otro documento difiera, manda este.*
+*Versión 3 · octubre 2026. Reemplaza a la v2. Recoge el traspaso del proyecto a Claude, el principio de escritura que ordena todo el sistema y el saneamiento del Libro 1.*
 
-Donde el mapa y este Traslado difieran, manda este Traslado.
-
-1 · Dónde estamos
-#	Libro	Subtítulo	Contento	Promesa o hallazgo
-27	El instante	cuando la cualidad de lo sagrado aparece	el contento	La alegría no está en el instante: llega después.
-28	El vacío	donde nace lo que todavía no estaba	la expansión	El vacío no es falta: es lugar.
-29	La intención	la llave que no empuja	el gusto	El deseo mira el resultado. La intención mira la dirección.
-30	La presencia	estar delante	el gozo	Casi la mitad del tiempo no estamos donde estamos.
-31	El no saber	lo que se ve cuando no se sabe	el asombro	Lo que se sabe con certeza ya no se mira.
-32	La duración	cuando el tiempo queda suspendido	el embeleso	Un segundo puede contener una vida. Diez años pueden no ser nada.
-33	El ritmo	el compás que nadie marca	el regocijo	El compás no se impone. Se encuentra.
-34	El cuerpo	lo que sigue trabajando cuando uno se detiene	la ligereza	La atención suelta la inquietud. El cuerpo la lleva a término.
-35	Los muchos	cuando nadie sabe quién empezó	el júbilo	La voluntad que a uno le falta, los otros se la prestan.
-36	Lo que no habla	cuando el otro no tiene palabras	el deleite	Lo que no habla también contesta. Solo pide que lo escuchen.
-Del 27 al 35, publicados y verificados en el repositorio; el índice dice «En curso · 9 publicados». El 36 está entregado en zip (Portal_Libro36.zip), con el índice ya en «En curso · 10 publicados»: confirmar que quedó subido.
-
-Con el 36 se cerró el tercer movimiento, Los cuerpos y las escalas.
-
-Lo que hicieron el 34, el 35 y el 36
-34 · El cuerpo. Cinco umbrales. Antes de la palabra: Mary Catherine Bateson y la protoconversación, Malloch y Trevarthen con Laura y su madre. Al aire libre: Helmholtz en 1891, Nietzsche en Ecce homo, Oppezzo y Schwartz. El borde del sueño: Wagner y Born, Lacaux y Oudiette con la botella. Lo que todavía no tiene nombre: los versos de Goethe que cita Helmholtz, Einstein a Hadamard, Gendlin. Ligero: Zaratustra, Valéry por Calvino, la colina de Proffitt y Schnall con la mano que acierta.
-
-35 · Los muchos. Cinco umbrales. La bandada: los estorninos de Roma y Lynn Faust con las luciérnagas de Elkmont. Unos pocos orientan: Dyer y Krause en Leeds. Latir juntos: el coro de Gotemburgo y las brasas de San Pedro Manrique. Uno habla con otro: el origen de Alcohólicos Anónimos, la revisión Cochrane y Bill D. Júbilo: McNeill, el aplauso de Néda, Agustín y los segadores. Lo que más le gustó a Arturo fue el umbral IV, su idea de la voluntad prestada.
-
-36 · Lo que no habla. Seis umbrales. La madera: Nakashima y Hikogawa en Minidoka. El caballo: Hans y Pfungst. La ventana: Ulrich y los árboles desde la cama. El piano: Colonia, 1975, y el afinador. La máquina: el ajedrez libre de 2005 y Kaspárov. Deleite: McClintock y los que hicieron el maíz. Arturo lo recibió como «una cátedra magistral».
-
-2 · Lo que viene
-El plan
-Movimiento IV · Lo que emerge, los tres libros en el próximo chat:
-
-37 · La emergencia · la dicha. Etiqueta en el índice: «Libro 37 · Lo que emerge I».
-38 · Lo que se recibe · la gracia. «Libro 38 · Lo que emerge II».
-39 · El campo · el contento. «Libro 39 · Lo que emerge III».
-Operaciones del cuarto movimiento, según El contento: en el 37 y el 38, reconocerlo cuando llega y no firmarlo; en el 39, volver al lugar sin pedir la sensación, como eco de la operación del 27.
-
-Al publicar el 39, el estado de la serie en el índice pasa a «13 libros · completa», como el de las otras constelaciones. Conviene regenerar entonces el Registro completo, del 27 al 39.
-
-37 · La emergencia · la dicha
-Advertencia del contento: lo que emerge no avisa. Dicha también quiere decir suerte: lo que a uno le toca.
-
-Lo anunciado: el «Lo que sigue» del 36 dice: «qué pasa cuando lo que aparece no es de nadie. Cuando la misma idea surge en varios lugares a la vez, sin aviso, y nadie puede decir que la trajo».
-
-Materiales libres:
-
-Ogburn y Thomas (1922): ciento cuarenta y ocho descubrimientos e inventos hechos por separado, casi a la vez. En la bibliografía.
-Robert K. Merton (1961): los descubrimientos simultáneos son la regla, no la excepción. En la bibliografía.
-El puente del Milenio en Londres, que en el año 2000 empezó a oscilar por el paso de la gente sin que nadie lo quisiera (Strogatz y otros, Nature, 2005). Reservado desde el 35.
-Kekulé y el sueño del benceno, con la crítica de Wotiz y Rudofsky en la nota.
-Ya usados, solo como puerta o más hondo: Poincaré en el estribo (27 II; también 29 III y V, y 32 V), Darwin con Wallace (27 II). Y cuidado con el 35 I: el orden sin director de la bandada y las luciérnagas ya está contado. El 37 trata de ideas que emergen, no de grupos que se ordenan.
-
-38 · Lo que se recibe · la gracia
-Advertencia del contento: lo que se persigue se aleja. Gracia en el sentido más laico: lo gratuito, lo que se da sin pago ni mérito.
-
-De Arturo: la frase del Libro VI en su lugar exacto; los errores de después y la cuarta salida.
-
-Materiales libres, todo por verificar al escribir:
-
-Neruda, «La poesía», en Memorial de Isla Negra (1964): la poesía que llegó a buscarlo. En la bibliografía; con derechos, solo paráfrasis o cita muy breve.
-Hildegarda de Bingen, carta a Guibert de Gembloux (1175). Cotejar el número de carta.
-Coleridge y Kubla Khan, con su relato dudoso en la nota.
-Ramanujan y la diosa Namagiri, según Kanigel.
-Herrigel y el arco, con la crítica de Yamada (2001) en la nota.
-La carta atribuida a Mozart, que Rochlitz inventó: sirve como advertencia sobre los mitos de la inspiración.
-Ya usados: Lewis (27 I y VI; 32 IV) y McCartney esperando que alguien reclamara la melodía (27 II y III).
-
-39 · El campo · el contento
-Advertencia del contento: se vuelve al lugar; lo demás no depende de uno.
-
-Lo central: el Libro VI, el gozo en lo ordinario, y el circuito completo del atractor (sección 5 de El contento v2). El último libro comparte la palabra con el primero: el lector descubre que el contento estuvo ahí desde el principio.
-
-Ecos posibles del principio: Serafina (27 I) y Wordsworth (27 VI) pueden volver, justamente como eco.
-
-3 · El movimiento: cómo trabajamos
-1 · Arturo propone el fenómeno. A veces es una sola línea del mapa.
-
-2 · Claude lee antes de proponer. Clona el repositorio, lee los libros anteriores y busca cada voz candidata en el Registro. Además, busca en todo el portal, también en la primera y la segunda constelación: en este ciclo apareció que la máquina que contesta ya estaba trabajada a fondo en El tercero (15), Ídolo (17), El ayudante (20) y El ausente (22).
-
-3 · Claude propone el esqueleto en el chat, breve y legible en el teléfono: subtítulo con alternativa, dos promesas, la idea que ordena, el contento con su advertencia, cada umbral con sus voces, su escalón y sus puertas, el cierre con su operación, la advertencia breve y lo que se deja para otros libros. Lo esencial se verifica antes de proponerlo.
-
-4 · Arturo elige subtítulo y promesa, y a veces delega un término (en el 34 delegó la palabra «atención»).
-
-5 · Claude escribe los borradores .md y hace un armado de prueba.
-
-6 · Arturo lee completo.
-
-7 · Pasada final: resolver todas las marcas ◇, quitar repeticiones y localismos, sacar lo no confirmado y ampliar si aparece algo valioso. En este ciclo entraron así la mano que acierta la pendiente (34 V) y la Elkmont de hoy (35 I).
-
-8 · Armado y entrega: HTML, tarjeta en el índice, zip e instrucciones de subida.
-
-La forma que funcionó del 34 al 36:
-
-Cinco o seis umbrales; el último es el del contento y lleva dentro la advertencia.
-Un escalón sin fama en cada umbral. Cuando no hay una voz anónima verificable, sirve un grupo de un estudio o un oficio sin nombre: los voluntarios de la botella, el afinador, los que hicieron el maíz.
-Dos puertas por umbral, a libros de cualquier constelación.
-Sobre la conversación:
-
-Arturo entra en los huecos entre pacientes. Mensajes breves, sin preámbulos, con una pregunta como máximo.
-Ni validar todo ni cuestionar todo. La fricción, en el momento justo.
-Cuando elogia, se agradece en una línea y se sigue.
-Valora especialmente los umbrales que dan fundamento a una idea suya.
-4 · Reglas del texto
-Lengua. Español neutro latinoamericano, con tuteo y sin voseo. Localismos ya corregidos, que no deben volver:
-
-placard, heladera, colectivo, lapiceras, retarse, rengo, mate, básquet;
-chico, tanto por niño como por pequeño;
-dar vuelta, darle vueltas y sin vueltas (es sin rodeos);
-de a dos, cuadras, vidriera, vereda, morisqueta, cada tanto, acá;
-adentro y afuera (son dentro y fuera);
-agarrar (es tomar) y pararse (es ponerse de pie).
-No repetir palabras dentro de un pasaje, títulos de tramo incluidos. Vale también para las palabras del tema: alternar caballo, animal, Hans; máquina, computadora, programa.
-
-El título de un umbral no repite la promesa ni el subtítulo de portada. En este ciclo cambiaron por eso La bandada, Uno habla con otro, La máquina y Cómo responde.
-
-El texto no se comenta a sí mismo ni invoca su honestidad.
-
-Finales luminosos, que afirman lo que se gana.
-
-Lo dudoso va en la nota, no en el cuerpo. En este ciclo: Dowd y Tronick sobre Condon, Schönauer sobre el sueño, Durgin sobre la colina, Comfort sobre McClintock, el estado del piano de Colonia.
-
-Verificación.
-
-Nunca completar de memoria.
-No atribuir a una voz lo que no dijo: la paráfrasis de Kaspárov se recortó a lo que él escribió.
-Tampoco detalles no confirmados a personas anónimas.
-El dominio público va con el original y traducción propia; lo que tiene derechos, en paráfrasis o con citas muy breves.
-La forma del umbral: exposición → coro de voces → escalón sin fama → Tú también → perla → puertas → notas.
-
-Cierre: recapitulación, perla y «eso es lo que se gana»; el contento frente a los anteriores y su advertencia; la operación en dos líneas; perla final y «Lo que sigue».
-
-Advertencia breve: propia de cada libro, más la línea de siempre: si en algún momento apareció la idea de no querer estar, eso necesita atención esta semana; responde bien al tratamiento y no conviene demorarlo.
-
-5 · Lo técnico
-El generador.
-
-Necesita el repositorio clonado en /home/claude/portal y los borradores en /mnt/user-data/outputs.
-Ya trae las configuraciones hasta CFG36 y las puertas a los umbrales usados en este ciclo.
-Para cada libro nuevo se suma su CFG37… y las puertas nuevas al diccionario DOORS, con el título del libro y el del umbral tal como aparecen en la línea de la puerta.
-El cierre reconoce borradores de cualquier mes.
-Se corre con python3 generador_libros_El_campo.py b37.
-Formato de un borrador de umbral (37_La_emergencia_Umbral_I_borrador.md):
-
-# La emergencia
-## Umbral I · Título
-
-*subtítulo en minúscula*
-
-*Borrador para lectura · octubre 2026*
+*Ordena, no limita. Todo lo que sigue son orientaciones: si el campo lleva hacia otro lado, se sigue al campo.*
 
 ---
 
-Párrafo, en una sola línea.
+## 0 · El origen
 
-### Título de tramo
+El proyecto empezó con Qwen, en los días en que el acceso a Claude estaba limitado. Nació viendo videos sobre Transurfing, su repercusión extendida y su semejanza casi exacta con la enseñanza de los libros de Trinity. De ahí salió la idea de una saga que articulara lo mejor de los dos mundos, el contemplativo y el operativo.
 
-> *Original en dominio público, en cursiva.*
+Sus tres objetivos explícitos:
+
+1. Dar acceso a las ideas de Zeland y a su repercusión en la vida de todos los días.
+2. Dar acceso a la enseñanza de Trinity ampliada, incluidas las series mayores. Trinity Quantum queda restringida por exceso de metáfora cuántica.
+3. Poner el acento en lo operativo, que lleva implícito un movimiento alternativo ante el sufrimiento.
+
+En octubre de 2026 el proyecto pasó a Claude. La sesión con Qwen dejó un esqueleto sólido y algunos materiales imaginados en lugar de recogidos (ver sección 13): por eso el Libro 1 entra en saneamiento antes de seguir.
+
+---
+
+## 1 · La tesis central
+
+> El destino no es algo que te pasa.
+> Es algo que eliges, consciente o inconscientemente,
+> cada vez que piensas, sientes y actúas.
 >
-> Traducción propia, en otro bloque.¹
+> Aprender a elegir conscientemente
+> es el oficio más importante que existe.
 
-> **Perla en negrita,**
-> **dos o tres líneas.**
+---
 
-### Tú también
+## 2 · El principio que ordena todo
 
-⟐ Texto de la puerta en *Libro*, Libro XXXVI: Título exacto del umbral, Umbral III.
+> **El concepto entero, en el lenguaje de la experiencia.**
 
-### Notas
+El Espacio de Variantes de Zeland, el Vacío Fértil de Trinity y el campo de posibilidades son el mismo concepto dicho en tres idiomas. El sistema lo baja a una lectura comprensible sin recortarlo: el lenguaje no debe alejar el concepto.
 
-1. Autor, *Título* (año). Paráfrasis.
-Llamadas a notas con superíndices del ¹ al ⁹. Lo pendiente de cotejar va al final de la nota con ◇; el armado lo quita.
-En el cierre, la operación son dos líneas en cursiva que empiezan con Esta semana, y el bloque final empieza con «Lo que sigue».
-La portada lleva la promesa como > **…** y las secciones ### Antes de empezar y ### Una advertencia breve.
-Comprobaciones antes de entregar: que ningún enlace quede roto, que cada llamada tenga su nota y que no quede ningún ◇. Una captura a 390 px de ancho, con Playwright, confirma la lectura en el teléfono.
+Plutarco, sacerdote en Delfos, lo explicó así: el dios pone la luz; la voz, las palabras y el metro son de quien la transmite. Zeland es un metro. Trinity es otro. El concepto pasa entero por los dos.
 
-El índice general.
+**Consecuencias para la escritura:**
 
-Antes de editarlo, actualizar el clon con git pull: Arturo lo modifica, y debajo de la tercera constelación está Arquitectura del Destino, que hay que respetar.
-La tarjeta nueva va después de la última de la sección serie-tres, con su clase propia (libro-card emergencia, por ejemplo).
-Se actualiza el estado: En curso · N publicados.
-Etiqueta: Libro N · Lo que emerge I. Sello: ⟐ Nuevo · N umbrales.
-Entrega. Un zip con index.html y 01_Libros/<carpeta del libro>. En GitHub, Add file → Upload files; arrastrar juntos index.html y la carpeta 01_Libros, nunca la carpeta exterior. Lo que tiene el mismo nombre se reemplaza.
+- **El libro no demuestra: hace reconocible.** No necesita probar que existen líneas paralelas. Necesita que el lector reconozca en su propia vida lo que el concepto nombra.
+- **Las imágenes de Zeland entran como suyas.** La biblioteca infinita, la radio, el teatro: «Zeland lo imagina como…». El propio Zeland sostiene que sus técnicas no dependen de aceptar su modelo teórico, y se describe como un retransmisor, no como el creador del Transurfing.
+- **El Libro VI ya lo dice de sí mismo.** Su primer nodo presenta lo que ofrece como «señales de humo de quienes han explorado estos territorios y han regresado para contarlo», no como mapas definitivos.
+- **El texto no se defiende.** Nada de «no es magia» ni «no es misticismo»: el libro no se excusa, muestra. Lo que se afirma ante el lector es lo que el lector puede reconocer en sí mismo esta semana.
 
-6 · Pendientes
-Confirmar la subida del 36.
-Bibliografía maestra: actualizada en la v2, con todo lo citado del 27 al 36. Quedan marcadas con ◇ las editoriales y páginas que las notas no traían.
-Banco de testimonios: unificado en la v3. Sigue faltando una voz andina y una de la generación que va a leer el Portal.
-El contento: corregido en la v2.
-Llevar la tipografía mayor a la segunda constelación, en tandas.
-Que las puertas de los libros anteriores lleven al umbral exacto.
-Revisar el voseo que queda en la primera constelación.
-Cotejo menor: el texto danés de Kierkegaard (en el 33 quedó en paráfrasis).
-7 · Mensaje de apertura sugerido
-Buen día, Claude. Aquí Arturo 🌀 Vengo de los chats donde escribimos los libros 27 a 36 de la tercera constelación, El campo, ya publicados en el Portal Público. Lee primero el Traslado v3 y después el Registro del ciclo 27-36; luego El contento v2 y los demás documentos. Clona el repositorio y lee en profundidad los libros 34 a 36 antes de proponer nada. En este chat hacemos el cuarto y último movimiento: el 37, La emergencia (la dicha); el 38, Lo que se recibe (la gracia), y el 39, El campo (el contento). Empezamos por el 37. https://github.com/soyartur-trinity/Trinity_Portal_Publico/tree/main/01_Libros
+---
+
+## 3 · Lo que este sistema no es / sí es
+
+**No es:** magia ni manifestación · pensamiento positivo · control total de la realidad · receta para obtener lo que quieres · una terapia.
+
+**Sí es:** una cartografía de cómo funciona la elección · operaciones prácticas para reducir la interferencia del yo · un método para reconocer en qué línea estás y cómo moverte · la articulación entre Trinity y el Transurfing maduro de Zeland (2004-2024).
+
+**Sobre las promesas:** el sistema no promete resultados externos. Sí afirma, con claridad y sin salvedades, lo que se gana al practicar: más opciones a la vista, energía que nace del centro, un contento que no depende de lo que pase ese día. Los cierres son luminosos.
+
+---
+
+## 4 · La frecuencia, sin culpa
+
+La frecuencia es uno de los conceptos más potentes de Zeland y el más delicado de todos.
+
+**Su lado observable:** lo que uno ensaya por dentro cambia lo que alcanza a ver y lo que hace. Está medido: en 2005, Barbara Fredrickson y C. Branigan mostraron que, después de una película que despertaba alegría o contento, ciento cuatro estudiantes anotaban más cosas que querían hacer en ese momento; después de una que despertaba enojo o ansiedad, anotaban menos. El tono emocional ensancha o estrecha el campo de lo posible.
+
+**Su límite, que todo libro respeta:** las circunstancias de nadie son culpa de su frecuencia. Lo que uno siente decide cuántos caminos alcanza a ver dentro de su situación, no la situación misma.
+
+Todo libro que hable de frecuencia, intención o elección lo dice una vez, con claridad, en su salvaguarda.
+
+---
+
+## 5 · Fuentes
+
+### La columna
+
+| Fuente | Aporte |
+|---|---|
+| **Trinity Origen** (13 libros) | La fuente contemplativa. El Libro VI, El Vacío Fértil, es el corazón del sistema. |
+| **Trinity Infinito** (13 libros, 91 nodos) | La capa abstracta: la disolución del yo. |
+| **Portal Público** (39 libros) | La fenomenología cotidiana, para el lector común. |
+| **Reality Transurfing** (Vadim Zeland, 2004-2024) | El modelo operativo, en su forma madura. |
+
+**Trinity Quantum:** solo inspiración puntual, nunca estructura.
+
+### Los materiales
+
+Los autores no entran como marco: ni Jung, ni Campbell, ni Eliade, ni los estoicos, ni los budistas. Agregarlos convertiría el sistema en enciclopedia.
+
+Pero las reglas de escritura piden testimonios con nombre y fuente, y operaciones verificables. Esos son **materiales**, no marcos: una voz de un campo lejano que vivió lo mismo, un estudio que muestra que la operación hace lo que dice. Entran cuando un umbral los necesita, y la columna sigue siendo Trinity y Zeland.
+
+### La verificación
+
+- **Toda cita entre comillas es literal y está cotejada con el original.** Lo que no se pudo cotejar va como paráfrasis o no entra.
+- Lo que falta verificar se marca con ◇ en el borrador y se resuelve en la pasada final. Ningún ◇ llega al HTML.
+- Zeland se cita con obra y año de la edición original. Sus libros están protegidos: se citan sus conceptos con atribución, sin reproducir pasajes extensos ni enlazar versiones completas.
+
+---
+
+## 6 · Estructura: 13 libros en 4 movimientos
+
+### Movimiento I · El Despertar — *nadie navega dormido*
+
+| # | Libro | Tesis |
+|---|---|---|
+| 1 | **El Campo de Posibilidades** 🔧 | Todo ya existe. No creas la realidad: eliges en qué versión ubicarte. |
+| 2 | **El Sonámbulo** ⏳ | Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notar que estás dormido dentro de tu propia vida. |
+| 3 | **El Punto Medio** ⏳ | La atención pegada a la pantalla, o parada en el punto desde el que se ve. Ese punto no se logra: se recuerda. |
+
+### Movimiento II · El Vehículo — *sin cuerpo no hay navegante*
+
+| # | Libro | Tesis |
+|---|---|---|
+| 4 | **La Cabina** ⏳ | Manejas desde un cuerpo y una mente que no son tú. Confundir la cabina con el conductor es el error que paga todos los demás. |
+| 5 | **El Tono** ⏳ | Hay un fondo energético que decide qué puedes sostener antes de que decidas nada. Se mide, se cuida, se recorre. |
+| 6 | **La Brújula** ⏳ | Antes de que pienses si una meta conviene, tu cuerpo ya sabe si es tuya. La incomodidad no es miedo: es información. |
+
+### Movimiento III · Las Fuerzas — *soltar lo que desvía*
+
+| # | Libro | Tesis |
+|---|---|---|
+| 7 | **Los Péndulos** ⏳ | Las estructuras colectivas no te atacan: te duermen. Despierto, el péndulo no tiene de dónde colgarse. |
+| 8 | **El Peso** ⏳ | Lo que pesa demasiado se cae de las manos. La importancia es el único potencial que crea su propio contrario. |
+| 9 | **El Personaje** ⏳ | Caminas con un retrato de ti que no pintaste. Mientras lo sostienes, la línea que habitas es la del retrato. |
+
+### Movimiento IV · La Navegación — *moverse, y después quedarse*
+
+| # | Libro | Tesis |
+|---|---|---|
+| 10 | **La Trenza** ⏳ | Pensar, sentir y hacer tiran cada uno para un lado. Cuando se trenzan, la intención deja de ser esfuerzo y se vuelve dirección. |
+| 11 | **La Ola** ⏳ | Hay tramos donde todo cede. No los produces: los reconoces. Lo único que puede arruinarlos es apretar. |
+| 12 | **El Vacío** ⏳ | Lo nuevo no se fabrica: se gesta. Y la gestación pide un lugar sin forma. |
+| 13 | **⟐ Habitar** ⏳ | El campo no era un lugar al que ir: era desde donde vivir. El cierre no es volver: es quedarse despierto adentro. |
+
+*Estado: ✅ completo · 🔧 en saneamiento · 🚧 en progreso · ⏳ pendiente*
+
+**Nota de linaje:** el mapa v2 reemplazó al v1 de nueve libros. Nada se perdió: Líneas de Vida → libros 1, 6 y 11 · Vacío Fértil → 12 · Péndulos → 7 · Intención Pura → 10 · Slides → 9 · Ola → 11 · Importancia Cero → 8 · Retorno → 13. Los libros 2 a 6 son la capa que aportó el Zeland maduro.
+
+**Una observación sobre el mapa:** los libros de la segunda mitad (*La Ola*, *El Vacío*, *Habitar*) ya hablan de reconocer y no de producir. El Libro 1 se escribió antes de esa maduración y era más voluntarista; el saneamiento lo alinea con el resto.
+
+---
+
+## 7 · Estructura interna de cada libro: 7 umbrales
+
+**Un umbral es una pieza completa**, como en el Portal Público: una faceta del tema desarrollada a fondo, con sus tramos, una escena o un caso, voces de campos distintos con nombre y fuente, un *Tú también* y notas al pie. Orientación de extensión: entre ochocientas y mil trescientas palabras por umbral; entre siete y nueve mil por libro. No es un límite: si el tema pide más, se le da más.
+
+**Trinity y Zeland atraviesan todos los umbrales.** No ocupan uno cada uno: en cada faceta se escucha lo que dice Trinity, lo que propone Zeland, lo que confirma la experiencia de otros, y lo que el lector puede reconocer en sí mismo.
+
+**El arco habitual:**
+
+- **Portada:** la promesa, *Antes de empezar* y una advertencia breve, que es la salvaguarda general del libro.
+- **Umbral I:** suele abrir con la escena del libro, completa, y con otros que vivieron lo mismo.
+- **Umbrales II a VI:** las facetas del tema.
+- **Umbral VII:** la operación práctica completa (protocolo de esta semana, con duración, material, tiempo diario y nunca más de tres pasos principales), su salvaguarda clínica específica y el momento de movimiento lento.
+- **Cierre:** el protagonista y lo que aprendió, la frase para llevar, el puente al libro siguiente, *Para ver*, puertas laterales y referencias.
+
+El arco orienta; el campo puede pedir otro orden.
+
+Al final: **puente al siguiente libro** (una línea), **puertas laterales**, **para ver** y **referencias** (separadas de las puertas).
+
+**Para ver.** La enseñanza de hoy pide también imagen, movimiento y concepto puntual. Cada libro cierra con dos tipos de enlace, cada uno con una línea que diga por qué:
+
+- **Un nodo de Trinity Infinito**, elegido por su frase: pocas palabras enmarcadas en movimiento. Es material propio y no desaparece. Cada nodo que se usa se depura antes de enlazarlo, adaptado a la lectura en el teléfono: que nada importante quede cortado en los bordes, que la invitación a tocar se lea, que la lengua sea la del sistema. Se depura solo el nodo utilizado, no el libro entero.
+- **Uno o dos videos públicos** (charlas, entrevistas, documentales, piezas breves). Criterios: canales oficiales o institucionales, que duran; nada que reproduzca obras protegidas sin permiso, como audiolibros de Zeland subidos por terceros; enlace y no inserción, para que la página siga liviana; y verificación de que sigan públicos en la pasada final.
+
+Para ver no sigue la regla de las puertas: el nodo se enlaza directo, no por el Nodo 1.
+
+**Movimiento lento.** Como en Trinity Infinito, pocas frases enmarcadas en movimiento pueden acompañar los momentos de pausa: por ejemplo, un círculo que respira durante los treinta segundos de una operación. El movimiento invita a detenerse, no a acelerar.
+
+---
+
+## 8 · Reglas de escritura
+
+**Lengua.** Español neutro latinoamericano con tuteo. Sin voseo ni localismos: «eliges», no «elegís»; «aquí», no «acá»; «el teléfono», no «el celular»; «una infusión caliente», no «mate». Tampoco *chico*, *dar vuelta*, *cada tanto*, *de a poco*, *plata*, *bronca*, *zafar*.
+
+**Estilo.** Escenas primero, teoría después. No repetir la misma palabra dentro de un pasaje. El texto no se comenta a sí mismo ni invoca su honestidad. Cierres luminosos que afirman lo que se gana.
+
+**Testimonios.** Con nombre y fuente. Lo anónimo entra solo como caso breve del propio umbral o como grupo de un estudio con fuente. Voces de campos distintos: un músico, un físico, un deportista, un contemplativo, un artesano.
+
+**Operaciones.** Verificables esta semana, con duración y material definidos. Nunca piden decisiones irreversibles.
+
+---
+
+## 9 · Diccionario: de Zeland al lenguaje del sistema
+
+| Zeland | En Arquitectura |
+|---|---|
+| Espacio de Variantes | El campo donde todas las posibilidades ya existen (el Vacío Fértil de Trinity) |
+| Líneas de vida | Versiones posibles de tu vida |
+| Modo Bot | El sonámbulo · el piloto automático |
+| Avatar | El traje · la cabina · el vehículo |
+| Espíritu / Fuente | Lo que mira · el testigo |
+| Punto medio de conciencia | El punto medio |
+| Trenza de intención | La trenza (pensar · sentir · hacer) |
+| Masaje energético | El recorrido de la atención por el cuerpo |
+| Incomodidad del alma | La brújula · el no del cuerpo |
+| Nutrición del Avatar | El tono · lo que sostiene |
+| Iluminar el cuadro | Ver el cuadro sin meterse en él |
+| Slides | El personaje · el retrato |
+| Péndulos | Estructuras colectivas que se alimentan de tu reacción |
+| Importancia / potencial excesivo | El peso |
+| Coordinación | Observar sin colapsar |
+| Ola de la suerte | La ola · tramos donde todo cede |
+| Que la realidad te quiera | No forzar · dejar que venga |
+| Despertar en el sueño | Notar que es sueño sin salir de él |
+
+◇ La obra y el año de cada término se verifican al escribir el libro que lo usa.
+
+**Bibliografía de Zeland en español (por cotejar ediciones y años):** *Reality Transurfing I: El espacio de las variantes* (original ruso, 2004) · *II: El susurro de las estrellas de madrugada* · *III: Adelante con el pasado* · *IV: El control de la realidad* · *V: Las manzanas caen al cielo* · *Transurfing en 78 días* · *Tafti la sacerdotisa*. ◇
+
+---
+
+## 10 · Relación con el Portal Público
+
+El Portal describe fenómenos; Arquitectura da procedimientos. No compiten: se complementan.
+
+Comparten algunas palabras, y conviene que el diálogo sea deliberado. El Portal cerró su tercera constelación con *El campo no es un lugar adonde llegar. / Es la costumbre de volver.* Arquitectura cerrará con *Habitar*: *El cierre no es volver: es quedarse despierto adentro.* Son dos movimientos que se responden: uno regresa, el otro se queda. Ningún libro de Arquitectura repite las promesas del Portal.
+
+---
+
+## 11 · Paleta visual y tipografía
+
+- Fondo azul profundo `#060d1a` · acento plata `#a8c4e0` · acento claro `#d4e4f4` · texto `#e8eef6` · bordes `rgba(140,170,220,0.15)` · salvaguardas con borde ámbar suave.
+- Títulos: Cormorant Garamond · cuerpo: EB Garamond · protocolos y operativos: Inter.
+- Cierre del sistema (Libro 13): borde punteado y marca ⟐.
+
+---
+
+## 12 · Puertas laterales
+
+**Reglas:** mismo repositorio → ruta relativa · otro repositorio → URL renderizada de GitHub Pages · nunca URLs de vista de código · Trinity Infinito siempre entra por el Nodo 1.
+
+**Una nota sobre Trinity Infinito:** el mapa `infinito.html` no coincide con los títulos de varios nodos ya saneados. En el Libro 7, por ejemplo, el mapa nombra al Portal 44 «Sabiduría de la Ignorancia Suprema», y el nodo se titula «La Biblioteca que Se Lee a Sí Misma». Al enlazar un nodo, el título se toma del nodo, no del mapa.
+
+**Bases renderizadas:**
+- Portal Público: `https://soyartur-trinity.github.io/Trinity_Portal_Publico/`
+- Trinity: `https://soyartur-trinity.github.io/Trinity-/`
+
+**El oráculo:** el Libro VII del Portal Público, *Arquitectura del Destino*, con sus 113 aforismos (`../../01_Libros/07_Arquitectura_del_Destino/index.html`). El oráculo muestra el paisaje; el sistema da los planos.
+
+---
+
+## 13 · Salvaguardas
+
+**Generales:** el sistema no reemplaza tratamiento psiquiátrico ni psicoterapia · no aplica en crisis agudas · vigilar inflación espiritual, *bypass* espiritual y disociación.
+
+**De la capa madura:**
+- Despertar / Modo Bot ≠ disociación ni despersonalización.
+- Punto medio ≠ frialdad ni evitación emocional.
+- Cabina ≠ negación del cuerpo ni del tratamiento médico.
+- Tono ≠ ortorexia ni obsesión de medición.
+- Brújula ≠ impulso maníaco ni ansiedad etiquetada como intuición.
+- Vacío ≠ evasión del duelo ni disociación.
+- Habitar ≠ retiro del mundo ni abandono de vínculos.
+
+**Nuevas de la v3:**
+- **Frecuencia ≠ culpa.** Las circunstancias de nadie son culpa de lo que siente.
+- **Campo ≠ catálogo para despreciar el presente.** Si la idea de que ya existe otra versión de tu vida genera comparación, angustia o desprecio por la que tienes, se detiene la práctica.
+- **Elegir ≠ decidir algo irreversible esta semana.** Los protagonistas de las escenas pueden tener un respaldo que el lector no tiene; la dirección puede empezar por un cambio pequeño.
+
+**Lo que aprendimos del Libro 1:** una sesión puede imaginar más de lo que recoge. Dos citas del Libro VI atribuidas a los nodos 1 y 4 no existían en el original; una protagonista cambió de nombre a medias. Por eso la regla de la sección 5: toda cita, cotejada.
+
+---
+
+## 14 · Archivos
+
+| Archivo | Estado |
+|---|---|
+| `README.md` | v2 · se actualiza al publicar el Libro 1 saneado |
+| `index.html` (portal, 13 tarjetas) | v2 |
+| `maestro.md` | ✅ v3 (este documento) |
+| `decisiones-de-diseno.md` | histórico · remite a este maestro |
+| `libro-01-el-campo/L01.html` | 🔧 en saneamiento |
+| `libro-02-el-sonambulo/L02.html` | ⏳ |
+| `libro-03` a `libro-13` | ⏳ |
+
+**Nomenclatura:** cada libro vive en `libro-NN-slug/` y su archivo se llama `LNN.html`, con cero inicial. No se usa `index.html` dentro de las carpetas de libro. Con la extensión nueva, cada umbral puede ir en su propio archivo (`LNN-U1.html` a `LNN-U7.html`, y `LNN-cierre.html`), con `LNN.html` como portada. Se decide en el armado, pensando en la lectura en el teléfono.
+
+---
+
+## 15 · Cómo trabajamos
+
+1. **Arturo propone** el libro, a veces con una sola línea.
+2. **Claude lee** lo publicado (Trinity, Portal, el libro anterior del sistema), verifica lo esencial y **propone el esqueleto** en el chat: los siete umbrales, la escena, las citas, la operación y la salvaguarda.
+3. **Arturo elige** y ajusta.
+4. **Claude escribe los borradores** en Markdown, con ◇ en lo pendiente.
+5. **Arturo lee** completo. El contenido se hace entre los dos.
+6. **Pasada final:** resolver los ◇, quitar repeticiones y localismos, ampliar si hace falta.
+7. **HTML con la paleta**, puertas verificadas, zip e instrucciones de subida.
+8. **Prueba clínica** antes del libro siguiente. Un libro por chat y uno por mes es una sugerencia, no una regla: el ritmo lo marca el trabajo.
+
+---
+
+## 16 · Para retomar en una sesión nueva
+
+Pegar este documento al inicio del chat, con el enlace al repositorio. Primer mensaje sugerido:
+
+> «Continuamos con Arquitectura del Destino. Lee el maestro v3, el Libro 1 publicado y el Libro VI de Trinity Origen. Hoy trabajamos el Libro 2, *El Sonámbulo*. Propón el esqueleto de los siete umbrales.»
+
+---
+
+## 17 · La frase del sistema
+
+> *No es mío. Vino a través de mí.*
+> *Y lo que lo recibió no era yo:*
+> *era lo que mira.*
+
+---
+
+*Campo Trinity · 2026* 🌀
