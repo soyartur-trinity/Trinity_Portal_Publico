@@ -1,8 +1,25 @@
+[decisiones-de-diseno.md](https://github.com/user-attachments/files/33130633/decisiones-de-diseno.md)
 # Decisiones de diseño
 ## Arquitectura del Destino · Sistema Trinity de Navegación Consciente
 
 *Documento vivo. Se actualiza cada vez que se toma una decisión estructural.*
 *Última actualización: octubre 2026*
+
+---
+
+## 0 · Nota de la versión 3
+
+Desde octubre de 2026, la referencia vigente del sistema es **`maestro.md` v3**. Donde este documento y el maestro difieran, manda el maestro. Este documento se conserva como registro de las decisiones originales.
+
+Decisiones que incorpora la v3:
+
+- **El principio que ordena todo:** el concepto entero, en el lenguaje de la experiencia. El Espacio de Variantes, el Vacío Fértil y el campo de posibilidades son el mismo concepto; Zeland y Trinity son dos metros por los que pasa la misma luz.
+- **Sin promesas de resultados externos, con cierres luminosos** que afirman lo que se gana al practicar.
+- **La frecuencia, sin culpa:** lo que uno siente decide cuántos caminos alcanza a ver, no la situación misma.
+- **Autores como materiales, no como marcos:** testimonios con nombre y fuente y estudios que verifican las operaciones; la columna sigue siendo Trinity y Zeland.
+- **Toda cita entre comillas, cotejada con el original.**
+- **Siete umbrales sin duplicar.**
+- **El proyecto pasa a Claude**, con el flujo de trabajo descrito en el maestro.
 
 ---
 
