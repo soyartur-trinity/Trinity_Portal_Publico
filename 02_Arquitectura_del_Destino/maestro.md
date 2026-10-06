@@ -1,4 +1,4 @@
-[maestro.md](https://github.com/user-attachments/files/33130641/maestro.md)
+[maestro.md](https://github.com/user-attachments/files/33130789/maestro.md)
 # Documento Maestro · v3
 ## Arquitectura del Destino · Sistema Trinity de Navegación Consciente
 
