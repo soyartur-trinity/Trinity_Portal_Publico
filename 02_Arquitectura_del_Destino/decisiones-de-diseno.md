@@ -1,4 +1,4 @@
-[decisiones-de-diseno.md](https://github.com/user-attachments/files/33130633/decisiones-de-diseno.md)
+[decisiones-de-diseno.md](https://github.com/user-attachments/files/33130781/decisiones-de-diseno.md)
 # Decisiones de diseño
 ## Arquitectura del Destino · Sistema Trinity de Navegación Consciente
 
