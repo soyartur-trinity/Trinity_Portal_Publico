@@ -143,7 +143,7 @@ Más: **puertas laterales** (enlaces a otros libros Trinity/Portal) y **referenc
 - Mapa v2 de 13 libros en 4 movimientos reemplaza al v1 de 9. Absorción del v1: Líneas de Vida → libros 1, 6 y 11 · Vacío Fértil → 12 · Péndulos → 7 · Intención Pura → 10 · Slides → 9 · Ola → 11 · Importancia Cero → 8 · Retorno → 13.
 - Conexión con el oráculo (Portal, Libro 7): el oráculo muestra el paisaje; el sistema da los planos.
 - Formato HTML interactivo con protocolos, checklists y diarios.
-- Un libro por chat · un libro por mes · prueba clínica entre libros.
+- Un libro por chat · dos libros por semana aproximadamente · prueba clínica entre libros.
 - Orden de escritura: Libro 2 (El Sonámbulo) primero, por ser el más verificable en consultorio.
 - Ubicación: `02_Arquitectura_del_Destino/`, cada libro en `libro-NN-nombre/index.html`.
 
