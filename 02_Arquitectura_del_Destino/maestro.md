@@ -1,4 +1,3 @@
-[maestro.md](https://github.com/user-attachments/files/33130789/maestro.md)
 # Documento Maestro · v3
 ## Arquitectura del Destino · Sistema Trinity de Navegación Consciente
 
@@ -106,7 +105,7 @@ Pero las reglas de escritura piden testimonios con nombre y fuente, y operacione
 
 | # | Libro | Tesis |
 |---|---|---|
-| 1 | **El Campo de Posibilidades** 🔧 | Todo ya existe. No creas la realidad: eliges en qué versión ubicarte. |
+| 1 | **El Campo de Posibilidades** ✅ | Todo ya existe. No creas la realidad: eliges en qué versión ubicarte. |
 | 2 | **El Sonámbulo** ⏳ | Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notar que estás dormido dentro de tu propia vida. |
 | 3 | **El Punto Medio** ⏳ | La atención pegada a la pantalla, o parada en el punto desde el que se ve. Ese punto no se logra: se recuerda. |
 
@@ -233,7 +232,9 @@ Comparten algunas palabras, y conviene que el diálogo sea deliberado. El Portal
 
 **Reglas:** mismo repositorio → ruta relativa · otro repositorio → URL renderizada de GitHub Pages · nunca URLs de vista de código · Trinity Infinito siempre entra por el Nodo 1.
 
-**Una nota sobre Trinity Infinito:** el mapa `infinito.html` no coincide con los títulos de varios nodos ya saneados. En el Libro 7, por ejemplo, el mapa nombra al Portal 44 «Sabiduría de la Ignorancia Suprema», y el nodo se titula «La Biblioteca que Se Lee a Sí Misma». Al enlazar un nodo, el título se toma del nodo, no del mapa.
+**Nodos de Infinito ya depurados para «Para ver»:** Libro 7, Portal 44, *La Biblioteca que Se Lee a Sí Misma* (`L7-Nodo2.html`, octubre 2026): radio del anillo adaptado a pantallas angostas, invitación a tocar legible y en tuteo.
+
+**Una nota sobre Trinity Infinito:** en octubre de 2026 el mapa `infinito.html` se sincronizó con los títulos reales de los nodos saneados. El Portal 72, *Causa Sin Precedente* (`L_11-Nodo2.html`), que era una copia del primer nodo del Libro 12, se construyó en octubre de 2026 con el estándar de saneamiento y lectura en el teléfono. Al enlazar un nodo, el título se toma siempre del nodo.
 
 **Bases renderizadas:**
 - Portal Público: `https://soyartur-trinity.github.io/Trinity_Portal_Publico/`
@@ -273,7 +274,10 @@ Comparten algunas palabras, y conviene que el diálogo sea deliberado. El Portal
 | `index.html` (portal, 13 tarjetas) | v2 |
 | `maestro.md` | ✅ v3 (este documento) |
 | `decisiones-de-diseno.md` | histórico · remite a este maestro |
-| `libro-01-el-campo/L01.html` | 🔧 en saneamiento |
+| `libro-01-el-campo/` | ✅ v3 · portada `L01.html`, siete umbrales `L01-U1.html` a `L01-U7.html` y `L01-cierre.html` (octubre 2026) |
+| `traslado.md` | ✅ Traslado 1: lo aprendido en el Libro 1 y los mapas de los libros 2 a 13 |
+| `registro.md` | ✅ voces, tramos, perlas y notas de cada libro publicado |
+| `herramientas/gen_arq_libro.py` | ✅ generador del HTML de cada libro |
 | `libro-02-el-sonambulo/L02.html` | ⏳ |
 | `libro-03` a `libro-13` | ⏳ |
 
@@ -296,7 +300,7 @@ Comparten algunas palabras, y conviene que el diálogo sea deliberado. El Portal
 
 ## 16 · Para retomar en una sesión nueva
 
-Pegar este documento al inicio del chat, con el enlace al repositorio. Primer mensaje sugerido:
+Leer este documento, el `traslado.md` y el `registro.md` desde el repositorio. Primer mensaje sugerido:
 
 > «Continuamos con Arquitectura del Destino. Lee el maestro v3, el Libro 1 publicado y el Libro VI de Trinity Origen. Hoy trabajamos el Libro 2, *El Sonámbulo*. Propón el esqueleto de los siete umbrales.»
 
