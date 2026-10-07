@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="una línea escrita">
+<title>Elegir no es crear · Umbral VI · El Campo de Posibilidades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:106.25%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L01.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span></div><div class="cual">Umbral VI</div><h1>Elegir no es crear</h1><p class="sub">una línea escrita</p></header><main><p>Hay un campo amplio. Hay una línea estrecha desde la que se mira. Hay un testigo que puede notar desde dónde mira. Falta el último movimiento: elegir.</p>
+<h2>Dos verbos</h2>
+<p>Crear y elegir parecen parientes, pero piden cosas distintas.</p>
+<p>Crear pide fuerza, tiempo, construcción. Es empujar contra la resistencia de lo que todavía no existe. Elegir pide otra cosa: claridad, decisión, dirección. Es reconocer, entre lo que ya está disponible, hacia dónde se quiere ir.</p>
+<p>El esfuerzo puede ser el mismo. Roberto trabajó tanto después de renunciar como antes. La diferencia es que un esfuerzo te lleva adonde quieres ir, y el otro te deja remando con todas tus fuerzas en medio del océano, sin rumbo.</p>
+<p>Por eso este sistema no empieza por la acción. Empieza por la elección. No porque la acción no importe, sino porque la acción sin elección es fuerza gastada en la dirección que otros eligieron por ti.</p>
+<h2>La decisión de Roberto</h2>
+<p>Durante los tres meses que siguieron a aquel lunes, Roberto no hizo nada espectacular. No escribió un plan de negocios ni se fue de viaje a buscarse. Hizo algo más modesto: empezó a prestar atención a los momentos en que se sentía vivo.</p>
+<p>Descubrió que eran pocos, y que tenían algo en común. Ocurrían cuando alguna familia llegaba al estudio en medio de un conflicto y él, en lugar de pensar en la estrategia legal, se quedaba escuchando. Cuando ayudaba a dos personas que se odiaban a encontrar un punto donde podían hablar. Ahí, el traje dejaba de pesar.</p>
+<p>Una noche, en un cuaderno que no le mostró a nadie, escribió una sola frase: <em>Quiero trabajar con personas, no con expedientes.</em></p>
+<p>No era un plan. Era una dirección. Y a partir de esa frase, empezó a notar cosas que antes pasaban de largo: un colega que había dejado el estudio para dedicarse a la mediación familiar, un curso que se dictaba los jueves por la noche, una conversación con su mujer que había postergado durante años.</p>
+<p>Tres meses después, renunció. Hoy trabaja con familias en conflicto, desde un lugar menos técnico y más humano. Gana la mitad. Vive el doble.</p>
+<h2>Una frase escrita</h2>
+<p>Lo que le pasó a Roberto tiene una explicación que la psicología estudió con cuidado.</p>
+<p>En los años noventa, el psicólogo alemán Peter Gollwitzer empezó a investigar por qué tanta gente que tiene metas firmes no las cumple. Encontró que una meta, por sí sola, rinde poco. Lo que cambia las cosas es un plan simple que diga cuándo, dónde y cómo se va a dar el primer paso. Lo llamó <em>intención de implementación</em>.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Su explicación es que, al escribir ese plan, la situación elegida queda marcada en la mente. Cuando aparece, se la reconoce enseguida, casi sin esfuerzo, como si la atención la estuviera esperando.</p>
+<p>Una intención escrita no obliga a nada. Orienta la mirada.</p>
+<div class="perla"><p>Elegir no es empujar.<br>Es saber hacia dónde mirar.</p></div>
+<h2>Los estudiantes de las vacaciones</h2>
+<p>En uno de sus primeros estudios, publicado en 1997 con Veronika Brandstätter, Gollwitzer les pidió a unos estudiantes universitarios alemanes que nombraran un proyecto que querían terminar durante las vacaciones de Navidad. A una parte les pidió, además, que escribieran en una sola frase cuándo y dónde iban a empezar.</p>
+<p>Al volver de las vacaciones, los que habían escrito esa frase habían terminado sus proyectos difíciles unas tres veces más a menudo que los que no.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>No sabemos sus nombres ni cuáles eran sus proyectos. Una tesis, quizá, una mudanza, una conversación pendiente. Sabemos que una frase de una línea, escrita antes de empezar, multiplicó sus posibilidades de llegar.</p>
+<p>Desde entonces, ese hallazgo se repitió en cientos de pruebas, con metas muy distintas.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> La frase sigue funcionando.</p>
+<h2>Lo que no es</h2>
+<p>Conviene decir también lo que esta elección no es.</p>
+<p>No es una orden que se le da al universo para que cumpla. Lo que una intención escrita hace es más humilde y más comprobable: cambia lo que uno ve. Las oportunidades que antes pasaban de largo empiezan a notarse.</p>
+<p>Tampoco es una renuncia mañana. Roberto tenía un respaldo que le permitió arriesgar. Muchas personas no lo tienen, y para ellas la dirección empieza por un cambio pequeño: un rato a la semana dedicado a lo que las hace sentir vivas, una conversación, un curso. Casi siempre conviene que empiece así. El campo no se recorre de un salto. Se recorre eligiendo, una y otra vez, hacia dónde mirar.</p>
+<h2>Tú también</h2>
+<p>Si tuvieras que escribir una sola frase sobre la vida que quieres habitar, ¿cuál sería? No un plan, no una lista. Una dirección, en pocas palabras.</p>
+<p>No hace falta escribirla hoy. Pero quizá ya la sabes. Muchas veces la frase está ahí desde hace años, esperando que alguien la anote.</p>
+<div class="perla"><p>La dirección no se inventa.<br>Se reconoce, y se escribe.</p></div>
+<div class="sigue"><a href="L01-U5.html">Anterior: El testigo</a><a class="prox" href="L01-U7.html">Siguiente: La operación</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Peter M. Gollwitzer, «Implementation Intentions: Strong Effects of Simple Plans», <em>American Psychologist</em> 54 (1999): 493-503. Paráfrasis.</li><li id="nota-2">Peter M. Gollwitzer y Veronika Brandstätter, «Implementation Intentions and Effective Goal Pursuit», <em>Journal of Personality and Social Psychology</em> 73, n.º 1 (1997): 186-199. Paráfrasis.</li><li id="nota-3">Sobre la acumulación de estudios, Peter M. Gollwitzer y Paschal Sheeran, «Implementation Intentions and Goal Achievement: A Meta-Analysis of Effects and Processes», <em>Advances in Experimental Social Psychology</em> 38 (2006). Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 1 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

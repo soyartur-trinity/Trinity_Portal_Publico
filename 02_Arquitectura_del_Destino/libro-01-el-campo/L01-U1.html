@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="cuando el traje pesa">
+<title>La vida equivocada · Umbral I · El Campo de Posibilidades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:106.25%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L01.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral I</div><h1>La vida equivocada</h1><p class="sub">cuando el traje pesa</p></header><main><h2>El traje</h2>
+<p>Roberto tiene cuarenta y cinco años. Lleva veinte ejerciendo la abogacía en un estudio corporativo grande, de esos que ocupan varios pisos de un edificio de vidrio. Tiene prestigio, clientes importantes y un ingreso que le permitiría vivir sin preocupaciones el resto de sus días.</p>
+<p>Cada mañana, a las siete, se para frente al espejo del dormitorio y se pone el traje. La camisa blanca, la corbata que su mujer le regaló hace años, el saco gris. Y cada mañana, en el momento en que se abrocha el último botón, siente algo que no sabe nombrar. No es tristeza. No es cansancio. Es la sensación de estar poniéndose un disfraz.</p>
+<p>Durante mucho tiempo la apartó. Pensó que era la edad, el estrés, la rutina. Pensó que todos se sentían así y que madurar consistía en no hacerle caso. Tenía razones para seguir: la familia, el futuro, lo que había construido, lo que se esperaba de él.</p>
+<p>Un lunes de marzo cierra un caso difícil. El socio principal lo felicita delante de todos, y alguien propone celebrarlo esa misma noche. Roberto sonríe, agradece, y mientras camina de vuelta a su oficina se escucha pensar, con una claridad que lo asusta: «Esta no es mi vida».</p>
+<p>Esta vez no aparta el pensamiento. Se sienta, cierra la puerta y se queda con él.</p>
+<h2>Lo que se esperaba de él</h2>
+<p>En 1886, León Tolstói publicó una novela breve sobre un hombre parecido a Roberto. Iván Ilich era un juez respetado de San Petersburgo, que había hecho todo bien: estudió lo que convenía, se casó como correspondía, ascendió a tiempo, decoró su casa con buen gusto. El segundo capítulo empieza con una frase célebre:</p>
+<div class="cita"><p class="orig"><em>Прошедшая история жизни Ивана Ильича была самая простая и обыкновенная и самая ужасная.</em></p><p class="trad">La historia de la vida de Iván Ilich había sido de lo más simple, de lo más corriente, y de lo más terrible.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Iván Ilich murió a los cuarenta y cinco años, la misma edad de Roberto.</p>
+<p>Cuando enferma y comprende que va a morir, una noche, mirando la cara dormida del criado que lo cuida, se hace la pregunta que había evitado durante décadas:</p>
+<div class="cita"><p class="orig"><em>а что, как и в самом деле вся моя жизнь, сознательная жизнь, была «не то».</em></p><p class="trad">¿Y si de verdad toda mi vida, mi vida consciente, no fue lo que debía ser?<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Entonces se le ocurre algo todavía más inquietante. Aquellos impulsos apenas perceptibles de ir contra lo que todos consideraban correcto, los que él mismo apartaba enseguida, quizá fueron lo único verdadero. Y todo lo demás, su carrera, su casa, su manera de vivir, pudo no ser lo que debía.</p>
+<h2>La luz del final</h2>
+<p>Pero la novela no termina en el lamento. En los últimos instantes, cuando ya casi no puede hablar, Iván Ilich se dice a sí mismo que sí, que todo fue lo que no debía, pero que no importa: todavía se puede hacer lo que debe ser. Ve una luz, y comprende que su vida no fue la que debía haber sido, y que eso aún puede corregirse.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> Siente que alguien le besa la mano: es su hijo, que llora junto a la cama. Por primera vez en mucho tiempo, siente compasión en lugar de rencor.</p>
+<p>Busca entonces su miedo a la muerte, el que lo había acompañado durante semanas, y no lo encuentra.</p>
+<div class="cita"><p class="orig"><em>Вместо смерти был свет.</em></p><p class="trad">En lugar de la muerte había luz.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p></div>
+<p>Tolstói pone esa comprensión en el último minuto de una vida. Este libro empieza donde la novela termina: la pregunta de Iván Ilich se puede hacer antes, con tiempo para elegir.</p>
+<div class="perla"><p>La pregunta que asusta<br>es también la primera puerta.</p></div>
+<h2>Doce semanas</h2>
+<p>En 2009, una enfermera australiana publicó en su blog un texto breve que dio la vuelta al mundo. Bronnie Ware había pasado años cuidando en sus casas a personas que tenían, en general, las últimas doce semanas de su vida por delante. Cuando les preguntaba si se arrepentían de algo, o si habrían hecho algo distinto, los mismos temas aparecían una y otra vez.</p>
+<p>El más frecuente de todos era no haber tenido el valor de vivir una vida fiel a sí mismos, en lugar de la que otros esperaban de ellos. Ware escribió que la mayoría no había cumplido ni la mitad de sus sueños, y que morían sabiendo que se debía a elecciones que habían hecho, o que no se habían animado a hacer. El segundo lamento lo escuchó de todos los hombres que cuidó: haber trabajado demasiado.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>No sabemos los nombres de esas personas. Tres años después, Ware convirtió sus historias en un libro que se tradujo a decenas de idiomas. Lo que le dijeron al final de su vida lo siguen leyendo, cada día, otros que todavía tienen tiempo de elegir.</p>
+<h2>La primera señal</h2>
+<p>Lo que sintió Roberto esa mañana frente al espejo, lo que sintió Iván Ilich demasiado tarde, lo que escuchó Bronnie Ware en tantas habitaciones, no es un capricho ni una crisis pasajera. Es una información precisa: la vida que estás viviendo y la que podrías vivir no son la misma.</p>
+<p>Esa distancia no es un defecto. Es la primera señal de que hay un campo más amplio que el camino que tienes delante. El resto de este libro trata de ese campo: qué es, cómo se ve desde dentro, y cómo se empieza a mover uno dentro de él.</p>
+<p>Tres meses después de aquel lunes, Roberto renuncia. No tiene un plan armado: tiene una dirección. Pero eso viene más adelante.</p>
+<h2>Tú también</h2>
+<p>Quizá tú también tienes tu traje. No hace falta que sea una corbata: puede ser un rol, una costumbre, una manera de presentarte ante los demás que hace tiempo dejó de ser tuya. Lo reconoces porque pesa un poco más cada mañana, y porque cuando alguien te felicita por lo bien que lo llevas, algo dentro de ti no se alegra del todo.</p>
+<p>No hace falta quitártelo hoy. Alcanza con notar que lo llevas puesto.</p>
+<div class="perla"><p>Lo que pesa cada mañana<br>no es el día.<br>Es el traje.</p></div>
+<div class="sigue"><a href="L01.html">Anterior: Portada</a><a class="prox" href="L01-U2.html">Siguiente: El campo</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">León Tolstói, <em>La muerte de Iván Ilich</em> (1886), cap. II. Texto ruso según <em>The Death of Ivan Ilich: An Electronic Study Edition of the Russian Text</em>, ed. Gary R. Jahn (Universidad de Minnesota); traducción propia.</li><li id="nota-2">Ídem, cap. XI. Traducción propia; el resto del pasaje, en paráfrasis.</li><li id="nota-3">Ídem, cap. XII. Paráfrasis. La crisis de Iván Ilich se parece a la del propio Tolstói, contada en su <em>Confesión</em> (1884), según <em>Encyclopaedia Britannica</em>, «The Death of Ivan Ilyich».</li><li id="nota-4">Ídem, cap. XII. Traducción propia.</li><li id="nota-5">Bronnie Ware, «Regrets of the Dying» (blog, 2009) y <em>The Top Five Regrets of the Dying</em> (2011). Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 1 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

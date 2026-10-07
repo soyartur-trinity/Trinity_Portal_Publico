@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="lo que el ánimo deja ver">
+<title>La línea estrecha · Umbral IV · El Campo de Posibilidades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:106.25%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L01.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral IV</div><h1>La línea estrecha</h1><p class="sub">lo que el ánimo deja ver</p></header><main><p>El campo es amplio. Pero nadie lo ve entero. Cada uno mira desde algún lugar, y ese lugar decide cuánto del campo alcanza a ver. Zeland lo llama frecuencia. Hay una manera de comprobarlo sin creer en nada.</p>
+<h2>Veinte renglones</h2>
+<p>En 2005, la psicóloga Barbara Fredrickson y su colega C. Branigan publicaron dos experimentos con ciento cuatro estudiantes universitarios. A cada uno le mostraron un fragmento breve de película, elegido para despertar una emoción: diversión, contento, ninguna en particular, enojo o ansiedad.</p>
+<p>En uno de los experimentos, después de la película, les entregaron una hoja con veinte renglones que empezaban de la misma manera: «Me gustaría…». Tenían que completar todos los que pudieran con lo que sentían ganas de hacer en ese momento.</p>
+<p>Quienes venían de la diversión o del contento llenaron más renglones. Quienes venían del enojo o la ansiedad, menos. La hoja era igual para todos. Lo distinto era el tono con que la miraban.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Fredrickson llamó a su teoría <em>ampliar y construir</em>: las emociones agradables ensanchan el repertorio de lo que uno piensa y se siente capaz de hacer; las amenazantes lo angostan.</p>
+<div class="perla"><p>El campo no cambió.<br>Cambió cuánto de él se veía.</p></div>
+<h2>La frecuencia</h2>
+<p>Zeland lo describe en términos de frecuencia: lo que uno piensa y siente tendría una vibración propia, y esa vibración orientaría la línea de vida que recorre. Lo que cualquiera puede comprobar en sí mismo es más sencillo y más útil: lo que uno ensaya por dentro decide cuántos caminos alcanza a ver.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Piensa en dos personas con las mismas circunstancias. La primera se despierta pensando «otro día más de esta vida que no quiero». Durante el día repite «no tengo tiempo», «esto es injusto», «nunca voy a poder». Se acuesta sintiendo peso.</p>
+<p>La segunda se despierta pensando «hoy voy a aprender algo». Durante el día repite «esto es interesante», «puedo con esto», «veamos qué pasa». Se acuesta sintiendo que avanzó.</p>
+<p>Viven en el mismo lugar. No ven el mismo campo.</p>
+<h2>Antes y después de la cosecha</h2>
+<p>Pero hay algo que esta comparación esconde, y conviene sacarlo a la luz enseguida. No siempre el tono depende de uno.</p>
+<p>En 2013, un grupo de economistas y psicólogos de las universidades de Warwick, Harvard, Princeton y Columbia Británica publicó en la revista <em>Science</em> un estudio con cuatrocientos sesenta y cuatro agricultores de caña de azúcar del estado de Tamil Nadu, en el sur de la India. Esos agricultores cobran una vez al año, al vender la cosecha. Antes, están en apuros: empeñan objetos, piden préstamos. Después, durante un tiempo, no les falta.</p>
+<p>Los investigadores le tomaron las mismas pruebas de razonamiento a cada agricultor dos veces: antes de la cosecha y después. El mismo hombre, la misma mujer, rendían bastante menos antes, cuando el dinero escaseaba, que después, cuando habían cobrado. La diferencia era comparable a la de haber pasado una noche entera sin dormir.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Descartaron las explicaciones obvias: no era cansancio físico, ni alimentación, ni el estrés medido en el cuerpo. Su conclusión fue que las preocupaciones por la escasez ocupan la mente y dejan menos lugar para todo lo demás. Uno de los autores, Sendhil Mullainathan, lo aclaró sin rodeos: no estaban diciendo que los pobres fueran menos capaces. Estaban diciendo que ser pobre es como pasar una noche en vela todas las noches.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<h2>Sin culpa</h2>
+<p>Este estudio cambia la manera de leer todo lo anterior. La línea estrecha no es un defecto de carácter. Muchas veces la estrecha la situación misma: la falta de dinero, de tiempo, de descanso, de compañía. Nadie elige su frecuencia en el vacío.</p>
+<p>Por eso este sistema sostiene una regla que no admite excepciones: lo que sientes no es culpable de lo que vives. Lo que sientes decide cuántos caminos alcanzas a ver dentro de tu situación. No decide la situación.</p>
+<p>Y hay una consecuencia luminosa. Si la estrechez viene en buena parte de las circunstancias, aliviarlas, aunque sea un poco, ensancha la vista. Y si viene del tono, cuidarlo no es un lujo: es devolverle a la mente el lugar que necesita para elegir. En los agricultores, el mismo cerebro que se angostaba antes de la cosecha se ensanchaba después. Nada se había perdido. Solo estaba ocupado.</p>
+<div class="perla"><p>Lo que se angosta<br>también puede ensancharse.</p></div>
+<h2>Tú también</h2>
+<p>Recuerda un día en que todo parecía cerrado: no se te ocurría ninguna salida, cada opción tenía su obstáculo. Y recuerda otro, quizá poco después, en que el mismo problema se veía distinto, con más de una puerta.</p>
+<p>El problema era el mismo. Lo que había cambiado era cuánto espacio tenías por dentro para mirarlo.</p>
+<div class="perla"><p>No se trata de pensar en positivo.<br>Se trata de notar desde dónde estás mirando.</p></div>
+<div class="sigue"><a href="L01-U3.html">Anterior: La biblioteca</a><a class="prox" href="L01-U5.html">Siguiente: El testigo</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Barbara L. Fredrickson y C. Branigan, «Positive Emotions Broaden the Scope of Attention and Thought-Action Repertoires», <em>Cognition &amp; Emotion</em> 19, n.º 3 (2005): 313-332. Paráfrasis.</li><li id="nota-2">Sobre la frecuencia en el modelo de Zeland, los primeros volúmenes de <em>Reality Transurfing</em>. Paráfrasis.</li><li id="nota-3">Anandi Mani, Sendhil Mullainathan, Eldar Shafir y Jiaying Zhao, «Poverty Impedes Cognitive Function», <em>Science</em> 341, n.º 6149 (2013): 976-980. Paráfrasis.</li><li id="nota-4">Sendhil Mullainathan, declaraciones a <em>LiveScience</em> (agosto de 2013), reproducidas por NBC News. Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 1 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

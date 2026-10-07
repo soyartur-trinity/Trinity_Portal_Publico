@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ver lo que piensas sin ser lo que piensas">
+<title>El testigo · Umbral V · El Campo de Posibilidades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:106.25%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L01.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span></div><div class="cual">Umbral V</div><h1>El testigo</h1><p class="sub">ver lo que piensas sin ser lo que piensas</p></header><main><p>Si el tono decide cuánto del campo se ve, la pregunta siguiente es inevitable: ¿se puede ver el tono? ¿Se puede notar desde dónde se está mirando, mientras se mira? Las tradiciones contemplativas dicen que sí, y le dieron un nombre a la parte de uno que lo hace: el testigo.</p>
+<h2>Un hueco entre dos pensamientos</h2>
+<p><em>El Vacío Fértil</em> describe la primera puerta de entrada a ese lugar con una sencillez que sorprende. No hace falta retirarse a una montaña. Basta con notar los huecos naturales entre un pensamiento y el siguiente, que suelen durar fracciones de segundo.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>En ese hueco, por un instante, no estás pensando. Y sin embargo estás. Algo en ti sigue presente, mirando. Ese algo es el testigo: la parte de ti que observa lo que piensas y lo que sientes sin confundirse con ello.</p>
+<p>Es el mismo lugar que el tercer libro de este sistema recorrerá a fondo, con el nombre que le da Zeland en su etapa madura: el punto medio. Por ahora alcanza con saber que existe, y que se lo puede encontrar en medio segundo.</p>
+<h2>Leche, leche, leche</h2>
+<p>En 1916, el psicólogo británico Edward Titchener, que enseñaba en la Universidad de Cornell, describió en uno de los primeros manuales de psicología un fenómeno curioso. Si se repite una palabra en voz alta, rápido y muchas veces seguidas, al cabo de un rato deja de significar. Se vuelve un sonido raro, casi ajeno.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Casi un siglo después, la terapia de aceptación y compromiso, una de las corrientes de la psicología contemporánea, convirtió esa curiosidad en un ejercicio clínico. Lo llaman, sin mucha ceremonia, <em>leche, leche, leche</em>. Primero se piensa en la leche: su color blanco, su frescura, su sabor. Después se repite la palabra en voz alta, rápido, durante cuarenta y cinco segundos. Casi todos describen lo mismo: al final, la palabra ya no trae nada consigo. Es un ruido.</p>
+<p>La técnica tiene un nombre técnico: <em>defusión</em>. Su idea es simple y profunda. Un pensamiento como «soy un fracaso» pesa porque estamos fundidos con él: no lo vemos como un pensamiento, lo vemos como la realidad. La defusión no lo discute ni intenta reemplazarlo por otro mejor. Cambia la relación con él. Lo deja ser lo que es: palabras.</p>
+<h2>Treinta segundos</h2>
+<p>En 2004, el psicólogo Akihiko Masuda, junto con Steven Hayes, uno de los creadores de esa terapia, y otros colegas, puso a prueba la técnica. Les pidieron a ocho personas, en estudios individuales, que eligieran una palabra que resumiera un pensamiento negativo sobre sí mismas, y que la repitieran rápido durante treinta segundos.</p>
+<p>Compararon el efecto con otras dos estrategias: distraerse, o intentar controlar el pensamiento. La repetición fue la que más redujo tanto el malestar como la credibilidad de esos pensamientos.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Un estudio posterior del mismo grupo midió cuánto tiempo hacía falta. El malestar empezaba a ceder a los pocos segundos. La credibilidad, la sensación de que el pensamiento dice la verdad sobre uno, tardaba más: entre veinte y treinta segundos.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Treinta segundos. El tiempo exacto de las pausas que propone la operación de este libro.</p>
+<h2>Los que repitieron su palabra</h2>
+<p>No sabemos quiénes eran. Personas que aceptaron elegir la palabra más dura que se decían a sí mismas, y pronunciarla en voz alta, una y otra vez, delante de un desconocido, hasta que dejó de herir.</p>
+<p>Es un gesto pequeño y valiente. Lo que más duele de un pensamiento no es lo que dice, sino creer que eso somos. Aquellas personas descubrieron, en medio minuto, que la palabra era solo una palabra.</p>
+<div class="perla"><p>El pensamiento no es la realidad.<br>Es algo que la mente dice sobre ella.</p></div>
+<h2>La distancia que lo cambia todo</h2>
+<p>Cuando el testigo está presente, puedes notar «estoy pensando que no tengo tiempo» en lugar de «no tengo tiempo». Puedes notar «estoy sintiendo que esto es injusto» en lugar de «esto es injusto».</p>
+<p>Esa pequeña distancia no niega nada. El tiempo puede ser poco y la situación puede ser injusta. Pero ahora hay alguien que lo ve, y ese alguien tiene algo que el pensamiento solo no tiene: la posibilidad de elegir qué hacer con lo que ve.</p>
+<p>Te permite ver tu frecuencia en lugar de ser tu frecuencia. Y eso, en el campo de las posibilidades, es la diferencia entre quedarse encerrado en una línea y empezar a ver las otras.</p>
+<h2>Tú también</h2>
+<p>La próxima vez que una frase dura se repita en tu cabeza, prueba agregarle algo delante: «estoy teniendo el pensamiento de que…». No para convencerte de lo contrario. Solo para ver qué cambia cuando lo dices así.</p>
+<p>Muchas veces no cambia lo que pensabas. Cambia el lugar desde donde lo miras.</p>
+<div class="perla"><p>Hay alguien que mira lo que piensas.<br>Ese también eres tú.</p></div>
+<div class="sigue"><a href="L01-U4.html">Anterior: La línea estrecha</a><a class="prox" href="L01-U6.html">Siguiente: Elegir no es crear</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 1, «Vacío mental», nivel 1. Paráfrasis.</li><li id="nota-2">Edward B. Titchener, <em>A Text-Book of Psychology</em> (1916), citado según Masuda y otros (2004). Paráfrasis.</li><li id="nota-3">Akihiko Masuda, Steven C. Hayes, Casey F. Sackett y Michael P. Twohig, «Cognitive Defusion and Self-Relevant Negative Thoughts: Examining the Impact of a Ninety Year Old Technique», <em>Behaviour Research and Therapy</em> 42 (2004): 477-485. Paráfrasis.</li><li id="nota-4">Akihiko Masuda y otros, «A Parametric Study of Cognitive Defusion and the Believability and Discomfort of Negative Self-Relevant Thoughts», versión disponible en ScholarWorks, Universidad Estatal de Georgia. Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 1 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

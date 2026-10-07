@@ -2,539 +2,134 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arquitectura del Destino · Libro 1 · El Campo de Posibilidades</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Todo ya existe. No creas la realidad: eliges en qué versión ubicarte.">
+<title>El Campo de Posibilidades · Libro 1 · Arquitectura del Destino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
 }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #060d1a;
-  color: #e8eef6;
-  line-height: 1.7;
-  overflow-x: hidden;
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:106.25%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
-
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
 }
-
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  color: #a8c4e0;
-  margin-bottom: 0.5rem;
-}
-
-h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  color: #d4e4f4;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(168,196,224,0.2);
-  padding-bottom: 0.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-  color: #a8c4e0;
-  margin-top: 2rem;
-  margin-bottom: 0.8rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  color: rgba(232,238,246,0.85);
-}
-
-.escena {
-  background: rgba(120,160,220,0.05);
-  border-left: 3px solid #a8c4e0;
-  padding: 1.2rem 1.5rem;
-  margin: 2rem 0;
-  font-style: italic;
-}
-
-.protocolo {
-  background: rgba(168,196,224,0.08);
-  border: 1px solid rgba(168,196,224,0.2);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin: 2rem 0;
-}
-
-.protocolo h4 {
-  color: #d4e4f4;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.protocolo ol {
-  margin-left: 1.5rem;
-  margin-top: 0.8rem;
-}
-
-.protocolo li {
-  margin-bottom: 0.6rem;
-}
-
-.protocolo-meta {
-  font-size: 0.9rem;
-  color: rgba(168,196,224,0.7);
-  margin-top: 1rem;
-  padding-top: 0.8rem;
-  border-top: 1px solid rgba(168,196,224,0.15);
-}
-
-.salvaguarda {
-  background: rgba(201,168,76,0.08);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: 8px;
-  padding: 1.2rem 1.5rem;
-  margin: 2rem 0;
-}
-
-.salvaguarda h4 {
-  color: #d3b06a;
-  font-size: 1rem;
-  margin-bottom: 0.8rem;
-}
-
-.cierre {
-  text-align: center;
-  font-size: 1.3rem;
-  color: #d4e4f4;
-  font-style: italic;
-  margin: 3rem 0;
-  padding: 2rem;
-  background: rgba(168,196,224,0.05);
-  border-radius: 12px;
-}
-
-.puertas {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(168,196,224,0.15);
-}
-
-.puertas h3 {
-  margin-bottom: 1rem;
-}
-
-.puertas ul {
-  list-style: none;
-}
-
-.puertas li {
-  margin-bottom: 0.8rem;
-}
-
-.puertas a {
-  color: #a8c4e0;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(168,196,224,0.3);
-  transition: all 0.2s;
-}
-
-.puertas a:hover {
-  color: #d4e4f4;
-  border-bottom-color: #a8c4e0;
-}
-
-.puertas .fuente {
-  display: block;
-  font-size: 0.85rem;
-  color: rgba(232,238,246,0.5);
-  margin-top: 0.3rem;
-}
-
-.referencias {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(168,196,224,0.15);
-  font-size: 0.9rem;
-  color: rgba(232,238,246,0.6);
-}
-
-.referencias h3 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.referencias ol {
-  margin-left: 1.5rem;
-}
-
-.referencias li {
-  margin-bottom: 0.8rem;
-}
-
-.back-link {
-  display: inline-block;
-  margin-bottom: 2rem;
-  color: #a8c4e0;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.back-link:hover {
-  color: #d4e4f4;
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
 }
 </style>
 </head>
 <body>
-<div class="container">
-  <a href="../index.html" class="back-link">← Volver al portal de Arquitectura del Destino</a>
-
-  <h1>El Campo de Posibilidades</h1>
-  <p style="font-size: 1.1rem; color: rgba(232,238,246,0.7);">Libro 1 de 13 · Arquitectura del Destino</p>
-
-  <h2>Antes de empezar</h2>
-  
-  <p>Este libro es una invitación a cambiar la forma en que piensas sobre tu realidad.</p>
-  
-  <p>No te va a pedir que creas nada. No te va a pedir que aceptes conceptos new age ni fórmulas mágicas. Te va a pedir algo más difícil y más útil: <strong>que observes</strong>.</p>
-
-  <h2>Escena</h2>
-  
-<div class="escena">
-  <p>Roberto tiene cuarenta y cinco años. Veinte de ejercicio de la abogacía en un estudio corporativo grande. Prestigio, clientes importantes, un ingreso que le permitiría vivir sin preocupaciones el resto de sus días.</p>
-
-  <p>Pero cada mañana, al ponerse el traje, siente que se está poniendo un disfraz. No es tristeza. No es crisis de la mediana edad. Es algo más silencioso y más firme: la certeza de que esa vida no es la suya.</p>
-
-  <p>Un lunes, después de cerrar un caso que le valió un reconocimiento del estudio, se escucha pensando: <em>"Esta no es mi vida."</em> Y en lugar de apartar el pensamiento, como hizo otras veces, se queda con él.</p>
-
-  <p>Tres meses después renuncia. No tiene un plan armado: tiene una dirección. Empieza a trabajar con familias en conflicto, desde un lugar menos técnico y más humano. Gana la mitad. Vive el doble. Cuando se levanta cada mañana, antes de que los pies toquen el piso, siente algo que no había sentido en veinte años: un contento interior que no depende de lo que vaya a pasar ese día.</p>
-
-  <p>Roberto no es más exitoso que antes. Es más auténtico. Y esa autenticidad le da una energía que enana desde el centro: no lo empuja desde afuera, lo sostiene desde adentro.</p>
-</div>
-
-  <h2>Desde Trinity</h2>
-  
-  <p>En el <em>Libro VI: El Vacío Fértil</em>, el Nodo 1 dice:</p>
-  
-  <blockquote style="border-left: 2px solid #a8c4e0; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: rgba(232,238,246,0.8);">
-    "El vacío no es ausencia. Es un campo de posibilidades infinitas. Todo lo que puede existir, ya existe en potencia. Tu tarea no es crear lo que no existe: es elegir entre lo que ya está disponible."
-  </blockquote>
-  
-  <p>Esta frase contiene una idea radical: <strong>la realidad no se crea, se elige</strong>.</p>
-  
-  <p>Esto va contra todo lo que nos enseñaron. Nos dijeron que tenemos que construir nuestra vida ladrillo a ladrillo, con esfuerzo, con sacrificio, con voluntad. Y hay algo de verdad en eso: hay que actuar, hay que trabajar, hay que tomar decisiones.</p>
-  
-  <p>Pero hay algo más fundamental que eso: <strong>la acción siempre viene después de la elección</strong>. Primero eliges qué vida vas a habitar. Después actúas para materializarla.</p>
-  
-  <p>Si eliges mal, por más que actúes con fuerza, vas a estar construyendo en el lugar equivocado. Es como si María siguiera trabajando duro en la empresa, ganando ascensos, comprando una casa más grande... todo eso puede estar muy bien ejecutado, pero si está en la línea de vida equivocada, cada éxito la aleja más de donde debería estar.</p>
-
-  <h2>Desde Transurfing</h2>
-  
-  <p>Vadim Zeland desarrolló un modelo que explica esto con precisión quirúrgica. Él lo llama <strong>el Espacio de Variantes</strong>.</p>
-  
-  <p>Imagina que existe un campo infinito donde todas las posibilidades están ya escritas. Cada decisión que podrías tomar, cada camino que podrías recorrer, cada versión de tu vida que podrías vivir... todo eso ya existe como potencial.</p>
-  
-  <p>No es misticismo. Es una forma de modelar la realidad que resulta útil. Piensa en una biblioteca infinita: todos los libros posibles ya existen ahí. El escritor no crea el libro desde cero: lo encuentra en la biblioteca y lo baja a la realidad física escribiéndolo.</p>
-  
-  <p>Con tu vida pasa lo mismo. No la estás inventando. La estás <strong>descubriendo</strong> y <strong>materializando</strong>.</p>
-
-  <h2>La articulación</h2>
-  
-  <p>Trinity y Transurfing dicen lo mismo con palabras distintas:</p>
-  
-  <ul style="margin-left: 2rem; margin-top: 1rem;">
-    <li style="margin-bottom: 0.8rem;"><strong>Trinity:</strong> El vacío es fértil. Contiene todo en potencia.</li>
-    <li style="margin-bottom: 0.8rem;"><strong>Transurfing:</strong> El Espacio de Variantes contiene todas las líneas de vida posibles.</li>
-  </ul>
-  
-  <p>Los dos están diciendo: <strong>no estás creando tu realidad desde cero. Estás eligiendo entre un menú infinito de posibilidades que ya existen</strong>.</p>
-  
-  <p>Esto cambia todo. Porque si tu tarea es elegir y no crear, entonces el problema no es la falta de esfuerzo. El problema es la falta de claridad sobre qué estás eligiendo.</p>
-
-  <h2>Operación práctica</h2>
-  
-  <div class="protocolo">
-    <h4>Protocolo: Reconocer tu línea actual</h4>
-    
-    <p>Durante los próximos 7 días, lleva un registro simple. Cada noche, antes de dormir, anota en una libreta:</p>
-    
-    <ol>
-      <li><strong>¿Qué sentí hoy?</strong> (una o dos palabras: peso, ligereza, aburrimiento, alegría, ansiedad, paz...)</li>
-      <li><strong>¿Qué frase se repitió en mi cabeza?</strong> ("no tengo tiempo", "esto no es para mí", "ya va a pasar", "tengo que aguantar"...)</li>
-      <li><strong>Si esta sensación se extendiera por 10 años más, ¿cómo sería mi vida?</strong></li>
-    </ol>
-    
-    <p>No juzgues lo que encuentres. Solo obsérvalo. Al final de la semana, lee tus notas y pregúntate:</p>
-    
-    <p><strong>¿Esta es la línea de vida que quiero habitar?</strong></p>
-    
-    <div class="protocolo-meta">
-      <strong>Duración:</strong> 7 días<br>
-      <strong>Material:</strong> una libreta o el celular<br>
-      <strong>Tiempo diario:</strong> 5 minutos antes de dormir
-    </div>
-  </div>
-
-  <h2>Salvaguarda clínica</h2>
-  
-  <div class="salvaguarda">
-    <h4>Cuándo este libro no es para ti</h4>
-    <p>Si estás atravesando una crisis aguda (depresión mayor, duelo reciente, trauma no procesado), este no es el momento de leer sobre arquitectura del destino. Primero necesitas contención profesional.</p>
-    <p>La diferencia es simple: si la sensación de "esto no es mi vida" viene acompañada de desesperación profunda, incapacidad de funcionar, o pensamientos de que no vale la pena vivir, busca ayuda profesional antes de seguir.</p>
-    <p>Este libro es para personas que funcionan pero sienten que están en el lugar equivocado. No es para personas que no pueden funcionar.</p>
-  </div>
-
-  <h2>Umbral 1: El mapa infinito</h2>
-  
-  <p>Dijimos que existe un campo de posibilidades infinitas. Ahora vamos a entender cómo funciona.</p>
-  
-  <h3>Qué es el Espacio de Variantes</h3>
-  
-  <p>El Espacio de Variantes no es un lugar físico. No puedes ir ahí caminando. Es una estructura de información donde todas las posibilidades existen como patrones.</p>
-  
-  <p>Piénsalo así: en un videojuego, el código contiene todas las posibilidades del juego. Cada camino que podrías tomar, cada enemigo que podrías enfrentar, cada final que podrías alcanzar... todo eso está en el código, aunque tú solo experimentes una partida a la vez.</p>
-  
-  <p>Tu vida es parecida. El "código" de tu realidad contiene todas las versiones posibles de tu vida. Tú estás jugando una partida específica, pero las otras partidas existen como potencial.</p>
-  
-  <h3>Cómo te mueves entre variantes</h3>
-  
-  <p>No te mueves físicamente. Te mueves <strong>energéticamente</strong>.</p>
-  
-  <p>Cada pensamiento que tienes, cada emoción que sientes, cada decisión que tomas... todo eso es una señal que emites al campo. Esa señal te sintoniza con ciertas líneas de vida y te aleja de otras.</p>
-  
-  <p>Es como una radio: si sintonizas la frecuencia 98.5, escuchas esa emisora. Las otras emisoras siguen existiendo, pero tú no las escuchas porque no estás sintonizado con ellas.</p>
-  
-  <p>Con tu vida pasa lo mismo: tu frecuencia mental y emocional determina qué línea de vida experimentas.</p>
-
-  <h2>Umbral 2: Ya está todo</h2>
-  
-  <p>Esta es la idea más liberadora del libro: <strong>todo lo que necesitas ya está disponible</strong>.</p>
-  
-  <p>No tienes que inventar una vida mejor desde cero. Tienes que reconocer cuál de las vidas posibles es la tuya y sintonizarte con ella.</p>
-  
-  <h3>La creatividad como reconocimiento</h3>
-  
-  <p>En Trinity, el Nodo 4 del Libro VI dice:</p>
-  
-  <blockquote style="border-left: 2px solid #a8c4e0; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic;">
-    "La verdadera creatividad no es inventar lo nuevo. Es reconocer lo que ya estaba ahí, esperando ser visto."
-  </blockquote>
-  
-  <p>Esto aplica a todo. No solo al arte. A tu vida entera.</p>
-  
-  <p>La versión de ti que es escritor ya existe en el campo. La versión de ti que tiene la relación que quieres ya existe. La versión de ti que vive con propósito ya existe.</p>
-  
-  <p>Tu tarea no es crear esas versiones. Es <strong>encontrarlas</strong> y <strong>sintonizarte</strong> con ellas.</p>
-  
-  <h3>Por qué esto alivia la presión</h3>
-  
-  <p>Si crees que tienes que crear tu vida desde cero, la presión es enorme. ¿Y si me equivoco? ¿Y si no soy lo suficientemente creativo? ¿Y si no tengo las habilidades necesarias?</p>
-  
-  <p>Pero si entiendes que tu vida ya existe y solo tienes que encontrarla, la presión desaparece. No tienes que ser creativo. Tienes que ser <strong>observador</strong>.</p>
-  
-  <p>Y observar es algo que todos podemos hacer.</p>
-
-  <h2>Umbral 3: Las líneas paralelas</h2>
-  
-  <p>En el Espacio de Variantes, todas las líneas de vida existen simultáneamente. No son futuros posibles: son <strong>presentes paralelos</strong>.</p>
-  
-  <h3>Qué significa esto</h3>
-  
-  <p>Significa que ahora mismo, en este instante, existe una versión de ti que ya tiene la vida que quieres.</p>
-  
-  <p>No es que esa versión "va a existir" si haces las cosas bien. Esa versión <strong>ya existe</strong>, en otra frecuencia, en otra línea de vida.</p>
-  
-  <p>Tu tarea no es crear esa versión. Es <strong>mudarte</strong> a la línea donde esa versión eres tú.</p>
-  
-  <h3>La diferencia entre crear y elegir</h3>
-  
-  <p>Crear implica esfuerzo, tiempo, construcción. Elegir implica claridad, decisión, movimiento.</p>
-  
-  <p>Cuando crees que tienes que crear tu vida, trabajas duro pero sin dirección. Es como remar con fuerza en un océano sin saber hacia dónde vas.</p>
-  
-  <p>Cuando entiendes que tienes que elegir tu vida, primero miras el mapa, decides el destino, y después remas con dirección.</p>
-  
-  <p>El esfuerzo puede ser el mismo. La diferencia es que uno te lleva a donde quieres ir y el otro te deja agotado en medio del océano.</p>
-
-  <h2>Umbral 4: La frecuencia de la elección</h2>
-  
-  <p>Si todo ya existe y solo tienes que elegir, entonces la pregunta clave es: <strong>¿cómo eliges?</strong></p>
-  
-  <p>La respuesta es: con tu frecuencia.</p>
-  
-  <h3>Qué es tu frecuencia</h3>
-  
-  <p>Tu frecuencia es el conjunto de pensamientos, emociones y decisiones que emites constantemente al campo.</p>
-  
-  <p>No es algo místico. Es observable. Piensa en dos personas:</p>
-  
-  <ul style="margin-left: 2rem; margin-top: 1rem;">
-    <li style="margin-bottom: 0.8rem;"><strong>Persona A:</strong> Se despierta pensando "otro día más de esta vida que no quiero". Durante el día repite "no tengo tiempo", "esto es injusto", "nunca voy a poder". Se acuesta sintiendo peso.</li>
-    <li style="margin-bottom: 0.8rem;"><strong>Persona B:</strong> Se despierta pensando "hoy voy a aprender algo nuevo". Durante el día repite "esto es interesante", "puedo con esto", "estoy avanzando". Se acuesta sintiendo que progresó.</li>
-  </ul>
-  
-  <p>Ambas personas pueden tener las mismas circunstancias externas. Pero emiten frecuencias completamente distintas. Y por lo tanto, se sintonizan con líneas de vida completamente distintas.</p>
-  
-  <h3>La frecuencia determina la línea</h3>
-  
-  <p>Esto es crucial: <strong>tu frecuencia actual te tiene en tu línea actual</strong>.</p>
-  
-  <p>Si no te gusta donde estás, no sirve de nada desear estar en otro lado. Tienes que cambiar tu frecuencia. Porque mientras tu frecuencia sea la misma, vas a seguir sintonizando la misma línea.</p>
-  
-  <p>Por eso Roberto siente el peso cada lunes: su frecuencia es de peso, de "esto no es mi vida", de frustración. Esa frecuencia la mantiene en la línea donde efectivamente no es su vida.</p>
-  
-  <p>Para cambiar de línea, tiene que cambiar de frecuencia. Y eso se hace cambiando lo que piensas, lo que sientes y lo que decides.</p>
-
-  <h2>Umbral 5: El testigo del campo</h2>
-  
-  <p>Para cambiar tu frecuencia, primero tienes que observarla. Y para observarla, necesitas algo que los contemplativos llaman <strong>el testigo</strong>.</p>
-  
-  <h3>Qué es el testigo</h3>
-  
-  <p>El testigo es la parte de ti que observa sin juzgar. No es tu mente pensante (que siempre está opinando). Es algo más silencioso, más amplio, que simplemente mira.</p>
-  
-  <p>Cuando estás en modo testigo, puedes observar tus pensamientos sin identificarte con ellos. Puedes ver "estoy pensando que no tengo tiempo" en lugar de "no tengo tiempo".</p>
-  
-  <p>Esa pequeña distancia lo cambia todo. Porque te permite ver tu frecuencia en lugar de ser tu frecuencia.</p>
-  
-  <h3>Cómo se cultiva el testigo</h3>
-  
-  <p>No se cultiva con esfuerzo. Se cultiva con <strong>pausas</strong>.</p>
-  
-  <p>Varias veces al día, deten lo que estás haciendo por 30 segundos y pregúntate:</p>
-  
-  <ul style="margin-left: 2rem; margin-top: 1rem;">
-    <li style="margin-bottom: 0.8rem;">¿Qué estoy pensando ahora?</li>
-    <li style="margin-bottom: 0.8rem;">¿Qué estoy sintiendo ahora?</li>
-    <li style="margin-bottom: 0.8rem;">¿Qué frecuencia estoy emitiendo?</li>
-  </ul>
-  
-  <p>No cambies nada. Solo observa. Con el tiempo, esta práctica te da algo invaluable: la capacidad de elegir conscientemente tu frecuencia, en lugar de emitirla automáticamente.</p>
-
-  <h2>Umbral 6: La primera elección consciente</h2>
-  
-  <p>Todo lo que hemos visto hasta ahora culmina en esto: <strong>tu primera elección consciente</strong>.</p>
-  
-  <h3>Qué es una elección consciente</h3>
-  
-  <p>La mayoría de las personas eligen su línea de vida inconscientemente. Emiten una frecuencia sin darse cuenta, y esa frecuencia los lleva a donde los lleva.</p>
-  
-  <p>Una elección consciente es distinta. Es cuando te detienes, observas tu frecuencia actual, y decides deliberadamente cambiarla para sintonizar otra línea.</p>
-  
-  <p>No es un pensamiento mágico. No es "voy a pensar positivo y todo va a cambiar". Es un proceso concreto:</p>
-  
-  <ol style="margin-left: 2rem; margin-top: 1rem;">
-    <li style="margin-bottom: 0.8rem;">Observas tu línea actual (¿dónde estoy?)</li>
-    <li style="margin-bottom: 0.8rem;">Observas tu frecuencia actual (¿qué estoy emitiendo?)</li>
-    <li style="margin-bottom: 0.8rem;">Decides qué línea quieres habitar</li>
-    <li style="margin-bottom: 0.8rem;">Cambias tu frecuencia para sintonizar esa línea</li>
-  </ol>
-  
-  <h3>La frase que cambia todo</h3>
-  
-  <p>Hay una práctica simple que funciona como catalizador. Toma una hoja de papel y escribe:</p>
-  
-  <p style="text-align: center; font-size: 1.2rem; color: #d4e4f4; margin: 2rem 0; font-style: italic;">"Hoy elijo conscientemente habitar la línea de vida donde [describe brevemente cómo es esa vida]."</p>
-  
-  <p>No es magia. Es una declaración de intención. Le dice al campo (y a ti mismo) que estás eligiendo, no dejando que las cosas pasen.</p>
-  
-  <p>Después de escribirla, léela cada mañana durante una semana. Observa qué cambia. No fuerces nada. Solo observa.</p>
-
-  <h2>Umbral 7: El campo como hogar</h2>
-  
-  <p>Hay algo que queremos que te lleves de este libro, más allá de los conceptos y las prácticas.</p>
-  
-  <p>Y es esto: <strong>el campo es tu hogar</strong>.</p>
-  
-  <h3>Qué significa esto</h3>
-  
-  <p>El Espacio de Variantes, el vacío fértil, el campo de posibilidades... como lo llames, no es algo externo a ti. No es un lugar al que vas. Es el lugar desde donde vienes.</p>
-  
-  <p>Tú no eres solo la versión de ti que está leyendo este libro. Eres también todas las otras versiones que existen en el campo. Eres el testigo que observa. Eres la consciencia que elige.</p>
-  
-  <p>Cuando entiendes esto, algo se relaja. Porque ya no estás solo luchando por construir una vida. Estás en tu elemento, navegando un campo que es tuyo por derecho.</p>
-  
-  <h3>Volver al campo</h3>
-  
-  <p>En Trinity, el Libro VI termina con una invitación: volver al vacío.</p>
-  
-  <p>No como escape. Como retorno. Porque el vacío no es un lugar al que vas cuando estás cansado. Es el lugar desde donde operas cuando estás lúcido.</p>
-  
-  <p>Cuanta más conexión tengas con el campo, más claridad tienes para elegir. Cuanto más identificado estés solo con tu línea actual, menos opciones ves.</p>
-  
-  <p>El campo es amplio. Tu línea es estrecha. Volver al campo es recordar que tienes opciones.</p>
-
-  <h2>Cierre del libro</h2>
-  
-  <p>Terminamos donde empezamos, pero con herramientas nuevas.</p>
-  
-  <p>María sentía el peso cada lunes porque estaba en una línea de vida que no era la suya, emitiendo una frecuencia que la mantenía ahí.</p>
-  
-  <p>Ahora sabe:</p>
-  
-  <ul style="margin-left: 2rem; margin-top: 1rem;">
-    <li style="margin-bottom: 0.8rem;">Que existe un campo de posibilidades donde todas las versiones de su vida ya existen</li>
-    <li style="margin-bottom: 0.8rem;">Que su frecuencia actual la tiene sintonizada con esta línea específica</li>
-    <li style="margin-bottom: 0.8rem;">Que puede cambiar su frecuencia para sintonizar otra línea</li>
-    <li style="margin-bottom: 0.8rem;">Que el campo es su hogar, no un lugar extraño</li>
-  </ul>
-  
-  <p>Con eso, ya puede empezar a moverse.</p>
-
-  <div class="cierre">
-    El campo no es un lugar al que llegas.<br>
-    Es un lugar al que vuelves.<br>
-    Y volver es llegar a casa.
-  </div>
-
-  <div class="puentes">
-    <p style="text-align: center; font-size: 1.1rem; color: #a8c4e0; margin: 2rem 0;">
-      Este libro te mostró el campo.<br>
-      El siguiente te presenta al que duerme dentro de él.
-    </p>
-  </div>
-
-  <div class="puertas">
-    <h3>Puertas laterales</h3>
-    <ul>
-      <li>
-        <a href="../../01_Libros/18_Lo_Que_Se_Escapa/index.html">Portal Público, Libro 18: Lo que se escapa</a>
-        <span class="fuente">mismo repositorio</span>
-      </li>
-      <li>
-        <a href="../../01_Libros/28_El_Vacio/index.html">Portal Público, Libro 28: El Vacío</a>
-        <span class="fuente">mismo repositorio</span>
-      </li>
-      <li>
-        <a href="../../01_Libros/07_Arquitectura_del_Destino/index.html">Trinity Origen, Libro VII: Arquitectura del Destino (oráculo de 113 aforismos)</a>
-        <span class="fuente">mismo repositorio</span>
-      </li>
-      <li>
-        <a href="https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_06/index.html">Trinity Origen, Libro VI: El Vacío Fértil</a>
-        <span class="fuente">repositorio Trinity</span>
-      </li>
-      <li>
-        <a href="https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro1/L1-Nodo1.html">Trinity Infinito, Libro 1: Núcleo Ontológico</a>
-        <span class="fuente">repositorio Trinity · entrada por el Nodo 1</span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="referencias">
-    <h3>Referencias</h3>
-    <ol>
-      <li><strong>Zeland, Vadim.</strong> <em>Transurfing: El modelo de la realidad.</em> Concepto de Espacio de Variantes como campo de posibilidades infinitas.</li>
-      <li><strong>Zeland, Vadim.</strong> <em>Transurfing: El susurro de las estrellas matutinas.</em> La importancia de la frecuencia mental y emocional.</li>
-      <li><strong>Trinity Origen, Libro VI:</strong> <em>El Vacío Fértil.</em> Los siete nodos sobre la creatividad desde el vacío.</li>
-    </ol>
-  </div>
-
-</div>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="../../index.html">Portal Trinity</a></nav><div class="wrap"><header class="cabeza"><div class="cual">Libro 1 de 13</div><h1>El Campo de Posibilidades</h1><p class="sub">lo que ya está a tu alcance</p><svg class="campo-svg" viewBox="0 0 600 210" role="img" aria-label="Un campo de puntos, y una sola línea que lo atraviesa"><circle class="p" cx="20" cy="18" r="1.6"/><circle class="p" cx="60" cy="18" r="1.6"/><circle class="p" cx="100" cy="18" r="1.6"/><circle class="p" cx="140" cy="18" r="1.6"/><circle class="p" cx="180" cy="18" r="1.6"/><circle class="p" cx="220" cy="18" r="1.6"/><circle class="p" cx="260" cy="18" r="1.6"/><circle class="p" cx="300" cy="18" r="1.6"/><circle class="p" cx="340" cy="18" r="1.6"/><circle class="p" cx="380" cy="18" r="1.6"/><circle class="p" cx="420" cy="18" r="1.6"/><circle class="p" cx="460" cy="18" r="1.6"/><circle class="p" cx="500" cy="18" r="1.6"/><circle class="p" cx="540" cy="18" r="1.6"/><circle class="p" cx="580" cy="18" r="1.6"/><circle class="p" cx="20" cy="44" r="1.6"/><circle class="p" cx="60" cy="44" r="1.6"/><circle class="p" cx="100" cy="44" r="1.6"/><circle class="p" cx="140" cy="44" r="1.6"/><circle class="p" cx="180" cy="44" r="1.6"/><circle class="p" cx="220" cy="44" r="1.6"/><circle class="p" cx="260" cy="44" r="1.6"/><circle class="p" cx="300" cy="44" r="1.6"/><circle class="p" cx="340" cy="44" r="1.6"/><circle class="p" cx="380" cy="44" r="1.6"/><circle class="p" cx="420" cy="44" r="1.6"/><circle class="p" cx="460" cy="44" r="1.6"/><circle class="p" cx="500" cy="44" r="1.6"/><circle class="p" cx="540" cy="44" r="1.6"/><circle class="p" cx="580" cy="44" r="1.6"/><circle class="p" cx="20" cy="70" r="1.6"/><circle class="p" cx="60" cy="70" r="1.6"/><circle class="p" cx="100" cy="70" r="1.6"/><circle class="p" cx="140" cy="70" r="1.6"/><circle class="p" cx="180" cy="70" r="1.6"/><circle class="p" cx="220" cy="70" r="1.6"/><circle class="p" cx="260" cy="70" r="1.6"/><circle class="p" cx="300" cy="70" r="1.6"/><circle class="p" cx="340" cy="70" r="1.6"/><circle class="p" cx="380" cy="70" r="1.6"/><circle class="p" cx="420" cy="70" r="1.6"/><circle class="p" cx="460" cy="70" r="1.6"/><circle class="p" cx="500" cy="70" r="1.6"/><circle class="p" cx="540" cy="70" r="1.6"/><circle class="p" cx="580" cy="70" r="1.6"/><circle class="p" cx="20" cy="96" r="1.6"/><circle class="p" cx="60" cy="96" r="1.6"/><circle class="p" cx="100" cy="96" r="1.6"/><circle class="p" cx="140" cy="96" r="1.6"/><circle class="p" cx="180" cy="96" r="1.6"/><circle class="p" cx="220" cy="96" r="1.6"/><circle class="p" cx="260" cy="96" r="1.6"/><circle class="p" cx="300" cy="96" r="1.6"/><circle class="p" cx="340" cy="96" r="1.6"/><circle class="p" cx="380" cy="96" r="1.6"/><circle class="p" cx="420" cy="96" r="1.6"/><circle class="p" cx="460" cy="96" r="1.6"/><circle class="p" cx="500" cy="96" r="1.6"/><circle class="p" cx="540" cy="96" r="1.6"/><circle class="p" cx="580" cy="96" r="1.6"/><circle class="p" cx="20" cy="122" r="1.6"/><circle class="p" cx="60" cy="122" r="1.6"/><circle class="p" cx="100" cy="122" r="1.6"/><circle class="p" cx="140" cy="122" r="1.6"/><circle class="p" cx="180" cy="122" r="1.6"/><circle class="p" cx="220" cy="122" r="1.6"/><circle class="p" cx="260" cy="122" r="1.6"/><circle class="p" cx="300" cy="122" r="1.6"/><circle class="p" cx="340" cy="122" r="1.6"/><circle class="p" cx="380" cy="122" r="1.6"/><circle class="p" cx="420" cy="122" r="1.6"/><circle class="p" cx="460" cy="122" r="1.6"/><circle class="p" cx="500" cy="122" r="1.6"/><circle class="p" cx="540" cy="122" r="1.6"/><circle class="p" cx="580" cy="122" r="1.6"/><circle class="p" cx="20" cy="148" r="1.6"/><circle class="p" cx="60" cy="148" r="1.6"/><circle class="p" cx="100" cy="148" r="1.6"/><circle class="p" cx="140" cy="148" r="1.6"/><circle class="p" cx="180" cy="148" r="1.6"/><circle class="p" cx="220" cy="148" r="1.6"/><circle class="p" cx="260" cy="148" r="1.6"/><circle class="p" cx="300" cy="148" r="1.6"/><circle class="p" cx="340" cy="148" r="1.6"/><circle class="p" cx="380" cy="148" r="1.6"/><circle class="p" cx="420" cy="148" r="1.6"/><circle class="p" cx="460" cy="148" r="1.6"/><circle class="p" cx="500" cy="148" r="1.6"/><circle class="p" cx="540" cy="148" r="1.6"/><circle class="p" cx="580" cy="148" r="1.6"/><circle class="p" cx="20" cy="174" r="1.6"/><circle class="p" cx="60" cy="174" r="1.6"/><circle class="p" cx="100" cy="174" r="1.6"/><circle class="p" cx="140" cy="174" r="1.6"/><circle class="p" cx="180" cy="174" r="1.6"/><circle class="p" cx="220" cy="174" r="1.6"/><circle class="p" cx="260" cy="174" r="1.6"/><circle class="p" cx="300" cy="174" r="1.6"/><circle class="p" cx="340" cy="174" r="1.6"/><circle class="p" cx="380" cy="174" r="1.6"/><circle class="p" cx="420" cy="174" r="1.6"/><circle class="p" cx="460" cy="174" r="1.6"/><circle class="p" cx="500" cy="174" r="1.6"/><circle class="p" cx="540" cy="174" r="1.6"/><circle class="p" cx="580" cy="174" r="1.6"/><circle class="p" cx="20" cy="200" r="1.6"/><circle class="p" cx="60" cy="200" r="1.6"/><circle class="p" cx="100" cy="200" r="1.6"/><circle class="p" cx="140" cy="200" r="1.6"/><circle class="p" cx="180" cy="200" r="1.6"/><circle class="p" cx="220" cy="200" r="1.6"/><circle class="p" cx="260" cy="200" r="1.6"/><circle class="p" cx="300" cy="200" r="1.6"/><circle class="p" cx="340" cy="200" r="1.6"/><circle class="p" cx="380" cy="200" r="1.6"/><circle class="p" cx="420" cy="200" r="1.6"/><circle class="p" cx="460" cy="200" r="1.6"/><circle class="p" cx="500" cy="200" r="1.6"/><circle class="p" cx="540" cy="200" r="1.6"/><circle class="p" cx="580" cy="200" r="1.6"/><path class="linea dibuja" d="M20 148 C 120 140, 160 98, 240 96 S 360 70, 420 60 S 540 44, 580 34"/></svg></header><main><div class="promesa"><p>No tienes que construir otra vida desde cero.<br>Tienes que ver las que ya están a tu alcance.</p></div><h2>Antes de empezar</h2><p>Un abogado que una mañana se escucha pensar «esta no es mi vida», y en lugar de apartar el pensamiento se queda con él. Un juez ruso que, en su lecho, descubre que hizo todo lo que se esperaba de él. Una restauradora que pasa veintiún años quitando lo que otros pintaron encima de Leonardo. Un matemático que imagina, antes que Borges, una biblioteca con todos los libros posibles. Unos agricultores de la India que piensan mejor después de la cosecha que antes.</p><p>Este es el primer libro de un sistema de trece. Su tema es el punto de partida de todo lo demás: antes de cualquier esfuerzo hay un campo de posibilidades, y lo que hacemos, sepámoslo o no, es elegir en cuál de ellas ubicarnos.</p><p>Lo cuentan una enfermera que escuchó a cientos de personas al final de su vida, un autor ruso que se presenta como retransmisor, una psicóloga que midió cómo el ánimo ensancha lo que vemos, un psicólogo de hace un siglo que repetía una palabra hasta vaciarla, y unos estudiantes alemanes que escribieron una sola frase.</p><p>Este libro no te va a pedir que creas nada. Te va a pedir algo más difícil y más útil: que observes. Al final hay una operación para esta semana, con sus pasos, su tiempo y su material.</p><section class="aviso"><h2>Una advertencia breve</h2><p>Esto no es un manual terapéutico ni reemplaza un tratamiento.</p><p>Si estás atravesando una crisis aguda, como una depresión mayor, un duelo reciente o un trauma no procesado, primero necesitas contención profesional. La señal es simple: si la sensación de que esta no es tu vida viene acompañada de desesperación profunda o de la imposibilidad de funcionar, busca ayuda antes de seguir.</p><p>Lo que sientes no es culpable de lo que vives. Este libro habla de cuántos caminos alcanzas a ver dentro de tu situación, no de quién tiene la culpa de ella.</p><p>Si en algún momento apareció la idea de no querer estar, eso necesita atención esta semana. Responde bien al tratamiento y no conviene demorarlo.</p></section><h2>Los siete umbrales</h2><ol class="indice"><li><a href="L01-U1.html"><span class="n">I</span><span><span class="t">La vida equivocada</span><span class="s">cuando el traje pesa</span></span></a></li><li><a href="L01-U2.html"><span class="n">II</span><span><span class="t">El campo</span><span class="s">lo que queda cuando se quita lo agregado</span></span></a></li><li><a href="L01-U3.html"><span class="n">III</span><span><span class="t">La biblioteca</span><span class="s">todos los libros posibles</span></span></a></li><li><a href="L01-U4.html"><span class="n">IV</span><span><span class="t">La línea estrecha</span><span class="s">lo que el ánimo deja ver</span></span></a></li><li><a href="L01-U5.html"><span class="n">V</span><span><span class="t">El testigo</span><span class="s">ver lo que piensas sin ser lo que piensas</span></span></a></li><li><a href="L01-U6.html"><span class="n">VI</span><span><span class="t">Elegir no es crear</span><span class="s">una línea escrita</span></span></a></li><li><a href="L01-U7.html"><span class="n">VII</span><span><span class="t">La operación</span><span class="s">siete días para ver tu línea</span></span></a></li><li><a href="L01-cierre.html"><span class="n">⟐</span><span><span class="t">Tu casa</span><span class="s">el campo desde donde vienes</span></span></a></li></ol><div class="sigue"><a href="../index.html">Volver a la serie</a><a class="prox" href="L01-U1.html">Empezar: La vida equivocada</a></div></main></div><footer class="pie">Arquitectura del Destino, Sistema Trinity de Navegación Consciente. Lic. Arturo Rodríguez, Campo Trinity.</footer>
 </body>
 </html>
