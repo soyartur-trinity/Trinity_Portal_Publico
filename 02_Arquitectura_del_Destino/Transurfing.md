@@ -1164,3 +1164,156 @@ En *Las Manzanas Caen Al Cielo* / *El control de la Realidad*, Capítulo IV: **�
 > «A fin de desarrollar este hábito, es suficiente seguir una sencilla regla: Enséñate a pensar en lo que estás haciendo ahora mismo. No hagas nada sólo porque sí, sin pensar, mientras nadas en una amorfa jalea de pensamientos incontrolados. Proclama la declaración de intenciones. Eso no significa que siempre tengas que estar en alerta total. Puedes dejar tus pensamientos derivar tanto como quieras, pero hazlo intencionadamente, por el principio: si mi mente está vagando es sólo porque yo la dejo. E igual de intencionadamente vuelve a un estado enfocado cuando sea necesario» [43].
 
 ***
+Transurfing a ti mismo, el último libro de Vadim
+
+Con agradecimiento a Anders por haber rescatado y reiniciado este foro y en celebración de su trabajo y logro, aquí hay una nota informativa de Notebooklm sobre el último y más actualizado libro de Vadim, traducido al español latinoamericano.
+
+¡Disfruten!
+
+r/realitytransurfing - Transurfing a ti mismo, el último libro de Vadim
+Documento Informativo: Principios Clave de 'Transurfing Yourself'
+
+Resumen Ejecutivo
+
+Este documento sintetiza los temas centrales y las técnicas prácticas de "Transurfing Yourself", un sistema para gestionar la realidad personal adaptado para un período descrito como la "Nueva Realidad" o "Nueva Era". La premisa central es que la vida ordinaria es un "sueño despierto" que se puede controlar a través del despertar consciente y la intención enfocada. A medida que la humanidad entra en la "Era de Acuario", un tiempo de cambio de energías planetarias y despertar del ADN latente, el poder de la intención ha aumentado significativamente, abriendo una ventana de oportunidad única para la autotransformación profunda.
+
+El mandato principal de "Transurfing Yourself" es ir más allá de la gestión de la realidad externa para transformar fundamentalmente el ser interior. Esto implica un objetivo radical: no solo frenar el envejecimiento, sino lograr la Transformación, Regeneración y Evolución (TRE). Esto se logra reemplazando los programas socialmente arraigados de limitación y degradación con un nuevo programa de renovación y desarrollo, respaldado por pilares prácticos de nutrición efectiva, movimiento efectivo y atención efectiva.
+
+Las técnicas clave incluyen reconocer y desmantelar los obstáculos autoimpuestos (el principio de "No hay montaña"), identificar y sobrescribir las creencias limitantes negativas ("marcadores de pensamiento") y entrar en un estado de poder ("YO SOY TODO-POSIBLE"). La práctica definitiva es "Despertar en el Espíritu", un proceso de conexión con el ser superior para acceder a un nivel más profundo de conciencia, poder y claridad. El dominio de la propia atención se presenta como la habilidad fundamental, ya que la realidad de uno es un reflejo directo de aquello en lo que se enfoca la atención.
+
+--------------------------------------------------------------------------------
+
+I. El Contexto: La Nueva Realidad y el Sueño Despierto
+
+Los principios de "Transurfing Yourself" se basan en un cambio fundamental en la naturaleza de la realidad, que comenzó alrededor del 22 de diciembre de 2020. Esta "Nueva Era", que sucede a la "era oscura y difícil de Piscis", se caracteriza por nuevas energías planetarias y oportunidades únicas.
+
+A. Características de la Nueva Realidad
+
+Cambio Energético: La realidad está cambiando a "vibraciones más altas". La resonancia Schumann (frecuencia fundamental de 7.83 Hz) permanece constante, pero su espectro se ha vuelto errático e impredecible, con picos inesperados en armónicos más altos.
+Transformación Fisiológica: El cuerpo humano se está reestructurando en respuesta a estas nuevas energías. Una parte del ADN humano, previamente latente, ha comenzado a despertar. Esto se manifiesta externamente como "cambios"—cambios significativos en el estado de ánimo y el bienestar.
+Mayor Poder de la Intención: Se ha abierto una "ventana de oportunidad para controlar los procesos internos y externos con el poder de nuestra intención". La capacidad y el poder de la intención enfocada han aumentado significativamente.
+Obstáculos Amplificados: Concomitantemente, la "muralla de obstáculos que te creas a ti mismo, a través de tu lucha", también ha crecido. Las actitudes negativas y los reflejos primitivos (irritación, ira, juicio) disminuyen inmediatamente la energía y la vibración, lo que dificulta el logro de los objetivos.
+B. La Metáfora del Sueño Despierto
+
+El paradigma central es que la vida de vigilia es análoga a un sueño. La mayoría de los individuos están "dormidos" dentro de este sueño, actuando como personajes inconscientes sujetos a un guion externo. No son conscientes de su situación y no pueden influir en ella.
+
+Sueño Lúcido Mientras se Está Despierto: La habilidad principal es "despertar en un sueño despierto". Esto significa lograr un estado de conciencia consciente donde uno se da cuenta de que está en una realidad similar a un sueño y, por lo tanto, puede tomar el control de ella.
+El Problema es el Sueño: Los problemas y las pesadillas en la vida deben tratarse como los de un sueño. La solución es despertar dentro del sueño, darse cuenta de que es un sueño y tomar el control. Como dice el texto, "Lo que eliges es lo que obtienes".
+El Desafío del Despertar: La parte más difícil del proceso es "LEVANTARSE DEL SUEÑO DESPIERTO". Las experiencias negativas y pensar demasiado en los problemas son los factores que más inducen al sueño.
+II. El Mandato de 'Transurfing Yourself': Recordando el Verdadero Ser
+
+Las nuevas condiciones requieren una evolución de "Transurfing de la Realidad" a "Transurfing Yourself". Este es un cambio de la gestión de eventos externos a una transformación profunda e interna destinada a reclamar el ser auténtico y poderoso de uno.
+
+Volviendo al Ser Real: Se describe que los individuos han "inventado" sus seres actuales, cubiertos con proyecciones limitantes y suposiciones de personalidad. El mandato es "rebobinar tu vida" y recordar un momento, a menudo en la infancia o la adolescencia, en el que uno se sentía fuerte, libre y capaz de cualquier cosa. Este estado auténtico es la clave para desbloquear el verdadero potencial.
+Despertando al Ser Superior: Más allá de despertar como una encarnación individual, la Nueva Era presenta la oportunidad de despertar al ser superior, o Espíritu, que trasciende todas las encarnaciones.
+La Pregunta Fundamental: El texto postula que un paso clave en este proceso es hacer la pregunta "¿QUIÉN ERES?", no en un sentido superficial, sino para identificar el verdadero ser detrás de todas las construcciones sociales y personales. Los personajes de un sueño no pueden responder a esta pregunta, pero un individuo despierto sí puede.
+III. Principios Clave y Técnicas Fundamentales
+
+Para navegar por la Nueva Realidad y lograr la autotransformación, se presenta un conjunto de principios clave y técnicas accionables.
+
+A. Superando los Obstáculos Autoimpuestos: 'No Hay Montaña'
+
+Este principio aborda las barreras auto creadas para lograr los objetivos, que se basan principalmente en la importancia ficticia que se le da al objetivo en sí.
+
+La Metáfora de la 'Montaña': Un objetivo a menudo se imagina como una "alta montaña" que requiere una difícil escalada. Esta "montaña" está compuesta de creencias limitantes: "nada es fácil", "no hay suficiente para todos", "tienes que trabajar duro", "eres incapaz e indigno".
+El Principio: En la Nueva Era, la ausencia de esta montaña auto creada es más importante que la fuerza de la propia intención. La mentalidad requerida es: "No hay montaña, solo está en mi cabeza. Camino por la llanura y tomo con calma lo mío".
+La Acción: El proceso es primero "quitar la montaña" mentalmente y luego proceder con la tarea como si fuera simple, como "ir a la tienda por un periódico". Esta forma de pensamiento se considera una de las técnicas más poderosas de la Nueva Era. Para aceptarlo, uno necesita una mente clara y altos niveles de energía.
+B. Deconstruyendo las Creencias Limitantes: Marcadores de Pensamiento
+
+Los marcadores de pensamiento son programas negativos, impuestos socialmente, que atan, limitan e inducen un estado de "sueño despierto". Liberarse de estos es crucial para poder decir "no hay montaña".
+
+Naturaleza de los Marcadores: Son creencias y reacciones opresivas que operan inconscientemente. Ejemplos incluyen:
+"Estás equivocado desde el principio".
+"Las opiniones de los demás son muy importantes para mí".
+"Tengo que / Lo debo".
+"No merezco, no soy digno".
+"Tienes que trabajar mucho y duro".
+"Llego tarde a todo".
+El Proceso de Eliminación:
+Conciencia: Uno debe ver y comprender qué marcadores han dominado su vida. Algunos desaparecen con un solo momento de conciencia.
+Usar como Desencadenantes: Deja que los propios marcadores se conviertan en activadores del despertar. Date cuenta en el momento en que caes bajo la influencia de un marcador.
+Reemplazo: Reemplaza conscientemente la actitud negativa con una positiva. Declara y repite constantemente nuevas actitudes empoderadoras.
+Seguimiento del Progreso: Monitorea las confirmaciones de que las nuevas actitudes están funcionando.
+C. Desatando el Poder Personal: La Técnica 'YO SOY TODO-POSIBLE'
+
+Esta es una técnica integral diseñada para "hacer explotar los problemas" y establecer una nueva realidad liberándose temporalmente de los marcadores de pensamiento y los bloqueos energéticos implantados.
+
+El Proceso de Tres Pasos:
+Entra en un estado de comodidad y calma.
+"Explota tu biocampo" exhalando con fuerza por la nariz e imaginando una onda expansiva que emana del cuerpo. Simultáneamente, pronuncia la forma de pensamiento: "".
+Desde este nuevo estado de poder, establece el "marco objetivo" (el resultado final deseado).
+Efectos: Esta práctica produce una sensación de ligereza, fuerza, confianza y ingravidez. Elimina las abrazaderas energéticas y los bloqueos físicos que cuelgan en el biocampo, que representan el peso de los problemas y las responsabilidades. El efecto es temporal, por lo que es crucial establecer la propia realidad inmediatamente después de realizar la técnica. La práctica regular conduce a resultados duraderos y libera de los complejos de inferioridad.
+IV. El Objetivo Radical: Transformación, Regeneración, Evolución (TRE)
+
+El objetivo final presentado es una desviación radical de aceptar el envejecimiento y la degradación. Las condiciones únicas de la Transición permiten un reinicio completo del cuerpo y la mente.
+
+A. La Premisa de la Regeneración
+
+Una Ventana de Oportunidad: La Nueva Era permite que la degradación del cuerpo se transforme en "renacimiento y desarrollo", incluyendo la regeneración y la evolución. Se dice que el cuerpo anhela esto y sabe que es posible.
+Reemplazando el Programa: El principal factor limitante es el programa social que dicta que todas las personas envejecen, se enferman y mueren. Este viejo programa debe ser reemplazado conscientemente por uno nuevo para la regeneración.
+Determinación Inquebrantable: Lograr esto requiere un "compromiso inquebrantable con el renacimiento y el desarrollo". Esta no es una simple solicitud, sino una firme determinación de tener y actuar.
+B. El Programa TRE y el Estado de Referencia
+
+El programa de regeneración implica establecer una nueva plantilla mental y volver a un "estado de referencia".
+
+Encontrar el Estado de Referencia: Uno debe recordar un momento en la vida (a menudo la infancia o la juventud) en el que se sintió físicamente excelente y sin cargas. Este recuerdo sirve como la "configuración básica" a la que uno puede regresar. Reexperimentar este estado es un paso clave.
+Creando un Nuevo Estado de Referencia: Si no existe tal recuerdo positivo, uno puede crear un nuevo estado de referencia estableciendo un objetivo de desarrollo y buscando el renacimiento en cuerpo y espíritu.
+Transmitiendo Formas de Pensamiento: El nuevo programa se instala transmitiendo constantemente formas de pensamiento, tanto activamente como en segundo plano. Un ejemplo es:
+C. Pilares de Apoyo Físico y Energético
+
+El programa TRE está respaldado por tres pilares prácticos.
+
+Pilar	Descripción	Recomendaciones Clave
+1. Limpieza	La higiene interna es la primera condición necesaria. Un cuerpo limpio permite que la energía fluya libre y poderosamente. Las toxinas acumuladas bloquean y amortiguan la energía.	Sigue los principios de la purificación. Concéntrate tanto en el cuerpo como en la mente.
+2. Nutrición Efectiva	La comida debe ser limpia y efectiva, promoviendo la regeneración. Evita los sistemas estrictos y los extremos.	Brotes: Descritos como "superalimentos" e "iniciadores de la regeneración", que transportan la energía de la vida naciente. Los brotes clave incluyen cebada, avena, trigo sarraceno, sésamo negro, lentejas y alfalfa. <br> Otros Alimentos Clave: Fucus ("rey de las algas marinas"), polen de flores, jalea real, hongo Melena de León, raíz de chirivía, verduras fermentadas (chucrut), aguacate, nueces.
+3. Movimiento Efectivo	El movimiento activo elimina tanto la intoxicación orgánica como la informativa. La actividad física debe ser una prioridad. La regeneración solo es posible con el movimiento activo.	Principios: Debe ser variado, agradable (no una carga), moderado e incorporar la relajación. <br> Áreas Clave: Se debe prestar especial atención al cuello, ya que los músculos del cuello débiles y tensos pueden sufrir espasmos, comprimir los vasos sanguíneos e impedir el flujo sanguíneo al cerebro, causando problemas generalizados.
+V. Dominando la Atención y la Conciencia
+
+La capacidad de controlar la realidad es directamente proporcional a la capacidad de controlar la propia atención y estado de ser.
+
+A. La Primacía de la Atención
+
+La Atención Crea la Realidad: El principio principal del Transurfing es que la vida está llena de aquello en lo que se enfoca la atención. Quien controla su atención controla la realidad.
+El Hábito del Despertar: Uno debe desarrollar el hábito de monitorear su estado y despertar. La técnica más simple es hacer preguntas conscientes ("¿Cómo me siento? ¿Qué me molesta?").
+Desencadenantes: Cualquier experiencia negativa (desaliento, ansiedad, impotencia) debe servir como un activador para despertar, detener los pensamientos negativos y establecer una nueva realidad deseada.
+B. Principios de Coordinación: Felicidad y Amor
+
+Estos principios implican gestionar activamente el estado emocional para influir positivamente en el "espejo" de la realidad.
+
+Coordinación de la Felicidad: Esta es una forma de "gestión de la alegría". Implica enfocarse conscientemente en los placeres simples y saborearlos, en lugar de darlos por sentado. Al enfocarse en la alegría, la realidad la refleja en un bucle de retroalimentación positivo.
+Coordinación del Amor: En la Nueva Realidad, es beneficioso reemplazar los reflejos negativos (irritación, ira, resentimiento) con el envío consciente e intencional de amor. El mundo, como un espejo, refleja la actitud de uno. Irradiar amor hace que regrese, aumentando la energía personal.
+C. Despertar en el Espíritu: El Siguiente Nivel de Conciencia
+
+Esta es la práctica más avanzada, que representa un cambio profundo en la autoconciencia.
+
+De la Atención a la 'Atención Misma': La práctica implica transformarse por completo en la propia atención. Este estado se describe como una contemplación silenciosa y sin pensamientos de uno mismo y de la realidad, donde todas las capas de la personalidad desaparecen, dejando solo un observador silencioso.
+Conectando con el Espíritu: Este observador silencioso es el "Espíritu" o Ser superior. La Nueva Era permite el contacto directo con este Espíritu a través de un "punto de acceso" ubicado detrás y por encima de la parte posterior de la cabeza.
+El Poder del Espíritu: Al conectarse con esta fuente original, uno gana el "PODER DEL ESPÍRITU". Este poder permite:
+Mayor capacidad para gestionarse a sí mismo y a su realidad.
+Curación de dolencias físicas y mentales.
+Liberación de programas y complejos destructivos.
+Programarse a sí mismo para TRE.
+Encontrar la propia misión y los verdaderos objetivos.
+Efecto Acumulativo: La práctica sistemática de entrar en el estado del Espíritu tiene un efecto acumulativo, lo que permite desarrollar y acumular estas habilidades beneficiosas de forma permanente.
+VI. Aplicación Práctica y Técnicas Clave
+
+El texto proporciona numerosas técnicas prácticas, muchas de las cuales se detallan en sus apéndices. La "trenza" es una herramienta mencionada con frecuencia para influir directamente en la realidad.
+
+A. La Técnica de la 'Trenza' para Establecer la Realidad
+
+La "trenza" es una extensión energética utilizada para establecer un "marco objetivo", una imagen clara o intención de un resultado final deseado. Se describe que funciona "sin ser notada" para cambiar a una persona a una nueva "bobina de película" donde se reproduce el guion deseado.
+
+Razones por las que la 'Trenza' puede no funcionar:
+Razón	Explicación
+Tiempo	Intentar cambiar una realidad que ya ha sucedido o está a punto de suceder. La realidad necesita tiempo para implementar el plan.
+Alcance	Intentar establecer un marco en una realidad compartida (por ejemplo, detener una guerra, asegurar el éxito de un proyecto importante) en lugar de en la capa del propio mundo.
+Método	Establecer un guion (una secuencia de eventos) en lugar de un marco objetivo (el resultado final). Uno no puede controlar el guion.
+Objetivo	Intentar determinar el comportamiento o la actitud de una persona específica. Las personas no pueden ser manipuladas directamente como eventos.
+Camino Compartido	Intentar ganar en loterías, casinos o bolsas de valores, que es una "ruta compartida" con una gran multitud, en lugar de un camino individual.
+B. Resumen de los Pasos Accionables Clave
+
+Deja de Negociar: Cuando se necesita acción (por ejemplo, comenzar una rutina de ejercicios), omite la etapa de negociar con la mente perezosa. No pienses, hazlo.
+Haz Preguntas Críticas: Para despertar del sueño despierto, haz constantemente preguntas conscientes y curiosas sobre tu estado y tu realidad.
+Usa Dos Cuadernos: Para enfocar la atención, usa un cuaderno matutino para declaraciones (metas) y un cuaderno vespertino para afirmaciones (progreso).
+Practica el Acecho: Opera en silencio, fingiendo estar dormido mientras permaneces en un estado de Presencia consciente. Permite que la realidad haga lo que necesitas que haga con tu permiso, en lugar de forzarla.
+Enfócate Hacia Adentro: Para ver la realidad con claridad, la atención debe estar dentro de ti. Mira lo que está sucediendo a tu alrededor desde dentro de ti mismo.
