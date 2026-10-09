@@ -1051,3 +1051,116 @@ Ante cualquier impacto negativo, provocación inesperada o crisis emergente, eje
 
 La realidad no se combate ni se somete mediante la fuerza; se elige de manera consciente mediante el control estricto de la atención y la dirección impecable de la intención.
 
+Prafrasis de 3 libros:
+El control de la Realidad 
+Adelante el pasado 
+Las manzanas caen al cielo 
+
+### 1. Dónde habla Zeland de vivir dormido, del sueño en la vigilia o de estar despierto mientras se vive
+
+Vadim Zeland aborda el concepto de **«dormir despierto»**, el **«sueño inconsciente en la vigilia»** y el **«despertar a la realidad»** en múltiples capítulos a lo largo de sus libros:
+
+#### *Adelante al Pasado* (Reality Transurfing, Tomo 3)
+* **Capítulo I: Energía**, apartado **«Estrés y relajación»** (pág. 19):
+  > «En cualquier situación complicada basta con que te acuerdes de la importancia y disminuyas conscientemente su significación. La única dificultad consiste en recordarlo en el momento oportuno. En estado de estrés estás durmiendo despierto y no te acuerdas de ningún Transurfing. Para librarte del estrés es imprescindible que te despiertes y quites la importancia» [1].
+
+* **Capítulo III: Coordinación**, apartado **«Batalla con el espantajo de arcilla»** (págs. 72–73):
+  > «Todo lo que necesitas es despertar a tiempo y recordar qué tipo de juego es el que tiene lugar, y después, quitar inmediatamente la importancia. Si todo lo has hecho conscientemente, el péndulo se hundirá en el vacío. Eres capaz de romper las reglas del juego sólo si no duermes despierto. En un sueño inconsciente el hombre siempre es víctima de las circunstancias. El sueño ocurre y no eres capaz de hacer nada con eso. En la vida real todos, desde hace mucho tiempo, también se han acostumbrado a reaccionar a las influencias negativas de manera igualmente automática» [2, 3].
+
+* **Capítulo III: Coordinación**, apartado **«Deslizamiento»** (págs. 104–105):
+  > «La dependencia consiste en que participas en una batalla impuesta. Pero tan pronto como despiertes en la vida real, pongas fin a la lucha contra ti mismo, contra el mundo y abandones el campo de batalla, ya nada podrá detenerte [...] Todos estamos durmiendo despiertos y cumplimos nuestros papeles mecánicamente. La profundidad de nuestro sueño, de nuevo, es proporcional a la significación que damos a todos los atributos del juego, por tanto somos prisioneros de nuestra importancia» [4, 5].
+  > «Como si te dieras cuenta: todo lo que está ocurriendo sólo es resultado de dormir despierto. Al apartarte del escenario al patio de butacas, de repente comprendes que eres tú quien decide si debe seguir luchando o puede sólo ir y coger tranquilamente lo que te pertenece» [6].
+
+* **Capítulo V: Cartas de los lectores / Respuestas** (págs. 111–112):
+  > «La irritación es una reacción inconsciente. En un sueño inconsciente, el sueño simplemente sucede con la persona, puesto que ella está absorbida por completo por ese juego y no se da cuenta de que sólo es un sueño. Asimismo el individuo duerme despierto, como si fuera una ostra, al reaccionar en negativo a un irritante exterior [...] Pero la gente se entrega por completo a ese juego, y por tanto actúa inconscientemente, como quien duerme despierto. Con ellos la vida “ocurre” y no son capaces de influir en el guión, aunque intenten hacerlo con todas sus fuerzas» [7, 8].
+
+#### *El control de la Realidad* (Reality Transurfing, Tomo 4) / *Las Manzanas Caen Al Cielo*
+* **Prefacio**:
+  > «En la vida cotidiana, la gente está a merced de las circunstancias y son incapaces de influir significativamente en el curso de los acontecimientos en su vida. La vida “sucede” de la misma manera que las cosas suceden en un sueño inconsciente [...] Tú eres capaz de deshacerte de la ilusión del reflejo y despertar de tu sueño del espejo a la vida real» [9, 10].
+
+* **Capítulo I: Danzando con las sombras**, apartado **«La ley de la mala suerte»**:
+  > «Por regla general todo el mundo está en un grado variable dormido despierto. Hacemos muchas cosas automáticamente, de una manera relajada, sin ser someramente conscientes de lo que está pasando» [11].
+  > «Despierta y hazte consciente del modo en que un péndulo está intentando manipularte. Entender qué está pasando es ya la mitad de la batalla. El poder de la influencia de un péndulo está en proporción inversa al conocimiento consciente. Tiene poder sobre ti mientras estés durmiendo despierto» [12].
+
+* **Capítulo II: El sueño de los dioses**, apartado **«Soñar despierto»**:
+  > «Para los adultos, jugar a juegos se ha acabado; la vida es una cosa seria. Esto es verdad por una parte, pero por otra, tal actitud convierte la existencia en un sueño inconsciente que tienes mientras estás dormido despierto [...] Y es por eso que tú eres el dueño de tu realidad en un sueño consciente, pero si estás teniendo un sueño mientras estás dormido despierto, estás indefenso» [13].
+  > «La vida es como un sueño inconsciente que estás teniendo mientras duermes despierto, porque no tienes un punto de apoyo respecto a la realidad» [14].
+
+* **Capítulo IV / Apartado «Coordinación del Sueño»** (*Las Manzanas Caen Al Cielo*):
+  > «Cuando tú despiertas en un sueño que estás teniendo mientras duermes despierto, es como si salieras del flujo de los acontecimientos y te encontraras en medio de un enorme caleidoscopio, que está rotando lentamente, centelleando con facetas de realidad. Tú eres una parte de esta realidad, y al mismo tiempo existes separadamente, autónomamente» [15].
+
+---
+
+### 2. Cómo describe la atención capturada cuando uno queda absorbido por una situación
+
+Zeland explica este fenómeno a través de dos mecanismos centrales: el **«lazo de captura»** del péndulo sobre la **«flecha de la atención»**, y la **fijación hipnótica en el reflejo del espejo**.
+
+#### *El control de la Realidad* (Reality Transurfing, Tomo 4)
+* **Capítulo I: Danzando con las sombras**, apartado **«La ley de la mala suerte»**:
+  > «La gente duerme particularmente profundo si su atención está atrapada en un lazo de captura. En algunas comunidades – por ejemplo en el ejército, una banda o una secta – se crea un cierto entorno, con unas maneras particulares y un pensamiento estereotipado. Esto 'seda' la mente humana, y el subconsciente se vuelve totalmente abierto a la influencia zombificante de un péndulo» [16].
+  > «Si 'el bufón está saltando', eso significa que tu atención ha sido atrapada en un lazo de captura. Has sido atraído al juego de un péndulo, con el fin de aumentar la energía conflictiva. Para liberarte del lazo de captura tienes que desconectar tu atención» [17].
+
+* **Capítulo I: Danzando con las sombras**, apartado **«Los Señores de la Energía»**:
+  > «El cliente no va a ir a ninguna parte de todos modos, mientras su atención esté atrapada en el lazo de captura de un péndulo [...] Ellos son incapaces de pensar en nada más, porque el péndulo ha enganchado su atención. Tal captura es posible gracias a un rasgo particular de la mente humana. La atención puede ser fijada sólo sobre una cosa – es como la flecha de una veleta, con el péndulo dirigiendo el viento en una sola y misma dirección. El modo en que la 'flecha de atención' es capturada puede ser ilustrado con un ejemplo muy simple: cuando una persistente melodía se queda pegada en tu cabeza» [18, 19].
+  > «En todos los casos, la dependencia tiene lugar principalmente porque la flecha de atención es atrapada en el lazo de captura de un péndulo. Para 'desprenderse de la aguja', tienes que cambiar tu atención, ocuparla con algo distinto» [20].
+
+* **Capítulo II: El sueño de los dioses**, apartado **«Soñar despierto»**:
+  > «Una vez que la atención ha sido capturada, el espectro de la percepción es dramáticamente estrechado, la conciencia es perdida, y la individualidad inmersa en un estado que no es muy diferente de un sueño inconsciente» [21].
+  > «Las cosas que te afectan, preocupan o molestan, son habitualmente las cosas que tienen tu conciencia bajo control y están constantemente carcomiéndote, en diversos grados. La sucesión de esos pensamientos es difícil de controlar [...] La percepción y la atención están fijadas por problemas, pensamientos apremiantes, circunstancias. Como resultado, te sumerges en tus problemas, como en un sueño que tienes mientras estás dormido despierto» [22].
+
+#### *Las Manzanas Caen Al Cielo*
+* **Capítulo III: El Mundo Espejo**, apartado **«El Espejo Dual»**:
+  > «Una persona frente a un espejo dirige toda su atención al espejo, sin tratar de mirarse a sí mismo desde dentro. Y por eso el reflejo, no la imagen original, juega el papel dominante en la cadena de retroalimentación. La persona está en poder del espejo, porque está como hipnotizada, mirando su copia. No se le ocurre que puede cambiar el original. Es exactamente por esta obsesión con mantener nuestra atención en el reflejo por lo que obtenemos lo que activamente no queremos» [23].
+
+* **Capítulo IV**, apartado **«Coordinación del Sueño»**:
+  > «Es la fijación de la atención sobre el reflejo lo que convierte tu vida en un sueño inconsciente, donde tú estás enteramente en poder de las circunstancias. La realidad te domina en tanto que estés hechizado, observando ansiosamente los acontecimientos desplegados en el espejo [...] Mientras tanto, hay una sola cosa que sigue manteniéndote encerrado: tu atención. Tú puedes salir del espejo. Dentro del espejo está el sueño inconsciente; fuera hay un sueño consciente» [24-26].
+
+---
+
+### 3. La figura del observador interior: nombre exacto y pasajes textuales
+
+El nombre exacto que le da Vadim Zeland a esa instancia consciente dentro de uno es **el Celador** (referido también como **el Celador interior** o **tu observador interior**) [27-30].
+
+*(Nota de contexto: en los textos originales en ruso se utiliza el término Смотритель — Smotritel. En las obras de Transurfing aparece tanto como el personaje metafísico que transmitió el Conocimiento —la «Adivinanza del Celador»— como en la figura funcional del vigía interior que custodia la vigilia) [27, 28, 31, 32].*
+
+#### *Adelante al Pasado* (Reality Transurfing, Tomo 3)
+* **Capítulo II: Freiling**, apartado **«Intención de las relaciones»** (págs. 37–38):
+  > «Ocúpate de ellos tú también. Redirige tu atención de ti mismo a otra gente. Activa tu Celador y deja de jugar al juego de aumentar tu importancia. Ahora juega al juego de aumentar la importancia de los demás. Interésate por ellos, escúchalos, obsérvalos» [27].
+
+* **Capítulo II: Freiling**, apartado **«Corriente de las relaciones»** (págs. 45–46):
+  > «Si tu Celador no duerme, él siempre te ayudará a encontrar una explicación de por qué la persona a la que intentas acusar actúa precisamente de esta manera. El Celador, al ser tu observador interior, no permitirá que te entregues por completo al juego y empieces una discusión o una pelea. Mira el juego desde un lado, como espectador; recuerda que la crítica no te traerá nada, salvo daños, y muévete según la corriente» [28].
+  > «Por lo común, la gente discutidora está entregada por completo al juego. Duermen muy profundamente. Para no dejarte involucrar en el juego, es necesario que despiertes y actives tu Celador interior. Si en una polémica participan varias personas a la vez, baja a la sala de espectáculos y observa el juego desde allí. Asume el papel de un espectador sensato y obtendrás grandes ventajas» [29].
+
+* **Capítulo III: Coordinación**, apartado **«Coordinación de la intención»** (pág. 85):
+  > «Activa a tu Celador desde el mismo comienzo de la función; por ejemplo, al principio del día. Normalmente tienes una idea aproximada de cómo deben desarrollarse los acontecimientos. En el momento en que tu guión se cambia ante tus ojos, necesitas admitir los cambios, conformarte con ellos [...] Cabe señalar que la coordinación se educa con la práctica [...] Tu Celador debe trabajar sin cesar. Que no te pase desapercibido el momento en que, sin darte cuenta, estarás involucrado en un juego negativo» [30, 33].
+
+*(En el Tomo 4 / Las Manzanas Caen al Cielo se presenta adicionalmente al **«Guardián de la Eternidad»**, la ley arquetípica absoluta que custodia el acceso al espacio de variantes y ante quien el practicante debe presentar su veredicto de Hacedor) [34].*
+
+---
+
+### 4. Técnica concreta para «despertar» en medio de una situación cotidiana
+
+Zeland propone varias pautas operativas directas:
+
+#### A. La fórmula verbal de constatación y bajada al auditorio
+En *El control de la Realidad* (Tomo 4), Capítulo I: **«Danzando con las sombras»**, apartado **«La ley de la mala suerte»**:
+> «Cuando estés en una multitud, necesitas bajar de la escena de acción al auditorio, dar la vuelta y despertar: '¿Qué estoy haciendo aquí? ¿Soy consciente de lo que está pasando? ¿Para qué necesito esto?'
+> El despertar del sueño despierto debe estar precisamente articulado, como se mostró arriba: **'Ahora mismo no estoy dormido y estoy claramente consciente de lo que estoy haciendo, por qué lo estoy haciendo y por qué lo estoy haciendo de este modo en particular.'** Si te provees de tal constancia de la situación, todo estará bien. Pero si no, entonces en cualquier situación conflictiva, incluso la más minúscula, serás una marioneta» [12, 35].
+
+*(Fórmula sintetizada en el resumen del capítulo: «Conciencia: Ahora mismo no estoy dormido y estoy claramente consciente de lo que estoy haciendo, por qué lo estoy haciendo y por qué lo estoy haciendo de este modo y no de otro») [36].*
+
+#### B. La técnica física y energética del «Giro de la llave»
+En *Adelante al Pasado* (Tomo 3), Capítulo IV: **«Adelante al Pasado»**, apartado **«Transacción»** (págs. 97–98):
+> «Para la rápida puesta en marcha de las fuentes energéticas, hay un método eficaz que puedes utilizar. Imagina que, desde el mismo centro de tu cuerpo, salen dos flechas horizontales en direcciones contrarias: una se dirige hacia adelante, la otra hacia atrás. Las flechas sobresalen del cuerpo no más de unos veinte o treinta centímetros. Ahora hazlas girar en tu mente al mismo tiempo: la de delante hacia arriba, la de atrás hacia abajo, de manera que se coloquen verticalmente a lo largo de la columna vertebral. Enseguida sentirás que los flujos energéticos se han avivado notablemente [...] Es como si giraras la llave que pone en marcha los flujos centrales» [37, 38].
+> «Puedes completar este elemento en cualquier situación en la que necesites entrar rápidamente en estado de relajación. Intenta girar la llave muchas veces a lo largo del día, sobre todo cuando estés preocupado por algo. Notarás enseguida que la llave quita tensiones [...] Hete aquí que vas caminando y pensando en algo deprimente, preocupante, desagradable. En este momento, acuérdate de la llave y gírala [...] Considera que ésta es la llave de la funda del condicionamiento, en la que te encarcelan siempre las circunstancias deprimentes» [39, 40].
+
+#### C. La interrupción del juego y desarticulación de la importancia
+En *Adelante al Pasado* (Tomo 3), Capítulo III: **«Coordinación»**, apartados **«Batalla con el espantajo de arcilla»** y **«Coordinación de la intención»**:
+> «Tropiezas con una circunstancia enojosa. Guárdate de formular tu actitud negativa y reaccionar de modo primitivo, como si fueras una ostra. Dite a ti mismo: «¡Para! ¡Pues sólo es un juego con el espantajo de arcilla! Bueno, espantajito, vamos a jugar!». A pesar de todo, ten intenciones positivas y haz que este acontecimiento te alegre» [41].
+> «Cada vez que jures, intentando convencerte, que «una última vez más y ya está», despierta y sacúdete la alucinación. Es la voz del péndulo» [42].
+
+#### D. La regla de atención al acto presente
+En *Las Manzanas Caen Al Cielo* / *El control de la Realidad*, Capítulo IV: **«El Guardián de la Eternidad»**, apartado **«La Energía de la Intención»**:
+> «A fin de desarrollar este hábito, es suficiente seguir una sencilla regla: Enséñate a pensar en lo que estás haciendo ahora mismo. No hagas nada sólo porque sí, sin pensar, mientras nadas en una amorfa jalea de pensamientos incontrolados. Proclama la declaración de intenciones. Eso no significa que siempre tengas que estar en alerta total. Puedes dejar tus pensamientos derivar tanto como quieras, pero hazlo intencionadamente, por el principio: si mi mente está vagando es sólo porque yo la dejo. E igual de intencionadamente vuelve a un estado enfocado cuando sea necesario» [43].
+
+***
