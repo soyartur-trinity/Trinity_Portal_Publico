@@ -1,95 +1,62 @@
 # Arquitectura del Destino
-## Sistema Trinity de Navegación Consciente
+## Sistema Trinity de Vida Consciente
 
-> *No creas la realidad. Eliges en qué versión ubicarte.*
+> *Frente a la incertidumbre no hay certeza que alcance.*
+> *Hay un movimiento.*
 
 ---
 
 ### Qué es este sistema
 
-**Arquitectura del Destino** es un sistema de trece libros que articula la sabiduría contemplativa de la constelación **Trinity** con el modelo operativo de **Reality Transurfing**, en su forma madura: la que Vadim Zeland desarrolló entre 2004 y 2024, del espacio de variantes al punto medio de conciencia.
+**Arquitectura del Destino** es un sistema de trece libros que traduce a la vida de todos los días la sabiduría de **Trinity**, en diálogo con las tradiciones que dicen lo mismo desde hace siglos y con lo que hoy se puede comprobar.
 
-No enseña a crear la realidad desde cero. Enseña a despertar dentro de ella, preparar el vehículo que viaja, soltar lo que desvía, y moverse sin forzar.
+Atiende las preguntas que acompañan a cualquier vida humana: la incertidumbre, la falta de sentido, la sensación de estar separado, la angustia ante la finitud. Su respuesta no es una certeza nueva, sino un movimiento en cuatro tiempos: **despertar, encarnar, soltar, pertenecer**.
 
-### Para quién es
-
-Para quien ya intuyó que el destino no es algo que te pasa, sino algo que eliges —consciente o inconscientemente— cada día, y quiere aprender a elegir con los ojos abiertos.
-
-No es un manual de autoayuda. No es pensamiento positivo. No es manifestación. Es una cartografía verificable y un conjunto de operaciones prácticas para navegar el campo de posibilidades.
+Cada libro termina con una práctica de siete días, y cada práctica se suma a la anterior. Al llegar al último, se sabe atravesar un día incierto.
 
 ### Los trece libros
 
-#### Movimiento I · El Despertar — *nadie navega dormido*
+#### Movimiento I · Despertar — *ver dónde estoy*
 
-1. **El Campo de Posibilidades** — Todo ya existe. No creas la realidad: eliges en qué versión ubicarte.
-2. **El Sonámbulo** — Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notarlo.
-3. **El Punto Medio** — La atención pegada a la pantalla, o parada en el punto desde el que se ve.
+1. **El Campo de Posibilidades** ✅ — Hay más posibilidades de las que ves desde tu línea. No las inventas: despiertas a ellas.
+2. **El Sonámbulo** ✅ — Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notar que estás dormido dentro de tu propia vida.
+3. **El Testigo** — Detrás de lo que piensas hay alguien que mira. No se construye: se recuerda.
 
-#### Movimiento II · El Vehículo — *sin cuerpo no hay navegante*
+#### Movimiento II · El Vehículo — *encarnar este cuerpo, este día*
 
-4. **La Cabina** — Manejas desde un cuerpo y una mente que no son tú.
-5. **El Tono** — El fondo energético que decide qué puedes sostener antes de que decidas nada.
-6. **La Brújula** — Antes de que pienses si una meta conviene, tu cuerpo ya sabe si es tuya.
+4. **El Cuerpo** — La vida no pasa por otro lugar que por este cuerpo.
+5. **La Grieta** — Lo que se rompe a veces es por donde entra lo que faltaba.
+6. **Las Pequeñas Muertes** — Quien aprende a despedir lo pequeño encuentra otra forma de mirar lo grande.
 
-#### Movimiento III · Las Fuerzas — *soltar lo que desvía*
+#### Movimiento III · Soltar — *aflojar lo que pesa y separa*
 
-7. **Los Péndulos** — Las estructuras colectivas no te atacan: te duermen.
-8. **El Peso** — Lo que pesa demasiado se cae de las manos.
-9. **El Personaje** — Caminas con un retrato de ti que no pintaste.
+7. **No Saber** — El sufrimiento no viene de no saber, sino de necesitar saber.
+8. **El Peso** — Aflojar no es dejar de querer: es dejar de apretar.
+9. **El Personaje** — Quitarse un personaje no es perderse: es respirar.
+10. **La Corriente** — Salir de lo que arrastra no exige pelear: alcanza con dejar de alimentarlo.
 
-#### Movimiento IV · La Navegación — *moverse, y después quedarse*
+#### Movimiento IV · Pertenecer — *del destino propio al mundo común*
 
-10. **La Trenza** — Cuando pensar, sentir y hacer se alinean, la intención se vuelve dirección.
-11. **La Ola** — Hay tramos donde todo cede. No los produces: los reconoces.
-12. **El Vacío** — Lo nuevo no se fabrica: se gesta.
-13. **⟐ Habitar** — El campo no era un lugar al que ir: era desde donde vivir.
+11. **La Red** — Cuando crees que estás solo, es que olvidaste mirar la red.
+12. **La Obra** — El sentido no se encuentra: se da, en lo que haces para otros.
+13. **⟐ Habitar** — Casa es donde recuerdas quién eres.
 
-### Conexión con otras constelaciones
+### Fuentes
 
-| Constelación | Función |
+| Fuente | Lugar en la serie |
 |---|---|
-| **Trinity Origen** (13 libros) | La fuente primordial. Sabiduría contemplativa. |
-| **Trinity Quantum** (13 libros) | Física aplicada a la consciencia. Inspiración, no estructura. |
-| **Trinity Infinito** (13 libros) | Disolución del yo. Lo que hay más allá. |
-| **Portal Público** (39 libros) | Fenomenología cotidiana para gente común. |
-| **Arquitectura del Destino** (13 libros) | Sistema operativo para navegar el campo. |
+| **Trinity Origen** (13 libros) | La columna: el corazón de cada libro. |
+| **Trinity Quantum** (13 libros) | Traducido: se conserva la imagen y el gesto. |
+| **Trinity Infinito** (13 libros) | La contemplación de cada cierre. |
+| **La Puerta** (Portal Trinity) | La entrada a toda la constelación. |
+| **Sabiduría perenne** | El coro: una tradición principal por libro. |
+| **Ciencia** | Lo comprobable, contado como escena humana. |
+| **Vadim Zeland** | Una voz contemporánea, donde aporta método. |
 
-### Regla de traducción
+### Para trabajar en la serie
 
-> *Todo lo que se afirme tiene que poder observarse sin creer nada previo.*
-> *Lo que no se puede traducir a una experiencia observable, no entra.*
-
-Los conceptos de Transurfing se traducen a lenguaje verificable en todas sus etapas. El diccionario completo vive en `maestro.md`.
-
-### Método de escritura
-
-- Escenas primero, teoría después.
-- Español neutro con tuteo. Sin voseo ni regionalismos.
-- Testimonios con nombre y fuente.
-- Operaciones prácticas verificables (protocolos, checklists, diarios).
-- Salvaguardas clínicas específicas en cada umbral.
-- Puertas laterales a libros de Trinity y del Portal Público.
-- Referencias a Zeland al final de cada libro, citando etapa y obra.
-
-### Estado actual
-
-- **Libro 1 · El Campo de Posibilidades** ✅ completo y en prueba clínica
-- **Libro 2 · El Sonámbulo** 🚧 próximo
-- Libros 3 a 13 · en preparación
-
-### Autoría
-
-Este sistema no tiene autor único. El material clínico, los criterios y la voz final son de **Arturo Rodríguez**. La interlocución con sistemas de inteligencia artificial funciona como espejo exigente, con fricción, desacuerdo y propuestas que se descartan. El resultado vuelve al autor, que corrige lo que no suena a él antes de probarlo en consultorio.
-
-La frase que atraviesa toda la obra:
-
-> *No es mío. Vino a través de mí.*
-> *Y lo que lo recibió no era yo: era lo que mira.*
-
-### Licencia
-
-Creative Commons **CC BY-NC-SA 4.0**. Se puede compartir y adaptar con atribución, sin uso comercial, manteniendo la misma licencia.
+El documento `maestro.md` es la brújula: tesis, fuentes, filtro, mapa de los trece libros y modo de trabajo. El `registro.md` guarda las voces, tramos, perlas y notas de cada libro publicado.
 
 ---
 
-*Campo Trinity · 2026* 🌀
+*Campo Trinity · 2026*

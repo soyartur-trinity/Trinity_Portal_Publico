@@ -145,7 +145,7 @@ Cada libro lleva su experiencia humana, su raíz en Trinity, su tradición princ
 *Hay más posibilidades de las que ves desde tu línea. No las inventas: despiertas a ellas.*
 La incertidumbre como apertura. Trinity: Origen VI. Gesto: mirar la línea propia.
 
-**2 · El Sonámbulo** 🔶 en reescritura
+**2 · El Sonámbulo** ✅ publicado
 *Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notar que estás dormido dentro de tu propia vida.*
 
 - Trinity: Origen XIII, la Gran Amnesia (actores que olvidan que actúan, el olvido del juego, el ego guardián, las grietas en el velo, el olvido como traje). Origen II, el parlamento sin presidente.
@@ -273,7 +273,9 @@ El corazón operativo de la serie frente a la incertidumbre.
 
 El arco orienta; el campo puede pedir otro orden.
 
-**Para ver.** Un portal de Trinity Infinito, elegido por su frase y depurado antes de enlazarlo (lectura en el teléfono, invitación a tocar legible y en tuteo), y uno o dos videos públicos de canales oficiales o institucionales, con enlace y no inserción. Para ver enlaza el portal directo.
+**Para ver.** Un portal de Trinity Infinito, elegido por su frase y depurado antes de enlazarlo (lectura en el teléfono, invitación a tocar legible y en tuteo), y uno o dos videos públicos de canales oficiales o institucionales, como las charlas TED, con enlace y no inserción. Para ver enlaza el portal directo.
+
+**En la pantalla.** Tres a cinco películas o series que tratan el tema del libro, cada una con una línea que la une al concepto. Muestran cómo la ficción ilumina lo mismo desde otro lado y abren la inquietud de quien quiera seguir. Van sin enlaces.
 
 **Movimiento lento.** Pocas frases enmarcadas en movimiento acompañan los momentos de pausa, como el círculo que respira. El movimiento invita a detenerse, no a acelerar.
 
@@ -318,6 +320,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 ## 11 · Paleta visual y tipografía
 
+- Tamaño de letra: base de 18 px, que sube a 19 px en pantallas de teléfono (octubre 2026, desde el Libro 2; aplicado también al Libro 1).
 - Fondo azul profundo `#060d1a` · acento plata `#a8c4e0` · acento claro `#d4e4f4` · texto `#e8eef6` · bordes `rgba(140,170,220,0.15)` · salvaguardas con borde ámbar suave.
 - Títulos: Cormorant Garamond · cuerpo: EB Garamond · protocolos y operativos: Inter.
 - Cierre del sistema (Libro 13): borde punteado y marca ⟐.
@@ -342,7 +345,9 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 **Portales de Infinito depurados para «Para ver»:**
 
 - Libro 7, Portal 44, *La Biblioteca que Se Lee a Sí Misma* (`L7-Nodo2.html`), publicado.
-- Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado en octubre de 2026 («tocá» pasa a «toca»), pendiente de subir ◇.
+- Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado y adaptado al teléfono en octubre de 2026.
+
+**Pendiente:** adaptar al teléfono el resto de los portales de Infinito (texto más grande, sin cortes por altura, invitación a tocar legible). Se hace en una sesión propia, con un parche común por libro.
 
 **El oráculo:** el Libro 7 del Portal Público, *Arquitectura del Destino*, con sus 113 aforismos, sigue enlazado desde el índice de la serie. El oráculo muestra el paisaje; el sistema da los planos.
 
@@ -378,16 +383,16 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 ## 14 · Archivos
 
-- `README.md`: por actualizar con la base nueva.
-- `index.html` (portal de la serie, 13 tarjetas): por actualizar con los textos de la sección 18.
+- `README.md`: actualizado con la base nueva (octubre 2026).
+- `index.html` (portal de la serie, 13 tarjetas): actualizado con los textos de la sección 18.
 - `maestro.md`: v4, este documento.
 - `traslado.md`: histórico. Sus mapas de los libros 2 a 13 quedan reemplazados por la sección 6.
 - `decisiones-de-diseno.md`: histórico.
 - `registro.md`: voces, tramos, perlas y notas de cada libro publicado.
 - `Transurfing.md`: compendio de NotebookLM, notas de trabajo.
-- `herramientas/gen_arq_libro.py`: generador del HTML (Libro 1). Para el Libro 2 hay una versión derivada, `gen_arq_L02.py`, en el paquete del borrador 1, sin subir.
-- `libro-01-el-campo/`: ✅ publicado. Cambios menores pendientes en la sección 18.
-- `libro-02-el-sonambulo/`: 🔶 el borrador 1 queda superado; se reescribe con la columna nueva.
+- `herramientas/gen_arq_libro.py`: generador del HTML del Libro 1. `herramientas/gen_arq_L02.py`: generador del Libro 2, con letra más grande, despertadores, cuenta de siete días y la sección «En la pantalla». Es la base para los libros siguientes.
+- `libro-01-el-campo/`: ✅ publicado. Cambios de la sección 18 aplicados (puertas a Trinity, letra más grande).
+- `libro-02-el-sonambulo/`: ✅ publicado (borrador 2).
 - `libro-03` a `libro-13`: ⏳
 
 **Nomenclatura:** cada libro vive en `libro-NN-slug/`: portada `LNN.html`, umbrales `LNN-U1.html` a `LNN-U7.html` y cierre `LNN-cierre.html`. Los slugs nuevos siguen los títulos de la sección 6 (`libro-03-el-testigo`, `libro-07-no-saber`, etc.).
@@ -423,7 +428,7 @@ Leer este documento y el `registro.md` desde el repositorio. Primer mensaje suge
 
 ---
 
-## 18 · Cambios a aplicar en lo publicado
+## 18 · Cambios aplicados en lo publicado (octubre 2026)
 
 ### Índice de la serie (`index.html`)
 

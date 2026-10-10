@@ -85,4 +85,146 @@ Tramos: Lo que vas a necesitar · Paso 1 · Tres pausas al día · Paso 2 · Cad
 
 ---
 
+## Libro 2 · El Sonámbulo
+
+*Publicado en octubre de 2026 (borrador 2, con la base del maestro v4).*
+
+---
+
+**Subtítulo:** *lo que vive tu día cuando no estás*
+**Promesa:** Despertar no te cambia la vida. / Te pone dentro de ella.
+**Columna:** Trinity Origen XIII (la Gran Amnesia, el círculo, las grietas del velo, el recuerdo del origen) y Origen II (el parlamento y el Observador Luminoso).
+**Coro:** el Buda (*Dona Sutta*), el *Himno de la Perla*, Gurdjieff y Ouspensky, Calderón, Heráclito, Tolstói y Shklovski. **Comprobable:** James, Wood, Worsley y Hearne, Liikkanen. **Zeland:** el dormir despierto, el Celador, las dos pantallas, los activadores.
+**Protagonista:** Amalia, 52 años, farmacéutica; una mañana sus dedos marcan la clave vieja de la alarma. No cambia de vida: despierta dentro de ella.
+**Archivos:** `libro-02-el-sonambulo/L02.html` (portada), `L02-U1.html` a `L02-U7.html`, `L02-cierre.html`.
+
+### Umbral I · La clave vieja — *cuando la vida sigue sola*
+Tramos: La sirena · Lo que los dedos sabían · Una escalera en París · El que respondió «despierto» · Muchos nombres para lo mismo · Dormir con los ojos abiertos · Tú también
+- Perla: El cuerpo recuerda caminos / que la vida ya dejó.
+- Perla: No se trata de vivir otra vida. / Se trata de estar en esta.
+- Perla: A veces lo que te despierta / no lo elegiste. / Lo que haces después, sí.
+- Nota: William James, *The Principles of Psychology* (1890), vol. I, cap. IV, «Habit». Paráfrasis.
+- Nota: Ídem. Traducción propia.
+- Nota: *Dona Sutta*, Anguttara Nikaya 4.36. Paráfrasis.
+- Nota: Sobre *buddha* (de la raíz *budh*, despertar, darse cuenta) y *sati* (emparentada con el sánscrito *smṛti*, memoria): T. W. Rhys Davids y William Stede, *Pali-English Dictionary* (Pali Text Society, 1921-1925).
+- Nota: P. D. Ouspensky, *In Search of the Miraculous* (1949), donde recoge la enseñanza de Gurdjieff; en español, *Fragmentos de una enseñanza desconocida*. Paráfrasis.
+- Nota: Vadim Zeland, *Adelante al pasado* (Reality Transurfing III, original ruso de 2005), cap. III, págs. 104-105 de la edición española. Paráfrasis.
+- Nota: Vadim Zeland, *Transurfing de uno mismo* (original ruso, 2024). Paráfrasis.
+
+### Umbral II · La gran amnesia — *el olvido necesario*
+Tramos: Una fotografía · Actores que olvidan que actúan · No se despierta sin haber dormido · El príncipe y la perla · La risa en el cajón · Tú también
+- Perla: No se despierta / sin haber dormido.
+- Perla: El olvido es un traje. / Debajo, sigues tú.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 1: «La Gran Amnesia».
+- Nota: Ídem, Nodo 3: «El Recuerdo del Origen». Selección de la lista «Capas del olvido».
+- Nota: Ídem, Nodo 1.
+- Nota: Vadim Zeland, *El control de la realidad* (Reality Transurfing IV, original ruso de 2005), cap. II, «Soñar despierto». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 1.
+- Nota: Ídem.
+- Nota: Vadim Zeland, *Adelante al pasado* (Reality Transurfing III), cap. III, «Batalla con el espantajo de arcilla», págs. 72-73 de la edición española. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 1.
+- Nota: *Himno de la Perla*, en los *Hechos de Tomás* (siglo III, original siríaco). Paráfrasis sobre la traducción inglesa de A. A. Bevan, *The Hymn of the Soul* (1897).
+- Nota: Ídem. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 1.
+
+### Umbral III · El hombre máquina — *todo sucede*
+Tramos: Un día entero · La máquina · Dos horas en San Petersburgo · La mañana atenta · El volante de inercia · Cuatro de cada diez · El centro del círculo · Dos volantes · Tú también
+- Perla: El sonámbulo no tropieza. / Hace todo bien. / Lo que falta es alguien.
+- Perla: El programa no es el enemigo. / Es la casa. / Falta que haya alguien en ella.
+- Perla: No hace falta despertar para todo. / Alcanza con estar presente en las curvas.
+- Nota: P. D. Ouspensky, *In Search of the Miraculous: Fragments of an Unknown Teaching* (1949); en español, *Fragmentos de una enseñanza desconocida*.
+- Nota: Ídem, caps. 1 y 2. Paráfrasis de la enseñanza de Gurdjieff sobre el hombre máquina y los muchos yoes.
+- Nota: Ídem, cap. 7. Paráfrasis de los estados de conciencia y del recuerdo de sí.
+- Nota: Ídem, cap. 7. Paráfrasis.
+- Nota: Ídem.
+- Nota: William James, *The Principles of Psychology* (1890), vol. I, cap. IV, «Habit». Traducción propia.
+- Nota: Ídem. Traducción propia.
+- Nota: Ídem. Paráfrasis.
+- Nota: Wendy Wood, Jeffrey M. Quinn y Deborah A. Kashy, «Habits in Everyday Life: Thought, Emotion, and Action», *Journal of Personality and Social Psychology* 83 (2002): 1281-1297. Paráfrasis del método.
+- Nota: Ídem. Paráfrasis.
+- Nota: Ídem, p. 1281. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 5: «El Círculo Completo».
+- Nota: Ídem.
+- Nota: Ídem.
+
+### Umbral IV · El parlamento sin presidente — *quién decide cuando nadie preside*
+Tramos: El jueves del reclamo · Un parlamento sin presidente · El Celador · Las dos pantallas · La flecha y la melodía · La silla del centro · Tú también
+- Perla: Las voces pueden seguir hablando. / Lo que cambia todo / es que alguien las escuche.
+- Perla: Dormir no es irse. / Es quedar atrapado / en lo que se mira.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 1: «El Parlamento Sagrado». Paráfrasis de «Los Miembros del Consejo Interior».
+- Nota: Ídem.
+- Nota: Ídem.
+- Nota: Vadim Zeland, *Adelante al pasado* y *El control de la realidad* (Reality Transurfing III y IV, originales rusos de 2005), edición española. Paráfrasis.
+- Nota: Vadim Zeland, *El control de la realidad*, cap. I, «Danzando con las sombras», apartado «La ley de la mala suerte». Paráfrasis.
+- Nota: Vadim Zeland, *Reality Transurfing*, tomos III y IV, apartados sobre la coordinación de la intención. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Nodo 1, «El Protocolo del Parlamento Sagrado». Paráfrasis.
+- Nota: Vadim Zeland, *Tafti la sacerdotisa: caminando despierto en una película* (original ruso, 2018). Paráfrasis del modelo.
+- Nota: Vadim Zeland, *El control de la realidad* (Reality Transurfing IV), cap. I, «Danzando con las sombras». Paráfrasis.
+- Nota: Lassi A. Liikkanen, «Musical Activities Predispose to Involuntary Musical Imagery», *Psychology of Music* 40 (2012): 236-256. Paráfrasis.
+- Nota: Ídem. Paráfrasis.
+
+### Umbral V · Despierto dentro del sueño — *notar sin salir*
+Tramos: Un martes gris · Hull, 12 de abril de 1975 · El hombre de la seña · Estoy mirando · Cobrar vida en la película · Aun en sueños · Tú también
+- Perla: No hace falta salir del sueño. / Basta saber que se sueña.
+- Perla: Despertar no es irse de la vida. / Es llegar a ella.
+- Nota: Sobre el experimento de Hull: entrevista a Keith Hearne en *World of Lucid Dreaming*, y su tesis doctoral, *Lucid Dreams: An Electro-Physiological and Psychological Study* (Universidad de Liverpool, 1978). Paráfrasis.
+- Nota: Ídem. Paráfrasis.
+- Nota: Sobre la réplica de LaBerge en Stanford (1978): Stephen LaBerge, *Lucid Dreaming* (1985). Paráfrasis.
+- Nota: Alan Worsley, relato recogido por *World of Lucid Dreaming*. Paráfrasis.
+- Nota: P. D. Ouspensky, *In Search of the Miraculous* (1949), cap. 9. Paráfrasis.
+- Nota: Vadim Zeland, *Tafti la sacerdotisa* (original ruso, 2018). Paráfrasis.
+- Nota: Ídem. Paráfrasis.
+- Nota: Trinity Infinito, Libro 3, Portal 21: «Cuando el Juego Se Reconoce Como Juego».
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 5: «El Círculo Completo». Paráfrasis.
+- Nota: Pedro Calderón de la Barca, *La vida es sueño* (1635), jornada II.
+- Nota: Ídem.
+- Nota: Ídem, jornada III. Paráfrasis.
+
+### Umbral VI · Las grietas del velo — *lo que se gana*
+Tramos: El sábado temprano · Las grietas del velo · El polvo del sofá · Que la piedra sea piedra · El mundo común · Lo que se gana · Tú también
+- Perla: Lo de siempre / no es lo mismo / cuando alguien lo mira.
+- Perla: Dormidos, cada uno en su mundo. / Despiertos, en el de todos.
+- Perla: Despertar no agrega nada. / Devuelve lo que ya estaba.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 1: «La Gran Amnesia», sección «Las grietas en el velo». Paráfrasis.
+- Nota: Ídem.
+- Nota: Ídem, Nodo 3: «El Recuerdo del Origen».
+- Nota: Ídem.
+- Nota: Ídem, sección «Los guardianes del recuerdo».
+- Nota: León Tolstói, diario, entrada del 1 de marzo de 1897, Nikólskoie, en la cita de Víktor Shklovski, «Искусство как приём» (1917). Traducción propia. La escena del sofá, del mismo pasaje del diario, en paráfrasis.
+- Nota: Víktor Shklovski, «Искусство как приём» (*El arte como artificio*, 1917). Traducción propia.
+- Nota: Ídem. Traducción propia.
+- Nota: Heráclito, fragmento 1 (Diels-Kranz), conservado por Sexto Empírico. Paráfrasis.
+- Nota: Heráclito, fragmento 89 (Diels-Kranz), conservado por Plutarco, *Sobre la superstición*, 166c. Traducción propia.
+
+### Umbral VII · La operación — *tres despertadores*
+Tramos: Lo que vas a necesitar · Paso 1 · Elige tus tres despertadores · Paso 2 · Cuando suene · Paso 3 · Cada noche, una cuenta · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Tres veces al día, / alguien vuelve a casa.
+- Nota: Peter M. Gollwitzer, «Implementation Intentions: Strong Effects of Simple Plans», *American Psychologist* 54 (1999): 493-503. Paráfrasis.
+- Nota: Vadim Zeland, *Transurfing de uno mismo* (original ruso, 2024). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 1, «El Protocolo del Parlamento Sagrado»; Vadim Zeland, *Reality Transurfing*, tomos III y IV. Paráfrasis.
+- Nota: P. D. Ouspensky, *In Search of the Miraculous* (1949), cap. 9. Paráfrasis.
+- Nota: Vadim Zeland, *Adelante al pasado* (Reality Transurfing III), cap. III, «Batalla con el espantajo de arcilla». Paráfrasis.
+- Nota: William James, *The Principles of Psychology* (1890), vol. I, cap. IV, «Habit». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 3: «El Recuerdo del Origen».
+- Nota: Vadim Zeland, *Reality Transurfing*, tomos III y IV, edición española. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso».
+
+### Cierre · Alguien en casa — *la misma vida, habitada*
+- Perla: Despertar no te cambia la vida. / Te pone dentro de ella.
+- Perla: El programa sigue girando. / Tú puedes estar dentro.
+- Para ver: Trinity Infinito, Libro 3, Portal 21: Cuando el Juego Se Reconoce Como Juego. El juego se ve de pronto a sí mismo, y en lugar de detenerse sigue, ahora con alegría. Es despertar dentro del sueño sin salir de él. · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro3/L3-Nodo7.html`
+- Para ver: Judson Brewer: Una forma sencilla de dejar un mal hábito (TED, 2016). Un psiquiatra que estudia cómo se forman los hábitos muestra que la curiosidad, mirar con atención lo que uno hace mientras lo hace, desarma el piloto automático mejor que la fuerza de voluntad. Nueve minutos, con subtítulos en español. · `https://www.youtube.com/watch?v=-moW9jvvMr4`
+- En la pantalla: Groundhog Day (1993; en español, *Atrapado en el tiempo* o *Hechizo del tiempo*). Un hombre vive el mismo día una y otra vez hasta que deja de atravesarlo dormido. La salida no llega cuando escapa, sino cuando empieza a estar presente y a obrar bien dentro de la repetición: Segismundo en clave de comedia.
+- En la pantalla: The Truman Show (1998). Alguien descubre, por pequeñas grietas en el decorado, que vive dentro de una película. Es la Gran Amnesia contada como fábula, y el *Himno de la Perla* con una puerta pintada en el horizonte.
+- En la pantalla: Memento (2000). Un hombre sin memoria reciente se orienta con notas y tatuajes, y sus hábitos siguen funcionando aunque él no recuerde nada. La máquina de Gurdjieff, llevada al extremo.
+- En la pantalla: Waking Life (2001). Un joven atraviesa un sueño del que no logra salir, y en cada escena alguien le habla de despertar. Es lo más cercano en el cine a soñar lúcido con los ojos abiertos.
+- En la pantalla: Black Mirror, «Quince millones de méritos» (2011). Un mundo de pantallas que absorben toda la atención: la pantalla de afuera de Zeland, convertida en sistema.
+- Puerta: Trinity Origen, Libro XIII: El Retorno a Casa · repositorio Trinity
+- Puerta: Trinity Origen, Libro XIII, Nodo 1: La Gran Amnesia · repositorio Trinity
+- Puerta: Trinity Origen, Libro II, Nodo 1: El Parlamento Sagrado · repositorio Trinity
+- Puerta: La Puerta, Nodo 13: Tu siguiente paso · repositorio Trinity
+- Puerta: Trinity Infinito, Libro 3: El juego sin jugador · repositorio Trinity
+
+---
+
 *Campo Trinity · 2026*

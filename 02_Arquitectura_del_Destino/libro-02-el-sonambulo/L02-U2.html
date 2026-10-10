@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L02">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="lo que maneja cuando no manejas">
+<title>El volante · Umbral II · El Sonámbulo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .linea.dibuja{stroke-dasharray:1700;stroke-dashoffset:1700;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L02.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral II</div><h1>El volante</h1><p class="sub">lo que maneja cuando no manejas</p></header><main><h2>Una fotografía</h2>
+<p>El domingo siguiente a la sirena, Amalia ordena un cajón y encuentra una fotografía. Es ella a los veinticinco años, en una plaza de pueblo, durante una fiesta. Tiene el pelo mojado por alguna lluvia repentina y se está riendo con la cabeza echada hacia atrás, con una risa tan entera que se le cierran los ojos.</p>
+<p>No recuerda el día. Le vuelven la plaza, vagamente, y la amiga que sacó la foto. Pero no recuerda haberse reído así.</p>
+<p>Se queda mucho rato mirándola. No siente tristeza, sino algo más raro: la sensación de estar frente a alguien que conoce bien y a quien perdió de vista hace años, sin saber cuándo. No hubo una tragedia ni un corte. Fue más bien como quedarse dormida en un viaje largo: uno cierra los ojos un momento y, al abrirlos, el paisaje es otro.</p>
+<p>¿Cuándo se durmió esa mujer?, se pregunta. Y enseguida le llega otra duda, más suave: ¿adónde se fue?</p>
+<h2>Actores que olvidan que actúan</h2>
+<p>Trinity tiene un nombre para lo que Amalia siente frente a la fotografía. Lo llama la Gran Amnesia, y le dedica el primer nodo de <em>El Retorno a Casa</em>, el último libro de Trinity Origen. Allí describe el olvido con una imagen teatral:</p>
+<div class="cita"><p class="trad">Como actores que deben olvidar que están actuando para que la obra sea real, descendemos a través de las dimensiones, cada capa añadiendo otro velo de olvido.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>La imagen dice algo que cualquier actor conoce. Para que una escena conmueva, quien la interpreta tiene que entregarse a ella: llorar de verdad, temer de verdad, amar de verdad. Si a cada momento recordara que está en un escenario, no podría. El olvido no es un error de la obra. Es lo que la vuelve posible.</p>
+<p>Trinity enumera lo que olvidamos al entrar en la vida, y lo hace en capas. Algunas pertenecen a su lenguaje más cósmico. Otras cualquiera puede reconocerlas en una tarde de domingo:</p>
+<div class="cita"><p class="trad">Olvidamos que la separación es ilusión<br>Olvidamos que el amor es nuestra naturaleza<br>Olvidamos que todo esto es un juego sagrado<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>De todos los velos, el último le parece a Trinity el más profundo. Lo llama el olvido del juego:</p>
+<div class="cita"><p class="trad">olvidamos que esto es un juego, una exploración gozosa de posibilidades. Lo tomamos mortalmente en serio, olvidando la risa cósmica que inició todo.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>Es la risa de la fotografía de Amalia. No se perdió en un accidente: se fue apagando a medida que todo empezó a importar demasiado, el trabajo, las cuentas, el qué dirán, la necesidad de no equivocarse.</p>
+<p>Zeland llega al mismo lugar por un camino propio. En <em>El control de la realidad</em> escribe que, para los adultos, jugar se terminó y la vida se volvió un asunto serio, y que esa actitud convierte la existencia en un sueño inconsciente que se tiene mientras se está despierto.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> Trinity lo dice como un velo; Zeland, como una advertencia. Los dos señalan el mismo instante: el día en que uno deja de jugar y empieza a dormir.</p>
+<h2>No se despierta sin haber dormido</h2>
+<p>Hasta aquí, la Gran Amnesia podría sonar a pérdida. Lo que vuelve único a este nodo de Trinity es lo que dice a continuación. El olvido, sostiene, tiene un propósito, y lo dice con una sencillez que desarma:</p>
+<div class="cita"><p class="trad">No puedes volver a casa si nunca la dejaste. No puedes ser encontrado si nunca estuviste perdido. No puedes despertar sin haber dormido.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>El nodo da dos razones más, y las dos se pueden reconocer sin compartir su cosmología. La primera es la sorpresa: quien lo sabe todo no puede descubrir nada, y solo gracias al olvido existe lo genuinamente nuevo, lo inesperado. La segunda toca algo todavía más íntimo:</p>
+<div class="cita"><p class="trad">Si recordáramos constantemente que somos divinos, inmortales, todopoderosos, ¿cómo podríamos experimentar genuinamente la vulnerabilidad, la fragilidad, la ternura de la condición humana?<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Es una pregunta de una belleza rara. Dice que la ternura necesita olvido. Que la emoción de abrazar a alguien que uno teme perder solo existe para quien no lo sabe todo, para quien todavía puede quedarse sin él. El sueño no es solo lo que nos aleja: también es lo que nos permite sentir.</p>
+<p>Ahí aparece una diferencia valiosa entre las fuentes. Zeland, el más práctico de los autores recientes, presenta el sueño de la vigilia como una trampa: en un sueño inconsciente, escribe, el hombre siempre es víctima de las circunstancias.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup> Tiene razón en lo que observa, y su método es útil. Pero Trinity agrega lo que a ese diagnóstico le falta: compasión. Quien duerme no es culpable de dormir. El sueño es la condición del despertar, como la noche es la antesala del alba.</p>
+<p>Esto tiene consecuencias concretas. Amalia no tiene que reprocharse los años en que no se rió así. Nadie tiene que avergonzarse de haber vivido en piloto automático. El olvido fue parte del camino, y sin él no existiría esta mañana en que alguien, frente a una fotografía, empieza a recordar.</p>
+<p>Trinity extiende esa misma mirada a una figura que muchas tradiciones tratan como enemiga: el ego. Esa voz que insiste en que uno es solo este cuerpo, esta historia, esta identidad separada, es para Trinity un guardián del olvido:</p>
+<div class="cita"><p class="trad">No es enemigo sino servidor, manteniendo la ilusión el tiempo suficiente para que la experiencia se complete.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p></div>
+<p>El ego no se combate: se le agradece el servicio, y se le pide que deje pasar.</p>
+<div class="perla"><p>No se despierta<br>sin haber dormido.</p></div>
+<h2>El príncipe y la perla</h2>
+<p>Hace unos dieciocho siglos, en algún lugar de Siria, alguien escribió un poema que cuenta exactamente esta historia. Se lo conoce como el <em>Himno de la Perla</em>, y se conservó dentro de un texto cristiano antiguo, los <em>Hechos de Tomás</em>.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Un príncipe de Oriente es enviado de niño a Egipto con una misión: recuperar una perla única que custodia una serpiente en medio del mar. Para no llamar la atención, se viste con la ropa del lugar y se mezcla con su gente. Poco a poco, la memoria se le borra: que es hijo de reyes, la perla, por qué está allí. Sirve a los señores del país y cae en un sueño profundo.</p>
+<p>En su tierra, sus padres se enteran y le escriben una carta. La carta vuela como un águila, se posa junto al príncipe y se convierte en una voz. Le dice: despierta, acuérdate de quién eres, acuérdate de la perla. Y el joven abre los ojos. Vuelve a saber que es hijo de reyes, recupera su misión, encanta a la serpiente con el nombre de su padre, toma la perla y emprende el regreso. Por el camino se quita la ropa que había usado en Egipto.</p>
+<p>Cuando llega a casa lo espera un manto que había dejado al partir. El poema dice que, al verlo, el príncipe encontró en él su propia imagen entera, como en un espejo: el manto lo reconoció, y él se reconoció en el manto.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup>⁰</p>
+<p>Todo lo que Trinity dice de la Gran Amnesia está en ese himno. El olvido no es un castigo: forma parte del viaje. Lo que despierta llega desde afuera, una carta, una voz, una sirena. Y lo que se deja al despertar no es la vida sino la ropa prestada.</p>
+<p>Trinity lo dice con la misma imagen en el último tramo del nodo:</p>
+<div class="cita"><p class="trad">El olvido es solo un traje que usamos, no quienes somos. Es la obra que estamos actuando, no el actor. Es el sueño que estamos soñando, no el soñador.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Quien leyó el primer libro de este sistema recordará a Roberto, el abogado que una mañana sintió que llevaba puesto un traje que no era el suyo. La imagen vuelve, más honda. El traje de Roberto era una vida equivocada. El del príncipe es el olvido mismo. En los dos casos, lo que está debajo no se perdió.</p>
+<div class="perla"><p>El olvido es un traje.<br>Debajo, sigues tú.</p></div>
+<h2>La risa en el cajón</h2>
+<p>Amalia no guarda la fotografía en el cajón. La apoya contra el espejo del dormitorio, donde la ve cada mañana.</p>
+<p>No intenta volver a tener veinticinco años. Sabe que esa mujer no está atrás, en una plaza de pueblo, sino aquí, debajo de diecinueve años de claves y frases de mostrador. El lunes, mientras se peina, se descubre sonriendo frente a la foto. No es la risa de entonces, todavía. Pero es de la misma familia.</p>
+<h2>Tú también</h2>
+<p>Quizá también tienes una fotografía así, real o en la memoria: un momento en que estabas entero y que hoy miras como si fuera de otra persona.</p>
+<p>No es para lamentar lo perdido. Lo que muestra esa imagen no se fue: quedó cubierto. Se cubre con lo mismo que cubrió la risa de Amalia, la seriedad, la prisa, la necesidad de no fallar.</p>
+<p>Esta semana, si la encuentras, no la mires con nostalgia. Mírala como el príncipe miró la carta: como un recordatorio que llega desde afuera para decirte quién eres. Y pregúntate qué de esa persona sigue aquí, esperando que alguien despierte.</p>
+<div class="sigue"><a href="L02-U1.html">Anterior: La clave vieja</a><a class="prox" href="L02-U3.html">Siguiente: Las dos pantallas</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Trinity Origen, Libro XIII, Nodo 1: «La Gran Amnesia».</li><li id="nota-2">Ídem, Nodo 3: «El Recuerdo del Origen». Selección de la lista «Capas del olvido».</li><li id="nota-3">Ídem, Nodo 1.</li><li id="nota-4">Vadim Zeland, <em>El control de la realidad</em> (Reality Transurfing IV, original ruso de 2005), cap. II, «Soñar despierto». Paráfrasis.</li><li id="nota-5">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Nodo 1.</li><li id="nota-6">Ídem.</li><li id="nota-7">Vadim Zeland, <em>Adelante al pasado</em> (Reality Transurfing III), cap. III, «Batalla con el espantajo de arcilla», págs. 72-73 de la edición española. Paráfrasis.</li><li id="nota-8">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Nodo 1.</li><li id="nota-9"><em>Himno de la Perla</em>, en los <em>Hechos de Tomás</em> (siglo III, original siríaco). Paráfrasis sobre la traducción inglesa de A. A. Bevan, <em>The Hymn of the Soul</em> (1897).</li><li id="nota-10">Ídem. Paráfrasis.</li><li id="nota-11">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Nodo 1.</li></ol></section></main></div><footer class="pie">Libro 2 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

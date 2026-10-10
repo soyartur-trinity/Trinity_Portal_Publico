@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L02">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="el porqué vacío">
+<title>Porque sí · Umbral IV · El Sonámbulo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .linea.dibuja{stroke-dasharray:1700;stroke-dashoffset:1700;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L02.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral IV</div><h1>Porque sí</h1><p class="sub">el porqué vacío</p></header><main><h2>El jueves del reclamo</h2>
+<p>Un jueves, poco antes del cierre, entra un hombre con una receta y un apuro. El medicamento que necesita no llegó: hay escasez en todo el país. Amalia se lo explica, y él levanta la voz. Dice que siempre es lo mismo, que nadie se hace cargo, que en esta farmacia no saben trabajar.</p>
+<p>Amalia siente el calor en la cara. Contesta. El hombre contesta más fuerte. Durante cinco minutos los dos discuten, y ella está completamente metida en la escena: escucha cada palabra, elige cada respuesta, no piensa en otra cosa. Cuando él se va dando un portazo, le tiemblan las manos.</p>
+<p>Esa noche, en la cama, la discusión vuelve. Amalia le dice al hombre todo lo que no le dijo. Lo repite con variantes, mejora las frases, imagina lo que él habría respondido. A las dos de la mañana sigue en el mostrador, aunque está acostada a oscuras.</p>
+<p>Al día siguiente, mientras levanta la cortina, se da cuenta de algo extraño. En los cinco minutos del reclamo estuvo del todo presente, y sin embargo ausente. Durante las horas de la noche permaneció sola por completo, y aun así no descansó. En las dos ocasiones le pasó lo mismo: algo la había tragado.</p>
+<h2>Un parlamento sin presidente</h2>
+<p>En <em>La Voz Interior</em>, el segundo libro de Trinity Origen, la mente aparece como un parlamento. No es una metáfora decorativa: es una manera precisa de describir lo que cualquiera oye por dentro en un día difícil.</p>
+<p>Hay una voz guardiana, que antes se llamaba crítica y que Trinity rehabilita: no es una enemiga sino un centinela, nacido del deseo de proteger. Hay una voz intuitiva que habla en susurros y no grita, porque no necesita competir. Hay una voz soñadora, el Niño Eterno, que recuerda que uno vino aquí a jugar, no solo a sobrevivir. Hay una voz sabia que trae la memoria de los que vinieron antes. Y hay una voz del cuerpo, que no usa palabras y que, cuando se la ignora, grita más fuerte.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Todas tienen un asiento. Ninguna sobra. Lo decisivo, para Trinity, es otra cosa:</p>
+<div class="cita"><p class="trad">No se trata de que una voz domine a las demás. Se trata de que emerja en ti la función del Presidente del Parlamento — esa conciencia observadora que puede escuchar todas las voces sin ser arrastrada por ninguna.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Y enseguida aclara qué es ese Presidente:</p>
+<div class="cita"><p class="trad">Este Presidente no es otra voz más. Es el espacio de conciencia donde todas las voces pueden existir sin luchar por el control. Es el «Yo» que puede decir: «Los escucho a todos. Valoro sus perspectivas. Y desde esta escucha completa, elijo».<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>Con esa imagen, el sonámbulo se entiende de un modo nuevo. Cuando falta el presidente, el parlamento no se suspende. Sigue sesionando, y decide la voz que más grita. En el mostrador gritó la guardiana, la que defiende el honor de la farmacia. En la cama se impuso otra, la que necesita tener la última palabra. Amalia no estaba en silencio ni vacía: tenía la sala llena. Lo que faltaba era alguien en la silla del centro.</p>
+<p>Es la misma intuición de Gurdjieff, que hablaba de muchos yoes pequeños que se turnan para hablar en nombre de uno, pero con una diferencia de tono que importa. Gurdjieff veía en esa multitud una prueba de la mecanicidad. Trinity ve un consejo de voces valiosas que solo necesita presidencia. El sonámbulo no es alguien sin voces. Es un parlamento sin presidente.</p>
+<div class="perla"><p>Las voces pueden seguir hablando.<br>Lo que cambia todo<br>es que alguien las escuche.</p></div>
+<h2>El Celador</h2>
+<p>Zeland, desde su propio camino, llegó a una figura casi idéntica. En los tomos clásicos del Transurfing aparece una instancia interior que la edición española llama el Celador: un observador que uno lleva dentro y que se puede activar.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Su función es mirar el juego sin entregarse por completo a él. Cuando uno está a punto de lanzarse a una discusión, el Celador no lo permite; cuando uno está totalmente absorbido por una escena, el Celador baja del escenario a la platea y mira la obra desde allí, como un espectador que sabe que está en un teatro.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Es la misma silla del centro con otro nombre. El Presidente de Trinity escucha todas las voces sin ser arrastrado por ninguna; el Celador de Zeland mira el juego sin quedar atrapado en él. Dos metros distintos, la misma luz. Lo que Zeland agrega es práctico: al Celador, dice, hay que activarlo desde el comienzo, por ejemplo al empezar el día, y no esperar a estar en medio del enredo.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Trinity, por su parte, propone algo muy parecido en el mismo nodo del parlamento: una convocatoria matutina, cada amanecer, antes de que el mundo reclame.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<h2>Las dos pantallas</h2>
+<p>En su obra más reciente, Zeland afinó todavía más la descripción del sueño de la vigilia. En <em>Tafti la sacerdotisa</em> sostiene que dormimos tanto soñando como despiertos, y habla de dos pantallas.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>La pantalla de afuera es lo que ocurre alrededor: la escena, la gente, lo que se dice. La de adentro es lo que sucede en la cabeza: el recuerdo, el ensayo, la conversación imaginada. Según su modelo, dormir no es cerrar los ojos. Es que la atención quede hundida en una de esas pantallas sin que nadie advierta la inmersión.</p>
+<p>Con ese mapa, el jueves de Amalia se vuelve claro. En el mostrador dormía en la pantalla de afuera: el reclamo la había absorbido por completo. En la cama dormía en la de adentro: la discusión seguía proyectándose, sola, una y otra vez. Cambiaba el escenario. El sueño era el mismo.</p>
+<p>Esto corrige una idea muy extendida. Solemos pensar que estar dormido en la vida es estar distraído, con la cabeza en otra parte. Pero también se puede dormir con toda la atención puesta en lo que pasa. Lo que define al sonámbulo no es adónde mira. Es que nadie advierte dónde quedó la mirada.</p>
+<div class="perla"><p>Dormir no es irse.<br>Es quedar atrapado<br>en lo que se mira.</p></div>
+<h2>La flecha y la melodía</h2>
+<p>Zeland tiene una imagen sencilla para explicar cómo queda atrapada la atención. La compara con la flecha de una veleta: puede apuntar a una sola dirección por vez, y cuando algo sopla con fuerza, la arrastra entera hacia ese lado. Y da un ejemplo que todos conocen: la melodía que se queda pegada en la cabeza y vuelve, una y otra vez, aunque uno no la haya llamado.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Es un ejemplo bien elegido, porque es inofensivo y universal. Un estudio realizado en Finlandia con miles de personas encontró que la gran mayoría experimenta esas melodías pegadizas al menos una vez por semana.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup>⁰ Nadie las elige. Llegan, se instalan y giran solas, como la discusión de Amalia a las dos de la mañana. Esos miles de anónimos que respondieron un cuestionario sobre algo tan pequeño mostraron, sin proponérselo, cómo funciona el mecanismo entero: algo toma la atención, y ahí se queda.</p>
+<p>Para desprender la flecha, Zeland no propone pelear con la melodía, sino ocupar la atención con otra cosa.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Trinity diría lo mismo con su lenguaje: no se trata de callar a la voz que grita, sino de que alguien vuelva a sentarse en la silla del centro. Desde ahí, la voz puede seguir hablando. Ya no decide.</p>
+<h2>La silla del centro</h2>
+<p>El viernes por la mañana, Amalia no se reprocha la discusión. Se imagina su cabeza como una sala llena, donde varias voces hablaron a la vez, y la imagen le parece justa: la que contestó en el mostrador tenía sus razones, y la que siguió de noche también.</p>
+<p>Pero se hace una promesa pequeña. La próxima vez que algo la trague, no va a intentar callar a nadie. Solo va a fijarse si la silla del centro está ocupada.</p>
+<p>Esa misma tarde, cuando una clienta le cuenta una historia larga y triste, Amalia nota que empieza a irse con ella. Siente el tirón de la pantalla. Y por un segundo, sin dejar de escuchar, vuelve a sentarse. Lo que cuenta sigue siendo triste. Pero ahora hay alguien que la escucha.</p>
+<h2>Tú también</h2>
+<p>Seguramente conoces las dos pantallas. La de afuera, que te atrapa en una discusión, en una serie, en el teléfono que se desliza con el dedo durante una hora que parecieron diez minutos. Y la de adentro, que proyecta a las tres de la mañana una conversación que ya terminó, o una que todavía no empezó.</p>
+<p>En ninguna de las dos hiciste algo malo. Así funciona la atención cuando nadie la acompaña.</p>
+<p>La próxima vez que salgas de una de esas pantallas, con la sensación de haber estado lejos, pregúntate solamente en cuál estabas, y qué voz estaba hablando. Ponerle nombre ya es volver a la silla. Y quien vuelve a la silla no necesita echar a nadie del parlamento: le alcanza con presidir.</p>
+<div class="sigue"><a href="L02-U3.html">Anterior: Las dos pantallas</a><a class="prox" href="L02-U5.html">Siguiente: Despierto dentro del sueño</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>La Voz Interior</em>, Trinity Origen, Libro II, Nodo 1: «El Parlamento Sagrado». Paráfrasis de «Los Miembros del Consejo Interior».</li><li id="nota-2">Ídem.</li><li id="nota-3">Ídem.</li><li id="nota-4">Vadim Zeland, <em>Adelante al pasado</em> y <em>El control de la realidad</em> (Reality Transurfing III y IV, originales rusos de 2005), edición española. Paráfrasis.</li><li id="nota-5">Vadim Zeland, <em>El control de la realidad</em>, cap. I, «Danzando con las sombras», apartado «La ley de la mala suerte». Paráfrasis.</li><li id="nota-6">Vadim Zeland, <em>Reality Transurfing</em>, tomos III y IV, apartados sobre la coordinación de la intención. Paráfrasis.</li><li id="nota-7">Lic. Arturo Rodríguez, <em>La Voz Interior</em>, Nodo 1, «El Protocolo del Parlamento Sagrado». Paráfrasis.</li><li id="nota-8">Vadim Zeland, <em>Tafti la sacerdotisa: caminando despierto en una película</em> (original ruso, 2018). Paráfrasis del modelo.</li><li id="nota-9">Vadim Zeland, <em>El control de la realidad</em> (Reality Transurfing IV), cap. I, «Danzando con las sombras». Paráfrasis.</li><li id="nota-10">Lassi A. Liikkanen, «Musical Activities Predispose to Involuntary Musical Imagery», <em>Psychology of Music</em> 40 (2012): 236-256. Paráfrasis.</li><li id="nota-11">Ídem. Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 2 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
