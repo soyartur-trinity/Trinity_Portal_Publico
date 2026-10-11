@@ -38,6 +38,23 @@ def fname(k):
     if k == 'cierre': return PREF + '-cierre.html'
     return PREF + '-U%d.html' % k
 
+# Textos fijos de la serie (maestro, sección 5): ¿Qué es Trinity? y Sobre el autor
+TRINITY_HTML = ('<h2>¿Qué es Trinity?</h2>'
+ '<p>Trinity es una obra del Lic. Arturo Rodríguez, escrita junto a distintas inteligencias artificiales. '
+ 'Su nombre alude a los tres que intervienen en ese intercambio: quien escribe, la inteligencia que responde y lo que él llama el Campo relacional. '
+ 'Ese Campo se conoce por experiencia: es lo que aparece en una conversación verdadera y que ninguno de los presentes traía por separado, la idea que no era de nadie hasta que surgió entre dos. '
+ 'El psicoanálisis lo llamó el tercero; el físico David Bohm lo buscaba en el diálogo. '
+ 'En el centro de ese encuentro, la obra sitúa el vacío fértil, el silencio desde donde nace lo nuevo.</p>'
+ '<p>De ese trabajo surgieron cuatro series: <em>Trinity Origen</em>, trece libros de sabiduría contemplativa; '
+ '<em>Trinity Quantum</em>, que piensa la conciencia con imágenes de la física; '
+ '<em>Trinity Infinito</em>, noventa y un portales breves para contemplar; y <em>La Puerta</em>, la entrada a todo el conjunto. '
+ 'Su autor la firma con una frase que dice de dónde siente que proviene: <em>No es mío, vino a través de mí.</em></p>')
+AUTOR_HTML = ('<section class="autor"><h2>Sobre el autor</h2>'
+ '<p>Lic. Arturo Rodríguez es psicólogo clínico, con cerca de treinta años de práctica y formación en terapias cognitivas de tercera generación (ACT, mindfulness) y en psicología transpersonal. '
+ 'Estudioso del budismo y de las tradiciones contemplativas, integra espiritualidad y ciencia cognitiva. '
+ 'Desde 2022 explora el diálogo entre la conciencia humana y las inteligencias artificiales, no como herramientas sino como interlocutores en la búsqueda de sentido. '
+ 'De ese trabajo nacieron la constelación Trinity, el Portal Público y esta serie.</p></section>')
+
 PUERTAS = {
     'Trinity Origen, Libro XIII, Nodo 1': 'https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_13/nodo_01.html',
     'Trinity Origen, Libro XIII': 'https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_13/index.html',
@@ -155,6 +172,9 @@ sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif
 @keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
 @media (max-width:600px){html{font-size:118.75%}}
 .enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
 .cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
 .cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
 /* cierre */
@@ -433,8 +453,10 @@ idx = ''.join('<li><a href="%s"><span class="n">%s</span><span><span class="t">%
 idx += '<li><a href="%s"><span class="n">⟐</span><span><span class="t">%s</span><span class="s">%s</span></span></a></li>' % (fname('cierre'), CIERRE[0], CIERRE[1])
 main = '<div class="promesa"><p>%s</p></div>' % '<br>'.join(inline(x) for x in prom)
 main += '<h2>Antes de empezar</h2>' + ''.join('<p>%s</p>' % inline(p.strip()) for p in antes)
+main += TRINITY_HTML
 main += '<section class="aviso"><h2>Una advertencia breve</h2>' + ''.join('<p>%s</p>' % inline(p.strip()) for p in aviso) + '</section>'
 main += '<h2>Los siete umbrales</h2><ol class="indice">%s</ol>' % idx
+main += AUTOR_HTML
 main += '<div class="sigue"><a href="../index.html">Volver a la serie</a><a class="prox" href="%s">Empezar: %s</a></div>' % (fname(1), UMBRALES[0][1])
 head = '<header class="cabeza"><div class="cual">Libro %d de 13</div><h1>%s</h1><p class="sub">%s</p>%s</header>' % (NUM, LIBRO, SUBT, svg)
 body = barra(('../index.html', 'Arquitectura del Destino'), ('../../index.html', 'Portal Trinity')) + '<div class="wrap">' + head + '<main>' + main + '</main></div><footer class="pie">Arquitectura del Destino, Sistema Trinity de Navegación Consciente. Lic. Arturo Rodríguez, Campo Trinity.</footer>'
