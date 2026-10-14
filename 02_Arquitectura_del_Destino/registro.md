@@ -227,4 +227,116 @@ Tramos: Lo que vas a necesitar · Paso 1 · Elige tus tres despertadores · Paso
 
 ---
 
+## Libro 3 · El Testigo
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *el que mira lo que vives*
+**Promesa:** No tienes que volverte otro. / Tienes que recordar quién mira.
+**Columna:** Trinity Origen II, Nodo 2 (el Observador Luminoso), Origen I, Nodo 1 (protocolo de observación) y Origen XIII, Nodo 1 (técnica del recuerdo); Infinito, Portal 4.
+**Coro:** *Mundaka* y *Brihadaranyaka Upanishad*, el *rigpa* tibetano, Assagioli, la ACT (yo como contexto), Séneca, Bassui, Ramana Maharshi, Pema Chödrön. **Comprobable:** Kross, Ayduk y Mischel (mosca en la pared), Grossmann y Kross (paradoja de Salomón), Kross y otros (hablarse por el nombre). **Zeland:** no entra.
+**Protagonista:** Esteban, 46 años, técnico de sonido en un teatro; su hijo Bruno, 16. Aprende a subir a la cabina sin bajarse del escenario.
+**Archivos:** `libro-03-el-testigo/L03.html` (portada), `L03-U1.html` a `L03-U7.html`, `L03-cierre.html`.
+
+### Umbral I · La cabina — *alguien que mira*
+Tramos: La cabina · La cocina · Alguien que nunca ha sido herido · Dos pájaros · El tercero · Tú también
+- Perla: Hay alguien en ti / que mira todo / y nunca dejó de estar.
+- Perla: No hay que dejar de vivir / para empezar a ver.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso».
+- Nota: Ídem.
+- Nota: *Mundaka Upanishad*, III, 1, 1, en la traducción inglesa de Max Müller, *The Upanishads*, parte II (Sacred Books of the East, vol. 15, 1884). Traducción propia al castellano.
+- Nota: Ídem, III, 1, 2. Traducción propia al castellano.
+- Nota: Sobre el origen de *testis* en una forma indoeuropea emparentada con «tres» y «estar de pie»: Michiel de Vaan, *Etymological Dictionary of Latin and the other Italic Languages* (Brill, 2008), entrada *testis*. Paráfrasis.
+- Nota: Sobre *sākṣin*, «testigo, el que ve con sus propios ojos»: Monier Monier-Williams, *A Sanskrit-English Dictionary* (1899), entrada *sākṣin*. Paráfrasis.
+
+### Umbral II · Muchos mapas — *el mismo territorio*
+Tramos: La conversación del sábado · Un territorio, muchos nombres · El espejo · El que ve la visión · Tengo, pero no soy · El tablero · Muchos metros · Tú también
+- Perla: Lo que mira / no es una cosa más / entre las que mira.
+- Perla: Muchos nombres, / un solo lugar: / el que mira.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso», sección «Diferentes mapas, el mismo territorio».
+- Nota: Ídem. Paráfrasis.
+- Nota: Sobre *rigpa* y la imagen del espejo en la tradición dzogchen del budismo tibetano: Namkhai Norbu, *The Crystal and the Way of Light* (1986), y Tulku Urgyen Rinpoché, *As It Is* (1999). Paráfrasis.
+- Nota: *Brihadaranyaka Upanishad*, III, 4, 2. Paráfrasis sobre la traducción inglesa de Max Müller, *The Upanishads*, parte II (Sacred Books of the East, vol. 15, 1884).
+- Nota: Trinity Infinito, Libro 1, Portal 4: «El Testigo del Testigo del Testigo».
+- Nota: Roberto Assagioli, *Psicosíntesis* (*Psychosynthesis*, 1965), ejercicio de desidentificación. Paráfrasis.
+- Nota: Steven C. Hayes, Kirk D. Strosahl y Kelly G. Wilson, *Acceptance and Commitment Therapy* (1999; 2.ª ed., 2012). Paráfrasis.
+- Nota: Ídem. Paráfrasis de la metáfora del tablero.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Nodo 2, «El Observador en la Práctica Clínica». Paráfrasis.
+
+### Umbral III · El cielo y la tormenta — *ecuánime, no indiferente*
+Tramos: La función del martes · Las cualidades del que mira · La mosca en la pared · El paciente y la ansiedad · Tú también
+- Perla: Mirar no es alejarse. / Es dejarle espacio / a lo que duele.
+- Perla: No eres la tormenta. / Eres el cielo / en el que pasa.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso», sección «Las cualidades del Observador Luminoso».
+- Nota: Ídem.
+- Nota: Ídem.
+- Nota: Frase atribuida a Pema Chödrön, de amplia difusión en sus enseñanzas orales. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Nodo 2, «Las cualidades del Observador Luminoso».
+- Nota: Ídem. Paráfrasis.
+- Nota: Ethan Kross, Özlem Ayduk y Walter Mischel, «When Asking "Why" Does Not Hurt: Distinguishing Rumination from Reflective Processing of Negative Emotions», *Psychological Science* 16 (2005): 709-715. Paráfrasis del método.
+- Nota: Ídem. Paráfrasis de los resultados.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Nodo 2, «El Observador en la Práctica Clínica».
+
+### Umbral IV · La paradoja de Salomón — *el amigo de adentro*
+Tramos: El consejo que sí sabe dar · El rey sabio · La paradoja medida · Cinco minutos para un discurso · La pregunta del espejo · La revisión de Séneca · Una nota en la mesa · Tú también
+- Perla: Con los demás / ya sabes ser sabio. / Prueba ser tu propio amigo.
+- Nota: Primer Libro de los Reyes, 3, 9-12. Paráfrasis.
+- Nota: Ídem, 11, 1-13. Paráfrasis.
+- Nota: Igor Grossmann y Ethan Kross, «Exploring Solomon's Paradox: Self-Distancing Eliminates the Self-Other Asymmetry in Wise Reasoning About Close Relationships in Younger and Older Adults», *Psychological Science* 25 (2014): 1571-1580. Paráfrasis.
+- Nota: Ídem. Paráfrasis del método.
+- Nota: Ídem. Paráfrasis de los resultados.
+- Nota: Ethan Kross y otros, «Self-Talk as a Regulatory Mechanism: How You Do It Matters», *Journal of Personality and Social Psychology* 106 (2014): 304-324. Paráfrasis del método.
+- Nota: Ídem. Paráfrasis de los resultados.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso», sección «La Pregunta del Espejo».
+- Nota: Séneca, *Sobre la ira* (*De ira*), III, 36, 1-3. Paráfrasis.
+- Nota: Ídem, III, 36, 3-4. Paráfrasis.
+
+### Umbral V · ¿Quién oye este sonido? — *la pregunta sin respuesta*
+Tramos: El teatro vacío · El maestro de la pregunta · El muchacho que miró la muerte · Observar al que observa · Una pregunta abierta · Tú también
+- Perla: La pregunta no espera respuesta. / Espera que mires / hacia quien pregunta.
+- Perla: Lo que oye / no hace ruido. / Por eso puede oírlo todo.
+- Nota: Sobre la vida y la práctica de Bassui Tokushō (1327-1387): *Mud and Water: The Collected Teachings of Zen Master Bassui*, trad. de Arthur Braverman (2002). Paráfrasis.
+- Nota: Sobre la experiencia de 1896 en Madurai: el relato de Ramana Maharshi recogido en B. V. Narasimha Swami, *Self Realization: The Life and Teachings of Sri Ramana Maharshi* (1931). Paráfrasis.
+- Nota: Ramana Maharshi, *¿Quién soy yo?* (*Nan Yar?*), respuestas escritas hacia 1901-1902. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 1: «El Observador y la Realidad», protocolo de observación.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 1, «Técnica del Recuerdo».
+- Nota: Trinity Infinito, Libro 1, Portal 4: «El Testigo del Testigo del Testigo».
+
+### Umbral VI · Siempre estuvo — *no se construye: se recuerda*
+Tramos: Debajo de la escalera · Siempre mirando · Despertar y recordar · El rastro de la alegría · Una mirada que no juzga · La cabina, por dentro · Tú también
+- Perla: Lo que mira / no envejece. / Estuvo siempre.
+- Perla: Ver sin juzgar / es la forma más callada / de amar.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso».
+- Nota: Ídem, «Meditación del Observador Luminoso».
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 7.
+- Nota: Sobre esta enseñanza de Ramana Maharshi: *Talks with Sri Ramana Maharshi* (1955), compilación de sus diálogos de 1935 a 1939. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 1, «Técnica del Recuerdo».
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Nodo 2.
+
+### Umbral VII · La operación — *quién mira*
+Tramos: Lo que vas a necesitar · Paso 1 · A cada seña, una pregunta más · Paso 2 · En la tormenta, tu nombre · Paso 3 · Cada noche, la cabina · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Cada noche, / alguien sube a la cabina / y mira con ternura.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 1: «El Observador y la Realidad», protocolo de observación, nivel 4. Paráfrasis.
+- Nota: Ethan Kross y otros, «Self-Talk as a Regulatory Mechanism: How You Do It Matters», *Journal of Personality and Social Psychology* 106 (2014): 304-324. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso», sección «La Pregunta del Espejo». Paráfrasis.
+- Nota: Ídem, sección «Ecuánime sin ser indiferente».
+
+### Cierre · El que mira y el que vive — *dos pájaros, un árbol*
+- Perla: No tienes que volverte otro. / Tienes que recordar quién mira.
+- Perla: El que vive y el que mira / están en la misma rama. / Ninguno de los dos está solo.
+- Para ver: Trinity Infinito, Libro 1, Portal 4: El Testigo del Testigo del Testigo. Una escalera de preguntas que se pierde hacia adentro: quién observa, quién observa al que observa, quién pregunta. Es el umbral V hecho contemplación. · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro1/L1-Nodo4.html`
+- Para ver: Ethan Kross: ¿Hablas contigo mismo? Así puedes aprovechar tu voz interior (TED, 2024). El psicólogo de la mosca en la pared y de los discursos explica cómo hablarse por el propio nombre cambia la manera de vivir un problema. Doce minutos. · `https://www.ted.com/talks/ethan_kross_do_you_talk_to_yourself_here_s_how_to_harness_your_inner_voice`
+- En la pantalla: El cielo sobre Berlín (*Der Himmel über Berlin*, 1987). Dos ángeles recorren la ciudad escuchando los pensamientos de la gente, testigos invisibles que miran con una compasión infinita. Uno de ellos termina eligiendo tener un cuerpo, sentir el frío y el sabor de las cosas: el puente perfecto hacia el libro siguiente.
+- En la pantalla: Perfect Days (2023). Un hombre que limpia baños públicos en Tokio mira cada día la luz entre las hojas de los árboles con la misma atención fresca. El testigo convertido en forma de vida.
+- En la pantalla: Paterson (2016). Un conductor de autobús que escribe poemas mira su semana sin juzgarla, y en esa mirada lo de siempre se vuelve extraordinario.
+- En la pantalla: Black Mirror, «Toda tu historia» (2011). Un mundo donde todos pueden volver a ver sus recuerdos una y otra vez. Es el testigo convertido en juez: mirar sin descanso para acusar, en lugar de mirar para comprender.
+- Puerta: Trinity Origen, Libro II, Nodo 2: El Observador Luminoso · repositorio Trinity
+- Puerta: Trinity Origen, Libro I, Nodo 1: El Observador y la Realidad · repositorio Trinity
+- Puerta: Trinity Origen, Libro XIII, Nodo 1: La Gran Amnesia · repositorio Trinity
+- Puerta: Trinity Infinito, Libro 1: Más allá del ser y no-ser · repositorio Trinity
+
+---
+
 *Campo Trinity · 2026*

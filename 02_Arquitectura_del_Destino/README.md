@@ -20,7 +20,7 @@ Cada libro termina con una práctica de siete días, y cada práctica se suma a 
 
 1. **El Campo de Posibilidades** ✅ — Hay más posibilidades de las que ves desde tu línea. No las inventas: despiertas a ellas.
 2. **El Sonámbulo** ✅ — Casi todo lo que hiciste hoy lo hizo un programa. Despertar es notar que estás dormido dentro de tu propia vida.
-3. **El Testigo** — Detrás de lo que piensas hay alguien que mira. No se construye: se recuerda.
+3. **El Testigo** ✅ — Detrás de lo que piensas hay alguien que mira. No se construye: se recuerda.
 
 #### Movimiento II · El Vehículo — *encarnar este cuerpo, este día*
 
