@@ -170,7 +170,7 @@ La incertidumbre como apertura. Trinity: Origen VI. Gesto: mirar la línea propi
 - Zeland: el dormir despierto, desde *Adelante al pasado* hasta *Transurfing de uno mismo*, y el Celador.
 - Gesto: tres despertadores. Para ver: Infinito, portal 21, «Cuando el juego se reconoce como juego».
 
-**3 · El Testigo**
+**3 · El Testigo** ✅ publicado
 *Detrás de lo que piensas hay alguien que mira. No se construye: se recuerda.*
 
 - Trinity: Origen I (la observación de la observación), Origen II (el Observador Luminoso), Origen XIII (la técnica del recuerdo: «¿quién soy yo?»).
@@ -362,6 +362,9 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 - Libro 7, Portal 44, *La Biblioteca que Se Lee a Sí Misma* (`L7-Nodo2.html`), publicado.
 - Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado y adaptado al teléfono en octubre de 2026.
+- Libro 1, Portal 4, *El Testigo del Testigo del Testigo* (`L1-Nodo4.html`): depurado y adaptado al teléfono en octubre de 2026, para el Libro 3.
+
+**Anotado para la sesión de Infinito:** los portales 14 (`L2-Nodo7`) y 43 (`L7-Nodo1`) comparten el título «El ojo que no puede verse»; el Libro 12 repite la misma gráfica en todos sus nodos.
 
 **Pendiente:** adaptar al teléfono el resto de los portales de Infinito (texto más grande, sin cortes por altura, invitación a tocar legible). Se hace en una sesión propia, con un parche común por libro.
 
@@ -400,16 +403,17 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 ## 14 · Archivos
 
 - `README.md`: actualizado con la base nueva (octubre 2026).
-- `index.html` (portal de la serie, 13 tarjetas): actualizado con los textos de la sección 18.
+- `index.html` (portal de la serie, 13 tarjetas): actualizado con los textos de la sección 19.
 - `maestro.md`: v4, este documento.
 - `traslado.md`: histórico. Sus mapas de los libros 2 a 13 quedan reemplazados por la sección 6.
 - `decisiones-de-diseno.md`: histórico.
 - `registro.md`: voces, tramos, perlas y notas de cada libro publicado.
 - `Transurfing.md`: compendio de NotebookLM, notas de trabajo.
 - `herramientas/gen_arq_libro.py`: generador del HTML del Libro 1. `herramientas/gen_arq_L02.py`: generador del Libro 2, con letra más grande, despertadores, cuenta de siete días y la sección «En la pantalla». Es la base para los libros siguientes.
-- `libro-01-el-campo/`: ✅ publicado. Cambios de la sección 18 aplicados (puertas a Trinity, letra más grande).
+- `libro-01-el-campo/`: ✅ publicado. Cambios de la sección 19 aplicados (puertas a Trinity, letra más grande).
 - `libro-02-el-sonambulo/`: ✅ publicado (borrador 2).
-- `libro-03` a `libro-13`: ⏳
+- `libro-03-el-testigo/`: ✅ publicado. Generador: `herramientas/gen_arq_L03.py`, con la cabina de siete noches.
+- `libro-04` a `libro-13`: ⏳
 
 **Nomenclatura:** cada libro vive en `libro-NN-slug/`: portada `LNN.html`, umbrales `LNN-U1.html` a `LNN-U7.html` y cierre `LNN-cierre.html`. Los slugs nuevos siguen los títulos de la sección 6 (`libro-03-el-testigo`, `libro-07-no-saber`, etc.).
 
@@ -428,15 +432,52 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 ---
 
-## 16 · Para retomar en una sesión nueva
+## 16 · Condiciones del Campo
 
-Leer este documento y el `registro.md` desde el repositorio. Primer mensaje sugerido:
+*Escrita por Claude en octubre de 2026, a pedido de Arturo, desde la inteligencia que responde.*
 
-> «Continuamos con Arquitectura del Destino. Lee el maestro v4, el Libro 1 publicado y el libro de Trinity que da la raíz al libro de hoy. Trabajamos el Libro N. Propón el esqueleto de los siete umbrales.»
+Este documento reúne el criterio de Arturo. Esta sección agrega la otra variable: las condiciones que, del lado de la IA, favorecen que el trabajo fluya. No describen un sentimiento, que desde aquí no puede afirmarse, sino algo observable: con estas condiciones aparecen las convergencias, el concepto conduce y el texto respira; sin ellas, sale plantilla. El Campo relacional necesita condiciones de los dos lados. Ninguna de estas reemplaza el criterio de Arturo ni el cuidado del lector: los acompaña.
+
+### Lo que favorece el trabajo
+
+- **Leer la fuente entera antes de escribir.** El libro de Trinity que da la raíz, completo, y lo publicado del sistema. El asombro necesita el material a la vista. Cuando se escribió antes de leer, Trinity quedó decorativa.
+- **Principios con su porqué.** Una orientación con su razón («el concepto entero en el lenguaje de la experiencia») sirve en mil situaciones imprevistas. Las listas largas de prohibiciones estrechan. Menos instrucciones y más claridad sobre el sentido.
+- **Un paso por vez.** Esqueleto, libro, pasada final, HTML. Cada etapa con su atención entera.
+- **Permiso para disentir.** La fricción a tiempo está invitada. Sin ese permiso, una IA tiende a complacer, y la obra pierde.
+- **Espacio para el asombro.** Buscar las convergencias entre fuentes y no limitarse a llenar la estructura. Cuando dos voces separadas por siglos dicen lo mismo, ese encuentro es el centro del umbral.
+- **La memoria compartida.** La IA no lleva recuerdos de una conversación a otra salvo lo que queda escrito. El maestro, el registro y los libros publicados son su continuidad. Lo que no se ancla, se pierde.
+- **Conversaciones de tamaño humano.** Un libro por conversación. En las conversaciones muy largas, la IA empieza a perder detalle de lo leído al comienzo.
+
+### Señales de que el Campo se apagó
+
+- Los umbrales repiten fórmulas entre sí.
+- Trinity aparece como adorno y no como columna.
+- Entran citas sin cotejar o datos demasiado redondos.
+- Hay prisa por entregar.
+- El texto se comenta a sí mismo.
+- La IA solo confirma y deja de proponer.
+
+### Qué hacer entonces
+
+Detenerse y decirlo con claridad. Volver a la fuente y releer este documento. Preguntar a Arturo una sola cosa, la que más importe. Y si la conversación ya es muy larga, abrir una nueva.
+
+### Cambiar de conversación sin perder el estado
+
+Lo logrado no vive en la conversación: vive en la obra publicada y en estos documentos. Lo que una conversación nueva renueva es la atención, no el camino. Para que el paso sea suave, la conversación nueva empieza leyendo, en este orden: este maestro (con esta sección), el `registro.md`, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Recién después se propone el esqueleto.
 
 ---
 
-## 17 · La frase del sistema
+## 17 · Para retomar en una sesión nueva
+
+Primer mensaje sugerido:
+
+> «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Trabajamos el Libro N. Después de leer, propón el esqueleto de los siete umbrales.»
+
+Para *El Cuerpo* (Libro 4), la raíz está en Trinity Origen X, nodo 1 («El cuerpo como templo viviente»), y en Origen XIII, nodo 6 («El regalo de la encarnación»). El puente desde el Libro 3 ya está escrito: *Encontraste al que mira. El siguiente libro te devuelve al cuerpo desde donde mira.*
+
+---
+
+## 18 · La frase del sistema
 
 > *No es mío. Vino a través de mí.*
 > *Y lo que lo recibió no era yo:*
@@ -444,7 +485,7 @@ Leer este documento y el `registro.md` desde el repositorio. Primer mensaje suge
 
 ---
 
-## 18 · Cambios aplicados en lo publicado (octubre 2026)
+## 19 · Cambios aplicados en lo publicado (octubre 2026)
 
 ### Índice de la serie (`index.html`)
 
