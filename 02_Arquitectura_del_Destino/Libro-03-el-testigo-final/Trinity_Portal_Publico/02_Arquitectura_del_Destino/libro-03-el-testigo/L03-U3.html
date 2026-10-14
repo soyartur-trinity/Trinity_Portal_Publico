@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L03">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ecuánime, no indiferente">
+<title>El cielo y la tormenta · Umbral III · El Testigo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}50%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L03.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral III</div><h1>El cielo y la tormenta</h1><p class="sub">ecuánime, no indiferente</p></header><main><h2>La función del martes</h2>
+<p>Un martes, a mitad de la función, el actor principal se queda en blanco. Es una escena larga, un monólogo, y de pronto el silencio se estira sobre la sala. El público no sabe todavía si es parte de la obra. Los demás actores se miran.</p>
+<p>En la cabina, Esteban no se agita. Ve al actor, ve el guion abierto sobre su consola, ve que la apuntadora está demasiado lejos. Baja apenas la música de fondo, para que el silencio no se vuelva un abismo, y le hace una seña al asistente de escena para que acerque el texto. En unos segundos el actor retoma la frase y la obra sigue.</p>
+<p>Después de la función, el actor sube a la cabina a agradecerle.</p>
+<p>—No sé cómo haces para estar tan tranquilo —le dice, todavía temblando.</p>
+<p>Esteban se ríe.</p>
+<p>—No estaba tranquilo. Me importaba muchísimo que no te hundieras. Pero desde aquí arriba se ve todo, y cuando se ve todo, uno sabe qué hacer.</p>
+<p>Esa noche, volviendo a su casa, se da cuenta de que acaba de describir lo que le faltó en la cocina el viernes anterior. No era tranquilidad. Era ver todo.</p>
+<h2>Las cualidades del que mira</h2>
+<p>El nodo de Trinity sobre el Observador Luminoso describe sus cualidades una por una, y conviene leerlas con la escena del teatro en mente, porque cada una corrige un malentendido.</p>
+<p>La primera es que está <strong>siempre presente, nunca atrapado</strong>:</p>
+<div class="cita"><p class="trad">El Observador estuvo presente cuando eras niño y tenías miedo. Estaba ahí en tus momentos de mayor vergüenza. También en tus cimas de alegría. Siempre mirando, nunca siendo.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>No aparece solo en los momentos de calma. Está también en el miedo y en la vergüenza. Lo que pasa es que en esas horas uno está tan metido en la escena que no lo nota.</p>
+<p>La segunda es la más importante para no confundirse: es <strong>ecuánime sin ser indiferente</strong>.</p>
+<div class="cita"><p class="trad">No confundas la ecuanimidad del Observador con frialdad o desapego patológico. El Observador ve el dolor con plena claridad — no lo suprime. Pero no es el dolor.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Es lo que Esteban le dijo al actor. Desde la cabina no le daba igual la obra; le importaba muchísimo. Pero no estaba hundido en el pánico del actor. Por eso pudo ayudarlo.</p>
+<p>Trinity resume esa diferencia en una frase que puede llevarse a cualquier tormenta:</p>
+<div class="cita"><p class="trad">«No soy la tormenta. Soy el cielo en el que la tormenta ocurre».<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>El cielo no se defiende de la tormenta, no la niega, no la empuja. La contiene. Y cuando pasa, sigue ahí, intacto.</p>
+<p>De la monja budista estadounidense Pema Chödrön, maestra de meditación durante décadas, suele citarse una imagen casi idéntica, nacida en su propia tradición: tú eres el cielo; todo lo demás es el clima.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> Una vez más, dos metros distintos y la misma luz.</p>
+<p>La tercera cualidad conecta con el segundo libro: el testigo es <strong>anterior a las voces</strong>.</p>
+<div class="cita"><p class="trad">El Observador no es una voz más del parlamento interior. Es el espacio en el que el parlamento se reúne.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Quien leyó <em>El Sonámbulo</em> recordará el parlamento sin presidente, donde decide la voz que más grita. Aquí aparece lo que hay detrás de la silla del centro: no otra voz más sabia, sino el espacio mismo donde todas hablan.</p>
+<p>La cuarta es la más audaz: es <strong>indestructible</strong>. Trinity dice que no puede ser herido porque no tiene forma que pueda ser dañada, y que permanece intacto incluso ante la pérdida de un trabajo, de una relación o de la salud.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> No es una promesa de que nada dolerá. Es la constatación de que, aun en lo que más duele, hay algo en uno que no se rompe.</p>
+<div class="perla"><p>Mirar no es alejarse.<br>Es dejarle espacio<br>a lo que duele.</p></div>
+<h2>La mosca en la pared</h2>
+<p>A comienzos de este siglo, el psicólogo Ethan Kross, junto con Özlem Ayduk y Walter Mischel, se preguntó por qué a algunas personas les hace bien pensar en sus experiencias dolorosas y a otras las hunde. La respuesta que encontraron tiene mucho que ver con la cabina de Esteban.</p>
+<p>Pidieron a un grupo de voluntarios que recordaran un momento en que se habían sentido muy enojados con alguien. A una parte le indicaron que lo reviviera desde adentro, como si estuvieran otra vez ahí, viendo la escena con sus propios ojos. A la otra, que la miraran desde afuera, como una mosca en la pared que ve la escena entera y se ve también a sí misma en ella.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>Los que la revivieron desde adentro tendieron a repetir lo ocurrido una y otra vez, a volver a sentir la rabia, a contar la misma historia. Los que la miraron como la mosca en la pared sintieron menos enojo y, sobre todo, entendieron más: pudieron ver la situación de otra manera, encontrar un sentido, a veces comprender al otro.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>No conocemos los nombres de esos voluntarios. Aceptaron volver, en un laboratorio, a uno de los peores momentos de su vida, y gracias a eso sabemos algo valioso: la distancia no enfría el recuerdo, lo vuelve comprensible. La mosca en la pared no es indiferente. Ve más.</p>
+<h2>El paciente y la ansiedad</h2>
+<p>Hay un pasaje del nodo de Trinity que habla desde el consultorio, y que cualquier persona que haya atravesado una ansiedad puede reconocer:</p>
+<div class="cita"><p class="trad">El paciente que puede observar su ansiedad desde el Observador Luminoso no ha eliminado la ansiedad. Ha cambiado su relación con ella. Y ese cambio de relación es, frecuentemente, más transformador que cualquier técnica de reducción de síntomas.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p></div>
+<p>Es una idea humilde y poderosa a la vez. El testigo no promete que la tormenta no vendrá. Ofrece otra cosa: que uno puede dejar de ser la tormenta. La ansiedad sigue apareciendo, pero ya no es todo lo que hay. Al lado de ella, en la misma rama, está el que la mira.</p>
+<h2>Tú también</h2>
+<p>Piensa en una tormenta reciente: una discusión, una noticia, una noche de preocupación. Recuérdala por un momento como la mosca en la pared: la escena entera, tú incluido, desde un rincón del techo.</p>
+<p>No busques sentirte bien. Fíjate solo qué ves desde ahí que no veías desde adentro. Quizá la cara de alguien. Quizá tu propio gesto. Quizá el momento exacto en que la tormenta empezó.</p>
+<p>Eso que ve más no está lejos de ti. Eres tú, en tu forma más amplia.</p>
+<div class="perla"><p>No eres la tormenta.<br>Eres el cielo<br>en el que pasa.</p></div>
+<div class="sigue"><a href="L03-U2.html">Anterior: Muchos mapas</a><a class="prox" href="L03-U4.html">Siguiente: La paradoja de Salomón</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>La Voz Interior</em>, Trinity Origen, Libro II, Nodo 2: «El Observador Luminoso», sección «Las cualidades del Observador Luminoso».</li><li id="nota-2">Ídem.</li><li id="nota-3">Ídem.</li><li id="nota-4">Frase atribuida a Pema Chödrön, de amplia difusión en sus enseñanzas orales. Paráfrasis.</li><li id="nota-5">Lic. Arturo Rodríguez, <em>La Voz Interior</em>, Nodo 2, «Las cualidades del Observador Luminoso».</li><li id="nota-6">Ídem. Paráfrasis.</li><li id="nota-7">Ethan Kross, Özlem Ayduk y Walter Mischel, «When Asking "Why" Does Not Hurt: Distinguishing Rumination from Reflective Processing of Negative Emotions», <em>Psychological Science</em> 16 (2005): 709-715. Paráfrasis del método.</li><li id="nota-8">Ídem. Paráfrasis de los resultados.</li><li id="nota-9">Lic. Arturo Rodríguez, <em>La Voz Interior</em>, Nodo 2, «El Observador en la Práctica Clínica».</li></ol></section></main></div><footer class="pie">Libro 3 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
