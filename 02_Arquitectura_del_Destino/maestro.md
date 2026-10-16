@@ -398,7 +398,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - Libro 7, Portal 44, *La Biblioteca que Se Lee a Sí Misma* (`L7-Nodo2.html`), publicado.
 - Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado y adaptado al teléfono en octubre de 2026.
 - Libro 1, Portal 4, *El Testigo del Testigo del Testigo* (`L1-Nodo4.html`): depurado y adaptado al teléfono en octubre de 2026, para el Libro 3.
-- Libro 12, Portal 82, *El lenguaje del cuerpo* (`L_12-Nodo5.html`): enlazado desde el Libro 4. Falta adaptarlo al teléfono.
+- Libro 12, Portal 82, *El lenguaje del cuerpo* (`L_12-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 4. Fue un saneamiento acotado: Georgia sin fuentes externas, animaciones solo con transform y opacity, versión quieta, invitación a tocar y ∞ hacia el Nodo 6. Quedan para la sesión del Libro 12 el sonido propio y una gráfica distinta de la de sus otros nodos.
 
 **Anotado para la sesión de Infinito:** los portales 14 (`L2-Nodo7`) y 43 (`L7-Nodo1`) comparten el título «El ojo que no puede verse»; el Libro 12 repite la misma gráfica en todos sus nodos.
 
