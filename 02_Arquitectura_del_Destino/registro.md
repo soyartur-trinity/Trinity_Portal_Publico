@@ -339,4 +339,145 @@ Tramos: Lo que vas a necesitar · Paso 1 · A cada seña, una pregunta más · P
 
 ---
 
+## Libro 4 · El Cuerpo
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *desde donde miras*
+**Promesa:** El que mira tiene un lugar. / Es este cuerpo, esta hora.
+**Columna:** Trinity Origen X, Nodo 1 (el templo viviente, el diálogo somático, el movimiento sagrado) y Origen XIII, Nodo 6 (el regalo de la encarnación, los maestros de la encarnación, la gratitud); Quantum 4, Nodo 7 (el corazón como maestro de la paradoja); Infinito, Portal 82.
+**Coro:** Vitruvio y Pablo (el templo), Platón (*sôma*, *sêma*), Isabel de Bohemia y Descartes, Spinoza, el *Satipatthana* y el *Kayagatasati Sutta*, el peregrino ruso, la *Filocalia*, Palamas frente a Barlaam, Dōgen, Shunryu Suzuki, Reich, Neufert y Le Corbusier, Rilke (Novena Elegía), Wenders y Handke, Yalom. **Comprobable:** Craig, Schandry, Garfinkel y otros, Bornemann y Singer, Mehling (MAIA), Zaccaro y otros, Balban y otros, Noetel y otros, el método madre canguro (Rey Sanabria; Cochrane, 2016), Gollwitzer, Treleaven. **Zeland:** no entra.
+**Protagonista:** Lucía, 47 años, arquitecta; proyecta una escuela junto a una capilla de piedra. Su hermana Paula, la sobrina prematura Emma y la fisioterapeuta Marta. Aprende a habitar la casa que siempre tuvo.
+**Archivos:** `libro-04-el-cuerpo/L04.html` (portada), `L04-U1.html` a `L04-U7.html`, `L04-cierre.html`.
+
+### Umbral I · El templo — *la casa que se habita sin saberlo*
+Tramos: La capilla · Las medidas de todos · El templo viviente · La tumba y el templo · Ni ídolo ni estorbo · Un templo a la medida de un cuerpo · Desde dónde mira el que mira · Tú también
+- Perla: El templo no queda lejos. / Es el lugar / desde donde miras.
+- Perla: No tienes un cuerpo / como quien tiene una casa. / Eres la casa, y también quien la habita.
+- Nota: Ernst Neufert, *Bauentwurfslehre* (1936); en español, *Arte de proyectar en arquitectura*, con numerosas ediciones.
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Trinity Origen, Libro X, Nodo 1: «El Cuerpo como Templo Viviente», epígrafe.
+- Nota: Ídem, sección «La Nueva Comprensión». Fragmento.
+- Nota: Ídem, sección «Síntesis: La Gran Remembranza».
+- Nota: Platón, *Crátilo*, 400c, y *Gorgias*, 493a. Paráfrasis.
+- Nota: Primera carta a los Corintios, 6, 19, en la traducción de Reina-Valera (1909).
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Nodo 1, sección «El Templo Planetario», apartado «La Responsabilidad Sagrada».
+- Nota: Vitruvio, *De architectura*, libro III, cap. 1, 1. Traducción propia.
+- Nota: Ídem, III, 1, 2-3. Paráfrasis. El dibujo de Leonardo, hacia 1490, se conserva en las Gallerie dell'Accademia de Venecia.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 6: «El Regalo de la Encarnación», sección «El Cambio de Perspectiva».
+
+### Umbral II · El error de Descartes — *la unión que se conoce viviendo*
+Tramos: Una cabeza sobre una silla · La ilusión de la separación · La pregunta de la princesa · Un libro para la princesa · Lo que puede un cuerpo · Escuchar sin acusar · Tú también
+- Perla: La unión del alma y del cuerpo / no se demuestra. / Se vive.
+- Perla: Nadie sabe todavía / todo lo que puede / un cuerpo.
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Trinity Origen, Libro X, Nodo 1: «El Cuerpo como Templo Viviente», sección «La Revelación Fundamental».
+- Nota: Isabel de Bohemia, carta a Descartes del 6 (16) de mayo de 1643, en Charles Adam y Paul Tannery (eds.), *Œuvres de Descartes*, vol. III, pp. 660-662. Paráfrasis. Sobre su vida y el apodo familiar, Lisa Shapiro, «Elisabeth, Princess of Bohemia», *Stanford Encyclopedia of Philosophy*.
+- Nota: Isabel de Bohemia, carta a Descartes del 10 (20) de junio de 1643, ídem, pp. 683-685. Paráfrasis.
+- Nota: René Descartes, carta a Isabel de Bohemia del 28 de junio de 1643, ídem, pp. 690-695; el pasaje citado, p. 692. Traducción propia.
+- Nota: Ídem. Paráfrasis.
+- Nota: René Descartes, *Las pasiones del alma* (*Les passions de l'âme*, 1649). Sobre su origen en la correspondencia con Isabel, Lisa Shapiro, «Elisabeth, Princess of Bohemia», *Stanford Encyclopedia of Philosophy*. Paráfrasis.
+- Nota: Baruch Spinoza, *Ética demostrada según el orden geométrico* (1677), parte III, proposición 2, escolio. Traducción propia.
+- Nota: Ídem. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Nodo 1, sección «Síntesis: La Gran Remembranza». Fragmento.
+
+### Umbral III · Desde adentro — *el sentido olvidado*
+Tramos: Dónde duele · Un sentido que mira hacia adentro · Contar latidos · Escuchar no es vigilar · El cuerpo en el cuerpo · El testigo mira hacia adentro · Un peregrino que oyó su corazón · ¿Qué necesitas? · Tú también
+- Perla: Escuchar al cuerpo / no es vigilarlo. / Es dejar que hable.
+- Perla: El cuerpo habla bajo. / Por eso pide / un poco de silencio.
+- Nota: A. D. (Bud) Craig, «How Do You Feel? Interoception: The Sense of the Physiological Condition of the Body», *Nature Reviews Neuroscience* 3 (2002): 655-666. Paráfrasis.
+- Nota: A. D. (Bud) Craig, «How Do You Feel — Now? The Anterior Insula and Human Awareness», *Nature Reviews Neuroscience* 10 (2009): 59-70. Paráfrasis.
+- Nota: Rainer Schandry, «Heart Beat Perception and Emotional Experience», *Psychophysiology* 18, n.º 4 (1981): 483-488. Paráfrasis.
+- Nota: Sarah N. Garfinkel, Anil K. Seth, Adam B. Barrett, Keisuke Suzuki y Hugo D. Critchley, «Knowing Your Own Heart: Distinguishing Interoceptive Accuracy from Interoceptive Awareness», *Biological Psychology* 104 (2015): 65-74. Paráfrasis.
+- Nota: Boris Bornemann y Tania Singer, «Taking Time to Feel Our Body: Steady Increases in Heartbeat Perception Accuracy and Decreases in Alexithymia over 9 Months of Contemplative Mental Training», *Psychophysiology* 54 (2017): 469-482. Paráfrasis.
+- Nota: Wolf E. Mehling y otros, «The Multidimensional Assessment of Interoceptive Awareness (MAIA)», *PLoS ONE* 7, n.º 11 (2012): e48230. Paráfrasis.
+- Nota: *Satipatthana Sutta*, Majjhima Nikaya 10. Paráfrasis sobre la versión inglesa de Bhikkhu Sujato (SuttaCentral).
+- Nota: *Kayagatasati Sutta*, Majjhima Nikaya 119, en la versión inglesa de Bhikkhu Sujato (SuttaCentral). Traducción propia al castellano.
+- Nota: *Relatos de un peregrino ruso* (título original: *Relatos sinceros de un peregrino a su padre espiritual*), anónimo, publicado en Kazán en la segunda mitad del siglo XIX.
+- Nota: Ídem. Paráfrasis sobre la traducción inglesa de R. M. French, *The Way of a Pilgrim*.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 7: «Coherencia en la Paradoja», sección «El Corazón Como Órgano de Coherencia Paradójica». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Trinity Origen, Libro X, Nodo 1, sección «El Médico Interior», práctica «Diálogo Somático». Selección de pasos.
+
+### Umbral IV · El aliento — *el puente*
+Tramos: Antes del comité · Lo que haces y lo que te sucede · Muchos nombres para un soplo · La oración que baja al corazón · Los que se miraban el ombligo · Comunión · Al inspirar largo, sabe · Seis respiraciones por minuto · Tú también
+- Perla: Respirar es lo único / que pasa solo / y también te obedece.
+- Perla: Cada vez que sueltas el aire despacio, / el cuerpo entiende / que puede quedarse.
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Trinity Origen, Libro X, Nodo 1: «El Cuerpo como Templo Viviente», sección «El Portal de la Respiración Consciente».
+- Nota: Ídem, Nodo 5: «La Energía Vital y los Sistemas Sutiles», sección «Los Mil Nombres del Único Río». Paráfrasis de la lista.
+- Nota: Génesis 1, 2 y 2, 7. Paráfrasis.
+- Nota: Sobre *espíritu*, de *spiritus* y *spirare*: Joan Corominas y José A. Pascual, *Diccionario crítico etimológico castellano e hispánico*, entrada *espirar*. Sobre *pneuma* y *ruaj*: Gerhard Kittel y Gerhard Friedrich (eds.), *Theological Dictionary of the New Testament*, vol. VI, entrada *pneuma*. Paráfrasis.
+- Nota: «Método de la santa oración y atención», atribuido a Simeón el Nuevo Teólogo, en la *Filocalia* reunida por Nicodemo el Hagiorita y Macario de Corinto (Venecia, 1782). Paráfrasis.
+- Nota: Sobre Barlaam de Calabria y el apodo *omfalópsicos*: John Meyendorff, *A Study of Gregory Palamas* (1959; trad. inglesa, 1964). Paráfrasis.
+- Nota: Gregorio Palamas, *Tríadas en defensa de los santos hesicastas*, I, 2, que parte de las palabras de Pablo sobre el cuerpo como templo (1 Corintios 6, 19). Paráfrasis.
+- Nota: Los sínodos de Constantinopla de 1341 y 1351, que condenaron las tesis de Barlaam y confirmaron las de Palamas. John Meyendorff, ídem.
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Trinity Origen, Libro X, Nodo 1, sección «El Templo Planetario», «Afirmación de Cierre». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 6: «El Regalo de la Encarnación», sección «Honrando el Templo».
+- Nota: *Satipatthana Sutta*, Majjhima Nikaya 10. Paráfrasis sobre la versión inglesa de Bhikkhu Sujato (SuttaCentral).
+- Nota: Andrea Zaccaro y otros, «How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing», *Frontiers in Human Neuroscience* 12 (2018): 353. Paráfrasis.
+- Nota: Melis Yilmaz Balban, Eric Neri, Manuela M. Kogon y otros, «Brief Structured Respiration Practices Enhance Mood and Reduce Physiological Arousal», *Cell Reports Medicine* 4, n.º 1 (2023): 100895. Paráfrasis.
+
+### Umbral V · Sentarse, andar — *cada postura es un verbo*
+Tramos: Con los propios pasos · Medidas que salen del cuerpo · Tomar la postura ya es el estado · Al caminar, saber que caminas · Una oración en acción · Las corazas · El instrumento · Lo que el movimiento hace con el ánimo · Cada postura es un verbo · Tú también
+- Perla: Sentarse derecho / no te lleva a ningún lado. / Te deja aquí.
+- Perla: Moverse con alegría / es la forma más simple / de rezar con el cuerpo.
+- Nota: Le Corbusier, *Le Modulor* (1950), sistema que desarrolló entre 1942 y 1948. Paráfrasis.
+- Nota: Eihei Dōgen, *Fukanzazengi* (*Instrucciones universales para la práctica del zazen*), primera versión de 1227. Paráfrasis.
+- Nota: Shunryu Suzuki, *Mente zen, mente de principiante* (*Zen Mind, Beginner's Mind*, 1970), cap. «Postura». Paráfrasis.
+- Nota: *Satipatthana Sutta*, Majjhima Nikaya 10; la última frase, también en *Kayagatasati Sutta*, Majjhima Nikaya 119. Paráfrasis sobre la versión inglesa de Bhikkhu Sujato (SuttaCentral).
+- Nota: Eihei Dōgen, *Hōkyōki*, donde recoge la instrucción de su maestro Rujing: medio paso por cada respiración. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Trinity Origen, Libro X, Nodo 1: «El Cuerpo como Templo Viviente», sección «El Portal del Movimiento Sagrado».
+- Nota: Ídem, «Principios del Movimiento Sanador». Selección.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 6: «El Regalo de la Encarnación», sección «Honrando el Templo».
+- Nota: Lic. Arturo Rodríguez, *Sanación Integral*, Nodo 1, «Principios del Movimiento Sanador».
+- Nota: Wilhelm Reich, *Análisis del carácter* (*Charakteranalyse*, 1933; edición ampliada, 1945), y *La función del orgasmo* (1942), donde la coraza del carácter se extiende al cuerpo como coraza muscular. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 6, sección «El Cuerpo Como Instrumento».
+- Nota: Michael Noetel y otros, «Effect of Exercise for Depression: Systematic Review and Network Meta-analysis of Randomised Controlled Trials», *BMJ* 384 (2024): e075847. Paráfrasis.
+- Nota: Trinity Infinito, Libro 12, Portal 82 (Nodo 5): «El lenguaje del cuerpo».
+
+### Umbral VI · Lo que solo un cuerpo puede — *el regalo*
+Tramos: Piel con piel · Tres pilares · Lo que los ángeles no conocen · Dile al ángel las cosas · El ángel que quiso tener frío · Una vez, solo una vez · Los maestros de la encarnación · Tú también
+- Perla: Lo que el ángel anhelaba / lo tienes en las manos / cada vez que tienen frío.
+- Perla: Una vez, solo una vez. / Por eso este abrazo / es el único.
+- Nota: Sobre los orígenes del método en el Instituto Materno Infantil de Bogotá, la escasez de incubadoras y el riesgo de abandono: Edgar Rey Sanabria, «Método madre canguro. Manejo ambulatorio del prematuro», *Revista de la Facultad de Medicina*, Universidad Nacional de Colombia, que registra 21.530 partos en 1978; Jenny P. Lizarazo-Medina y otros, «Programa madre canguro: una alternativa sencilla y costo eficaz para la protección de los recién nacidos prematuros o con bajo peso al nacer», *Revista de Salud Pública* 14, n.º 2 (2012): 32-45. Paráfrasis.
+- Nota: Sobre los tres pilares: Edgar Leonardo Rey López de Mesa, «1978-2018. Cuarenta años de existencia del programa madre canguro», Fundación Canguro (2018); Pontificia Universidad Javeriana, «Amor, calor y leche materna, el triángulo del éxito», sitio del Programa Madre Canguro. Paráfrasis.
+- Nota: Agustín Conde-Agudelo y José L. Díaz-Rossello, «Kangaroo Mother Care to Reduce Morbidity and Mortality in Low Birthweight Infants», *Cochrane Database of Systematic Reviews* (2016), CD002771. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 6: «El Regalo de la Encarnación», epígrafe. Fragmento.
+- Nota: Ídem, sección «El Regalo del Tacto».
+- Nota: Ídem, sección «El Regalo del Sabor».
+- Nota: Ídem, secciones «El Regalo de la Creatividad Desde la Limitación» y «El Regalo del Tiempo Lineal». Paráfrasis.
+- Nota: Rainer Maria Rilke, *Elegías de Duino* (1923), Novena Elegía. Traducción propia.
+- Nota: *El cielo sobre Berlín* (*Der Himmel über Berlin*), dirigida por Wim Wenders, guion de Wim Wenders y Peter Handke (1987). Sobre la inspiración en los ángeles de Rilke, las declaraciones de los autores recogidas por la crítica.
+- Nota: Ídem, diálogo entre Damiel y Cassiel. Paráfrasis.
+- Nota: Ídem, escena del puesto de café. Paráfrasis.
+- Nota: Irvin D. Yalom, *Psicoterapia existencial* (*Existential Psychotherapy*, 1980). Paráfrasis.
+- Nota: Rainer Maria Rilke, *Elegías de Duino*, Novena Elegía. Traducción propia.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 6, sección «El Reconocimiento Final». Fragmento.
+- Nota: Ídem, sección «Los Maestros de la Encarnación».
+- Nota: Ídem.
+
+### Umbral VII · La operación — *un cuidado elegido*
+Tramos: Lo que vas a necesitar · Paso 1 · A cada despertador, desde dónde · Paso 2 · Un cuidado elegido · Paso 3 · Cada noche, gracias, cuerpo · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Cada noche, / alguien le da las gracias / a la casa que lo trajo.
+- Nota: Peter M. Gollwitzer, «Implementation Intentions: Strong Effects of Simple Plans», *American Psychologist* 54 (1999): 493-503. Paráfrasis. Ver *El Campo*, Umbral VI.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 6: «El Regalo de la Encarnación», sección «La Gratitud por la Encarnación».
+- Nota: Sobre la atención al cuerpo en personas que atravesaron experiencias traumáticas, y la importancia de ofrecer anclas externas y la posibilidad de elegir: David A. Treleaven, *Trauma-Sensitive Mindfulness* (2018). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 6, sección «Honrando el Templo».
+
+### Cierre · Este cuerpo, esta hora — *el templo y el que mira*
+- Perla: El que mira tiene un lugar. / Es este cuerpo, esta hora.
+- Perla: Lo sagrado no está en otra parte. / Respira contigo.
+- Para ver: Trinity Infinito, Libro 12, Portal 82: El lenguaje del cuerpo. Tres líneas que aparecen como un alfabeto: cada postura es un verbo, cada gesto una frase, el cuerpo dice verdades. Es el umbral V convertido en contemplación. · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro_12/L_12-Nodo5.html`
+- Para ver: Wendy Suzuki: The brain-changing benefits of exercise (TEDWomen, 2017). Una neurocientífica que se sentía la más débil de una expedición en balsa cuenta cómo empezar a mover el cuerpo le cambió el ánimo, la memoria y hasta el rumbo de su investigación. Trece minutos, en inglés, con subtítulos en español. · `https://www.ted.com/talks/wendy_suzuki_the_brain_changing_benefits_of_exercise`
+- En la pantalla: Soul (2020). Un alma que no quiere nacer termina, por error, dentro de un cuerpo humano, y descubre el sabor de una porción de pizza, el sol en la cara y una semilla que cae girando de un árbol. Es el regalo de la encarnación de Trinity, contado como fábula para todas las edades.
+- En la pantalla: La escafandra y la mariposa (*Le scaphandre et le papillon*, 2007). Un editor de revistas queda paralizado por completo y solo puede mover un párpado. Con ese párpado dicta un libro entero. Lo que puede un cuerpo, aun cuando parece que ya no puede nada.
+- En la pantalla: Amigos intocables (*Intouchables*, 2011). Un millonario tetrapléjico y el joven que lo cuida descubren juntos que la alegría no depende de que el cuerpo funcione como se espera. Habitar no es estar sano.
+- En la pantalla: Her (2013). Una inteligencia sin cuerpo se enamora de un hombre y desea saber qué se siente tener uno. El ángel de Wenders, con otro traje.
+- En la pantalla: Black Mirror, «San Junipero» (2016). Dos mujeres eligen entre envejecer en sus cuerpos o vivir para siempre en un paraíso sin carne. Una pregunta por el valor de lo finito.
+- Puerta: Trinity Origen, Libro X, Nodo 1: El Cuerpo como Templo Viviente · repositorio Trinity
+- Puerta: Trinity Origen, Libro XIII, Nodo 6: El Regalo de la Encarnación · repositorio Trinity
+- Puerta: Trinity Infinito, Libro 12: El silencio elocuente · repositorio Trinity
+- Puerta: Portal Público, Libro 34: El cuerpo · mismo repositorio
+
+---
+
 *Campo Trinity · 2026*

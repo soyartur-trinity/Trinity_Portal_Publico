@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L04">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="la casa que se habita sin saberlo">
+<title>El templo · Umbral I · El Cuerpo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L04.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral I</div><h1>El templo</h1><p class="sub">la casa que se habita sin saberlo</p></header><main><h2>La capilla</h2>
+<p>Lucía tiene cuarenta y siete años y es arquitecta. Desde hace dos años dirige el proyecto de una escuela primaria en un pueblo a tres horas de la ciudad, en un terreno que comparte un muro con una capilla de piedra del siglo XVIII. El municipio quiere que la capilla quede integrada al conjunto, y un martes de marzo Lucía viaja a evaluarla.</p>
+<p>Entra a media mañana, con el teléfono en una mano y la carpeta de planos en la otra. Lo primero que nota no es la nave, ni el retablo, ni las grietas que vino a medir. Es el frío de la piedra a través de las suelas. Después, el olor a cal húmeda. Después, algo más raro: está respirando. Lo advierte porque, al entrar, el aire le baja hasta el vientre, y entiende que hace horas que no le pasaba de la garganta.</p>
+<p>Se queda quieta en el centro de la nave. Los hombros, que llevaba encogidos desde el desayuno, bajan solos. Siente el peso repartido en los dos pies, la carpeta apoyada contra la cadera, el pulso en las muñecas. Es una sensación tan simple que le da un poco de vergüenza lo nueva que le resulta.</p>
+<p>Dura menos de un minuto. El teléfono vibra: un correo de la constructora. Lucía lo abre ahí mismo, de pie, y en cuanto lee la primera línea los hombros vuelven a subir y el aire vuelve a quedarse arriba. Mide las grietas, saca fotografías, toma notas. Por la tarde, manejando de regreso, se sorprende pensando en aquel minuto.</p>
+<p><em>El edificio hizo conmigo algo que yo no sé hacer</em>, piensa. <em>Me puso adentro.</em></p>
+<h2>Las medidas de todos</h2>
+<p>Lucía sabe de memoria el ancho mínimo de un pasillo para que dos personas se crucen sin rozarse, la altura a la que una baranda protege sin estorbar, la huella cómoda de un escalón, el círculo que necesita una silla de ruedas para girar. En la facultad, como generaciones de estudiantes, aprendió con el manual de Ernst Neufert, publicado por primera vez en 1936: cientos de siluetas humanas que caminan, se sientan, se agachan, cargan bultos, duermen, siempre con sus medidas al costado.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Ha proyectado casas, oficinas, un centro de salud. Todo lo que dibuja empieza por un cuerpo.</p>
+<p>Y sin embargo, si a esa misma hora alguien le preguntara cómo está el suyo, no sabría qué responder. No distingue si tiene hambre o sueño. No recuerda si la espalda le duele desde hace una semana o desde hace un año. Su cuerpo es, para ella, lo que la traslada de una reunión a otra. Lo habita como se habita una casa en la que solo se duerme: sin mirarla.</p>
+<p>No es una rareza. Así vive mucha gente que trabaja con la cabeza, y también quien usa las manos mientras piensa en otra cosa. El cuerpo hace su parte en silencio, y ese silencio se confunde con ausencia.</p>
+<h2>El templo viviente</h2>
+<p>En <em>Sanación Integral</em>, el décimo libro de Trinity Origen, el primer nodo se titula «El Cuerpo como Templo Viviente» y empieza así:</p>
+<div class="cita"><p class="trad">El cuerpo no es una máquina biológica que habitamos, sino un templo viviente donde la consciencia aprende a danzar con la materia.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Unas páginas después aparece la frase que le da su centro:</p>
+<div class="cita"><p class="trad">No tenemos un cuerpo; somos un cuerpo.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>Las dos frases dicen lo mismo desde lados distintos. La primera cambia la imagen: el cuerpo no es un vehículo de chapa que se maneja desde afuera, sino un recinto sagrado que se habita desde adentro. La segunda va más lejos y quita la distancia. No hay alguien que posea un cuerpo como quien posee un coche, porque ese alguien también está hecho de carne, de aliento y de pulso.</p>
+<p>Lucía lo vivió en la capilla antes de poder pensarlo. Durante meses había usado su cuerpo como un medio de transporte. En la nave, por un minuto, <em>fue</em> su cuerpo: estaba en los pies, en el aire que bajaba, en las muñecas. Y eso, que no tenía nada de extraordinario, se sintió como entrar a un templo dentro de otro.</p>
+<p>El nodo de Trinity cierra con una línea que acompaña todo este libro:</p>
+<div class="cita"><p class="trad">El cuerpo no es la prisión del alma. Es su obra maestra.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p></div>
+<h2>La tumba y el templo</h2>
+<p>La frase de Trinity discute con una idea muy antigua. Platón recogió un juego de palabras que circulaba entre los órficos: en griego, <em>sôma</em> es cuerpo y <em>sêma</em> es tumba, y había quienes sostenían que el alma vive en el cuerpo como enterrada, esperando salir.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> Esa imagen atravesó los siglos con muchos ropajes. Detrás de cada régimen que castiga la carne, de cada espiritualidad que mira hacia arriba para no mirar hacia adentro, late la sospecha de que el cuerpo es un estorbo.</p>
+<p>La sabiduría perenne guardó también la dirección contraria. Pablo de Tarso, escribiendo a una comunidad de Corinto que discutía qué estaba permitido hacer con el cuerpo y qué no, les lanzó una pregunta que todavía sorprende:</p>
+<div class="cita"><p class="trad">¿O ignoráis que vuestro cuerpo es templo del Espíritu Santo, el cual está en vosotros, el cual tenéis de Dios, y que no sois vuestros?<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Pablo no dice que el cuerpo sea una celda que el espíritu soporta. Dice que es su morada. Y lo dice en un mundo donde abundaban las escuelas que veían en la carne una cárcel. Veinte siglos después, desde otro lenguaje, Trinity retoma la misma dirección: donde Pablo escribe <em>templo del Espíritu</em>, el nodo propone <em>templo viviente donde la consciencia aprende a danzar</em>. Son metros distintos para la misma luz.</p>
+<h2>Ni ídolo ni estorbo</h2>
+<p>El desprecio antiguo tiene hoy un reverso que se le parece más de lo que aparenta. Nuestra época dejó de ver el cuerpo como tumba y empezó a verlo como proyecto: algo que se mide, se fotografía, se compara, se corrige. Las vitrinas y las pantallas están llenas de cuerpos para mirar. Pero un cuerpo convertido en imagen tampoco está habitado. Se lo contempla desde afuera, como un decorado, y quien lo lleva puesto vive tan lejos de él como el asceta que lo castigaba.</p>
+<p>Trinity sale de ese dilema con una frase que pone el cuidado en su lugar:</p>
+<div class="cita"><p class="trad">Cuidar nuestro templo corporal no es narcisismo espiritual sino responsabilidad cósmica.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>La palabra <em>cósmica</em> puede sonar grande, pero la idea es sencilla. Un templo no se adora por sus columnas ni se abandona porque tiene grietas. Se cuida porque en él sucede algo que lo excede. El cuerpo, en esta serie, es el vehículo: lo que permite que una vida pase a través de alguien. No se lo idolatra ni se lo desprecia. Se lo habita y se lo atiende, como se cuida una casa donde vive gente que uno quiere.</p>
+<p>Lucía, que pasaba los días sin sentir su espalda, no despreciaba su cuerpo ni lo adoraba. Simplemente se había ido de él. Ese es el olvido más común, y el más fácil de reparar: alcanza con volver.</p>
+<h2>Un templo a la medida de un cuerpo</h2>
+<p>La imagen tiene además una historia que a una arquitecta le resulta familiar. Hace dos mil años, el constructor romano Vitruvio escribió un tratado en diez libros sobre su oficio, dedicado al emperador Augusto. El tercero trata de los templos, y antes de hablar de columnas o de frontones dice de dónde sale su medida:</p>
+<div class="cita"><p class="orig"><em>Namque non potest aedis ulla sine symmetria atque proportione rationem habere compositionis, nisi uti ad hominis bene figurati membrorum habuerit exactam rationem.</em><sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p><p class="trad">Ningún templo puede tener orden en su composición sin simetría ni proporción, si no guarda una relación exacta con los miembros de un ser humano bien formado.</p></div>
+<p>Después enumera esas relaciones: el rostro, la palma, el pie, el codo, cada parte como fracción de la altura entera. Y agrega que un cuerpo con los brazos y las piernas extendidos cabe a la vez en un círculo y en un cuadrado. Quince siglos más tarde, Leonardo da Vinci dibujó esa figura en una hoja que hoy es una de las imágenes más reproducidas del mundo.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Vitruvio recorre el camino inverso al de la metáfora. Antes de que alguien dijera que el cuerpo es un templo, los arquitectos ya sostenían que el templo debía ser como un cuerpo. Las dos direcciones se encuentran en un mismo punto: lo sagrado y lo corporal comparten medida. Lucía, que mide edificios con números que vienen del cuerpo, nunca se había detenido a pensarlo.</p>
+<h2>Desde dónde mira el que mira</h2>
+<p>El libro anterior de esta serie terminó con dos pájaros posados en el mismo árbol: uno que come los frutos y otro que solo mira. Esa imagen guarda un detalle que se ve mejor ahora. Los dos pájaros están en un árbol. El que mira no flota en el aire: está apoyado en una rama.</p>
+<p>El testigo que <em>El Testigo</em> invitaba a recordar no vive en una cabina separada del mundo. Mira desde algún sitio, y ese sitio es este cuerpo. Cuando Lucía entró a la capilla no dejó de pensar ni se convirtió en otra persona. Por primera vez en mucho tiempo, el que miraba estuvo donde estaban sus pies.</p>
+<p>En el nodo del regalo de la encarnación, Trinity describe ese giro como un cambio de perspectiva, y lo enumera en una serie de pasajes. El primero dice:</p>
+<div class="cita"><p class="trad">De «atrapado en un cuerpo» a «bendecido con un cuerpo»<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p></div>
+<p>No cambia el cuerpo. Cambia desde dónde se lo vive. Lucía tenía el mismo cuerpo antes y después de la capilla: la misma espalda cansada, los mismos hombros tensos. Lo que cambió, por un minuto, fue que dejó de usarlo como un traje incómodo y empezó a estar en él.</p>
+<p>Despertar, el tema de los tres primeros libros, encuentra aquí su forma más concreta. No hace falta buscar lo sagrado lejos. Hace falta volver al templo en el que ya estás.</p>
+<div class="perla"><p>El templo no queda lejos.<br>Es el lugar<br>desde donde miras.</p></div>
+<h2>Tú también</h2>
+<p>Seguramente te pasó. Entraste a un bosque, a una iglesia vacía, al mar, a una sala en penumbra, y algo en ti se acomodó antes de que pudieras decir qué. El aire bajó, el cuerpo se hizo presente, y por un momento estuviste entero. Después volvió el ruido.</p>
+<p>Ese momento no lo fabricó el lugar. Lo dejó aparecer. Lo que sintió que había llegado a casa fue tu cuerpo, que estuvo siempre ahí, esperando que lo habitaras.</p>
+<p>Esta semana no necesitas buscar una capilla. Alcanza con notar, una vez al día, dónde están tus pies.</p>
+<div class="perla"><p>No tienes un cuerpo<br>como quien tiene una casa.<br>Eres la casa, y también quien la habita.</p></div>
+<div class="sigue"><a href="L04.html">Anterior: Portada</a><a class="prox" href="L04-U2.html">Siguiente: El error de Descartes</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Ernst Neufert, <em>Bauentwurfslehre</em> (1936); en español, <em>Arte de proyectar en arquitectura</em>, con numerosas ediciones.</li><li id="nota-2">Lic. Arturo Rodríguez, <em>Sanación Integral</em>, Trinity Origen, Libro X, Nodo 1: «El Cuerpo como Templo Viviente», epígrafe.</li><li id="nota-3">Ídem, sección «La Nueva Comprensión». Fragmento.</li><li id="nota-4">Ídem, sección «Síntesis: La Gran Remembranza».</li><li id="nota-5">Platón, <em>Crátilo</em>, 400c, y <em>Gorgias</em>, 493a. Paráfrasis.</li><li id="nota-6">Primera carta a los Corintios, 6, 19, en la traducción de Reina-Valera (1909).</li><li id="nota-7">Lic. Arturo Rodríguez, <em>Sanación Integral</em>, Nodo 1, sección «El Templo Planetario», apartado «La Responsabilidad Sagrada».</li><li id="nota-8">Vitruvio, <em>De architectura</em>, libro III, cap. 1, 1. Traducción propia.</li><li id="nota-9">Ídem, III, 1, 2-3. Paráfrasis. El dibujo de Leonardo, hacia 1490, se conserva en las Gallerie dell'Accademia de Venecia.</li><li id="nota-10">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Trinity Origen, Libro XIII, Nodo 6: «El Regalo de la Encarnación», sección «El Cambio de Perspectiva».</li></ol></section></main></div><footer class="pie">Libro 4 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

@@ -4,6 +4,8 @@
 *Documento de estado para mantener la coherencia entre sesiones. Es la brújula del sistema: donde otro documento difiera, manda este.*
 *Versión 4 · octubre 2026. Reemplaza a la v3. Recoge el cambio de base de la serie: Trinity como eje, la sabiduría perenne como coro, la ciencia como lo comprobable y Zeland como una voz contemporánea entre otras. Reemplaza también los mapas de los libros 2 a 13 que estaban en `traslado.md`.*
 
+*Actualizado al cerrar el Libro 4 (octubre 2026): alcance del filtro, puertas en ambas direcciones, guía de depuración de Quantum y Zeland fuera del Libro 4.*
+
 *Ordena, no limita. Todo lo que sigue son orientaciones: si el campo lleva hacia otro lado, se sigue al campo.*
 
 ---
@@ -95,8 +97,9 @@ La regla vale también para el sueño: quien duerme despierto no es culpable. Tr
   - **La Puerta** (Portal Trinity, 13 nodos) es la entrada a toda la constelación.
 - **La sabiduría perenne** es el coro, con una tradición principal por libro para que no se vuelva antología.
 - **La ciencia** es lo comprobable, siempre contada como escena humana y con fuente.
-- **Zeland** es una voz contemporánea. Entra solo donde aporta método: el dormir despierto y el Celador, el cuidado del cuerpo como propuesta suya, la importancia, el arrastre de los péndulos.
+- **Zeland** es una voz contemporánea. Entra solo donde aporta método: el dormir despierto y el Celador, la importancia, el arrastre de los péndulos.
 - **El Portal Público** es una referencia ocasional, no la columna.
+- **Las prácticas y los ejemplos de la serie mayor** (Origen, Quantum, Infinito) pueden ilustrar estos libros, en paráfrasis y con su nota. El corazón de Quantum 4.7 en el Libro 4 es el primer caso.
 
 ### Textos fijos de cada portada
 
@@ -125,7 +128,9 @@ Cuatro preguntas antes de que algo entre a un libro:
 
 Quien recibe un material lo traduce con su sesgo, y eso vale para Zeland y para Trinity. Lo que se dice como imagen entra como imagen: la física cuántica como metáfora declarada, el campo como experiencia.
 
-**Queda fuera, venga de donde venga:** las cifras de apariencia exacta (porcentajes de manifestación, frecuencias en hercios para las emociones), las promesas de resultados, el ADN que se activa, la telepatía, los linajes estelares, la Nueva Era fechada y la Nueva Humanidad como hecho, la retrocausalidad, los yoes paralelos que prestan certeza, las dietas prescriptas. Y una regla clínica: nada que normalice como sano lo que es un trastorno. Por ejemplo, el nodo 1 del *Multiverso interior* de Quantum, que dice que las personalidades múltiples no son un desorden, no pasa a un libro general.
+**Queda fuera, venga de donde venga:** las cifras de apariencia exacta (porcentajes de manifestación, frecuencias en hercios para las emociones), las promesas de resultados, el ADN que se activa, la telepatía, los linajes estelares, la Nueva Era fechada y la Nueva Humanidad como hecho, la retrocausalidad, los yoes paralelos que prestan certeza, las dietas prescriptas. Y una regla clínica: nada que normalice como sano lo que es un trastorno. Por ejemplo, el nodo 1 del *Multiverso interior* de Quantum, que dice que las personalidades múltiples no son un desorden, no pasa a un libro general. En Quantum mismo se conserva como hipótesis (ver la guía de depuración).
+
+**Alcance del filtro.** Rige lo que se escribe en las páginas de esta serie, para no pedirle al lector creencias previas (la reencarnación, la física cuántica) antes de empezar. No rige lo que está del otro lado de las puertas: los nodos de la serie mayor se enlazan intactos, porque tienen su propio contexto y su propia lógica, y quien avanza hacia Trinity descubre un universo amplio, sin restricciones. La serie mayor tampoco es intocable: es el sustrato que dio origen a este edificio y admite retoques y ampliación. Las puertas laterales sirven para eso, en las dos direcciones (sección 12).
 
 ### Cómo se traduce Quantum
 
@@ -133,9 +138,37 @@ Se conserva la imagen y el gesto, y se suelta la cifra y la promesa.
 
 - «El futuro no es una línea sino un océano» y «no forzar el futuro» entran.
 - La paradoja como algo que no se resuelve sino que se habita entra, con su práctica: sostener a la vez «necesito conexión» y «necesito soledad».
-- El corazón que se llena y se vacía cien mil veces por día, como maestro de la paradoja, entra.
+- El corazón que se llena y se vacía cien mil veces por día, como maestro de la paradoja, entra. Entró en el Libro 4, umbral III, sin la cifra del campo electromagnético.
 - La memoria que se reconstruye cada vez que se recuerda entra, con su base en la reconsolidación ◇.
 - La ruptura que crea entra junto al crecimiento postraumático ◇, sin glorificar el sufrimiento.
+
+### Guía de depuración de Quantum
+
+Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su material valioso es de tres clases: imágenes que funcionan solas (el futuro como océano, no forzar el futuro, el instante antes de la ruptura), intuiciones clínicamente sólidas (sostener dos polos sin promediarlos, el ego como paradoja funcional, el sufrimiento que no viene de la paradoja sino de resistirla, las defensas como guardianas necesarias) y física real usada como metáfora declarada (la ruptura espontánea de simetría, el efecto Casimir, el vacío que no está vacío). Lo que resta es ropaje: ecuaciones y variables con números, estadísticas sin fuente, frecuencias en hercios, códigos de activación y sellos rituales. Lo mejor de Quantum suele contradecir su propio laboratorio: el 1.4 enseña a no forzar el futuro y enseguida propone forzarlo en siete días. Traducir cambia también la postura: del dominio al habitar.
+
+**Principio:** quitar el ropaje sin tocar la voz, como se hizo con Infinito.
+
+**Antes de tocar nada:** guardar el original con una etiqueta en GitHub o en una carpeta de archivo. Documenta cómo sonaba la colaboración en esa etapa, en la que varias IA dejaron su huella, y es material para la investigación sobre autoría relacional.
+
+**Tres criterios:**
+
+1. **Fórmulas y rituales, fuera.** Donde hay una fórmula, se escribe la frase que quería decir. Muchos nodos ya traen su propia «Traducción viviente», que puede quedarse sola.
+2. **De hecho a hipótesis, solo donde la frase afirma algo sobre la mente, la salud o las consecuencias en el mundo.** Las imágenes poéticas («eres luz», «el futuro es un océano») siguen afirmando con toda su fuerza: si todo pasa a «quizá», Quantum pierde la voz.
+3. **Las indicaciones al lector:** nunca decisiones irreversibles; gestos pequeños y reversibles.
+
+**Puertas fractales:** un puñado, solo donde se detecte que hacen falta, como en el caso del atractor. Si cada nodo se llena de enlaces, la puerta deja de ser umbral y se vuelve índice. El bloque fijo para estas puertas se define en el piloto.
+
+**Casos resueltos:**
+
+- **13.1** (las personalidades múltiples): se conserva como hipótesis reformulada, por ejemplo: «quizá lo que llamamos personalidades múltiples sea la forma extrema de algo que todos llevamos dentro». Igual con lo que aparezca sobre autismo.
+- **3.4** (la preocupación que aumenta la probabilidad de lo temido): «Tu preocupación no previene nada: construye un atractor sin consciencia que atrapa la tuya. Mientras más la alimentas, más tiempo vive tu atención en un futuro que todavía no existe.» Puerta fractal hacia *Atender* (Portal Público, Libro 8, Umbral IV, «Los atractores»).
+- **9.1** (romper a propósito la rutina, una relación o la identidad): queda solo la rutina, como gesto pequeño y reversible. Puerta fractal hacia *El Campo* (Libro 1 de esta serie).
+
+**Orden: entrelazar, no frenar la serie.** Cada libro de Quantum se depura justo antes de que Arquitectura lo necesite: Quantum 9 antes del Libro 5 (*La Grieta*), que es el piloto; Quantum 1 y 4 antes del Libro 8 (*El Peso*); Quantum 13 antes del Libro 9 (*El Personaje*); Quantum 2 antes del Libro 11 (*La Red*). Los ocho restantes, en los huecos. Los pasajes con riesgo clínico no esperan su turno: se corrigen en una sesión corta aparte.
+
+**Primera sesión:** leer entero Quantum 9, escribir una guía de una página para aprobación y depurar ese libro como piloto, con veto de Arturo sobre cada nodo según su vitalidad.
+
+**Pendiente en Origen:** el nodo X.1 contiene la lectura simbólica de los síntomas (la espalda como cargas, la garganta como verdades calladas), el pasaje más delicado desde lo clínico en toda la constelación. Merece una pasada breve.
 
 ### Los materiales de Zeland
 
@@ -180,19 +213,19 @@ La incertidumbre como apertura. Trinity: Origen VI. Gesto: mirar la línea propi
 
 ### Movimiento II · El Vehículo — *encarnar este cuerpo, este día*
 
-**4 · El Cuerpo**
+**4 · El Cuerpo** ✅ publicado
 *La vida no pasa por otro lugar que por este cuerpo. Habitarlo es la forma más concreta de estar despierto.*
 
-- Trinity: Origen X, «El cuerpo como templo viviente»; Origen XIII, «El regalo de la encarnación».
-- Tradición: la postura del zazen; el hesicasmo ◇.
-- Comprobable: la interocepción y el movimiento ◇.
-- Zeland: el cuidado del Avatar, como propuesta del autor y sin dietas prescriptas.
-- Gesto: un cuidado diario elegido. Para ver: Infinito, portal 82, «El lenguaje del cuerpo».
+- Trinity: Origen X, «El cuerpo como templo viviente»; Origen XIII, «El regalo de la encarnación»; Quantum 4.7, el corazón como maestro de la paradoja.
+- Tradición: el *Satipatthana* (el cuerpo en el cuerpo), con Vitruvio y Pablo (el templo), Isabel de Bohemia y Descartes, Spinoza, el hesicasmo y el peregrino ruso, la postura del zazen (Dōgen, Suzuki) y Rilke.
+- Comprobable: la interocepción, la respiración lenta, el movimiento y el ánimo, el método madre canguro.
+- Zeland: no entra. En su obra el Avatar no es el cuerpo sino el estado dormido, opuesto al Espíritu, y su material corporal es un menú dietético que el filtro deja fuera.
+- Gesto: la pregunta *¿desde dónde?* en cada despertador, un cuidado diario elegido y una línea de gratitud al cuerpo cada noche. Para ver: Infinito, portal 82, «El lenguaje del cuerpo».
 
 **5 · La Grieta**
 *Lo que se rompe no siempre termina algo. A veces es por donde entra lo que faltaba.*
 
-- Trinity: Origen III completo (la primera grieta, la melodía interrumpida, el silencio de gestación, el portal abierto); Quantum 9, la ruptura que crea, traducido.
+- Trinity: Origen III completo (la primera grieta, la melodía interrumpida, el silencio de gestación, el portal abierto); Quantum 9, la ruptura que crea, depurado antes como piloto de la guía.
 - Tradición: Juan de la Cruz y la noche oscura; el *kintsugi*.
 - Comprobable: el crecimiento postraumático ◇.
 - Gesto: acompañar la herida sin apurarla. Para ver: Infinito, portal 33, «El fénix cuántico».
@@ -267,7 +300,7 @@ El corazón operativo de la serie frente a la incertidumbre.
 - Tradición: Heráclito y el mundo común; el *Himno de la Perla*, si el Libro 2 no lo usó entero.
 - Gesto: un día completo con el movimiento entero. Para ver: Infinito, portal 52, «El centro que está en todas partes».
 
-**Dónde entra Zeland:** en los libros 2, 4, 8 y 10, y en el 1, ya publicado. Ningún libro gira sobre él.
+**Dónde entra Zeland:** en los libros 2, 8 y 10, y en el 1, ya publicado. En el 3 y el 4 no entra. Ningún libro gira sobre él.
 
 ---
 
@@ -318,7 +351,7 @@ Las palabras de la serie son de experiencia. Cuando un término de Zeland o de T
 - **El campo:** las posibilidades que hay más allá de la propia línea. Fuente: el Vacío Fértil de Trinity, que es vivo y genera. Zeland lo llama espacio de variantes y lo imagina como un reservorio fijo; la serie no adopta esa imagen.
 - **El sonámbulo:** vivir dormido dentro de la propia vida. Zeland: dormir despierto, modo bot. Gurdjieff: el sueño de la vigilia. Trinity: la Gran Amnesia.
 - **El testigo:** lo que mira. Trinity: el Observador Luminoso, el Presidente del parlamento. Zeland: el Celador. La *Upanishad*: el pájaro que mira.
-- **El vehículo:** el cuerpo y el ego, cuidados sin adorarlos. Zeland: el Avatar.
+- **El vehículo:** el cuerpo y el ego, cuidados sin adorarlos. Trinity: el templo viviente, el regalo de la encarnación. La serie no lo equipara con el Avatar de Zeland, que en su obra nombra el estado dormido.
 - **El peso:** la importancia que aplasta. Zeland: importancia, potencial excesivo.
 - **La corriente:** lo colectivo que se alimenta de la reacción propia. Zeland: péndulos.
 - **La red:** la conexión que se olvida. Trinity: la Red Viva, el océano y la ola.
@@ -351,7 +384,9 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 - Mismo repositorio → ruta relativa. Otro repositorio → URL renderizada de GitHub Pages. Nunca URLs de vista de código.
 - Trinity Infinito entra por el Nodo 1 de cada libro. En Origen y La Puerta se puede enlazar un nodo específico.
-- **Una puerta lleva a un nodo cuyo contenido pasa el filtro.** Si un nodo valioso contiene material que la serie deja fuera, se elige otro o se depura antes de enlazarlo.
+- **Los nodos se enlazan intactos.** El filtro rige lo que se escribe en esta serie, no lo que está del otro lado de la puerta (sección 5, «Alcance del filtro»).
+- **Un puñado, solo donde hace falta.** Si cada página se llena de enlaces, la puerta deja de ser umbral y se vuelve índice.
+- **En las dos direcciones.** Del cierre de cada libro hacia Trinity, y desde un nodo de la serie mayor, retocado o ampliado, hacia el libro de Arquitectura o del Portal que desarrolló su idea (las puertas fractales de la guía de Quantum).
 
 **Bases renderizadas:**
 
@@ -363,6 +398,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - Libro 7, Portal 44, *La Biblioteca que Se Lee a Sí Misma* (`L7-Nodo2.html`), publicado.
 - Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado y adaptado al teléfono en octubre de 2026.
 - Libro 1, Portal 4, *El Testigo del Testigo del Testigo* (`L1-Nodo4.html`): depurado y adaptado al teléfono en octubre de 2026, para el Libro 3.
+- Libro 12, Portal 82, *El lenguaje del cuerpo* (`L_12-Nodo5.html`): enlazado desde el Libro 4. Falta adaptarlo al teléfono.
 
 **Anotado para la sesión de Infinito:** los portales 14 (`L2-Nodo7`) y 43 (`L7-Nodo1`) comparten el título «El ojo que no puede verse»; el Libro 12 repite la misma gráfica en todos sus nodos.
 
@@ -383,7 +419,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - **Campo** ≠ catálogo para despreciar el presente.
 - **Despertar** ≠ disociación ni despersonalización. No es vigilancia constante: el programa también cuida.
 - **Testigo** ≠ frialdad ni evitación emocional.
-- **Cuerpo** ≠ dieta, ortorexia ni negación del tratamiento médico.
+- **Cuerpo** ≠ dieta, ortorexia ni negación del tratamiento médico. Tampoco lectura de los síntomas como culpa, ni vigilancia ansiosa del cuerpo. Habitar no es estar sano.
 - **Grieta** ≠ glorificar el sufrimiento ni apurar un duelo.
 - **Pequeñas muertes** ≠ invitación a morir. Si la contemplación de la finitud despierta deseos de no estar, se detiene y se pide ayuda.
 - **No saber** ≠ desrealización. Las prácticas de desmantelar certezas no se proponen a un lector general.
@@ -396,7 +432,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 **Transversales:** frecuencia, intención o estado ≠ culpa · elegir ≠ decidir algo irreversible esta semana.
 
-**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
+**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. En la pasada final del Libro 4, el cotejo encontró una cifra que no se sostenía (un centenar de partos por día, cuando eran unos veinte mil al año), una fecha corrida (*Le Modulor*) y una imagen atribuida al nodo equivocado. Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
 
 ---
 
@@ -413,7 +449,8 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - `libro-01-el-campo/`: ✅ publicado. Cambios de la sección 19 aplicados (puertas a Trinity, letra más grande).
 - `libro-02-el-sonambulo/`: ✅ publicado (borrador 2).
 - `libro-03-el-testigo/`: ✅ publicado. Generador: `herramientas/gen_arq_L03.py`, con la cabina de siete noches.
-- `libro-04` a `libro-13`: ⏳
+- `libro-04-el-cuerpo/`: ✅ publicado. Generador: `herramientas/gen_arq_L04.py`, con el círculo *¿Desde dónde?* que respira con la salida del aire más larga, el diario del cuidado elegido y notas de dos cifras. Es la base para los libros siguientes.
+- `libro-05` a `libro-13`: ⏳
 
 **Nomenclatura:** cada libro vive en `libro-NN-slug/`: portada `LNN.html`, umbrales `LNN-U1.html` a `LNN-U7.html` y cierre `LNN-cierre.html`. Los slugs nuevos siguen los títulos de la sección 6 (`libro-03-el-testigo`, `libro-07-no-saber`, etc.).
 
@@ -473,7 +510,7 @@ Primer mensaje sugerido:
 
 > «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Trabajamos el Libro N. Después de leer, propón el esqueleto de los siete umbrales.»
 
-Para *El Cuerpo* (Libro 4), la raíz está en Trinity Origen X, nodo 1 («El cuerpo como templo viviente»), y en Origen XIII, nodo 6 («El regalo de la encarnación»). El puente desde el Libro 3 ya está escrito: *Encontraste al que mira. El siguiente libro te devuelve al cuerpo desde donde mira.*
+Para *La Grieta* (Libro 5), la raíz está en Trinity Origen III, completo. Antes del esqueleto va la primera sesión de Quantum: depurar Quantum 9 (*Simetrías rotas*) como piloto de la guía de la sección 5. El puente desde el Libro 4 ya está escrito: *Volviste a habitar el cuerpo desde donde miras. El siguiente libro se queda contigo cuando algo se rompe, y mira lo que entra por la grieta.*
 
 ---
 
@@ -512,6 +549,11 @@ Para *El Cuerpo* (Libro 4), la raíz está en Trinity Origen X, nodo 1 («El cue
 ### `README.md`
 
 Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
+
+### Libro 4 (`libro-04-el-cuerpo/`)
+
+- Tarjeta del índice activa y marca ✅ en el `README.md`.
+- Entrada completa en el `registro.md`.
 
 ---
 
