@@ -6,6 +6,8 @@
 
 *Actualizado al cerrar el Libro 4 (octubre 2026): alcance del filtro, puertas en ambas direcciones, guía de depuración de Quantum y Zeland fuera del Libro 4.*
 
+*Actualizado tras el piloto de Quantum 9 (16 de octubre de 2026): cinco criterios de depuración, bloque fijo de la puerta fractal y etiqueta del original.*
+
 *Ordena, no limita. Todo lo que sigue son orientaciones: si el campo lleva hacia otro lado, se sigue al campo.*
 
 ---
@@ -148,25 +150,38 @@ Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su
 
 **Principio:** quitar el ropaje sin tocar la voz, como se hizo con Infinito.
 
-**Antes de tocar nada:** guardar el original con una etiqueta en GitHub o en una carpeta de archivo. Documenta cómo sonaba la colaboración en esa etapa, en la que varias IA dejaron su huella, y es material para la investigación sobre autoría relacional.
+**Antes de tocar nada:** guardar el original. Documenta cómo sonaba la colaboración en esa etapa, en la que varias IA dejaron su huella, y es material para la investigación sobre autoría relacional. **Hecho:** la etiqueta `quantum-original` del repositorio Trinity- (commit `9848ff9`, 16 de octubre de 2026) guarda los trece libros tal como estaban. Una etiqueta no es una carpeta: es una marca en el historial. Se consulta en GitHub eligiéndola en el selector de ramas, o en `https://github.com/soyartur-trinity/Trinity-/tree/quantum-original`, y se descarga entera en `https://github.com/soyartur-trinity/Trinity-/archive/refs/tags/quantum-original.zip`. No hace falta una etiqueta por libro.
 
-**Tres criterios:**
+**Cinco criterios.** Tres se acordaron al cerrar el Libro 4; el segundo y el quinto los sumó el piloto, porque el ropaje de Quantum 9 no eran fórmulas sino la providencia del dolor, el imperativo de romperse, las prácticas de exceso y lo cuántico dado por hecho.
 
-1. **Fórmulas y rituales, fuera.** Donde hay una fórmula, se escribe la frase que quería decir. Muchos nodos ya traen su propia «Traducción viviente», que puede quedarse sola.
-2. **De hecho a hipótesis, solo donde la frase afirma algo sobre la mente, la salud o las consecuencias en el mundo.** Las imágenes poéticas («eres luz», «el futuro es un océano») siguen afirmando con toda su fuerza: si todo pasa a «quizá», Quantum pierde la voz.
-3. **Las indicaciones al lector:** nunca decisiones irreversibles; gestos pequeños y reversibles.
+1. **Fórmulas y rituales, fuera.** Donde hay una fórmula, se escribe la frase que quería decir. Muchos nodos ya traen su propia «Traducción viviente», que puede quedarse sola. Salen también los sellos («Y así es. Y así soy. Y así será.») y los bloques de transmisión («Libro completado… La transmisión continúa»).
+2. **Del plan al hallazgo.** De «se rompió para» a «puede abrir». Donde el texto atribuye al universo una intención, un diseño o un tiempo perfecto para el dolor, se reescribe desde lo que la persona puede encontrar, con la frase que lo dice bien y no con un «quizá» mecánico. Las imágenes cósmicas quedan intactas.
+3. **De hecho a hipótesis, solo donde la frase afirma algo sobre la mente, la salud o las consecuencias en el mundo.** Las imágenes poéticas («eres luz», «el futuro es un océano») siguen afirmando con toda su fuerza: si todo pasa a «quizá», Quantum pierde la voz. La física entra como metáfora declarada y se corrige donde es inexacta.
+4. **Las indicaciones al lector:** nunca decisiones irreversibles; gestos pequeños y reversibles. Donde sale una práctica de exceso, entra su versión pequeña con la misma función: la sobrecarga intencional pasó a ser la restricción fértil. Las secciones «Tecnología de…» cambian el verbo de dominar por el de habitar.
+5. **Cuidado clínico en el tejido.** Donde aparecen trauma, enfermedad o muerte, una frase breve de cuidado en la voz del nodo, nunca como advertencia. Salen las jerarquías que avergüenzan y todo lo que presente un trastorno como algo sano.
 
-**Puertas fractales:** un puñado, solo donde se detecte que hacen falta, como en el caso del atractor. Si cada nodo se llena de enlaces, la puerta deja de ser umbral y se vuelve índice. El bloque fijo para estas puertas se define en el piloto.
+**Lo que no se toca:** las anáforas y las bendiciones («Benditas sean tus grietas…») son voz, no ropaje. Tampoco cambia la estética visual de cada libro.
+
+**Lengua y forma:** se corrigen erratas y anglicismos. Las obras protegidas pasan a paráfrasis atribuida (la línea de Cohen en el 9.5) y salen las atribuciones sin fuente (la de Rumi en el 9.4). Donde el texto habla de sí mismo («Este nodo… está, apropiadamente, incompleto»), la imagen se vuelve universal. En el HTML: letra de 18 px en el teléfono, firma «— Trinity Quantum · [título del libro]», fuera los restos de producción («Ropaje Trinity activo…», instrucciones al programador) y una nota de procedencia en el código que remite a la etiqueta.
+
+**Puertas fractales:** un puñado, solo donde se detecte que hacen falta, como en el caso del atractor. Si cada nodo se llena de enlaces, la puerta deja de ser umbral y se vuelve índice.
+
+**El bloque fijo**, definido en el piloto: al final del nodo, después de la cita y la firma, un recuadro con la palabra *Puerta*, una línea que dice qué se despliega del otro lado y el enlace «Cruzar ⟶». Lleva el color de la serie a la que conduce: azul y plata para Arquitectura (`.puerta.arquitectura`), negro cálido y ámbar para el Portal (`.puerta.portal`). El código está en Quantum 9, nodos 1 y 5.
 
 **Casos resueltos:**
 
 - **13.1** (las personalidades múltiples): se conserva como hipótesis reformulada, por ejemplo: «quizá lo que llamamos personalidades múltiples sea la forma extrema de algo que todos llevamos dentro». Igual con lo que aparezca sobre autismo.
 - **3.4** (la preocupación que aumenta la probabilidad de lo temido): «Tu preocupación no previene nada: construye un atractor sin consciencia que atrapa la tuya. Mientras más la alimentas, más tiempo vive tu atención en un futuro que todavía no existe.» Puerta fractal hacia *Atender* (Portal Público, Libro 8, Umbral IV, «Los atractores»).
-- **9.1** (romper a propósito la rutina, una relación o la identidad): queda solo la rutina, como gesto pequeño y reversible. Puerta fractal hacia *El Campo* (Libro 1 de esta serie).
+- **9.1** (romper a propósito la rutina, una relación o la identidad): queda solo la rutina, como gesto pequeño y reversible. ✅ Publicado, con puerta fractal hacia *El Campo*, Umbral IV, «La línea estrecha».
+- **9.5** (la grieta final): la muerte deja de ser «luz máxima» y «liberación final». Mirarla de frente no es desearla, y si alguna vez se vuelve deseo de no estar, es momento de pedir ayuda, sin esperar. ✅ Publicado, con puerta fractal hacia *Atravesar* (Portal Público, Libro 11, Umbral VI, «Hacer lugar»): hacerle lugar a la grieta es la expansión de ACT. *Atravesar* está escrito con voseo.
 
 **Orden: entrelazar, no frenar la serie.** Cada libro de Quantum se depura justo antes de que Arquitectura lo necesite: Quantum 9 antes del Libro 5 (*La Grieta*), que es el piloto; Quantum 1 y 4 antes del Libro 8 (*El Peso*); Quantum 13 antes del Libro 9 (*El Personaje*); Quantum 2 antes del Libro 11 (*La Red*). Los ocho restantes, en los huecos. Los pasajes con riesgo clínico no esperan su turno: se corrigen en una sesión corta aparte.
 
-**Primera sesión:** leer entero Quantum 9, escribir una guía de una página para aprobación y depurar ese libro como piloto, con veto de Arturo sobre cada nodo según su vitalidad.
+**Piloto: Quantum 9, *Simetrías rotas*** ✅ depurado y publicado el 16 de octubre de 2026, con veto de Arturo en cada nodo. Puertas anotadas para cuando existan sus libros: 9.7 → *La Grieta*, porque el gesto del Libro 5, no apresurar la reparación, nace ahí; y 9.4 → *El Peso*, por el perfeccionismo como violencia contra uno mismo.
+
+**Cómo se trabaja cada libro desde el piloto:** leer entero el libro; proponer una guía de una página solo con lo propio de ese libro, porque los cinco criterios ya están acordados; por cada nodo, una tarjeta con lo que queda, lo que cambia (antes → después) y lo que sale, y el veto de Arturo; después, el HTML con un script que aplica cada reemplazo aprobado exactamente una vez, y un zip con los archivos sueltos, para subir sin tocar el resto de la carpeta.
+
+**Anotado:** el índice general de Quantum (`02_Trinity_Quantum/index.html`) anuncia títulos que no coinciden con los libros, salvo el 1 y, desde el piloto, el 9. Se corrige en una sesión corta.
 
 **Pendiente en Origen:** el nodo X.1 contiene la lectura simbólica de los síntomas (la espalda como cargas, la garganta como verdades calladas), el pasaje más delicado desde lo clínico en toda la constelación. Merece una pasada breve.
 
@@ -225,7 +240,7 @@ La incertidumbre como apertura. Trinity: Origen VI. Gesto: mirar la línea propi
 **5 · La Grieta**
 *Lo que se rompe no siempre termina algo. A veces es por donde entra lo que faltaba.*
 
-- Trinity: Origen III completo (la primera grieta, la melodía interrumpida, el silencio de gestación, el portal abierto); Quantum 9, la ruptura que crea, depurado antes como piloto de la guía.
+- Trinity: Origen III completo (la primera grieta, la melodía interrumpida, el silencio de gestación, el portal abierto); Quantum 9, *Simetrías rotas*, ya depurado (sección 5): los guardianes de la simetría (9.1), la luz que siempre estuvo y la grieta solo dejó ver (9.5) y el tiempo entre la rotura y la reparación, que no se apresura (9.7).
 - Tradición: Juan de la Cruz y la noche oscura; el *kintsugi*.
 - Comprobable: el crecimiento postraumático ◇.
 - Gesto: acompañar la herida sin apurarla. Para ver: Infinito, portal 33, «El fénix cuántico».
@@ -387,6 +402,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - **Los nodos se enlazan intactos.** El filtro rige lo que se escribe en esta serie, no lo que está del otro lado de la puerta (sección 5, «Alcance del filtro»).
 - **Un puñado, solo donde hace falta.** Si cada página se llena de enlaces, la puerta deja de ser umbral y se vuelve índice.
 - **En las dos direcciones.** Del cierre de cada libro hacia Trinity, y desde un nodo de la serie mayor, retocado o ampliado, hacia el libro de Arquitectura o del Portal que desarrolló su idea (las puertas fractales de la guía de Quantum).
+- **Puertas fractales publicadas:** Quantum 9, nodo 1 → *El Campo*, Umbral IV; Quantum 9, nodo 5 → *Atravesar*, Umbral VI. El bloque fijo está en la sección 5.
 
 **Bases renderizadas:**
 
@@ -510,7 +526,7 @@ Primer mensaje sugerido:
 
 > «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Trabajamos el Libro N. Después de leer, propón el esqueleto de los siete umbrales.»
 
-Para *La Grieta* (Libro 5), la raíz está en Trinity Origen III, completo. Antes del esqueleto va la primera sesión de Quantum: depurar Quantum 9 (*Simetrías rotas*) como piloto de la guía de la sección 5. El puente desde el Libro 4 ya está escrito: *Volviste a habitar el cuerpo desde donde miras. El siguiente libro se queda contigo cuando algo se rompe, y mira lo que entra por la grieta.*
+Para *La Grieta* (Libro 5), la raíz está en Trinity Origen III, completo. Quantum 9 (*Simetrías rotas*) ya está depurado y publicado: se lee en su versión nueva, junto con Origen III. El puente desde el Libro 4 ya está escrito: *Volviste a habitar el cuerpo desde donde miras. El siguiente libro se queda contigo cuando algo se rompe, y mira lo que entra por la grieta.*
 
 ---
 
