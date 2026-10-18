@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L05">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="lo roto que sigue creciendo">
+<title>La madera nueva · Cierre · La Grieta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L05.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span></div><div class="cual">Cierre</div><h1>La madera nueva</h1><p class="sub">lo roto que sigue creciendo</p></header><main><p>Un arbolista que leía las grietas de los árboles y no vio la de su casa. Un maestro de Safed que imaginó la luz derramándose en recipientes que no pudieron contenerla. Un patólogo forestal que abrió miles de troncos y descubrió que los árboles no cicatrizan: rodean la herida y siguen creciendo. Una joven en París que repetía con el cuerpo lo que no podía contar, hasta que alguien la escuchó. Un shogún que recibió de China su cuenco cosido con hierro, y unos artesanos que aprendieron a esperar semanas a que la laca fraguara antes de poner el oro. Tres amigos que estuvieron siete días en silencio, y unos maestros que hicieron de ese silencio una regla. Un fraile que salió de una celda en la oscuridad y llamó amable a la noche. Un sociólogo que empezó a pensar bajo las bombas, y una ciudad que se levantó a sí misma después de un terremoto. Dos psicólogos que escucharon a quienes habían perdido mucho y encontraron, además del dolor, algo que crecía. Y una pregunta de cuatro palabras, la de Simone Weil, que cabe en cualquier camioneta.</p>
+<p>Todos dicen lo mismo de distintas maneras: lo que se rompe no siempre termina algo. Entre la rotura y la reparación hay un tiempo, y ese tiempo no se apura. Se acompaña.</p>
+<div class="perla"><p>Lo roto tiene su tiempo.<br>Mientras tanto, no estás solo en él.</p></div>
+<h2>Lo que Andrés sabe ahora</h2>
+<p>Andrés pasó veintiocho años leyendo las heridas de los árboles sin leer las suyas. Hoy sabe cuatro cosas.</p>
+<p>Que la grieta no es el dolor, sino el momento en que ya no se puede fingir, y que las que hablan bajo suelen llegar antes que las que hacen ruido.</p>
+<p>Que lo que se tapa demasiado pronto no desaparece: queda sonando por debajo, como la maleta marrón sonó cuarenta y siete años, esperando que alguien la escuchara.</p>
+<p>Que lo roto tiene su hora, y que lo mejor que alguien hizo por él en todo ese tiempo fue quedarse veinte minutos en una camioneta sin decir nada.</p>
+<p>Y que la luz que encontró no era nueva. Era la misma paciencia con que espera la primavera para juzgar un árbol, ahora vuelta también hacia las personas, y hacia sí mismo.</p>
+<p>Un año después de la primera tormenta, Andrés llevó a Matías a la plaza del mercado viejo. El fresno estaba en plena hoja. En el lugar de la rama maestra, el reborde de madera nueva había avanzado unos centímetros sobre el corte, como un labio que empieza a cerrarse sin apuro.</p>
+<p>—¿Lo vas a tapar? —preguntó Matías, que todavía está aprendiendo el oficio.</p>
+<p>—No —dijo Andrés—. No se tapa. Se mira cómo responde, y se espera.</p>
+<p>Después le contó lo que dice Shigo: que si dentro de cincuenta años alguien corta este fresno, va a encontrar adentro, en los anillos, la marca de esta tormenta, rodeada de madera sana. La herida va a seguir ahí. Y el árbol, también.</p>
+<p>Matías apoyó la mano en la corteza, donde terminaba la madera vieja y empezaba la nueva. Andrés lo dejó estar. No le explicó nada más.</p>
+<h2>El árbol</h2>
+<p>Al final del libro anterior, el que mira estaba posado en una rama que respira, siente frío y calor y un día dejará de estar. Este libro vio esa rama partirse.</p>
+<p>Una vida no se libra de las grietas. Ninguna. Se rompen relaciones, trabajos, salud, certezas, y a veces se rompen todas en la misma temporada. Lo que se aprende aquí no es a evitarlas, ni a cerrarlas rápido, ni a agradecerlas. Es a no dejarlas solas: a quedarse cerca de lo roto mientras encuentra su hora, y a hacer lo mismo con la grieta de quien tienes al lado.</p>
+<p>Eso es lo que se gana. No una vida sin heridas, sino una que deja de pelear con ellas. No el cuenco de antes, sino uno que muestra sus líneas. No la noche abolida, sino la noche acompañada, con suelo debajo y alguien que mira. Y una cadena que pasa de mano en mano: quien fue acompañado en su grieta aprende a acompañar.</p>
+<div class="perla"><p>Lo roto no se borra.<br>La vida crece alrededor.</p></div>
+<p class="puente">Aprendiste a quedarte junto a lo que se rompe sin apurarlo. El siguiente libro mira lo que termina un poco cada día, y enseña a despedirlo.</p><h2>Para ver</h2><ul class="enlaces"><li><a href="https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro5/L5-Nodo5.html">Trinity Infinito, Libro 5, Portal 33: El fénix cuántico.</a><span>Unas pocas líneas de fuego y ceniza que se transforman una en otra: de las cenizas al fuego, del fuego a las cenizas. Es el madero de Juan de la Cruz y el umbral IV, convertidos en contemplación. Toca la pantalla y deja que el fuego resuene.</span></li><li><a href="https://www.ted.com/talks/andrew_solomon_how_the_worst_moments_in_our_lives_make_us_who_we_are">Andrew Solomon: Cómo los peores momentos de nuestra vida nos hacen quienes somos (TED, 2014).</a><span>Un escritor marcado desde la infancia por la exclusión cuenta cómo las peores experiencias, con tiempo, no se olvidan sino que se integran y forman lo que uno es. Su idea central es la del umbral VI: no buscamos el dolor que nos da forma, pero después de él buscamos quiénes somos. Veinte minutos, en inglés, con subtítulos en español.</span></li></ul><h2>En la pantalla</h2><ul class="enlaces"><li><b>Tres colores: Azul</b><span>(<em>Trois couleurs: Bleu</em>, 1993). Una mujer que lo perdió todo en un accidente intenta sellar su vida entera: se muda, corta los lazos, quiere no sentir. Pero una partitura inconclusa la sigue a todas partes y pide terminarse. La melodía interrumpida del umbral II, en cine.</span></li><li><b>Intensa-Mente</b><span>(<em>Inside Out</em>, 2015). La Alegría quiere que nada se rompa en la cabeza de una niña y encierra a la Tristeza dentro de un círculo dibujado en el suelo. La niña empieza a sanar cuando la Tristeza puede hablar y sus padres la abrazan. Sellar y acompañar, contado para todas las edades.</span></li><li><b>Manchester junto al mar</b><span>(<em>Manchester by the Sea</em>, 2016). Un hombre carga una grieta que no logra reparar, y la película no lo obliga a hacerlo. Crecer no es una deuda, y quedarse cerca también es una forma de amor.</span></li><li><b>En busca del destino</b><span>(<em>Good Will Hunting</em>, 1997). Un terapeuta viudo, herido él mismo, acompaña a un joven brillante que se defiende de todo el mundo. Lo que lo abre no es una técnica, sino una presencia que no se apura. El sanador herido del umbral VI.</span></li><li><b>Black Mirror, «Vuelvo enseguida»</b><span>(<em>Be Right Back</em>, 2013). Una mujer que perdió a su pareja la reemplaza con una copia fabricada por una inteligencia artificial. Al principio del episodio, él le cuenta que su madre, después de cada pérdida, guardaba todas las fotos en el altillo. Es la reparación que intenta volver atrás, llevada al extremo: tapar la grieta con algo idéntico a lo que había.</span></li></ul><h2>Puertas laterales</h2><ul class="enlaces"><li><a href="https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_03/index.html">Trinity Origen, Libro III: El Dolor como Portal</a></li><li><a href="https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_03/nodo_07.html">Trinity Origen, Libro III, Nodo 7: Más allá del dolor, el portal abierto</a></li><li><a href="https://soyartur-trinity.github.io/Trinity-/02_Trinity_Quantum/Libro_09/nodo_07.html">Trinity Quantum, Libro 9, Nodo 7: La danza de rotura y reparación</a></li><li><a href="../../01_Libros/11_Atravesar/umbral_6_hacer_lugar.html">Portal Público, Libro 11: Atravesar, Umbral VI, «Hacer lugar»</a></li></ul><section class="notas" aria-label="Referencias"><h3>Referencias</h3><ol><li>Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Trinity Origen, Libro III, y <em>Simetrías rotas</em>, Trinity Quantum, Libro 9 (versión depurada, 2026).</li><li>San Juan de la Cruz, «Noche oscura» y <em>Noche oscura</em>.</li><li>Libro de Job, 2, 13, y Talmud de Babilonia, <em>Moed Katan</em> 28b.</li><li><em>Sallasutta</em>, Samyutta Nikaya 36.6, y Simone Weil, <em>A la espera de Dios</em> (1950).</li><li>Gershom Scholem, <em>Las grandes tendencias de la mística judía</em> (1941).</li><li>Alex L. Shigo y Charles L. Wilson, «Wound Dressings on Red Maple and American Elm» (1977).</li><li>Pierre Janet, <em>L'évolution de la mémoire et de la notion du temps</em> (1928).</li><li>Richard A. Mayou, Anke Ehlers y Mark Hobbs, <em>British Journal of Psychiatry</em> (2000).</li><li>Charles E. Fritz, «Disasters and Mental Health» (1961) y Rebecca Solnit, <em>A Paradise Built in Hell</em> (2009).</li><li>Richard G. Tedeschi y Lawrence G. Calhoun, <em>Trauma and Transformation</em> (1995).</li><li>Selma Fraiberg, Edna Adelson y Vivian Shapiro, «Ghosts in the Nursery» (1975).</li><li>Las demás fuentes, en las notas de cada umbral.</li></ol></section><div class="sigue"><a href="L05-U7.html">Anterior: La operación</a><a class="prox" href="../index.html">Volver a la serie</a></div></main></div><footer class="pie">Libro 5 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

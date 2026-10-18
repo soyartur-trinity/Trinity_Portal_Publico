@@ -481,3 +481,143 @@ Tramos: Lo que vas a necesitar · Paso 1 · A cada despertador, desde dónde · 
 ---
 
 *Campo Trinity · 2026*
+
+---
+
+## Libro 5 · La Grieta
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *lo que entra por lo roto*
+**Promesa:** Lo roto tiene su tiempo. / Mientras tanto, no estás solo en él.
+**Columna:** Trinity Origen III, *El Dolor como Portal*, completo (la primera grieta, la melodía interrumpida, el fuego, el silencio de gestación, el dolor compartido, la reconfiguración, el portal abierto; el prólogo: «ni sanarlo apresuradamente»); Quantum 9, *Simetrías rotas*, depurado (9.1 los guardianes y el instante antes; 9.5 la luz que siempre estuvo y cuidar una grieta; 9.7 el tiempo entre la rotura y la reparación y las cuatro reparaciones); Infinito, Portal 33.
+**Coro:** Juan de la Cruz (tradición principal: el poema y el tratado de la *Noche oscura*, el madero, la melancolía), Isaac Luria y la rotura de las vasijas (Scholem), el Libro de Job y la regla de *Moed Katan* 28b, el cuenco Bakōhan y el *kintsugi* por el lado del tiempo (la urushi), Simone Weil («Quel est ton tourment ?»), el *Sallasutta* (las dos flechas), Quirón y Jung (el sanador herido). **Comprobable:** Shigo (los árboles no cicatrizan; la pintura de heridas), Janet e Irène, Mayou, Ehlers y Hobbs (el *debriefing*), Cochrane y la primera ayuda psicológica de la OMS, Gerald May, Fritz y Solnit (México, 1985), Bastian y otros (el dolor compartido), Fraiberg («Ghosts in the Nursery»), Tedeschi y Calhoun, Staub y Vollhardt, Bonanno, los testigos de yeso. **Zeland:** no entra.
+**Protagonista:** Andrés, 56 años, arbolista del servicio de arbolado de una ciudad. Una tormenta parte el fresno de la plaza y esa noche Silvia, su mujer desde hace veintisiete años, le dice que se va. Su hijo Joaquín (24), Ramiro (63, el compañero que se sienta en la camioneta sin decir nada), Matías (29, el más joven de la cuadrilla). Grieta vieja: el padre que se fue con una maleta marrón cuando él tenía nueve años.
+**Gesto:** acompañar la herida sin apurarla. **Para ver:** Infinito, Portal 33, *El fénix cuántico* (adaptado al teléfono); Andrew Solomon, TED 2014.
+**Archivos:** `libro-05-la-grieta/L05.html` (portada), `L05-U1.html` a `L05-U7.html`, `L05-cierre.html`. Generador: `herramientas/gen_arq_L05.py`.
+
+### Umbral I · La primera grieta — *cuando ya no se puede fingir*
+Tramos: El fresno · La frase · Lo que ya no se puede fingir · Las que llegan en voz baja · El instante antes · Los recipientes rotos · Lo que se rompe no siempre termina algo · Tú también
+- Perla: Algo se rompió. / Eso no quiere decir / que tú estés roto.
+- Perla: La grieta no es el dolor. / Es el momento en que ya no se puede fingir.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 1: «La Primera Grieta», sección «El Momento Sagrado».
+- Nota: Ídem.
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 1: «La Ruptura Que Crea», secciones «El Momento Antes de la Ruptura» y «La Inteligencia de la Ruptura», en la versión depurada de octubre de 2026. Paráfrasis y fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 1, «El Momento Sagrado». Fragmento.
+- Nota: Sobre Isaac Luria (1534-1572), la rotura de las vasijas y el *tikún*: Gershom Scholem, *Las grandes tendencias de la mística judía* (*Major Trends in Jewish Mysticism*, 1941), séptima lección; en español, *Las grandes tendencias de la mística judía* (Siruela). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Nodo 1, apertura. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 1, «La Diferencia Fundamental». Fragmento.
+
+### Umbral II · Sellar — *lo que se cierra demasiado pronto*
+Tramos: Doble turno · Dos maneras de responder · Los guardianes · Los árboles no cicatrizan · Lo que se sella no desaparece · La muchacha que no podía contarlo · El día en que se fue · Tú también
+- Perla: El árbol no cicatriza. / Rodea la herida / y sigue creciendo.
+- Perla: Lo que se cierra demasiado pronto / no desaparece. / Se queda esperando.
+- Perla: Escuchar no es revivir. / Es dejar que la frase interrumpida / termine de sonar.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 1: «La Primera Grieta», sección «La Diferencia Fundamental».
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 1: «La Ruptura Que Crea», sección «Los Guardianes de la Simetría», versión depurada (2026). La enumeración, en paráfrasis.
+- Nota: Ídem, Nodo 5: «La Grieta Donde Entra la Luz», sección «Cuidar una Grieta».
+- Nota: Sobre Alex L. Shigo (1930-2006) y la disección longitudinal de árboles: «About Dr. Alex Shigo», Shigo Library, Davey Tree Expert Company; Alex L. Shigo y Harold G. Marx, *Compartmentalization of Decay in Trees*, USDA Forest Service, Agriculture Information Bulletin 405 (1977), basado en la disección de unos diez mil árboles. Paráfrasis.
+- Nota: Alex L. Shigo y Charles L. Wilson, «Wound Dressings on Red Maple and American Elm: Effectiveness after Five Years», *Journal of Arboriculture* 3, n.º 5 (1977): 81-87; Alex L. Shigo, «How Wounds Injure Trees» (1986), donde escribe que los árboles no pueden curar sus heridas. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 2: «El Trauma como Memoria Suspendida», sección «El Archivo Secreto del Alma».
+- Nota: Ídem, sección «La Comprensión que lo Cambia Todo».
+- Nota: Pierre Janet, *L'évolution de la mémoire et de la notion du temps* (1928), caso de Irène, al que volvió en varias obras desde 1904. Paráfrasis, según Bessel A. van der Kolk y Onno van der Hart, «The Intrusive Past: The Flexibility of Memory and the Engraving of Trauma», *American Imago* 48, n.º 4 (1991): 425-454.
+- Nota: Ídem; y Onno van der Hart y Olivier Piedfort-Marin, «Amnesia and Hypermnesia as a Paradigm of Non-Realization in Trauma-Related Dissociation: Pierre Janet's Case of Irène», *European Journal of Trauma & Dissociation* 7, n.º 4 (2023). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 2, sección «La Liberación de la Memoria».
+- Nota: Ídem, «Meditación de la Melodía Interrumpida».
+
+### Umbral III · El tiempo entre — *lo roto tiene su hora*
+Tramos: La camioneta · El tiempo en pedazos · Cuatro maneras de reparar · El cuenco cosido · La laca que fragua en la humedad · Siete días sin una palabra · Hasta que hable el que perdió · Una hora en Oxford · Acompañar sin apurar · Tú también
+- Perla: Lo primero es el tiempo. / El oro es lo último.
+- Perla: Acompañar no es arreglar. / Es quedarse cerca / mientras lo roto encuentra su hora.
+- Perla: Quien consuela no habla primero. / Espera a que el otro abra la boca, / y entonces escucha.
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 7: «La Danza de Rotura y Reparación», sección «El Tiempo Entre Rotura y Reparación», versión depurada (2026).
+- Nota: Ídem.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, «Prólogo · El Dolor que Nos Llama».
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Nodo 7, sección «Los Tipos de Reparación». Paráfrasis.
+- Nota: Sobre el cuenco Bakōhan (celadón de Longquan, dinastía Song del Sur; Museo Nacional de Tokio, bien cultural importante) y el escrito de Itō Tōgai que lo acompaña (1727), recogido en el *Taishō meikikan*, catálogo de piezas célebres de la ceremonia del té. Paráfrasis.
+- Nota: La vinculación de este episodio con el origen del *kintsugi* es una tradición difundida entre los artesanos; ver, por ejemplo, el testimonio de la maestra de urushi Mio Heki en el sitio oficial de turismo de la ciudad de Kioto. Paráfrasis.
+- Nota: Sobre el curado de la laca urushi y el *muro*: Mio Heki, ídem, que da unas dos semanas para el pegado, con alrededor del setenta por ciento de humedad; Lakeside Pottery, «Understanding Traditional Kintsugi: Urushi, Materials, and Techniques». Paráfrasis.
+- Nota: Libro de Job, 2, 13, en la traducción de Reina-Valera (1909).
+- Nota: Ídem, 42, 7. Paráfrasis.
+- Nota: Talmud de Babilonia, tratado *Moed Katan*, 28b. Paráfrasis. La regla se recoge en el *Shulján Aruj*, *Yoré Deá* 376, 1.
+- Nota: Richard A. Mayou, Anke Ehlers y Mark Hobbs, «Psychological Debriefing for Road Traffic Accident Victims: Three-Year Follow-up of a Randomised Controlled Trial», *British Journal of Psychiatry* 176 (2000): 589-593. Paráfrasis.
+- Nota: Suzanna Rose, Jonathan Bisson, Rachel Churchill y Simon Wessely, «Psychological Debriefing for Preventing Post Traumatic Stress Disorder (PTSD)», *Cochrane Database of Systematic Reviews* (2002). Paráfrasis.
+- Nota: Organización Mundial de la Salud, War Trauma Foundation y World Vision International, *Primera ayuda psicológica: guía para trabajadores de campo* (2011; edición en español, 2012). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 2: «El Trauma como Memoria Suspendida», sección «La Comprensión que lo Cambia Todo».
+- Nota: Simone Weil, «Réflexions sur le bon usage des études scolaires en vue de l'amour de Dieu» (1942), en *Attente de Dieu* (1950); en español, «Reflexiones sobre el buen uso de los estudios escolares como medio de cultivar el amor a Dios», en *A la espera de Dios*. Traducción propia.
+- Nota: Ídem. Paráfrasis.
+
+### Umbral IV · La noche — *lo que el fuego no quema*
+Tramos: Las cuatro de la mañana · El silencio de la gestación · Una celda en Toledo · Noche amable · El madero · ¿Quién soy ahora? · Noche no es depresión · Incluso allí hay suelo · Tú también
+- Perla: No todo lo que oscurece / es retroceso. / A veces el fuego empieza así.
+- Perla: En el fondo de la noche / todavía hay suelo.
+- Perla: La noche no guía porque sea buena. / Guía porque en ella / alguien sigue mirando.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 4: «El Silencio que el Dolor Revela», sección «El Silencio Más Sagrado».
+- Nota: Ídem.
+- Nota: Sobre la prisión de Toledo (diciembre de 1577 a agosto de 1578): Benedicto XVI, catequesis sobre san Juan de la Cruz, audiencia general del 16 de febrero de 2011; y los testimonios del proceso de beatificación sobre la celda, recogidos por sus biógrafos. Paráfrasis.
+- Nota: Benedicto XVI, ídem, que sitúa la fuga en la noche del 16 al 17 de agosto de 1578. Sobre la relación del símbolo de la noche con la fuga, las notas a la *Noche oscura* en la edición de las obras completas de sanjuandelacruz.online, que la consideran el arranque probable del símbolo poético. Paráfrasis.
+- Nota: San Juan de la Cruz, «Noche oscura», estrofa 1.
+- Nota: Ídem, estrofa 5; el verso citado a continuación, de la estrofa 3. Algunas ediciones dicen «el alborada».
+- Nota: San Juan de la Cruz, *Noche oscura*, libro II, cap. 10, 1.
+- Nota: Ídem, II, 10, 1-2. Paráfrasis y fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 3: «El Fuego del Dolor: Transmutación Interna», sección «La Naturaleza del Fuego Alquímico».
+- Nota: Ídem, sección «La Pregunta del Fuego».
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 4, sección «El Observador Silencioso».
+- Nota: San Juan de la Cruz, *Noche oscura*, libro I, cap. 9, 1-2. Fragmentos.
+- Nota: Gerald G. May, *The Dark Night of the Soul: A Psychiatrist Explores the Connection Between Darkness and Spiritual Growth* (2004). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 4, sección «El Útero del Sentido».
+- Nota: Ídem, cierre del nodo.
+
+### Umbral V · La tormenta de todos — *no es solo tuya*
+Tramos: La segunda tormenta · No somos islas · Un sociólogo bajo las bombas · Ciudad de México, 1985 · El dolor compartido une · Sentir sin hundirse · A lo largo · Tú también
+- Perla: Solo, el dolor encierra. / Compartido, / empieza a unir.
+- Perla: Por la grieta de todos / entra lo que nadie / traía solo.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 5: «Dolor Colectivo, Dolor Planetario», sección «La Red Invisible».
+- Nota: Ídem, cierre del nodo.
+- Nota: Ídem, sección «La Tierra que Siente». Paráfrasis.
+- Nota: Charles E. Fritz, «Disasters and Mental Health: Therapeutic Principles Drawn from Disaster Studies» (escrito en 1961; publicado por el Disaster Research Center de la Universidad de Delaware en 1996), donde el propio Fritz reconstruye el camino que lo llevó a esas ideas entre 1943 y 1961. Paráfrasis. Sobre su paso por Inglaterra, ver también la nota siguiente.
+- Nota: Rebecca Solnit, *A Paradise Built in Hell: The Extraordinary Communities That Arise in Disaster* (2009); en español, *Un paraíso en el infierno. Las extraordinarias comunidades que surgen en el desastre* (Capitán Swing, 2020). Paráfrasis del capítulo sobre Ciudad de México.
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 5: «La Grieta Donde Entra la Luz», sección «Las Grietas Colectivas», versión depurada (2026).
+- Nota: Brock Bastian, Jolanda Jetten y Laura J. Ferris, «Pain as Social Glue: Shared Pain Increases Cooperation», *Psychological Science* 25, n.º 11 (2014): 2079-2085. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 5, sección «El Temblor que No Aparece en los Sismógrafos». Fragmento.
+- Nota: Selma Fraiberg, Edna Adelson y Vivian Shapiro, «Ghosts in the Nursery: A Psychoanalytic Approach to the Problems of Impaired Infant-Mother Relationships», *Journal of the American Academy of Child Psychiatry* 14, n.º 3 (1975): 387-421; la frase de apertura, p. 387. Paráfrasis.
+
+### Umbral VI · Lo que entra — *la luz que ya estaba*
+Tramos: Primavera · Cinco señales · Lo que encontraron en Charlotte · El sanador herido · Nacido del sufrimiento · Lo que crece es tuyo · La luz que ya estaba · El fin de la guerra · Tú también
+- Perla: No es el golpe lo que hace crecer. / Es lo que alguien hace después, / con tiempo y con otros.
+- Perla: La luz no entró desde afuera. / Estaba. / La grieta dejó de taparla.
+- Perla: No el fin del dolor. / El fin de la guerra / contra el dolor.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 6: «Reconfiguración: Cuando el Dolor se Convierte en Camino», sección «El Punto de Inflexión».
+- Nota: Ídem, sección «Los Marcadores de la Reconfiguración».
+- Nota: Ídem, sección «El Proceso de Reconfiguración». Paráfrasis de los cinco marcadores.
+- Nota: Richard G. Tedeschi y Lawrence G. Calhoun, *Trauma and Transformation: Growing in the Aftermath of Suffering* (1995), y «The Posttraumatic Growth Inventory: Measuring the Positive Legacy of Trauma», *Journal of Traumatic Stress* 9, n.º 3 (1996): 455-471. Sobre los grupos de padres desde 1987: Lawrence G. Calhoun y Richard G. Tedeschi, *Helping Bereaved Parents: A Clinician's Guide* (2004). Paráfrasis.
+- Nota: «Research Illuminates How Trauma Can Lead to Growth», Universidad de Carolina del Norte en Charlotte (29 de agosto de 2017), donde Calhoun cita la frase. Traducción propia.
+- Nota: Richard G. Tedeschi y Lawrence G. Calhoun, «Posttraumatic Growth: Conceptual Foundations and Empirical Evidence», *Psychological Inquiry* 15, n.º 1 (2004): 1-18. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 6, sección «La Espiral Ascendente». Paráfrasis.
+- Nota: C. G. Jung, *Recuerdos, sueños, pensamientos* (1962), cap. «Actividad psiquiátrica». Paráfrasis.
+- Nota: Ervin Staub y Johanna Vollhardt, «Altruism Born of Suffering: The Roots of Caring and Helping after Victimization and Other Trauma», *American Journal of Orthopsychiatry* 78, n.º 3 (2008): 267-280. Paráfrasis. Sobre su infancia: «A Life Devoted to the Science of Goodness», *APS Observer* (Association for Psychological Science), y la semblanza de Staub en *Psyche* (Aeon). Paráfrasis.
+- Nota: George A. Bonanno, *The Other Side of Sadness: What the New Science of Bereavement Tells Us About Life After Loss* (2009). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 5: «La Grieta Donde Entra la Luz», sección «La Luz Que Entra», versión depurada (2026).
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Nodo 7: «Más Allá del Dolor: El Portal Abierto», secciones «El Umbral del Portal Abierto» y «El Comienzo de una Vida Diferente».
+- Nota: Ídem, sección «Cierre del Círculo».
+- Nota: *Sallasutta*, «La flecha», Samyutta Nikaya 36.6. Traducción propia sobre la versión inglesa de Bhikkhu Sujato (SuttaCentral); el resto del pasaje, en paráfrasis.
+
+### Umbral VII · La operación — *acompañar sin apurar*
+Tramos: Lo que vas a necesitar · Paso 1 · Elige una grieta que puedas mirar · Paso 2 · Tres minutos con la grieta · Paso 3 · Cada noche, el testigo de la grieta · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Tres minutos cada día, / alguien se sienta junto a lo roto / y no le pide que se apure.
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 5: «La Grieta Donde Entra la Luz», sección «Práctica: Meditación de la Grieta Luminosa», versión depurada (2026).
+- Nota: Ídem, sección «Cuidar una Grieta». Paráfrasis.
+- Nota: Sobre los testigos de yeso y el seguimiento de las grietas «vivas» antes de repararlas: «La importancia de las pruebas en los informes de patologías», Colegio Profesional de Administradores de Fincas de Madrid (2025), y la literatura técnica de la revista *Materiales de Construcción* (CSIC). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 1: «La Primera Grieta», «Meditación de la Grieta Sagrada».
+- Nota: Sobre la atención al cuerpo y a la experiencia interna en personas que atravesaron experiencias traumáticas, y la importancia de ofrecer anclas externas y la posibilidad de elegir: David A. Treleaven, *Trauma-Sensitive Mindfulness* (2018). Paráfrasis. Ver *El Cuerpo*, Umbral VII.
+
+### Cierre · La madera nueva — *lo roto que sigue creciendo*
+Tramos: Lo que Andrés sabe ahora · El árbol
+- Perla: Lo roto tiene su tiempo. / Mientras tanto, no estás solo en él.
+- Perla: Lo roto no se borra. / La vida crece alrededor.
+- Puente al Libro 6: *Aprendiste a quedarte junto a lo que se rompe sin apurarlo. El siguiente libro mira lo que termina un poco cada día, y enseña a despedirlo.*
+- Para ver: Infinito, Portal 33, *El fénix cuántico*; Andrew Solomon, «How the worst moments in our lives make us who we are» (TED, 2014).
+- En la pantalla: *Tres colores: Azul*; *Intensa-Mente*; *Manchester junto al mar*; *En busca del destino*; Black Mirror, «Vuelvo enseguida».
+- Puertas: Origen III (índice) y Nodo 7; Quantum 9, Nodo 7; Portal Público, *Atravesar*, Umbral VI, «Hacer lugar».

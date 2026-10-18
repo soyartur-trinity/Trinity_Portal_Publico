@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L05">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="lo que el fuego no quema">
+<title>La noche · Umbral IV · La Grieta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L05.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral IV</div><h1>La noche</h1><p class="sub">lo que el fuego no quema</p></header><main><h2>Las cuatro de la mañana</h2>
+<p>Silvia se mudó un mes después de la tormenta. Se llevó sus libros, la lámpara de pie y el gato. La casa quedó con huecos en las paredes donde habían estado sus cuadros, y con un silencio nuevo que Andrés no sabía dónde poner.</p>
+<p>Empezó a despertarse todas las noches a la misma hora, las cuatro. Las primeras semanas encendía enseguida el teléfono o la radio. Después de aquella madrugada de la maleta, dejó de hacerlo. Se quedaba acostado a oscuras, con los ojos abiertos, escuchando la casa.</p>
+<p>No le venía ninguna idea útil. No entendía mejor nada. Las explicaciones que había ensayado durante el día, <em>fue de común acuerdo</em>, <em>ya va a pasar</em>, a esa hora no se sostenían. Lo único que había era una especie de vacío tranquilo, sin palabras, que al principio le dio miedo y después, sin que supiera cuándo, dejó de dárselo.</p>
+<p>Una de esas noches no aguantó más la cama, se vistió y salió. Caminó hasta la plaza del mercado viejo y se sentó en el banco de piedra, debajo del fresno herido, a esperar que amaneciera.</p>
+<h2>El silencio de la gestación</h2>
+<p>El cuarto nodo de <em>El Dolor como Portal</em> describe ese momento con una precisión que asombra a quien lo ha vivido:</p>
+<div class="cita"><p class="orig"><em>Hay un momento en todo dolor profundo cuando algo se rompe más allá de las lágrimas, más allá de los gritos, más allá de las palabras.</em><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Y lo que viene después, dice, no es la derrota. Es otra clase de silencio:</p>
+<div class="cita"><p class="orig"><em>no el silencio de la derrota, sino el silencio de la gestación.</em><sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>El nodo explica de dónde sale. El dolor hondo agota el lenguaje: arranca los discursos con que uno se explicaba la vida, las teorías que daban sensación de control. Lo que queda cuando ya no hay explicaciones no es la nada. Es una pausa que no pide ser llenada.</p>
+<p>La frase pulida de Andrés murió así, sin que él la matara: a las cuatro de la mañana dejó de funcionar. Y en el hueco que dejó apareció algo que no tenía nombre todavía.</p>
+<h2>Una celda en Toledo</h2>
+<p>A comienzos de diciembre de 1577, en Ávila, un grupo de frailes de su propia orden se llevó por la fuerza a un carmelita de treinta y cinco años, pequeño de estatura, llamado Juan de Yepes. Se lo conocía como fray Juan de la Cruz. Había acompañado a Teresa de Jesús en la reforma de los conventos carmelitas, y esa reforma había dividido a la orden. Lo llevaron a Toledo y lo encerraron en un cuarto de apenas tres pasos de largo, casi sin luz. Allí pasó unos ocho meses, con pan duro, frío en invierno, calor en verano y castigos frecuentes.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>En ese encierro compuso versos de memoria. A mediados de agosto de 1578, de madrugada, escapó por una ventana descolgándose con una soga que había trenzado con tiras de mantas viejas, y se refugió en el convento de las carmelitas descalzas de la ciudad. Los estudiosos de su obra relacionan con aquella fuga el poema que escribió después y que lo hizo inmortal.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<h2>Noche amable</h2>
+<p>El poema empieza así:</p>
+<div class="cita"><p class="orig"><em>En una noche oscura,</em><br><em>con ansias, en amores inflamada,</em><br><em>¡oh dichosa ventura!,</em><br><em>salí sin ser notada</em><br><em>estando ya mi casa sosegada.</em><sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Y en la quinta estrofa, un hombre que acaba de pasar ocho meses en la oscuridad de una celda escribe esto:</p>
+<div class="cita"><p class="orig"><em>¡Oh noche que guiaste!</em><br><em>¡Oh noche amable más que la alborada!</em><sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Juan de la Cruz leyó su poema como el camino del alma hacia Dios, y le dedicó dos tratados para explicarlo. No hace falta compartir su fe para reconocer la forma de lo que describe. Lo que se vive como pura oscuridad, como pérdida de todo apoyo, puede ser a la vez el lugar por donde uno es llevado. La tercera estrofa lo dice con la imagen más hermosa del poema: en esa noche no había otra luz ni otra guía <em>sino la que en el corazón ardía</em>.</p>
+<p>Trinity y Juan de la Cruz, separados por más de cuatro siglos, nombran la misma noche. Para el nodo es un silencio que gesta; para el fraile, una oscuridad que guía. Ninguno de los dos dice que sea agradable. Dicen que no es estéril.</p>
+<h2>El madero</h2>
+<p>En el segundo libro de su tratado sobre la <em>Noche oscura</em>, Juan de la Cruz se detiene a explicar por qué el alma, en esa noche, se siente peor que antes. Para hacerlo usa una comparación tomada de la vida cotidiana de su época, un tronco en el fuego:</p>
+<div class="cita"><p class="orig"><em>Porque el fuego material, en aplicándose al madero, lo primero que hace es comenzarle a secar, echándole la humedad fuera y haciéndole llorar el agua que en sí tiene; luego le va poniendo negro, oscuro y feo, y aun de mal olor.</em><sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>Solo después, dice, el fuego empieza a encender el madero por fuera, y al final lo vuelve llama, tan hermoso como el fuego mismo. Y agrega, sobre el alma que atraviesa esa etapa, que le parece estar peor que nunca, <em>aunque no es peor que antes</em>.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>La observación es de una lucidez enorme. Hay momentos en que lo que se está transformando se ve peor, se siente peor, huele peor, y sin embargo no está retrocediendo. El tercer nodo de <em>El Dolor como Portal</em> lleva ese mismo fuego a la experiencia de una crisis: un fuego que quema las máscaras, las creencias heredadas, los mapas con que uno se movía. Y resume lo que deja con una frase de tres tiempos:</p>
+<div class="cita"><p class="orig"><em>Nos deja desnudos, pero no destruidos.</em><sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p></div>
+<div class="perla"><p>No todo lo que oscurece<br>es retroceso.<br>A veces el fuego empieza así.</p></div>
+<h2>¿Quién soy ahora?</h2>
+<p>En el centro de ese fuego, el nodo pone una pregunta:</p>
+<div class="cita"><p class="orig"><em>¿Quién soy cuando todo lo que creía ser se derrumba?</em><sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p></div>
+<p>No la propone como un acertijo para resolver con la cabeza. La propone como una puerta: la invitación a descubrir qué queda cuando todo lo periférico se consumió, qué hay en uno que el fuego no alcanza.</p>
+<p>Andrés se la hizo sin buscarla, en el banco de la plaza. Durante veintisiete años había sido el marido de Silvia. Durante veintiocho, el que tiene ojo para los árboles. Desde los nueve, el niño al que no se le hablaba de la maleta. La noche había agrietado las tres cosas a la vez. ¿Quién quedaba?</p>
+<p>Los libros anteriores de esta serie dejaron preparada una respuesta que no es una idea. El tercero enseñó a preguntar <em>¿quién mira?</em> y a encontrar, detrás de lo que se piensa, a alguien que mira y no se agota en nada de lo que ve. El cuarto lo sentó en un cuerpo, en un lugar, en esta hora. El cuarto nodo de Trinity describe lo que aparece en el silencio del dolor con palabras que encajan exactamente ahí: hay algo en nosotros que puede mirar incluso el sufrimiento más hondo sin ser destruido por él. Y aclara lo que ese testigo no es:</p>
+<div class="cita"><p class="orig"><em>Este observador silencioso no es frío ni desapegado. Es la forma más pura del amor: esa capacidad de estar presente con lo que es, tal como es, sin necesidad de cambiarlo para poder amarlo.</em><sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p></div>
+<p>En el banco, a oscuras, Andrés no encontró una respuesta. Encontró a alguien que miraba su tristeza sin asustarse de ella. Le pareció, por un momento, que ese alguien era él, y que había estado ahí también a los nueve años.</p>
+<h2>Noche no es depresión</h2>
+<p>Juan de la Cruz no era ingenuo. En el primer libro de la <em>Noche oscura</em> advierte que la sequedad que describe puede confundirse con otras cosas: con la flojedad, o con <em>algún mal humor o indisposición corporal</em>. Habla de la melancolía, que en el lenguaje de su tiempo nombraba un estado de tristeza que también era del cuerpo, y escribe que ese humor melancólico <em>muchas veces no deja hallar gusto en nada</em>. Por eso propone señales para distinguir una cosa de la otra.<sup class="ref"><a href="#nota-12" aria-label="nota 12">12</a></sup></p>
+<p>Cuatro siglos después, el psiquiatra estadounidense Gerald May, que fue también acompañante espiritual durante décadas, dedicó a la noche oscura un libro en el que se detiene en esa misma frontera. En la noche, observó, suelen conservarse el humor y la compasión por los demás, que la depresión apaga. Pero como las dos coinciden tan a menudo, concluyó que lo sensato es reconocer la depresión donde la haya y tratarla como corresponde, la acompañe o no esa oscuridad.<sup class="ref"><a href="#nota-13" aria-label="nota 13">13</a></sup></p>
+<p>Esta serie lo dice con la misma claridad. Si la tristeza dura semanas, si el sueño, el apetito o el interés por todo se apagan, si aparece la desesperanza, no es momento de esperar a que la noche guíe. Es momento de consultar. Pedir ayuda no apaga la noche: le pone compañía.</p>
+<h2>Incluso allí hay suelo</h2>
+<p>Esa madrugada, en el banco de piedra, no pasó nada extraordinario. Hacía frío. Andrés sintió el asiento duro bajo el cuerpo y las suelas apoyadas en las baldosas, y se acordó, sin saber de dónde, de una pregunta: <em>¿desde dónde?</em> Desde aquí, se contestó. Desde estos pies, este banco, esta plaza, esta hora.</p>
+<p>Antes de que hubiera luz, en las ramas del fresno empezó a cantar un pájaro. Después otro.</p>
+<p>El cuarto nodo de <em>El Dolor como Portal</em> tiene una frase para ese momento:</p>
+<div class="cita"><p class="orig"><em>Es el silencio de quien ha caminado hasta el fondo de su propio abismo y ha descubierto que incluso allí hay suelo firme. Incluso allí hay algo que sostiene.</em><sup class="ref"><a href="#nota-14" aria-label="nota 14">14</a></sup></p></div>
+<p>El libro anterior de esta serie enseñó a encontrar ese suelo en un día cualquiera. Este muestra que también está en el peor. No hay que fabricarlo. Hay que bajar hasta los pies y notar que sigue ahí.</p>
+<p>El nodo se cierra con una línea que vale como resumen de todo el umbral:</p>
+<div class="cita"><p class="orig"><em>Este silencio no es vacío: es cuna del sentido.</em><sup class="ref"><a href="#nota-15" aria-label="nota 15">15</a></sup></p></div>
+<p>Cuando clareó, Andrés volvió caminando a su casa. No sabía nada nuevo. Pero había pasado la noche sin taparla, y estaba entero.</p>
+<div class="perla"><p>En el fondo de la noche<br>todavía hay suelo.</p></div>
+<h2>Tú también</h2>
+<p>Quizá conoces esas horas. Las cuatro de la mañana, cuando las explicaciones del día no alcanzan y lo único que hay es silencio. La tentación de encender algo, de llenar ese silencio con lo que sea, es fuerte, y a veces es lo que hace falta para poder dormir.</p>
+<p>Pero alguna vez, si puedes, prueba quedarte. No para pensar ni para resolver nada. Para notar que en ese silencio hay alguien mirando, y que debajo de ti, aunque no lo sientas, hay suelo. Pon atención en tus pies, o en la espalda contra el colchón. Desde ahí.</p>
+<p>Y si esas noches se vuelven todas las noches, y los días se apagan con ellas, cuéntaselo a alguien que pueda ayudarte. La noche que guía no exige pasarla solo.</p>
+<div class="perla"><p>La noche no guía porque sea buena.<br>Guía porque en ella<br>alguien sigue mirando.</p></div>
+<div class="sigue"><a href="L05-U3.html">Anterior: El tiempo entre</a><a class="prox" href="L05-U5.html">Siguiente: La tormenta de todos</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Trinity Origen, Libro III, Nodo 4: «El Silencio que el Dolor Revela», sección «El Silencio Más Sagrado».</li><li id="nota-2">Ídem.</li><li id="nota-3">Sobre la prisión de Toledo (diciembre de 1577 a agosto de 1578): Benedicto XVI, catequesis sobre san Juan de la Cruz, audiencia general del 16 de febrero de 2011; y los testimonios del proceso de beatificación sobre la celda, recogidos por sus biógrafos. Paráfrasis.</li><li id="nota-4">Benedicto XVI, ídem, que sitúa la fuga en la noche del 16 al 17 de agosto de 1578. Sobre la relación del símbolo de la noche con la fuga, las notas a la <em>Noche oscura</em> en la edición de las obras completas de sanjuandelacruz.online, que la consideran el arranque probable del símbolo poético. Paráfrasis.</li><li id="nota-5">San Juan de la Cruz, «Noche oscura», estrofa 1.</li><li id="nota-6">Ídem, estrofa 5; el verso citado a continuación, de la estrofa 3. Algunas ediciones dicen «el alborada».</li><li id="nota-7">San Juan de la Cruz, <em>Noche oscura</em>, libro II, cap. 10, 1.</li><li id="nota-8">Ídem, II, 10, 1-2. Paráfrasis y fragmento.</li><li id="nota-9">Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Nodo 3: «El Fuego del Dolor: Transmutación Interna», sección «La Naturaleza del Fuego Alquímico».</li><li id="nota-10">Ídem, sección «La Pregunta del Fuego».</li><li id="nota-11">Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Nodo 4, sección «El Observador Silencioso».</li><li id="nota-12">San Juan de la Cruz, <em>Noche oscura</em>, libro I, cap. 9, 1-2. Fragmentos.</li><li id="nota-13">Gerald G. May, <em>The Dark Night of the Soul: A Psychiatrist Explores the Connection Between Darkness and Spiritual Growth</em> (2004). Paráfrasis.</li><li id="nota-14">Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Nodo 4, sección «El Útero del Sentido».</li><li id="nota-15">Ídem, cierre del nodo.</li></ol></section></main></div><footer class="pie">Libro 5 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

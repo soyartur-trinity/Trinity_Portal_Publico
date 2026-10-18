@@ -25,7 +25,7 @@ Cada libro termina con una práctica de siete días, y cada práctica se suma a 
 #### Movimiento II · El Vehículo — *encarnar este cuerpo, este día*
 
 4. **El Cuerpo** ✅ — La vida no pasa por otro lugar que por este cuerpo.
-5. **La Grieta** — Lo que se rompe a veces es por donde entra lo que faltaba.
+5. **La Grieta** ✅ — Lo que se rompe a veces es por donde entra lo que faltaba.
 6. **Las Pequeñas Muertes** — Quien aprende a despedir lo pequeño encuentra otra forma de mirar lo grande.
 
 #### Movimiento III · Soltar — *aflojar lo que pesa y separa*

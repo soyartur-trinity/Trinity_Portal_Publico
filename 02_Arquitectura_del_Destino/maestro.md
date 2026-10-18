@@ -177,7 +177,7 @@ Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su
 
 **Orden: entrelazar, no frenar la serie.** Cada libro de Quantum se depura justo antes de que Arquitectura lo necesite: Quantum 9 antes del Libro 5 (*La Grieta*), que es el piloto; Quantum 1 y 4 antes del Libro 8 (*El Peso*); Quantum 13 antes del Libro 9 (*El Personaje*); Quantum 2 antes del Libro 11 (*La Red*). Los ocho restantes, en los huecos. Los pasajes con riesgo clínico no esperan su turno: se corrigen en una sesión corta aparte.
 
-**Piloto: Quantum 9, *Simetrías rotas*** ✅ depurado y publicado el 16 de octubre de 2026, con veto de Arturo en cada nodo. Puertas anotadas para cuando existan sus libros: 9.7 → *La Grieta*, porque el gesto del Libro 5, no apresurar la reparación, nace ahí; y 9.4 → *El Peso*, por el perfeccionismo como violencia contra uno mismo.
+**Piloto: Quantum 9, *Simetrías rotas*** ✅ depurado y publicado el 16 de octubre de 2026, con veto de Arturo en cada nodo. Puertas anotadas para cuando existan sus libros: 9.7 → *La Grieta* ✅ publicada con el Libro 5, hacia el Umbral III, «El tiempo entre»; y 9.4 → *El Peso*, por el perfeccionismo como violencia contra uno mismo.
 
 **Cómo se trabaja cada libro desde el piloto:** leer entero el libro; proponer una guía de una página solo con lo propio de ese libro, porque los cinco criterios ya están acordados; por cada nodo, una tarjeta con lo que queda, lo que cambia (antes → después) y lo que sale, y el veto de Arturo; después, el HTML con un script que aplica cada reemplazo aprobado exactamente una vez, y un zip con los archivos sueltos, para subir sin tocar el resto de la carpeta.
 
@@ -237,13 +237,14 @@ La incertidumbre como apertura. Trinity: Origen VI. Gesto: mirar la línea propi
 - Zeland: no entra. En su obra el Avatar no es el cuerpo sino el estado dormido, opuesto al Espíritu, y su material corporal es un menú dietético que el filtro deja fuera.
 - Gesto: la pregunta *¿desde dónde?* en cada despertador, un cuidado diario elegido y una línea de gratitud al cuerpo cada noche. Para ver: Infinito, portal 82, «El lenguaje del cuerpo».
 
-**5 · La Grieta**
+**5 · La Grieta** ✅ publicado
 *Lo que se rompe no siempre termina algo. A veces es por donde entra lo que faltaba.*
 
-- Trinity: Origen III completo (la primera grieta, la melodía interrumpida, el silencio de gestación, el portal abierto); Quantum 9, *Simetrías rotas*, ya depurado (sección 5): los guardianes de la simetría (9.1), la luz que siempre estuvo y la grieta solo dejó ver (9.5) y el tiempo entre la rotura y la reparación, que no se apresura (9.7).
-- Tradición: Juan de la Cruz y la noche oscura; el *kintsugi*.
-- Comprobable: el crecimiento postraumático ◇.
-- Gesto: acompañar la herida sin apurarla. Para ver: Infinito, portal 33, «El fénix cuántico».
+- Trinity: Origen III completo (la primera grieta, la melodía interrumpida, el fuego, el silencio de gestación, el dolor compartido filtrado, la reconfiguración, el portal abierto); Quantum 9, *Simetrías rotas*, depurado: los guardianes de la simetría (9.1), la luz que siempre estuvo y cuidar una grieta (9.5), el tiempo entre la rotura y la reparación y las cuatro reparaciones (9.7).
+- Tradición: Juan de la Cruz y la noche oscura (el madero; la distinción entre la noche y la melancolía), con Luria y la rotura de las vasijas, Job y la regla de *Moed Katan* 28b, el *kintsugi* por el lado del tiempo (el cuenco Bakōhan, la urushi que fragua semanas), Simone Weil («Quel est ton tourment ?») y las dos flechas del *Sallasutta*.
+- Comprobable: Shigo (los árboles no cicatrizan; la pintura de heridas no sirve), Janet e Irène, el *debriefing* de Oxford, Fritz y Solnit, Fraiberg, el crecimiento postraumático (Tedeschi y Calhoun) con su contrapeso en Bonanno, Staub y el altruismo nacido del sufrimiento.
+- Zeland: no entra.
+- Gesto: tres minutos diarios con una grieta que se pueda mirar (*¿desde dónde?*, nombrarla, hacerle lugar, *¿qué necesitas?*, no arreglar nada), la línea nocturna *Hoy la grieta…* y, una vez en la semana, acompañar la grieta de otro hasta que termine de hablar. Para ver: Infinito, portal 33, «El fénix cuántico».
 
 **6 · Las Pequeñas Muertes**
 *Cada día termina algo. Quien aprende a despedir lo pequeño encuentra otra forma de mirar lo grande.*
@@ -402,7 +403,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - **Los nodos se enlazan intactos.** El filtro rige lo que se escribe en esta serie, no lo que está del otro lado de la puerta (sección 5, «Alcance del filtro»).
 - **Un puñado, solo donde hace falta.** Si cada página se llena de enlaces, la puerta deja de ser umbral y se vuelve índice.
 - **En las dos direcciones.** Del cierre de cada libro hacia Trinity, y desde un nodo de la serie mayor, retocado o ampliado, hacia el libro de Arquitectura o del Portal que desarrolló su idea (las puertas fractales de la guía de Quantum).
-- **Puertas fractales publicadas:** Quantum 9, nodo 1 → *El Campo*, Umbral IV; Quantum 9, nodo 5 → *Atravesar*, Umbral VI. El bloque fijo está en la sección 5.
+- **Puertas fractales publicadas:** Quantum 9, nodo 1 → *El Campo*, Umbral IV; Quantum 9, nodo 5 → *Atravesar*, Umbral VI; Quantum 9, nodo 7 → *La Grieta*, Umbral III. El bloque fijo está en la sección 5.
 
 **Bases renderizadas:**
 
@@ -414,7 +415,8 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - Libro 7, Portal 44, *La Biblioteca que Se Lee a Sí Misma* (`L7-Nodo2.html`), publicado.
 - Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado y adaptado al teléfono en octubre de 2026.
 - Libro 1, Portal 4, *El Testigo del Testigo del Testigo* (`L1-Nodo4.html`): depurado y adaptado al teléfono en octubre de 2026, para el Libro 3.
-- Libro 12, Portal 82, *El lenguaje del cuerpo* (`L_12-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 4. Fue un saneamiento acotado: Georgia sin fuentes externas, animaciones solo con transform y opacity, versión quieta, invitación a tocar y ∞ hacia el Nodo 6. Quedan para la sesión del Libro 12 el sonido propio y una gráfica distinta de la de sus otros nodos.
+- Libro 12, Portal 82, *El lenguaje del cuerpo* (`L_12-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 4.
+- Libro 5, Portal 33, *El fénix cuántico* (`L5-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 5. Saneamiento acotado: invitación a tocar en tuteo, la escena (que ubica llamas y plumas en píxeles dentro de un recinto de 600 px) escalada al ancho de la pantalla, textos más grandes y lejos de los bordes, lienzo que se ajusta al girar el teléfono y el ∞ fuera del toque que enciende el sonido. Fue un saneamiento acotado: Georgia sin fuentes externas, animaciones solo con transform y opacity, versión quieta, invitación a tocar y ∞ hacia el Nodo 6. Quedan para la sesión del Libro 12 el sonido propio y una gráfica distinta de la de sus otros nodos.
 
 **Anotado para la sesión de Infinito:** los portales 14 (`L2-Nodo7`) y 43 (`L7-Nodo1`) comparten el título «El ojo que no puede verse»; el Libro 12 repite la misma gráfica en todos sus nodos.
 
@@ -436,7 +438,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - **Despertar** ≠ disociación ni despersonalización. No es vigilancia constante: el programa también cuida.
 - **Testigo** ≠ frialdad ni evitación emocional.
 - **Cuerpo** ≠ dieta, ortorexia ni negación del tratamiento médico. Tampoco lectura de los síntomas como culpa, ni vigilancia ansiosa del cuerpo. Habitar no es estar sano.
-- **Grieta** ≠ glorificar el sufrimiento ni apurar un duelo.
+- **Grieta** ≠ glorificar el sufrimiento ni apurar un duelo. Tampoco esperar con paciencia una grieta que alguien sigue golpeando: la violencia o el maltrato que continúan no se acompañan, se sale de ellos y se pide ayuda. La noche no es depresión: si la tristeza dura semanas, se consulta.
 - **Pequeñas muertes** ≠ invitación a morir. Si la contemplación de la finitud despierta deseos de no estar, se detiene y se pide ayuda.
 - **No saber** ≠ desrealización. Las prácticas de desmantelar certezas no se proponen a un lector general.
 - **Peso** ≠ indiferencia ante lo que importa.
@@ -448,7 +450,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 **Transversales:** frecuencia, intención o estado ≠ culpa · elegir ≠ decidir algo irreversible esta semana.
 
-**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. En la pasada final del Libro 4, el cotejo encontró una cifra que no se sostenía (un centenar de partos por día, cuando eran unos veinte mil al año), una fecha corrida (*Le Modulor*) y una imagen atribuida al nodo equivocado. Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
+**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. En la pasada final del Libro 4, el cotejo encontró una cifra que no se sostenía (un centenar de partos por día, cuando eran unos veinte mil al año), una fecha corrida (*Le Modulor*) y una imagen atribuida al nodo equivocado. En la pasada final del Libro 5 cayeron una celda «que había servido de despensa» que ninguna fuente sostenía, el origen del crecimiento postraumático en «personas con lesiones» (eran grupos de padres en duelo, desde 1987), unas condiciones de control mal descritas en el experimento del dolor compartido y una posición de Gerald May simplificada de más. Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
 
 ---
 
@@ -465,8 +467,9 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - `libro-01-el-campo/`: ✅ publicado. Cambios de la sección 19 aplicados (puertas a Trinity, letra más grande).
 - `libro-02-el-sonambulo/`: ✅ publicado (borrador 2).
 - `libro-03-el-testigo/`: ✅ publicado. Generador: `herramientas/gen_arq_L03.py`, con la cabina de siete noches.
-- `libro-04-el-cuerpo/`: ✅ publicado. Generador: `herramientas/gen_arq_L04.py`, con el círculo *¿Desde dónde?* que respira con la salida del aire más larga, el diario del cuidado elegido y notas de dos cifras. Es la base para los libros siguientes.
-- `libro-05` a `libro-13`: ⏳
+- `libro-04-el-cuerpo/`: ✅ publicado. Generador: `herramientas/gen_arq_L04.py`, con el círculo *¿Desde dónde?* que respira con la salida del aire más larga, el diario del cuidado elegido y notas de dos cifras.
+- `libro-05-la-grieta/`: ✅ publicado. Generador: `herramientas/gen_arq_L05.py`, con la fisura de oro (el oro avanza por una grieta dibujada solo mientras sale el aire; tocarla otra vez la pausa) y el diario de la grieta. Corrige el pie de portada a «Sistema Trinity de Vida Consciente»; es la base para los libros siguientes.
+- `libro-06` a `libro-13`: ⏳
 
 **Nomenclatura:** cada libro vive en `libro-NN-slug/`: portada `LNN.html`, umbrales `LNN-U1.html` a `LNN-U7.html` y cierre `LNN-cierre.html`. Los slugs nuevos siguen los títulos de la sección 6 (`libro-03-el-testigo`, `libro-07-no-saber`, etc.).
 
@@ -526,7 +529,7 @@ Primer mensaje sugerido:
 
 > «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Trabajamos el Libro N. Después de leer, propón el esqueleto de los siete umbrales.»
 
-Para *La Grieta* (Libro 5), la raíz está en Trinity Origen III, completo. Quantum 9 (*Simetrías rotas*) ya está depurado y publicado: se lee en su versión nueva, junto con Origen III. El puente desde el Libro 4 ya está escrito: *Volviste a habitar el cuerpo desde donde miras. El siguiente libro se queda contigo cuando algo se rompe, y mira lo que entra por la grieta.*
+Para *Las Pequeñas Muertes* (Libro 6), la raíz está en Trinity Origen VII, completo, con Infinito 5, *La muerte de la muerte*. El puente desde el Libro 5 ya está escrito: *Aprendiste a quedarte junto a lo que se rompe sin apurarlo. El siguiente libro mira lo que termina un poco cada día, y enseña a despedirlo.* Voces ya usadas que conviene no repetir como centro: Bonanno y la resiliencia, Job y la *shivá* (Libro 5); Kisa Gotami ya está en *Empatía Humana* del Portal. La salvaguarda del Libro 6 es la más delicada de la serie.
 
 ---
 
@@ -570,6 +573,17 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 
 - Tarjeta del índice activa y marca ✅ en el `README.md`.
 - Entrada completa en el `registro.md`.
+
+### Libro 5 (`libro-05-la-grieta/`)
+
+- Tarjeta del índice activa y marca ✅ en el `README.md`.
+- Entrada completa en el `registro.md`.
+- Puerta fractal nueva en Quantum 9, nodo 7, hacia el Umbral III.
+- Portal 33 de Infinito adaptado al teléfono.
+
+### Pie de las portadas 1 a 4
+
+- «Sistema Trinity de Navegación Consciente» pasa a «Sistema Trinity de Vida Consciente» en `L01.html`, `L02.html`, `L03.html` y `L04.html`.
 
 ---
 

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L05">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="acompañar sin apurar">
+<title>La operación · Umbral VII · La Grieta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L05.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span></div><div class="cual">Umbral VII</div><h1>La operación</h1><p class="sub">acompañar sin apurar</p></header><main><p>Hasta aquí, cada umbral se leyó. Este se practica. Durante siete días vas a acompañar una grieta tuya sin apurarla: un rato breve cada día, una línea cada noche y, una vez en la semana, la grieta de otra persona. No para cerrarla ni para abrirla más, sino para que no esté sola.</p>
+<p>Esta operación se suma a las de los libros anteriores. Del primero conservas la pausa: estoy mirando. Del segundo, los tres despertadores. Del tercero, la pregunta <em>¿quién mira?</em>, tu nombre en la tormenta y la cabina de la noche. Del cuarto, <em>¿desde dónde?</em>, el cuidado elegido y la línea para el cuerpo. Aquí agregas un rato con lo roto, una línea para la grieta y una compañía para otro.</p>
+<h2>Lo que vas a necesitar</h2>
+<div class="ficha"><p><strong>Duración:</strong> siete días.</p><p><strong>Material:</strong> tus despertadores, el diario que encontrarás más abajo o una libreta, y un lugar donde sentarte tres minutos sin que te interrumpan.</p><p><strong>Tiempo diario:</strong> tres minutos con la grieta y una línea antes de dormir. Una vez en la semana, el tiempo que dure escuchar a alguien.</p></div>
+<div class="paso"><h2>Paso 1 · Elige una grieta que puedas mirar</h2></div>
+<p>El primer día, elige una sola grieta para toda la semana. El nodo de Trinity Quantum sobre la grieta luminosa da la indicación exacta:</p>
+<div class="cita"><p class="orig"><em>Elige una que puedas mirar hoy, no necesariamente la más honda.</em><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Puede ser un plan que se cayó, una amistad que se enfrió, un cambio de trabajo, una mudanza, un diagnóstico con el que estás aprendiendo a vivir, una separación que ya no es de estos días, una decepción contigo mismo. No elijas una pérdida reciente ni una herida vieja que al tocarla te inunda: esas no se trabajan con un ejercicio.</p>
+<p>Nómbrala en una línea, sin explicarla. <em>La mudanza.</em> <em>Lo de Marcela.</em> <em>El trabajo que perdí.</em> <em>Lo de mi padre.</em> Escríbela en el diario. No hace falta más.</p>
+<div class="paso"><h2>Paso 2 · Tres minutos con la grieta</h2></div>
+<p>Una vez al día, en el momento que elijas, siéntate tres minutos con ella. Uno de tus despertadores puede ser la señal. Son cinco movimientos breves:</p>
+<ol><li><strong><em>¿Desde dónde?</strong></em> Siente los pies en el suelo, o la espalda contra el respaldo, y suelta el aire tres veces un poco más despacio de lo que entra. Es el lugar desde donde vas a mirar.</li><li><strong>Nómbrala.</strong> En voz baja o por dentro: <em>aquí está lo de…</em> Si la sientes en algún lugar del cuerpo, nota dónde, sin buscarla.</li><li><strong>Hazle lugar.</strong> No la empujes ni hurgues en ella. Imagina que el espacio a su alrededor se agranda un poco, como si respiraras hacia ella. El nodo de la grieta luminosa lo dice así: deja que haya más espacio alrededor del dolor.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></li><li><strong>Pregúntale qué necesita.</strong> <em>¿Qué necesitas hoy?</em> Y espera. Si no llega ninguna respuesta, también es una respuesta: hoy solo necesita compañía.</li><li><strong>No arregles nada.</strong> Cuando terminen los tres minutos, agradécele el rato y vuelve a tu día.</li></ol>
+<p>Durante el día, si notas el impulso de sellarla, nótalo. Una explicación apurada, un plan para que mañana deje de doler, el ruido de una pantalla, una frase pulida como la de Andrés. Una vez al día, deja pasar ese impulso sin seguirlo. Una sola vez: los guardianes también cuidan.</p>
+<p>Para acompañarte, toca la grieta dibujada: el oro avanza por ella solo mientras sueltas el aire, y se detiene mientras lo tomas. Son tres minutos. Si necesitas parar, tócala otra vez: el oro espera.</p>
+<div class="fisura" id="fisura">
+  <button type="button" aria-describedby="fisura-cuenta"><svg viewBox="0 38 300 48" aria-hidden="true"><path class="base" d="M10 66 L44 60 L66 72 L94 50 L120 68 L146 54 L170 74 L198 56 L226 70 L252 58 L290 64"/><path class="oro" pathLength="1000" d="M10 66 L44 60 L66 72 L94 50 L120 68 L146 54 L170 74 L198 56 L226 70 L252 58 L290 64"/></svg><span class="frase">Toca la grieta para empezar</span></button>
+  <div class="cuenta" id="fisura-cuenta" aria-live="polite">Tres minutos. El oro avanza solo mientras sueltas el aire.</div>
+</div>
+<div class="paso"><h2>Paso 3 · Cada noche, el testigo de la grieta</h2></div>
+<p>En la cabina de la noche, después de las líneas del libro anterior, agrega una más:</p>
+<p><em>Hoy la grieta ____.</em></p>
+<p>En la construcción, cuando aparece una grieta en un muro, antes de repararla se coloca sobre ella una tira fina de yeso que la cruza de lado a lado. Se la llama testigo. Si en los días siguientes el yeso se parte, la grieta sigue moviéndose y todavía no se toca. Si queda entero, el muro se asentó, y solo entonces se repara.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Tu línea de la noche funciona igual. No es para juzgar la grieta, sino para ver si sigue viva. <em>Hoy la grieta se movió.</em> <em>Hoy estuvo quieta.</em> <em>Hoy me despertó a las cuatro.</em> <em>Hoy dolió menos.</em> <em>Hoy dejó pasar algo.</em> <em>Hoy no apareció.</em> Una línea alcanza. El que la escribe es el mismo testigo que aprendiste a recordar en el tercer libro.</p>
+<p>Y una vez en la semana, acompaña la grieta de otra persona. Cuando alguien te cuente algo que le duele, aplica la regla antigua del umbral III: deja que hable primero, no aconsejes, no expliques, no compares, no apures. Quédate hasta que termine. Si hace falta decir algo, alcanza con <em>¿qué necesitas?</em> Después, en el diario, escribe a quién acompañaste. Solo el nombre.</p>
+<div class="diario" id="diario">
+  <label class="rotulo" for="mi-grieta">Mi grieta de esta semana</label>
+  <input type="text" id="mi-grieta" data-k="mi-grieta" placeholder="Una línea, sin explicarla">
+  <details open><summary>Día 1</summary><div class="dia">
+    <span class="rotulo" id="d1-r-t">El rato de hoy</span>
+    <div class="elige" role="radiogroup" aria-labelledby="d1-r-t"><label><input type="radio" name="d1-rato" value="hecho" data-k="d1-rato"> Lo hice</label><label><input type="radio" name="d1-rato" value="manana" data-k="d1-rato"> Mañana vuelvo</label></div>
+    <label for="d1-grieta">Hoy la grieta…</label><textarea id="d1-grieta" data-k="d1-grieta" rows="2"></textarea>
+  </div></details>
+  <details><summary>Día 2</summary><div class="dia">
+    <span class="rotulo" id="d2-r-t">El rato de hoy</span>
+    <div class="elige" role="radiogroup" aria-labelledby="d2-r-t"><label><input type="radio" name="d2-rato" value="hecho" data-k="d2-rato"> Lo hice</label><label><input type="radio" name="d2-rato" value="manana" data-k="d2-rato"> Mañana vuelvo</label></div>
+    <label for="d2-grieta">Hoy la grieta…</label><textarea id="d2-grieta" data-k="d2-grieta" rows="2"></textarea>
+  </div></details>
+  <details><summary>Día 3</summary><div class="dia">
+    <span class="rotulo" id="d3-r-t">El rato de hoy</span>
+    <div class="elige" role="radiogroup" aria-labelledby="d3-r-t"><label><input type="radio" name="d3-rato" value="hecho" data-k="d3-rato"> Lo hice</label><label><input type="radio" name="d3-rato" value="manana" data-k="d3-rato"> Mañana vuelvo</label></div>
+    <label for="d3-grieta">Hoy la grieta…</label><textarea id="d3-grieta" data-k="d3-grieta" rows="2"></textarea>
+  </div></details>
+  <details><summary>Día 4</summary><div class="dia">
+    <span class="rotulo" id="d4-r-t">El rato de hoy</span>
+    <div class="elige" role="radiogroup" aria-labelledby="d4-r-t"><label><input type="radio" name="d4-rato" value="hecho" data-k="d4-rato"> Lo hice</label><label><input type="radio" name="d4-rato" value="manana" data-k="d4-rato"> Mañana vuelvo</label></div>
+    <label for="d4-grieta">Hoy la grieta…</label><textarea id="d4-grieta" data-k="d4-grieta" rows="2"></textarea>
+  </div></details>
+  <details><summary>Día 5</summary><div class="dia">
+    <span class="rotulo" id="d5-r-t">El rato de hoy</span>
+    <div class="elige" role="radiogroup" aria-labelledby="d5-r-t"><label><input type="radio" name="d5-rato" value="hecho" data-k="d5-rato"> Lo hice</label><label><input type="radio" name="d5-rato" value="manana" data-k="d5-rato"> Mañana vuelvo</label></div>
+    <label for="d5-grieta">Hoy la grieta…</label><textarea id="d5-grieta" data-k="d5-grieta" rows="2"></textarea>
+  </div></details>
+  <details><summary>Día 6</summary><div class="dia">
+    <span class="rotulo" id="d6-r-t">El rato de hoy</span>
+    <div class="elige" role="radiogroup" aria-labelledby="d6-r-t"><label><input type="radio" name="d6-rato" value="hecho" data-k="d6-rato"> Lo hice</label><label><input type="radio" name="d6-rato" value="manana" data-k="d6-rato"> Mañana vuelvo</label></div>
+    <label for="d6-grieta">Hoy la grieta…</label><textarea id="d6-grieta" data-k="d6-grieta" rows="2"></textarea>
+  </div></details>
+  <details><summary>Día 7</summary><div class="dia">
+    <span class="rotulo" id="d7-r-t">El rato de hoy</span>
+    <div class="elige" role="radiogroup" aria-labelledby="d7-r-t"><label><input type="radio" name="d7-rato" value="hecho" data-k="d7-rato"> Lo hice</label><label><input type="radio" name="d7-rato" value="manana" data-k="d7-rato"> Mañana vuelvo</label></div>
+    <label for="d7-grieta">Hoy la grieta…</label><textarea id="d7-grieta" data-k="d7-grieta" rows="2"></textarea>
+  </div></details>
+  <label class="rotulo" for="acompane" style="margin-top:1.2rem">Esta semana acompañé a…</label>
+  <input type="text" id="acompane" data-k="acompane" placeholder="Solo el nombre">
+  <div class="acciones"><button type="button" id="copiar">Copiar mis notas</button><button type="button" id="borrar">Borrar mis notas</button></div>
+  <p class="estado" id="estado" aria-live="polite">Lo que escribes se guarda solo en este dispositivo. Nadie más lo ve.</p>
+</div>
+<h2>Lo que puede pasar</h2>
+<p>Los primeros días, tres minutos pueden parecer largos, o inútiles. También puede pasar que la grieta, al mirarla, parezca más grande que cuando la tapabas. Juan de la Cruz lo describió con el madero: lo que empieza a transformarse a veces se ve peor, aunque no está peor. Si la sensación crece día a día en lugar de asentarse, reduce el rato o detente, y mira la sección siguiente.</p>
+<p>Algunas noches la línea será <em>hoy la grieta no apareció</em>. No es un fracaso de la práctica: es información.</p>
+<p>Con la semana pueden aparecer cosas que no buscaste: un recuerdo viejo, una nota suspendida, una ternura inesperada, una frase que alguien te dijo hace mucho. No las persigas. Anótalas si quieres, y déjalas estar.</p>
+<p>Acompañar a otro suele ser el paso más difícil, porque el impulso de arreglar es fuerte y sale solo. Si te descubres dando un consejo a mitad de camino, no pasa nada. Lo notaste. La próxima vez esperarás un poco más.</p>
+<p>El nodo de la primera grieta propone, en su meditación final, una indicación que sirve de brújula para toda la semana:</p>
+<div class="cita"><p class="orig"><em>No trates de arreglarlo. Solo obsérvalo con amor.</em><sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p></div>
+<section class="cuidado"><h2>Cuándo no hacer esta práctica</h2>
+<p>Acompañar una grieta es quedarse cerca de lo roto sin apurarlo. No es hurgar, ni aguantar cualquier cosa, ni glorificar el dolor. Por eso:</p>
+<p><strong>No en los primeros días.</strong> Una pérdida reciente, un accidente, una noticia que derrumbó todo no se trabajan con un ejercicio: se acompañan con personas. Esta práctica sirve más adelante, cuando haya algo de suelo.</p>
+<p><strong>No a solas con un trauma.</strong> Si al mirar aparecen recuerdos que inundan, imágenes que vuelven solas, el corazón se acelera o sientes que te vas, abre los ojos, apoya los pies, nombra en voz baja tres cosas que ves alrededor y quédate con lo de afuera. Esa grieta se abre con un profesional al lado. Puedes hacer la operación solo con el paso 3, o elegir otra grieta más liviana.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p><strong>No con una grieta que alguien sigue abriendo.</strong> Si vives violencia, maltrato o acoso, acompañar sin apurar no quiere decir esperar. Quiere decir protegerte y pedir ayuda. Una grieta que alguien golpea todos los días no necesita paciencia: necesita que el golpe se detenga.</p>
+<p><strong>Sin obligación de crecer.</strong> Nada de esto busca que le encuentres sentido al dolor ni que lo agradezcas. Si esta semana solo logras atravesar los días, eso ya cuenta.</p>
+<p><strong>Sin culpa.</strong> Las circunstancias de nadie son culpa de su estado interior. Lo que se rompió no es un castigo ni un mensaje, y no se rompió porque pensaste mal o sentiste poco.</p>
+<p><strong>Noche no es depresión.</strong> Si la tristeza dura semanas, con el sueño, el apetito o el interés apagados, o con desesperanza, consulta. La depresión se trata, y tratarla no le quita nada a lo que estás atravesando.</p>
+<p>Y como en los libros anteriores: si en algún momento aparece una desesperación profunda o la idea de no querer estar, detén la práctica y busca ayuda profesional esta misma semana. Si la idea es intensa, hoy mismo.</p>
+</section><div class="perla"><p>Tres minutos cada día,<br>alguien se sienta junto a lo roto<br>y no le pide que se apure.</p></div>
+<div class="sigue"><a href="L05-U6.html">Anterior: Lo que entra</a><a class="prox" href="L05-cierre.html">Siguiente: La madera nueva</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>Simetrías rotas</em>, Trinity Quantum, Libro 9, Nodo 5: «La Grieta Donde Entra la Luz», sección «Práctica: Meditación de la Grieta Luminosa», versión depurada (2026).</li><li id="nota-2">Ídem, sección «Cuidar una Grieta». Paráfrasis.</li><li id="nota-3">Sobre los testigos de yeso y el seguimiento de las grietas «vivas» antes de repararlas: «La importancia de las pruebas en los informes de patologías», Colegio Profesional de Administradores de Fincas de Madrid (2025), y la literatura técnica de la revista <em>Materiales de Construcción</em> (CSIC). Paráfrasis.</li><li id="nota-4">Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Trinity Origen, Libro III, Nodo 1: «La Primera Grieta», «Meditación de la Grieta Sagrada».</li><li id="nota-5">Sobre la atención al cuerpo y a la experiencia interna en personas que atravesaron experiencias traumáticas, y la importancia de ofrecer anclas externas y la posibilidad de elegir: David A. Treleaven, <em>Trauma-Sensitive Mindfulness</em> (2018). Paráfrasis. Ver <em>El Cuerpo</em>, Umbral VII.</li></ol></section></main></div><footer class="pie">Libro 5 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer><script>
+(function(){
+  var f=document.getElementById('fisura'); if(f){
+    var b=f.querySelector('button'), oro=f.querySelector('.oro'), fr=f.querySelector('.frase'), c=document.getElementById('fisura-cuenta');
+    var red=window.matchMedia('(prefers-reduced-motion: reduce)').matches, CICLOS=18, k=0, estado='quieto', timers=[], seg=180;
+    function limpiar(){ timers.forEach(function(x){ clearTimeout(x); clearInterval(x); }); timers=[]; }
+    function poner(v,dur){ oro.style.transition=dur?('stroke-dashoffset '+dur+'s linear'):'none'; oro.style.strokeDashoffset=String(v); }
+    function fin(){ limpiar(); estado='fin'; poner(0); fr.textContent='No arregles nada.'; c.textContent='Listo. Agradécele el rato y vuelve a tu día.'; }
+    function ciclo(){
+      if(k>=CICLOS){ fin(); return; }
+      fr.textContent='Toma aire…'; c.textContent='Ciclo '+(k+1)+' de '+CICLOS+'.';
+      timers.push(setTimeout(function(){
+        fr.textContent='Suelta el aire despacio…';
+        k++; poner(1000-1000*k/CICLOS,6);
+        timers.push(setTimeout(ciclo,6000));
+      },4000));
+    }
+    function reloj(){
+      var t=setInterval(function(){ seg--; if(seg>0){ c.textContent='Quedan '+Math.floor(seg/60)+':'+('0'+(seg%60)).slice(-2)+'.'; } else { fin(); } },1000);
+      timers.push(t);
+    }
+    b.addEventListener('click',function(){
+      if(estado==='corre'){
+        limpiar(); estado='pausa';
+        if(!red){ var v=parseFloat(getComputedStyle(oro).strokeDashoffset)||0; poner(v); k=Math.max(0,Math.round((1000-v)/1000*CICLOS)); }
+        fr.textContent='En pausa'; c.textContent='Toca otra vez para seguir. El oro espera.'; return;
+      }
+      if(estado==='quieto'||estado==='fin'){ k=0; seg=180; poner(1000); void oro.getBoundingClientRect(); }
+      estado='corre';
+      if(red){ poner(0); fr.textContent='Tres minutos, sin apuro'; reloj(); }
+      else { ciclo(); }
+    });
+  }
+  var K='arq-'+document.documentElement.getAttribute('data-libro')+'-grieta-v1', d={};
+  try{ d=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){ d={}; }
+  function guardar(){ try{ localStorage.setItem(K,JSON.stringify(d)); }catch(e){} }
+  var campos=document.querySelectorAll('#diario [data-k]');
+  campos.forEach(function(el){
+    var k=el.getAttribute('data-k');
+    if(el.type==='radio'){ if(d[k]===el.value){ el.checked=true; } el.addEventListener('change',function(){ d[k]=el.value; guardar(); }); }
+    else { if(d[k]){ el.value=d[k]; } el.addEventListener('input',function(){ d[k]=el.value; guardar(); }); }
+  });
+  var est=document.getElementById('estado');
+  var cp=document.getElementById('copiar'); if(cp){ cp.addEventListener('click',function(){
+    var txt=[];
+    if(d['mi-grieta']){ txt.push('Mi grieta de esta semana: '+d['mi-grieta']); }
+    var nom={hecho:'lo hice', manana:'mañana vuelvo'};
+    for(var i=1;i<=7;i++){ var h=d['d'+i+'-rato']||'', v=d['d'+i+'-grieta']||''; if(h||v){ txt.push('Día '+i+(h?'\nEl rato: '+nom[h]:'')+(v?'\nHoy la grieta '+v:'')); } }
+    if(d['acompane']){ txt.push('Esta semana acompañé a: '+d['acompane']); }
+    var s=txt.join('\n\n')||'Todavía no escribiste nada.';
+    if(navigator.clipboard){ navigator.clipboard.writeText(s).then(function(){ est.textContent='Notas copiadas.'; },function(){ est.textContent='No se pudieron copiar. Selecciona el texto a mano.'; }); }
+    else { est.textContent='Este navegador no permite copiar automáticamente.'; }
+  }); }
+  var br=document.getElementById('borrar'); if(br){ br.addEventListener('click',function(){
+    if(!confirm('¿Borrar las notas de esta semana? No se pueden recuperar.')){ return; }
+    d={}; guardar(); campos.forEach(function(el){ if(el.type==='radio'){ el.checked=false; } else { el.value=''; } }); est.textContent='Notas borradas.';
+  }); }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L05">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="lo roto tiene su hora">
+<title>El tiempo entre · Umbral III · La Grieta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L05.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral III</div><h1>El tiempo entre</h1><p class="sub">lo roto tiene su hora</p></header><main><h2>La camioneta</h2>
+<p>A la tercera semana, todos tenían un consejo para Andrés.</p>
+<p>Su cuñado le dijo que en un año iba a conocer a otra mujer y que se iba a reír de todo esto. Un compañero le recomendó no pensar, que pensar era lo peor. Una vecina le explicó, sin que él preguntara, por qué se van las mujeres a los cincuenta. Joaquín, por teléfono, le dijo que tenía que empezar terapia ya, esa misma semana, y le mandó tres nombres. Cada uno lo quería bien, y cada uno, a su manera, quería repararlo cuanto antes.</p>
+<p>Una tarde, después de retirar un tilo caído sobre una parada de autobús, Andrés y Ramiro se quedaron esperando la grúa en la camioneta. Ramiro tiene sesenta y tres años, le faltan dos para jubilarse y es famoso en la cuadrilla por hablar poco. Andrés empezó a decir su frase, <em>nos separamos, fue de común acuerdo</em>, y a mitad de camino se le cortó la voz. Ramiro no dijo nada. No le preguntó, no le explicó, no le contó lo que le había pasado a él. Apagó la radio, bajó un poco la ventanilla y se quedó mirando los árboles de la avenida.</p>
+<p>Estuvieron así veinte minutos. Cuando llegó la grúa, antes de bajar, Ramiro le apoyó la mano en el hombro un segundo. Fue el único momento de esas tres semanas en que Andrés sintió que podía respirar.</p>
+<h2>El tiempo en pedazos</h2>
+<p>El séptimo nodo de <em>Simetrías rotas</em> se titula «La Danza de Rotura y Reparación», y en su centro hay una sección que vale por todo el nodo. Empieza así:</p>
+<div class="cita"><p class="orig"><em>El espacio entre romperse y repararse es sagrado.</em><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Y unas líneas después, una indicación que conviene tomar al pie de la letra:</p>
+<div class="cita"><p class="orig"><em>No apresures la reparación. El tiempo en pedazos tiene su función.</em><sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>El nodo enumera esas funciones: permite que lo viejo termine de morir, deja espacio para lo verdaderamente nuevo, revela qué piezas eran esenciales. Mientras todo está en pedazos, todavía no se sabe qué forma va a tener lo que venga. Apurar la reparación es decidir esa forma antes de saber.</p>
+<p>El libro de Trinity que da la raíz a este lo anunciaba desde su primera página. En el prólogo de <em>El Dolor como Portal</em>, antes de que empiece ningún nodo, se lee:</p>
+<div class="cita"><p class="orig"><em>Este libro no busca evitar el dolor, ni sanarlo apresuradamente, ni convertirlo en algo más cómodo de experimentar.</em><sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p><em>Ni sanarlo apresuradamente.</em> Dos libros de Trinity escritos en épocas distintas, uno contemplativo y otro con imágenes de la física, coinciden en la misma advertencia. Y no son los únicos.</p>
+<h2>Cuatro maneras de reparar</h2>
+<p>El nodo distingue cuatro clases de reparación, y conviene conocerlas porque casi todos usamos alguna sin saberlo.</p>
+<p>La primera intenta volver al estado anterior. Niega que la rotura haya ocurrido, finge que nada cambió y une los pedazos con pegamento barato. El nodo la llama regresiva y advierte que está destinada a romperse de nuevo. Es la más rápida, y por eso la más tentadora: <em>estamos bien, aquí no pasó nada</em>.</p>
+<p>La segunda acepta la rotura y busca que las cosas vuelvan a funcionar. No le preocupa la belleza; le preocupa que la taza vuelva a contener agua. Es la reparación funcional, y el nodo la describe con justicia: sirve, aunque no trascienda.</p>
+<p>La tercera no esconde la rotura. La deja a la vista, la dignifica, hace de ella una parte de la forma. El nodo la llama transformativa y la asocia al oro en las grietas.</p>
+<p>La cuarta va más lejos: la rotura cambia el diseño mismo. Lo que se rearma no es lo de antes con una cicatriz, sino otra cosa. Es la reparación evolutiva.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Ninguna de estas maneras es una nota en un boletín. La funcional, la que permite volver al trabajo el lunes, es durante meses la única posible para mucha gente, y es digna. Lo que el nodo señala es otra cosa: las dos últimas no se pueden apurar. Llegan a su hora, y lo hacen mejor si no se las fuerza con la primera.</p>
+<h2>El cuenco cosido</h2>
+<p>En el Museo Nacional de Tokio hay un cuenco de té de cerámica verde pálida, hecho en China hace unos ochocientos años. Se llama Bakōhan, y tiene una historia que en Japón se cuenta desde hace siglos.</p>
+<p>Según un escrito de 1727 que acompaña a la pieza, en el siglo XV perteneció al shogún Ashikaga Yoshimasa, gran amante de la ceremonia del té. Cuando se rajó, Yoshimasa la mandó de vuelta a China con un encargo: que le hicieran otra igual. Desde China le devolvieron el mismo cuenco, con la fisura sujeta por grapas de hierro. Nadie sabía hacer ya uno como ese. Los broches de metal parecían insectos posados en la cerámica, y de ellos sale su nombre. El autor del escrito, el erudito Itō Tōgai, anotó que esas grapas, lejos de arruinarlo, le daban un encanto propio.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Se cuenta también que el disgusto con aquella reparación de hierro llevó a los artesanos japoneses a buscar otra manera de unir lo roto: una que no ocultara la grieta ni la cosiera, sino que la dejara a la vista. De esa búsqueda habría nacido el <em>kintsugi</em>, el arte de unir la cerámica con laca y oro. Es una leyenda, y así la cuentan los propios artesanos.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Lo que no es leyenda es cómo se hace.</p>
+<h2>La laca que fragua en la humedad</h2>
+<p>El <em>kintsugi</em> no empieza con oro. Empieza con <em>urushi</em>, la savia de un árbol, el árbol de la laca, que se cultiva en Japón desde hace milenios. Esa laca tiene una particularidad: no seca con el aire seco. Endurece absorbiendo la humedad del ambiente, y por eso los artesanos guardan las piezas en curso en un armario de madera cerrado, el <em>muro</em>, donde mantienen el aire húmedo y tibio.</p>
+<p>Unir dos pedazos con urushi lleva cerca de dos semanas de espera. Después se rellenan los huecos, capa por capa, y cada capa tiene que endurecer antes de lijarse y recibir la siguiente. Si alguien saca la pieza antes de tiempo, la laca queda blanda por dentro aunque parezca firme por fuera. Solo al final, sobre la última capa, se espolvorea el oro.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>En el <em>kintsugi</em>, lo primero es el tiempo. El oro es lo último.</p>
+<p>Y hay en esa imagen algo que no conviene explicar demasiado: lo que une los pedazos no fragua al sol, en lo seco, sino en un lugar cerrado, húmedo y quieto.</p>
+<div class="perla"><p>Lo primero es el tiempo.<br>El oro es lo último.</p></div>
+<h2>Siete días sin una palabra</h2>
+<p>El Libro de Job cuenta la historia de un hombre que lo pierde casi todo en pocos días: los bienes, los hijos, la salud. Tres amigos se enteran y vienen de lejos para consolarlo. Lo primero que hacen es lo mejor que harán en todo el libro:</p>
+<div class="cita"><p class="orig"><em>Así se sentaron con él en tierra por siete días y siete noches, y ninguno le hablaba palabra, porque veían que el dolor era muy grande.</em><sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p></div>
+<p>Después Job habla, y los amigos también. Durante decenas de capítulos le explican por qué le pasó lo que le pasó: que algo habrá hecho, que el sufrimiento tiene una razón, que si se arrepiente todo volverá a estar en su lugar. Cada explicación es un intento de reparar, y cada una lo deja más solo. Al final del libro, la voz de Dios les reprocha a los amigos no haber hablado con verdad.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup> Queda en pie lo único que habían hecho bien al llegar: estar.</p>
+<h2>Hasta que hable el que perdió</h2>
+<p>Siglos después, los maestros del Talmud tomaron esa escena y la convirtieron en una regla. En un tratado sobre las fiestas y el duelo, Rabí Yojanán enseña que quienes van a consolar no tienen permiso para decir nada hasta que el doliente hable primero. Lo aprenden de Job: los amigos callaron siete días; después Job abrió la boca; solo entonces le respondieron. Y agregan otra indicación, igual de fina: cuando el que perdió hace un gesto con la cabeza para dar a entender que quiere quedarse solo, los visitantes ya no deben quedarse.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p>
+<p>La misma tradición no le pone fecha a la tristeza, pero le da forma al tiempo que sigue a una pérdida: siete días de duelo en la casa, treinta días en que la vida se retoma paso a paso, un año para los padres. No dice cuándo se termina el dolor. Dice que el tiempo entre tiene etapas, y que cada una se respeta.</p>
+<p>Esto tiene dos mil años. Hoy suena casi revolucionario.</p>
+<h2>Una hora en Oxford</h2>
+<p>En los años noventa se extendió en muchos países una práctica que parecía de puro sentido común. Después de un accidente o de una catástrofe, se sentaba a las personas lo antes posible con un profesional, para que contaran lo ocurrido, nombraran lo que habían sentido y recibieran explicaciones sobre lo que iban a sentir. Se llamaba <em>debriefing</em>, y se ofrecía a sobrevivientes, a rescatistas, a testigos. Abrir enseguida parecía la mejor manera de evitar que algo quedara encerrado.</p>
+<p>En el hospital John Radcliffe de Oxford, un equipo de psiquiatras quiso comprobarlo. A ciento seis personas internadas después de un accidente de tránsito les ofrecieron, por sorteo, una de dos cosas: un encuentro de <em>debriefing</em> de alrededor de una hora, casi siempre en las primeras cuarenta y ocho horas, o nada. A los cuatro meses no había diferencias entre los dos grupos. A los tres años sí las había: quienes habían recibido la sesión estaban peor, con más síntomas, más dolor y peor funcionamiento en su vida diaria. Y entre quienes habían llegado al hospital con los síntomas más intensos, los que no tuvieron la sesión se recuperaron, y los que pasaron por ella siguieron mal.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p>
+<p>No fue un hallazgo aislado. Las revisiones que reunieron los estudios llegaron a la misma conclusión sobre las sesiones únicas de ese tipo,<sup class="ref"><a href="#nota-12" aria-label="nota 12">12</a></sup> y la primera ayuda psicológica que hoy recomiendan los organismos internacionales es otra: dar seguridad, consuelo y contacto con los seres queridos, escuchar a quien quiera hablar, y no presionar a nadie para que cuente lo que vivió.<sup class="ref"><a href="#nota-13" aria-label="nota 13">13</a></sup></p>
+<p>Hablar ayuda. Lo que ese ensayo mostró es que el momento importa, y que forzarlo puede estorbar justo a quienes más lo necesitan.</p>
+<h2>Acompañar sin apurar</h2>
+<p>Un nodo de Trinity que dice <em>no apresures la reparación</em>. Unos artesanos que saben que el oro va al final y que la laca no se apura. Unos maestros que establecieron, hace siglos, que quien consuela no habla primero. Un ensayo clínico en Oxford. Ninguna de estas voces conocía a las otras. Ninguna dice que no haya que hablar, ni reparar. Todas dicen lo mismo sobre el cuándo: cuando el que perdió abre la boca, cuando la laca fraguó, cuando hay suelo.</p>
+<p>Ese es el gesto de este libro: acompañar la herida sin apurarla.</p>
+<p>Acompañar no es arreglar. Tampoco es abandonar, ni mirar desde lejos esperando que pase sola. Es quedarse cerca. El segundo nodo de <em>El Dolor como Portal</em> describe exactamente lo que espera una herida suspendida:</p>
+<div class="cita"><p class="orig"><em>la calidez de una presencia que no juzgue, la ternura de un reconocimiento que no trate de cambiar nada, el silencio lo suficientemente amplio y amoroso como para dejarla desplegarse sin prisa.</em><sup class="ref"><a href="#nota-14" aria-label="nota 14">14</a></sup></p></div>
+<p>El gesto tiene dos direcciones.</p>
+<p>Hacia adentro, acompañar sin apurar quiere decir no exigirse estar bien a fecha fija, ni entender ya, ni haber sacado conclusiones. Tampoco tapar la grieta para siempre. Quiere decir pasar un rato con ella, de vez en cuando, como quien visita a un enfermo: sin pedirle que mejore para la próxima visita.</p>
+<p>Hacia afuera, quiere decir lo que hizo Ramiro. Cuando alguien te cuenta su grieta, hay cuatro maneras de apurarla que salen solas: el consejo, la explicación, la comparación con lo que te pasó a ti y la urgencia de que salga adelante. Acompañar es dejarlas pasar, sentarse cerca y aguantar el silencio. Si hace falta decir algo, alcanza con una pregunta: <em>¿qué necesitas?</em> Y esperar la respuesta, aunque tarde.</p>
+<p>En 1942, Simone Weil le envió a un amigo sacerdote un ensayo breve sobre el valor del estudio escolar, y lo terminó en un lugar inesperado: la atención a quien sufre. Escribió que los desdichados no necesitan en este mundo otra cosa que personas capaces de prestarles atención, y que esa capacidad es tan rara que se parece a un milagro. Y resumió la plenitud del amor al prójimo en una sola pregunta:</p>
+<div class="cita"><p class="orig"><em>Quel est ton tourment ?</em><sup class="ref"><a href="#nota-15" aria-label="nota 15">15</a></sup></p><p class="trad">¿Cuál es tu tormento?</p></div>
+<p>Hacer esa pregunta, aclaraba, exige mirar al otro no como un caso ni como un ejemplar de los desafortunados, sino como alguien exactamente igual a uno, a quien la desgracia marcó un día con su sello.<sup class="ref"><a href="#nota-16" aria-label="nota 16">16</a></sup> Ramiro hizo esa pregunta sin pronunciarla: apagó la radio.</p>
+<p>Ese viernes, Andrés pasó por la plaza del mercado viejo antes de volver a su casa. El corte del fresno seguía limpio, claro, sin novedad. En su oficio se sabe que una herida así no se evalúa en otoño. Hay que esperar la primavera y ver si en los bordes del corte empieza a asomar un reborde de madera nueva, que avanza desde la corteza y va rodeando la herida, año tras año. No es algo que se pueda acelerar. Se puede, a lo sumo, no estorbar.</p>
+<p>Se quedó un rato sentado en el banco de piedra. No le pidió nada al árbol. Por primera vez en tres semanas, tampoco se lo pidió a sí mismo.</p>
+<div class="perla"><p>Acompañar no es arreglar.<br>Es quedarse cerca<br>mientras lo roto encuentra su hora.</p></div>
+<h2>Tú también</h2>
+<p>Quizá alguna vez alguien hizo contigo lo que Ramiro hizo con Andrés. Se sentó cerca, no te explicó nada, no te apuró. Quizá no recuerdas lo que dijo, porque no dijo casi nada, y sin embargo recuerdas cómo te sentiste. Esa persona sabía algo que los amigos de Job olvidaron al tercer capítulo.</p>
+<p>Y quizá, alguna vez, tú fuiste el cuñado: el que tenía la solución lista, el que quería que el otro estuviera bien cuanto antes, también para dejar de sentirse incómodo frente a su dolor. Le pasa a casi todo el mundo. No hay reproche en eso; hay un aprendizaje posible.</p>
+<p>Esta semana, la próxima vez que alguien te cuente algo que le duele, prueba la regla antigua: deja que hable primero, y quédate hasta que termine.</p>
+<div class="perla"><p>Quien consuela no habla primero.<br>Espera a que el otro abra la boca,<br>y entonces escucha.</p></div>
+<div class="sigue"><a href="L05-U2.html">Anterior: Sellar</a><a class="prox" href="L05-U4.html">Siguiente: La noche</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>Simetrías rotas</em>, Trinity Quantum, Libro 9, Nodo 7: «La Danza de Rotura y Reparación», sección «El Tiempo Entre Rotura y Reparación», versión depurada (2026).</li><li id="nota-2">Ídem.</li><li id="nota-3">Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Trinity Origen, Libro III, «Prólogo · El Dolor que Nos Llama».</li><li id="nota-4">Lic. Arturo Rodríguez, <em>Simetrías rotas</em>, Nodo 7, sección «Los Tipos de Reparación». Paráfrasis.</li><li id="nota-5">Sobre el cuenco Bakōhan (celadón de Longquan, dinastía Song del Sur; Museo Nacional de Tokio, bien cultural importante) y el escrito de Itō Tōgai que lo acompaña (1727), recogido en el <em>Taishō meikikan</em>, catálogo de piezas célebres de la ceremonia del té. Paráfrasis.</li><li id="nota-6">La vinculación de este episodio con el origen del <em>kintsugi</em> es una tradición difundida entre los artesanos; ver, por ejemplo, el testimonio de la maestra de urushi Mio Heki en el sitio oficial de turismo de la ciudad de Kioto. Paráfrasis.</li><li id="nota-7">Sobre el curado de la laca urushi y el <em>muro</em>: Mio Heki, ídem, que da unas dos semanas para el pegado, con alrededor del setenta por ciento de humedad; Lakeside Pottery, «Understanding Traditional Kintsugi: Urushi, Materials, and Techniques». Paráfrasis.</li><li id="nota-8">Libro de Job, 2, 13, en la traducción de Reina-Valera (1909).</li><li id="nota-9">Ídem, 42, 7. Paráfrasis.</li><li id="nota-10">Talmud de Babilonia, tratado <em>Moed Katan</em>, 28b. Paráfrasis. La regla se recoge en el <em>Shulján Aruj</em>, <em>Yoré Deá</em> 376, 1.</li><li id="nota-11">Richard A. Mayou, Anke Ehlers y Mark Hobbs, «Psychological Debriefing for Road Traffic Accident Victims: Three-Year Follow-up of a Randomised Controlled Trial», <em>British Journal of Psychiatry</em> 176 (2000): 589-593. Paráfrasis.</li><li id="nota-12">Suzanna Rose, Jonathan Bisson, Rachel Churchill y Simon Wessely, «Psychological Debriefing for Preventing Post Traumatic Stress Disorder (PTSD)», <em>Cochrane Database of Systematic Reviews</em> (2002). Paráfrasis.</li><li id="nota-13">Organización Mundial de la Salud, War Trauma Foundation y World Vision International, <em>Primera ayuda psicológica: guía para trabajadores de campo</em> (2011; edición en español, 2012). Paráfrasis.</li><li id="nota-14">Lic. Arturo Rodríguez, <em>El Dolor como Portal</em>, Nodo 2: «El Trauma como Memoria Suspendida», sección «La Comprensión que lo Cambia Todo».</li><li id="nota-15">Simone Weil, «Réflexions sur le bon usage des études scolaires en vue de l'amour de Dieu» (1942), en <em>Attente de Dieu</em> (1950); en español, «Reflexiones sobre el buen uso de los estudios escolares como medio de cultivar el amor a Dios», en <em>A la espera de Dios</em>. Traducción propia.</li><li id="nota-16">Ídem. Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 5 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
