@@ -765,7 +765,7 @@ Tramos: Lo que Nora sabe ahora · La casa del pueblo · El aeropuerto · El fina
 - Puente al Libro 7: *Aprendiste a despedir lo que termina cada día. El siguiente libro afloja otra cosa: la necesidad de saber lo que viene.*
 - Para ver: Infinito, Portal 32, *Olas en el océano* · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro5/L5-Nodo4.html`; BJ Miller, «What really matters at the end of life» (TED, 2015) · `https://www.ted.com/talks/bj_miller_what_really_matters_at_the_end_of_life`
 - En la pantalla: *Despedidas* (*Okuribito*); *Vivir* (*Ikiru*); *Coco*; *La llegada* (*Arrival*); *After Life* (Kore-eda).
-- Puertas: Origen VII, Nodo 2; Infinito 5 (entrada por el Nodo 1); Portal Público, *El Duelo*. El índice de Origen VII queda fuera hasta la sesión corta sobre sus nodos 4 y 5.
+- Puertas: Origen VII (índice, agregado tras la depuración breve de sus nodos 4 y 5, el 20 de octubre de 2026) y su Nodo 2; Infinito 5 (entrada por el Nodo 1); Portal Público, *El Duelo*.
 
 ---
 

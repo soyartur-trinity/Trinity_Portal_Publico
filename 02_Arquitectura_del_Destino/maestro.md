@@ -187,7 +187,7 @@ Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su
 
 **Pendiente en Origen:** el nodo X.1 contiene la lectura simbólica de los síntomas (la espalda como cargas, la garganta como verdades calladas), el pasaje más delicado desde lo clínico en toda la constelación. Merece una pasada breve.
 
-**Pendiente en Origen VII** (detectado al escribir el Libro 6), con prioridad clínica: el nodo 5 presenta la psicosis como posible apertura y la despersonalización como iniciación (el testimonio de Andrea) y propone enteógenos en «dosis heroicas»; el nodo 4 propone DMT, plantas y cannabis para moribundos, frecuencias en hercios, el proyecto AWARE mal resumido y los 21 gramos, e incluye a una madre en duelo que «quería morir» curada con ayahuasca. Hasta esa sesión corta, el Libro 6 enlaza solo el Nodo 2, no el índice. Menores: en el nodo 2, la frase de Sócrates aparece «antes de beber la cicuta» y la dijo en el juicio; en el nodo 1 hay una cita de Gandhi en blanco; los testimonios son anónimos. Del nodo 6 (registro akáshico, los cien monos) y del 7 (la década del parto, los niños índigo) nada pasa a la serie.
+**Origen VII, depuración breve** ✅ (20 de octubre de 2026), con el veto de Arturo y el original guardado en la etiqueta `origen-original`. Nodo 4: la neurotecnología pasa a neurociencia (las ondas gamma como pregunta abierta, lo que acompaña al que muere); la DMT pineal queda como hipótesis de Strassman; las plantas, como tradición e investigación (la psilocibina en ensayos clínicos), nunca como indicación; la música del tránsito reemplaza las frecuencias en hercios; AWARE se cuenta como fue; el *death plan* suma las voluntades anticipadas; salen el protocolo con DMT, el cannabis, los médiums, los biofotones, los 21 gramos y los testimonios de David y de Carmen, en cuyo lugar entra una frase de cuidado. Nodo 5: la emergencia espiritual de los Grof reemplaza «la psicosis puede ser apertura»; la noche oscura se distingue de la depresión; el retiro intensivo pide un centro con a quién recurrir; las sustancias pasan a ser una advertencia; sale el testimonio de Andrea; la meditación se llama *Morir antes de morir* y empieza con una frase de cuidado. Atribuciones reparadas: la firma suelta de Gandhi (nodo 1) y la de Sócrates (nodo 5), y la frase de Sócrates situada en el juicio (nodo 2). Del nodo 6 (registro akáshico, los cien monos) y del 7 (la década del parto, los niños índigo) nada pasa a la serie; quedan para la depuración completa de Origen. El script está en `herramientas/depurar_origen7.py`.
 
 ### Los materiales de Zeland
 
@@ -594,7 +594,11 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 - Tarjeta del índice activa y marca ✅ en el `README.md`.
 - Entrada completa en el `registro.md`.
 - Portal 32 de Infinito adaptado al teléfono (repositorio Trinity-).
-- Puertas: Origen VII, Nodo 2; Infinito 5; Portal Público, *El Duelo*. El índice de Origen VII se agrega después de la sesión corta sobre sus nodos 4 y 5.
+- Puertas: Origen VII (índice, agregado tras la depuración breve) y su Nodo 2; Infinito 5; Portal Público, *El Duelo*.
+
+### Origen VII (`01_Trinity_Origen/Libro_07/`, repositorio Trinity-)
+
+- Depuración breve por riesgo clínico de los nodos 4 y 5, y atribuciones de los nodos 1, 2 y 5 (ver la sección 5). Cada nodo tocado lleva en el código una nota de procedencia que remite a la etiqueta `origen-original`.
 
 ### Pie de las portadas 1 a 4
 

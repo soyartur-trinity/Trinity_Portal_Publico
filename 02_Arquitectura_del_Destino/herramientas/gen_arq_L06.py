@@ -57,6 +57,7 @@ AUTOR_HTML = ('<section class="autor"><h2>Sobre el autor</h2>'
  'De ese trabajo nacieron la constelación Trinity, el Portal Público y esta serie.</p></section>')
 
 PUERTAS = {
+    'Trinity Origen, Libro VII': 'https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_07/index.html',
     'Trinity Origen, Libro VII, Nodo 2': 'https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_07/nodo_02.html',
     'Trinity Infinito, Libro 5': 'https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro5/L5-Nodo1.html',
     'Portal Público, Libro 5': '../../01_Libros/05_Duelo/index.html',
