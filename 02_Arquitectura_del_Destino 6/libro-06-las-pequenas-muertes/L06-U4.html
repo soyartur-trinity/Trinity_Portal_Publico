@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L06">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="amar lo que termina">
+<title>La última vez · Umbral IV · Las Pequeñas Muertes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* la clepsidra */
+.clepsidra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.clepsidra button{appearance:none;width:100%;max-width:19rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.clepsidra button:hover{border-color:var(--border-strong)}
+.clepsidra svg{display:block;width:9.5rem;height:auto}
+.clepsidra .vaso{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1.6;stroke-linejoin:round}
+.clepsidra .agua{fill:rgba(168,196,224,.26)}
+.clepsidra .gota{fill:var(--ambar);opacity:0}
+.clepsidra .gota.cae{animation:cae 1.7s ease-in forwards}
+@keyframes cae{0%{opacity:0;transform:translateY(0)}12%{opacity:1}82%{opacity:1;transform:translateY(74px)}100%{opacity:0;transform:translateY(80px)}}
+.clepsidra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .gotap{fill:var(--ambar);opacity:0;animation:gotea 6s ease-in 3.6s infinite}
+@keyframes gotea{0%{opacity:0;transform:translateY(0)}15%{opacity:.9}70%{opacity:.9;transform:translateY(46px)}85%,100%{opacity:0;transform:translateY(52px)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .clepsidra .agua{transition:none!important}
+  .clepsidra .gota.cae{animation:none}
+  .campo-svg .gotap{animation:none;opacity:.75;transform:translateY(20px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L06.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral IV</div><h1>La última vez</h1><p class="sub">amar lo que termina</p></header><main><h2>El corte de pelo</h2>
+<p>Durante las semanas siguientes, Nora empezó a notar las últimas veces. No las buscaba: aparecían solas. El último domingo en que Julián tocaba la guitarra con la puerta abierta, mal y contento. Las últimas botas embarradas junto a la entrada. La última vez que él gritaba desde la ducha que se había terminado el champú.</p>
+<p>Al principio cada una era una punzada. Nora la sentía en el pecho, una pequeña caída, y quería apartar la vista. Algunas noches pensó que hubiera preferido no darse cuenta, como antes.</p>
+<p>Un sábado, Julián le pidió que le cortara el pelo, como desde que tenía cinco años: una silla en el patio, una toalla sobre los hombros, la tijera vieja. Nora supo, mientras le mojaba la cabeza con un rociador, que era la última vez antes del viaje y, quién sabe, la última de todas. La punzada llegó, como siempre. Pero esta vez no apartó la vista. Lo miró.</p>
+<p>Vio la nuca de su hijo, que no miraba con atención desde hacía años. Un lunar detrás de la oreja izquierda que había olvidado. La manera en que cerraba los ojos cuando la tijera se acercaba a la frente, igual que a los cinco. Una cicatriz pequeña en la ceja, de una caída en bicicleta que ella recordaba con todos sus detalles y él no. Cortó más despacio que nunca.</p>
+<p>—¿Qué te pasa? —preguntó Julián—. Estás tardando el doble.</p>
+<p>—Te estoy mirando —dijo Nora.</p>
+<p>Él se rió y no preguntó más. Ella barrió el pelo del patio con la escoba de siempre y se quedó un rato apoyada en el palo. La punzada seguía ahí. Y junto a ella había algo que no esperaba: no recordaba la última vez que había visto a su hijo tan entero.</p>
+<h2>¿Puedes amar algo sabiendo que terminará?</h2>
+<p>Entre las preguntas con las que Trinity cierra el nodo de las pequeñas muertes, la última es la más simple y la más difícil:</p>
+<div class="cita"><p class="trad">¿Puedes amar algo sabiendo que terminará?<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>El nodo no deja la pregunta en el aire. Unas páginas antes, al describir las señales de que alguien empezó a integrar esta enseñanza, responde con dos frases:</p>
+<div class="cita"><p class="trad">Te vuelvas más presente<br>Sabiendo que todo termina, saboreas más</p><p class="trad">Veas belleza en la impermanencia<br>Como los japoneses con el sakura<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Y en el epígrafe del mismo nodo hay una imagen que parece salida de un monasterio: <em>El maestro Zen que puede soltar su taza de té está listo para soltar su vida.</em><sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>La intuición de Trinity contradice una idea muy extendida: que saber que algo termina le quita valor, o que hay que olvidarlo para poder disfrutar. Trinity dice lo contrario. Saber que acaba es lo que permite verlo. Lo que se cree eterno se da por descontado; lo que se sabe pasajero se mira. Nora lo había comprobado con la tijera en la mano: la conciencia del final no le robó la tarde. Se la devolvió.</p>
+<h2>El vaso que ya está roto</h2>
+<p>A mediados de los años setenta, con poco más de veinte años, un estudiante estadounidense llamado Mark Epstein viajó con sus primeros maestros de meditación a un monasterio del bosque, en Tailandia, para conocer a Ajahn Chah, uno de los guías más respetados de su tiempo. Después de esperar, se animaron a preguntarle qué quería decir el Buda cuando hablaba de acabar con el deseo.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Ajahn Chah tomó el vaso de agua que tenía al lado y se lo mostró. Les dijo que para él ese vaso ya estaba roto. Que lo disfrutaba, que bebía de él, que guardaba el agua admirablemente y a veces reflejaba el sol, y que si lo golpeaba con un dedo sonaba hermoso. Que cuando el viento lo tirara o su codo lo empujara de la mesa y se hiciera pedazos, él diría: <em>claro</em>. Y que precisamente porque sabía que el vaso ya estaba roto, cada momento con él era precioso.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Epstein, que con los años se convirtió en psiquiatra y en uno de los puentes más finos entre el budismo y la psicoterapia, contó esa escena en su primer libro. Es la misma imagen del epígrafe de Trinity: una taza de té en un monasterio zen, un vaso de agua en un monasterio del bosque tailandés. Dos tradiciones distintas, separadas por miles de kilómetros, llegaron a la misma vajilla.</p>
+<p>Lo que el vaso enseña no es resignación. Ajahn Chah no dice que no le importa el vaso: dice que lo disfruta más. Tampoco dice que va a sufrir cuando se rompa: dice <em>claro</em>. Las dos cosas vienen juntas. Quien ya despidió al vaso por dentro puede tenerlo entero por fuera.</p>
+<h2>El rocío de Adashino</h2>
+<p>En el Japón del siglo XIV, un funcionario de la corte llamado Yoshida Kenkō dejó su cargo, se hizo monje y escribió, en un cuaderno, pasajes breves sobre lo que veía y pensaba. El libro, <em>Tsurezuregusa</em>, que podría traducirse como <em>Apuntes de los días ociosos</em>, es uno de los clásicos de la literatura japonesa.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> En su séptimo pasaje nombra dos lugares de las afueras de Kioto: Adashino, donde se dejaban los cuerpos de los muertos, y la colina de Toribeyama, donde se los cremaba.</p>
+<div class="cita"><p class="trad">Si el rocío de Adashino no se desvaneciera nunca, si el humo de Toribeyama no se disipara jamás, y nos quedáramos en este mundo para siempre, ¡qué poco nos conmovería todo! Lo precioso del mundo es, justamente, que nada en él es seguro.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>La palabra que Kenkō usa para <em>conmover</em> es una de las más hondas del idioma japonés: <em>mono no aware</em>, la emoción de las cosas, esa sensibilidad que despierta lo que pasa porque pasa. En el mismo pasaje recuerda a la efímera, que no llega a la noche, y a la cigarra del verano, que no conoce ni la primavera ni el otoño, y concluye que un solo año vivido con serenidad ya es un tiempo largo.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p>
+<p>Más adelante, en el pasaje 137, Kenkō se pregunta si las flores del cerezo solo deben mirarse en plena floración, y la luna solo cuando no tiene nubes. Y responde que no: que las ramas a punto de abrirse y el jardín cubierto de pétalos caídos merecen tanta o más atención.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup> Es el <em>sakura</em> que nombra Trinity. Cada primavera, millones de personas en Japón salen a mirar los cerezos durante los pocos días en que florecen. Nadie va a pesar de que la flor dure poco. Van porque dura poco.</p>
+<h2>Cuando la graduación se acerca</h2>
+<p>En 2008, la psicóloga Jaime Kurtz, del Pomona College, en California, hizo un experimento con estudiantes del último año, a un mes y medio de graduarse. Durante quince días, dos veces por semana, les pidió que escribieran sobre su vida en el campus. A la mitad les presentó ese final como algo muy cercano: les quedaba poco. A la otra mitad, como algo todavía lejano.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>Los que sentían cerca el final hicieron más cosas propias de esa etapa: fueron más a los lugares que les gustaban, vieron más a sus amigos, aprovecharon lo que el campus ofrecía. Y su bienestar aumentó a lo largo de las dos semanas. Kurtz lo resumió en una conclusión que contradice la intuición común: pensar en el final de una experiencia agradable puede aumentar el disfrute del presente.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>Ninguno de esos estudiantes se puso a pensar en la muerte. Bastó con que una etapa se les presentara como finita. La pequeña muerte de la vida universitaria, mirada a tiempo, hizo con ellos lo que el vaso roto hacía con Ajahn Chah.</p>
+<h2>Hong Kong, 1997</h2>
+<p>La psicóloga Laura Carstensen, de la Universidad de Stanford, dedicó buena parte de su carrera a una pregunta: por qué las personas mayores, a medida que envejecen, reducen su vida social y se quedan con pocos vínculos, los más cercanos. Durante décadas se pensó que era una pérdida, un retraimiento. Carstensen propuso otra explicación, que llamó <em>teoría de la selectividad socioemocional</em>: cuando el tiempo que queda se percibe como corto, la gente elige lo que le importa de verdad, y deja de invertir en lo que promete algo para más adelante.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Si la teoría era cierta, no debía depender de la edad, sino del horizonte. Y lo comprobaron. Cuando a los mayores se les pidió que imaginaran un futuro largo, su preferencia por los vínculos de siempre desaparecía. Cuando a los jóvenes se les propuso un porvenir breve, elegían como la gente de edad.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p>
+<p>Después llegó la historia a ofrecer un experimento natural. En 1997, Hong Kong iba a pasar de la administración británica a la china, y mucha gente vivió esa fecha como el final de una época. Helene Fung, Laura Carstensen y Amy Lutz midieron las preferencias sociales de habitantes de distintas edades. Un año antes del traspaso, solo los mayores preferían a las personas cercanas. Dos meses antes, también los jóvenes. Un año después, cuando la época nueva ya estaba en marcha, los más jóvenes volvieron a lo de antes, y esa preferencia quedó otra vez solo en la gente de edad.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p>
+<p>Una ciudad entera, ante una pequeña muerte colectiva, se inclinó por unos meses hacia lo que más le importaba. Lo que ordena lo importante no es la edad. Es el horizonte.</p>
+<h2>Bajar al instante</h2>
+<p>Trinity tiene, en el sexto nodo de <em>La Muerte como Maestra</em>, una práctica breve que sirve para hacer con lo cotidiano lo que el final hace solo:</p>
+<div class="cita"><p class="trad">El tiempo lineal es un eje horizontal (pasado-presente-futuro). El tiempo sagrado o «Kairos» es un eje vertical que profundiza en el Ahora.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p></div>
+<p>La práctica tiene cuatro pasos: notar cuándo la mente viaja hacia atrás o hacia adelante; buscar un ancla en los sentidos, como los pies en el suelo, un sonido o el contacto de la ropa; detenerse en ella treinta segundos, y repetir el gesto varias veces al día. La indicación central del tercer paso es esta:</p>
+<div class="cita"><p class="trad">Elige un ancla y sumérgete en ella con toda tu atención durante 30 segundos. Explórala como si fuera la primera vez.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p></div>
+<p><em>Como si fuera la primera vez.</em> Lo que Nora vivió con la tijera fue el mismo descenso, por el otro extremo. La primera vez y la última se parecen en algo: en las dos se mira de verdad. El hábito, que el segundo libro de este sistema describió como un volante que gira solo, vive en el medio, en las veces que suponemos infinitas. Saber que algo termina corta ese giro por un momento y deja ver lo que hay. Infinito 5 lo dice en su sexto portal:</p>
+<div class="cita"><p class="trad">Cada momento muere para dar paso al siguiente<br>pero el Ahora nunca muere<sup class="ref"><a href="#nota-12" aria-label="nota 12">12</a></sup></p></div>
+<h2>Una lente, no una profecía</h2>
+<p>Mirar algo como si fuera la última vez no es creer que lo será. Casi todo lo que hoy haces vas a volver a hacerlo mañana, y está bien que así sea. Los estudiantes de Kurtz no se pusieron tristes ni dejaron de planear su vida; solo vieron mejor la que tenían delante. La lente se usa un rato, sobre una cosa, y después se guarda.</p>
+<p>Tampoco es para todos los momentos. Si estás atravesando una pérdida reciente, esta mirada puede doler demasiado, y conviene esperar. Si los pensamientos sobre el final de las cosas o de las personas te llegan solos, insistentes, y te dejan con angustia en lugar de atención, esta práctica no es para ti esta semana: es una señal para consultar. La lente sirve cuando abre los ojos. Si los cierra, se deja.</p>
+<p>Nora la usó, en esas semanas, unas pocas veces por día. No con todo. Con una cosa por vez: una reunión de despedida con los amigos de Julián, a la que llegó sin listas; una tarde en el río; la manera en que él silbaba al bajar la escalera. A veces la punzada era fuerte. Casi siempre, detrás, venía la misma claridad del patio.</p>
+<div class="perla"><p>Saber que termina<br>no le quita nada.<br>Le devuelve la mirada.</p></div>
+<h2>Tú también</h2>
+<p>Elige hoy una sola cosa de tu día y mírala como si fuera la última vez. No algo solemne: la voz de alguien al teléfono, la calle desde la ventanilla del autobús, la mano de una persona que quieres, la luz de la tarde en una pared. Treinta segundos, con toda tu atención, como pide el ancla de Trinity.</p>
+<p>Si aparece la punzada, déjala estar. Fíjate qué viene detrás. Y después vuelve a tu día, que sigue, con su repetición generosa.</p>
+<div class="perla"><p>La primera vez y la última<br>se parecen:<br>en las dos, miras.</p></div>
+<div class="sigue"><a href="L06-U3.html">Anterior: Despedir</a><a class="prox" href="L06-U5.html">Siguiente: El ensayo de cada noche</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>La Muerte como Maestra</em>, Trinity Origen, Libro VII, Nodo 2: «Las Pequeñas Muertes», sección «Preguntas para Contemplar».</li><li id="nota-2">Ídem, sección «Integrando las Pequeñas Muertes», «Señales de Maestría». Fragmentos.</li><li id="nota-3">Ídem, epígrafe. Fragmento.</li><li id="nota-4">Mark Epstein, <em>Thoughts Without a Thinker: Psychotherapy from a Buddhist Perspective</em> (1995), introducción; en español, <em>Pensamientos sin pensador</em>. Paráfrasis. Jack Kornfield recoge otra versión de la misma enseñanza, con una taza de té china, en <em>The Wise Heart</em> (2008).</li><li id="nota-5">Sobre Yoshida Kenkō (hacia 1283-1350) y el <em>Tsurezuregusa</em>: Donald Keene, introducción a <em>Essays in Idleness: The Tsurezuregusa of Kenkō</em> (1967). Paráfrasis. En español, <em>Tsurezuregusa. Ocurrencias de un ocioso</em>, trad. de Justino Rodríguez (Hiperión, 1986).</li><li id="nota-6">Yoshida Kenkō, <em>Tsurezuregusa</em>, pasaje 7. Traducción propia del original japonés, cotejada con la versión inglesa de Donald Keene; el resto del pasaje, en paráfrasis.</li><li id="nota-7">Ídem, pasaje 137. Paráfrasis y traducción propia de la pregunta inicial.</li><li id="nota-8">Jaime L. Kurtz, «Looking to the Future to Appreciate the Present: The Benefits of Perceived Temporal Scarcity», <em>Psychological Science</em> 19, n.º 12 (2008): 1238-1241. Paráfrasis.</li><li id="nota-9">Laura L. Carstensen, Derek M. Isaacowitz y Susan T. Charles, «Taking Time Seriously: A Theory of Socioemotional Selectivity», <em>American Psychologist</em> 54, n.º 3 (1999): 165-181. Paráfrasis.</li><li id="nota-10">Helene H. Fung, Laura L. Carstensen y Amy M. Lutz, «Influence of Time on Social Preferences: Implications for Life-Span Development», <em>Psychology and Aging</em> 14, n.º 4 (1999): 595-604. Paráfrasis.</li><li id="nota-11">Lic. Arturo Rodríguez, <em>La Muerte como Maestra</em>, Nodo 6: «El Legado Cuántico», «Práctica 6.1: Anclaje en el Eje Vertical del Ahora». Fragmentos; los pasos, en paráfrasis.</li><li id="nota-12">Trinity Infinito, Libro 5: <em>La muerte de la muerte</em>, Portal 34 (Nodo 6): «El Presente Eterno». Fragmento.</li></ol></section></main></div><footer class="pie">Libro 6 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
