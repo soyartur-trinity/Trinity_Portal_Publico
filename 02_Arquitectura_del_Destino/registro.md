@@ -621,3 +621,152 @@ Tramos: Lo que Andrés sabe ahora · El árbol
 - Para ver: Infinito, Portal 33, *El fénix cuántico*; Andrew Solomon, «How the worst moments in our lives make us who we are» (TED, 2014).
 - En la pantalla: *Tres colores: Azul*; *Intensa-Mente*; *Manchester junto al mar*; *En busca del destino*; Black Mirror, «Vuelvo enseguida».
 - Puertas: Origen III (índice) y Nodo 7; Quantum 9, Nodo 7; Portal Público, *Atravesar*, Umbral VI, «Hacer lugar».
+
+---
+
+## Libro 6 · Las Pequeñas Muertes
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *el arte de despedir lo pequeño*
+**Promesa:** Cada noche, un día que se despide. / Cada mañana, uno que llega de regalo.
+**Columna:** Trinity Origen VII, *La Muerte como Maestra*: Nodo 2 completo (el catálogo de las pequeñas muertes, el dolor que no se romantiza, el protocolo de seis pasos, el sueño como ensayo general y el dormir consciente, la meditación del río, la paradoja de la práctica, «¿puedes amar algo sabiendo que terminará?»); Nodo 1 (el tabú, el precio de la negación, el ritual de despedida, la meditación del lecho); Nodo 6 (la práctica del eje vertical del ahora, la meditación del legado vivo, las ondas, morir vacío); Nodo 7 (el epitafio vivo). Quantum 9, Nodo 5, depurado («la grieta final»: mirar no es desear; practicar con lo pequeño). Infinito 5, *La muerte de la muerte*: portales 29, 32 y 34.
+**Coro:** Montaigne (tradición principal: *Ensayos* I, 20, «Que filosofar es aprender a morir»; II, 6, la caída del caballo y el sueño; III, 12, «el final, no la finalidad»), Séneca (*Cartas a Lucilio* 1, 12 y 24: *cotidie morimur*, la clepsidra, el verso de Lucilio, Pacuvio y el «he vivido»), Horacio (vía Montaigne), Cicerón y Platón, La Rochefoucauld (máxima 26), Heráclito (fragmento 12), el *Upajjhatthana Sutta* (AN 5.57) y el *Maranasati Sutta* (AN 6.19), Ajahn Chah (según Epstein), Yoshida Kenkō (*Tsurezuregusa* 7 y 137), el *hari-kuyō*, Homero y Hesíodo (Sueño y Muerte), el Talmud (*Berajot* 57b), el *Modé aní* y el *Shemá* nocturno, Margareta Magnusson (*döstädning*). **Comprobable:** Yalom (*Mirar al sol*, la ondulación), Bridges (*Transitions*), Eisenberger y otros (con Wager y otros), Norton y Gino, Kurtz, Carstensen, Isaacowitz y Charles, Fung, Carstensen y Lutz (Hong Kong, 1997), Scullin y otros, Becker y la teoría del manejo del terror (con *Many Labs 4*), Cozzolino y otros. **Zeland:** no entra.
+**Protagonista:** Nora, 58 años, vacía casas para una empresa pequeña (con Marcos y Luz). Su hijo Julián, 24, se va a trabajar a otro país en diez semanas. Amparo, 88, modista durante sesenta años, quiere vaciar su casa ella misma, despacio, «mientras estoy»; vive al final del libro. Héctor y Daniel, los hermanos, venden la casa del pueblo. Belén, que cose uniformes, recibe la máquina; Inés, la sobrina de Amparo. Objetos: el calendario tachado del señor del cuarto piso, la máquina negra, la lata de agujas y la maceta del geranio, la tijera y el corte de pelo.
+**Gesto:** una última vez cada día (treinta segundos, como si fuera la primera), un final despedido en la semana (los seis gestos en pequeño) y tres líneas cada noche: *Hoy terminó… / Queda para mañana… / Viví este día*; el séptimo día, el epitafio vivo. **Movimiento lento:** la clepsidra.
+**Para ver:** Infinito, Portal 32, *Olas en el océano* (adaptado al teléfono); BJ Miller, TED 2015.
+**Archivos:** `libro-06-las-pequenas-muertes/L06.html` (portada), `L06-U1.html` a `L06-U7.html`, `L06-cierre.html`. Generador: `herramientas/gen_arq_L06.py`.
+
+### Umbral I · La última gota — *la muerte no llega de una vez*
+Tramos: Cuarenta bolsas · La llamada · Morimos cada día · La clepsidra · Que filosofar es aprender a morir · Lo que Trinity llama pequeñas muertes · La puerta más grande · Ni el sol ni la muerte · Tú también
+- Perla: La muerte no llega de una vez. / Llega un poco cada día, / y cada día se puede despedir.
+- Perla: Lo que no se puede mirar de frente / se aprende a mirar en lo pequeño.
+- Nota: Séneca, *Cartas a Lucilio*, 24, 20. Traducción propia de *cotidie morimur*; el resto del pasaje, en paráfrasis. Sobre el juicio que preocupaba a Lucilio, ídem, 24, 1.
+- Nota: Ídem, 1, 2. Paráfrasis.
+- Nota: Sobre el uso de la clepsidra para medir los alegatos en los tribunales romanos, Plinio el Joven, *Cartas*, II, 11, 14, donde cuenta que habló casi cinco horas porque a las doce clepsidras concedidas se le sumaron cuatro. Paráfrasis.
+- Nota: Séneca, *Cartas a Lucilio*, 24, 20. Traducción propia.
+- Nota: Ídem, 24, 21. Traducción propia del verso de Lucilio (*mors non una venit, sed quae rapit ultima mors est*); el resto, en paráfrasis.
+- Nota: Michel de Montaigne, *Ensayos*, I, 20, «Que filosofar es aprender a morir» (1580). El ensayo parte de Cicerón, *Tusculanas*, I, 30, que a su vez remite a Platón, *Fedón*, 67e. Paráfrasis.
+- Nota: Ídem. Traducción propia sobre el ejemplar de Burdeos (1595), según la edición de Wikisource.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 2: «Las Pequeñas Muertes», epígrafe. Fragmento.
+- Nota: Ídem, sección «La Paradoja de la Práctica».
+- Nota: Ídem, Nodo 1: «El Tabú Primordial», sección «Transición al Nodo 2».
+- Nota: Ídem, Nodo 1, epígrafe.
+- Nota: Ídem, Nodo 1, sección «El Precio de la Negación», apartado «Vidas no vividas».
+- Nota: François de La Rochefoucauld, *Réflexions ou sentences et maximes morales* (edición de 1678), máxima 26. Traducción propia.
+- Nota: Irvin D. Yalom, *Staring at the Sun: Overcoming the Terror of Death* (2008); en español, *Mirar al sol. La superación del miedo a la muerte*, trad. de Agustín Pico Estrada (Emecé, 2008). Paráfrasis.
+
+### Umbral II · Sin ceremonia — *lo que termina sin que lo notes*
+Tramos: Diez semanas · Finales que no honramos · Perdimos la infancia · Toda transición empieza con un final · Aguas distintas · Lo que conviene repasar a menudo · Duele de verdad · Tú también
+- Perla: Casi todo lo que termina / se va sin que nadie lo despida.
+- Perla: Nadie le hizo un funeral a la infancia. / Igual terminó.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 2: «Las Pequeñas Muertes», sección «Las Muertes Cotidianas que No Vemos».
+- Nota: Ídem, «El Catálogo de Pequeñas Muertes». Fragmentos; los demás elementos de la lista, en paráfrasis.
+- Nota: Ídem, sección «Preguntas para Contemplar».
+- Nota: Séneca, *Cartas a Lucilio*, 24, 20. Traducción propia.
+- Nota: Sobre la trayectoria de William Bridges (1933-2013): «William Bridges Bio», William Bridges Associates; y su entrevista en tompeters.com, «Cool Friends: William Bridges». Paráfrasis.
+- Nota: William Bridges, *Transitions: Making Sense of Life's Changes* (1980; edición revisada, 2004). Paráfrasis de la distinción entre cambio y transición, de la regla según la cual toda transición empieza con un final y de las tres etapas: el final, la zona neutral y el nuevo comienzo.
+- Nota: Heráclito, fragmento 12 (Diels-Kranz), conservado por Ario Dídimo según Eusebio de Cesarea, *Preparación evangélica*, XV, 20. Traducción propia. La fórmula «nadie se baña dos veces en el mismo río» procede de la paráfrasis de Platón, *Crátilo*, 402a, y de Plutarco.
+- Nota: Trinity Infinito, Libro 5: *La muerte de la muerte*, Portal 29 (Nodo 1): «El Río Eterno».
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 2, «Meditación: El Río de la Impermanencia».
+- Nota: *Upajjhatthana Sutta*, «Temas para repasar a menudo», Anguttara Nikaya 5.57. Traducción propia sobre la versión inglesa de Bhikkhu Sujato (SuttaCentral); el resto, en paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 2, sección «El Dolor de las Pequeñas Muertes».
+- Nota: Naomi I. Eisenberger, Matthew D. Lieberman y Kipling D. Williams, «Does Rejection Hurt? An fMRI Study of Social Exclusion», *Science* 302, n.º 5643 (2003): 290-292. Paráfrasis del método y de los resultados. Sobre la discusión posterior acerca del alcance de la superposición entre dolor social y físico, Tor D. Wager y otros, «Pain in the ACC?», *Proceedings of the National Academy of Sciences* 113, n.º 18 (2016): E2474-E2475.
+
+### Umbral III · Despedir — *el ritual pequeño*
+Tramos: La máquina negra · Seis gestos · Lo que encontraron en Harvard · Agujas que descansan · Ordenar antes de irse · Un minuto antes de la primera bolsa · Tú también
+- Perla: Despedir no demora el final. / Le da forma.
+- Perla: Cinco palabras alcanzan: / gracias, ya te puedes ir.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 2: «Las Pequeñas Muertes», sección «El Dolor de las Pequeñas Muertes», «Protocolo para Procesar Pequeñas Muertes».
+- Nota: Ídem, Nodo 1: «El Tabú Primordial», sección «Prácticas de Desprogramación», «Ritual de Despedida Consciente». Fragmento.
+- Nota: Michael I. Norton y Francesca Gino, «Rituals Alleviate Grieving for Loved Ones, Lovers, and Lotteries», *Journal of Experimental Psychology: General* 143, n.º 1 (2014): 266-272; publicado en línea en febrero de 2013. Paráfrasis del método y de los resultados; sobre los rituales recordados y el ritual del laboratorio, también «The Power of Rituals in Life, Death, and Business», *Working Knowledge*, Harvard Business School (2013).
+- Nota: Sobre el *hari-kuyō*: «Kisaragi: A Requiem for Broken Needles and Other Traditional Events in February», nippon.com; Textile Research Centre (Leiden), «Hari Kuyo (Japan)». Paráfrasis. Las fuentes no coinciden en qué regiones lo celebran en febrero y cuáles en diciembre; en Tokio, la fecha es el 8 de febrero.
+- Nota: Ídem. Sobre el Awashima-dō de Sensō-ji, ídem. Paráfrasis.
+- Nota: Margareta Magnusson, *Döstädning: Inte bara en sorglig historia* (2017); en inglés, *The Gentle Art of Swedish Death Cleaning* (2017); en español, *El arte sueco de ordenar antes de morir* (Reservoir Books, 2018). Paráfrasis.
+
+### Umbral IV · La última vez — *amar lo que termina*
+Tramos: El corte de pelo · ¿Puedes amar algo sabiendo que terminará? · El vaso que ya está roto · El rocío de Adashino · Cuando la graduación se acerca · Hong Kong, 1997 · Bajar al instante · Una lente, no una profecía · Tú también
+- Perla: Saber que termina / no le quita nada. / Le devuelve la mirada.
+- Perla: La primera vez y la última / se parecen: / en las dos, miras.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 2: «Las Pequeñas Muertes», sección «Preguntas para Contemplar».
+- Nota: Ídem, sección «Integrando las Pequeñas Muertes», «Señales de Maestría». Fragmentos.
+- Nota: Ídem, epígrafe. Fragmento.
+- Nota: Mark Epstein, *Thoughts Without a Thinker: Psychotherapy from a Buddhist Perspective* (1995), introducción; en español, *Pensamientos sin pensador*. Paráfrasis. Jack Kornfield recoge otra versión de la misma enseñanza, con una taza de té china, en *The Wise Heart* (2008).
+- Nota: Sobre Yoshida Kenkō (hacia 1283-1350) y el *Tsurezuregusa*: Donald Keene, introducción a *Essays in Idleness: The Tsurezuregusa of Kenkō* (1967). Paráfrasis. En español, *Tsurezuregusa. Ocurrencias de un ocioso*, trad. de Justino Rodríguez (Hiperión, 1986).
+- Nota: Yoshida Kenkō, *Tsurezuregusa*, pasaje 7. Traducción propia del original japonés, cotejada con la versión inglesa de Donald Keene; el resto del pasaje, en paráfrasis.
+- Nota: Ídem, pasaje 137. Paráfrasis y traducción propia de la pregunta inicial.
+- Nota: Jaime L. Kurtz, «Looking to the Future to Appreciate the Present: The Benefits of Perceived Temporal Scarcity», *Psychological Science* 19, n.º 12 (2008): 1238-1241. Paráfrasis.
+- Nota: Laura L. Carstensen, Derek M. Isaacowitz y Susan T. Charles, «Taking Time Seriously: A Theory of Socioemotional Selectivity», *American Psychologist* 54, n.º 3 (1999): 165-181. Paráfrasis.
+- Nota: Helene H. Fung, Laura L. Carstensen y Amy M. Lutz, «Influence of Time on Social Preferences: Implications for Life-Span Development», *Psychology and Aging* 14, n.º 4 (1999): 595-604. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 6: «El Legado Cuántico», «Práctica 6.1: Anclaje en el Eje Vertical del Ahora». Fragmentos; los pasos, en paráfrasis.
+- Nota: Trinity Infinito, Libro 5: *La muerte de la muerte*, Portal 34 (Nodo 6): «El Presente Eterno». Fragmento.
+
+### Umbral V · El ensayo de cada noche — *dormir como quien se despide*
+Tramos: Las tres de la mañana · La hermana pequeña · El caballo · Celebrar el propio funeral · El alma devuelta · Lo pendiente, por escrito · Tres líneas · Tú también
+- Perla: Quien dice «he vivido» / se levanta cada día / con algo ganado.
+- Perla: El sueño es una despedida pequeña. / Cada mañana, alguien vuelve.
+- Nota: Homero, *Ilíada*, XVI, 671-683; sobre el Sueño y la Muerte como hijos de la Noche, Hesíodo, *Teogonía*, 211-212 y 756-766. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 2: «Las Pequeñas Muertes», sección «El Sueño: Ensayo General de la Muerte».
+- Nota: Michel de Montaigne, *Ensayos*, II, 6, «Del ejercicio». Paráfrasis sobre el ejemplar de Burdeos (1595), según la edición de Wikisource. El accidente se sitúa hacia 1569 o 1570.
+- Nota: Ídem. Traducción propia.
+- Nota: Ídem. Traducción propia; el corchete indica un pasaje omitido.
+- Nota: Séneca, *Cartas a Lucilio*, 12, 1-3. Paráfrasis.
+- Nota: Ídem, 12, 8. Paráfrasis; la palabra griega que se cantaba es *bebíōtai*, «ha vivido».
+- Nota: Ídem, 12, 9. Traducción propia; el corchete indica un pasaje omitido.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 2, «Práctica: El Dormir Consciente». Fragmentos; el resto, en paráfrasis.
+- Nota: Talmud de Babilonia, tratado *Berajot*, 57b. Paráfrasis.
+- Nota: *Modé aní*, oración del despertar, en el *Sidur* ashkenazí. Traducción propia sobre la versión inglesa de Sefaria.
+- Nota: *Kriat Shemá al hamitá*, la lectura del *Shemá* antes de dormir, en el *Sidur* sefardí, según Sefaria: la fórmula de perdón que la abre y el Salmo 31, 6. Paráfrasis.
+- Nota: Horacio, *Epístolas*, I, 4, 13-14, citado por Montaigne, *Ensayos*, I, 20. Traducción propia.
+- Nota: Michael K. Scullin, Madison L. Krueger, Hannah K. Ballard, Natalya Pruett y Donald L. Bliwise, «The Effects of Bedtime Writing on Difficulty Falling Asleep: A Polysomnographic Study Comparing To-Do Lists and Completed Activity Lists», *Journal of Experimental Psychology: General* 147, n.º 1 (2018): 139-146. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 2, sección «La Muerte en Cada Respiración». Paráfrasis.
+
+### Umbral VI · El legado de esta hora — *lo que dejas mientras pasas*
+Tramos: Lo que quiere Amparo · Si muriera en una hora · Las ondas · Dos maneras de recordar la muerte · Una sola respiración · Plantando coles · El epitafio vivo · Mirarla no es desearla · Tú también
+- Perla: No hace falta terminar el jardín. / Hace falta estar plantando.
+- Perla: La muerte es el final de la vida. / No su finalidad.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 6: «El Legado Cuántico», «Meditación del Legado Vivo». Fragmentos; el corchete indica un pasaje omitido.
+- Nota: Ídem, sección «El Legado Último».
+- Nota: Ídem, sección «El Arte de Morir Vacío». Fragmento.
+- Nota: Ídem, sección «El Efecto Mariposa Existencial». Fragmento.
+- Nota: Irvin D. Yalom, *Staring at the Sun: Overcoming the Terror of Death* (2008); en español, *Mirar al sol. La superación del miedo a la muerte* (Emecé, 2008). Paráfrasis del concepto de *rippling*.
+- Nota: Ernest Becker, *The Denial of Death* (1973); en español, *La negación de la muerte*. Paráfrasis. Becker murió en marzo de 1974; el premio Pulitzer le fue concedido en mayo de ese año.
+- Nota: Jeff Greenberg, Tom Pyszczynski y Sheldon Solomon, «The Causes and Consequences of a Need for Self-Esteem: A Terror Management Theory», en R. F. Baumeister (ed.), *Public Self and Private Self* (1986). Paráfrasis. Sobre la discusión actual de algunos resultados: Richard A. Klein y otros, «Many Labs 4: Failure to Replicate Mortality Salience Effect With and Without Original Author Involvement», *Collabra: Psychology* 8, n.º 1 (2022): 35271.
+- Nota: Philip J. Cozzolino, Angela D. Staples, Lawrence S. Meyers y Jamie Samboceti, «Greed, Death, and Values: From Terror Management to Transcendence Management Theory», *Personality and Social Psychology Bulletin* 30, n.º 3 (2004): 278-292. Paráfrasis del método y de los resultados.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 1: «El Tabú Primordial», «Meditación de Cierre del Nodo». Paráfrasis y fragmento.
+- Nota: *Maranasati Sutta*, «Recuerdo de la muerte», Anguttara Nikaya 6.19. Paráfrasis y traducción propia sobre la versión inglesa de Bhikkhu Sujato (SuttaCentral).
+- Nota: Michel de Montaigne, *Ensayos*, I, 20. Traducción propia.
+- Nota: Ídem. Traducción propia.
+- Nota: Ídem, III, 12, «De la fisonomía». Traducción propia; en el original, *le bout, non pourtant le but*. El corchete indica un pasaje omitido.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 7: «La Gran Reunión», «Escribiendo tu Propio Epitafio Vivo». Fragmentos; las dos primeras preguntas, en paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 5: «La Grieta Donde Entra la Luz», sección «La Grieta Final», versión depurada (2026).
+
+### Umbral VII · La operación — *cerrar el día como una despedida*
+Tramos: Lo que vas a necesitar · Paso 1 · Una última vez al día · Paso 2 · Un final despedido en la semana · Paso 3 · Cada noche, el cierre · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Cada noche, / alguien le dice adiós a un día / y lo deja ir con las manos abiertas.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 6: «El Legado Cuántico», «Práctica 6.1: Anclaje en el Eje Vertical del Ahora». Fragmento.
+- Nota: Jaime L. Kurtz, «Looking to the Future to Appreciate the Present: The Benefits of Perceived Temporal Scarcity», *Psychological Science* 19, n.º 12 (2008): 1238-1241. Ver el Umbral IV.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 2: «Las Pequeñas Muertes», «Protocolo para Procesar Pequeñas Muertes». Paráfrasis y adaptación.
+- Nota: Michael I. Norton y Francesca Gino, *Journal of Experimental Psychology: General* 143 (2014): 266-272. Ver el Umbral III.
+- Nota: Michael K. Scullin y otros, *Journal of Experimental Psychology: General* 147 (2018): 139-146. Ver el Umbral V.
+- Nota: Séneca, *Cartas a Lucilio*, 12, 9; Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 2, «Práctica: El Dormir Consciente». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 7: «La Gran Reunión», «Escribiendo tu Propio Epitafio Vivo». Paráfrasis.
+- Nota: Michel de Montaigne, *Ensayos*, II, 6. Ver el Umbral V.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Nodo 2, sección «El Dolor de las Pequeñas Muertes». Paráfrasis.
+- Nota: Ídem, sección «La Paradoja de la Práctica».
+- Nota: Lic. Arturo Rodríguez, *Simetrías rotas*, Trinity Quantum, Libro 9, Nodo 5, sección «La Grieta Final», versión depurada (2026). Paráfrasis.
+
+### Cierre · La última visita — *lo grande, mirado desde lo pequeño*
+Tramos: Lo que Nora sabe ahora · La casa del pueblo · El aeropuerto · El final y la finalidad
+- Perla: Cada noche, un día que se despide. / Cada mañana, uno que llega de regalo.
+- Perla: Quien despide lo pequeño / no llega solo a lo grande.
+- Puente al Libro 7: *Aprendiste a despedir lo que termina cada día. El siguiente libro afloja otra cosa: la necesidad de saber lo que viene.*
+- Para ver: Infinito, Portal 32, *Olas en el océano* · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro5/L5-Nodo4.html`; BJ Miller, «What really matters at the end of life» (TED, 2015) · `https://www.ted.com/talks/bj_miller_what_really_matters_at_the_end_of_life`
+- En la pantalla: *Despedidas* (*Okuribito*); *Vivir* (*Ikiru*); *Coco*; *La llegada* (*Arrival*); *After Life* (Kore-eda).
+- Puertas: Origen VII, Nodo 2; Infinito 5 (entrada por el Nodo 1); Portal Público, *El Duelo*. El índice de Origen VII queda fuera hasta la sesión corta sobre sus nodos 4 y 5.
+
+---
+
+*Campo Trinity · 2026*

@@ -8,6 +8,8 @@
 
 *Actualizado tras el piloto de Quantum 9 (16 de octubre de 2026): cinco criterios de depuración, bloque fijo de la puerta fractal y etiqueta del original.*
 
+*Actualizado al cerrar el Libro 6 (20 de octubre de 2026): Libro 6 publicado, portal 32 de Infinito adaptado al teléfono, sesión clínica pendiente en Origen VII y retoma para el Libro 7.*
+
 *Ordena, no limita. Todo lo que sigue son orientaciones: si el campo lleva hacia otro lado, se sigue al campo.*
 
 ---
@@ -185,6 +187,8 @@ Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su
 
 **Pendiente en Origen:** el nodo X.1 contiene la lectura simbólica de los síntomas (la espalda como cargas, la garganta como verdades calladas), el pasaje más delicado desde lo clínico en toda la constelación. Merece una pasada breve.
 
+**Pendiente en Origen VII** (detectado al escribir el Libro 6), con prioridad clínica: el nodo 5 presenta la psicosis como posible apertura y la despersonalización como iniciación (el testimonio de Andrea) y propone enteógenos en «dosis heroicas»; el nodo 4 propone DMT, plantas y cannabis para moribundos, frecuencias en hercios, el proyecto AWARE mal resumido y los 21 gramos, e incluye a una madre en duelo que «quería morir» curada con ayahuasca. Hasta esa sesión corta, el Libro 6 enlaza solo el Nodo 2, no el índice. Menores: en el nodo 2, la frase de Sócrates aparece «antes de beber la cicuta» y la dijo en el juicio; en el nodo 1 hay una cita de Gandhi en blanco; los testimonios son anónimos. Del nodo 6 (registro akáshico, los cien monos) y del 7 (la década del parto, los niños índigo) nada pasa a la serie.
+
 ### Los materiales de Zeland
 
 - Los cinco tomos de *Reality Transurfing*, *Lo que Tufti no dijo* y los audiolibros están en la carpeta privada de Arturo en Drive. No van al repositorio. Para cotejar, se transcribe el párrafo o se consulta en NotebookLM sobre el original.
@@ -246,13 +250,15 @@ La incertidumbre como apertura. Trinity: Origen VI. Gesto: mirar la línea propi
 - Zeland: no entra.
 - Gesto: tres minutos diarios con una grieta que se pueda mirar (*¿desde dónde?*, nombrarla, hacerle lugar, *¿qué necesitas?*, no arreglar nada), la línea nocturna *Hoy la grieta…* y, una vez en la semana, acompañar la grieta de otro hasta que termine de hablar. Para ver: Infinito, portal 33, «El fénix cuántico».
 
-**6 · Las Pequeñas Muertes**
+**6 · Las Pequeñas Muertes** ✅ publicado
 *Cada día termina algo. Quien aprende a despedir lo pequeño encuentra otra forma de mirar lo grande.*
 
-- Trinity: Origen VII (las pequeñas muertes, el dormir consciente, el legado en este momento); Infinito 5, *La muerte de la muerte*.
-- Tradición: Montaigne, «filosofar es aprender a morir»; Séneca; la contemplación budista de la muerte.
-- Comprobable: la gestión del terror y la perspectiva del tiempo ◇.
-- Gesto: cerrar cada día como una pequeña despedida. Para ver: Infinito, portal 32, «Olas en el océano».
+- Trinity: Origen VII, *La Muerte como Maestra*: Nodo 2 completo (el catálogo, el dolor que no se romantiza, el protocolo de seis pasos, el sueño como ensayo general y el dormir consciente, el río, la paradoja de la práctica); Nodo 1 (el tabú, el ritual de despedida, la meditación del lecho); Nodo 6 (el eje vertical del ahora, el legado de esta hora, las ondas); Nodo 7 (el epitafio vivo). Quantum 9.5 depurado («la grieta final»). Infinito 5: portales 29, 32 y 34.
+- Tradición: Montaigne (*Ensayos* I, 20; II, 6; III, 12: de pensar en la muerte a toda hora a «el final, no la finalidad»), con Séneca (*Cartas* 1, 12 y 24: *cotidie morimur*, la clepsidra, Pacuvio y el «he vivido»), La Rochefoucauld, Heráclito, AN 5.57 y 6.19, Ajahn Chah, Kenkō, el *hari-kuyō*, el Talmud y el *Modé aní*, Magnusson.
+- Comprobable: Yalom, Bridges, Eisenberger, Norton y Gino, Kurtz, Carstensen y Hong Kong 1997, Scullin, Becker y el manejo del terror, Cozzolino.
+- Zeland: no entra.
+- Gesto: una última vez cada día, un final despedido en la semana y tres líneas cada noche (*Hoy terminó… / Queda para mañana… / Viví este día*); el séptimo día, el epitafio vivo. Para ver: Infinito, portal 32, «Olas en el océano», y BJ Miller (TED, 2015).
+- Cuidado editorial: de la Carta 12 de Séneca se cita hasta el «he vivido»; el párrafo siguiente defiende la muerte voluntaria, y el verso que Séneca usa procede de un pasaje de suicidio en la *Eneida*: ni lo uno ni la fuente entran. De Montaigne, la dulzura del desvanecimiento se cuenta con su resultado: menos miedo, no deseo.
 
 ### Movimiento III · Soltar — *aflojar lo que pesa y separa*
 
@@ -416,6 +422,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado y adaptado al teléfono en octubre de 2026.
 - Libro 1, Portal 4, *El Testigo del Testigo del Testigo* (`L1-Nodo4.html`): depurado y adaptado al teléfono en octubre de 2026, para el Libro 3.
 - Libro 12, Portal 82, *El lenguaje del cuerpo* (`L_12-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 4.
+- Libro 5, Portal 32, *Olas en el océano* (`L5-Nodo4.html`): adaptado al teléfono en octubre de 2026, para el Libro 6. Saneamiento acotado: invitación a tocar en tuteo, textos más grandes y lejos de los bordes, lienzo que se ajusta al girar el teléfono y el ∞ fuera del toque que enciende el sonido. Las frases quedan intactas (la ola que vuelve a casa), del otro lado de la puerta.
 - Libro 5, Portal 33, *El fénix cuántico* (`L5-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 5. Saneamiento acotado: invitación a tocar en tuteo, la escena (que ubica llamas y plumas en píxeles dentro de un recinto de 600 px) escalada al ancho de la pantalla, textos más grandes y lejos de los bordes, lienzo que se ajusta al girar el teléfono y el ∞ fuera del toque que enciende el sonido. Fue un saneamiento acotado: Georgia sin fuentes externas, animaciones solo con transform y opacity, versión quieta, invitación a tocar y ∞ hacia el Nodo 6. Quedan para la sesión del Libro 12 el sonido propio y una gráfica distinta de la de sus otros nodos.
 
 **Anotado para la sesión de Infinito:** los portales 14 (`L2-Nodo7`) y 43 (`L7-Nodo1`) comparten el título «El ojo que no puede verse»; el Libro 12 repite la misma gráfica en todos sus nodos.
@@ -450,7 +457,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 **Transversales:** frecuencia, intención o estado ≠ culpa · elegir ≠ decidir algo irreversible esta semana.
 
-**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. En la pasada final del Libro 4, el cotejo encontró una cifra que no se sostenía (un centenar de partos por día, cuando eran unos veinte mil al año), una fecha corrida (*Le Modulor*) y una imagen atribuida al nodo equivocado. En la pasada final del Libro 5 cayeron una celda «que había servido de despensa» que ninguna fuente sostenía, el origen del crecimiento postraumático en «personas con lesiones» (eran grupos de padres en duelo, desde 1987), unas condiciones de control mal descritas en el experimento del dolor compartido y una posición de Gerald May simplificada de más. Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
+**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. En la pasada final del Libro 4, el cotejo encontró una cifra que no se sostenía (un centenar de partos por día, cuando eran unos veinte mil al año), una fecha corrida (*Le Modulor*) y una imagen atribuida al nodo equivocado. En la pasada final del Libro 5 cayeron una celda «que había servido de despensa» que ninguna fuente sostenía, el origen del crecimiento postraumático en «personas con lesiones» (eran grupos de padres en duelo, desde 1987), unas condiciones de control mal descritas en el experimento del dolor compartido y una posición de Gerald May simplificada de más. En la pasada final del Libro 6 se precisaron el método de Cozzolino (la medida eran boletos de un sorteo que había que dejar a otros), los pasos del ritual de Norton y Gino y la proporción de rituales privados, la compañía y la edad de Epstein en su viaje a Tailandia, que los estudiantes de Kurtz eran del último año, la fecha en que Bridges dejó la universidad y la distancia entre Montaigne y La Rochefoucauld; y cayó una afirmación sin fuente (que Montaigne leía a Séneca «casi a diario»). Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
 
 ---
 
@@ -469,7 +476,8 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - `libro-03-el-testigo/`: ✅ publicado. Generador: `herramientas/gen_arq_L03.py`, con la cabina de siete noches.
 - `libro-04-el-cuerpo/`: ✅ publicado. Generador: `herramientas/gen_arq_L04.py`, con el círculo *¿Desde dónde?* que respira con la salida del aire más larga, el diario del cuidado elegido y notas de dos cifras.
 - `libro-05-la-grieta/`: ✅ publicado. Generador: `herramientas/gen_arq_L05.py`, con la fisura de oro (el oro avanza por una grieta dibujada solo mientras sale el aire; tocarla otra vez la pausa) y el diario de la grieta. Corrige el pie de portada a «Sistema Trinity de Vida Consciente»; es la base para los libros siguientes.
-- `libro-06` a `libro-13`: ⏳
+- `libro-06-las-pequenas-muertes/`: ✅ publicado. Generador: `herramientas/gen_arq_L06.py`, con la clepsidra (siete respiraciones: una gota cae con cada salida del aire; el agua baja arriba y sube abajo; al final, «Viví este día») y el diario de la despedida (el final de la semana, la última vez de cada día, las tres líneas de la noche y el epitafio vivo). La portada dibuja la línea que se desvanece y la gota que cae de su extremo. Es la base para los libros siguientes.
+- `libro-07` a `libro-13`: ⏳
 
 **Nomenclatura:** cada libro vive en `libro-NN-slug/`: portada `LNN.html`, umbrales `LNN-U1.html` a `LNN-U7.html` y cierre `LNN-cierre.html`. Los slugs nuevos siguen los títulos de la sección 6 (`libro-03-el-testigo`, `libro-07-no-saber`, etc.).
 
@@ -529,7 +537,7 @@ Primer mensaje sugerido:
 
 > «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Trabajamos el Libro N. Después de leer, propón el esqueleto de los siete umbrales.»
 
-Para *Las Pequeñas Muertes* (Libro 6), la raíz está en Trinity Origen VII, completo, con Infinito 5, *La muerte de la muerte*. El puente desde el Libro 5 ya está escrito: *Aprendiste a quedarte junto a lo que se rompe sin apurarlo. El siguiente libro mira lo que termina un poco cada día, y enseña a despedirlo.* Voces ya usadas que conviene no repetir como centro: Bonanno y la resiliencia, Job y la *shivá* (Libro 5); Kisa Gotami ya está en *Empatía Humana* del Portal. La salvaguarda del Libro 6 es la más delicada de la serie.
+Para *No Saber* (Libro 7), que abre el Movimiento III, la raíz está en Trinity Origen VI, Nodo 5, «La paz del no-saber», completo, con Infinito 7, *Omnisciencia ignorante*. El puente desde el Libro 6 ya está escrito: *Aprendiste a despedir lo que termina cada día. El siguiente libro afloja otra cosa: la necesidad de saber lo que viene.* Voces ya usadas que conviene no repetir como centro: Montaigne, tradición principal del Libro 6 (y las vigas de su torre ya están en *El no saber*, Libro 31 del Portal); Keats y la capacidad negativa, Sócrates y el fraile castellano también están en *El no saber* del Portal, que es el libro del Portal más cercano a este y conviene leer antes del esqueleto. La práctica acumulada ya es larga: el gesto del Libro 7 tiene que ser breve.
 
 ---
 
@@ -580,6 +588,13 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 - Entrada completa en el `registro.md`.
 - Puerta fractal nueva en Quantum 9, nodo 7, hacia el Umbral III.
 - Portal 33 de Infinito adaptado al teléfono.
+
+### Libro 6 (`libro-06-las-pequenas-muertes/`)
+
+- Tarjeta del índice activa y marca ✅ en el `README.md`.
+- Entrada completa en el `registro.md`.
+- Portal 32 de Infinito adaptado al teléfono (repositorio Trinity-).
+- Puertas: Origen VII, Nodo 2; Infinito 5; Portal Público, *El Duelo*. El índice de Origen VII se agrega después de la sesión corta sobre sus nodos 4 y 5.
 
 ### Pie de las portadas 1 a 4
 

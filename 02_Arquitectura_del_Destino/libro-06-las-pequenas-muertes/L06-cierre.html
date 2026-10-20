@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L06">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="lo grande, mirado desde lo pequeño">
+<title>La última visita · Cierre · Las Pequeñas Muertes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* la clepsidra */
+.clepsidra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.clepsidra button{appearance:none;width:100%;max-width:19rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.clepsidra button:hover{border-color:var(--border-strong)}
+.clepsidra svg{display:block;width:9.5rem;height:auto}
+.clepsidra .vaso{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1.6;stroke-linejoin:round}
+.clepsidra .agua{fill:rgba(168,196,224,.26)}
+.clepsidra .gota{fill:var(--ambar);opacity:0}
+.clepsidra .gota.cae{animation:cae 1.7s ease-in forwards}
+@keyframes cae{0%{opacity:0;transform:translateY(0)}12%{opacity:1}82%{opacity:1;transform:translateY(74px)}100%{opacity:0;transform:translateY(80px)}}
+.clepsidra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .gotap{fill:var(--ambar);opacity:0;animation:gotea 6s ease-in 3.6s infinite}
+@keyframes gotea{0%{opacity:0;transform:translateY(0)}15%{opacity:.9}70%{opacity:.9;transform:translateY(46px)}85%,100%{opacity:0;transform:translateY(52px)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .clepsidra .agua{transition:none!important}
+  .clepsidra .gota.cae{animation:none}
+  .campo-svg .gotap{animation:none;opacity:.75;transform:translateY(20px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L06.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span></div><div class="cual">Cierre</div><h1>La última visita</h1><p class="sub">lo grande, mirado desde lo pequeño</p></header><main><p>Un filósofo romano que le explicó a un amigo asustado que la muerte no llega de una vez, sino gota a gota, como se vacía una clepsidra. Un señor de Gascuña que quiso tenerla siempre en la cabeza, cayó de un caballo, la reconoció en el borde del sueño y terminó escribiendo que es el final de la vida, no su finalidad. Un maestro del bosque que levantó un vaso de agua y dijo que ya estaba roto. Un monje japonés que no quería un rocío eterno. Unas costureras que acuestan sus agujas en algo blando para que descansen. Dos investigadores que descubrieron que un ritual alivia aunque no se crea en él. Unos estudiantes y una ciudad entera que, cuando el horizonte se acercó, eligieron lo que más querían. Un gobernador que se hacía cantar su propio funeral, y un filósofo que propuso imitarlo con alegría. Un psiquiatra que vio en un estanque las ondas que deja una vida. Y una modista que cosió una última costura antes de regalar su máquina.</p>
+<p>Todos dicen lo mismo de distintas maneras: la muerte no llega de una vez. Llega un poco cada día, y cada día se puede despedir. Quien despide lo pequeño no le pierde el respeto a lo grande. Aprende a mirarlo sin darle la espalda.</p>
+<div class="perla"><p>Cada noche, un día que se despide.<br>Cada mañana, uno que llega de regalo.</p></div>
+<h2>Lo que Nora sabe ahora</h2>
+<p>Nora pasó doce años vaciando las casas de otros sin despedir nada propio. Hoy sabe cuatro cosas.</p>
+<p>Que casi todo lo que termina se va sin ceremonia, y que verlo mientras se va ya es empezar a despedirlo.</p>
+<p>Que despedir no demora el final: le da forma. Un minuto en la puerta antes de la primera bolsa, cinco palabras, una postal guardada para alguien.</p>
+<p>Que saber que algo termina no le quita nada. A ella le devolvió la nuca de su hijo, el lunar detrás de la oreja, la manera en que cierra los ojos ante la tijera.</p>
+<p>Y que el día no se cierra porque esté completo, sino porque lo que falta tiene dónde esperar. Con eso, las tres de la mañana dejaron de ser una lista interminable.</p>
+<h2>La casa del pueblo</h2>
+<p>Aquel sábado, la casa del pueblo estaba casi vacía. Héctor y Daniel habían cargado en la camioneta los muebles que cada uno quería y discutían, a medias en broma, por un reloj de pared. Nora recorrió los cuartos uno por uno. En el marco de la puerta del patio seguían las rayas de lápiz con las alturas de los tres hermanos, año por año, con las iniciales al lado. No se puede llevar un marco de puerta. Lo tocó con la mano abierta, despacio, como Amparo había tocado la funda de la máquina.</p>
+<p>Antes de irse, les pidió a sus hermanos un minuto. Los tres se quedaron de pie en la sala vacía, sin decir nada, con la luz de la tarde entrando por la ventana sin cortinas. Daniel lloró un poco. Héctor hizo un chiste y después se calló. Afuera, la higuera que su padre había plantado el año en que nació Nora movía las hojas.</p>
+<p>—Gracias —dijo Nora, en voz baja, a nadie en particular—. Ya nos podemos ir.</p>
+<p>Cerraron la puerta. Nora no se llevó nada. Esa noche, en el cuaderno, escribió: <em>Hoy terminó la casa</em>. Y después: <em>Viví este día</em>.</p>
+<h2>El aeropuerto</h2>
+<p>Dos semanas después, Julián se fue. Nora lo había ayudado a armar las cajas, como se había propuesto en su epitafio vivo, sin hacer ninguna lista. En el aeropuerto no le dio recomendaciones. Lo miró mientras él hablaba de la conexión y del frío que iba a hacer allá. Lo abrazó largo. Cuando él cruzó el control, se quedó mirando hasta que ya no se lo veía, y un rato más.</p>
+<p>La punzada estaba. Era grande. Y junto a ella estaba la misma claridad del patio, la de la tarde de la tijera: lo había visto entero. No se iba sin que ella lo hubiera despedido.</p>
+<p>Esa misma semana sonó el teléfono. Era Amparo, desde la residencia que había elegido ella misma, una casa con jardín y un piano que nadie toca. Se había mudado con una maleta pequeña, la radio y la maceta del geranio, con las agujas dormidas debajo.</p>
+<p>—Aquí hay una señora que cose pésimo —dijo—. Le estoy enseñando.</p>
+<p>Nora se rió por primera vez en días. Antes de cortar, Amparo le preguntó si iba a ir a visitarla. Nora dijo que el jueves, como siempre.</p>
+<h2>El final y la finalidad</h2>
+<p>Al final del libro anterior, el que mira había aprendido a quedarse junto a lo que se rompe sin apurarlo. Este libro miró lo que termina sin romperse: un día, una etapa, una casa, una costumbre, una tarde que no vuelve. Con él se cierra el movimiento que enseña a encarnar. Primero, el cuerpo: el lugar desde donde se mira. Después, la grieta: lo que se rompe en ese vehículo y en esa vida. Ahora, la finitud: el borde que le da forma a todo lo demás. Encarnar, al final, es aceptar que esta vida acaba, y habitarla entera mientras dura.</p>
+<p>Una vida no se libra de los finales. Ninguna. Lo que se aprende aquí no es a evitarlos, ni a apurarlos, ni a pensar en la muerte a toda hora. Es a despedir lo que termina, en el tamaño en que llega: una gota por vez. El nodo depurado de Trinity Quantum sobre la grieta lo dijo con exactitud: <em>cada pequeña grieta que se acompaña enseña algo sobre la grande. Por eso los contemplativos practican con lo pequeño: para que, cuando llegue la hora, se la pueda mirar de frente.</em></p>
+<p>Eso es lo que se gana. No una vida sin finales, sino una que los despide. No la muerte resuelta, sino mirada sin darle la espalda. Días que terminan enteros y mañanas que llegan como regalo. Una conversación posible con los que quieres, sobre lo que más importa, sin que se cierre la garganta. Y algo que Montaigne descubrió al final de su vida, después de haber querido prepararse para todo:</p>
+<div class="cita"><p class="trad">Si no sabes morir, no te preocupes: la naturaleza te lo enseñará en el momento, plena y suficientemente. Ella hará exactamente ese trabajo por ti.</p></div>
+<p>No hace falta dominar la muerte. Hace falta vivir los días, y despedirlos. Lo demás, cuando llegue, se aprende.</p>
+<div class="perla"><p>Quien despide lo pequeño<br>no llega solo a lo grande.</p></div>
+<p class="puente">Aprendiste a despedir lo que termina cada día. El siguiente libro afloja otra cosa: la necesidad de saber lo que viene.</p><h2>Para ver</h2><ul class="enlaces"><li><a href="https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro5/L5-Nodo4.html">Trinity Infinito, Libro 5, Portal 32: Olas en el océano.</a><span>Una ola que cree morir al volver al mar y descubre que vuelve a casa; mil olas, un solo océano. Es la imagen con que muchas tradiciones miran el final, convertida en contemplación. Toca la pantalla y deja que el océano resuene.</span></li><li><a href="https://www.ted.com/talks/bj_miller_what_really_matters_at_the_end_of_life">BJ Miller: Lo que realmente importa al final de la vida (TED, 2015).</a><span>Un médico de cuidados paliativos, que a los diecinueve años perdió tres miembros en un accidente, cuenta lo que aprendió en una unidad de quemados la noche en que una enfermera le llevó a escondidas una bola de nieve y él la miró derretirse en su mano. Su idea central es la de este libro: lo grande se mira mejor desde lo pequeño. Diecinueve minutos, en inglés, con subtítulos en español.</span></li></ul><h2>En la pantalla</h2><ul class="enlaces"><li><b>Despedidas</b><span>(<em>Okuribito</em>, 2008; en México, <em>Violines en el cielo</em>). Un violonchelista que pierde su trabajo termina, sin buscarlo, preparando a los muertos ante sus familias, en un ritual japonés lento y delicado. Descubre que una despedida bien hecha cambia a los que quedan. El umbral III, en cine.</span></li><li><b>Vivir</b><span>(<em>Ikiru</em>, 1952). En la película de Akira Kurosawa, un funcionario gris y postergado sabe que le queda poco tiempo y dedica sus últimos meses a conseguir una plaza para los niños de un barrio. La escena final, en un columpio bajo la nieve, es el legado de esta hora.</span></li><li><b>Coco</b><span>(2017). Un niño, una familia mexicana y el Día de Muertos: recordar a los que se fueron como parte de estar vivo. Una cultura que no le da la espalda a la muerte, contada para todas las edades.</span></li><li><b>La llegada</b><span>(<em>Arrival</em>, 2016). Una lingüista aprende a mirar el tiempo de otra manera y elige vivir una historia aun sabiendo cómo termina. La pregunta de Trinity, <em>¿puedes amar algo sabiendo que terminará?</em>, convertida en ciencia ficción.</span></li><li><b>After Life</b><span>(<em>Wandāfuru raifu</em>, 1998). En una película de Hirokazu Kore-eda, los recién muertos tienen una semana para elegir un solo recuerdo que conservarán para siempre. Lo que queda cuando todo lo demás se despide.</span></li></ul><h2>Puertas laterales</h2><ul class="enlaces"><li><a href="https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/Libro_07/nodo_02.html">Trinity Origen, Libro VII, Nodo 2: Las Pequeñas Muertes</a></li><li><a href="https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro5/L5-Nodo1.html">Trinity Infinito, Libro 5: La muerte de la muerte</a></li><li><a href="../../01_Libros/05_Duelo/index.html">Portal Público, Libro 5: El Duelo</a></li></ul><section class="notas" aria-label="Referencias"><h3>Referencias</h3><ol><li>Lic. Arturo Rodríguez, <em>La Muerte como Maestra</em>, Trinity Origen, Libro VII; <em>Simetrías rotas</em>, Trinity Quantum, Libro 9 (versión depurada, 2026); Trinity Infinito, Libro 5, <em>La muerte de la muerte</em>.</li><li>Michel de Montaigne, <em>Ensayos</em>, I, 20; II, 6; III, 12.</li><li>Séneca, <em>Cartas a Lucilio</em>, 1, 12 y 24.</li><li><em>Upajjhatthana Sutta</em>, Anguttara Nikaya 5.57, y <em>Maranasati Sutta</em>, Anguttara Nikaya 6.19.</li><li>Yoshida Kenkō, <em>Tsurezuregusa</em> (hacia 1330).</li><li>Mark Epstein, <em>Thoughts Without a Thinker</em> (1995).</li><li>François de La Rochefoucauld, <em>Máximas</em> (1678), e Irvin D. Yalom, <em>Staring at the Sun</em> (2008).</li><li>Helene H. Fung, Laura L. Carstensen y Amy M. Lutz, <em>Psychology and Aging</em> (1999).</li><li>Jaime L. Kurtz, <em>Psychological Science</em> (2008).</li><li>Michael I. Norton y Francesca Gino, <em>Journal of Experimental Psychology: General</em> (2014).</li><li>Philip J. Cozzolino y otros, <em>Personality and Social Psychology Bulletin</em> (2004).</li><li>Michael K. Scullin y otros, <em>Journal of Experimental Psychology: General</em> (2018).</li><li>William Bridges, <em>Transitions</em> (1980), y Margareta Magnusson, <em>Döstädning</em> (2017).</li><li>Las demás fuentes, en las notas de cada umbral.</li></ol></section><div class="sigue"><a href="L06-U7.html">Anterior: La operación</a><a class="prox" href="../index.html">Volver a la serie</a></div></main></div><footer class="pie">Libro 6 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
