@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L07">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="las preguntas que no se responden solas">
+<title>No saber juntos · Umbral VI · No Saber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* la nube */
+.nube{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.nube button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.nube button:hover{border-color:var(--border-strong)}
+.nube svg{display:block;width:15rem;max-width:100%;height:auto}
+.nube .cielo{fill:rgba(168,196,224,.05)}
+.nube .claro{fill:url(#claro-luz);opacity:0}
+.nube .copo{fill:#d4e4f4;stroke:none}
+.nube .mitad{transform-box:view-box;opacity:.34}
+.nube .astro{fill:var(--ambar);opacity:0}
+.nube .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .niebla{opacity:0;animation:niebla 9s ease-in-out 3.2s infinite alternate}
+@keyframes niebla{from{opacity:.38}to{opacity:.85}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .nube .mitad,.nube .claro,.nube .astro{transition:none!important}
+  .campo-svg .niebla{animation:none;opacity:.6}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L07.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span></div><div class="cual">Umbral VI</div><h1>No saber juntos</h1><p class="sub">las preguntas que no se responden solas</p></header><main><h2>El hermano</h2>
+<p>Ernesto, el hermano mayor de Gabriel, vende maquinaria agrícola y tiene respuesta para todo. Cuando Gabriel por fin le contó lo del nódulo, por teléfono, un domingo a la tarde, Ernesto arrancó como arrancaba siempre:</p>
+<p>—Seguro que no es nada. Mira, yo conozco a un señor que…</p>
+<p>Y se detuvo. Gabriel oyó del otro lado un silencio que no le conocía. Después, la voz de su hermano, más baja:</p>
+<p>—No sé qué decirte, Gabriel.</p>
+<p>Otro silencio.</p>
+<p>—Pero estoy.</p>
+<p>Gabriel tuvo que sentarse. Durante semanas había recibido respuestas: de la doctora, de internet, de la máquina, de sus compañeros, que le decían que no se preocupara. Ninguna lo había acompañado tanto como ese <em>no sé</em> de su hermano.</p>
+<p>Su padre nunca decía <em>no sé</em>. Tenía opinión sobre el clima, el fútbol, la política, la salud de los vecinos y el futuro de sus hijos, y la daba con la seguridad de quien no se equivoca. Lo querían mucho. Y alrededor de él, recordó Gabriel esa tarde, siempre había habido algo de soledad: cuesta acercarse a quien ya sabe.</p>
+<h2>Conversaciones sin saber</h2>
+<p>El nodo 5 de Trinity propone una práctica para las conversaciones que parece mínima y cambia el clima de cualquier encuentro: responder <em>no sé</em> cuando es lo honesto, no fingir certezas, hacer preguntas sin esperar respuestas, escuchar sin intentar entenderlo todo, permitir silencios sin llenarlos.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Y sugiere algunas frases para tener a mano:</p>
+<div class="cita"><p class="trad">No sé, ¿y tú?<br>Qué interesante, nunca lo había visto así.<br>Puede ser, o puede no ser.<br>Qué misterio, ¿no?<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Leídas en el papel parecen modestas. Dichas en el momento justo, le dan otra forma a una conversación. La certeza tiende a cerrar: cuando uno sabe, el otro escucha o discute. El no saber abre un lugar donde los dos pueden estar. Por eso Trinity, cuando enumera los obstáculos del camino, responde a la tentación del nihilismo, la de concluir que si nada se sabe nada importa, con dos frases:</p>
+<div class="cita"><p class="trad">Del no-saber emerge compasión natural. No saber conecta, no aísla.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<h2>La humildad que acerca</h2>
+<p>En 2017, el psicólogo Mark Leary y su equipo, en la Universidad Duke, publicaron cuatro estudios sobre lo que llamaron humildad intelectual: la disposición a reconocer que las propias creencias pueden estar equivocadas.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> Encontraron que quienes la tienen más alta son más curiosos, toleran mejor la ambigüedad y son menos dogmáticos. Y encontraron algo que importa en este umbral: juzgan menos a los demás por sus opiniones, y cuando un político cambia de postura, tienden menos a acusarlo de incoherente.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>La investigación dice a su manera lo que Trinity dice en una línea. La certeza tiende a separar a la gente en los que tienen razón y los que no. El no saber deja lugar para el otro. Trinity, al describir la paz del no-saber, le atribuye un rasgo que va en la misma dirección: no busca confirmación, no necesita que los demás estén de acuerdo.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<h2>La postura de no saber</h2>
+<p>A fines de los años ochenta, en Houston, dos terapeutas de familia, Harlene Anderson y Harold Goolishian, empezaron a describir una manera de estar en la consulta que llamaron postura de no saber.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> No era ignorancia ni falta de formación. Era una decisión: no llegar a la conversación con la respuesta puesta, no saber de antemano qué le pasa a la persona ni qué necesita, y dejarse guiar por una curiosidad genuina sobre la manera en que ella entiende su propia vida. En la fórmula que hizo conocido su trabajo, el consultante es el experto.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Lo que encontraron fue que, desde esa postura, la conversación misma empezaba a producir sentidos nuevos que ninguno de los dos traía. El terapeuta seguía sabiendo lo que sabía. Solo dejaba de ponerlo delante.</p>
+<p>Es lo que Ernesto hizo sin haber leído nada: dejó de saber por su hermano. Y en ese hueco, Gabriel pudo hablar por primera vez de lo que sentía, y no de lo que debía pensar.</p>
+<h2>Clara</h2>
+<p>Una noche de mayo, Clara dejó los exámenes a un lado y le dijo algo que llevaba semanas guardando: que ella también tenía miedo, y que no se lo había dicho para no sumarle peso. Gabriel sintió el impulso de siempre, el de tranquilizarla con una cifra, con un <em>es muy frecuente</em>, con lo que había dicho la doctora. Se contuvo.</p>
+<p>—Yo tampoco sé —le dijo—. ¿Qué es lo que más miedo te da?</p>
+<p>Ella tardó en contestar. Hablaron mucho rato, de cosas que no tenían respuesta: qué harían si el control traía otra noticia, cómo se lo contarían a Valentina, qué querían hacer si todo seguía igual. No resolvieron nada. Cuando apagaron la luz, Clara se durmió enseguida, por primera vez en semanas.</p>
+<p>Entre sus prácticas para las conversaciones, Trinity propone escuchar sin intentar entenderlo todo y permitir silencios sin llenarlos.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Gabriel no había entendido del todo el miedo de Clara, ni ella el suyo. Pero se habían hecho compañía en el mismo lugar: el de no saber.</p>
+<h2>Contratar sin preguntar</h2>
+<p>Bernie Glassman fue ingeniero aeronáutico en California, donde trabajó en proyectos de vuelos interplanetarios, antes de volverse maestro zen.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> En 1982 abrió en Yonkers, al norte de Nueva York, una panadería para dar trabajo a vecinos que no lo conseguían en otra parte. Pocos años después adoptó un método poco común, que la panadería conserva: contratar sin entrevistas, sin currículum y sin averiguar el pasado de nadie. Quien quiere trabajar deja su nombre en una lista y, cuando se libera un puesto, entra el siguiente.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup> Así encontraron empleo personas a las que ningún otro lugar contrataba.</p>
+<p>En 1996, con su esposa, Sandra Jishu Holmes, fundó una comunidad, los Zen Peacemakers, y resumió su enseñanza en tres principios. Puso primero el no saber, que para él era soltar las ideas fijas sobre uno mismo y sobre el universo. Después venían dar testimonio de la alegría y el sufrimiento del mundo, y actuar desde ahí.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> En ese orden, no saber no es el final del camino sino su comienzo: primero se sueltan las ideas fijas, después se ve, y recién entonces se actúa.</p>
+<p>Los tres principios cuelgan todavía en una pared de la panadería, y quienes la dirigen explican que el primero es el fundamento de su manera de contratar.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup> Alguien los puso a la vista para no olvidarlos, como Aurelio su versículo junto al reloj.</p>
+<p>En la panadería de Yonkers, no saber quién era cada uno fue una forma de confianza. Trinity lo dice a su manera entre los regalos con que cierra el nodo: cuando se vive desde el no-saber, cada persona es misterio, sin categorías fijas.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<h2>Lo que no es</h2>
+<p>Junto al miedo a funcionar, Trinity nombra otros tres riesgos de este camino, y conviene tenerlos a la vista para no confundirse.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>El no saber fingido: usar <em>no sé</em> para escapar de una responsabilidad, para no comprometerse, como pereza disfrazada de humildad. El antídoto del nodo: el verdadero no-saber es vibrante, no apático.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>El nihilismo: concluir que si nada es seguro, nada importa. Su antídoto ya apareció: no saber conecta.</p>
+<p>La arrogancia: sentirse superior por no saber, despreciar la ciencia o a quienes buscan respuestas. Trinity le contesta con una frase que tiene humor: el verdadero no-saber incluye no saber si el no-saber es superior.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Gabriel no dejó de confiar en la tomografía ni en la doctora Ríos. Iba a ir al control de septiembre, sin certezas pero con la cita anotada. No saber no le quitaba nada a lo que sí se sabe. Le quitaba la exigencia de saber lo que todavía no.</p>
+<h2>Las preguntas grandes</h2>
+<p>Algunas preguntas no se responden con ningún control. ¿Qué pasa después de la muerte? ¿Quién soy, más allá de lo que hago? ¿Para qué todo esto?</p>
+<p>El nodo de Trinity les dedica una sección y propone recorrerlas en distintas profundidades. Ante la pregunta por la muerte, el no-saber superficial dice: <em>nadie sabe</em>. El profundo dice otra cosa: <em>no sé qué es muerte ni qué es después</em>.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup> Ante la pregunta por uno mismo, el superficial dice <em>no sé</em>; el profundo, <em>no sé quién pregunta</em>.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup> El primero cierra la conversación. El segundo la abre.</p>
+<p>Un domingo de mayo, en la casa de su madre, Ernesto y Gabriel se quedaron solos en el patio cuando los demás ya se habían ido. Hablaron un rato del padre. Y Ernesto, el de las respuestas, le preguntó de pronto:</p>
+<p>—¿Tú crees que hay algo después?</p>
+<p>—No sé —dijo Gabriel.</p>
+<p>—Yo tampoco.</p>
+<p>Se quedaron callados, mirando el limonero viejo del fondo. Y Gabriel pensó que hacía semanas que no se sentía tan poco solo.</p>
+<p>Las preguntas grandes traen lo que este sistema llama soledad cósmica: la sensación de estar frente a lo inmenso sin nadie al lado. Pero hay algo que se olvida. No saber es la condición más compartida de la especie. No supieron los que pintaron las cuevas, ni los que miraron las estrellas desde lo alto de las pirámides, ni los padres de nadie. No sabe quien se sienta a tu lado en el autobús. Nadie que haya vivido supo. En la pregunta más grande, nadie está solo.</p>
+<p>Por eso este libro no promete responderlas. Promete algo más sencillo y más firme: no te quita la pregunta; te da un lugar desde donde hacerla sin quedarte solo.</p>
+<div class="perla"><p>No saber es lo que más compartimos<br>con todos los que vivieron.</p></div>
+<h2>Tú también</h2>
+<p>La próxima vez que alguien te cuente una preocupación, prueba no resolverla. En lugar de <em>seguro que no es nada</em> o <em>yo que tú haría tal cosa</em>, di la verdad, si es la verdad: <em>no sé</em>. Y después, si puedes: <em>pero aquí estoy</em>.</p>
+<p>O hazle una pregunta grande, de esas que no tienen respuesta, a alguien que quieres. No para resolverla. Para no saber juntos un rato.</p>
+<div class="perla"><p>La certeza habla.<br>El no saber escucha.</p></div>
+<div class="sigue"><a href="L07-U5.html">Anterior: Saber sin saber</a><a class="prox" href="L07-U7.html">Siguiente: La operación</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «Prácticas Cotidianas del No-Saber», «Práctica Interpersonal: Conversaciones sin Saber». Paráfrasis; las frases, fragmentos.</li><li id="nota-2">Ídem, sección «Obstáculos en el Camino del No-Saber». Fragmentos y paráfrasis.</li><li id="nota-3">Mark R. Leary, Kate J. Diebels, Erin K. Davisson y otros, «Cognitive and Interpersonal Features of Intellectual Humility», <em>Personality and Social Psychology Bulletin</em> 43, n.º 6 (2017): 793-813. Paráfrasis.</li><li id="nota-4">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Nodo 5, fase 4: «La Paz Inquebrantable», «Características de esta Paz». Paráfrasis.</li><li id="nota-5">Harlene Anderson y Harold Goolishian, «The Client Is the Expert: A Not-Knowing Approach to Therapy», en Sheila McNamee y Kenneth J. Gergen (eds.), <em>Therapy as Social Construction</em> (1992): 25-39. Paráfrasis.</li><li id="nota-6">Bernie Glassman, <em>Bearing Witness: A Zen Master's Lessons in Making Peace</em> (1998). Paráfrasis. Sobre su trabajo en McDonnell Douglas y la fundación de la orden: Upaya Zen Center, «Bernie Glassman, Roshi».</li><li id="nota-7">Sobre la panadería Greyston y su contratación abierta, adoptada en 1985: Leigh Buchanan, «The New York Bakery That Hires Everyone, No Questions Asked», <em>Inc.</em>; y Greyston, «Open Hiring». Paráfrasis.</li><li id="nota-8">Sobre los tres principios en la pared de Greyston y el no saber como fundamento de la contratación abierta: «Greyston Bakery», <em>Tricycle</em>. Paráfrasis.</li><li id="nota-9">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Nodo 5, sección «El Regalo Final del No-Saber». Paráfrasis.</li><li id="nota-10">Ídem, sección «El No-Saber Aplicado a Grandes Preguntas». Fragmentos.</li></ol></section></main></div><footer class="pie">Libro 7 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

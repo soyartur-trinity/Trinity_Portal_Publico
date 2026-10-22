@@ -30,7 +30,7 @@ Cada libro termina con una práctica de siete días, y cada práctica se suma a 
 
 #### Movimiento III · Soltar — *aflojar lo que pesa y separa*
 
-7. **No Saber** — El sufrimiento no viene de no saber, sino de necesitar saber.
+7. **No Saber** ✅ — El sufrimiento no viene de no saber, sino de necesitar saber.
 8. **El Peso** — Aflojar no es dejar de querer: es dejar de apretar.
 9. **El Personaje** — Quitarse un personaje no es perderse: es respirar.
 10. **La Corriente** — Salir de lo que arrastra no exige pelear: alcanza con dejar de alimentarlo.

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L07">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="una cosa pequeña sin saber">
+<title>La operación · Umbral VII · No Saber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* la nube */
+.nube{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.nube button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.nube button:hover{border-color:var(--border-strong)}
+.nube svg{display:block;width:15rem;max-width:100%;height:auto}
+.nube .cielo{fill:rgba(168,196,224,.05)}
+.nube .claro{fill:url(#claro-luz);opacity:0}
+.nube .copo{fill:#d4e4f4;stroke:none}
+.nube .mitad{transform-box:view-box;opacity:.34}
+.nube .astro{fill:var(--ambar);opacity:0}
+.nube .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .niebla{opacity:0;animation:niebla 9s ease-in-out 3.2s infinite alternate}
+@keyframes niebla{from{opacity:.38}to{opacity:.85}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .nube .mitad,.nube .claro,.nube .astro{transition:none!important}
+  .campo-svg .niebla{animation:none;opacity:.6}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L07.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span></div><div class="cual">Umbral VII</div><h1>La operación</h1><p class="sub">una cosa pequeña sin saber</p></header><main><p>Hasta aquí, cada umbral se leyó. Este se practica. Durante siete días vas a ejercitar el no saber en tamaño pequeño: una frase cuando aparece la necesidad de saber, una elección diaria sin conocer el resultado y una línea de la noche que se completa. No para dejar de buscar respuestas, sino para que la espera de una respuesta no se quede con tus días.</p>
+<p>Esta operación se suma a las de los libros anteriores. Del primero conservas la pausa: <em>estoy mirando</em>. Del segundo, los tres despertadores. Del tercero, la pregunta <em>¿quién mira?</em>, tu nombre en la tormenta y la cabina de la noche. Del cuarto, <em>¿desde dónde?</em>, el cuidado elegido y la línea para el cuerpo. Del quinto, los tres minutos con una grieta, su línea nocturna y la compañía para otro. Del sexto, una última vez, un final despedido y tres líneas antes de dormir. Aquí la práctica es corta: una frase, una elección y media línea. Si la cabina de la noche ya se alargó, quédate esta semana con lo que hoy te sirva, y con esto.</p>
+<h2>Lo que vas a necesitar</h2>
+<div class="ficha"><p><strong>Duración:</strong> siete días.</p><p><strong>Material:</strong> tus despertadores, el diario que encontrarás más abajo o una libreta, y un bolígrafo junto a la cama.</p><p><strong>Tiempo diario:</strong> unos segundos cada vez que aparezca la necesidad de saber, una elección pequeña y media línea antes de dormir. El séptimo día, diez minutos para una carta.</p></div>
+<div class="paso"><h2>Paso 1 · No sé, y está bien</h2></div>
+<p>Esta semana vas a aprender a reconocer el momento en que aparece la necesidad de saber. Tiene señales precisas: la mano que va al teléfono para ver si llegó algo; la búsqueda que repites con otras palabras; la pregunta que le haces a alguien por segunda vez; la escena del resultado que tu mente ensaya otra vez, con todos sus detalles; el pecho que se cierra un poco cuando piensas en lo que viene.</p>
+<p>Cuando notes una de esas señales, detente un momento y di, en voz baja o por dentro:</p>
+<p><em>No sé, y está bien.</em></p>
+<p>Después suelta el aire despacio, más largo de lo que entra, como aprendiste en el cuarto libro. Es el gesto que Seung Sahn enseñaba a sus alumnos: el aire que sale lleva el no sé.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Si quieres, recorre en miniatura los cuatro pasos de Trinity:<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> no empujes el miedo; deja caer los hombros, que es la forma que tiene el cuerpo de soltarse; nota qué permanece mientras tanto, la respiración, el piso, la luz; y deja que llegue lo que llegue.</p>
+<p>No está prohibido mirar el teléfono ni preguntar. Se trata de hacerlo después de la frase, no en su lugar. Muchas veces, después de decirla, la urgencia baja y la búsqueda ya no hace falta. Otras veces no baja, y también está bien: la dijiste.</p>
+<p>Es la primera semana del experimento que Trinity propone al final del nodo: notar cada vez que pretendes saber, practicar decir <em>no sé</em> con honestidad, observar la incomodidad y no intentar saber por qué.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Cuando suenen tus despertadores, agrégales esta pregunta: <em>¿estoy esperando saber algo ahora?</em> Muchas veces descubrirás que sí.</p>
+<div class="paso"><h2>Paso 2 · Una cosa pequeña sin saber</h2></div>
+<p>Cada día, elige una cosa pequeña y reversible cuyo resultado no conoces, y hazla. Es la siembra de Qohelet en tamaño diario: siembra por la mañana, porque no sabes qué va a prosperar.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Algunos ejemplos: escribirle a alguien con quien perdiste contacto, sin saber si va a contestar. Tomar otro camino para volver a casa. Aceptar una invitación a la que normalmente dirías que no. Decir tu opinión en una reunión sin saber cómo la van a recibir. Inscribirte en una clase de prueba. Preguntarle a alguien cómo está de verdad, sin saber qué te va a responder. Volver a algo que dejaste, como Gabriel volvió a nadar.</p>
+<p>Usa los pasos de Trinity en su forma más corta:<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> reconoce que no sabes cómo va a salir; elige igual; hazlo; y después no juzgues el resultado como un examen. Si salió bien, bien. Si salió mal, recuerda al viejo de la frontera: ¿quién sabe? Si no pasó nada, también sembraste.</p>
+<p>Elige cosas que puedas deshacer. Esta semana no es para decisiones grandes ni irreversibles, y nunca para decisiones sobre tu salud: esas se toman con tu equipo de salud y con la información disponible.</p>
+<div class="paso"><h2>Paso 3 · Cada noche, la línea completa</h2></div>
+<p>En la cabina de la noche, después de las líneas de los libros anteriores, escribe las tres del sexto. Esta semana, la segunda se completa:</p>
+<p><em>Hoy terminó…</em></p>
+<p><em>Queda para mañana… y no sé cómo será.</em></p>
+<p><em>Viví este día.</em></p>
+<p>La segunda línea ya le entregaba lo pendiente al día siguiente. Ahora le agrega lo único verdadero que puede decirse del mañana: no sé cómo será. No como una amenaza, sino como lo decía el viejo de la frontera: abierto. Si quieres, anota al margen la cosa pequeña que elegiste hoy sin saber.</p>
+<p>Después apaga la luz y suelta el aire despacio. Mañana está a tu espalda. Delante, el sueño.</p>
+<p>Para acompañarte al apagar la luz, toca la nube dibujada: con cada vez que sueltas el aire, se abre un poco. Son siete respiraciones. Cuando se abre la última, queda un cielo que no promete nada. Si necesitas parar, tócala otra vez.</p>
+<div class="nube" id="nube">
+  <button type="button" aria-describedby="nube-cuenta"><svg viewBox="0 0 200 120" aria-hidden="true">
+    <defs><radialGradient id="claro-luz" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#d4e4f4" stop-opacity=".55"/><stop offset=".6" stop-color="#a8c4e0" stop-opacity=".16"/><stop offset="1" stop-color="#a8c4e0" stop-opacity="0"/></radialGradient><clipPath id="marco-nube"><rect x="4" y="4" width="192" height="112" rx="10"/></clipPath></defs>
+    <rect class="cielo" x="4" y="4" width="192" height="112" rx="10"/>
+    <ellipse class="claro" cx="100" cy="62" rx="46" ry="34"/>
+    <circle class="astro" cx="100" cy="60" r="3"/>
+    <g clip-path="url(#marco-nube)">
+    <g class="mitad izq">
+      <circle class="copo" cx="56" cy="70" r="17"/><circle class="copo" cx="76" cy="56" r="23"/>
+      <circle class="copo" cx="92" cy="52" r="20"/><circle class="copo" cx="84" cy="76" r="18"/>
+    </g>
+    <g class="mitad der">
+      <circle class="copo" cx="120" cy="54" r="20"/><circle class="copo" cx="138" cy="62" r="20"/>
+      <circle class="copo" cx="154" cy="74" r="14"/><circle class="copo" cx="118" cy="76" r="17"/>
+    </g>
+    </g>
+  </svg><span class="frase">Toca la nube para empezar</span></button>
+  <div class="cuenta" id="nube-cuenta" aria-live="polite">Siete respiraciones. Con cada salida del aire, la nube se abre un poco.</div>
+</div>
+<p>El séptimo día, después de las líneas, escribe una carta. Trinity la propone al cierre del nodo y la llama <em>Carta al Misterio</em>.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> Empieza con dos palabras, <em>Querido Misterio</em>, y sigue con lo que quieras decirle a lo que no sabes: cómo te llevas con la incertidumbre, qué te asusta, qué le agradeces, qué guía le pedirías sin esperar respuesta. Fírmala como sugiere el nodo, en tus palabras: <em>quien no sabe</em>.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Trinity propone quemarla y mirar cómo se disuelve el humo. Aquí no hace falta fuego: guárdala junto al epitafio vivo del sexto libro. Léela al despertar.</p>
+<div class="diario" id="diario">
+  <details open><summary>Día 1</summary><div class="dia">
+    <label for="d1-cosa">La cosa pequeña de hoy, sin saber cómo saldrá</label><input type="text" id="d1-cosa" data-k="d1-cosa" placeholder="Escribirle a alguien, otro camino, una invitación">
+    <label class="marca"><input type="checkbox" data-k="d1-hecha"> La hice</label>
+    <div class="contador"><span class="t">Dije «no sé, y está bien»</span><button type="button" data-menos="d1-nose" aria-label="Una vez menos">−</button><output data-k="d1-nose" aria-live="polite">0</output><button type="button" data-mas="d1-nose" aria-label="Una vez más">+</button></div>
+    <label for="d1-term">Hoy terminó…</label><textarea id="d1-term" data-k="d1-term" rows="2"></textarea>
+    <label for="d1-queda">Queda para mañana… y no sé cómo será</label><textarea id="d1-queda" data-k="d1-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d1-vivi"> Viví este día</label>
+  </div></details>
+  <details><summary>Día 2</summary><div class="dia">
+    <label for="d2-cosa">La cosa pequeña de hoy, sin saber cómo saldrá</label><input type="text" id="d2-cosa" data-k="d2-cosa" placeholder="Escribirle a alguien, otro camino, una invitación">
+    <label class="marca"><input type="checkbox" data-k="d2-hecha"> La hice</label>
+    <div class="contador"><span class="t">Dije «no sé, y está bien»</span><button type="button" data-menos="d2-nose" aria-label="Una vez menos">−</button><output data-k="d2-nose" aria-live="polite">0</output><button type="button" data-mas="d2-nose" aria-label="Una vez más">+</button></div>
+    <label for="d2-term">Hoy terminó…</label><textarea id="d2-term" data-k="d2-term" rows="2"></textarea>
+    <label for="d2-queda">Queda para mañana… y no sé cómo será</label><textarea id="d2-queda" data-k="d2-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d2-vivi"> Viví este día</label>
+  </div></details>
+  <details><summary>Día 3</summary><div class="dia">
+    <label for="d3-cosa">La cosa pequeña de hoy, sin saber cómo saldrá</label><input type="text" id="d3-cosa" data-k="d3-cosa" placeholder="Escribirle a alguien, otro camino, una invitación">
+    <label class="marca"><input type="checkbox" data-k="d3-hecha"> La hice</label>
+    <div class="contador"><span class="t">Dije «no sé, y está bien»</span><button type="button" data-menos="d3-nose" aria-label="Una vez menos">−</button><output data-k="d3-nose" aria-live="polite">0</output><button type="button" data-mas="d3-nose" aria-label="Una vez más">+</button></div>
+    <label for="d3-term">Hoy terminó…</label><textarea id="d3-term" data-k="d3-term" rows="2"></textarea>
+    <label for="d3-queda">Queda para mañana… y no sé cómo será</label><textarea id="d3-queda" data-k="d3-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d3-vivi"> Viví este día</label>
+  </div></details>
+  <details><summary>Día 4</summary><div class="dia">
+    <label for="d4-cosa">La cosa pequeña de hoy, sin saber cómo saldrá</label><input type="text" id="d4-cosa" data-k="d4-cosa" placeholder="Escribirle a alguien, otro camino, una invitación">
+    <label class="marca"><input type="checkbox" data-k="d4-hecha"> La hice</label>
+    <div class="contador"><span class="t">Dije «no sé, y está bien»</span><button type="button" data-menos="d4-nose" aria-label="Una vez menos">−</button><output data-k="d4-nose" aria-live="polite">0</output><button type="button" data-mas="d4-nose" aria-label="Una vez más">+</button></div>
+    <label for="d4-term">Hoy terminó…</label><textarea id="d4-term" data-k="d4-term" rows="2"></textarea>
+    <label for="d4-queda">Queda para mañana… y no sé cómo será</label><textarea id="d4-queda" data-k="d4-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d4-vivi"> Viví este día</label>
+  </div></details>
+  <details><summary>Día 5</summary><div class="dia">
+    <label for="d5-cosa">La cosa pequeña de hoy, sin saber cómo saldrá</label><input type="text" id="d5-cosa" data-k="d5-cosa" placeholder="Escribirle a alguien, otro camino, una invitación">
+    <label class="marca"><input type="checkbox" data-k="d5-hecha"> La hice</label>
+    <div class="contador"><span class="t">Dije «no sé, y está bien»</span><button type="button" data-menos="d5-nose" aria-label="Una vez menos">−</button><output data-k="d5-nose" aria-live="polite">0</output><button type="button" data-mas="d5-nose" aria-label="Una vez más">+</button></div>
+    <label for="d5-term">Hoy terminó…</label><textarea id="d5-term" data-k="d5-term" rows="2"></textarea>
+    <label for="d5-queda">Queda para mañana… y no sé cómo será</label><textarea id="d5-queda" data-k="d5-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d5-vivi"> Viví este día</label>
+  </div></details>
+  <details><summary>Día 6</summary><div class="dia">
+    <label for="d6-cosa">La cosa pequeña de hoy, sin saber cómo saldrá</label><input type="text" id="d6-cosa" data-k="d6-cosa" placeholder="Escribirle a alguien, otro camino, una invitación">
+    <label class="marca"><input type="checkbox" data-k="d6-hecha"> La hice</label>
+    <div class="contador"><span class="t">Dije «no sé, y está bien»</span><button type="button" data-menos="d6-nose" aria-label="Una vez menos">−</button><output data-k="d6-nose" aria-live="polite">0</output><button type="button" data-mas="d6-nose" aria-label="Una vez más">+</button></div>
+    <label for="d6-term">Hoy terminó…</label><textarea id="d6-term" data-k="d6-term" rows="2"></textarea>
+    <label for="d6-queda">Queda para mañana… y no sé cómo será</label><textarea id="d6-queda" data-k="d6-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d6-vivi"> Viví este día</label>
+  </div></details>
+  <details><summary>Día 7</summary><div class="dia">
+    <label for="d7-cosa">La cosa pequeña de hoy, sin saber cómo saldrá</label><input type="text" id="d7-cosa" data-k="d7-cosa" placeholder="Escribirle a alguien, otro camino, una invitación">
+    <label class="marca"><input type="checkbox" data-k="d7-hecha"> La hice</label>
+    <div class="contador"><span class="t">Dije «no sé, y está bien»</span><button type="button" data-menos="d7-nose" aria-label="Una vez menos">−</button><output data-k="d7-nose" aria-live="polite">0</output><button type="button" data-mas="d7-nose" aria-label="Una vez más">+</button></div>
+    <label for="d7-term">Hoy terminó…</label><textarea id="d7-term" data-k="d7-term" rows="2"></textarea>
+    <label for="d7-queda">Queda para mañana… y no sé cómo será</label><textarea id="d7-queda" data-k="d7-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d7-vivi"> Viví este día</label>
+  </div></details>
+  <label class="rotulo" for="carta" style="margin-top:1.2rem">Mi carta al misterio, el séptimo día</label>
+  <textarea id="carta" data-k="carta" rows="5" placeholder="Querido Misterio…"></textarea>
+  <div class="acciones"><button type="button" id="copiar">Copiar mis notas</button><button type="button" id="borrar">Borrar mis notas</button></div>
+  <p class="estado" id="estado" aria-live="polite">Lo que escribes se guarda solo en este dispositivo. Nadie más lo ve.</p>
+</div>
+<h2>Lo que puede pasar</h2>
+<p>Los primeros días, la frase puede sonar falsa, y el teléfono puede ganar casi siempre. A Gabriel le pasó. Dila igual. No hace falta creerla para que trabaje: alcanza con decirla antes de la búsqueda.</p>
+<p>Muchas personas se sorprenden de cuántas veces al día aparece la necesidad de saber: el clima, el mensaje que no llega, la cara de alguien, una cifra, el resultado de un partido, lo que va a decir el jefe. Ese descubrimiento ya es la práctica.</p>
+<p>La paz, cuando llega, a veces dura un minuto y se va. Trinity lo anticipa: incluso esta paz puede irse, y eso también está bien.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> No se trata de conservarla, sino de saber volver.</p>
+<p>Algunas cosas pequeñas van a salir mal. La persona no contesta, el camino nuevo era más largo, la opinión no cayó bien. Forma parte. Qohelet no prometía que toda semilla prosperara: decía que, como no sabes cuál, siembres.</p>
+<p>Y algunas personas notan, hacia el final de la semana, que tienen más curiosidad, que escuchan mejor, que se duermen un poco antes, o que una espera grande se volvió más liviana sin haber recibido ninguna noticia.</p>
+<section class="cuidado"><h2>Cuándo no hacer esta práctica</h2>
+<p>Aprender a no saber es una manera de vivir mejor con lo incierto, no de alejarse de lo que se sabe. Por eso:</p>
+<p><strong>No saber no es descuidarse.</strong> Si esperas un resultado médico o estás en tratamiento, los controles y las decisiones se siguen con tu equipo de salud. Esta práctica acompaña la espera; nunca reemplaza el cuidado.</p>
+<p><strong>Si la duda se vuelve obligación.</strong> Si te obliga a comprobar una y otra vez lo que ya comprobaste, a pedir confirmación sin descanso, o si la preocupación ocupa buena parte de tus días, deja el paso 1 y consulta: eso tiene tratamiento, y responde bien.</p>
+<p><strong>Si nada parece real.</strong> Si al practicar aparece la sensación persistente de que las cosas no son del todo reales, o de estar mirándote desde afuera, detén la práctica y consúltalo. No es una profundidad mayor: es una señal de que necesitas compañía profesional.</p>
+<p><strong>Sin decisiones irreversibles.</strong> Las cosas pequeñas de esta semana se pueden deshacer. Lo grande se decide con tiempo, con información y con otros.</p>
+<p><strong>Sin culpa.</strong> Que te cueste la incertidumbre no es un defecto. Es una alarma antigua, la misma que en el experimento de las serpientes ayudaba a predecir mejor. Las circunstancias de nadie son culpa de su estado interior. Si un día no hiciste nada de esto, ese día también queda a tu espalda.</p>
+<p><strong>Si la tristeza dura.</strong> Si la espera trae semanas de tristeza, con el sueño, el apetito o el interés apagados, consulta. La depresión se trata.</p>
+<p>Y como en los libros anteriores: si en algún momento aparece una desesperación profunda o la idea de no querer estar, detén la práctica y busca ayuda profesional esta misma semana. Si la idea es intensa, hoy mismo.</p>
+</section><div class="perla"><p>Cada noche,<br>alguien deja el mañana a su espalda<br>y se duerme sin saber.</p></div>
+<div class="sigue"><a href="L07-U6.html">Anterior: No saber juntos</a><a class="prox" href="L07-cierre.html">Siguiente: Septiembre</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Stanley Lombardo, <em>Lion's Roar</em> (2005). Ver el Umbral IV.</li><li id="nota-2">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», «Protocolo NADA» y «Experimento de 30 Días: Inmersión en el No-Saber», semana 1. Paráfrasis y adaptación.</li><li id="nota-3">Eclesiastés 11, 6. Ver el Umbral V.</li><li id="nota-4">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Nodo 5, «Práctica Decisional: Elegir sin Saber». Paráfrasis y adaptación.</li><li id="nota-5">Ídem, «Práctica de Cierre: Carta al Misterio». Paráfrasis; la firma, adaptada.</li><li id="nota-6">Ídem, fase 4, «Características de esta Paz». Ver el Umbral IV.</li></ol></section></main></div><footer class="pie">Libro 7 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer><script>
+(function(){
+  var n=document.getElementById('nube'); if(n){
+    var b=n.querySelector('button'), izq=n.querySelector('.mitad.izq'), der=n.querySelector('.mitad.der'), claro=n.querySelector('.claro'), astro=n.querySelector('.astro'), fr=n.querySelector('.frase'), cu=document.getElementById('nube-cuenta');
+    var red=window.matchMedia('(prefers-reduced-motion: reduce)').matches, CICLOS=7, k=0, estado='quieto', timers=[];
+    function limpiar(){ timers.forEach(function(x){ clearTimeout(x); }); timers=[]; }
+    function abre(m,anim){ var d=(anim&&!red)?'6s':'0s'; [izq,der,claro,astro].forEach(function(e){ e.style.transition='transform '+d+' ease-in-out, opacity '+d+' ease-in-out'; });
+      var f=m/CICLOS; izq.style.transform='translateX('+(-f*34)+'px)'; der.style.transform='translateX('+(f*34)+'px)';
+      izq.style.opacity=der.style.opacity=String(0.34*(1-f*0.6)); claro.style.opacity=String(f*0.95); astro.style.opacity=String(f>=1?0.9:0); }
+    function fin(){ limpiar(); estado='fin'; abre(CICLOS,false); fr.textContent='No sé, y está bien.'; cu.textContent='Un cielo que no promete nada. Que descanses.'; }
+    function ciclo(){
+      if(k>=CICLOS){ fin(); return; }
+      fr.textContent='Toma aire…'; cu.textContent='Respiración '+(k+1)+' de '+CICLOS+'.';
+      timers.push(setTimeout(function(){
+        fr.textContent='Suelta el aire despacio…';
+        k++; abre(k,true);
+        timers.push(setTimeout(ciclo,6000));
+      },4000));
+    }
+    b.addEventListener('click',function(){
+      if(estado==='corre'){ limpiar(); estado='pausa'; abre(k,false); fr.textContent='En pausa'; cu.textContent='Toca otra vez para seguir. La nube espera.'; return; }
+      if(estado==='quieto'||estado==='fin'){ k=0; abre(0,false); void izq.getBoundingClientRect(); }
+      estado='corre'; ciclo();
+    });
+  }
+  var K='arq-'+document.documentElement.getAttribute('data-libro')+'-nosaber-v1', d={};
+  try{ d=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){ d={}; }
+  function guardar(){ try{ localStorage.setItem(K,JSON.stringify(d)); }catch(e){} }
+  var campos=document.querySelectorAll('#diario [data-k]');
+  campos.forEach(function(el){
+    var k=el.getAttribute('data-k');
+    if(el.tagName==='OUTPUT'){ el.textContent=String(d[k]||0); }
+    else if(el.type==='checkbox'){ if(d[k]){ el.checked=true; } el.addEventListener('change',function(){ d[k]=el.checked; guardar(); }); }
+    else { if(d[k]){ el.value=d[k]; } el.addEventListener('input',function(){ d[k]=el.value; guardar(); }); }
+  });
+  function cuenta(k,delta){ var v=Math.max(0,(d[k]||0)+delta); d[k]=v; guardar(); var o=document.querySelector('#diario output[data-k="'+k+'"]'); if(o){ o.textContent=String(v); } }
+  document.querySelectorAll('#diario [data-mas]').forEach(function(x){ x.addEventListener('click',function(){ cuenta(x.getAttribute('data-mas'),1); }); });
+  document.querySelectorAll('#diario [data-menos]').forEach(function(x){ x.addEventListener('click',function(){ cuenta(x.getAttribute('data-menos'),-1); }); });
+  var est=document.getElementById('estado');
+  var cp=document.getElementById('copiar'); if(cp){ cp.addEventListener('click',function(){
+    var txt=[];
+    for(var i=1;i<=7;i++){ var c=d['d'+i+'-cosa']||'', hc=d['d'+i+'-hecha'], ns=d['d'+i+'-nose']||0, h=d['d'+i+'-term']||'', q=d['d'+i+'-queda']||'', v=d['d'+i+'-vivi'];
+      if(c||hc||ns||h||q||v){ txt.push('Día '+i+(c?'\nLa cosa pequeña: '+c+(hc?' (hecha)':''):'')+(ns?'\nDije «no sé, y está bien»: '+ns+(ns===1?' vez':' veces'):'')+(h?'\nHoy terminó '+h:'')+(q?'\nQueda para mañana '+q+'… y no sé cómo será.':'')+(v?'\nViví este día.':'')); } }
+    if(d['carta']){ txt.push('Mi carta al misterio:\n'+d['carta']); }
+    var s=txt.join('\n\n')||'Todavía no escribiste nada.';
+    if(navigator.clipboard){ navigator.clipboard.writeText(s).then(function(){ est.textContent='Notas copiadas.'; },function(){ est.textContent='No se pudieron copiar. Selecciona el texto a mano.'; }); }
+    else { est.textContent='Este navegador no permite copiar automáticamente.'; }
+  }); }
+  var br=document.getElementById('borrar'); if(br){ br.addEventListener('click',function(){
+    if(!confirm('¿Borrar las notas de esta semana? No se pueden recuperar.')){ return; }
+    d={}; guardar(); campos.forEach(function(el){ if(el.tagName==='OUTPUT'){ el.textContent='0'; } else if(el.type==='checkbox'){ el.checked=false; } else { el.value=''; } }); est.textContent='Notas borradas.';
+  }); }
+})();
+</script>
+</body>
+</html>

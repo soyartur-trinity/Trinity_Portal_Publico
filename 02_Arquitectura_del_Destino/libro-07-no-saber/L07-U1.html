@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L07">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="la última adicción">
+<title>Probablemente · Umbral I · No Saber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* la nube */
+.nube{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.nube button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.nube button:hover{border-color:var(--border-strong)}
+.nube svg{display:block;width:15rem;max-width:100%;height:auto}
+.nube .cielo{fill:rgba(168,196,224,.05)}
+.nube .claro{fill:url(#claro-luz);opacity:0}
+.nube .copo{fill:#d4e4f4;stroke:none}
+.nube .mitad{transform-box:view-box;opacity:.34}
+.nube .astro{fill:var(--ambar);opacity:0}
+.nube .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .niebla{opacity:0;animation:niebla 9s ease-in-out 3.2s infinite alternate}
+@keyframes niebla{from{opacity:.38}to{opacity:.85}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .nube .mitad,.nube .claro,.nube .astro{transition:none!important}
+  .campo-svg .niebla{animation:none;opacity:.6}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L07.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral I</div><h1>Probablemente</h1><p class="sub">la última adicción</p></header><main><h2>Setenta por ciento</h2>
+<p>A las siete y diez, como cada mañana desde hace veinticinco años, Gabriel se acercó al micrófono del pequeño estudio que la radio de la ciudad tiene dentro del servicio meteorológico. Detrás del vidrio, el operador le hizo la seña.</p>
+<p>—Buenos días. Para hoy, cielo cubierto con mejoras hacia la tarde. Para mañana, probabilidad de lluvia del setenta por ciento. Si tienen que salir temprano, lleven paraguas.</p>
+<p>Gabriel tiene cincuenta y tres años y es meteorólogo. Le gusta esa frase. Se la enseñó Aurelio, su primer jefe, el día en que él, recién llegado, anunció al aire que iba a llover y no llovió. «Nosotros no decimos que va a llover», le explicó Aurelio después, sin enojo. «Decimos cuánto.» Desde entonces Gabriel dice cuánto. Lo dice con calma, con una voz que media ciudad reconoce, y casi nadie le reprocha nada cuando se cumple el treinta por ciento restante.</p>
+<p>Ese mes había tenido una gripe fuerte y una tos que no terminaba de irse. La médica le pidió una radiografía y después, para estar segura, una tomografía. La tos se fue. En la tomografía quedó otra cosa.</p>
+<p>Era un martes de marzo. A las once, el informe llegó al teléfono: <em>Nódulo sólido de seis milímetros en el lóbulo inferior derecho. Probablemente benigno. Se sugiere control tomográfico en seis meses.</em></p>
+<p>Lo leyó de pie, en el pasillo, junto a la ventana que da a la terraza de los instrumentos. Lo volvió a leer. A la cuarta vez ya no leía el informe: leía una sola palabra.</p>
+<p>Por la tarde habló con la neumonóloga, la doctora Ríos, que le explicó despacio lo que él ya había entendido: que estos nódulos son muy frecuentes, que la enorme mayoría no son nada, que lo correcto es mirarlo de nuevo en seis meses para ver si cambia.</p>
+<p>—¿La enorme mayoría es cuánto? —preguntó Gabriel.</p>
+<p>Hubo un silencio corto del otro lado.</p>
+<p>—No te voy a dar un número —dijo ella—. Te voy a dar una fecha.</p>
+<h2>¿Llueve o no?</h2>
+<p>Esa noche, mientras Clara, su mujer, corregía exámenes en la mesa del comedor, Valentina, la hija de los dos, de quince años, le preguntó a Gabriel si al día siguiente iba a llover. Quería ir caminando al colegio con sus amigas y no tenía ganas de cargar el impermeable.</p>
+<p>—Setenta por ciento —dijo él.</p>
+<p>—Papá, no te pregunté eso. ¿Llueve o no llueve?</p>
+<p>Era una discusión vieja entre ellos, y siempre terminaba igual: él se reía, ella ponía los ojos en blanco y llevaba el impermeable por las dudas. Esa noche Gabriel no se rió. Se quedó mirándola, porque de pronto entendió la pregunta. Era la misma que él llevaba todo el día haciéndole a su propio cuerpo. No quería un setenta, ni un noventa y ocho. Quería un sí o un no.</p>
+<p>El hombre que cada mañana reparte probabilidades acababa de recibir una, y no la podía sostener.</p>
+<h2>La última adicción</h2>
+<p><em>El Vacío Fértil</em>, el sexto libro de Trinity Origen, recorre un territorio que asusta: el de lo que queda cuando se suelta lo conocido. En su quinto nodo, «La paz del no-saber», llega a un punto en que el lector, después de haber atravesado pérdidas y abismos, podría creer que ya soltó todo. El nodo le advierte que no:</p>
+<div class="cita"><p class="trad">Queda una adicción más sutil y persistente que todas las anteriores: la adicción a la certeza, la compulsión de entender, la necesidad de saber.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Trinity no la presenta como un defecto. La presenta como lo que nos hizo humanos:</p>
+<div class="cita"><p class="trad">Esta es la adicción primordial del homo sapiens - el "hombre que sabe". Es la que nos distinguió de otros primates, la que construyó civilizaciones, la que nos llevó a la luna.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Saber qué animal se acerca, en qué estación conviene sembrar, cuánto tarda en cerrar una herida: la necesidad de saber le dio a la especie casi todo lo que tiene. El servicio meteorológico donde trabaja Gabriel es uno de sus frutos. Nadie en su sano juicio querría renunciar a ella.</p>
+<p>El problema aparece cuando esa necesidad pide certeza donde todavía no la hay. Cuando no se conforma con lo mucho que se conoce y exige lo que aún no puede conocerse: si el nódulo va a cambiar, si la persona va a volver, si el trabajo va a seguir, si el hijo va a estar bien. Ahí deja de ser una herramienta y se vuelve lo que Trinity llama una adicción: algo que se busca una y otra vez, que alivia por un rato y que pide más.</p>
+<p>El nodo distingue con cuidado ese no-saber de la ignorancia. La ignorancia, escribe, es no saber y no saber que no sabes.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> El no-saber consciente es otra cosa: la comprensión vivida de que todo conocimiento es provisional, toda certeza es una construcción, todo entendimiento es parcial, toda respuesta genera más preguntas, y el misterio es la naturaleza última de la existencia.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Gabriel conocía esa lista de memoria, aunque nunca la hubiera leído. Cualquier meteorólogo la conoce. Los modelos con que trabaja se corrigen varias veces al día, cada vez que llegan datos nuevos; el pronóstico de hoy desmiente en parte el de ayer, y nadie lo vive como un fracaso: así se conoce algo vivo. Lo que Gabriel sabía hacer con la atmósfera no sabía hacerlo con su propio pecho.</p>
+<p>Trinity lo resume en una línea, antes de enumerar de dónde viene ese sufrimiento: no viene de no saber.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> Viene de necesitarlo. Y propone una imagen para lo que podría venir después del <em>homo sapiens</em>, el hombre que sabe: un <em>homo mysticus</em>, «el hombre que celebra el misterio».<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> No es alguien que renuncia a saber. Es alguien que sabe todo lo que puede y que, donde el saber termina, no se desespera: se queda.</p>
+<div class="perla"><p>El sufrimiento no viene de no saber.<br>Viene de necesitar saber.</p></div>
+<h2>Una palabra elástica</h2>
+<p>En marzo de 1951, los analistas de inteligencia de Estados Unidos escribieron en un informe que un ataque soviético contra Yugoslavia, ese mismo año, debía considerarse una «posibilidad seria». Pocos días después, un alto funcionario del Departamento de Estado le preguntó al historiador Sherman Kent, que había trabajado en esa estimación, qué probabilidades habían querido expresar con esas dos palabras. Kent, pesimista, pensaba en algo así como sesenta y cinco contra treinta y cinco a favor del ataque. El funcionario lo había leído como algo mucho menos probable. Inquieto, Kent les hizo la misma pregunta, uno por uno, a los colegas que habían firmado el informe con él. Las respuestas fueron desde veinte contra ochenta hasta ochenta contra veinte.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> Los mismos que habían escrito la frase no coincidían en lo que significaba.</p>
+<p>Kent propuso después una tabla que uniera cada expresión con un rango de números, y la comunidad de inteligencia tardó décadas en tomarle la palabra.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> Expresiones como <em>probable</em>, <em>posible</em> o <em>casi seguro</em> son elásticas: cada uno las estira según lo que teme o lo que desea.</p>
+<p><em>Probablemente benigno</em> quería decir, para la doctora Ríos, casi con seguridad nada. Para Gabriel, a las dos de la mañana, quería decir otra cosa: que había una puerta entreabierta. La palabra era la misma. Lo que cambiaba era quién la escuchaba.</p>
+<h2>Piedras y serpientes</h2>
+<p>En 2016, un equipo del University College London quiso medir algo que todos conocemos de memoria: cuánto pesa no saber. El neurocientífico Archy de Berker y sus colegas invitaron a cuarenta y cinco voluntarios a un juego de computadora. En la pantalla había piedras. Debajo de algunas se escondía una serpiente. Los jugadores tenían que adivinar, piedra por piedra, si la habría, y cada vez que aparecía recibían en la mano una descarga eléctrica leve, molesta pero inofensiva.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p>
+<p>Las probabilidades cambiaban a lo largo del juego, de modo que había momentos en que la serpiente era casi segura, otros en que casi no había riesgo y otros en que daba lo mismo apostar a una cosa o a la otra. Mientras tanto, los investigadores medían el estrés de cada jugador por el sudor de la piel, por la dilatación de las pupilas y por lo que cada uno decía sentir.</p>
+<p>El resultado cabe en una línea. Lo que más estresaba no era la descarga segura: era la duda. Cuando la probabilidad rondaba el cincuenta por ciento, el estrés llegaba a su punto más alto; cuando la serpiente era segura, o era seguro que no había, bajaba.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Saber que va a doler pesaba menos que no saber si iba a doler.</p>
+<p>El estudio dejó además un detalle que conviene guardar. Los jugadores cuyo estrés seguía más de cerca la incertidumbre fueron los que mejor adivinaron dónde estaban las serpientes.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup> La alarma ante lo desconocido no es un error del cuerpo. Es un instrumento antiguo, que mantuvo viva a la especie entre piedras con serpientes. A veces, sencillamente, se dispara de más y no se apaga.</p>
+<p>Por eso la angustia de Gabriel no habla mal de él. No es debilidad ni falta de fe ni exceso de imaginación. Es la mente de la especie haciendo lo que sabe hacer, en un lugar donde eso no sirve: frente a una pregunta que no tiene respuesta hasta septiembre.</p>
+<h2>El tercer movimiento</h2>
+<p>Los dos primeros movimientos de este sistema enseñaron a despertar dentro de la propia vida y a habitarla en un cuerpo que se rompe y que termina. El tercero empieza aquí, y su verbo es soltar. No soltar la vida ni lo que se ama: soltar lo que pesa de más. Y lo primero que pesa, antes que la importancia, el personaje o la corriente que arrastra, es esto: la exigencia de conocer ya lo que todavía no puede conocerse.</p>
+<p>Gabriel no va a perder la pregunta en estas páginas. Tampoco va a encontrar la respuesta, que nadie tiene. Lo vamos a acompañar seis meses mientras aprende algo que, sin darse cuenta, practica desde hace veinticinco años en su trabajo: estar en paz con un setenta por ciento.</p>
+<div class="perla"><p>Lo que pesa no es la noticia.<br>Es la espera de la noticia.</p></div>
+<h2>Tú también</h2>
+<p>Piensa en algo que hoy estás esperando saber. Un resultado, la respuesta a un mensaje, la decisión de otra persona, lo que va a pasar con un trabajo o con alguien que quieres. No hace falta que sea grave.</p>
+<p>Fíjate dónde vive esa espera en tu cuerpo: en el pecho, en el estómago, en las manos que buscan el teléfono. Fíjate cuántas veces hoy fuiste a ver si había novedades.</p>
+<p>No hagas nada con eso todavía. Por ahora alcanza con notarlo, y con notar algo más: que lo que pesa no es lo que ignoras, sino la urgencia de saberlo.</p>
+<div class="sigue"><a href="L07.html">Anterior: Portada</a><a class="prox" href="L07-U2.html">Siguiente: Las cinco espinas</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «La Última Adicción: La Necesidad de Saber». Fragmento.</li><li id="nota-2">Ídem.</li><li id="nota-3">Ídem, sección «Anatomía del No-Saber». Fragmento y paráfrasis.</li><li id="nota-4">Ídem, sección «La Tortura del Casi-Saber». Paráfrasis.</li><li id="nota-5">Sherman Kent, «Words of Estimative Probability», <em>Studies in Intelligence</em> 8, n.º 4 (1964): 49-65, sobre la Estimación Nacional de Inteligencia NIE 29-51, «Probability of an Invasion of Yugoslavia in 1951» (marzo de 1951). Paráfrasis.</li><li id="nota-6">Archy O. de Berker, Robb B. Rutledge, Christoph Mathys, Louise Marshall, Gemma F. Cross, Raymond J. Dolan y Sven Bestmann, «Computations of Uncertainty Mediate Acute Stress Responses in Humans», <em>Nature Communications</em> 7 (2016): 10996. Paráfrasis del método y de los resultados.</li><li id="nota-7">Ídem; University College London, «Uncertainty can cause more stress than inevitable pain» (29 de marzo de 2016). Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 7 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

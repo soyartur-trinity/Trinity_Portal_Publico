@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L07">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="el que mira las nubes">
+<title>Saber sin saber · Umbral V · No Saber</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* la nube */
+.nube{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.nube button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.nube button:hover{border-color:var(--border-strong)}
+.nube svg{display:block;width:15rem;max-width:100%;height:auto}
+.nube .cielo{fill:rgba(168,196,224,.05)}
+.nube .claro{fill:url(#claro-luz);opacity:0}
+.nube .copo{fill:#d4e4f4;stroke:none}
+.nube .mitad{transform-box:view-box;opacity:.34}
+.nube .astro{fill:var(--ambar);opacity:0}
+.nube .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .niebla{opacity:0;animation:niebla 9s ease-in-out 3.2s infinite alternate}
+@keyframes niebla{from{opacity:.38}to{opacity:.85}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .nube .mitad,.nube .claro,.nube .astro{transition:none!important}
+  .campo-svg .niebla{animation:none;opacity:.6}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L07.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span></div><div class="cual">Umbral V</div><h1>Saber sin saber</h1><p class="sub">el que mira las nubes</p></header><main><h2>El abanico</h2>
+<p>Los lunes a las diez, el servicio se reúne a discutir la semana. En la pantalla grande de la sala de mapas, Irene proyectó el pronóstico por conjuntos: cincuenta y una versiones del mismo modelo, que arrancan casi idénticas, con diferencias mínimas en el estado inicial de la atmósfera, y que se van separando con los días.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Durante los tres primeros, las líneas viajaban juntas, como un manojo de hilos. Hacia el quinto se abrían en abanico: en algunas versiones llegaba un frente frío; en otras, se quedaba al sur.</p>
+<p>—¿Y qué digo el jueves? —preguntó Irene, que esa semana empezaba a salir al aire.</p>
+<p>Gabriel se escuchó contestar lo que Aurelio le había dicho a él veinticinco años antes.</p>
+<p>—Lo que hay. Cuando el abanico está cerrado, dices probable. Cuando se abre, dices posible. Y nunca inventas el que no está.</p>
+<p>Irene tomó nota. Gabriel se quedó mirando el abanico. Hacía un cuarto de siglo que hacía exactamente eso: decidir bien sin saber. Ninguna mañana de su vida laboral había sabido si iba a llover. Y había hecho su trabajo, lo había hecho bien y, en general, había sido feliz haciéndolo.</p>
+<h2>Los mejor calibrados</h2>
+<p>En 1977, los estadísticos Allan Murphy y Robert Winkler publicaron un estudio sobre los pronósticos de probabilidad de lluvia y de temperatura que hacían los meteorólogos de Estados Unidos.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> Querían saber si esos números eran confiables: si, cuando un pronosticador decía treinta por ciento, llovía más o menos tres de cada diez veces. La respuesta fue que sí. Los meteorólogos estaban notablemente bien calibrados.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Puede parecer poco, y no lo es. Cuando se les pide a las personas, incluidos muchos especialistas, que acompañen sus juicios con una probabilidad, lo habitual es el exceso de confianza: dicen noventa donde aciertan setenta.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> Los pronosticadores del tiempo son una excepción famosa, y la razón parece sencilla: cada día dicen un número y al día siguiente el cielo les contesta. Aprendieron, a fuerza de práctica, a ponerle una medida honesta a lo que no saben.</p>
+<h2>El erizo y el zorro</h2>
+<p>Hay un verso del poeta griego Arquíloco que el filósofo Isaiah Berlin hizo famoso en el siglo XX: el zorro sabe muchas cosas; el erizo, una sola y grande.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>El psicólogo Philip Tetlock lo usó para nombrar lo que encontró en uno de los estudios más largos sobre el juicio de los expertos. Durante casi dos décadas reunió predicciones de cientos de especialistas en política y economía, y las comparó con lo que efectivamente ocurrió.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> En promedio, acertaron poco más de lo que habría acertado el azar. Pero había diferencias. Los erizos, los que explicaban el mundo con una sola gran idea y la defendían con seguridad, predecían peor. Los zorros, que dudaban, combinaban miradas, corregían sus estimaciones y decían con frecuencia <em>no estoy seguro</em>, predecían mejor.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Años más tarde, Tetlock y la psicóloga Barbara Mellers organizaron un torneo de pronósticos abierto a voluntarios. Algunos de los que mejor predijeron no eran especialistas sino personas curiosas que pensaban en probabilidades, revisaban sus ideas cuando aparecía un dato nuevo y no se casaban con ninguna.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Tetlock los llamó superpronosticadores. Lo que tenían en común no era saber más. Era saber no saber.</p>
+<h2>Saber no-sabiendo</h2>
+<p>Trinity dedica una sección del nodo a esta paradoja, y la titula con una fórmula que parece un juego de palabras y es una instrucción: <em>saber no-sabiendo</em>. La maestría final, escribe, no es no saber nada: es funcionar mientras no sabes.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup> Para mostrarlo pone tres figuras.</p>
+<p>Un cirujano que, después de tocar el no-saber, sigue operando y lo explica así:</p>
+<div class="cita"><p class="trad">Mis manos saben, yo no sé.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>Una madre de tres hijos:</p>
+<div class="cita"><p class="trad">No sé cómo ser madre. Cada día es nuevo. Cuando abrazo a mi hijo, no sé si es lo 'correcto'. Pero el amor sabe. El no-saber me hace presente.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>Y un monje que, después de cuarenta años de meditación, dice que no sabe meditar, porque cada vez que se sienta es la primera vez.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>Las tres figuras dicen lo mismo de distintas maneras: hay un saber que no pasa por la certeza. Está en las manos que operan, en los brazos que abrazan, en la espalda que se sienta. Gabriel lo tenía en los ojos con que leía un abanico de cincuenta y una líneas.</p>
+<p>Entre los rasgos de la paz del no-saber, Trinity anota uno que un pronosticador practica a diario: no teme la contradicción; puede sostener opuestos sin resolverlos, porque la paradoja es amiga y no enemiga.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup> Durante tres días, el abanico de Irene contuvo a la vez un frente que llegaba y otro que se quedaba al sur. El oficio no consistía en elegir uno antes de tiempo, sino en mantener los dos con calma, decir cuánto pesaba cada uno y esperar a que el cielo decidiera.</p>
+<p>Entre los obstáculos de este camino, Trinity nombra uno que Gabriel conoció la primera semana: el miedo a funcionar.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup> Si no sé, ¿cómo trabajo? ¿Cómo decido? ¿Cómo sigo? La respuesta del nodo es de una sencillez que desarma: la vida existió miles de millones de años sin saber; el cuerpo respira sin saber cómo. Y agrega una sola palabra: confía.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Gabriel pensó en eso una mañana, mientras subía la escalera de la terraza: el mismo pulmón que guardaba el nódulo seguía respirando, doce, quince veces por minuto, sin saber nada de él.</p>
+<h2>El que mira las nubes</h2>
+<p>En la pared de la sala de pronósticos, junto al reloj, Aurelio había dejado pegada una hoja con un versículo, y nadie se animó a sacarla cuando se jubiló. Gabriel la había leído mil veces sin leerla. Esa semana la leyó.</p>
+<p>Viene de un libro breve y extraño de la Biblia hebrea, el Eclesiastés, cuyo autor se presenta como Qohelet, el que reúne a la asamblea, y que repite como pocos textos antiguos dos palabras: <em>no sabes</em>.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup> En su capítulo once escribe:</p>
+<div class="cita"><p class="trad">El que al viento mira, no sembrará; y el que mira a las nubes, no segará.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p></div>
+<p>Y un poco más adelante:</p>
+<div class="cita"><p class="trad">Como tú no sabes cuál es el camino del viento, o cómo se crían los huesos en el vientre de la mujer preñada, así ignoras la obra de Dios, el cual hace todas las cosas. Por la mañana siembra tu simiente, y a la tarde no dejes reposar tu mano: porque tú no sabes cuál es lo mejor, si esto o lo otro, o si ambas a dos cosas son buenas.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p></div>
+<p>Es uno de los consejos más antiguos sobre la incertidumbre que conserva nuestra tradición, y no es un consejo de resignación. Qohelet no dice que no se pueda hacer nada porque no se sabe. Dice lo contrario: precisamente porque no sabes qué va a prosperar, siembra. A la mañana y a la tarde. Reparte, prueba, no te quedes mirando el cielo a la espera de una certeza que no va a llegar. El que espera saber para actuar no siembra nunca.</p>
+<p>Gabriel, que pasaba los días mirando las nubes, se rió solo frente a la hoja. Llevaba veinticinco años sembrando sin saber. Le faltaba hacerlo también fuera del trabajo.</p>
+<div class="perla"><p>El que mira las nubes no siembra.<br>El que siembra<br>mira las nubes y siembra igual.</p></div>
+<h2>Aurelio</h2>
+<p>Un sábado, Gabriel fue a visitar a Aurelio. Tiene ochenta y un años, camina con bastón y vive en una casa baja con un patio lleno de macetas, donde todavía guarda un pluviómetro que revisa cada mañana. Gabriel le contó lo del nódulo, y después le preguntó por la hoja de la pared.</p>
+<p>Aurelio se rió.</p>
+<p>—Los primeros diez años no dormía la noche antes de un pronóstico importante —dijo—. Quería acertar siempre. Cuando fallaba, me pasaba días dándole vueltas, buscando el dato que no había visto. Un día mi mujer encontró ese versículo y me lo copió en una hoja. Me costó entenderlo. Mi trabajo no era saber si iba a llover. Era decir bien lo que no se sabía, y después dejar que lloviera o no.</p>
+<p>Se quedaron un rato callados, mirando el cielo del patio.</p>
+<p>—¿Y lo tuyo? —preguntó Aurelio—. ¿Qué probabilidad te dieron?</p>
+<p>—No me dieron un número. Me dieron una fecha.</p>
+<p>Aurelio asintió despacio, como cuando aprobaba un pronóstico bien hecho.</p>
+<p>—Es una buena médica —dijo.</p>
+<h2>Elegir sin saber</h2>
+<p>El nodo de Trinity convierte esta sabiduría en una práctica para cuando hay que decidir. Primero, reconocer: no sé qué es mejor. Después, mirar las opciones sin apurarse a preferir una, notar hacia dónde se inclina algo por dentro y actuar desde ahí. Por último, dos gestos que parecen pequeños y son enormes: no apegarse al resultado, y celebrar no saber si fue lo correcto.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p>
+<p>No es una invitación a decidir a ciegas ni a echar una moneda al aire en lo importante. Es otra manera de llevar el peso de la elección. Quien necesita saber antes de elegir, o no elige, o elige y después se tortura con lo que habría pasado. Quien acepta no saber elige con lo que tiene, y deja el resultado donde corresponde: a su espalda.</p>
+<p>Esa semana, Gabriel eligió algo pequeño. Volvió a la piscina del club de su barrio, adonde había dejado de ir hacía dos años. No sabía si iba a poder nadar como antes, ni si la tos iba a volver, ni si iba a sostenerlo. La neumonóloga le había dicho que podía. El martes nadó veinte minutos, despacio. El aire entraba y salía. No supo si había sido una buena idea. Volvió el jueves.</p>
+<h2>Tú también</h2>
+<p>Piensa en algo que haces bien sin saber cómo va a salir. Manejar con lluvia. Dar una clase. Criar a alguien. Tocar un instrumento delante de otros. Cuidar a un enfermo. Atender a un cliente difícil. Escribir un mensaje importante.</p>
+<p>Ahí ya practicas lo que este libro propone. Tus manos saben, aunque tú no sepas. Lo único que falta es llevar esa misma confianza a lo que esperas.</p>
+<div class="perla"><p>No hace falta saber lo que viene<br>para hacer bien<br>lo que toca hoy.</p></div>
+<div class="sigue"><a href="L07-U4.html">Anterior: Lo más íntimo</a><a class="prox" href="L07-U6.html">Siguiente: No saber juntos</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Sobre el pronóstico por conjuntos: Centro Europeo de Previsiones Meteorológicas a Plazo Medio (ECMWF), <em>Forecast User Guide</em>, «Ensemble forecasts»: el modelo se corre cincuenta y una veces, una sin perturbar y cincuenta desde condiciones iniciales levemente distintas. Paráfrasis.</li><li id="nota-2">Allan H. Murphy y Robert L. Winkler, «Reliability of Subjective Probability Forecasts of Precipitation and Temperature», <em>Journal of the Royal Statistical Society, Series C (Applied Statistics)</em> 26, n.º 1 (1977): 41-47. Paráfrasis.</li><li id="nota-3">Sarah Lichtenstein, Baruch Fischhoff y Lawrence D. Phillips, «Calibration of Probabilities: The State of the Art to 1980», en Daniel Kahneman, Paul Slovic y Amos Tversky (eds.), <em>Judgment under Uncertainty: Heuristics and Biases</em> (1982). Paráfrasis.</li><li id="nota-4">Isaiah Berlin, <em>The Hedgehog and the Fox</em> (1953), que parte de un fragmento de Arquíloco. Paráfrasis.</li><li id="nota-5">Philip E. Tetlock, <em>Expert Political Judgment: How Good Is It? How Can We Know?</em> (2005). Paráfrasis.</li><li id="nota-6">Philip E. Tetlock y Dan Gardner, <em>Superforecasting: The Art and Science of Prediction</em> (2015). Paráfrasis. El torneo, el Good Judgment Project, se celebró entre 2011 y 2015.</li><li id="nota-7">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «Vivir la Paradoja: Saber No-Sabiendo». Fragmentos y paráfrasis.</li><li id="nota-8">Ídem, fase 4: «La Paz Inquebrantable», «Características de esta Paz». Paráfrasis.</li><li id="nota-9">Ídem, sección «Obstáculos en el Camino del No-Saber», «El Miedo a Funcionar». Paráfrasis y fragmento.</li><li id="nota-10">Eclesiastés 11, 4-6, en la versión de Reina-Valera (1909), con la acentuación actualizada.</li><li id="nota-11">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Nodo 5, sección «Prácticas Cotidianas del No-Saber», «Práctica Decisional: Elegir sin Saber». Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 7 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

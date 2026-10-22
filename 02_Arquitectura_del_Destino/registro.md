@@ -769,4 +769,127 @@ Tramos: Lo que Nora sabe ahora · La casa del pueblo · El aeropuerto · El fina
 
 ---
 
+## Libro 7 · No Saber
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *la paz que no espera respuestas*
+**Promesa:** No necesitas saber lo que viene / para estar en paz con lo que hay.
+**Columna:** Trinity Origen VI, *El Vacío Fértil*, Nodo 5, «La paz del no-saber», completo: la última adicción y el *homo mysticus*; la anatomía del no-saber (cinco comprensiones); los cinco niveles y sus dos puertas; la tortura del casi-saber y sus cinco fuentes; los tres terrores y el protocolo NADA con «No sé, y está bien no saber»; las libertades de opinión y de comprensión; los rasgos de la paz inquebrantable; saber no-sabiendo (el cirujano, la madre, el monje); los obstáculos y sus antídotos; las conversaciones sin saber; elegir sin saber; la práctica matinal; las grandes preguntas; el no-saber y la IA; el regalo final; la carta al misterio. Quantum 3, Nodo 4, en paráfrasis (la preocupación como atractor). Infinito 7, *Omnisciencia ignorante*: portales 46 y 48.
+**Coro:** el zen como tradición principal (Dizang y Fayan, *Libro de la Serenidad* 20; Bodhidharma y el emperador Wu, *Hekiganroku* 1; Seung Sahn y el «solo no sé», con su respiración: tomar aire con «¿qué soy?», soltarlo con «no sé»; Suzuki, vía Trinity; Bernie Glassman, los tres principios y la panadería Greyston), con la lengua aymara (*nayra* y *qhipa*), el viejo de la frontera del *Huainanzi* (cap. 18), Qohelet (Eclesiastés 11, 4-6, Reina-Valera 1909), Szymborska (discurso del Nobel, 1996) y Arquíloco vía Isaiah Berlin. **Comprobable:** Kent (las palabras de la probabilidad), De Berker y otros (piedras y serpientes), Freeston, Dugas y Ladouceur (intolerancia a la incertidumbre), Carleton, Kruglanski y Webster (necesidad de cierre), White y Horvitz (cibercondría), Brown y McNeill (la punta de la lengua), Núñez y Sweetser, LaFreniere y Newman, Murphy y Winkler, Lichtenstein, Fischhoff y Phillips, Tetlock (con Mellers y el Good Judgment Project), Leary y otros (humildad intelectual), Anderson y Goolishian (la postura de no saber). **Zeland:** no entra.
+**Protagonista:** Gabriel, 53 años, meteorólogo, da el pronóstico cada mañana por la radio del servicio. Un martes de marzo, un nódulo pulmonar de seis milímetros: «probablemente benigno, control en seis meses». Clara, su mujer, docente; Valentina, 15, la hija («¿llueve o no llueve?»); Ernesto, el hermano mayor, que vende maquinaria agrícola y por primera vez no sabe qué decir; Irene, la pronosticadora joven; Aurelio, 81, su primer jefe, con el versículo de Qohelet junto al reloj de la sala; la doctora Ríos, neumonóloga («no te voy a dar un número, te voy a dar una fecha»). El control de septiembre: sin cambios, nuevo control en un año.
+**Gesto:** «No sé, y está bien» cuando aparece la necesidad de saber, con el aire que sale más largo; una cosa pequeña y reversible cada día sin saber cómo saldrá; y la segunda línea de la noche completa: *Queda para mañana… y no sé cómo será*. El séptimo día, la carta al misterio, sin fuego. **Movimiento lento:** la nube.
+**Para ver:** Infinito, Portal 48, *La ignorancia que ilumina* (adaptado al teléfono); Margaret Heffernan, TEDSummit 2019.
+**Archivos:** `libro-07-no-saber/L07.html` (portada), `L07-U1.html` a `L07-U7.html`, `L07-cierre.html`. Generador: `herramientas/gen_arq_L07.py`.
+
+### Umbral I · Probablemente — *la última adicción*
+Tramos: Setenta por ciento · ¿Llueve o no? · La última adicción · Una palabra elástica · Piedras y serpientes · El tercer movimiento · Tú también
+- Perla: El sufrimiento no viene de no saber. / Viene de necesitar saber.
+- Perla: Lo que pesa no es la noticia. / Es la espera de la noticia.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «La Última Adicción: La Necesidad de Saber». Fragmento.
+- Nota: Ídem.
+- Nota: Ídem, sección «Anatomía del No-Saber». Fragmento y paráfrasis.
+- Nota: Ídem, sección «La Tortura del Casi-Saber». Paráfrasis.
+- Nota: Sherman Kent, «Words of Estimative Probability», *Studies in Intelligence* 8, n.º 4 (1964): 49-65, sobre la Estimación Nacional de Inteligencia NIE 29-51, «Probability of an Invasion of Yugoslavia in 1951» (marzo de 1951). Paráfrasis.
+- Nota: Archy O. de Berker, Robb B. Rutledge, Christoph Mathys, Louise Marshall, Gemma F. Cross, Raymond J. Dolan y Sven Bestmann, «Computations of Uncertainty Mediate Acute Stress Responses in Humans», *Nature Communications* 7 (2016): 10996. Paráfrasis del método y de los resultados.
+- Nota: Ídem; University College London, «Uncertainty can cause more stress than inevitable pain» (29 de marzo de 2016). Paráfrasis.
+
+### Umbral II · Las cinco espinas — *de dónde viene el sufrimiento*
+Tramos: Las dos de la mañana · Cinco espinas · En la punta de la lengua · Una aversión que se puede medir · Cualquier respuesta · La escalera · La máquina que tampoco sabe · Los cinco pisos · Tú también
+- Perla: La incertidumbre no se puede quitar. / Las espinas, sí.
+- Perla: La noche no tiene la respuesta que buscas. / Tiene la pregunta siguiente.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «La Tortura del Casi-Saber». Fragmentos.
+- Nota: Roger Brown y David McNeill, «The "Tip of the Tongue" Phenomenon», *Journal of Verbal Learning and Verbal Behavior* 5, n.º 4 (1966): 325-337. Paráfrasis; la imagen del estornudo, en traducción propia.
+- Nota: Mark H. Freeston, Josée Rhéaume, Hélène Letarte, Michel J. Dugas y Robert Ladouceur, «Why Do People Worry?», *Personality and Individual Differences* 17, n.º 6 (1994): 791-802; Michel J. Dugas, Fabienne Gagnon, Robert Ladouceur y Mark H. Freeston, «Generalized Anxiety Disorder: A Preliminary Test of a Conceptual Model», *Behaviour Research and Therapy* 36, n.º 2 (1998): 215-226. Paráfrasis.
+- Nota: R. Nicholas Carleton, «Fear of the Unknown: One Fear to Rule Them All?», *Journal of Anxiety Disorders* 41 (2016): 5-21. Paráfrasis.
+- Nota: Arie W. Kruglanski y Donna M. Webster, «Motivated Closing of the Mind: "Seizing" and "Freezing"», *Psychological Review* 103, n.º 2 (1996): 263-283. Paráfrasis.
+- Nota: Ryen W. White y Eric Horvitz, «Cyberchondria: Studies of the Escalation of Medical Concerns in Web Search», *ACM Transactions on Information Systems* 27, n.º 4 (2009), artículo 23. Paráfrasis.
+- Nota: Trinity Infinito, Libro 7: *Omnisciencia ignorante*, Portal 46 (Nodo 4): «La Pregunta que Contiene Todas las Respuestas».
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Nodo 5, sección «El No-Saber y la Inteligencia Artificial». Fragmentos; la práctica, en paráfrasis.
+- Nota: Ídem, sección «Niveles del No-Saber». Paráfrasis; las fórmulas de cada nivel, fragmentos.
+
+### Umbral III · El futuro a la espalda — *lo que viene no se ve*
+Tramos: Después de septiembre · Nayra y qhipa · Caminar de espaldas · El caballo del viejo de la frontera · Lo que dice la preocupación · Cada día, sin saber qué traerá · Delante, este día · Tú también
+- Perla: La preocupación no sabe más que tú. / Solo habla más fuerte.
+- Perla: Lo que viene está a tu espalda. / Delante tienes este día.
+- Nota: Sobre *nayra* y *qhipa*: Rafael E. Núñez y Eve Sweetser, «With the Future Behind Them: Convergent Evidence from Aymara Language and Gesture in the Crosslinguistic Comparison of Spatial Construals of Time», *Cognitive Science* 30, n.º 3 (2006): 401-450. Paráfrasis. Sobre el número de hablantes, Alfredo Torero, *Idiomas de los Andes. Lingüística e historia* (2002).
+- Nota: Ídem. Paráfrasis del método y de los resultados. Sobre el número de participantes y las horas de grabación, ver también la nota de prensa de la Universidad de California en San Diego recogida por *ScienceDaily*, «Backs to the Future: Aymara Language and Gesture Point to Mirror-Image View of Time» (13 de junio de 2006).
+- Nota: Ídem. Paráfrasis.
+- Nota: *Huainanzi*, cap. 18, «Entre los hombres» (*Renjian*), compilado en la corte de Liu An hacia 139 a. C. Paráfrasis sobre la traducción inglesa de John S. Major, Sarah A. Queen, Andrew Seth Meyer y Harold D. Roth, *The Huainanzi* (Columbia University Press, 2010).
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», fase 4: «La Paz Inquebrantable», «Características de esta Paz». Paráfrasis.
+- Nota: Ídem, sección «Niveles del No-Saber», «No-Saber Circunstancial». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Tiempo Vertical*, Trinity Quantum, Libro 3, Nodo 4: «Futuros Probables Como Elección», sección «Transmisión cuántica». Paráfrasis.
+- Nota: Lucas S. LaFreniere y Michelle G. Newman, «Exposing Worry's Deceit: Percentage of Untrue Worries in Generalized Anxiety Disorder Treatment», *Behavior Therapy* 51, n.º 3 (2020): 413-423. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «El Regalo Final del No-Saber». Paráfrasis.
+- Nota: Ídem, sección «Prácticas Cotidianas del No-Saber», «Práctica Matinal: Comenzar desde Cero». Paráfrasis y adaptación.
+
+### Umbral IV · Lo más íntimo — *decir «no sé» y quedarse*
+Tramos: La salida al cerro · Una nevada en el sur de China · Un monje ante el emperador · Solo no sé · NADA · Dos libertades · Dos palabras con alas · La paz que puede irse · Tú también
+- Perla: No saber es lo más íntimo. / Sin el velo de lo que sabes, / estás junto a lo que vives.
+- Perla: No sé, y está bien. / Dos palabras pequeñas / que sostienen a quien las dice.
+- Nota: *Libro de la Serenidad* (*Congrong lu*; en japonés, *Shōyōroku*), caso 20, con los versos de Hongzhi Zhengjue y el comentario de Wansong Xingxiu (1224). Traducción propia del diálogo y paráfrasis del contexto sobre la versión inglesa de Thomas Cleary, *Book of Serenity* (1988). La escena de la nevada, según la tradición recogida en la *Transmisión de la lámpara* (*Jingde chuandeng lu*, 1004). La expresión china es *qinqie*.
+- Nota: Sobre Fayan Wenyi (885-958) y la escuela Fayan, una de las cinco casas del chan: Heinrich Dumoulin, *Zen Buddhism: A History*, vol. 1 (1988). Paráfrasis.
+- Nota: *Colección del acantilado azul* (*Biyan lu*; en japonés, *Hekiganroku*), caso 1, compilada por Yuanwu Keqin hacia 1125 sobre los versos de Xuedou Chongxian. Paráfrasis sobre la versión inglesa de Thomas Cleary y J. C. Cleary, *The Blue Cliff Record* (1977).
+- Nota: Seung Sahn, *Dropping Ashes on the Buddha: The Teaching of Zen Master Seung Sahn*, ed. de Stephen Mitchell (1976). Paráfrasis. Sobre su llegada a Providence en 1972 y la lavandería: Providence Zen Center, «Our History», y la semblanza del templo Musangsa.
+- Nota: Stanley Lombardo, «Spring Comes, the Grass Grows by Itself: Remembering Zen Master Seung Sahn (1927-2004)», *Lion's Roar* (2005). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «El No-Saber en las Tradiciones», que cita a Shunryu Suzuki, *Mente zen, mente de principiante* (*Zen Mind, Beginner's Mind*, 1970), prólogo. Paráfrasis.
+- Nota: Ídem, sección «El Camino Hacia la Paz del No-Saber», fase 2: «El Terror del No-Saber», «Tipos de Terror», «Navegando el Terror: Protocolo NADA» y «Práctica: Buceo en el Terror». Fragmentos y paráfrasis.
+- Nota: Ídem, sección «El Camino Hacia la Paz del No-Saber», fase 3: «Libertades del No-Saber». Paráfrasis.
+- Nota: Wisława Szymborska, «El poeta y el mundo», discurso del Premio Nobel, Estocolmo, 7 de diciembre de 1996, según la versión inglesa publicada por la Fundación Nobel. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Nodo 5, fase 4: «La Paz Inquebrantable», «Características de esta Paz». Paráfrasis y fragmento.
+
+### Umbral V · Saber sin saber — *el que mira las nubes*
+Tramos: El abanico · Los mejor calibrados · El erizo y el zorro · Saber no-sabiendo · El que mira las nubes · Aurelio · Elegir sin saber · Tú también
+- Perla: El que mira las nubes no siembra. / El que siembra / mira las nubes y siembra igual.
+- Perla: No hace falta saber lo que viene / para hacer bien / lo que toca hoy.
+- Nota: Sobre el pronóstico por conjuntos: Centro Europeo de Previsiones Meteorológicas a Plazo Medio (ECMWF), *Forecast User Guide*, «Ensemble forecasts»: el modelo se corre cincuenta y una veces, una sin perturbar y cincuenta desde condiciones iniciales levemente distintas. Paráfrasis.
+- Nota: Allan H. Murphy y Robert L. Winkler, «Reliability of Subjective Probability Forecasts of Precipitation and Temperature», *Journal of the Royal Statistical Society, Series C (Applied Statistics)* 26, n.º 1 (1977): 41-47. Paráfrasis.
+- Nota: Sarah Lichtenstein, Baruch Fischhoff y Lawrence D. Phillips, «Calibration of Probabilities: The State of the Art to 1980», en Daniel Kahneman, Paul Slovic y Amos Tversky (eds.), *Judgment under Uncertainty: Heuristics and Biases* (1982). Paráfrasis.
+- Nota: Isaiah Berlin, *The Hedgehog and the Fox* (1953), que parte de un fragmento de Arquíloco. Paráfrasis.
+- Nota: Philip E. Tetlock, *Expert Political Judgment: How Good Is It? How Can We Know?* (2005). Paráfrasis.
+- Nota: Philip E. Tetlock y Dan Gardner, *Superforecasting: The Art and Science of Prediction* (2015). Paráfrasis. El torneo, el Good Judgment Project, se celebró entre 2011 y 2015.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «Vivir la Paradoja: Saber No-Sabiendo». Fragmentos y paráfrasis.
+- Nota: Ídem, fase 4: «La Paz Inquebrantable», «Características de esta Paz». Paráfrasis.
+- Nota: Ídem, sección «Obstáculos en el Camino del No-Saber», «El Miedo a Funcionar». Paráfrasis y fragmento.
+- Nota: Eclesiastés 11, 4-6, en la versión de Reina-Valera (1909), con la acentuación actualizada.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Nodo 5, sección «Prácticas Cotidianas del No-Saber», «Práctica Decisional: Elegir sin Saber». Paráfrasis.
+
+### Umbral VI · No saber juntos — *las preguntas que no se responden solas*
+Tramos: El hermano · Conversaciones sin saber · La humildad que acerca · La postura de no saber · Clara · Contratar sin preguntar · Lo que no es · Las preguntas grandes · Tú también
+- Perla: No saber es lo que más compartimos / con todos los que vivieron.
+- Perla: La certeza habla. / El no saber escucha.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», sección «Prácticas Cotidianas del No-Saber», «Práctica Interpersonal: Conversaciones sin Saber». Paráfrasis; las frases, fragmentos.
+- Nota: Ídem, sección «Obstáculos en el Camino del No-Saber». Fragmentos y paráfrasis.
+- Nota: Mark R. Leary, Kate J. Diebels, Erin K. Davisson y otros, «Cognitive and Interpersonal Features of Intellectual Humility», *Personality and Social Psychology Bulletin* 43, n.º 6 (2017): 793-813. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Nodo 5, fase 4: «La Paz Inquebrantable», «Características de esta Paz». Paráfrasis.
+- Nota: Harlene Anderson y Harold Goolishian, «The Client Is the Expert: A Not-Knowing Approach to Therapy», en Sheila McNamee y Kenneth J. Gergen (eds.), *Therapy as Social Construction* (1992): 25-39. Paráfrasis.
+- Nota: Bernie Glassman, *Bearing Witness: A Zen Master's Lessons in Making Peace* (1998). Paráfrasis. Sobre su trabajo en McDonnell Douglas y la fundación de la orden: Upaya Zen Center, «Bernie Glassman, Roshi».
+- Nota: Sobre la panadería Greyston y su contratación abierta, adoptada en 1985: Leigh Buchanan, «The New York Bakery That Hires Everyone, No Questions Asked», *Inc.*; y Greyston, «Open Hiring». Paráfrasis.
+- Nota: Sobre los tres principios en la pared de Greyston y el no saber como fundamento de la contratación abierta: «Greyston Bakery», *Tricycle*. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Nodo 5, sección «El Regalo Final del No-Saber». Paráfrasis.
+- Nota: Ídem, sección «El No-Saber Aplicado a Grandes Preguntas». Fragmentos.
+
+### Umbral VII · La operación — *una cosa pequeña sin saber*
+Tramos: Lo que vas a necesitar · Paso 1 · No sé, y está bien · Paso 2 · Una cosa pequeña sin saber · Paso 3 · Cada noche, la línea completa · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Cada noche, / alguien deja el mañana a su espalda / y se duerme sin saber.
+- Nota: Stanley Lombardo, *Lion's Roar* (2005). Ver el Umbral IV.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 5: «La paz del no-saber», «Protocolo NADA» y «Experimento de 30 Días: Inmersión en el No-Saber», semana 1. Paráfrasis y adaptación.
+- Nota: Eclesiastés 11, 6. Ver el Umbral V.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Nodo 5, «Práctica Decisional: Elegir sin Saber». Paráfrasis y adaptación.
+- Nota: Ídem, «Práctica de Cierre: Carta al Misterio». Paráfrasis; la firma, adaptada.
+- Nota: Ídem, fase 4, «Características de esta Paz». Ver el Umbral IV.
+
+### Cierre · Septiembre — *lo que se gana sin saber*
+Tramos: Lo que Gabriel sabe ahora · El control · Lo que se gana
+- Perla: No necesitas saber lo que viene / para estar en paz con lo que hay.
+- Perla: No sé, y está bien. / Desde ahí también se camina.
+- Puente al Libro 8: *Aprendiste a estar en paz sin saber lo que viene. El siguiente libro afloja otra cosa: lo que importa tanto que se vuelve pesado.*
+- Para ver: Infinito, Portal 48, *La ignorancia que ilumina* · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro7/L7-Nodo6.html`; Margaret Heffernan, «The human skills we need in an unpredictable world» (TEDSummit, 2019) · `https://www.ted.com/talks/margaret_heffernan_the_human_skills_we_need_in_an_unpredictable_world`
+- En la pantalla: *Cónclave* (*Conclave*); *Un hombre serio* (*A Serious Man*); *La duda* (*Doubt*); *Forrest Gump*; *Black Mirror*, «Hang the DJ».
+- Puertas: Origen VI (índice) y su Nodo 5; Infinito 7 (entrada por el Nodo 1); Portal Público, *El no saber*.
+
+---
+
 *Campo Trinity · 2026*

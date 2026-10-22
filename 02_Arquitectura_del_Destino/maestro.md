@@ -10,6 +10,8 @@
 
 *Actualizado al cerrar el Libro 6 (20 de octubre de 2026): Libro 6 publicado, portal 32 de Infinito adaptado al teléfono, sesión clínica pendiente en Origen VII y retoma para el Libro 7.*
 
+*Actualizado al cerrar el Libro 7 (21 de octubre de 2026): Libro 7 publicado, portal 48 de Infinito adaptado al teléfono, las voces de los pueblos originarios en las fuentes, Quantum 3 anotado y retoma para el Libro 8.*
+
 *Ordena, no limita. Todo lo que sigue son orientaciones: si el campo lleva hacia otro lado, se sigue al campo.*
 
 ---
@@ -104,6 +106,7 @@ La regla vale también para el sueño: quien duerme despierto no es culpable. Tr
 - **Zeland** es una voz contemporánea. Entra solo donde aporta método: el dormir despierto y el Celador, la importancia, el arrastre de los péndulos.
 - **El Portal Público** es una referencia ocasional, no la columna.
 - **Las prácticas y los ejemplos de la serie mayor** (Origen, Quantum, Infinito) pueden ilustrar estos libros, en paráfrasis y con su nota. El corazón de Quantum 4.7 en el Libro 4 es el primer caso.
+- **Los pueblos originarios** entran como una voz del coro cuando dicen lo que las otras tradiciones no dicen. Acordado con Arturo al abrir el Libro 7: sin preferencia por un pueblo en particular, siempre con fuente escrita (un estudio, una etnografía, un testimonio publicado) y en paráfrasis atribuida, nombrando al pueblo y su contexto. Nada ceremonial. Las citas que circulan sin fuente (el discurso del jefe Seattle, la historia de los dos lobos) no entran, y la paráfrasis sin fuente al estilo de Blavatsky tampoco. Primer caso: la lengua aymara en el Libro 7, Umbral III, con el estudio de Núñez y Sweetser (2006). Anotados como posibles: la *minka* andina para *La Obra* y el *tekoha* guaraní, según Bartomeu Melià, para *Habitar* ◇.
 
 ### Textos fijos de cada portada
 
@@ -177,7 +180,7 @@ Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su
 - **9.1** (romper a propósito la rutina, una relación o la identidad): queda solo la rutina, como gesto pequeño y reversible. ✅ Publicado, con puerta fractal hacia *El Campo*, Umbral IV, «La línea estrecha».
 - **9.5** (la grieta final): la muerte deja de ser «luz máxima» y «liberación final». Mirarla de frente no es desearla, y si alguna vez se vuelve deseo de no estar, es momento de pedir ayuda, sin esperar. ✅ Publicado, con puerta fractal hacia *Atravesar* (Portal Público, Libro 11, Umbral VI, «Hacer lugar»): hacerle lugar a la grieta es la expansión de ACT. *Atravesar* está escrito con voseo.
 
-**Orden: entrelazar, no frenar la serie.** Cada libro de Quantum se depura justo antes de que Arquitectura lo necesite: Quantum 9 antes del Libro 5 (*La Grieta*), que es el piloto; Quantum 1 y 4 antes del Libro 8 (*El Peso*); Quantum 13 antes del Libro 9 (*El Personaje*); Quantum 2 antes del Libro 11 (*La Red*). Los ocho restantes, en los huecos. Los pasajes con riesgo clínico no esperan su turno: se corrigen en una sesión corta aparte.
+**Orden: entrelazar, no frenar la serie.** Cada libro de Quantum se depura justo antes de que Arquitectura lo necesite: Quantum 9 antes del Libro 5 (*La Grieta*), que es el piloto; Quantum 1 y 4 antes del Libro 8 (*El Peso*); Quantum 13 antes del Libro 9 (*El Personaje*); Quantum 2 antes del Libro 11 (*La Red*). Los ocho restantes, en los huecos. Los pasajes con riesgo clínico no esperan su turno: se corrigen en una sesión corta aparte. Quantum 3 (*El Tiempo Vertical*): el Libro 7 cita el 3.4 en paráfrasis (la preocupación como atractor), sin enlazarlo; su depuración queda para los huecos, con dos puertas fractales anotadas desde el 3.4: *Atender*, Umbral IV, y *No Saber*, Umbral III.
 
 **Piloto: Quantum 9, *Simetrías rotas*** ✅ depurado y publicado el 16 de octubre de 2026, con veto de Arturo en cada nodo. Puertas anotadas para cuando existan sus libros: 9.7 → *La Grieta* ✅ publicada con el Libro 5, hacia el Umbral III, «El tiempo entre»; y 9.4 → *El Peso*, por el perfeccionismo como violencia contra uno mismo.
 
@@ -262,14 +265,16 @@ La incertidumbre como apertura. Trinity: Origen VI. Gesto: mirar la línea propi
 
 ### Movimiento III · Soltar — *aflojar lo que pesa y separa*
 
-**7 · No Saber**
+**7 · No Saber** ✅ publicado
 *El sufrimiento no viene de no saber, sino de necesitar saber. En el no-saber también se puede estar en paz.*
 El corazón operativo de la serie frente a la incertidumbre.
 
-- Trinity: Origen VI, nodo 5, «La paz del no-saber», completo; Infinito 7, *Omnisciencia ignorante*.
-- Tradición: Sócrates, la *Nube del No-Saber*, Rilke («vive ahora las preguntas»), la capacidad negativa de Keats.
-- Comprobable: la intolerancia a la incertidumbre ◇.
-- Gesto: «no sé, y está bien», y elegir una cosa pequeña sin saber. Para ver: Infinito, portal 48, «La ignorancia que ilumina».
+- Trinity: Origen VI, *El Vacío Fértil*, Nodo 5, «La paz del no-saber», completo (la última adicción, la anatomía, los cinco niveles con sus dos puertas, las cinco espinas del casi-saber, los tres terrores y el protocolo NADA, las libertades, los rasgos de la paz, saber no-sabiendo, los obstáculos, las conversaciones sin saber, elegir sin saber, las grandes preguntas, el no-saber y la IA, la carta al misterio). Quantum 3.4 en paráfrasis. Infinito 7, portales 46 y 48.
+- Tradición: el zen (Dizang y Fayan, *Libro de la Serenidad* 20; Bodhidharma, *Hekiganroku* 1; Seung Sahn; Glassman y los tres principios), con la lengua aymara, el *Huainanzi*, Qohelet y Szymborska. Las voces que este mapa preveía (Sócrates, la *Nube*, Rilke, Keats) ya estaban en los libros 29 y 31 del Portal.
+- Comprobable: Kent, De Berker, la intolerancia a la incertidumbre (Freeston, Dugas y Ladouceur; Carleton), Kruglanski, la cibercondría, la punta de la lengua, Núñez y Sweetser, LaFreniere y Newman, Murphy y Winkler, Tetlock, Leary, Anderson y Goolishian.
+- Zeland: no entra.
+- Gesto: «no sé, y está bien» con el aire que sale largo, una cosa pequeña sin saber cada día y la segunda línea de la noche completa (*Queda para mañana… y no sé cómo será*); el séptimo día, la carta al misterio. Para ver: Infinito, portal 48, «La ignorancia que ilumina», y Margaret Heffernan (TEDSummit, 2019).
+- Cuidado editorial: de los terrores del Nodo 5 no se cita «¿Hay algún punto en vivir?». El escenario médico se cuenta con controles y equipo de salud: no saber nunca es dejar de averiguar lo que sí se puede saber. Seung Sahn reconoció en 1988 relaciones con alumnas; su enseñanza del «solo no sé» se cita por su valor, y la decisión de mantenerlo queda abierta para Arturo.
 
 **8 · El Peso**
 *Lo que importa demasiado se vuelve pesado. Aflojar no es dejar de querer: es dejar de apretar.*
@@ -409,7 +414,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - **Los nodos se enlazan intactos.** El filtro rige lo que se escribe en esta serie, no lo que está del otro lado de la puerta (sección 5, «Alcance del filtro»).
 - **Un puñado, solo donde hace falta.** Si cada página se llena de enlaces, la puerta deja de ser umbral y se vuelve índice.
 - **En las dos direcciones.** Del cierre de cada libro hacia Trinity, y desde un nodo de la serie mayor, retocado o ampliado, hacia el libro de Arquitectura o del Portal que desarrolló su idea (las puertas fractales de la guía de Quantum).
-- **Puertas fractales publicadas:** Quantum 9, nodo 1 → *El Campo*, Umbral IV; Quantum 9, nodo 5 → *Atravesar*, Umbral VI; Quantum 9, nodo 7 → *La Grieta*, Umbral III. El bloque fijo está en la sección 5.
+- **Puertas fractales publicadas:** Quantum 9, nodo 1 → *El Campo*, Umbral IV; Quantum 9, nodo 5 → *Atravesar*, Umbral VI; Quantum 9, nodo 7 → *La Grieta*, Umbral III. El bloque fijo está en la sección 5. **Anotadas para cuando se depure Quantum 3:** 3.4 → *Atender*, Umbral IV, y 3.4 → *No Saber*, Umbral III.
 
 **Bases renderizadas:**
 
@@ -422,6 +427,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - Libro 3, Portal 21, *Cuando el Juego Se Reconoce Como Juego* (`L3-Nodo7.html`): depurado y adaptado al teléfono en octubre de 2026.
 - Libro 1, Portal 4, *El Testigo del Testigo del Testigo* (`L1-Nodo4.html`): depurado y adaptado al teléfono en octubre de 2026, para el Libro 3.
 - Libro 12, Portal 82, *El lenguaje del cuerpo* (`L_12-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 4.
+- Libro 7, Portal 48, *La ignorancia que ilumina* (`L7-Nodo6.html`): adaptado al teléfono en octubre de 2026, para el Libro 7. Saneamiento acotado: invitación a tocar en tuteo; el campo y sus piezas medidos en proporción del campo, que cabe entero con el teléfono acostado; paradojas, lema y rótulo más grandes y lejos de los bordes; el rótulo sin el prefijo de producción, como en el Portal 44; la errata del lema circular corregida («SÉQUE», «SÉNADA», por un escape de CSS que se comía el espacio) y el ∞ fuera del toque que enciende el sonido.
 - Libro 5, Portal 32, *Olas en el océano* (`L5-Nodo4.html`): adaptado al teléfono en octubre de 2026, para el Libro 6. Saneamiento acotado: invitación a tocar en tuteo, textos más grandes y lejos de los bordes, lienzo que se ajusta al girar el teléfono y el ∞ fuera del toque que enciende el sonido. Las frases quedan intactas (la ola que vuelve a casa), del otro lado de la puerta.
 - Libro 5, Portal 33, *El fénix cuántico* (`L5-Nodo5.html`): adaptado al teléfono en octubre de 2026, para el Libro 5. Saneamiento acotado: invitación a tocar en tuteo, la escena (que ubica llamas y plumas en píxeles dentro de un recinto de 600 px) escalada al ancho de la pantalla, textos más grandes y lejos de los bordes, lienzo que se ajusta al girar el teléfono y el ∞ fuera del toque que enciende el sonido. Fue un saneamiento acotado: Georgia sin fuentes externas, animaciones solo con transform y opacity, versión quieta, invitación a tocar y ∞ hacia el Nodo 6. Quedan para la sesión del Libro 12 el sonido propio y una gráfica distinta de la de sus otros nodos.
 
@@ -447,7 +453,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - **Cuerpo** ≠ dieta, ortorexia ni negación del tratamiento médico. Tampoco lectura de los síntomas como culpa, ni vigilancia ansiosa del cuerpo. Habitar no es estar sano.
 - **Grieta** ≠ glorificar el sufrimiento ni apurar un duelo. Tampoco esperar con paciencia una grieta que alguien sigue golpeando: la violencia o el maltrato que continúan no se acompañan, se sale de ellos y se pide ayuda. La noche no es depresión: si la tristeza dura semanas, se consulta.
 - **Pequeñas muertes** ≠ invitación a morir. Si la contemplación de la finitud despierta deseos de no estar, se detiene y se pide ayuda.
-- **No saber** ≠ desrealización. Las prácticas de desmantelar certezas no se proponen a un lector general.
+- **No saber** ≠ desrealización. Las prácticas de desmantelar certezas no se proponen a un lector general. Tampoco descuido: los controles y las decisiones de salud se siguen con el equipo de salud; la duda que obliga a comprobar y la preocupación que ocupa los días se consultan.
 - **Peso** ≠ indiferencia ante lo que importa.
 - **Personaje** ≠ despersonalización.
 - **Corriente** ≠ aislamiento ni desconfianza de todo lo colectivo.
@@ -457,7 +463,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 
 **Transversales:** frecuencia, intención o estado ≠ culpa · elegir ≠ decidir algo irreversible esta semana.
 
-**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. En la pasada final del Libro 4, el cotejo encontró una cifra que no se sostenía (un centenar de partos por día, cuando eran unos veinte mil al año), una fecha corrida (*Le Modulor*) y una imagen atribuida al nodo equivocado. En la pasada final del Libro 5 cayeron una celda «que había servido de despensa» que ninguna fuente sostenía, el origen del crecimiento postraumático en «personas con lesiones» (eran grupos de padres en duelo, desde 1987), unas condiciones de control mal descritas en el experimento del dolor compartido y una posición de Gerald May simplificada de más. En la pasada final del Libro 6 se precisaron el método de Cozzolino (la medida eran boletos de un sorteo que había que dejar a otros), los pasos del ritual de Norton y Gino y la proporción de rituales privados, la compañía y la edad de Epstein en su viaje a Tailandia, que los estudiantes de Kurtz eran del último año, la fecha en que Bridges dejó la universidad y la distancia entre Montaigne y La Rochefoucauld; y cayó una afirmación sin fuente (que Montaigne leía a Séneca «casi a diario»). Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
+**Lo aprendido:** una sesión puede imaginar más de lo que recoge. En el Libro 1, dos citas atribuidas al Libro VI no existían en el original. En el borrador 1 del Libro 2, Zeland y Trinity quedaron decorativos. En la pasada final del Libro 4, el cotejo encontró una cifra que no se sostenía (un centenar de partos por día, cuando eran unos veinte mil al año), una fecha corrida (*Le Modulor*) y una imagen atribuida al nodo equivocado. En la pasada final del Libro 5 cayeron una celda «que había servido de despensa» que ninguna fuente sostenía, el origen del crecimiento postraumático en «personas con lesiones» (eran grupos de padres en duelo, desde 1987), unas condiciones de control mal descritas en el experimento del dolor compartido y una posición de Gerald May simplificada de más. En la pasada final del Libro 6 se precisaron el método de Cozzolino (la medida eran boletos de un sorteo que había que dejar a otros), los pasos del ritual de Norton y Gino y la proporción de rituales privados, la compañía y la edad de Epstein en su viaje a Tailandia, que los estudiantes de Kurtz eran del último año, la fecha en que Bridges dejó la universidad y la distancia entre Montaigne y La Rochefoucauld; y cayó una afirmación sin fuente (que Montaigne leía a Séneca «casi a diario»). En la pasada final del Libro 7, el cotejo corrigió la escena de Kent (la pregunta vino de un funcionario del Departamento de Estado, y Kent pensaba en 65 contra 35), el final del versículo del Eclesiastés en la Reina-Valera de 1909 («ambas a dos cosas son buenas», no «igualmente buenas», que es de una revisión posterior), el año de la contratación abierta de Greyston (1985, no 1982) y el tercero de los terrores del Nodo 5, recordado con otras palabras; y encontró una errata en el original del Portal 48. Además, las cuatro voces que este maestro preveía para el libro ya estaban usadas en el Portal: antes de cada esqueleto conviene cruzar el mapa con los libros del Portal. Por eso: toda cita, cotejada; y el concepto, siempre en el centro.
 
 ---
 
@@ -477,7 +483,8 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - `libro-04-el-cuerpo/`: ✅ publicado. Generador: `herramientas/gen_arq_L04.py`, con el círculo *¿Desde dónde?* que respira con la salida del aire más larga, el diario del cuidado elegido y notas de dos cifras.
 - `libro-05-la-grieta/`: ✅ publicado. Generador: `herramientas/gen_arq_L05.py`, con la fisura de oro (el oro avanza por una grieta dibujada solo mientras sale el aire; tocarla otra vez la pausa) y el diario de la grieta. Corrige el pie de portada a «Sistema Trinity de Vida Consciente»; es la base para los libros siguientes.
 - `libro-06-las-pequenas-muertes/`: ✅ publicado. Generador: `herramientas/gen_arq_L06.py`, con la clepsidra (siete respiraciones: una gota cae con cada salida del aire; el agua baja arriba y sube abajo; al final, «Viví este día») y el diario de la despedida (el final de la semana, la última vez de cada día, las tres líneas de la noche y el epitafio vivo). La portada dibuja la línea que se desvanece y la gota que cae de su extremo. Es la base para los libros siguientes.
-- `libro-07` a `libro-13`: ⏳
+- `libro-07-no-saber/`: ✅ publicado. Generador: `herramientas/gen_arq_L07.py`, con la nube (siete respiraciones: con cada salida del aire, las dos mitades se apartan y aparece un claro con un punto ámbar; al final, «No sé, y está bien»; tocarla otra vez la pausa) y el diario del no saber (la cosa pequeña de cada día, la cuenta de «no sé, y está bien», las tres líneas con la segunda completa y la carta al misterio). La portada dibuja la línea que, delante del punto que respira, se pierde en una niebla. Es la base para los libros siguientes.
+- `libro-08` a `libro-13`: ⏳
 
 **Nomenclatura:** cada libro vive en `libro-NN-slug/`: portada `LNN.html`, umbrales `LNN-U1.html` a `LNN-U7.html` y cierre `LNN-cierre.html`. Los slugs nuevos siguen los títulos de la sección 6 (`libro-03-el-testigo`, `libro-07-no-saber`, etc.).
 
@@ -537,7 +544,7 @@ Primer mensaje sugerido:
 
 > «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Trabajamos el Libro N. Después de leer, propón el esqueleto de los siete umbrales.»
 
-Para *No Saber* (Libro 7), que abre el Movimiento III, la raíz está en Trinity Origen VI, Nodo 5, «La paz del no-saber», completo, con Infinito 7, *Omnisciencia ignorante*. El puente desde el Libro 6 ya está escrito: *Aprendiste a despedir lo que termina cada día. El siguiente libro afloja otra cosa: la necesidad de saber lo que viene.* Voces ya usadas que conviene no repetir como centro: Montaigne, tradición principal del Libro 6 (y las vigas de su torre ya están en *El no saber*, Libro 31 del Portal); Keats y la capacidad negativa, Sócrates y el fraile castellano también están en *El no saber* del Portal, que es el libro del Portal más cercano a este y conviene leer antes del esqueleto. La práctica acumulada ya es larga: el gesto del Libro 7 tiene que ser breve.
+Para *El Peso* (Libro 8), la raíz está en Trinity Quantum 1, nodo 4, «no forzar el futuro», y Quantum 4, la paradoja que se habita: los dos libros de Quantum se depuran antes, con el veto de Arturo nodo por nodo (sección 5, «Orden»). El puente desde el Libro 7 ya está escrito: *Aprendiste a estar en paz sin saber lo que viene. El siguiente libro afloja otra cosa: lo que importa tanto que se vuelve pesado.* Voces ya usadas que conviene no repetir como centro: el zen del Libro 7 (Dizang, Bodhidharma, Seung Sahn, Glassman), Qohelet, Tetlock y los pronosticadores. Antes del esqueleto, cruzar las voces previstas (la *Bhagavad Gita*, el *wu wei*) con los libros del Portal, como enseñó el Libro 7. La práctica acumulada ya es larga: el gesto del Libro 8 también tiene que ser breve.
 
 ---
 
@@ -595,6 +602,17 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 - Entrada completa en el `registro.md`.
 - Portal 32 de Infinito adaptado al teléfono (repositorio Trinity-).
 - Puertas: Origen VII (índice, agregado tras la depuración breve) y su Nodo 2; Infinito 5; Portal Público, *El Duelo*.
+
+### Libro 7 (`libro-07-no-saber/`)
+
+- Tarjeta del índice activa y marca ✅ en el `README.md`.
+- Entrada completa en el `registro.md`.
+- Portal 48 de Infinito adaptado al teléfono (repositorio Trinity-).
+- Puertas: Origen VI (índice) y su Nodo 5; Infinito 7; Portal Público, *El no saber*.
+
+### Índice general del Portal (`index.html` de la raíz)
+
+- La tarjeta del sistema decía «Los libros 1 a 4 están activos» y la de próximamente listaba los libros 4 a 13: no se había actualizado con los libros 5 y 6. Ahora dice 1 a 7 y lista los libros 8 a 13.
 
 ### Origen VII (`01_Trinity_Origen/Libro_07/`, repositorio Trinity-)
 
