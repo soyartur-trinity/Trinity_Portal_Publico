@@ -221,7 +221,7 @@ Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su
 
 **Cómo se trabaja cada libro desde el piloto:** leer entero el libro; proponer una guía de una página solo con lo propio de ese libro, porque los cinco criterios ya están acordados; por cada nodo, una tarjeta con lo que queda, lo que cambia (antes → después) y lo que sale, y el veto de Arturo; después, el HTML con un script que aplica cada reemplazo aprobado exactamente una vez, y un zip con los archivos sueltos, para subir sin tocar el resto de la carpeta.
 
-**Anotado:** el índice general de Quantum (`02_Trinity_Quantum/index.html`) anuncia títulos que no coinciden con los libros, salvo el 1 y, desde el piloto, el 9. Se corrige en una sesión corta.
+**Índice general de Quantum** (`02_Trinity_Quantum/index.html`) ✅ corregido el 22 de octubre de 2026: once de los trece títulos no coincidían con sus libros. Ahora cada enlace lleva el título del índice de su libro: 1 *El Arquitecto Cuántico*, 2 *Entrelazamiento Sagrado*, 3 *El Tiempo Vertical*, 4 *La Paradoja Luminosa*, 5 *El Portal Infinito*, 6 *El Vacío Creativo*, 7 *Realidades Holofractales*, 8 *Plasma Consciente*, 9 *Simetrías Rotas*, 10 *Campos de Torsión*, 11 *Transducción Dimensional*, 12 *Singularidad Consciente*, 13 *El Multiverso Interior*.
 
 **Pendiente en Origen:** el nodo X.1 contiene la lectura simbólica de los síntomas (la espalda como cargas, la garganta como verdades calladas), el pasaje más delicado desde lo clínico en toda la constelación. Merece una pasada breve.
 
