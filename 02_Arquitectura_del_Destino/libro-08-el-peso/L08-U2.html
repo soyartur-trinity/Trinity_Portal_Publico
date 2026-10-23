@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L08">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="el peso lo pone quien mira">
+<title>La tabla sobre el abismo · Umbral II · El Peso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L08.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral II</div><h1>La tabla sobre el abismo</h1><p class="sub">el peso lo pone quien mira</p></header><main><h2>La cinta en el piso</h2>
+<p>Una semana después, Mariana fue al museo. Inés la llevó a la sala principal, todavía vacía, con las paredes recién pintadas de blanco. En el centro, bajo la claraboya, alguien había marcado con cinta un cuadrado en el piso: el lugar del pedestal.</p>
+<p>Mariana se paró adentro del cuadrado. La luz caía de lleno. Pensó en la vasija sobre el pedestal, en la gente caminando a su alrededor, en alguien inclinándose para mirar de cerca la pared, y sintió el estómago como cuando era niña y subía a la escalera del tobogán más alto de la plaza.</p>
+<p>—Es solo un cuadrado de cinta —dijo Inés, que la conocía bien.</p>
+<p>—Ya sé —dijo Mariana.</p>
+<p>Esa noche, de vuelta en el taller, no intentó la pieza grande. Se dijo que iba a calentar la mano con algo de práctica, sin compromiso, y amasó cinco kilos de barro como quien amasa para un ejercicio. Lo centró en un minuto. Abrió el hueco, levantó las paredes en tres tirones largos y, sin darse cuenta, terminó con una vasija alta, de cincuenta y cinco centímetros, de paredes parejas.</p>
+<p>La miró girar en el plato, despacio. Era buena. Tan buena como cualquiera de las que había imaginado para el museo.</p>
+<p>Entonces pensó: <em>esta podría ir al museo</em>. Y quiso afinarle el borde. Al primer contacto, el borde se le torció. Quiso enderezarlo. La pared se hundió hacia adentro, y la pieza entera se plegó sobre sí misma como un acordeón.</p>
+<p>Era el mismo barro. Eran las mismas manos. Lo único que había cambiado era una frase.</p>
+<h2>Una tabla más ancha de lo necesario</h2>
+<p>En el siglo diecisiete, el matemático y filósofo Blaise Pascal dejó anotado entre sus papeles un experimento que nadie necesita hacer para comprobarlo:</p>
+<p><em>Pongan al filósofo más grande del mundo sobre una tabla más ancha de lo necesario. Si debajo hay un precipicio, por más que la razón lo convenza de que está seguro, la imaginación se impondrá. Muchos no podrían sostener ese pensamiento sin ponerse pálidos y sudar.</em><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Pascal hablaba de la imaginación, esa facultad que, según él, gobierna a los hombres más que la razón. La tabla es la misma sobre el piso y sobre el abismo. Su ancho no cambia. Lo que cambia es lo que hay debajo, o mejor dicho, lo que el que camina ve debajo. Montaigne, medio siglo antes, había imaginado la misma escena con una viga tendida entre las dos torres de la catedral de Notre-Dame.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<h2>La misma tabla entre dos techos</h2>
+<p>Cuatro siglos después de Pascal, el autor ruso Vadim Zeland eligió la misma imagen para explicar una idea central de su obra. Imagina, escribe, que tienes que caminar por una tabla tirada en el suelo. Nada más fácil. Ahora piensa que esa misma tabla está tendida entre los techos de dos edificios altos. Recorrerla se volvió importante, y no hay manera de convencerte de lo contrario.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Zeland llama <em>importancia</em> a ese exceso. Según su definición, la importancia aparece cuando a algo se le atribuye un significado desmedido. Distingue dos formas. La importancia interna es la que uno se da a sí mismo: soy alguien importante, hago un trabajo importante. La externa es la que uno le pone a algo de afuera, a un objeto, a un acontecimiento, a una persona: esto significa muchísimo para mí, es fundamental que me salga bien.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> De la primera se ocupa el cuarto umbral de este libro. Mariana, por ahora, cargaba con la segunda.</p>
+<p>Lo que Zeland señala con precisión es que ese significado lo pone quien mira. La tabla no es más angosta entre dos techos. El barro no es más difícil cuando va a ir al museo. Pero el que camina, o el que tornea, ya no camina ni tornea la tabla o el barro: camina y tornea el abismo que imagina debajo.</p>
+<div class="perla"><p>El peso no está en la cosa.<br>Está en lo que le agregamos al mirarla.</p></div>
+<h2>Ni importante ni indiferente</h2>
+<p>Zeland va más lejos y propone que la importancia está detrás de una larga lista de estados que conocemos bien. La indignación, la inquietud, la ansiedad, la vergüenza, el miedo, el apego, la idealización, el orgullo, el desprecio: todos, escribe, son en el fondo formas de darle a algo, adentro o afuera de uno, más significado del que tiene.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> Se puede discutir la amplitud de la tesis. Pero la experiencia de reconocerla en uno mismo es inmediata: casi todo lo que nos aprieta el pecho tiene detrás algo que nos importa de más.</p>
+<p>Lo más valioso de su planteo es una distinción. Bajar la importancia, aclara, no significa volverse una estatua ni dejar de sentir. Pelear contra las emociones, tratar de mostrarse calmo mientras por dentro todo hierve, solo agrega más tensión. Lo que propone es cambiar la relación con aquello que importa, que es de donde las emociones nacen. Y para describir esa relación encuentra una fórmula exacta: algo puede no ser importante para uno sin ser indiferente.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Ni importante ni indiferente. Es el lugar que este libro busca. Mariana no quiere que la muestra le dé lo mismo: sería traicionar su oficio y su historia. Quiere que deje de ser un abismo. Entre el apriete y el desinterés hay un tercer modo de querer algo, y es el más eficaz de los tres.</p>
+<h2>Lo que hace el cuerpo en la altura</h2>
+<p>La ciencia del equilibrio comprobó algo que Pascal intuyó. A fines de los años noventa, el investigador Mark Carpenter y sus colegas, en Canadá, pidieron a un grupo de voluntarios que se quedaran de pie, quietos, sobre una plataforma, primero baja y después elevada, a veces junto al borde. La tarea era la misma y el apoyo también. Sin embargo, en la altura el cuerpo cambiaba de estrategia: se balanceaba menos y con oscilaciones más rápidas, y su centro de presión se corría, lejos del vacío. Los investigadores propusieron que el sistema nervioso adopta una estrategia de rigidez: endurece la postura para quedarse más quieto.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> Al año siguiente, el mismo grupo mostró que ese control se ajusta como un dial, más apretado cuanto mayor es la amenaza percibida.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Es una sabiduría antigua del cuerpo. Ante un precipicio verdadero, endurecerse protege: quien está rígido se cae menos de golpe. El problema empieza cuando el cuerpo trata como un precipicio lo que no lo es. Un museo, un examen, una reunión, una primera cita. Entonces aprieta igual, y lo que en el borde de un barranco salva la vida, en el torno desarma una vasija.</p>
+<p>Mariana no tenía un precipicio debajo. Tenía un cuadrado de cinta en el piso. Su cuerpo no conocía la diferencia.</p>
+<h2>Cada futuro tiene su peso</h2>
+<p><em>El Arquitecto Cuántico</em>, el libro de Trinity que acompaña este umbral, dedica su cuarto nodo a lo que llama «El arte de la probabilidad». Su subtítulo es casi un programa: <em>cultivando el futuro sin forzarlo</em>. Allí Trinity imagina el futuro no como una línea sino como un campo abierto, donde cada posibilidad tiene su propio peso. Algunas son densas, casi inevitables. Otras son ligeras, apenas susurros. La mayoría flota entre ambos extremos.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p>
+<p>Lo que importa para este libro es lo que el nodo dice que da peso a un futuro. No la fuerza con que se lo empuja: la atención con que se lo alimenta. Y por eso propone una práctica que llama transferencia de atención:</p>
+<div class="cita"><p class="trad">Retira atención de lo que temes<br>Dásela a lo que quieres<br>Lo que dejas de alimentar pierde peso<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Durante una semana, Mariana había alimentado un solo futuro: la vasija que se derrumba bajo la claraboya, frente a todos. Lo había mirado desde la cama, desde la ducha, desde el torno. Cada vez que lo miraba, le daba más peso. Y cuanto más pesaba, más apretaba ella el barro para que no ocurriera.</p>
+<p>El nodo no le pide que deje de pensar en la muestra, ni que se convenza de que todo va a salir bien. Le pide algo más modesto y más practicable: que no le dé toda su atención al futuro que teme. En el nodo anterior, el que contaba la historia del arquero, Trinity lo había dicho con una frase que podría servir de lema para este libro:</p>
+<div class="cita"><p class="trad">Lo que se mira sin descanso ocupa la vida entera;<br>lo que se atiende y luego se suelta encuentra su tamaño.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>Y unas líneas más abajo:</p>
+<div class="cita"><p class="trad">La no-observación consciente no borra nada:<br>le devuelve a cada cosa su tamaño.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>Ese es el trabajo. No achicar lo que importa: devolverle su tamaño. Una vasija de museo mide lo que mide una vasija: cincuenta y tantos centímetros de barro cocido. Todo lo demás —la claraboya, la niña de nueve años, la maestra, la mirada ajena— lo había puesto Mariana encima, capa por capa, como quien carga un estante hasta que se dobla.</p>
+<h2>La red</h2>
+<p>Zeland propone para la importancia externa un remedio de una sensatez casi doméstica. Si tienes que caminar por una tabla entre dos techos, dice, lo único que te devuelve la calma es una red. La forma de esa red depende de cada situación, pero el principio es siempre el mismo: no poner todo en uno solo de los platos de la balanza. Tiene que haber un contrapeso, una protección, un plan alternativo. Y aclara algo que conviene subrayar: no se trata de reprimir el miedo ni la emoción, sino de quitarle a la situación el exceso de significado, y eso solo se logra cuando existe alguna red.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>Al día siguiente Mariana llamó a Inés.</p>
+<p>—Una pregunta tonta —le dijo—. ¿Qué pasa si la pieza grande no sale?</p>
+<p>Inés se rio.</p>
+<p>—Exponemos lo que salga. Tus cuencos ya están, las jarras de la serie verde también. Si quieres, ponemos tres piezas medianas en el centro. La sala no se cae, Mariana.</p>
+<p>Colgó y se quedó mirando los estantes. Allí estaban los cuencos, las jarras, dos vasijas medianas que había hecho en marzo sin pensar en ningún museo. Las había mirado toda la semana sin verlas. Eran la red. Habían estado ahí desde el principio.</p>
+<p>No le quitó las ganas de hacer la vasija grande. Le quitó el abismo de debajo.</p>
+<div class="perla"><p>Lo que importa sigue importando.<br>Solo deja de estar suspendido sobre el vacío.</p></div>
+<h2>Tú también</h2>
+<p>Vuelve a eso que hoy te importa mucho. Pregúntate cuál es tu tabla y qué ves debajo. ¿Es un precipicio de verdad, o un cuadrado de cinta en el piso?</p>
+<p>Después hazte la pregunta de Zeland: ¿cuál es tu red? ¿Qué pasaría, concretamente, si eso no sale como esperas? ¿Qué otra cosa queda en pie, qué segunda oportunidad, qué apoyo, qué plan alternativo?</p>
+<p>No tienes que dejar de querer que salga bien. Solo mira si, debajo de la tabla, hay más red de la que creías.</p>
+<div class="sigue"><a href="L08-U1.html">Anterior: La pieza del museo</a><a class="prox" href="L08-U3.html">Siguiente: Apretar</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Blaise Pascal, <em>Pensamientos</em> (1670), fr. 82 (Brunschvicg), «Imaginación». Traducción propia.</li><li id="nota-2">Michel de Montaigne, <em>Ensayos</em> (1580), libro II, cap. 12, «Apología de Raimundo Sabunde». Paráfrasis.</li><li id="nota-3">Vadim Zeland, <em>Reality Transurfing I: El espacio de las variantes</em> (original ruso de 2004), cap. IV, «Equilibrar», sección «Importancia». Paráfrasis.</li><li id="nota-4">Mark G. Carpenter, James S. Frank y Cathy P. Silcher, «Surface Height Effects on Postural Control: A Hypothesis for a Stiffening Strategy for Stance», <em>Journal of Vestibular Research</em> 9, n.º 4 (1999): 277-286. Paráfrasis.</li><li id="nota-5">Allan L. Adkin, James S. Frank, Mark G. Carpenter y Gerhard W. Peysar, «Postural Control Is Scaled to Level of Postural Threat», <em>Gait &amp; Posture</em> 12, n.º 2 (2000): 87-93. Paráfrasis.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>El Arquitecto Cuántico</em>, Trinity Quantum, Libro 1, Nodo 4: «El arte de la probabilidad», secciones «La danza de lo probable» y «Técnicas para cultivar lo probable». Fragmento y paráfrasis.</li><li id="nota-7">Ídem, Nodo 2: «El observador como creador». Fragmento.</li><li id="nota-8">Vadim Zeland, <em>El espacio de las variantes</em>, cap. IV, secciones «Importancia» y «De la batalla al equilibrio». Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 8 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L08">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="aflojar no es descuidar">
+<title>El nadador · Umbral VI · El Peso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L08.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span></div><div class="cual">Umbral VI</div><h1>El nadador</h1><p class="sub">aflojar no es descuidar</p></header><main><h2>Como cuando hacías cien cuencos</h2>
+<p>Un martes de agosto, Elvira pidió que la llevaran al taller. Fernando la fue a buscar en el auto. Entró despacio, apoyada en el brazo de Mariana, y se sentó en una silla junto al torno, con las manos temblorosas sobre la falda.</p>
+<p>Mariana tenía preparados cinco kilos de barro para la vasija grande. Faltaban tres semanas para la muestra. Ya no quedaba tiempo para muchos intentos.</p>
+<p>—No la mires tanto —le dijo Elvira antes de que empezara—. Hazla rápido. Como cuando hacías cien cuencos para la feria de diciembre y no te daba el día.</p>
+<p>Mariana se rio. Se acordaba de esas tardes: cien cuencos en una jornada, uno detrás de otro, sin tiempo para pensar en ninguno. Nunca había centrado mejor que entonces.</p>
+<p>Arrojó el barro al plato y pisó el pedal más de lo habitual. Subió el cono, lo bajó, lo subió, sin detenerse a comprobar nada. Empezó a tararear una canción que no recordaba de dónde venía. Al rato se dio cuenta de que el barro ya no golpeaba. Giraba quieto, como si no girara.</p>
+<p>Abrió el hueco. Levantó la pared en un tirón largo, después en otro, después en un tercero, con los ojos en la ventana más que en la pieza. No midió. No retocó el borde. Cuando paró el torno, la vasija tenía cincuenta y ocho centímetros y una pared pareja de arriba abajo, con una leve ondulación a la altura del hombro, donde la mano había respirado.</p>
+<p>Elvira no dijo nada. Le tocó el brazo con su mano temblorosa, y eso fue todo.</p>
+<h2>El viejo de la catarata</h2>
+<p>En el capítulo de Zhuangzi que acompaña este libro, Confucio llega con sus discípulos a una catarata tan alta y tan violenta que ni los peces ni las tortugas pueden nadar en ella. De pronto ve a un viejo en medio del agua y cree que es alguien que quiere morir. Manda a sus discípulos a rescatarlo, corriendo por la orilla. Pero unos cientos de pasos más abajo el viejo sale del agua, se sacude el pelo y se va caminando y cantando.</p>
+<p>Confucio lo alcanza y le pregunta si tiene algún método. El viejo dice que no:</p>
+<p><em>Entro con el remolino hasta el centro y salgo con el agua cuando vuelve a subir. Sigo el camino del agua y no le impongo nada mío. Así es como nado.</em><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Y cuando Confucio insiste, el viejo agrega: <em>no sé cómo lo hago, y sin embargo lo hago.</em><sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>En el mismo capítulo, unas páginas antes, el barquero del primer umbral había dado la misma respuesta con otras palabras: los buenos nadadores aprenden pronto porque se olvidan del agua. No la ignoran: la conocen tan bien que ya no les da miedo. Para los que saben bucear, dice Zhuangzi, un abismo de agua es como una colina, y una barca que vuelca es como un carro que retrocede.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> Han visto tantas veces lo que puede pasar que lo que puede pasar ya no les ocupa el pecho.</p>
+<h2>El gallo de madera</h2>
+<p>Hay en el mismo capítulo una historia breve y casi cómica. Un entrenador llamado Ji Xingzi criaba un gallo de pelea para el rey. A los diez días el rey preguntó si estaba listo. Todavía no, dijo el entrenador: es vanidoso, pendenciero, confía demasiado en su fuerza. A los diez días siguientes: todavía no, reacciona en cuanto oye cantar a otro gallo o lo ve aparecer. Diez días después: todavía no, mira con furia y está lleno de ímpetu. A los cuarenta días, por fin: ya casi. Aunque otro gallo cante, él no cambia. Al mirarlo, dirías que es un gallo de madera. Su virtud está completa. Ningún otro gallo se atreve a enfrentarlo: todos huyen.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>El gallo de madera no es un gallo muerto ni indiferente. Es un gallo que ya no necesita demostrar nada. Todo lo que el entrenador le fue quitando —la vanidad, la reacción, la furia— era importancia. Lo que quedó fue la fuerza sin el peso.</p>
+<h2>El zapato que calza</h2>
+<p>Y al final del capítulo, Zhuangzi resume todo en dos líneas que tienen la sencillez de las cosas ciertas:</p>
+<p><em>Cuando el zapato calza, el pie se olvida. Cuando el cinturón calza, se olvida la cintura.</em><sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Nadie piensa en un zapato cómodo. El zapato se nota cuando aprieta. Lo mismo pasa con una tarea, con un oficio, con un vínculo: cuando calzan, uno se olvida de ellos y está entero en lo que hace. El peso es el aviso de que algo aprieta.</p>
+<p>Justo antes, Zhuangzi menciona a un artesano legendario llamado Chui, capaz de trazar círculos y cuadrados más exactos que los que se hacen con compás y escuadra. Sus dedos, dice, acompañaban la transformación de las cosas sin que su mente tuviera que intervenir, y por eso su espíritu estaba entero y no encontraba resistencia.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> Es la mano de Mariana en las tardes de los cien cuencos. Es la mano de los golfistas expertos de Sian Beilock cuando la prisa no les deja tiempo de vigilarse.</p>
+<div class="perla"><p>El zapato se nota cuando aprieta.<br>El peso es el aviso.</p></div>
+<h2>Acción sin actor</h2>
+<p><em>El Vacío Fértil</em> es el sexto libro de <em>Trinity Origen</em>, la serie de sabiduría contemplativa. El libro anterior de este sistema, <em>No Saber</em>, se apoyó en su quinto nodo. El sexto, «Integración del vacío», da el paso siguiente: después de haber soltado tanto, ¿cómo se vive en el mundo de todos los días? ¿Cómo se trabaja, cómo se cría a un hijo, cómo se pagan las cuentas?<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p>
+<p>En ese nodo, Trinity escribe una versión propia del <em>wu wei</em>, la acción sin forzar de la tradición taoísta. La llama «el principio wu wei actualizado», y la condensa en cuatro líneas:</p>
+<div class="cita"><p class="trad">Acción sin actor<br>Eficiencia sin esfuerzo<br>Resultados sin apego<br>Excelencia sin ego<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Ninguna de las cuatro renuncia a algo. Hay acción, hay eficiencia, hay resultados, hay excelencia. Lo que se quita es lo que sobra: el actor que se mira actuar, el esfuerzo que aprieta, el apego que persigue la flecha, el ego que necesita estar a la altura. Es exactamente lo que le quitaron al gallo.</p>
+<p>Pero el nodo no se queda ahí, y esto es lo que lo vuelve valioso para este libro. Antes de enseñar el principio, advierte sobre dos errores. El primero es usar el vacío como excusa: creer que, como uno ya soltó, puede desentenderse de lo mundano. Sus síntomas, dice Trinity, son el descuido de las responsabilidades básicas y una arrogancia espiritual disfrazada de desapego. Y lo corrige con una frase:</p>
+<div class="cita"><p class="trad">El vacío no niega la forma, la abraza sin apego.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>El segundo error es el contrario: volver a endurecerse, tratar lo aprendido como una experiencia del pasado y recaer en los viejos patrones, hasta el agotamiento.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Entre esos dos errores está el camino de este libro. Ni descuidar ni apretar. Trinity tiene, en el mismo nodo, una imagen precisa para eso: llevar la identidad de trabajo ligera, <em>como ropa, no como piel</em>.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Y cuando enumera lo que se gana al final de ese camino, lo dice en dos líneas que cualquiera querría para sí:</p>
+<div class="cita"><p class="trad">Logras sin inflarte<br>Pierdes sin quebrarte<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<h2>No es que no te importe</h2>
+<p><em>El Arquitecto Cuántico</em> lo había dicho a su manera, en su sexto nodo, hablando de alguien que suelta lo que desea:</p>
+<div class="cita"><p class="trad">No es que no te importe.<br>Es que confías tanto<br>que la ansiedad sobra, y la certeza también.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>Y en el primero había dejado una paradoja que ahora se entiende mejor: para tener el control, hay que soltar el control. La atención que rinde, decía, no es la más intensa, sino la que regresa sin apretar, día tras día.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>Zeland, que en tantas cosas habla otro idioma, coincide en este punto con una exactitud sorprendente. Bajar la importancia, escribe, no tiene nada que ver con descuidar las responsabilidades ni con subestimar lo que pasa alrededor. Al contrario: el descuido es la otra cara de la misma moneda. No hay lugar para el descuido ni para la exageración. Lo que propone es hacer las cosas sin dramatismo, pero de ninguna manera con negligencia.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup> Y le pone a su capítulo sobre la importancia un cierre de tres palabras que podría ser el lema de Mariana en el torno: <em>cuidar sin preocuparse</em>.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Agrega además un recurso que ninguna otra voz de este libro menciona y que, sin embargo, todas practican: el humor. Lo único que no crea exceso de importancia, escribe Zeland, es la capacidad de reírse de uno mismo y de los demás sin ofender. El humor, dice, desinfla la importancia.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup> Elvira lo sabía. Tomás también, la noche en que dijo que nadie se moría.</p>
+<div class="perla"><p>Ni descuidar ni apretar.<br>Cuidar sin preocuparse.</p></div>
+<h2>El tazón sin firma</h2>
+<p>En un templo budista de Kioto se guarda un tazón de té que Japón declaró tesoro nacional. Se lo conoce como el Kizaemon Ido, por el nombre de uno de sus antiguos dueños. Fue hecho en Corea en el siglo dieciséis, por un alfarero cuyo nombre nadie conoce, y probablemente fue en su origen un cuenco común para arroz, de los que se hacían por centenares. Los maestros del té japoneses lo eligieron entre muchos y lo veneraron durante siglos.</p>
+<p>En 1931, el pensador japonés Sōetsu Yanagi, fundador de un movimiento que reivindicó la belleza de los objetos hechos por artesanos anónimos, consiguió verlo junto con su amigo, el ceramista Kawai Kanjirō. El tazón estaba guardado en cinco cajas, una dentro de otra, envuelto en seda púrpura. Yanagi escribió después que, al verlo, se le cayó el corazón: era un buen tazón, sí, pero tan común como se pueda imaginar. Un cuenco coreano para comer, de los que usaba a diario un hombre pobre, sin un rastro de adorno ni de cálculo. Y que precisamente por eso era hermoso. Quien lo hizo, si Yanagi tiene razón, no estaba tratando de hacer una obra maestra. Estaba haciendo un cuenco, uno más entre cientos, con una mano que ya no necesitaba vigilarse.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup></p>
+<p>La idea atraviesa toda la obra de Yanagi: la belleza más honda aparece cuando el que hace se olvida de sí mismo. Por eso comparaba esos cuencos coreanos con los que algunos ceramistas japoneses hacían a propósito para imitarlos. Unos buscaban con esfuerzo la irregularidad; los otros la dejaban aparecer sin buscarla, porque hacían cuencos para comer, no para ser admirados.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup> No es una invitación al descuido. El alfarero coreano tenía un oficio enorme. Lo que no tenía era el peso de tener que estar a la altura.</p>
+<h2>Centrar</h2>
+<p>Mariana tiene en el taller un libro viejo, con las tapas manchadas de barro, que le regaló Elvira cuando terminó su primer año de aprendizaje. Lo escribió en 1964 una poeta y ceramista estadounidense, Mary Caroline Richards, que había enseñado en una escuela de artes legendaria, el Black Mountain College. Se llama <em>Centering</em>, centrar, y su idea es que el gesto de centrar el barro en el torno no es solo una técnica: es una manera de estar en la vida. Para centrar el barro, la persona tiene que estar centrada. Y lo que se aprende en el torno, esa presión que es firme sin ser violenta, esa quietud que no es rigidez, se puede llevar a todo lo demás.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p>
+<p>Esa noche, después de que Fernando llevó a Elvira de vuelta a su casa, Mariana se quedó un rato mirando la vasija, todavía húmeda, envuelta a medias en plástico para que secara despacio. Pensó en las tres semanas de piezas desplomadas, en el martillo, en la vasija agujereada a las tres de la mañana, en la voz que había usado con su hijo. Se rio sola, en voz alta, en el taller vacío. No de vergüenza: de alivio. Todo ese peso lo había puesto ella. Y lo que ella había puesto, podía sacarlo.</p>
+<h2>Tú también</h2>
+<p>Piensa en algo que haces bien cuando no te miras hacerlo. Ordenar tu escritorio, manejar por una ruta conocida, explicar algo que dominas, jugar con un niño, escribir un mensaje rápido a un amigo.</p>
+<p>Hoy, elige una tarea que te pesa y hazla de esa manera: como si fuera de práctica, como un cuenco más entre cientos, sin la última revisión. No la descuides. Solo no la persigas.</p>
+<p>Y si en algún momento te descubres apretando, prueba lo que hizo Mariana: ríete un poco de ti, en voz alta si puedes. El humor también afloja.</p>
+<div class="sigue"><a href="L08-U5.html">Anterior: La hoja de loto</a><a class="prox" href="L08-U7.html">Siguiente: La operación</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Zhuangzi, cap. 19, «Comprender la vida», 9. Traducción propia sobre la versión de James Legge (1891).</li><li id="nota-2">Ídem, 4. Paráfrasis.</li><li id="nota-3">Ídem, 8. Paráfrasis.</li><li id="nota-4">Ídem, 13. Traducción propia.</li><li id="nota-5">Ídem, 12. Paráfrasis.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 6: «Integración del vacío», secciones «Los dos errores de la no-integración», «El arte de la integración», «El vacío en el trabajo» y «El regalo de la integración». Fragmento y paráfrasis.</li><li id="nota-7">Lic. Arturo Rodríguez, <em>El Arquitecto Cuántico</em>, Trinity Quantum, Libro 1, Nodo 6: «El lenguaje de las sincronicidades». Fragmento.</li><li id="nota-8">Ídem, Nodo 1: «El colapso de la función de onda», «La paradoja como medicina». Paráfrasis.</li><li id="nota-9">Vadim Zeland, <em>El espacio de las variantes</em>, cap. IV, «Equilibrar», sección «De la batalla al equilibrio» y resumen del capítulo. Paráfrasis.</li><li id="nota-10">Sōetsu Yanagi, «The Kizaemon Tea-bowl», en <em>The Unknown Craftsman: A Japanese Insight into Beauty</em>, adaptación de Bernard Leach (1972). Paráfrasis. El tazón se guarda en el Kohō-an, dentro del templo Daitoku-ji, en Kioto, y fue declarado tesoro nacional en 1951.</li><li id="nota-11">M. C. Richards, <em>Centering in Pottery, Poetry, and the Person</em> (1964). Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 8 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

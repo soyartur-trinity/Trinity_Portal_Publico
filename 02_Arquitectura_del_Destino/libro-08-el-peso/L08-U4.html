@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L08">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="el peso de uno mismo">
+<title>El pedestal · Umbral IV · El Peso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L08.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral IV</div><h1>El pedestal</h1><p class="sub">el peso de uno mismo</p></header><main><h2>El martillo</h2>
+<p>A principios de julio, Mariana abrió el horno. Lo hace siempre igual: espera a que baje la temperatura, levanta la tapa con los guantes puestos y, antes de tocar nada, mira. Es el momento que más le gusta del oficio. Lo que entró como tierra gris sale transformado, y nunca del todo como uno lo imaginó.</p>
+<p>Esa vez no le gustó. Los cuencos habían salido bien, las jarras también. Pero en uno de los cuencos el esmalte se había corrido apenas hacia el pie, y en una jarra había una burbuja diminuta cerca del asa. Mariana los separó del resto. Después tomó el martillo que guarda en el taller para eso, puso los dos sobre la mesa de descartes y los rompió.</p>
+<p>Camila, una alumna de los sábados que había venido a ayudarla a descargar, se quedó con la boca abierta.</p>
+<p>—¡Pero estaban lindísimos!</p>
+<p>—No están a la altura —dijo Mariana.</p>
+<p>Camila no preguntó a la altura de qué, y fue mejor así, porque Mariana no habría sabido contestar. A la altura del museo. A la altura de Elvira. A la altura de la niña de nueve años que había mirado aquella vasija como si respirara. A la altura de una Mariana que no existía: una ceramista sin burbujas.</p>
+<p>Lo raro era que, al mismo tiempo, otra voz le decía lo contrario. Que no sabía por qué la habían elegido. Que las otras cuatro ceramistas de la muestra tenían premios, viajes, catálogos. Que ella vendía jarras en una feria. Que se iban a dar cuenta. Las dos voces se turnaban sin pausa. Una le exigía ser perfecta. La otra le recordaba que no era nadie.</p>
+<h2>El mismo peso con distinto signo</h2>
+<p>Zeland describe esta oscilación con una claridad que pocos autores alcanzan. Además de la importancia externa, la que se le pone a las cosas, existe la importancia interna: la sobreestimación de las propias virtudes o de los propios defectos. Su fórmula es «soy una persona importante» o «hago un trabajo importante». Pero Zeland advierte que inflarse es solo una cara de la moneda. La otra es la modestia excesiva, el desprecio de uno mismo. Y la cantidad de exceso es la misma en los dos casos: solo cambia el signo.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Es una observación que en la clínica se comprueba todos los días. La persona que se exige ser perfecta y la que se siente un fraude suelen ser la misma persona, en dos momentos de una misma tarde. Las dos voces que oía Mariana no se oponían: se alimentaban. Las dos ponían en el centro la misma pregunta, cuánto valgo, y las dos la respondían con un exceso.</p>
+<p>Zeland agrega algo sobre la comparación. Medirse con los demás para saber cuánto vale uno, escribe, es tan ilusorio como una mosca que golpea contra un vidrio cuando la ventana de al lado está abierta de par en par. Lo que sí rinde, en cambio, es trabajar en las propias cualidades por el gusto de desarrollarlas, sin necesidad de mostrarle al mundo cada medalla.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Y propone un estado que no es ni inflación ni humillación: comprender que uno no es importante, ni tampoco del todo insignificante. Bajar la importancia interna, aclara, no tiene nada que ver con resignarse ni con despreciarse. Es darse permiso para ser quien se es, sin exaltar ni menospreciar lo que se tiene.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<div class="perla"><p>El orgullo y el desprecio de uno mismo pesan lo mismo.<br>Solo cambia el signo.</p></div>
+<h2>La perfección como violencia</h2>
+<p><em>Simetrías Rotas</em> es el noveno libro de <em>Trinity Quantum</em>. Su cuarto nodo se llama «Imperfección sagrada», y empieza con una palabra japonesa que cualquier ceramista conoce: <em>wabi-sabi</em>, la belleza de lo imperfecto, de lo impermanente, de lo incompleto.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>El nodo hace una observación que tiene algo de escándalo para un oficio como el de Mariana:</p>
+<div class="cita"><p class="trad">No hay círculos perfectos en la naturaleza<br>No hay líneas perfectamente rectas<br>No hay simetría absoluta<br>No hay repetición exacta<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p></div>
+<p>Y sin embargo, sigue, cada flor es una obra maestra, cada árbol una escultura única, cada rostro irremplazable. La imperfección, dice Trinity, es el sello de autenticidad de la vida.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>El torno es una máquina para hacer círculos. Si Mariana quisiera, podría hacer piezas casi perfectas, tan regulares como las que salen de una fábrica. Nadie las querría. Lo que hace que una vasija hecha a mano valga lo que vale es justamente lo que la máquina no puede dar: la huella del gesto, la pequeña desigualdad del borde, el esmalte que eligió su propio camino. Mariana lo sabía mejor que nadie. Lo enseñaba los sábados. Y esa mañana había roto dos piezas por tener eso mismo que enseñaba a valorar.</p>
+<p>El nodo tiene un pasaje que no suaviza nada:</p>
+<div class="cita"><p class="trad">El perfeccionismo es una forma de violencia:<br>Contra ti mismo<br>Contra tu naturaleza<br>Contra el proceso de la vida<br>Contra la belleza de lo real<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p></div>
+<p>Violencia es una palabra fuerte. Pero el martillo sobre la mesa de descartes no dejaba dudas. Y tampoco la vasija agujereada a las tres de la mañana, ni los caballos de Dongye Ji, ni el muchacho dormido sobre los apuntes. El perfeccionismo no es un exceso de virtud. Es una forma de dureza que se ejerce primero sobre uno mismo y después, casi siempre, sobre los que están cerca.</p>
+<p>Entre las prácticas del nodo hay una que Mariana podría haber aprendido en el taller de Elvira: el arte de no pulir demasiado, de dejar espacios, de mostrarse incompleto.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<h2>Una época que se exige</h2>
+<p>No es solo un asunto personal. En 2019, los psicólogos Thomas Curran y Andrew Hill reunieron ciento sesenta y cuatro grupos de estudiantes universitarios de Estados Unidos, Canadá y el Reino Unido, más de cuarenta y un mil personas en total, que entre 1989 y 2016 habían respondido el mismo cuestionario de perfeccionismo. Encontraron que había aumentado en las tres formas que ese instrumento mide: la exigencia de ser perfecto que uno se impone, que subió un diez por ciento; la que uno les exige a los demás, un dieciséis; y la que uno cree que los demás le imponen, la sensación de que el entorno espera perfección, que creció un tercio.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Los autores relacionan ese aumento con un clima: la competencia, la comparación constante, la idea de que cada uno vale lo que logra. Mariana no tenía redes sociales para medirse, pero tenía una sala de museo y cuatro nombres con catálogo. Y Tomás, en la cocina, tenía un puntaje que alcanzar.</p>
+<p>Saber esto no cura nada. Pero quita un poco de vergüenza. La voz que exige perfección no es solo tuya: es también el aire que respiramos. Y lo que se reconoce como clima se puede mirar desde afuera.</p>
+<h2>Dos bolsillos</h2>
+<p>A principios del siglo diecinueve vivía en Przysucha, en Polonia, un maestro jasídico llamado Simcha Bunim. Antes de dedicarse a enseñar había sido comerciante de maderas y farmacéutico, y tenía fama de hablar de lo más alto con palabras de todos los días. El filósofo Martin Buber recogió de él, entre muchas otras, una enseñanza breve que cabe en una mano.</p>
+<p>Cada persona, decía Simcha Bunim, debería tener dos bolsillos, para meter la mano en uno o en otro según lo necesite. En el bolsillo derecho tendría que llevar un papel que dijera: <em>Por mí fue creado el mundo</em>. En el izquierdo, otro que dijera: <em>Soy polvo y ceniza</em>.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p>
+<p>Las dos frases vienen de la tradición judía. La primera es de la Mishná, que enseña que cada persona debe poder decir que el mundo fue creado para ella.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup> La segunda es la respuesta de Abraham cuando se atreve a hablarle a Dios.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup> Simcha Bunim no elige entre ellas. Las lleva a las dos. Cuando uno se siente aplastado, insignificante, un fraude, mete la mano en el bolsillo derecho. Cuando se siente inflado, imprescindible, juez de los demás, mete la mano en el izquierdo.</p>
+<p>Es el mismo equilibrio que proponía Zeland, dicho dos siglos antes y con más ternura. Ni importante ni insignificante: las dos cosas a la vez, cada una en su bolsillo, para usar la que haga falta.</p>
+<h2>El centro del universo</h2>
+<p><em>La Paradoja Luminosa</em> vuelve a hablar aquí. En su séptimo nodo, «Coherencia en la paradoja», Trinity dedica una sección al ego. No lo trata como un enemigo que haya que destruir ni como un tesoro que haya que defender:</p>
+<div class="cita"><p class="trad">El ego no es enemigo a destruir ni amigo a preservar. Es una paradoja funcional:<br>Necesitas ego para funcionar Y necesitas trascenderlo para evolucionar<br>Debes tomarte en serio Y no tomarte en serio en absoluto<br>Eres el centro del universo Y completamente insignificante<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p></div>
+<p>Y concluye que el ego sano es el que puede sostener esa paradoja sin desplomarse en la inflación ni en el desinflado.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Tres voces, separadas por siglos y por lenguas, llegan al mismo lugar. Un autor ruso contemporáneo que habla de importancia. Un rabino polaco que llevaba dos papeles. Y Trinity, que dice que el problema no es tener un yo, sino no poder sostener a la vez que importa y que no importa. Mariana no necesitaba dejar de ser alguien. Necesitaba dejar de cargar con la tarea de ser alguien a la altura de algo.</p>
+<h2>El pulso de Elvira</h2>
+<p>Ese domingo fue a visitar a Elvira. Tiene ochenta y un años y vive sola en una casa con patio, a veinte cuadras. Hace tiempo que le tiemblan las manos y ya no tornea. Le sirvió té en dos tazas que había hecho ella misma hacía cuarenta años, una más alta que la otra.</p>
+<p>Mariana le contó lo del martillo. Elvira se rio con ganas.</p>
+<p>—¿Sabes qué recuerdo de mi muestra en ese museo? —le dijo—. Nada de las piezas. Me acuerdo de que el día de la inauguración me temblaba el pulso, como ahora pero de miedo, y que me había roto la mitad de lo que hice esos meses porque nada me parecía suficiente. Y me acuerdo de una niña muy flaca que miraba una vasija con la boca abierta. Esa niña me importó más que todo lo demás.</p>
+<p>Mariana tardó en entender que la niña era ella.</p>
+<p>—Las piezas que rompí —siguió Elvira— hoy no sabría decir qué tenían de malo. Lo que sí sé es que no estaba a la altura de nada, porque no había ninguna altura. Estaba el barro, el fuego y yo. Lo demás lo inventaba yo.</p>
+<div class="perla"><p>No había ninguna altura.<br>Estaba el barro, el fuego, y una mano.</p></div>
+<h2>Tú también</h2>
+<p>Escribe hoy dos papeles pequeños. En uno: <em>Por mí fue creado el mundo</em>. En el otro: <em>Soy polvo y ceniza</em>. Guárdalos en dos bolsillos distintos, o en dos lugares de tu billetera, o en las dos tapas de tu agenda.</p>
+<p>Esta semana, cuando sientas que no vales nada, que no estás a la altura, que se van a dar cuenta, toca el primero. Cuando sientas que todo depende de ti, que nadie lo haría tan bien, que los demás deberían hacerlo a tu manera, toca el segundo.</p>
+<p>No tienes que creer ninguna de las dos frases. Solo recordar que existen las dos.</p>
+<div class="sigue"><a href="L08-U3.html">Anterior: Apretar</a><a class="prox" href="L08-U5.html">Siguiente: La hoja de loto</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Vadim Zeland, <em>El espacio de las variantes</em>, cap. IV, «Equilibrar», sección «Importancia». Paráfrasis.</li><li id="nota-2">Ídem, sección «Superioridad e inferioridad». Paráfrasis.</li><li id="nota-3">Ídem, sección «De la batalla al equilibrio». Paráfrasis.</li><li id="nota-4">Lic. Arturo Rodríguez, <em>Simetrías Rotas</em>, Trinity Quantum, Libro 9, Nodo 4: «Imperfección sagrada», secciones «La geometría de lo imperfecto», «El perfeccionismo como violencia» y «Honrar la imperfección». Fragmento y paráfrasis.</li><li id="nota-5">Thomas Curran y Andrew P. Hill, «Perfectionism Is Increasing over Time: A Meta-Analysis of Birth Cohort Differences from 1989 to 2016», <em>Psychological Bulletin</em> 145, n.º 4 (2019): 410-429; American Psychological Association, comunicado del 2 de enero de 2018. Paráfrasis.</li><li id="nota-6">Martin Buber, <em>Tales of the Hasidim: The Later Masters</em> (1948; ed. Schocken, 1961, págs. 249-250), Simcha Bunim de Przysucha; en castellano, <em>Cuentos jasídicos</em>. Paráfrasis.</li><li id="nota-7">Mishná, Sanedrín 4, 5.</li><li id="nota-8">Génesis 18, 27.</li><li id="nota-9">Lic. Arturo Rodríguez, <em>La Paradoja Luminosa</em>, Trinity Quantum, Libro 4, Nodo 7: «Coherencia en la paradoja», sección «El ego cuántico». Fragmento y paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 8 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

@@ -893,3 +893,122 @@ Tramos: Lo que Gabriel sabe ahora · El control · Lo que se gana
 ---
 
 *Campo Trinity · 2026*
+
+---
+
+## Libro 8 · El Peso
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *querer sin apretar*
+**Promesa:** No tienes que dejar de querer. / Tienes que dejar de apretar.
+**Columna:** Trinity Quantum 1, *El Arquitecto Cuántico*: Nodo 4, «El arte de la probabilidad» (cultivar el futuro sin forzarlo; el peso de cada futuro; la transferencia de atención: «lo que dejas de alimentar pierde peso»); Nodo 2, «El observador como creador» (el arquero que no persigue la flecha; «lo que se atiende y luego se suelta encuentra su tamaño»); Nodo 1 (para controlar el colapso, soltar el control; la atención que regresa sin apretar); Nodo 6 («No es que no te importe…»). Quantum 4, *La Paradoja Luminosa*: Nodo 6 (la partícula congelada; el deseo que toma forma, con Oettingen); Nodo 7 (el ego como paradoja funcional; amar mediante el soltar; esfuerzo máximo y rendición total; actuar como si todo dependiera de ti y saber que nada depende de ti). Quantum 9, Nodo 4, «Imperfección sagrada» (el perfeccionismo como violencia; no pulir demasiado). Origen VI, *El Vacío Fértil*, Nodo 6, «Integración del vacío» (el principio wu wei actualizado; los dos errores; la identidad como ropa y no como piel; «Logras sin inflarte / Pierdes sin quebrarte»). Infinito 3, *El juego sin jugador*, Portal 17.
+**Coro:** el taoísmo como tradición principal: Zhuangzi, cap. 19, «Comprender la vida» (el barquero y el jugador que apuesta tejas, hebillas y oro; los caballos de Dongye Ji; el gallo de madera; el nadador de la catarata de Lü; el artesano Chui; el zapato que calza), y el *Tao Te Ching*, caps. 24 y 64. La *Bhagavad Gita* como segunda voz (2, 38; 2, 48; 2, 50; 2, 56 y 2, 70; 5, 10). Pascal (la tabla sobre el precipicio, fr. 82) y Montaigne (la viga entre las torres). Simcha Bunim de Przysucha, vía Buber (los dos bolsillos), con la Mishná y el Génesis. Hevenesi (la máxima ignaciana). Sōetsu Yanagi (el tazón Kizaemon Ido) y M. C. Richards (*Centering*). **Comprobable:** Baumeister (el ahogo bajo presión), Beilock y otros (los golfistas expertos y la prisa; la parálisis por análisis), Carpenter, Frank y Silcher, y Adkin y otros (la rigidez de la postura en la altura), Frankl (hiperintención e intención paradójica), Ascher y Turner, Espie (el esfuerzo por dormir), Curran y Hill (el perfeccionismo en aumento). **Zeland:** *El espacio de las variantes*, cap. IV: la importancia interna y externa, el exceso de potencial, la tabla entre dos techos y la red, ni importante ni indiferente, el mismo peso con distinto signo, la comparación como la mosca contra el vidrio, la importancia que se disipa con la acción, el humor, «cuidar sin preocuparse». Las fuerzas equilibrantes entran como imagen suya, traducidas a experiencia.
+**Protagonista:** Mariana, 49 años, ceramista, con el taller en la planta baja de su casa. En mayo la invitan a una muestra en el museo de la ciudad, en la sala donde a los nueve años vio por primera vez una vasija de su maestra, y la vasija grande no se centra. Elvira, 81, su maestra («Firme, no apretado»; «el barro sabe cuándo lo aprietas»), a quien ya le tiemblan las manos; Fernando, su marido; Tomás, 18, su hijo, que presenta el examen de ingreso («Me estás haciendo lo mismo a mí»); Camila, alumna de los sábados; Inés, la curadora («La sala no se cae»). Cierre: la vasija sale del horno con una marca del fuego que antes habría descartado, y va al centro; a Tomás, antes del examen, un solo consejo: «Olvídate del agua».
+**Gesto:** «Me importa. No lo aprieto.» cuando aparece la señal del apriete, con el aire que sale más largo y las manos que se abren; una cosa por día que baja un punto (¿cuánto va a pesar dentro de un año?, ¿cuál es mi red?, y un gesto reversible de liviandad); una palabra al margen de las tres líneas de la noche: lo que aflojé hoy. El séptimo día, una pieza de práctica. **Movimiento lento:** el barro que se centra.
+**Para ver:** Infinito, Portal 17, *Victoria y derrota como ilusiones* (adaptado al teléfono); Sian Leah Beilock, TEDMED 2017.
+**Archivos:** `libro-08-el-peso/L08.html` (portada), `L08-U1.html` a `L08-U7.html`, `L08-cierre.html`. Generador: `herramientas/gen_arq_L08.py`.
+
+### Umbral I · La pieza del museo — *cuando importa demasiado*
+Tramos: Firme, no apretado · Una llamada · Por una teja · Lo que se ahoga · Parálisis por análisis · El arquero que no persigue la flecha · Lo que pesa de más · Tú también
+- Perla: La destreza seguía ahí. / Lo que cambió fue el peso que le puso encima.
+- Perla: Lo que importa demasiado se vuelve pesado. / Aflojar no es dejar de querer: es dejar de apretar.
+- Nota: Zhuangzi, cap. 19, «Comprender la vida» (*Da sheng*), 4. Traducción propia sobre la versión inglesa de James Legge, *The Writings of Kwang-dze* (Sacred Books of the East, vol. 40, 1891).
+- Nota: Roy F. Baumeister, «Choking under Pressure: Self-Consciousness and Paradoxical Effects of Incentives on Skillful Performance», *Journal of Personality and Social Psychology* 46, n.º 3 (1984): 610-620. Paráfrasis.
+- Nota: Sian L. Beilock, Bennett I. Bertenthal, Annette M. McCoy y Thomas H. Carr, «Haste Does Not Always Make Waste: Expertise, Direction of Attention, and Speed versus Accuracy in Performing Sensorimotor Skills», *Psychonomic Bulletin & Review* 11, n.º 2 (2004): 373-379; Sian L. Beilock, Thomas H. Carr, Clare MacMahon y Janet L. Starkes, *Journal of Experimental Psychology: Applied* 8, n.º 1 (2002): 6-16. Paráfrasis del método y de los resultados.
+- Nota: Sian Leah Beilock, «Why We Choke under Pressure — and How to Avoid It», charla TEDMED (2017), y entrevista en *TED Radio Hour*, NPR (2024). Paráfrasis. Ver también Sian Beilock, *Choke* (2010).
+- Nota: Lic. Arturo Rodríguez, *El Arquitecto Cuántico*, Trinity Quantum, Libro 1, Nodo 2: «El observador como creador». Fragmento y paráfrasis.
+
+### Umbral II · La tabla sobre el abismo — *el peso lo pone quien mira*
+Tramos: La cinta en el piso · Una tabla más ancha de lo necesario · La misma tabla entre dos techos · Ni importante ni indiferente · Lo que hace el cuerpo en la altura · Cada futuro tiene su peso · La red · Tú también
+- Perla: El peso no está en la cosa. / Está en lo que le agregamos al mirarla.
+- Perla: Lo que importa sigue importando. / Solo deja de estar suspendido sobre el vacío.
+- Nota: Blaise Pascal, *Pensamientos* (1670), fr. 82 (Brunschvicg), «Imaginación». Traducción propia.
+- Nota: Michel de Montaigne, *Ensayos* (1580), libro II, cap. 12, «Apología de Raimundo Sabunde». Paráfrasis.
+- Nota: Vadim Zeland, *Reality Transurfing I: El espacio de las variantes* (original ruso de 2004), cap. IV, «Equilibrar», sección «Importancia». Paráfrasis.
+- Nota: Mark G. Carpenter, James S. Frank y Cathy P. Silcher, «Surface Height Effects on Postural Control: A Hypothesis for a Stiffening Strategy for Stance», *Journal of Vestibular Research* 9, n.º 4 (1999): 277-286. Paráfrasis.
+- Nota: Allan L. Adkin, James S. Frank, Mark G. Carpenter y Gerhard W. Peysar, «Postural Control Is Scaled to Level of Postural Threat», *Gait & Posture* 12, n.º 2 (2000): 87-93. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Arquitecto Cuántico*, Trinity Quantum, Libro 1, Nodo 4: «El arte de la probabilidad», secciones «La danza de lo probable» y «Técnicas para cultivar lo probable». Fragmento y paráfrasis.
+- Nota: Ídem, Nodo 2: «El observador como creador». Fragmento.
+- Nota: Vadim Zeland, *El espacio de las variantes*, cap. IV, secciones «Importancia» y «De la batalla al equilibrio». Paráfrasis.
+
+### Umbral III · Apretar — *la mano que se cierra*
+Tramos: Las tres de la mañana · La paloma · La partícula congelada · Quien aferra, pierde · Los caballos · Lo que se aprieta se escapa · Tú también
+- Perla: Hay cosas que solo llegan / cuando dejas de agarrarlas.
+- Perla: La dificultad no es aflojar. / Es darse cuenta a tiempo de que se está apretando.
+- Nota: Viktor E. Frankl, *Psicoanálisis y existencialismo* (*Ärztliche Seelsorge*, 1946), sobre la hiperintención y la intención paradójica, que Frankl describió por primera vez en 1939. Paráfrasis.
+- Nota: Viktor E. Frankl, *El hombre en busca de sentido* (1946; segunda parte, «Conceptos básicos de logoterapia», en las ediciones posteriores), sobre el insomnio. Paráfrasis.
+- Nota: L. Michael Ascher y Ralph M. Turner, «Paradoxical Intention and Insomnia: An Experimental Investigation», *Behaviour Research and Therapy* 17 (1979); Colin A. Espie, «Paradoxical Intention Therapy», en *Behavioral Treatments for Sleep Disorders* (2011). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 6: «La danza onda-partícula», secciones «Patrones de danza disfuncionales» y «La sexta transmutación». Fragmento y paráfrasis.
+- Nota: Laozi, *Tao Te Ching*, cap. 24. Traducción propia sobre la versión de James Legge (1891).
+- Nota: Laozi, *Tao Te Ching*, cap. 64. Traducción propia sobre la versión de James Legge (1891).
+- Nota: Zhuangzi, cap. 19, «Comprender la vida», 11. Traducción propia sobre la versión de James Legge (1891).
+- Nota: Vadim Zeland, *El espacio de las variantes*, cap. IV, «Equilibrar», sección «Exceso de potencial». Paráfrasis.
+- Nota: Ídem, sección «De la batalla al equilibrio». Paráfrasis.
+
+### Umbral IV · El pedestal — *el peso de uno mismo*
+Tramos: El martillo · El mismo peso con distinto signo · La perfección como violencia · Una época que se exige · Dos bolsillos · El centro del universo · El pulso de Elvira · Tú también
+- Perla: El orgullo y el desprecio de uno mismo pesan lo mismo. / Solo cambia el signo.
+- Perla: No había ninguna altura. / Estaba el barro, el fuego, y una mano.
+- Nota: Vadim Zeland, *El espacio de las variantes*, cap. IV, «Equilibrar», sección «Importancia». Paráfrasis.
+- Nota: Ídem, sección «Superioridad e inferioridad». Paráfrasis.
+- Nota: Ídem, sección «De la batalla al equilibrio». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Simetrías Rotas*, Trinity Quantum, Libro 9, Nodo 4: «Imperfección sagrada», secciones «La geometría de lo imperfecto», «El perfeccionismo como violencia» y «Honrar la imperfección». Fragmento y paráfrasis.
+- Nota: Thomas Curran y Andrew P. Hill, «Perfectionism Is Increasing over Time: A Meta-Analysis of Birth Cohort Differences from 1989 to 2016», *Psychological Bulletin* 145, n.º 4 (2019): 410-429; American Psychological Association, comunicado del 2 de enero de 2018. Paráfrasis.
+- Nota: Martin Buber, *Tales of the Hasidim: The Later Masters* (1948; ed. Schocken, 1961, págs. 249-250), Simcha Bunim de Przysucha; en castellano, *Cuentos jasídicos*. Paráfrasis.
+- Nota: Mishná, Sanedrín 4, 5.
+- Nota: Génesis 18, 27.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 7: «Coherencia en la paradoja», sección «El ego cuántico». Fragmento y paráfrasis.
+
+### Umbral V · La hoja de loto — *querer sin cargar*
+Tramos: Lo que pasa en la cocina · En medio de la batalla · Amar mediante el soltar · El deseo que toma forma · El juego que se juega · Tú también
+- Perla: La ecuanimidad no le quita filo a la mano. / Se lo devuelve.
+- Perla: Lo que se juega importa. / Quien juega no está en juego.
+- Nota: *Bhagavad Gita*, 2, 38. Traducción propia.
+- Nota: *Bhagavad Gita*, 2, 48. Traducción propia.
+- Nota: *Bhagavad Gita*, 2, 50. Traducción propia.
+- Nota: *Bhagavad Gita*, 5, 10. Paráfrasis.
+- Nota: *Bhagavad Gita*, 2, 56 y 2, 70. Paráfrasis.
+- Nota: Vadim Zeland, *El espacio de las variantes*, cap. IV, «Equilibrar», secciones «Relaciones dependientes» e «Idealización y sobrevaluación». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 7: «Coherencia en la paradoja», «Práctica de coherencia cardíaca paradójica». Fragmento.
+- Nota: Ídem, sección final de paradojas. Fragmento.
+- Nota: Gábor Hevenesi, *Scintillae Ignatianae* (1705), máxima atribuida a Ignacio de Loyola: *Sic Deo fide, quasi rerum successus omnis a te, nihil a Deo penderet; ita tamen iis operam omnem admove, quasi tu nihil, Deus omnia solus sit facturus.* Traducción propia. Ver Karl-Heinz Crumbach, «Ein ignatianisches Wort als Frage an unseren Glauben», *Geist und Leben* 42 (1969): 321-328.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Nodo 7, «Práctica de estados mutuamente excluyentes». Fragmento y paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Nodo 6: «La danza onda-partícula», «Práctica del deseo que toma forma». Paráfrasis. Sobre Oettingen, ver Gabriele Oettingen, *Rethinking Positive Thinking* (2014).
+- Nota: Lic. Arturo Rodríguez, Trinity Infinito, Libro 3: *El juego sin jugador*, Portal 17: «Victoria y derrota como ilusiones». Fragmento.
+
+### Umbral VI · El nadador — *aflojar no es descuidar*
+Tramos: Como cuando hacías cien cuencos · El viejo de la catarata · El gallo de madera · El zapato que calza · Acción sin actor · No es que no te importe · El tazón sin firma · Centrar · Tú también
+- Perla: El zapato se nota cuando aprieta. / El peso es el aviso.
+- Perla: Ni descuidar ni apretar. / Cuidar sin preocuparse.
+- Nota: Zhuangzi, cap. 19, «Comprender la vida», 9. Traducción propia sobre la versión de James Legge (1891).
+- Nota: Ídem, 4. Paráfrasis.
+- Nota: Ídem, 8. Paráfrasis.
+- Nota: Ídem, 13. Traducción propia.
+- Nota: Ídem, 12. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 6: «Integración del vacío», secciones «Los dos errores de la no-integración», «El arte de la integración», «El vacío en el trabajo» y «El regalo de la integración». Fragmento y paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Arquitecto Cuántico*, Trinity Quantum, Libro 1, Nodo 6: «El lenguaje de las sincronicidades». Fragmento.
+- Nota: Ídem, Nodo 1: «El colapso de la función de onda», «La paradoja como medicina». Paráfrasis.
+- Nota: Vadim Zeland, *El espacio de las variantes*, cap. IV, «Equilibrar», sección «De la batalla al equilibrio» y resumen del capítulo. Paráfrasis.
+- Nota: Sōetsu Yanagi, «The Kizaemon Tea-bowl», en *The Unknown Craftsman: A Japanese Insight into Beauty*, adaptación de Bernard Leach (1972). Paráfrasis. El tazón se guarda en el Kohō-an, dentro del templo Daitoku-ji, en Kioto, y fue declarado tesoro nacional en 1951.
+- Nota: M. C. Richards, *Centering in Pottery, Poetry, and the Person* (1964). Paráfrasis.
+
+### Umbral VII · La operación — *aflojar una cosa por día*
+Tramos: Lo que vas a necesitar · Paso 1 · Me importa. No lo aprieto. · Paso 2 · Una cosa por día baja un punto · Paso 3 · Cada noche, una palabra al margen · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Me importa. No lo aprieto.
+- Perla: Cada noche, / alguien deja en la mesa lo que importa / y abre la mano.
+- Nota: Vadim Zeland, *El espacio de las variantes*, cap. IV, «Equilibrar», sección «De la batalla al equilibrio». Ver el Umbral III.
+- Nota: Lic. Arturo Rodríguez, *El Arquitecto Cuántico*, Trinity Quantum, Libro 1, Nodo 2. Ver el Umbral II.
+- Nota: Vadim Zeland, *El espacio de las variantes*, cap. IV, secciones «Importancia» y «De la batalla al equilibrio». Ver los umbrales II y VI.
+- Nota: Lic. Arturo Rodríguez, *Simetrías Rotas*, Trinity Quantum, Libro 9, Nodo 4: «Imperfección sagrada», «Honrar la imperfección». Paráfrasis y adaptación.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 6: «Integración del vacío», «Los dos errores de la no-integración». Ver el Umbral VI.
+
+### Cierre · El fuego — *lo que se gana al aflojar*
+Tramos: Lo que Mariana sabe ahora · Lo que dejó el fuego · La inauguración · El sábado · Lo que se gana
+- Perla: No tienes que dejar de querer. / Tienes que dejar de apretar.
+- Perla: Me importa. No lo aprieto. / Y la mano vuelve a ser mía.
+- Para ver: Trinity Infinito, Libro 3, Portal 17, *Victoria y derrota como ilusiones* (adaptado al teléfono); Sian Leah Beilock, «Por qué nos ahogamos bajo presión, y cómo evitarlo» (TEDMED, 2017).
+- En la pantalla: *Whiplash*; *Cisne negro*; *En busca de Bobby Fischer*; *La leyenda de Bagger Vance*; *Black Mirror*, «Caída en picada».
+- Puertas laterales: Quantum 1 y su Nodo 4; Quantum 4, Nodo 7; Quantum 9, Nodo 4; Origen VI, Nodo 6; Infinito, Libro 3; Portal Público, Libro 29.
