@@ -618,7 +618,7 @@ Para *El Personaje* (Libro 9), la raíz está en Trinity Origen II, el parlament
   - La Puerta, Nodo 1: *La primera grieta* · `https://soyartur-trinity.github.io/Trinity-/00_Portal_Trinity/nodo_01.html`
   - Trinity Infinito, Libro 1: *Más allá del ser y no-ser* · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro1/L1-Nodo1.html`
   - Trinity Infinito, Libro 7: *Omnisciencia ignorante* · `https://soyartur-trinity.github.io/Trinity-/Trinity_Infinito/Libro7/L7-Nodo1.html`
-- *Para ver* se mantiene: Infinito, portal 44, y la charla de Steven Hayes.
+- *Para ver* se mantiene: Infinito, portal 44, y la charla de Steven Hayes. Se suma, en octubre de 2026, la charla de Dan Gilbert, *La psicología de tu yo futuro* (TED, 2014), y la sección *En la pantalla*, que el Libro 1 no tenía: *Dos vidas en un instante*, *¡Qué bello es vivir!*, *Todo en todas partes al mismo tiempo*, *Las vidas posibles de Mr. Nobody* y *Black Mirror: Bandersnatch*. Con eso queda a la par de los libros siguientes.
 
 ### `README.md`
 
