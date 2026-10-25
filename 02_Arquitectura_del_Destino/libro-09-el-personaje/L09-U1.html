@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L09">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="el personaje que llega antes que tú">
+<title>La cara de malo · Umbral I · El Personaje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L09.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral I</div><h1>La cara de malo</h1><p class="sub">el personaje que llega antes que tú</p></header><main><h2>El metro de las ocho</h2>
+<p>Víctor Almada sube al metro a las ocho y diez, con un libro en la mano y la gorra baja hasta las cejas. Tiene cincuenta y seis años y es actor. Se sienta junto a la ventanilla, abre el libro y no alcanza a leer una línea.</p>
+<p>Enfrente, una mujer joven lo mira, mira la tapa del libro y vuelve a mirarlo a él. Después se inclina hacia el niño que lleva en las rodillas y le dice algo al oído. El niño abre mucho los ojos y esconde la cara contra el pecho de su madre.</p>
+<p>Dos estaciones más adelante, un hombre de traje se le planta delante, agarrado del pasamanos, y le sonríe con todos los dientes.</p>
+<p>—Usted debería estar preso, Lacroix.</p>
+<p>Lo dice en broma. Un par de pasajeros se ríen. Víctor sonríe también, levanta apenas la ceja izquierda, como la levantaba Augusto Lacroix un segundo antes de arruinarle la vida a alguien, y el hombre se baja feliz, con algo para contar en la oficina.</p>
+<p>Hace veinte años, Víctor interpretó a Augusto Lacroix, el villano de <em>La casa de los naranjos</em>, una telenovela que se emitió durante tres temporadas en el horario central y que desde entonces no ha dejado de repetirse por las tardes, en otros países y en otras pantallas. Augusto era el dueño de una hacienda de naranjos y de casi todo lo que la rodeaba. Quemaba cartas, separaba a los enamorados, despojaba a las viudas, y lo hacía con una calma que asustaba más que cualquier grito. Durante tres años, millones de personas lo odiaron cada noche. Víctor recibió amenazas, flores, cartas de amor y un bolso que una señora le arrojó en la fila de un banco.</p>
+<p>Después llegaron otros papeles, y todos se parecían. Un banquero que estafaba a jubilados, dos padrastros, un juez que vendía sentencias, el jefe de una banda. Los directores de casting se lo dicen sin rodeos: tienes cara de malo.</p>
+<p>Víctor no se considera un hombre malo. Se considera, más bien, lo contrario. En su casa nadie lo ha oído levantar la voz.</p>
+<h2>Una llamada</h2>
+<p>Esa tarde lo llamó Nicolás, su representante. El canal preparaba una continuación: <em>La casa de los naranjos</em>, veinte años después. Sesenta capítulos. Augusto Lacroix volvía, viejo, a recuperar la hacienda que había perdido en el último episodio. Pagaban bien, mejor que nunca.</p>
+<p>—No te pido que me contestes ahora —le dijo Nicolás—. Tienes dos meses. Pero piénsalo: sin Augusto no hay novela.</p>
+<p>Víctor colgó y se quedó un rato en el banco de una plaza, a una cuadra de su casa. Sin Augusto no hay novela, repitió por dentro. Y por primera vez en mucho tiempo se preguntó si sin Augusto había Víctor. No sabía bien qué quería decir con esa pregunta. Pero le dejó un frío en el estómago.</p>
+<p>Esa noche, mientras se lavaba los dientes, se vio en el espejo del baño con la ceja levantada. No la había levantado a propósito.</p>
+<h2>Lo que la palabra quería decir</h2>
+<p>Lo que le pasa a Víctor no es un asunto de actores. Le pasa a cualquiera, y la palabra que lo nombra viene del teatro.</p>
+<p>En latín, <em>persona</em> era la máscara que el actor se ponía en escena. En el siglo II, el escritor Aulo Gelio recogió la explicación de un gramático llamado Gavio Baso: la máscara cubría la cabeza y la cara entera, y dejaba una sola abertura para la voz; recogida así, la voz salía más clara y resonante. Por eso, decía, se la llamaba <em>persona</em>, de <em>personare</em>: sonar a través.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Los lingüistas de hoy prefieren otro origen, quizá etrusco. En una tumba de Tarquinia, pintada hacia el año 520 antes de nuestra era, sobre la figura de un hombre enmascarado está escrita una sola palabra: <em>phersu</em>. Algunos estudiosos la emparentan, a su vez, con el griego <em>prósopon</em>, el rostro, la máscara.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> Pero la etimología antigua, aunque no sea la exacta, dice algo verdadero. Una persona es aquello por donde pasa una voz.</p>
+<p>Con los siglos, la palabra hizo un viaje curioso. De la máscara pasó al papel que se representaba; del papel, a la función que alguien cumple entre los demás; y de ahí, a la persona entera. Hoy decimos <em>persona</em> para nombrar lo más propio que tenemos, y el término todavía guarda, escondido, su primer sentido: algo que se lleva puesto.</p>
+<p>En este libro vamos a llamar personaje a eso: a la figura que uno representa frente a los otros y frente a sí mismo, con su manera de hablar, sus gestos, lo que se permite y lo que no. No es una de las voces que discuten por dentro, de las que habló el segundo libro de este sistema. Tampoco es el que mira, que fue el asunto del tercero. Es el traje que la persona entera se pone para salir al mundo. Y que con los años empieza a defender como si fuera ella.</p>
+<h2>Un verbo disfrazado</h2>
+<p><em>La Paradoja Luminosa</em> es el cuarto libro de Trinity Quantum, la serie que piensa la conciencia con imágenes de la física. Su cuarto nodo se titula «Identidad fluida» y empieza con una afirmación que a primera vista desconcierta: lo que llamamos <em>yo</em> no es una cosa fija, sino un flujo que se reconfigura todo el tiempo y que parece sólido porque repite sus patrones. Enseguida lo dice con una imagen:</p>
+<div class="perla"><p>Eres un verbo disfrazado de sustantivo,<br>un fluir que aprendió a parecer estático.</p></div>
+<p>Y aclara, para que nadie se asuste:</p>
+<div class="cita"><p class="trad">La identidad fluida no es la pérdida del yo sino el reconocimiento de que el yo es un proceso, no un producto.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>Un sustantivo nombra una cosa: la mesa, el árbol, el malo. Un verbo nombra algo que sucede: caminar, cuidar, enojarse, reírse. Lo que somos se parece más a lo segundo. Víctor no <em>es</em> algo que se pueda señalar con el dedo: está siendo, a cada hora, alguien distinto según con quién habla y qué le pasa. Pero la vida, los demás y él mismo necesitan nombres, y de tanto nombrarlo, el verbo se congela. Un día aparece escrito en un afiche: <em>el malo</em>. Otro día, en la sobremesa de una familia: <em>el bueno</em>. El personaje es ese instante en que un verbo se vuelve sustantivo y se queda así.</p>
+<p>Otro nodo de Quantum, en el libro de las realidades holofractales, lo dice con una frase casi de guionista: cada mañana nos reconstruimos a partir de la memoria y del hábito, y somos, así, la nueva versión diaria de un personaje que creemos que es el mismo.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<h2>La ropa y la piel</h2>
+<p>El libro anterior de este sistema terminó recordando, con Trinity, que la identidad es ropa y no piel.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> Ahí estaba, sin decirlo, el comienzo de este. Porque el problema no es la ropa. Nadie sale a la calle desnudo, y nadie vive sin algún traje: el de la madre, el del profesional, el del amigo que escucha, el de la hija que siempre llama los domingos. El problema empieza cuando uno olvida que lo lleva puesto.</p>
+<p>El mismo nodo de <em>La Paradoja Luminosa</em> tiene una sección sobre la sociedad como espejo, y allí aparece la idea central de este libro, entera, en cuatro líneas:</p>
+<div class="perla"><p>La maestría social no es rechazar todas las etiquetas<br>sino usarlas como vestuario temporal<br>sin confundirlas con tu piel.</p><p>Puedes jugar todos los roles sin creerte ninguno.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Conviene leerlo despacio, porque dice menos de lo que parece y más de lo que parece. No pide quemar el vestuario. No pide vivir sin papeles, cosa que nadie puede. Tampoco promete que debajo de todos los trajes espere un yo verdadero, intacto, listo para ser encontrado. Pide algo más sencillo: saber que es vestuario. Y saber que se puede colgar.</p>
+<p>A Víctor, en el metro, alguien le habló a Augusto. Él respondió como Augusto, con la ceja, porque eso es lo que se espera, porque es fácil y porque el hombre se fue contento. No hay nada de malo en eso: es parte de su oficio. Lo que lo inquietó fue lo otro, lo del espejo. Que la ceja subiera sola. Que el traje se moviera sin que él lo eligiera.</p>
+<h2>Muchos, y ninguno</h2>
+<p>Durante este libro vamos a acompañar a Víctor en los dos meses que tiene para contestarle a Nicolás. Vamos a ver de dónde salió Augusto y qué cuidaba; cuántos personajes más lleva puestos sin saberlo; por qué los defiende con tanto empeño frente a un público que casi no mira; cuál se le pegó a la cara de verdad, y no es el que todos creen; y qué queda cuando se quita uno.</p>
+<p>No va a cambiar de vida. No va a dejar de ser actor ni va a descubrir, al final, que era otra persona. Va a aprender algo más modesto y más útil, que también te sirve a ti aunque nunca hayas pisado un escenario: que se puede llevar un personaje sin ser llevado por él.</p>
+<div class="perla"><p>Eres muchos, y ninguno de ellos te agota.<br>Quitarse un personaje no es perderse: es respirar.</p></div>
+<h2>Tú también</h2>
+<p>Piensa en cómo te presentarías si un desconocido te preguntara quién eres. Probablemente dirías un nombre y una función: soy maestra, soy el contador, soy la mamá de Tomás. Ahora piensa en cómo te nombran en tu familia, aunque nadie lo diga en voz alta: la responsable, el que arregla todo, la que no necesita nada, el gracioso, el que se enoja, la fuerte.</p>
+<p>Elige uno de esos nombres. Fíjate qué hace tu cuerpo cuando alguien te trata como si fueras solo eso. A veces es un alivio, porque ya se sabe qué hacer. A veces es un peso pequeño entre los hombros.</p>
+<p>No cambies nada todavía. Por ahora alcanza con notar que ese nombre es un traje. Bien cosido, quizá. Pero un traje.</p>
+<div class="sigue"><a href="L09.html">Anterior: Portada</a><a class="prox" href="L09-U2.html">Siguiente: El que nunca se enoja</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Aulo Gelio, <em>Noches áticas</em>, V, 7, que recoge la explicación de Gavio Baso en su obra sobre el origen de las palabras. Paráfrasis.</li><li id="nota-2">Sobre <em>phersu</em> y la pintura de la Tumba de los Augures, en Tarquinia (hacia 520 a. C.), donde la palabra está escrita sobre la figura enmascarada: Jean-René Jannot, «Phersu, Phersuna, Persona. À propos du masque étrusque», en Jean-Paul Thuillier (ed.), <em>Spectacles sportifs et scéniques dans le monde étrusco-italique</em> (Roma, École française de Rome, 1993), 281-320. Paráfrasis.</li><li id="nota-3">Lic. Arturo Rodríguez, <em>La Paradoja Luminosa</em>, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «La disolución del yo sólido». Fragmentos.</li><li id="nota-4">Lic. Arturo Rodríguez, <em>Realidades Holofractales</em>, Trinity Quantum, Libro 7, Nodo 4: «La ilusión del yo separado», sección «Muerte del ego en tiempo real». Paráfrasis.</li><li id="nota-5">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 6: «Integración del vacío». Paráfrasis. Ver <em>El Peso</em>, Umbral VI.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>La Paradoja Luminosa</em>, Nodo 4, sección «El espejo cuántico social». Fragmento.</li></ol></section></main></div><footer class="pie">Libro 9 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

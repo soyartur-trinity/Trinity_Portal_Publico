@@ -1014,3 +1014,136 @@ Tramos: Lo que Mariana sabe ahora · Lo que dejó el fuego · La inauguración �
 - Para ver: Trinity Infinito, Libro 3, Portal 17, *Victoria y derrota como ilusiones* (adaptado al teléfono); Sian Leah Beilock, «Por qué nos ahogamos bajo presión, y cómo evitarlo» (TEDMED, 2017).
 - En la pantalla: *Whiplash*; *Cisne negro*; *En busca de Bobby Fischer*; *La leyenda de Bagger Vance*; *Black Mirror*, «Caída en picada».
 - Puertas laterales: Quantum 1 y su Nodo 4; Quantum 4, Nodo 7; Quantum 9, Nodo 4; Origen VI, Nodo 6; Infinito, Libro 3; Portal Público, Libro 29.
+
+## Libro 9 · El Personaje
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *lo que llevas puesto*
+**Promesa:** No tienes que buscar tu verdadero yo. / Te basta con quitarte uno y respirar.
+**Columna:** Trinity Quantum 4, *La Paradoja Luminosa*, Nodo 4, «Identidad fluida» (versión depurada): «Eres un verbo disfrazado de sustantivo»; las etiquetas como vestuario temporal y «Puedes jugar todos los roles sin creerte ninguno»; la muerte del personaje principal y el intérprete de Gazzaniga; «Sé tú mismo» como consejo imposible; cuando la fluidez se traba; la presencia sin personaje; la práctica del cambio de estado. Quantum 13, *El Multiverso Interior* (depurado): Nodo 1, el yo idealizado, el temido y el desconocido, «Ninguno es más tú que los otros, y ninguno te contiene entero», «No busques tu ‘verdadero yo’», la página con otra voz; Nodo 4, el espejo holográfico; Nodo 7, «tus muchos se reconozcan en la misma casa». Quantum 1, Nodo 3, «Realidades superpuestas» (la consciencia que recorre y reúne las versiones; el método de las puertas). Origen II, *La Voz Interior*: Nodo 3, la alquimia del diálogo («Detrás de cada voz agresiva hay un dolor…»); Nodo 6, el vestíbulo del templo; Nodo 7, «El retorno a la unidad». Origen III, *El Dolor como Portal*, Nodos 3 y 7 («Nunca fuimos el personaje…»). Origen V, *Los Vínculos Sagrados*, Nodo 4 (la sombra de la máscara). Origen VI, *El Vacío Fértil*, Nodo 1 (el vacío existencial y «La muerte del nombre», solo en su gesto pequeño) y Nodo 6 (la identidad como ropa). Quantum 7.4 entra solo en paráfrasis, sin enlace (la versión diaria de un personaje; ponerse y quitarse el yo como ropa; «¿de quién es este problema?»; soltar el personaje al dormir). Infinito 3, *El juego sin jugador*, Portal 20.
+**Coro:** el teatro del mundo como tradición principal: la etimología de *persona* (Aulo Gelio y Gavio Baso; el *phersu* de la Tumba de los Augures, con Jannot); Epicteto, *Enquiridión* 17 (*hypokritḗs*, «el que responde» al coro, y *prósopon*); Fernando Pessoa (la carta a Casais Monteiro de 1935 y el día triunfal; la «Tábua bibliográfica» y el drama en gente; los 136 autores ficticios; Bernardo Soares; «Tabacaria» y la máscara pegada a la cara); Mateo 6 (los hipócritas como actores; la cámara cerrada); Chögyam Trungpa (el materialismo espiritual); Ibsen, *Peer Gynt* (la cebolla y la respuesta de Solveig); Jung (la *persona* de 1928 y «Sobre el renacimiento», 1940: el profesor con su manual, el tenor con su voz, la túnica de Neso, «lo que uno en realidad no es»), con Sófocles; Winnicott (el falso self como guardián). **Comprobable:** Markus y Nurius (los yoes posibles), Fleeson (los rasgos como distribuciones de estados), Little (los rasgos libres y el nicho restaurador), Linville y Rafaeli-Mor y Steinberg (la complejidad del yo), Gazzaniga y LeDoux (el intérprete), Gilovich, Medvec y Savitsky, y Savitsky, Epley y Gilovich (el efecto foco), Swann (la autoverificación), Helmholtz (la inferencia inconsciente, vía Quantum 13.4), Brewer, Van Raalte y Linder (la identidad deportiva exclusiva), Goffman (la distancia del rol), Kuhn y McPartland (las veinte respuestas a «¿quién soy?»). **Zeland:** fuera de este libro; su material sobre máscaras está atado al «alma única» y a «llegar a ser una estrella», y su crítica de los estándares queda para *La Corriente*.
+**Protagonista:** Víctor Almada, 56 años, actor, veinte años siendo Augusto Lacroix, el villano de *La casa de los naranjos*. El canal le ofrece una continuación y tiene dos meses para responder. Olga, 81, su maestra de teatro (el reloj; «Lo que no te permitías en la vida te sale perfecto en escena»; los dos dedos que se juntan); Ramón Almada, su padre, el del reloj y la voz baja; la promesa de los nueve años; Lola, 17, su hija, a quien el dueño de una tienda no le paga («Hablar contigo es como hablarle a una pared pintada de amable»); Teresa, su esposa, bibliotecaria de escuela; Nicolás, su representante; la conductora de radio y la pregunta por el último teatro. La máscara pegada no era el villano sino el amable que nunca se enoja. En la tienda entra sin ninguno de los dos trajes («—¿Y ese quién era? —No sé. Yo, creo»). Cierre: acepta volver a hacer de Augusto, «Ahora sé quién se lo pone»; el niño del metro («¿Usted es el malo? —A veces. Hoy no»); «Tabacaria» leída en la escuela de Olga.
+**Gesto:** «Lo llevo puesto. No lo soy.» en una puerta, con el aire que sale más largo, y un personaje liviano que se deja un rato en el vestíbulo con un cambio pequeño y reversible; el inventario del primer día (veinte veces «¿quién soy?», doce minutos); la pregunta del día, ¿a quién le duele: a la persona o al traje?; cada noche, la línea «Hoy me quité a…» y la silla donde queda el personaje del día. El séptimo día, una página con la voz de alguien que también eres. **Movimiento lento:** la máscara que se vuelve transparente.
+**Para ver:** Infinito, Portal 20, *El juego dentro del juego* (adaptado al teléfono); Brian Little, «¿Quién eres en realidad? El enigma de la personalidad» (TED, 2016).
+**Archivos:** `libro-09-el-personaje/L09.html` (portada), `L09-U1.html` a `L09-U7.html`, `L09-cierre.html`. Generador: `herramientas/gen_arq_L09.py`.
+
+### Umbral I · La cara de malo — *el personaje que llega antes que tú*
+Tramos: El metro de las ocho · Una llamada · Lo que la palabra quería decir · Un verbo disfrazado · La ropa y la piel · Muchos, y ninguno · Tú también
+- Perla: Eres un verbo disfrazado de sustantivo, / un fluir que aprendió a parecer estático.
+- Perla: La maestría social no es rechazar todas las etiquetas / sino usarlas como vestuario temporal / sin confundirlas con tu piel.
+- Perla: Puedes jugar todos los roles sin creerte ninguno.
+- Perla: Eres muchos, y ninguno de ellos te agota. / Quitarse un personaje no es perderse: es respirar.
+- Nota: Aulo Gelio, *Noches áticas*, V, 7, que recoge la explicación de Gavio Baso en su obra sobre el origen de las palabras. Paráfrasis.
+- Nota: Sobre *phersu* y la pintura de la Tumba de los Augures, en Tarquinia (hacia 520 a. C.), donde la palabra está escrita sobre la figura enmascarada: Jean-René Jannot, «Phersu, Phersuna, Persona. À propos du masque étrusque», en Jean-Paul Thuillier (ed.), *Spectacles sportifs et scéniques dans le monde étrusco-italique* (Roma, École française de Rome, 1993), 281-320. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «La disolución del yo sólido». Fragmentos.
+- Nota: Lic. Arturo Rodríguez, *Realidades Holofractales*, Trinity Quantum, Libro 7, Nodo 4: «La ilusión del yo separado», sección «Muerte del ego en tiempo real». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 6: «Integración del vacío». Paráfrasis. Ver *El Peso*, Umbral VI.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Nodo 4, sección «El espejo cuántico social». Fragmento.
+
+### Umbral II · El que nunca se enoja — *lo que el personaje protege*
+Tramos: El reloj · La promesa de los nueve años · Un actor en un drama · Detrás de cada máscara · El yo temido · El guardián del verdadero · Agradecer antes de quitar · Tú también
+- Perla: Detrás de cada voz agresiva hay un dolor. / Detrás de cada voz controladora hay un miedo. / Detrás de cada voz crítica hay un deseo de ser amado.
+- Perla: En la paciencia, la máscara cae y aparece el rostro verdadero.
+- Perla: El personaje no nació para engañar. / Nació para cuidar algo.
+- Perla: Antes de quitártelo, / pregúntale qué protegía.
+- Nota: Epicteto, *Enquiridión* (siglo II, compilado por Flavio Arriano), 17. Traducción propia del texto griego, cotejada con la versión inglesa de Thomas W. Higginson (1865).
+- Nota: En el griego del *Enquiridión*, 17: «ὑποκριτὴς εἶ δράματος» (eres actor de un drama) y «τὸ δοθὲν ὑποκρίνασθαι πρόσωπον καλῶς» (representar bien el papel que se te ha dado). Para el sentido de las dos palabras: Liddell, Scott y Jones, *A Greek-English Lexicon*, entradas ὑποκριτής y πρόσωπον.
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 3: «La alquimia del diálogo», secciones «Los principios de la alquimia dialogal» y «El protocolo del diálogo alquímico». Fragmentos y paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 4, «Sombra de la máscara». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Multiverso Interior*, Trinity Quantum, Libro 13, Nodo 1: «Universos paralelos internos», «Laboratorio cuántico», en la versión depurada de octubre de 2026. Fragmento y paráfrasis.
+- Nota: Hazel Markus y Paula Nurius, «Possible Selves», *American Psychologist* 41, n.º 9 (1986): 954-969. Paráfrasis.
+- Nota: Donald W. Winnicott, «Ego Distortion in Terms of True and False Self» (1960), en *The Maturational Processes and the Facilitating Environment* (1965); en español, «La distorsión del yo en términos de self verdadero y falso». Paráfrasis.
+- Nota: C. G. Jung, *Las relaciones entre el yo y el inconsciente* (*Die Beziehungen zwischen dem Ich und dem Unbewussten*, 1928), primera parte, cap. III, «La persona como segmento de la psique colectiva» (*Obra completa*, vol. 7, §§ 245-246). Paráfrasis.
+
+### Umbral III · Muchos — *ninguno te agota*
+Tramos: Un martes · La cómoda alta · No es mío · Siete versiones en una semana · El profesor que se escondía en el baño · Ninguno te contiene entero · No poner todo en un traje · La misma casa · Tú también
+- Perla: Con tu madre eres un ser diferente que con tus amigos. / En soledad emergen aspectos invisibles en compañía. / Bajo presión accedes a recursos que no sabías que tenías.
+- Perla: No es inconsistencia. Es fluidez.
+- Perla: No busques tu «verdadero yo»: / celebra que eres todos los yoes.
+- Perla: La cordura no consiste en ser uno solo, / sino en que tus muchos se reconozcan en la misma casa.
+- Perla: No eres una de tus versiones ni su suma. / Eres la consciencia que las recorre y las reúne.
+- Perla: Eres muchos. / Ninguno de ellos te agota.
+- Perla: Ser muchos no es estar roto. / Es tener muchas puertas en la misma casa.
+- Nota: Fernando Pessoa, carta a Adolfo Casais Monteiro, Lisboa, 13 de enero de 1935, según el texto del Arquivo Pessoa. Paráfrasis; la frase citada, en el original y en traducción propia.
+- Nota: Jerónimo Pizarro y Patricio Ferrari (eds.), *Eu sou uma antologia: 136 autores fictícios* (Lisboa, Tinta-da-china, 2013). Paráfrasis.
+- Nota: Fernando Pessoa, «Tábua bibliográfica», *Presença*, n.º 17 (Coímbra, diciembre de 1928): «um drama em gente, em vez de em actos». Traducción propia.
+- Nota: Fernando Pessoa (Bernardo Soares), *Libro del desasosiego*: «Cada um de nós é vários, é muitos, é uma prolixidade de si mesmos». El número del fragmento cambia según la edición. Traducción propia.
+- Nota: William Fleeson, «Toward a Structure- and Process-Integrated View of Personality: Traits as Density Distributions of States», *Journal of Personality and Social Psychology* 80, n.º 6 (2001): 1011-1027. Paráfrasis del método y de los resultados.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «El espectro completo del ser». Fragmentos.
+- Nota: Brian R. Little, *Me, Myself, and Us: The Science of Personality and the Art of Well-Being* (2014), y «Who Are You, Really? The Puzzle of Personality», charla TED (2016). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Multiverso Interior*, Trinity Quantum, Libro 13, Nodo 1: «Universos paralelos internos», en la versión depurada de octubre de 2026, secciones «Paradoja medicinal», «Transmisión cuántica» y «Cierre dimensional». Fragmentos y paráfrasis.
+- Nota: Patricia W. Linville, «Self-Complexity as a Cognitive Buffer Against Stress-Related Illness and Depression», *Journal of Personality and Social Psychology* 52, n.º 4 (1987): 663-676. Paráfrasis del método y de los resultados.
+- Nota: Eshkol Rafaeli-Mor y Jennifer Steinberg, «Self-Complexity and Well-Being: A Review and Research Synthesis», *Personality and Social Psychology Review* 6, n.º 1 (2002): 31-58. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Multiverso Interior*, Nodo 7: «Unificación del multiverso personal», versión depurada (2026). Fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Arquitecto Cuántico*, Trinity Quantum, Libro 1, Nodo 3: «Realidades superpuestas», sección «Tú, entero», versión depurada (2026). Fragmento.
+
+### Umbral IV · El público — *por qué lo defendemos*
+Tramos: La entrevista · Una pala para el gallinero · El protagonista que se teje después · La camiseta · Que nos confirmen · El espejo · Defender cansa · Tú también
+- Perla: El que despierta no es quien se durmió. / El que responde correos no es quien medita. / El que ríe con amigos no es quien llora en soledad. / El que planifica el futuro no es quien recuerda el pasado.
+- Perla: Las personas en tu vida son otros, con su propio mundo, / pero te llegan a través de tu espejo holográfico interior.
+- Perla: Defendemos al personaje / ante un público que casi no está mirando.
+- Perla: La historia de quién eres se cuenta después. / La vida pasa antes.
+- Nota: Michael S. Gazzaniga y Joseph E. LeDoux, *The Integrated Mind* (1978). Paráfrasis del experimento con el paciente P. S. y de su respuesta.
+- Nota: Michael S. Gazzaniga, *Who's in Charge? Free Will and the Science of the Brain* (2011); en español, *¿Quién manda aquí? El libre albedrío y la ciencia del cerebro*. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «La muerte del personaje principal», en la versión depurada de octubre de 2026. Fragmentos y paráfrasis.
+- Nota: Thomas Gilovich, Victoria H. Medvec y Kenneth Savitsky, «The Spotlight Effect in Social Judgment: An Egocentric Bias in Estimates of the Salience of One's Own Actions and Appearance», *Journal of Personality and Social Psychology* 78, n.º 2 (2000): 211-222; Kenneth Savitsky, Nicholas Epley y Thomas Gilovich, «Do Others Judge Us as Harshly as We Think?», *Journal of Personality and Social Psychology* 81, n.º 1 (2001): 44-56. Paráfrasis. En el primer estudio, los que llevaban la camiseta calcularon que la había notado cerca de la mitad de los presentes; la proporción real fue de alrededor del veintitrés por ciento.
+- Nota: William B. Swann Jr., Gregory Hixon y Chris De La Ronde, «Embracing the Bitter "Truth": Negative Self-Concepts and Marital Commitment», *Psychological Science* 3, n.º 2 (1992): 118-121. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Multiverso Interior*, Trinity Quantum, Libro 13, Nodo 4: «El espejo holográfico interior», en la versión depurada de octubre de 2026, secciones «Transmisión cuántica» y «Práctica de 7 días», día 5. Fragmento y paráfrasis.
+
+### Umbral V · Pegada a la cara — *cuando el traje no sale*
+Tramos: El sábado · El dominó equivocado · Lo que uno no es · Los que oraban en las esquinas · Sé tú mismo · Cuando la fluidez se traba · Tú también
+- Perla: «Sé tú mismo» es un consejo imposible / porque no hay un «mismo» fijo que ser.
+- Perla: La autenticidad no es encontrar tu verdadero yo / sino reconocer que todos tus yoes son igualmente verdaderos.
+- Perla: La máscara que más pesa / no es la que te ponen. / Es la que ya no notas.
+- Perla: No hace falta encontrar quién eres de verdad. / Hace falta dejar entrar lo que también eres.
+- Nota: Fernando Pessoa (Álvaro de Campos), «Tabacaria» (fechado el 15 de enero de 1928; publicado en *Presença*, n.º 39, en 1933), según el texto del Arquivo Pessoa. Paráfrasis.
+- Nota: C. G. Jung, «Sobre el renacimiento» («Über Wiedergeburt», 1940; revisado en 1950), en *Los arquetipos y lo inconsciente colectivo* (*Obra completa*, vol. 9/1, § 221). Paráfrasis.
+- Nota: Sófocles, *Las traquinias*, sobre la túnica de Neso. Paráfrasis.
+- Nota: Evangelio según Mateo 6, 2-6 y 6, 16, en la versión de Reina-Valera (1909), con la acentuación actualizada.
+- Nota: Sobre *hypokritḗs*, ver el Umbral II, nota 2. En el Nuevo Testamento la palabra ya nombra al que finge, sin perder el eco del actor: Liddell, Scott y Jones, *A Greek-English Lexicon*, entrada ὑποκριτής.
+- Nota: Chögyam Trungpa, *Cutting Through Spiritual Materialism* (1973); en español, *Más allá del materialismo espiritual*. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «La paradoja de la autenticidad», versión depurada (2026). Fragmentos.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 3: «El fuego del dolor». Paráfrasis y fragmento.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Nodo 4, sección «Cuando la fluidez se traba», versión depurada (2026). Fragmentos y paráfrasis.
+- Nota: Britton W. Brewer, Judy L. Van Raalte y Darwyn E. Linder, «Athletic Identity: Hercules' Muscles or Achilles Heel?», *International Journal of Sport Psychology* 24 (1993): 237-254. Paráfrasis.
+
+### Umbral VI · Lo que queda — *alguien, sin traje*
+Tramos: La tienda · Ni el bueno ni el malo · La cebolla · Solveig · El vestíbulo · No eres el templo · Nunca fuimos el personaje · La muerte del nombre · El niño en el carrusel · Lo que no es · Tú también
+- Perla: No eres las voces. No eres el parlamento. No eres el observador. / No eres el jardín. No eres la sinfonía. No eres el templo.
+- Perla: Eres la Conciencia en la que todo esto acontece.
+- Perla: Nunca fuimos el personaje de la historia que pensábamos que éramos. / Siempre fuimos el espacio consciente donde la historia podía desplegarse.
+- Perla: Debajo de los personajes no hay un hueco. / Hay alguien que respira.
+- Perla: Lo que queda cuando te quitas uno / no es nadie. / Eres tú, sin tener que demostrarlo.
+- Nota: Henrik Ibsen, *Peer Gynt* (1867), acto V, escena 5. Paráfrasis, cotejada con el original noruego («Du er ingen kejser; du er en løg») y con la traducción inglesa de William y Charles Archer (1907).
+- Nota: Ídem, acto V, escena final. El original noruego; traducción propia, cotejada con la versión de William y Charles Archer (1907).
+- Nota: Lic. Arturo Rodríguez, *La Voz Interior*, Trinity Origen, Libro II, Nodo 6: «El templo de la integración», secciones «La arquitectura del templo interior» y «El sanctasanctórum». Fragmento y paráfrasis.
+- Nota: Ídem, Nodo 7: «El retorno a la unidad», secciones «La paradoja de la unidad» y «El descanso en el ser». Fragmentos.
+- Nota: Lic. Arturo Rodríguez, *El Dolor como Portal*, Trinity Origen, Libro III, Nodo 7: «Más allá del dolor: el portal abierto». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «Navegando la fluidez», versión depurada (2026). Fragmento y paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 1, «Vacío existencial», nivel 3, con sus señales, sus peligros y la práctica «La muerte del nombre». Fragmento y paráfrasis.
+- Nota: Erving Goffman, «Role Distance», en *Encounters: Two Studies in the Sociology of Interaction* (1961). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Realidades Holofractales*, Trinity Quantum, Libro 7, Nodo 4: «La ilusión del yo separado», sección «Navegando entre yo y no-yo». Paráfrasis.
+
+### Umbral VII · La operación — *quitarse uno por día*
+Tramos: Lo que vas a necesitar · Paso 1 · Lo llevo puesto. No lo soy. · Paso 2 · ¿A quién le duele? · Paso 3 · Cada noche, la silla · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Lo llevo puesto. No lo soy.
+- Perla: Cada noche, alguien deja en la silla / el personaje del día, / y se acuesta liviano, con su nombre.
+- Nota: Manford H. Kuhn y Thomas S. McPartland, «An Empirical Investigation of Self-Attitudes», *American Sociological Review* 19, n.º 1 (1954): 68-76. Paráfrasis. La prueba se conoce como Test de las Veinte Afirmaciones (*Twenty Statements Test*).
+- Nota: Lic. Arturo Rodríguez, *El Arquitecto Cuántico*, Trinity Quantum, Libro 1, Nodo 3: «Realidades superpuestas», sección «Navegación práctica entre versiones», «Método de las puertas», versión depurada (2026). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», «Práctica del cambio de estado», versión depurada (2026). Paráfrasis y fragmento.
+- Nota: Lic. Arturo Rodríguez, *Realidades Holofractales*, Trinity Quantum, Libro 7, Nodo 4: «La ilusión del yo separado», «Integración diaria». Paráfrasis.
+- Nota: Ídem. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Multiverso Interior*, Trinity Quantum, Libro 13, Nodo 1: «Universos paralelos internos», «Práctica de 7 días», día 6, y «Laboratorio cuántico», versión depurada (2026). Paráfrasis y fragmento.
+
+### Cierre · El vestuario — *lo que se gana al quitarse un personaje*
+Tramos: Lo que Víctor sabe ahora · El sí · El vestuario · El metro · La lectura · Lo que se gana
+- Perla: No tienes que buscar tu verdadero yo. / Te basta con quitarte uno y respirar.
+- Perla: Lo llevo puesto. No lo soy.
+- Perla: Al principio eras uno. / Luego jugaste a ser muchos. / Ahora reconoces que ser muchos / era otra forma de ser uno.
+- Perla: Lo llevo puesto. No lo soy. / Y debajo, alguien respira.
+- Para ver: Trinity Infinito, Libro 3, Portal 20, *El juego dentro del juego* (adaptado al teléfono); Brian Little, «¿Quién eres en realidad? El enigma de la personalidad» (TED, 2016).
+- En la pantalla: *Birdman o (la inesperada virtud de la ignorancia)*; *Desde el jardín*; *Persona*; *Separación* (*Severance*); *Black Mirror*, «Joan es horrible».
+- Puertas laterales: Quantum 4, Nodo 4; Quantum 13; Origen II y su Nodo 7; Origen VI, Nodo 1; Infinito, Libro 3; Portal Público, Libro 2.

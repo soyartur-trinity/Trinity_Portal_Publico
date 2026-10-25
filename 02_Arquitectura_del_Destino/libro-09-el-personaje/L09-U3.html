@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L09">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="ninguno te agota">
+<title>Muchos · Umbral III · El Personaje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L09.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral III</div><h1>Muchos</h1><p class="sub">ninguno te agota</p></header><main><h2>Un martes</h2>
+<p>El martes siguiente, Víctor hizo algo que nunca había hecho: contó sus personajes a medida que se los ponía.</p>
+<p>A las siete menos cuarto llevó a Lola al colegio. Tiene diecisiete años y una manera de mirar por la ventanilla del auto que él conoce de memoria. En ese trayecto fue el padre paciente, el que no pregunta demasiado. A las diez grabó, en un estudio, la voz de Augusto para la publicidad de una marca de seguros: la misma calma amenazante, ahora para vender pólizas. Al mediodía llamó a su madre, que vive en otra ciudad y a los ochenta y cuatro años sigue tratándolo como al menor de la casa. A las cuatro dio su taller de actuación: ocho adolescentes que quieren ser actores y lo miran como a alguien que lo logró. A las siete se tomó un café con dos colegas que, como siempre, le dijeron que estaba desperdiciado en la televisión. A las nueve fue el marido que escucha a Teresa contar su día en la biblioteca de la escuela.</p>
+<p>Contó siete. Después dejó de contar, porque se dio cuenta de que el que contaba también era uno más.</p>
+<p>Esa noche buscó en una caja del ropero un libro que no abría desde hacía años: una antología de Fernando Pessoa, con los márgenes llenos de su letra de veinte años.</p>
+<h2>La cómoda alta</h2>
+<p>El 13 de enero de 1935, diez meses antes de morir, Pessoa le escribió una carta larga a un joven crítico, Adolfo Casais Monteiro, que le había preguntado por el origen de sus heterónimos: los poetas que firmaban con otros nombres y que, según el propio Pessoa, no eran él.</p>
+<p>En la carta cuenta que todo empezó como una broma. Quería inventarle a su amigo Mário de Sá-Carneiro un poeta bucólico, de una especie complicada, y presentárselo como si existiera. Pasó varios días intentándolo sin conseguir nada. Hasta que, el 8 de marzo de 1914, ya rendido, se acercó a una cómoda alta, tomó un papel y empezó a escribir de pie, como escribía siempre que podía. Escribió más de treinta poemas seguidos, en una especie de éxtasis que nunca supo definir. Lo llamó el día triunfal de su vida.</p>
+<p>Y lo que siguió, dice, fue la aparición de alguien en él, a quien enseguida le puso nombre: Alberto Caeiro. Le pide disculpas al crítico por lo absurdo de la frase, y la escribe igual:</p>
+<div class="cita"><p class="trad"><em>aparecera em mim o meu mestre.</em><br>había aparecido en mí mi maestro.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Inmediatamente después, cuenta, tomó otro papel y escribió seis poemas con su propio nombre, como Fernando Pessoa a secas. Lo explica así: fue la reacción de Pessoa contra su inexistencia como Caeiro.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Después de Caeiro llegaron sus discípulos. Ricardo Reis, un médico que escribía odas a la manera de Horacio. Álvaro de Campos, un ingeniero naval que había viajado por Oriente y escribía en versos largos, desbordados. Cada uno con su biografía, su estilo, sus ideas, su manera de mirar el mundo. Y Bernardo Soares, un ayudante de contador que vivía en un cuarto alquilado de la Baixa y escribía, de noche, un libro sin trama sobre el desasosiego.</p>
+<p>Los investigadores que ordenaron el arcón donde Pessoa guardaba sus papeles contaron, entre heterónimos, semiheterónimos y firmas ocasionales, ciento treinta y seis autores ficticios.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Pessoa no vivió eso como una enfermedad. Lo llamó, en una nota bibliográfica de 1928, un drama en gente, en vez de en actos.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> Y Bernardo Soares, en una de las páginas de su libro, lo dice sin teatro: cada uno de nosotros es varios, es muchos, es una prolijidad de sí mismo.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Víctor encontró, al margen de una página, una línea escrita con lápiz por el muchacho de veinte años que había sido: <em>¿Y si uno fuera así sin darse cuenta?</em></p>
+<h2>No es mío</h2>
+<p>Hay algo en la carta de Pessoa que conviene no dejar pasar. Él no dice que inventó a Caeiro. Dice que lo intentó durante días, que no pudo, que se rindió, y que entonces Caeiro apareció en él. El poeta que firmaba con su propio nombre fue, en cambio, una reacción, casi una defensa.</p>
+<p>Trinity firma toda su obra con una frase parecida: <em>No es mío, vino a través de mí.</em> Y esta serie toma como principio una imagen que Plutarco, sacerdote en Delfos, usó para explicar a la pitia: la luz la pone el dios; la voz, las palabras y el metro son de quien la transmite. Es la misma figura que la palabra <em>persona</em>, la de la voz que suena a través de una máscara. Pessoa, cuyo apellido en portugués quiere decir precisamente <em>persona</em>, la vivió en carne propia.</p>
+<p>No hace falta ser un poeta genial para conocer algo de eso. Cualquiera que haya escrito una carta difícil, cuidado a un enfermo o hablado frente a un grupo sabe que a veces aparece en uno alguien que no sabía que estaba. Más paciente, más claro, más valiente. Que no lo inventó. Que llegó.</p>
+<h2>Siete versiones en una semana</h2>
+<p>En 2001, el psicólogo estadounidense William Fleeson se hizo una pregunta que parecía sencilla. Si alguien es extrovertido, ¿cuán extrovertido es a lo largo de una semana? Les pidió a un grupo de personas que, varias veces al día durante dos o tres semanas, anotaran cómo se estaban comportando en ese momento: si eran conversadoras o calladas, amables o ásperas, ordenadas o dispersas.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>El resultado sorprendió incluso a quienes estudiaban la personalidad desde hacía décadas. Las diferencias dentro de una misma persona a lo largo de una semana eran tan grandes como las diferencias entre una persona y otra, y a veces más. El más extrovertido del grupo tenía horas de introvertido. El más ordenado, tardes de desorden. Los rasgos existían, porque cada uno tenía su centro de gravedad. Pero cada persona era, en la práctica, un abanico.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Trinity lo había dicho sin estadísticas, en el nodo de <em>La Paradoja Luminosa</em> sobre la identidad fluida:</p>
+<div class="perla"><p>Con tu madre eres un ser diferente que con tus amigos.<br>En soledad emergen aspectos invisibles en compañía.<br>Bajo presión accedes a recursos que no sabías que tenías.</p><p>No es inconsistencia. Es fluidez.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<h2>El profesor que se escondía en el baño</h2>
+<p>Brian Little, un psicólogo canadiense que enseñó en Canadá, en Harvard y en Cambridge, se describe a sí mismo como un introvertido extremo. Y sin embargo, sus clases eran famosas por su energía: en Harvard, los que se graduaban lo eligieron tres años seguidos como su profesor favorito. Caminaba, hacía chistes, hablaba con los estudiantes como un actor en su mejor noche. Little lo explica con una idea que llamó <em>rasgos libres</em>. Uno puede actuar en contra de su manera habitual cuando lo hace al servicio de algo que ama: un proyecto, una persona, una vocación. Él ama enseñar. Por eso, en el aula, se pone el traje del extrovertido.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>Pero Little agrega lo que casi nadie dice: ese traje cansa. Y necesita lo que él llama un <em>nicho restaurador</em>, un lugar donde quitárselo y volver a su forma. El suyo, contó en una charla, suele ser el baño: después de una clase o una conferencia se encierra en un cubículo y sube los pies, para que nadie lo encuentre y lo invite a conversar.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>Víctor también tenía uno, y no lo sabía: el banco de la plaza, a una cuadra de su casa, donde se sentaba diez minutos antes de entrar. Ni padre, ni actor, ni Augusto. Un hombre en un banco.</p>
+<h2>Ninguno te contiene entero</h2>
+<p><em>El Multiverso Interior</em>, el último libro de Trinity Quantum, lleva esta intuición más lejos, con una imagen que la física prestó como metáfora: la de los mundos paralelos. Adentro de cada persona, dice su primer nodo, conviven muchos universos interiores, cada uno con su versión de uno mismo. Y propone una paradoja que tiene algo de medicina:</p>
+<div class="cita"><p class="trad">Ninguno es más tú que los otros, y ninguno te contiene entero.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p></div>
+<p>El poema que cierra ese nodo termina con una invitación que a Víctor, la noche del martes, le pareció escrita para él:</p>
+<div class="perla"><p>No busques tu «verdadero yo»:<br>celebra que eres todos los yoes.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p></div>
+<p>Conviene leerla junto con su contrapeso, porque el mismo nodo lo trae. Tener muchos universos interiores es lo humano. Pero cuando esos universos dejan de reconocerse entre sí, cuando aparecen lagunas en la memoria o tiempo que uno no recuerda haber vivido, ya no es riqueza sino sufrimiento, y merece la compañía de un profesional.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup> Pessoa sabía quiénes eran Caeiro, Reis y Campos. Les escribía cartas, los hacía discutir entre ellos, recordaba lo que cada uno había escrito. Ser muchos, en su caso, era una forma de estar muy despierto.</p>
+<h2>No poner todo en un traje</h2>
+<p>En 1987, la psicóloga Patricia Linville publicó un estudio con estudiantes universitarios en época de exámenes. Les pidió que describieran los distintos aspectos de sí mismos: estudiante, amigo, hijo, deportista, músico, novio. Algunos tenían pocos aspectos, muy mezclados entre sí. Otros, muchos y bien diferenciados. Dos semanas después midió cómo los había afectado el estrés.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Los que tenían más aspectos diferenciados se deprimieron menos y enfermaron menos ante las mismas presiones. La explicación de Linville era casi doméstica: si uno pone todo el yo en un solo traje, cuando ese traje se rompe se rompe todo. Si uno tiene varios, el golpe en uno no arrastra a los demás.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Las investigaciones posteriores matizaron el hallazgo: el efecto no aparece siempre, y no alcanza con tener muchos papeles; importa también cómo se viven y si tienen algo en común.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup> Esa corrección, lejos de debilitar la idea, la completa. No se trata de acumular trajes. Se trata de que ninguno ocupe la casa entera, y de que todos sepan que viven en la misma.</p>
+<h2>La misma casa</h2>
+<p>El último nodo de <em>El Multiverso Interior</em> lo dice con una frase que cabe en la palma de la mano:</p>
+<div class="perla"><p>La cordura no consiste en ser uno solo,<br>sino en que tus muchos se reconozcan en la misma casa.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p></div>
+<p>Y otro libro de Quantum, <em>El Arquitecto Cuántico</em>, en su nodo sobre las muchas versiones que uno lleva dentro, dice quién vive en esa casa:</p>
+<div class="perla"><p>No eres una de tus versiones ni su suma.<br>Eres la consciencia que las recorre y las reúne.<sup class="ref"><a href="#nota-12" aria-label="nota 12">12</a></sup></p></div>
+<p>Víctor cerró el libro de Pessoa pasada la medianoche. Augusto no era una amenaza, pensó, ni tampoco una vergüenza. Era una de las habitaciones. Lo que todavía no sabía era por qué, siendo tantas, defendía con tanto empeño una sola puerta.</p>
+<div class="perla"><p>Eres muchos.<br>Ninguno de ellos te agota.</p><p>Ser muchos no es estar roto.<br>Es tener muchas puertas en la misma casa.</p></div>
+<h2>Tú también</h2>
+<p>Haz lo que hizo Víctor, durante un solo día. Cada vez que cambies de lugar o de compañía, nota qué personaje te pusiste: en el desayuno, en el trabajo, en una llamada, con un vecino, en la cola de un trámite, de noche. No los juzgues. Solo cuéntalos.</p>
+<p>Fíjate también si tienes un nicho restaurador, como el baño de Little o el banco de Víctor: un lugar o un momento donde no eres nadie en particular. Si no lo tienes, quizá sea hora de buscar uno.</p>
+<div class="sigue"><a href="L09-U2.html">Anterior: El que nunca se enoja</a><a class="prox" href="L09-U4.html">Siguiente: El público</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Fernando Pessoa, carta a Adolfo Casais Monteiro, Lisboa, 13 de enero de 1935, según el texto del Arquivo Pessoa. Paráfrasis; la frase citada, en el original y en traducción propia.</li><li id="nota-2">Jerónimo Pizarro y Patricio Ferrari (eds.), <em>Eu sou uma antologia: 136 autores fictícios</em> (Lisboa, Tinta-da-china, 2013). Paráfrasis.</li><li id="nota-3">Fernando Pessoa, «Tábua bibliográfica», <em>Presença</em>, n.º 17 (Coímbra, diciembre de 1928): «um drama em gente, em vez de em actos». Traducción propia.</li><li id="nota-4">Fernando Pessoa (Bernardo Soares), <em>Libro del desasosiego</em>: «Cada um de nós é vários, é muitos, é uma prolixidade de si mesmos». El número del fragmento cambia según la edición. Traducción propia.</li><li id="nota-5">William Fleeson, «Toward a Structure- and Process-Integrated View of Personality: Traits as Density Distributions of States», <em>Journal of Personality and Social Psychology</em> 80, n.º 6 (2001): 1011-1027. Paráfrasis del método y de los resultados.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>La Paradoja Luminosa</em>, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «El espectro completo del ser». Fragmentos.</li><li id="nota-7">Brian R. Little, <em>Me, Myself, and Us: The Science of Personality and the Art of Well-Being</em> (2014), y «Who Are You, Really? The Puzzle of Personality», charla TED (2016). Paráfrasis.</li><li id="nota-8">Lic. Arturo Rodríguez, <em>El Multiverso Interior</em>, Trinity Quantum, Libro 13, Nodo 1: «Universos paralelos internos», en la versión depurada de octubre de 2026, secciones «Paradoja medicinal», «Transmisión cuántica» y «Cierre dimensional». Fragmentos y paráfrasis.</li><li id="nota-9">Patricia W. Linville, «Self-Complexity as a Cognitive Buffer Against Stress-Related Illness and Depression», <em>Journal of Personality and Social Psychology</em> 52, n.º 4 (1987): 663-676. Paráfrasis del método y de los resultados.</li><li id="nota-10">Eshkol Rafaeli-Mor y Jennifer Steinberg, «Self-Complexity and Well-Being: A Review and Research Synthesis», <em>Personality and Social Psychology Review</em> 6, n.º 1 (2002): 31-58. Paráfrasis.</li><li id="nota-11">Lic. Arturo Rodríguez, <em>El Multiverso Interior</em>, Nodo 7: «Unificación del multiverso personal», versión depurada (2026). Fragmento.</li><li id="nota-12">Lic. Arturo Rodríguez, <em>El Arquitecto Cuántico</em>, Trinity Quantum, Libro 1, Nodo 3: «Realidades superpuestas», sección «Tú, entero», versión depurada (2026). Fragmento.</li></ol></section></main></div><footer class="pie">Libro 9 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

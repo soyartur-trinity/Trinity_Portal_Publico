@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L09">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="por qué lo defendemos">
+<title>El público · Umbral IV · El Personaje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L09.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral IV</div><h1>El público</h1><p class="sub">por qué lo defendemos</p></header><main><h2>La entrevista</h2>
+<p>A fines de agosto, una radio cultural lo invitó a hablar de un ciclo de lecturas dramáticas en el que iba a participar. La conductora, una mujer de voz tranquila que lo admiraba sin disimulo, le preguntó primero por el ciclo y después, como era inevitable, por Augusto.</p>
+<p>Víctor tenía la respuesta preparada desde hacía años. La dio con soltura, casi con gracia. Contó que venía del teatro independiente, que se había formado con Olga, que a los treinta y seis la televisión lo había tomado por sorpresa y que Augusto le había pagado la casa. «Le estoy muy agradecido», dijo, con una media sonrisa que todos los que lo conocen saben leer. «Pero lo mío es el escenario. Siempre volví a él».</p>
+<p>La conductora asintió. Y después, con la misma voz tranquila, sin ninguna mala intención, le preguntó:</p>
+<p>—¿Y cuándo fue la última vez que hizo teatro?</p>
+<p>Víctor abrió la boca y no le salió nada. Hizo la cuenta: nueve años. Dijo algo sobre la falta de tiempo, hizo un chiste sobre los productores, la conductora se rio y pasó a otra pregunta.</p>
+<p>La entrevista duró veinte minutos más. Víctor no recuerda casi nada de esos veinte minutos. Volvió a su casa convencido de que todo el país había oído el silencio, el tartamudeo, el chiste desesperado. Esa noche no durmió. Repasó la escena una y otra vez, como un actor que repasa el error de una función.</p>
+<p>A la mañana siguiente llamó a Olga, que escucha esa radio todos los días.</p>
+<p>—¿Qué silencio? —le dijo ella—. Estuviste muy bien. Lo único que me llamó la atención fue que hablaras del teatro como de una novia que dejaste.</p>
+<h2>Una pala para el gallinero</h2>
+<p>Al final de los años setenta, el neurocientífico Michael Gazzaniga trabajaba con pacientes a quienes, para controlar una epilepsia grave, se les había cortado el cuerpo calloso, el puente de fibras que une los dos hemisferios del cerebro. En esos pacientes, cada mitad podía recibir información sin que la otra se enterara.</p>
+<p>Uno de ellos, un joven al que la literatura conoce por sus iniciales, P. S., participó en un experimento que se volvió célebre. A su hemisferio izquierdo, el que maneja el lenguaje, le mostraron la imagen de una pata de gallina. Al derecho, la de una casa cubierta de nieve. Después le pidieron que eligiera, entre varias tarjetas, las que se relacionaban con lo que había visto. Con la mano derecha, gobernada por el hemisferio izquierdo, eligió una gallina. Con la izquierda, gobernada por el derecho, una pala.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Cuando le preguntaron por qué había elegido la pala, el hemisferio que hablaba no tenía la menor idea de la casa con nieve. No había visto esa imagen. Y sin embargo P. S. no dijo que no sabía. Respondió enseguida, con toda tranquilidad: la pata va con la gallina, y la pala hace falta para limpiar el gallinero.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Gazzaniga llamó a esa función el <em>intérprete</em>: una parte del cerebro que fabrica, sin pausa y sin esfuerzo, explicaciones para lo que hacemos, aunque no conozca sus causas. No miente. Cree lo que dice. Su trabajo es que la historia cierre.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<h2>El protagonista que se teje después</h2>
+<p>El nodo de <em>La Paradoja Luminosa</em> sobre la identidad fluida tiene una sección que se titula, sin rodeos, «La muerte del personaje principal». Empieza así:</p>
+<div class="cita"><p class="trad">La ilusión más persistente es que eres el protagonista consistente de tu vida.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>Y propone mirar cualquier día con atención:</p>
+<div class="perla"><p>El que despierta no es quien se durmió.<br>El que responde correos no es quien medita.<br>El que ríe con amigos no es quien llora en soledad.<br>El que planifica el futuro no es quien recuerda el pasado.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>Su conclusión no es que no haya nadie, sino que la continuidad que sentimos no es un hecho de la naturaleza: es, en buena parte, una historia que el cerebro teje después. Y el nodo nombra al tejedor: es el intérprete de Gazzaniga.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Víctor tiene una historia sobre sí mismo que cuenta desde hace veinte años: el actor de teatro que la televisión secuestró por un tiempo y que siempre vuelve al escenario. La historia cierra. Explica por qué hace villanos, por qué los desprecia un poco, por qué se siente, en el fondo, mejor que ellos. Tiene un solo problema: ya no describe su vida. Hace nueve años que no pisa un teatro. El intérprete sigue cosiendo, con hilo cada vez más fino, un personaje que ya no se corresponde con lo que pasa.</p>
+<p>La pregunta de la conductora no fue cruel. Fue, simplemente, una pregunta por los hechos. Y el personaje, que vivía de la historia, se quedó sin texto.</p>
+<h2>La camiseta</h2>
+<p>En el año 2000, tres psicólogos de la Universidad Cornell, Thomas Gilovich, Victoria Medvec y Kenneth Savitsky, pidieron a algunos estudiantes que se pusieran una camiseta con la cara de un cantante que, según una encuesta previa, a esos estudiantes les resultaba vergonzoso usar. Con la camiseta puesta, cada uno entraba a una sala donde otros estudiantes completaban un cuestionario, se quedaba un momento y salía.</p>
+<p>Después le preguntaron al de la camiseta cuántos de los presentes creía que habían notado quién era el cantante. Respondió, en promedio, cerca de la mitad. Luego les preguntaron a los presentes. Lo había notado menos de uno de cada cuatro.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Los investigadores llamaron a eso <em>efecto foco</em>: la tendencia a creer que estamos bajo un reflector que, en realidad, casi nadie enciende. Cada uno es el centro de su propia película, y supone que también lo es de la de los demás. En experimentos posteriores, el mismo equipo encontró que el efecto se repite con los errores: la gente sobrestima cuánto se fijaron los otros en su tropiezo y cuán severamente lo juzgaron.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Víctor había pasado la noche bajo un reflector que solo estaba encendido en su cabeza. La conductora no recordaba el silencio. Olga tampoco. Lo que Olga sí había oído era otra cosa, más fina, que Víctor no sabía que se le notaba: la nostalgia.</p>
+<h2>Que nos confirmen</h2>
+<p>Hay una razón más por la que defendemos un personaje, y es menos obvia que el miedo a quedar mal. El psicólogo William Swann estudió durante décadas lo que llamó <em>autoverificación</em>: la necesidad de que los demás nos vean como nosotros nos vemos. En uno de sus estudios más conocidos, con matrimonios, encontró algo que contradice el sentido común: las personas que tenían una opinión negativa de sí mismas se sentían más comprometidas con parejas que también las veían así que con parejas que las veían mejor.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>No es masoquismo. Es que un mundo que confirma quiénes creemos ser es un mundo predecible, y lo predecible tranquiliza, aunque duela. Por eso elegimos, sin darnos cuenta, los testigos que nos confirman.</p>
+<p>Los dos colegas con los que Víctor toma un café los martes llevan veinte años diciéndole lo mismo: que está desperdiciado en la televisión, que es un actor de teatro. Víctor los quiere mucho. Nunca se había preguntado por qué le gustaba tanto oír esa frase.</p>
+<h2>El espejo</h2>
+<p><em>El Multiverso Interior</em> dedica su cuarto nodo a lo que llama el espejo holográfico interior: la idea de que no vemos a los otros desnudos, sino a través de nuestras expectativas, creencias y memorias. El nodo no dice que los demás sean un invento nuestro. Dice algo más preciso:</p>
+<div class="perla"><p>Las personas en tu vida son otros, con su propio mundo,<br>pero te llegan a través de tu espejo holográfico interior.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Y lo apoya en una vieja idea de la ciencia: ya en el siglo XIX, Hermann von Helmholtz llamó <em>inferencia inconsciente</em> al trabajo con que el cerebro completa lo que ve con lo que espera ver.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p>
+<p>Esto vale en las dos direcciones. Al hombre del metro, Víctor le llega como Augusto: ese es el personaje que el espejo de millones de espectadores le pone encima, y no puede hacer mucho para quitárselo. Pero Víctor también les pone personajes a los demás. La conductora, en su espejo, se volvió una jueza. Los productores de televisión son mercenarios. El público de las tardes, gente que no entiende de actuación. Y los dos amigos del café, los únicos que lo ven como es.</p>
+<p>El nodo propone una práctica sencilla: durante una hora, mirar el día como si se lo viera a través de un cristal que lleva el propio color, y notar qué parte es la escena y qué parte es el cristal.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Cuando Víctor lo intentó, descubrió que el cristal tenía mucho más color del que pensaba.</p>
+<h2>Defender cansa</h2>
+<p>Ninguna de estas tres cosas, el intérprete que teje la historia, el reflector que nadie enciende y los testigos que nos confirman, es un defecto. Son maneras en que la mente cuida la continuidad, que es valiosa: sin ella, nadie sabría a quién llamar por su nombre. El problema aparece cuando la continuidad se vuelve rigidez, y el personaje, en lugar de servirnos, necesita que lo sirvamos. Entonces la vida se vuelve una función permanente, sin entreacto, frente a un público que casi no mira.</p>
+<p>Defender un personaje cansa. Hay que recordar el texto, cuidar los gestos, elegir a quién se escucha, preparar respuestas para preguntas que todavía no llegaron. Víctor se dio cuenta, esa semana, de que llevaba veinte años preparando una sola respuesta. Y de que la pregunta de la conductora, que lo había dejado mudo, no era un ataque. Era una puerta.</p>
+<div class="perla"><p>Defendemos al personaje<br>ante un público que casi no está mirando.</p><p>La historia de quién eres se cuenta después.<br>La vida pasa antes.</p></div>
+<h2>Tú también</h2>
+<p>Recuerda la última vez que pasaste una noche repasando algo que dijiste o hiciste frente a otros. Pregúntate, con honestidad, cuántas de esas personas lo recuerdan hoy.</p>
+<p>Después piensa en la historia que cuentas sobre ti cuando te presentas: de dónde vienes, qué haces, por qué. Fíjate si todavía describe tu vida o si ya es, sobre todo, un texto aprendido.</p>
+<p>Y si quieres dar un paso más, piensa en quiénes son los amigos que siempre te dicen lo que esperas oír. No para alejarte de ellos. Solo para notar qué personaje te confirman.</p>
+<div class="sigue"><a href="L09-U3.html">Anterior: Muchos</a><a class="prox" href="L09-U5.html">Siguiente: Pegada a la cara</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Michael S. Gazzaniga y Joseph E. LeDoux, <em>The Integrated Mind</em> (1978). Paráfrasis del experimento con el paciente P. S. y de su respuesta.</li><li id="nota-2">Michael S. Gazzaniga, <em>Who's in Charge? Free Will and the Science of the Brain</em> (2011); en español, <em>¿Quién manda aquí? El libre albedrío y la ciencia del cerebro</em>. Paráfrasis.</li><li id="nota-3">Lic. Arturo Rodríguez, <em>La Paradoja Luminosa</em>, Trinity Quantum, Libro 4, Nodo 4: «Identidad fluida», sección «La muerte del personaje principal», en la versión depurada de octubre de 2026. Fragmentos y paráfrasis.</li><li id="nota-4">Thomas Gilovich, Victoria H. Medvec y Kenneth Savitsky, «The Spotlight Effect in Social Judgment: An Egocentric Bias in Estimates of the Salience of One's Own Actions and Appearance», <em>Journal of Personality and Social Psychology</em> 78, n.º 2 (2000): 211-222; Kenneth Savitsky, Nicholas Epley y Thomas Gilovich, «Do Others Judge Us as Harshly as We Think?», <em>Journal of Personality and Social Psychology</em> 81, n.º 1 (2001): 44-56. Paráfrasis. En el primer estudio, los que llevaban la camiseta calcularon que la había notado cerca de la mitad de los presentes; la proporción real fue de alrededor del veintitrés por ciento.</li><li id="nota-5">William B. Swann Jr., Gregory Hixon y Chris De La Ronde, «Embracing the Bitter "Truth": Negative Self-Concepts and Marital Commitment», <em>Psychological Science</em> 3, n.º 2 (1992): 118-121. Paráfrasis.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>El Multiverso Interior</em>, Trinity Quantum, Libro 13, Nodo 4: «El espejo holográfico interior», en la versión depurada de octubre de 2026, secciones «Transmisión cuántica» y «Práctica de 7 días», día 5. Fragmento y paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 9 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
