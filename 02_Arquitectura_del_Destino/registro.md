@@ -1147,3 +1147,117 @@ Tramos: Lo que Víctor sabe ahora · El sí · El vestuario · El metro · La le
 - Para ver: Trinity Infinito, Libro 3, Portal 20, *El juego dentro del juego* (adaptado al teléfono); Brian Little, «¿Quién eres en realidad? El enigma de la personalidad» (TED, 2016).
 - En la pantalla: *Birdman o (la inesperada virtud de la ignorancia)*; *Desde el jardín*; *Persona*; *Separación* (*Severance*); *Black Mirror*, «Joan es horrible».
 - Puertas laterales: Quantum 4, Nodo 4; Quantum 13; Origen II y su Nodo 7; Origen VI, Nodo 1; Infinito, Libro 3; Portal Público, Libro 2.
+
+## Libro 10 · La Corriente
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *el arte de salir de costado*
+**Promesa:** No tienes que pelear contra la corriente. / Te basta con dejar de alimentarla.
+**Columna:** Trinity Origen I, *Psicología Cuántica*, Nodo 4, «Campos morfogenéticos y conciencia colectiva», para reconocer la corriente: el individualismo radical en discusión, «Nuestros pensamientos, emociones y estados de conciencia no son eventos privados», el protocolo de identificación (¿qué es mío y qué heredado o cultural?, ¿qué emerge sin decisión?, discernir, elegir), la práctica del día, el epígrafe «No estás solo» y la gota en el océano; Sheldrake, solo como hipótesis. Trinity Quantum 10, *Campos de Torsión*, Nodo 6, «Remolinos de realidad» (versión depurada), para dejar de alimentarla: las cinco fases y «Olvidas que la alimentaste»; «Lo que alimentas con tu atención crece en tu vida»; los remolinos de miedo, sociales y de contagio; Merton; «Ningún remolino que te toca prueba que lo llamaste»; el arte de disolver (el centro y el gancho, retirar la energía, salir de costado como de la resaca, llenar el espacio) y la práctica «Salir de un remolino». Apoyos: Quantum 10.1 (Wiener; el ojo del huracán), 10.2 (el vórtice de este tiempo), 10.4 (el corazón colectivo), 10.7 (las térmicas y los cóndores); Origen I.2 (la capa colectiva de la emoción); Infinito 3, portal 19.
+**Coro:** la tradición del individuo frente a la multitud como tradición principal: Séneca, *De vita beata* 1-2 (el clamor de voces en direcciones opuestas; *quo itur*; *ad rumorem componimur*; el error que pasa de mano en mano); Kierkegaard, «Ese individuo» (la multitud es la no-verdad; la multitud no tiene manos; cada uno puede ser el individuo); Heidegger, *Ser y tiempo*, § 27 (el «se» es el nadie; también nos apartamos de la masa como se aparta la gente). Contrapeso contemplativo en el Umbral V: La Boétie (el coloso sin base, el fuego sin leña) y el Buda (MN 72, adónde va el fuego; SN 12.52, *anāhāro*; *upādāna* como combustible y aferramiento). Jung, «Sobre el renacimiento», §§ 225-226 (el grupo baja el nivel de conciencia; sin responsabilidad ni miedo; también da valor). Zeland, los péndulos en lenguaje de experiencia (se alimentan de seguidores y de opositores; los hilos; «haz como yo» y nadie se lo propone; ignorar no es evitar; la armadura; el vacío; cambiar el guion; su propia enseñanza podría volverse péndulo). Comprobable: Hasher, Goldstein y Toppino (1977); Prentice y Miller (1993) y Schroeder y Prentice (1998); Merton (1948); Brady y otros (2017); Asch (1951, 1956) y Deutsch y Gerard (1955); Lerman e Iwata (1995); Friedman (1985, 1999) y Bowen (1978); las corrientes de resaca (NOAA, USLA); la cadena humana de Panama City Beach (2017); Williams, Shepard, Lambertucci y otros (2020).
+**Protagonista:** Elena, 57 años, directora de la Escuela Número 14, primaria pública en un barrio que perdió su fábrica. Un audio en el grupo *Familias 14* dice que la escuela cierra a fin de año. Ismael, 68, conserje hace treinta y cinco años («Esta escuela ya cerró cinco veces, y sigue abierta»; abría a las siete y media); doña Rosa, 84, su madre (el teléfono al primer timbre; las begonias); su padre y el mar de los nueve años («¡Al costado!»; «si te cansas, flotas y levantas el brazo»); Verónica, la alarma, y Gustavo, la indignación contra la alarma, que terminan en el huerto y en la misma escalera; Sofía, 26, maestra de cuarto (las aves que planean); Hernán, maestro de sexto; Dante, 11 («a mí no me da risa»), Lucas, Martina y Abril. El sábado de la escuela abierta, el informe «matrícula estable, sin observaciones» y la campana.
+**Gesto:** «Esto arrastra. No lo alimento.» cuando aparece el tirón, con el aire que sale más largo; el mapa de corrientes del primer día (doce minutos, con las preguntas de Origen I.4); un paso al costado pequeño y reversible, después de las tres preguntas de Quantum 10.6, y algo elegido para llenar el espacio; cada noche, la línea «Hoy salí de…»; el séptimo día, sumarse a una corriente que eleva y escribir «Hoy subí con…» (puente a *La Red*). Movimiento lento: la orilla.
+**Para ver:** Trinity Infinito, Libro 3, Portal 19, *Piezas que se mueven solas* (adaptado al teléfono); Derek Sivers, «Cómo empezar un movimiento» (TED, 2010).
+**Archivos:** `libro-10-la-corriente/L10.html` (portada), `L10-U1.html` a `L10-U7.html`, `L10-cierre.html`. Generador: `herramientas/gen_arq_L10.py`.
+
+### Umbral I · La resaca — *lo que arrastra sin que lo notes*
+Tramos: Ciento cuarenta y tres · Agua quieta · Lo que gira entre muchos · No adonde hay que ir · ¿Es mío? · Remolinos en un río · La primera palada · Tú también
+- Perla: El agua que más arrastra / es la que parece quieta.
+- Perla: Hay corrientes que piensan por ti. / Salir de ellas no exige pelear: alcanza con dejar de alimentarlas.
+- Nota: Sobre las corrientes de resaca, su aspecto de agua calma entre las olas y la indicación de no nadar contra ellas sino en paralelo a la orilla, o flotar y pedir ayuda: Administración Nacional Oceánica y Atmosférica de los Estados Unidos (NOAA) y United States Lifesaving Association, guías de seguridad sobre las corrientes de resaca. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 4: «Campos morfogenéticos y conciencia colectiva», «Introducción: más allá del individualismo». Fragmentos.
+- Nota: Sobre la hipótesis de los campos mórficos: Rupert Sheldrake, *A New Science of Life* (1981). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», apertura, versión depurada (2026). Fragmento.
+- Nota: Séneca, *De vita beata* (hacia el año 58), 1, 1-2. Traducción propia del latín.
+- Nota: Ídem, 1, 3. La frase citada, en traducción propia del latín: *ne pecorum ritu sequamur antecedentium gregem, pergentes non quo eundum est sed quo itur*; la que sigue (*ad rumorem componimur*), en paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Nodo 4, «Navegación consciente de campos morfogenéticos», «Protocolo de identificación», etapa 1. Fragmento, con la grafía normalizada.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Nodo 1: «El giro del alma», «El secreto del giro», versión depurada (2026). Fragmento. La imagen de Wiener está en Norbert Wiener, *The Human Use of Human Beings* (1950). Paráfrasis.
+
+### Umbral II · Se dice — *el pensamiento que no es de nadie*
+Tramos: ¿Quién lo dijo? · El señor Nadie · Lo repetido · Cada uno cree que los demás creen · Nadie las mueve · Haz como yo · La tarjeta del cajón · Tú también
+- Perla: El rumor no necesita que nadie lo crea. / Le basta con que cada uno crea que los demás lo creen.
+- Perla: Si preguntas quién lo dijo / y te responden «se dice», / ya conoces al autor: nadie.
+- Nota: Martin Heidegger, *Sein und Zeit* (1927), § 27 (pp. 126-128 de la edición alemana). Paráfrasis; la frase citada, en el original y en traducción propia. La traducción de Jorge Eduardo Rivera (*Ser y tiempo*, 1997) llama a *das Man* «el se»; la de José Gaos, «el uno».
+- Nota: Lynn Hasher, David Goldstein y Thomas Toppino, «Frequency and the Conference of Referential Validity», *Journal of Verbal Learning and Verbal Behavior* 16 (1977): 107-112. Paráfrasis del método y de los resultados.
+- Nota: Séneca, *De vita beata*, 1, 4. Paráfrasis sobre el latín: *unusquisque mavult credere quam iudicare […] versatque nos et praecipitat traditus per manus error*; *nemo sibi tantummodo errat, sed alieni erroris et causa et auctor est*.
+- Nota: Deborah A. Prentice y Dale T. Miller, «Pluralistic Ignorance and Alcohol Use on Campus: Some Consequences of Misperceiving the Social Norm», *Journal of Personality and Social Psychology* 64, n.º 2 (1993): 243-256. Paráfrasis del método y de los resultados.
+- Nota: Lic. Arturo Rodríguez, Trinity Infinito, Libro 3: *El juego sin jugador*, Portal 19: «Piezas que se mueven solas». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 4, «Protocolo de identificación», etapa 1. Fragmento.
+- Nota: Ídem, Nodo 2: «Las emociones como información cuántica», «Protocolo de decodificación en cuatro capas», capa 3, «Información colectiva». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», «Los remolinos parásitos», versión depurada (2026). Fragmentos.
+- Nota: Vadim Zeland, *Reality Transurfing. Pasos I-V* (edición española en un volumen, 2012), cap. XVI, «Bailes con sombras», sección «La regla del péndulo». Paráfrasis.
+
+### Umbral III · De qué se alimenta — *atención, emoción, expectativa*
+Tramos: Medianoche · Cinco fases · El banco que quebró · Los dos lados del columpio · La multitud no tiene manos · Al primer timbre · Tú también
+- Perla: Al columpio no le importa de qué lado lo empujes. / Sigue siendo empujar.
+- Perla: La multitud no tiene manos. / Cada uno tiene dos.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», secciones «La mecánica de los remolinos» y «Los tipos de remolinos», versión depurada (2026). Fragmentos y paráfrasis.
+- Nota: Robert K. Merton, «The Self-Fulfilling Prophecy», *The Antioch Review* 8, n.º 2 (1948): 193-210. Paráfrasis. El banco, el Last National Bank, y su director, Cartwright Millingville, son el caso ilustrativo del propio Merton.
+- Nota: Vadim Zeland, *El espacio de las variantes* (*Reality Transurfing I*, original ruso de 2004), cap. II, «Péndulos», secciones «Péndulos destructivos» y «Cuerdas de marionetas». Paráfrasis.
+- Nota: William J. Brady, Julian A. Wills, John T. Jost, Joshua A. Tucker y Jay J. Van Bavel, «Emotion Shapes the Diffusion of Moralized Content in Social Networks», *Proceedings of the National Academy of Sciences* 114, n.º 28 (2017): 7313-7318. Paráfrasis del método y de los resultados.
+- Nota: Søren Kierkegaard, «Ese individuo» («Den Enkelte»), notas sobre la dedicatoria escritas en 1847 y publicadas en 1859 junto con *Mi punto de vista como escritor*. Traducción propia sobre la versión inglesa de Charles K. Bellinger, «The Crowd Is Untruth»; la frase, en el danés original, *Mængde er Usandheden*. La imagen de Cayo Mario, en paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 4, «Tipos de campos morfogenéticos humanos», «Campos familiares». Paráfrasis.
+
+### Umbral IV · Uno solo basta — *cuando alguien no sigue*
+Tramos: Seis palabras · Las líneas en la cartulina · Ese individuo · Más abajo, sin miedo · Discernir · El que se cree afuera · Tú también
+- Perla: Una sola voz no cambia lo que todos ven. / Cambia lo que cada uno se anima a decir.
+- Perla: Salir de la corriente no es nadar contra ella. / Tampoco es creerse fuera del agua.
+- Nota: Solomon E. Asch, «Effects of Group Pressure upon the Modification and Distortion of Judgments», en Harold Guetzkow (ed.), *Groups, Leadership and Men* (1951), y «Studies of Independence and Conformity: I. A Minority of One Against a Unanimous Majority», *Psychological Monographs* 70, n.º 9 (1956). Paráfrasis del método y de los resultados. En el grupo de control, sin presión, los errores no llegaron al uno por ciento.
+- Nota: Søren Kierkegaard, «Ese individuo» («Den Enkelte»), escrito en 1847 y publicado en 1859. Paráfrasis sobre la versión inglesa de Charles K. Bellinger. Ver el Umbral III, nota 5.
+- Nota: C. G. Jung, «Sobre el renacimiento» («Über Wiedergeburt», 1940; revisado en 1950), en *Los arquetipos y lo inconsciente colectivo* (*Obra completa*, vol. 9/1, §§ 225-226), apartado sobre la identificación con un grupo. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 4, «Protocolo de identificación», etapas 2 y 3. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», «Los tipos de remolinos», «Remolinos colectivos», versión depurada (2026). Paráfrasis.
+- Nota: Martin Heidegger, *Sein und Zeit* (1927), § 27. Paráfrasis.
+- Nota: Vadim Zeland, *El espacio de las variantes* (*Reality Transurfing I*), cap. II, «Péndulos», sección «Péndulos destructivos». Paráfrasis.
+- Nota: Morton Deutsch y Harold B. Gerard, «A Study of Normative and Informational Social Influences upon Individual Judgment», *Journal of Abnormal and Social Psychology* 51, n.º 3 (1955): 629-636. Paráfrasis.
+
+### Umbral V · Salir de costado — *no pelear: dejar de alimentar*
+Tramos: Un solo mensaje · La ráfaga · Dejar de sostener · Adónde va el fuego · El arte de disolver · Ignorar no es evitar · Al costado · Tú también
+- Perla: No lo empujes ni lo sacudas. / Basta con dejar de sostenerlo.
+- Perla: El fuego no necesita agua. / Necesita que nadie le eche más leña.
+- Nota: Sobre la ráfaga de extinción, ver por ejemplo Dorothea C. Lerman y Brian A. Iwata, «Prevalence of the Extinction Burst and Its Attenuation During Treatment», *Journal of Applied Behavior Analysis* 28, n.º 1 (1995): 93-94. Paráfrasis de los resultados.
+- Nota: Edwin H. Friedman, *A Failure of Nerve: Leadership in the Age of the Quick Fix* (edición póstuma, 1999; nueva edición, 2007). Paráfrasis.
+- Nota: Étienne de La Boétie, *Discours de la servitude volontaire* (escrito hacia 1548; publicado en parte en 1574 y completo en 1576). La frase citada, en traducción propia del francés: «Je ne veux pas que vous le poussiez ou l'ébranliez, mais seulement ne le soutenez plus, et vous le verrez, comme un grand colosse à qui on a dérobé la base, de son poids même fondre en bas et se rompre». La imagen del fuego, en paráfrasis.
+- Nota: *Aggivacchagotta Sutta*, *Majjhima Nikaya* 72. Paráfrasis sobre la traducción inglesa de Thanissaro Bhikkhu.
+- Nota: *Upādāna Sutta*, *Samyutta Nikaya* 12, 52. Paráfrasis sobre las traducciones inglesas de Thanissaro Bhikkhu y Bhikkhu Sujato; los términos, del pali (*anāhāro nibbāyeyya*).
+- Nota: Thanissaro Bhikkhu, *The Mind Like Fire Unbound* (1993), cap. II. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», «El arte de disolver remolinos», versión depurada (2026). Fragmentos.
+- Nota: Vadim Zeland, *El espacio de las variantes* (*Reality Transurfing I*), cap. II, «Péndulos», sección «Derrotando el péndulo», y resumen del capítulo. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Nodo 6, «Práctica: salir de un remolino». Fragmento.
+
+### Umbral VI · El ojo calmo — *no toda corriente arrastra*
+Tramos: Cinco veces · El ojo del huracán · El sistema ansioso · Presencia no ansiosa · Cuando muchos corazones se aquietan · Lo que sube · La gota y el océano · Tú también
+- Perla: Quien encuentra un poco de calma / se vuelve señal para otros.
+- Perla: No se sale de la corriente para quedarse solo. / Se sale para poder elegir con quién subir.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Trinity Quantum, Libro 10, Nodo 1: «El giro del alma», «El ojo del huracán», versión depurada (2026). Fragmento.
+- Nota: Ídem, Nodo 2: «Vórtices de transformación», «El vórtice de este tiempo». Fragmento.
+- Nota: Edwin H. Friedman, *Generation to Generation: Family Process in Church and Synagogue* (1985). Paráfrasis.
+- Nota: Edwin H. Friedman, *A Failure of Nerve: Leadership in the Age of the Quick Fix* (edición póstuma, 1999; nueva edición, 2007). Paráfrasis.
+- Nota: Murray Bowen, *Family Therapy in Clinical Practice* (1978). Paráfrasis.
+- Nota: Christine M. Schroeder y Deborah A. Prentice, «Exposing Pluralistic Ignorance to Reduce Alcohol Use Among College Students», *Journal of Applied Social Psychology* 28, n.º 23 (1998): 2150-2180. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Nodo 4: «Campos torsionales del corazón», «El corazón colectivo». Fragmento y paráfrasis.
+- Nota: C. G. Jung, «Sobre el renacimiento» (1940; revisado en 1950), *Obra completa*, vol. 9/1, §§ 225-226. Ver el Umbral IV, nota 3.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Nodo 7: «El tornado ascensional», «La espiral hacia la luz» y «El tornado colectivo». Fragmento y paráfrasis. El estudio de los cóndores: Hannah J. Williams, Emily L. C. Shepard, Sergio A. Lambertucci y otros, «Physical Limits of Flight Performance in the Heaviest Soaring Bird», *Proceedings of the National Academy of Sciences* 117, n.º 30 (2020): 17884-17890.
+- Nota: Sobre la cadena humana de Panama City Beach, Florida, el 8 de julio de 2017: crónicas de *The News Herald* de Panama City, *The Washington Post*, Associated Press y NPR, 11 a 13 de julio de 2017. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 4: «Campos morfogenéticos y conciencia colectiva», epígrafe y conclusión. Fragmentos.
+
+### Umbral VII · La operación — *salir de una corriente por día*
+Tramos: Lo que vas a necesitar · Paso 1 · Esto arrastra. No lo alimento. · Paso 2 · Un paso al costado · Paso 3 · Cada noche, la orilla · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Cada noche, alguien sale de costado, / deja que la corriente siga sin él, / y se duerme en la orilla.
+- Nota: Lic. Arturo Rodríguez, *Psicología Cuántica*, Trinity Origen, Libro I, Nodo 4: «Campos morfogenéticos y conciencia colectiva», «Protocolo de identificación», etapa 1. Paráfrasis.
+- Nota: Ídem, «Práctica diaria como agente morfogenético», «Durante el día». Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Campos de Torsión*, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», «El arte de disolver remolinos» y «Práctica: salir de un remolino», versión depurada (2026). Paráfrasis y adaptación.
+- Nota: Ídem, Nodo 7: «El tornado ascensional», «El tornado colectivo». Paráfrasis.
+
+### Cierre · La escuela abierta — *lo que se gana al dejar de alimentar*
+Tramos: Lo que Elena sabe ahora · El informe · La campana · El grupo · Lo que se gana
+- Perla: No tienes que pelear contra la corriente. / Te basta con dejar de alimentarla.
+- Perla: Esto arrastra. No lo alimento. / Y desde el centro quieto, eliges qué merece girar en tu vida.
+- Perla: Lo que pusiste en marcha sigue girando / en otros, / en lo que cuidaste, / en lo que diste, / como el agua sigue en movimiento / después de que el giro pasó.
+- Para ver: Trinity Infinito, Libro 3, Portal 19, *Piezas que se mueven solas* (adaptado al teléfono); Derek Sivers, «Cómo empezar un movimiento» (TED, 2010).
+- En la pantalla: *12 hombres en pugna*; *La ola*; *La cacería*; *Network, un mundo implacable*; *Black Mirror*, «Odio nacional».
+- Puertas laterales: Origen I y su Nodo 4; Quantum 10 y su Nodo 6; Infinito, Libro 3; Portal Público, Libro 25.
+- Puente: *Aprendiste a salir sin pelear de las corrientes que arrastran a muchos a la vez. El siguiente libro mira la otra cara de lo colectivo, la que solo se ve cuando uno deja de girar: la red que te sostiene aunque la olvides.*

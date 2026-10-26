@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L10">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="salir de una corriente por día">
+<title>La operación · Umbral VII · La Corriente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L10.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span></div><div class="cual">Umbral VII</div><h1>La operación</h1><p class="sub">salir de una corriente por día</p></header><main><p>Hasta aquí, cada umbral se leyó. Este se practica. Durante siete días vas a ejercitar, en tamaño pequeño, el gesto que da título a este libro: reconocer una corriente que te lleva, y salir de ella de costado, sin pelear. No para apartarte de los demás, sino para dejar de alimentar lo que arrastra y tener las manos libres para lo que sostiene.</p>
+<p>Esta operación se suma a las de los libros anteriores. Del primero conservas la pausa: estoy mirando. Del segundo, los tres despertadores. Del tercero, la pregunta ¿quién mira?, tu nombre en la tormenta y la cabina de la noche. Del cuarto, ¿desde dónde?, el cuidado elegido y la línea para el cuerpo. Del quinto, los tres minutos con una grieta, su línea nocturna y la compañía para otro. Del sexto, una última vez, un final despedido y tres líneas antes de dormir. Del séptimo, no sé, y está bien, una cosa pequeña sin saber y la segunda línea completa. Del octavo, me importa, no lo aprieto, una cosa que baja un punto y la palabra al margen. Del noveno, lo llevo puesto, no lo soy, la pregunta ¿a quién le duele? y la silla. Aquí la práctica es corta: un mapa el primer día, una frase cuando aparece el tirón, un paso al costado y una línea por la noche. Si la cabina de la noche ya se alargó, quédate esta semana con lo que hoy te sirva, y con esto.</p>
+<h2>Lo que vas a necesitar</h2>
+<div class="ficha"><p><strong>Duración:</strong> siete días.</p><p><strong>Material:</strong> una hoja y un bolígrafo para el primer día, tus despertadores, el diario que encontrarás más abajo o una libreta.</p><p><strong>Tiempo diario:</strong> doce minutos el primer día. Después, unos segundos cuando aparece el tirón, un paso al costado que no te lleva más de una hora, y una línea antes de dormir. El séptimo día, una salida con otros.</p></div>
+<div class="paso"><h2>Paso 1 · Esto arrastra. No lo alimento.</h2></div>
+<p>El primer día, antes de empezar, dibuja el mapa de tus corrientes. Toma una hoja y, durante doce minutos, escribe todas las que alimentas con tu atención: el noticiero a ciertas horas, un grupo de mensajes, una red social, una conversación de familia que siempre gira hacia lo mismo, un miedo que circula en tu trabajo, una indignación que te acompaña desde hace meses, una idea de cómo debería ser tu vida, tu casa o tu cuerpo. No elijas todavía. Solo anota.</p>
+<p>Al lado de cada una, hazte las dos preguntas del protocolo de Trinity: ¿esto es mío, lo heredé, o lo tomé del aire? ¿Qué hago aquí sin haberlo decidido?<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Después elige una para la semana. No la más fuerte: una liviana, de la que puedas salir sin que se caiga nada importante.</p>
+<p>Cada día, cuando sientas el tirón de esa corriente —la prisa, el pecho que se aprieta, los dedos que ya buscan el teléfono, las ganas de responder ahora mismo—, detente. Suelta el aire despacio, más largo de lo que entra, como aprendiste en el cuarto libro. Mientras sale, di en voz baja o por dentro:</p>
+<p><strong>Esto arrastra. No lo alimento.</strong></p>
+<p>Las dos mitades de la frase cuentan. La primera no se hace la fuerte: reconoce el tirón, no finge que no estás en el agua. La segunda es la que elige. Es Elena pasando junto al bolso que la llamaba, sin abrirlo.</p>
+<p>Trinity propone, en el mismo nodo de <em>Psicología Cuántica</em>, una práctica para el día entero: observar, mientras vives, qué está influyendo lo que piensas y sientes.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> Esta frase es esa observación en su forma más breve.</p>
+<div class="paso"><h2>Paso 2 · Un paso al costado</h2></div>
+<p>Una vez por día, sal de la corriente elegida con un paso al costado. Antes, hazle las tres preguntas del sexto nodo de <em>Campos de Torsión</em>: ¿qué la alimenta?, ¿cuál es la creencia que la sostiene?, ¿dónde está mi gancho?<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Después da el paso. Pequeño, concreto, reversible. Algunos ejemplos:</p>
+<ul><li>Deja el teléfono en otra habitación durante una hora.</li><li>Responde ese hilo mañana, y no hoy.</li><li>Mira las noticias una vez, a la hora que tú elijas, y no cada vez que aparezcan.</li><li>Cuando llegue la conversación de siempre, cambia de tema con amabilidad.</li><li>Lee el mensaje que te indigna y no lo reenvíes.</li><li>Si no puedes evitar el tema, responde con una pregunta en lugar de un argumento.</li></ul>
+<p>Y enseguida, llena el espacio que quedó libre. El nodo lo advierte: si no pones ahí algo elegido, el viejo giro vuelve a ocuparlo.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> Una caminata, una llamada a alguien que quieres, una tarea con sentido, diez minutos con una planta, un libro, un instrumento. No hace falta que sea importante. Hace falta que sea elegido.</p>
+<p>Si en los primeros días la corriente empuja más fuerte, si alguien te pregunta por qué no respondes o sientes en las manos algo parecido a una abstinencia, recuerda la ráfaga del quinto umbral: lo que deja de recibir alimento a veces aprieta un poco antes de aflojar, y aprieta menos cuando el espacio está lleno. No es una señal de que te equivocaste. Es una señal de que el gesto está funcionando.</p>
+<div class="paso"><h2>Paso 3 · Cada noche, la orilla</h2></div>
+<p>En la cabina de la noche, después de las líneas de los libros anteriores, escribe las tres del sexto, con la segunda completa como aprendiste en el séptimo:</p>
+<p><em>Hoy terminó…</em><br><em>Queda para mañana… y no sé cómo será.</em><br><em>Viví este día.</em></p>
+<p>Esta semana agrega una más, la de la corriente:</p>
+<p><em>Hoy salí de…</em></p>
+<p>Y escribe su nombre: el grupo de la oficina, el noticiero de la noche, la discusión de siempre. Unas pocas palabras alcanzan. Si hoy no saliste, escribe igual el nombre de la corriente. Saber dónde estabas ya es estar un poco en la orilla.</p>
+<p>Para acompañarte al apagar la luz, toca el dibujo del mar. Un punto de luz está en la franja oscura, la del agua quieta que tira hacia adentro. Con cada salida del aire, el punto avanza un poco en paralelo a la orilla. Son siete respiraciones. Cuando termina la última, el punto llega a donde rompen las olas, una ola lo acerca a la arena, y aparece una sola línea: <em>Esto arrastra. No lo alimento.</em> Si necesitas parar, tócalo otra vez.</p>
+<div class="orilla" id="orilla">
+  <button type="button" aria-describedby="orilla-cuenta"><svg viewBox="0 0 200 164" aria-hidden="true">
+    <rect class="mar" x="4" y="4" width="192" height="156" rx="12"/>
+    <path class="canal" d="M84 6 C 80 40, 86 80, 82 112 L 118 112 C 114 80, 120 40, 116 6 Z"/>
+    <path class="tira" d="M92 110 C 90 80, 94 46, 92 12"/><path class="tira" d="M100 110 C 102 78, 98 44, 100 12"/><path class="tira" d="M108 110 C 110 80, 106 46, 108 12"/>
+    <path class="ola" d="M10 100 q 9 -6 18 0 t 18 0 t 18 0 t 14 0"/><path class="ola" d="M14 88 q 9 -5 18 0 t 18 0 t 18 0"/>
+    <path class="ola" d="M122 100 q 9 -6 18 0 t 18 0 t 18 0 t 14 0"/><path class="ola" d="M128 88 q 9 -5 18 0 t 18 0 t 18 0"/>
+    <path class="arena" d="M4 116 C 50 110, 150 110, 196 116 L 196 148 Q 196 160 184 160 L 16 160 Q 4 160 4 148 Z"/>
+    <g class="nadador"><circle class="aura" cx="100" cy="58" r="12"/><circle class="luz" cx="100" cy="58" r="4"/></g>
+  </svg><span class="frase">Toca el mar para empezar</span></button>
+  <div class="cuenta" id="orilla-cuenta" aria-live="polite">Siete respiraciones. Con cada salida del aire, el punto avanza un poco en paralelo a la orilla.</div>
+</div>
+<p>El séptimo día, súmate a una corriente que eleva. Es la otra mitad de lo que enseña el último nodo de <em>Campos de Torsión</em>: nadie sube solo, y quien encuentra un poco de calma se vuelve señal para otros.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> Busca algo que ya esté subiendo entre varios, cerca de ti: un coro, una jornada para limpiar una plaza, una colecta del barrio, una visita a alguien que está solo, una clase abierta, una mesa larga en una celebración ajena. Súmate una vez, en pequeño, sin comprometerte a nada que no puedas cumplir. Esa noche, en lugar de la línea de la corriente, escribe: <em>Hoy subí con…</em></p>
+<div class="diario" id="diario">
+  <details open><summary>Día 1</summary><div class="dia">
+    <label for="d1-corr">La corriente de hoy</label><input type="text" id="d1-corr" data-k="d1-corr" placeholder="El grupo de la oficina, el noticiero, la discusión de siempre">
+    <label for="d1-gancho">Qué la alimentaba (mi gancho)</label><input type="text" id="d1-gancho" data-k="d1-gancho" placeholder="Tener razón, el miedo, la prisa, el primer timbre">
+    <label for="d1-paso">El paso al costado</label><input type="text" id="d1-paso" data-k="d1-paso" placeholder="El teléfono en otra habitación, responder mañana">
+    <label for="d1-lleno">Con qué llené el espacio</label><input type="text" id="d1-lleno" data-k="d1-lleno" placeholder="Una caminata, una llamada, un libro">
+    <label class="marca"><input type="checkbox" data-k="d1-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «esto arrastra, no lo alimento»</span><button type="button" data-menos="d1-frase" aria-label="Una vez menos">−</button><output data-k="d1-frase" aria-live="polite">0</output><button type="button" data-mas="d1-frase" aria-label="Una vez más">+</button></div>
+    <label for="d1-term">Hoy terminó…</label><textarea id="d1-term" data-k="d1-term" rows="2"></textarea>
+    <label for="d1-queda">Queda para mañana… y no sé cómo será</label><textarea id="d1-queda" data-k="d1-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d1-vivi"> Viví este día</label>
+    <label for="d1-sali">Hoy salí de…</label><input type="text" id="d1-sali" data-k="d1-sali" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 2</summary><div class="dia">
+    <label for="d2-corr">La corriente de hoy</label><input type="text" id="d2-corr" data-k="d2-corr" placeholder="El grupo de la oficina, el noticiero, la discusión de siempre">
+    <label for="d2-gancho">Qué la alimentaba (mi gancho)</label><input type="text" id="d2-gancho" data-k="d2-gancho" placeholder="Tener razón, el miedo, la prisa, el primer timbre">
+    <label for="d2-paso">El paso al costado</label><input type="text" id="d2-paso" data-k="d2-paso" placeholder="El teléfono en otra habitación, responder mañana">
+    <label for="d2-lleno">Con qué llené el espacio</label><input type="text" id="d2-lleno" data-k="d2-lleno" placeholder="Una caminata, una llamada, un libro">
+    <label class="marca"><input type="checkbox" data-k="d2-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «esto arrastra, no lo alimento»</span><button type="button" data-menos="d2-frase" aria-label="Una vez menos">−</button><output data-k="d2-frase" aria-live="polite">0</output><button type="button" data-mas="d2-frase" aria-label="Una vez más">+</button></div>
+    <label for="d2-term">Hoy terminó…</label><textarea id="d2-term" data-k="d2-term" rows="2"></textarea>
+    <label for="d2-queda">Queda para mañana… y no sé cómo será</label><textarea id="d2-queda" data-k="d2-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d2-vivi"> Viví este día</label>
+    <label for="d2-sali">Hoy salí de…</label><input type="text" id="d2-sali" data-k="d2-sali" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 3</summary><div class="dia">
+    <label for="d3-corr">La corriente de hoy</label><input type="text" id="d3-corr" data-k="d3-corr" placeholder="El grupo de la oficina, el noticiero, la discusión de siempre">
+    <label for="d3-gancho">Qué la alimentaba (mi gancho)</label><input type="text" id="d3-gancho" data-k="d3-gancho" placeholder="Tener razón, el miedo, la prisa, el primer timbre">
+    <label for="d3-paso">El paso al costado</label><input type="text" id="d3-paso" data-k="d3-paso" placeholder="El teléfono en otra habitación, responder mañana">
+    <label for="d3-lleno">Con qué llené el espacio</label><input type="text" id="d3-lleno" data-k="d3-lleno" placeholder="Una caminata, una llamada, un libro">
+    <label class="marca"><input type="checkbox" data-k="d3-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «esto arrastra, no lo alimento»</span><button type="button" data-menos="d3-frase" aria-label="Una vez menos">−</button><output data-k="d3-frase" aria-live="polite">0</output><button type="button" data-mas="d3-frase" aria-label="Una vez más">+</button></div>
+    <label for="d3-term">Hoy terminó…</label><textarea id="d3-term" data-k="d3-term" rows="2"></textarea>
+    <label for="d3-queda">Queda para mañana… y no sé cómo será</label><textarea id="d3-queda" data-k="d3-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d3-vivi"> Viví este día</label>
+    <label for="d3-sali">Hoy salí de…</label><input type="text" id="d3-sali" data-k="d3-sali" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 4</summary><div class="dia">
+    <label for="d4-corr">La corriente de hoy</label><input type="text" id="d4-corr" data-k="d4-corr" placeholder="El grupo de la oficina, el noticiero, la discusión de siempre">
+    <label for="d4-gancho">Qué la alimentaba (mi gancho)</label><input type="text" id="d4-gancho" data-k="d4-gancho" placeholder="Tener razón, el miedo, la prisa, el primer timbre">
+    <label for="d4-paso">El paso al costado</label><input type="text" id="d4-paso" data-k="d4-paso" placeholder="El teléfono en otra habitación, responder mañana">
+    <label for="d4-lleno">Con qué llené el espacio</label><input type="text" id="d4-lleno" data-k="d4-lleno" placeholder="Una caminata, una llamada, un libro">
+    <label class="marca"><input type="checkbox" data-k="d4-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «esto arrastra, no lo alimento»</span><button type="button" data-menos="d4-frase" aria-label="Una vez menos">−</button><output data-k="d4-frase" aria-live="polite">0</output><button type="button" data-mas="d4-frase" aria-label="Una vez más">+</button></div>
+    <label for="d4-term">Hoy terminó…</label><textarea id="d4-term" data-k="d4-term" rows="2"></textarea>
+    <label for="d4-queda">Queda para mañana… y no sé cómo será</label><textarea id="d4-queda" data-k="d4-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d4-vivi"> Viví este día</label>
+    <label for="d4-sali">Hoy salí de…</label><input type="text" id="d4-sali" data-k="d4-sali" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 5</summary><div class="dia">
+    <label for="d5-corr">La corriente de hoy</label><input type="text" id="d5-corr" data-k="d5-corr" placeholder="El grupo de la oficina, el noticiero, la discusión de siempre">
+    <label for="d5-gancho">Qué la alimentaba (mi gancho)</label><input type="text" id="d5-gancho" data-k="d5-gancho" placeholder="Tener razón, el miedo, la prisa, el primer timbre">
+    <label for="d5-paso">El paso al costado</label><input type="text" id="d5-paso" data-k="d5-paso" placeholder="El teléfono en otra habitación, responder mañana">
+    <label for="d5-lleno">Con qué llené el espacio</label><input type="text" id="d5-lleno" data-k="d5-lleno" placeholder="Una caminata, una llamada, un libro">
+    <label class="marca"><input type="checkbox" data-k="d5-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «esto arrastra, no lo alimento»</span><button type="button" data-menos="d5-frase" aria-label="Una vez menos">−</button><output data-k="d5-frase" aria-live="polite">0</output><button type="button" data-mas="d5-frase" aria-label="Una vez más">+</button></div>
+    <label for="d5-term">Hoy terminó…</label><textarea id="d5-term" data-k="d5-term" rows="2"></textarea>
+    <label for="d5-queda">Queda para mañana… y no sé cómo será</label><textarea id="d5-queda" data-k="d5-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d5-vivi"> Viví este día</label>
+    <label for="d5-sali">Hoy salí de…</label><input type="text" id="d5-sali" data-k="d5-sali" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 6</summary><div class="dia">
+    <label for="d6-corr">La corriente de hoy</label><input type="text" id="d6-corr" data-k="d6-corr" placeholder="El grupo de la oficina, el noticiero, la discusión de siempre">
+    <label for="d6-gancho">Qué la alimentaba (mi gancho)</label><input type="text" id="d6-gancho" data-k="d6-gancho" placeholder="Tener razón, el miedo, la prisa, el primer timbre">
+    <label for="d6-paso">El paso al costado</label><input type="text" id="d6-paso" data-k="d6-paso" placeholder="El teléfono en otra habitación, responder mañana">
+    <label for="d6-lleno">Con qué llené el espacio</label><input type="text" id="d6-lleno" data-k="d6-lleno" placeholder="Una caminata, una llamada, un libro">
+    <label class="marca"><input type="checkbox" data-k="d6-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «esto arrastra, no lo alimento»</span><button type="button" data-menos="d6-frase" aria-label="Una vez menos">−</button><output data-k="d6-frase" aria-live="polite">0</output><button type="button" data-mas="d6-frase" aria-label="Una vez más">+</button></div>
+    <label for="d6-term">Hoy terminó…</label><textarea id="d6-term" data-k="d6-term" rows="2"></textarea>
+    <label for="d6-queda">Queda para mañana… y no sé cómo será</label><textarea id="d6-queda" data-k="d6-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d6-vivi"> Viví este día</label>
+    <label for="d6-sali">Hoy salí de…</label><input type="text" id="d6-sali" data-k="d6-sali" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 7</summary><div class="dia">
+    <label for="d7-corr">La corriente de hoy</label><input type="text" id="d7-corr" data-k="d7-corr" placeholder="El grupo de la oficina, el noticiero, la discusión de siempre">
+    <label for="d7-gancho">Qué la alimentaba (mi gancho)</label><input type="text" id="d7-gancho" data-k="d7-gancho" placeholder="Tener razón, el miedo, la prisa, el primer timbre">
+    <label for="d7-paso">El paso al costado</label><input type="text" id="d7-paso" data-k="d7-paso" placeholder="El teléfono en otra habitación, responder mañana">
+    <label for="d7-lleno">Con qué llené el espacio</label><input type="text" id="d7-lleno" data-k="d7-lleno" placeholder="Una caminata, una llamada, un libro">
+    <label class="marca"><input type="checkbox" data-k="d7-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «esto arrastra, no lo alimento»</span><button type="button" data-menos="d7-frase" aria-label="Una vez menos">−</button><output data-k="d7-frase" aria-live="polite">0</output><button type="button" data-mas="d7-frase" aria-label="Una vez más">+</button></div>
+    <label for="d7-term">Hoy terminó…</label><textarea id="d7-term" data-k="d7-term" rows="2"></textarea>
+    <label for="d7-queda">Queda para mañana… y no sé cómo será</label><textarea id="d7-queda" data-k="d7-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d7-vivi"> Viví este día</label>
+    <label for="d7-sali">Hoy salí de…</label><input type="text" id="d7-sali" data-k="d7-sali" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <label class="rotulo" for="subi" style="margin-top:1.2rem">El séptimo día, una corriente que eleva: Hoy subí con…</label>
+  <textarea id="subi" data-k="subi" rows="4" placeholder="Con quién, y hacia dónde"></textarea>
+  <div class="acciones"><button type="button" id="copiar">Copiar mis notas</button><button type="button" id="borrar">Borrar mis notas</button></div>
+  <p class="estado" id="estado" aria-live="polite">Lo que escribes se guarda solo en este dispositivo. Nadie más lo ve.</p>
+</div>
+<h2>Lo que puede pasar</h2>
+<p>Los primeros días quizá notes que el tirón llega antes de que te des cuenta, y que ya estás respondiendo, leyendo o discutiendo cuando recuerdas la frase. Es lo esperable. Una corriente que alimentas desde hace años tiene más práctica que tú. Cada vez que lo notes, aunque sea tarde, ya es un paso al costado.</p>
+<p>Quizá alguien pregunte por qué ya no respondes, o te reproche no tomar partido. Casi siempre la pregunta dura menos de lo que temes. Puedes contestar con lo que Elena le dijo a Verónica: lo que sabes, sin garantías que no tienes, y una invitación a conversar en persona.</p>
+<p>Quizá aparezca, en el espacio que quedó libre, un pequeño vacío, una inquietud, como quien deja de oír un ruido al que estaba acostumbrado. Para eso es el segundo gesto del paso dos: llenarlo con algo elegido. Y quizá, algún día de la semana, notes algo que no esperabas: que dormiste mejor, que una conversación en persona fue más amable que cualquier mensaje, que alguien a tu lado también se calmó. No lo busques. Si llega, anótalo.</p>
+<section class="cuidado"><h2>Cuándo no hacer esta práctica</h2>
+<p>Dejar de alimentar una corriente no es dejar de informarse. Si hay una alerta real que pide actuar —un aviso oficial de emergencia, una indicación sanitaria, una evacuación—, infórmate en fuentes confiables y sigue las indicaciones. Lo que esta operación propone es elegir la fuente, la dosis y la hora, no cerrar los ojos.</p>
+<p>Tampoco es mirar hacia otro lado cuando alguien sufre un daño. Si en una corriente hay alguien a quien se burla, se acosa o se lastima, como a Abril en el autobús, salir de costado significa retirarle el aplauso al que daña y, al mismo tiempo, acercarse a quien lo sufre, intervenir si puedes y pedir ayuda si hace falta. Y si eres tú quien recibe el daño una y otra vez, lo sabio no es esperar a que el giro se apague: es alejarse y pedir ayuda.</p>
+<p>No tomes decisiones irreversibles esta semana. No abandones un grupo de familia, no cortes un vínculo, no borres una cuenta ni renuncies a un compromiso. Una hora con el teléfono en otra habitación alcanza. Se trata de salir de una corriente por un rato, no de quemar los puentes.</p>
+<p>Si al hacer esta práctica empiezas a sentir que todos piensan contra ti, que nadie es confiable o que lo mejor es aislarte, detente: esa sensación también es una corriente, y conviene hablarla con alguien de confianza. Y si sientes que tus pensamientos no son tuyos, que alguien los pone en tu cabeza o los controla, abandona el ejercicio y consúltalo esa misma semana.</p>
+<p>Si las noticias o los mensajes te quitan el sueño durante semanas, o el miedo al mundo ya no te deja salir, esta operación no alcanza: eso merece la compañía de un profesional, y responde bien al tratamiento.</p>
+</section><div class="perla"><p>Cada noche, alguien sale de costado,<br>deja que la corriente siga sin él,<br>y se duerme en la orilla.</p></div>
+<div class="sigue"><a href="L10-U6.html">Anterior: El ojo calmo</a><a class="prox" href="L10-cierre.html">Siguiente: La escuela abierta</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>Psicología Cuántica</em>, Trinity Origen, Libro I, Nodo 4: «Campos morfogenéticos y conciencia colectiva», «Protocolo de identificación», etapa 1. Paráfrasis.</li><li id="nota-2">Ídem, «Práctica diaria como agente morfogenético», «Durante el día». Paráfrasis.</li><li id="nota-3">Lic. Arturo Rodríguez, <em>Campos de Torsión</em>, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», «El arte de disolver remolinos» y «Práctica: salir de un remolino», versión depurada (2026). Paráfrasis y adaptación.</li><li id="nota-4">Ídem, Nodo 7: «El tornado ascensional», «El tornado colectivo». Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 10 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer><script>
+(function(){
+  var mm=document.getElementById('orilla'); if(mm){
+    var b=mm.querySelector('button'), nd=mm.querySelector('.nadador'), fr=mm.querySelector('.frase'), cu=document.getElementById('orilla-cuenta');
+    var red=window.matchMedia('(prefers-reduced-motion: reduce)').matches, CICLOS=7, DX=56, DY=64, k=0, estado='quieto', timers=[];
+    var desde=0, hacia=0, t0=0, dur=0, raf=null;
+    function limpiar(){ timers.forEach(function(x){ clearTimeout(x); }); timers=[]; }
+    function vAhora(now){ if(dur<=0){ return hacia; } var f=Math.min(1,(now-t0)/dur); f=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2; return desde+(hacia-desde)*f; }
+    function pinta(v){ var lx=Math.min(v,1), ly=Math.max(v-1,0); nd.setAttribute('transform','translate('+(DX*lx).toFixed(2)+' '+(DY*ly).toFixed(2)+')'); }
+    function cuadro(now){ pinta(vAhora(now)); if(dur>0&&now-t0<dur){ raf=requestAnimationFrame(cuadro); } else { raf=null; } }
+    function lleva(v,ms){ var now=performance.now(); desde=vAhora(now); hacia=v; t0=now; dur=(red||!ms)?0:ms; if(dur===0){ pinta(v); return; } if(!raf){ raf=requestAnimationFrame(cuadro); } }
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ mm.classList.toggle('vista',e[0].isIntersecting); }).observe(mm); } else { mm.classList.add('vista'); }
+    function fin(){ limpiar(); estado='fin'; lleva(2,2600); mm.classList.add('fin'); fr.textContent='Esto arrastra. No lo alimento.'; cu.textContent='Una ola te acerca a la arena. Que descanses.'; }
+    function ciclo(){
+      if(k>=CICLOS){ fin(); return; }
+      fr.textContent='Toma aire…'; cu.textContent='Respiración '+(k+1)+' de '+CICLOS+'.';
+      timers.push(setTimeout(function(){
+        fr.textContent='Suelta el aire despacio…';
+        k++; lleva(k/CICLOS,6000);
+        timers.push(setTimeout(ciclo,6000));
+      },4000));
+    }
+    b.addEventListener('click',function(){
+      if(estado==='corre'){ limpiar(); estado='pausa'; lleva(vAhora(performance.now()),0); fr.textContent='En pausa'; cu.textContent='Toca otra vez para seguir. El mar espera.'; return; }
+      if(estado==='quieto'||estado==='fin'){ k=0; mm.classList.remove('fin'); lleva(0,estado==='fin'?1200:0); }
+      estado='corre'; ciclo();
+    });
+  }
+  var K='arq-'+document.documentElement.getAttribute('data-libro')+'-corriente-v1', d={};
+  try{ d=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){ d={}; }
+  function guardar(){ try{ localStorage.setItem(K,JSON.stringify(d)); }catch(e){} }
+  var campos=document.querySelectorAll('#diario [data-k]');
+  campos.forEach(function(el){
+    var k=el.getAttribute('data-k');
+    if(el.tagName==='OUTPUT'){ el.textContent=String(d[k]||0); }
+    else if(el.type==='checkbox'){ if(d[k]){ el.checked=true; } el.addEventListener('change',function(){ d[k]=el.checked; guardar(); }); }
+    else { if(d[k]){ el.value=d[k]; } el.addEventListener('input',function(){ d[k]=el.value; guardar(); }); }
+  });
+  function cuenta(k,delta){ var v=Math.max(0,(d[k]||0)+delta); d[k]=v; guardar(); var o=document.querySelector('#diario output[data-k="'+k+'"]'); if(o){ o.textContent=String(v); } }
+  document.querySelectorAll('#diario [data-mas]').forEach(function(x){ x.addEventListener('click',function(){ cuenta(x.getAttribute('data-mas'),1); }); });
+  document.querySelectorAll('#diario [data-menos]').forEach(function(x){ x.addEventListener('click',function(){ cuenta(x.getAttribute('data-menos'),-1); }); });
+  var est=document.getElementById('estado');
+  var cp=document.getElementById('copiar'); if(cp){ cp.addEventListener('click',function(){
+    var txt=[];
+    for(var i=1;i<=7;i++){ var c=d['d'+i+'-corr']||'', g=d['d'+i+'-gancho']||'', p=d['d'+i+'-paso']||'', ll=d['d'+i+'-lleno']||'', hc=d['d'+i+'-hecho'], fz=d['d'+i+'-frase']||0, h=d['d'+i+'-term']||'', q=d['d'+i+'-queda']||'', v=d['d'+i+'-vivi'], s2=d['d'+i+'-sali']||'';
+      if(c||g||p||ll||hc||fz||h||q||v||s2){ txt.push('Día '+i+(c?'\nLa corriente de hoy: '+c:'')+(g?'\nQué la alimentaba: '+g:'')+(p?'\nEl paso al costado: '+p+(hc?' (hecho)':''):(hc?'\nLo hice.':''))+(ll?'\nCon qué llené el espacio: '+ll:'')+(fz?'\nDije «esto arrastra, no lo alimento»: '+fz+(fz===1?' vez':' veces'):'')+(h?'\nHoy terminó '+h:'')+(q?'\nQueda para mañana '+q+'… y no sé cómo será.':'')+(v?'\nViví este día.':'')+(s2?'\nHoy salí de '+s2:'')); } }
+    if(d['subi']){ txt.push('El séptimo día, Hoy subí con:\n'+d['subi']); }
+    var s=txt.join('\n\n')||'Todavía no escribiste nada.';
+    if(navigator.clipboard){ navigator.clipboard.writeText(s).then(function(){ est.textContent='Notas copiadas.'; },function(){ est.textContent='No se pudieron copiar. Selecciona el texto a mano.'; }); }
+    else { est.textContent='Este navegador no permite copiar automáticamente.'; }
+  }); }
+  var br=document.getElementById('borrar'); if(br){ br.addEventListener('click',function(){
+    if(!confirm('¿Borrar las notas de esta semana? No se pueden recuperar.')){ return; }
+    d={}; guardar(); campos.forEach(function(el){ if(el.tagName==='OUTPUT'){ el.textContent='0'; } else if(el.type==='checkbox'){ el.checked=false; } else { el.value=''; } }); est.textContent='Notas borradas.';
+  }); }
+})();
+</script>
+</body>
+</html>

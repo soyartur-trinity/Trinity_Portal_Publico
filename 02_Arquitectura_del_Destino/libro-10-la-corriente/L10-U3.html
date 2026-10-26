@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L10">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="atención, emoción, expectativa">
+<title>De qué se alimenta · Umbral III · La Corriente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L10.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral III</div><h1>De qué se alimenta</h1><p class="sub">atención, emoción, expectativa</p></header><main><h2>Medianoche</h2>
+<p>El mensaje que Elena envió aquella primera noche recibió cuarenta respuestas en una hora.</p>
+<p>Verónica preguntó, con buena fe, por qué la escuela estaba en esa lista si no iba a cerrar. Una madre de quinto agradeció la aclaración. Otra pidió que la directora mostrara la resolución, aunque Elena acababa de explicar que no existía ninguna. Y Gustavo, padre de unos gemelos de quinto, escribió en mayúsculas que ya era hora de que algunas madres dejaran de sembrar pánico, que no tenían nada mejor que hacer.</p>
+<p>En diez minutos el grupo se partió en dos. De un lado, los que tenían miedo y exigían respuestas. Del otro, los que estaban indignados con los que tenían miedo. Elena escribió otra vez, para calmar. Gustavo le agradeció y aprovechó para responderle a Verónica. Verónica le contestó a Gustavo. Alguien tomó una captura del intercambio y la publicó en la página del barrio con una pregunta: «¿Cierra la 14?».</p>
+<p>A la mañana siguiente había trescientos doce mensajes. A las siete en punto sonó el teléfono fijo de la casa de Elena. Era su madre, doña Rosa, ochenta y cuatro años, que vive sola en un piso del centro con el televisor encendido desde que se levanta.</p>
+<p>—Vi en las noticias que van a cerrar escuelas —dijo—. ¿La tuya está bien?</p>
+<p>Elena atendió al primer timbre, como siempre. En su casa, de niña, el teléfono se atendía al primer timbre. Su madre todavía lo hace.</p>
+<h2>Cinco fases</h2>
+<p>El sexto nodo de <em>Campos de Torsión</em> describe cómo nace y crece un remolino en la vida de alguien. Lo divide en cinco fases, y vale la pena recorrerlas con el rumor de la escuela al lado, porque encajan una por una.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Primero, la perturbación: un deseo, un miedo o una intención que cae en el agua como una piedra. El audio de la prima.</p>
+<p>Después, la alimentación del giro. Trinity la describe con tres ingredientes:</p>
+<div class="cita"><p class="trad">Atención sostenida<br>Emoción añadida<br>Expectativa creciente.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Las respuestas de medianoche, las mayúsculas de Gustavo, la pregunta de cada madre en la puerta: ¿y si es verdad?</p>
+<p>Tercero, la atracción: uno empieza a notar lo que antes pasaba de largo y a acercarse a quienes buscan lo mismo. Esa semana, todas las noticias sobre cierres de escuelas en cualquier lugar del país aparecían en el grupo, y cada una parecía una confirmación.</p>
+<p>Cuarto, la cristalización: lo sostenido toma forma. Una decisión, un hábito, un encuentro. Los formularios de traslado.</p>
+<p>Y por último, la estabilización, que es la fase más silenciosa:</p>
+<div class="cita"><p class="trad">Nueva realidad se ancla.<br>Se vuelve «normal».<br>Olvidas que la alimentaste.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Si la escuela cerraba, al año siguiente sería normal que no estuviera, y nadie recordaría quién había echado cada palada.</p>
+<p>El nodo resume la mecánica en una frase que vale para todo lo que gira, lo que uno desea y lo que teme, lo que elige y lo que lo arrastra:</p>
+<div class="cita"><p class="trad">Lo que alimentas con tu atención crece en tu vida.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Y dedica unas líneas a una clase de remolinos que aquella semana Elena conoció de cerca, los de miedo:</p>
+<div class="cita"><p class="trad">Agrandan lo temido hasta volverlo el centro de tus días.<br>Muy rápidos y poderosos.<br>Ocupan el lugar de la vida que está pasando.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Durante esos días, Elena caminó cuarenta veces por el pasillo de la planta baja, donde los niños de primero habían colgado sus primeros dibujos del año. No vio ninguno.</p>
+<h2>El banco que quebró</h2>
+<p>En 1948, el sociólogo estadounidense Robert K. Merton publicó un ensayo que le dio nombre a algo que todos habían visto pasar. Lo abre con una parábola: un banco perfectamente sano, en el año 1932, en el que un día empieza a correr el rumor de que no tiene fondos. Los clientes, que no tenían motivo para desconfiar, desconfían de que los demás desconfíen, y van todos a la vez a retirar sus ahorros. Ningún banco tiene en la caja el dinero de todos sus clientes el mismo día. El banco quiebra.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>Merton lo llamó profecía que se cumple a sí misma: una definición falsa de la situación provoca una conducta nueva que vuelve verdadera la idea que era falsa. Y la distingue de lo que ocurre en la naturaleza: las predicciones sobre el regreso del cometa Halley no cambian su órbita; el rumor sobre aquel banco, en cambio, sí cambió su destino.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> El nodo de Trinity cuenta el mismo caso y lo cierra con dos frases que dicen todo lo que hace falta:</p>
+<div class="cita"><p class="trad">Nadie lo atrajo con el pensamiento.<br>Lo hicieron girar entre todos.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Elena hizo las cuentas una noche, en la cocina, con una calculadora. Si cuarenta familias pedían el traslado, las inscripciones del año siguiente caerían por debajo del número que la Secretaría considera mínimo. La revisión de rutina se volvería, entonces, un examen de verdad. El rumor podía hacerse cierto a fuerza de ser creído.</p>
+<p>El mismo nodo agrega una frase que conviene dejar escrita con claridad, porque cuando se habla de atención y de lo que uno alimenta, es fácil deslizarse hacia la culpa:</p>
+<div class="cita"><p class="trad">Ningún remolino que te toca prueba que lo llamaste. Hay giros que nadie eligió, y quien está dentro de uno merece ayuda, no sospecha.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Las circunstancias de nadie son culpa de su estado interior. Una escuela que pierde alumnos, una familia que pierde el trabajo, un barrio que pierde una fábrica: nada de eso prueba que alguien haya pensado mal. Lo que uno elige, en todo caso, es qué hace dentro del giro.</p>
+<h2>Los dos lados del columpio</h2>
+<p>Vadim Zeland describe esta dinámica en el segundo capítulo del primer tomo de su obra, que llama «Péndulos». Cuando muchas personas piensan y sienten lo mismo a la vez, dice, se forma una estructura que empieza a vivir por su cuenta, y que se balancea con más fuerza cuantos más la empujan.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> La serie no adopta su descripción de esas estructuras como seres de energía; toma lo que cualquiera puede comprobar: que se alimentan de la reacción.</p>
+<p>Y aquí está lo más fino de su observación. El péndulo, dice Zeland, se alimenta tanto de sus seguidores como de sus opositores. Pone un ejemplo casi cómico: un grupo de señoras mayores sentadas en un banco de la plaza critican a las autoridades con pasión. No apoyan nada de lo que censuran, y sin embargo le entregan su tiempo, su enojo y su atención. Al columpio no le importa de qué lado lo empujes.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Verónica y Gustavo parecían estar en orillas opuestas. Ella tenía miedo; él estaba indignado con el miedo. Los dos alimentaban el mismo rumor. Y los mensajes largos y serenos de la directora, que pedían calma, también le daban de comer: cada uno le daba al tema un día más de vida.</p>
+<p>Zeland enumera también los hilos de los que tira una corriente para que uno se mueva: el miedo, la culpa, el deber, la indignación. Y uno más, que Elena leyó con una sonrisa incómoda: el de quien necesita, a toda costa, demostrar que tiene razón.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>La investigación reciente le puso cifras a algo parecido. En 2017, un equipo de la Universidad de Nueva York dirigido por William Brady y Jay Van Bavel analizó más de quinientos sesenta mil mensajes publicados en una red social sobre tres temas que dividen a la opinión pública. Por cada palabra con carga moral y emocional a la vez, como <em>vergüenza</em>, <em>odio</em> o <em>traición</em>, un mensaje se compartía en torno de un veinte por ciento más. El efecto apareció en los dos extremos del arco político, y fue mucho mayor dentro de cada bando que entre bandos: la indignación corre más rápido hacia los que ya piensan igual.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Es el clamor de Séneca, medido. No una corriente, sino dos que giran una contra otra y se dan fuerza mutuamente. La alarma y la indignación contra la alarma, el entusiasmo y el desprecio por el entusiasmo. Cada bando cree estar frenando al otro, y los dos empujan el mismo columpio.</p>
+<h2>La multitud no tiene manos</h2>
+<p>En 1847, el pensador danés Søren Kierkegaard escribió unas notas para acompañar la dedicatoria de un libro suyo a «ese individuo», el lector singular al que quería hablarle. En ellas aparece una frase que repitió muchas veces:</p>
+<div class="cita"><p class="trad">La multitud es la no-verdad.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Y la explica con una imagen de la historia de Roma. Cuando el general Cayo Mario, ya anciano y derrotado, estuvo prisionero, nadie se animó a matarlo con sus propias manos. Kierkegaard observa que la multitud se atreve a lo que ninguno de sus miembros se atrevería, y la razón es que la multitud diluye la responsabilidad hasta volverla una fracción. Pero la multitud es una abstracción, escribe, y no tiene manos. Cada individuo, en cambio, tiene dos.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>Kierkegaard no habla de culpa. Habla de algo que se pierde en el giro y que se puede recuperar: las propias manos. Cada mensaje reenviado, cada respuesta a medianoche, cada «me gusta» bajo la captura de la página del barrio tenía dos manos detrás. Las de Elena también.</p>
+<h2>Al primer timbre</h2>
+<p>El viernes por la noche, después de cortar con su madre por tercera vez en el día, Elena se quedó mirando el teléfono fijo, ese aparato que en su casa ya nadie usaba salvo doña Rosa.</p>
+<p>En su familia, el teléfono se atendía al primer timbre. Cuando ella era niña, su madre corría por el pasillo con las manos mojadas, porque un timbre que sonaba dos veces podía ser una mala noticia que esperaba. Elena había aprendido a vivir así sin que nadie se lo enseñara: a responder enseguida, a calmar a todos, a que nadie se quedara esperando.</p>
+<p>El nodo de <em>Psicología Cuántica</em> menciona, entre los campos que actúan sin que uno decida, los familiares: predisposiciones emocionales, patrones de comportamiento que nadie eligió y que pasan de una generación a la otra.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> La serie deja de lado la explicación de esas herencias por campos invisibles, y se queda con lo que cualquier familia puede reconocer en su mesa: hay maneras de reaccionar que se heredan como se hereda una receta, sin que nadie la escriba.</p>
+<p>Esa noche, Elena puso el teléfono boca abajo sobre la mesa de noche, decidida a no mirarlo hasta la mañana. Aguantó diez minutos. Lo volteó.</p>
+<p>Había cuarenta mensajes nuevos.</p>
+<div class="perla"><p>Al columpio no le importa de qué lado lo empujes.<br>Sigue siendo empujar.</p></div>
+<div class="perla"><p>La multitud no tiene manos.<br>Cada uno tiene dos.</p></div>
+<h2>Tú también</h2>
+<p>Busca una corriente que alimentas desde la orilla opuesta: una causa contra la que discutes, una persona a la que criticas todos los días, un tema que refutas cada vez que aparece. No se trata de que deje de importarte. Se trata de ver, solo por hoy, cuántos minutos le diste, y si alguno de esos ratos cambió algo.</p>
+<p>Y fíjate si en tu manera de reaccionar hay algo heredado, como el primer timbre de Elena: una prisa, una alarma o un silencio que aprendiste en tu casa antes de poder elegirlo.</p>
+<div class="sigue"><a href="L10-U2.html">Anterior: Se dice</a><a class="prox" href="L10-U4.html">Siguiente: Uno solo basta</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>Campos de Torsión</em>, Trinity Quantum, Libro 10, Nodo 6: «Remolinos de realidad», secciones «La mecánica de los remolinos» y «Los tipos de remolinos», versión depurada (2026). Fragmentos y paráfrasis.</li><li id="nota-2">Robert K. Merton, «The Self-Fulfilling Prophecy», <em>The Antioch Review</em> 8, n.º 2 (1948): 193-210. Paráfrasis. El banco, el Last National Bank, y su director, Cartwright Millingville, son el caso ilustrativo del propio Merton.</li><li id="nota-3">Vadim Zeland, <em>El espacio de las variantes</em> (<em>Reality Transurfing I</em>, original ruso de 2004), cap. II, «Péndulos», secciones «Péndulos destructivos» y «Cuerdas de marionetas». Paráfrasis.</li><li id="nota-4">William J. Brady, Julian A. Wills, John T. Jost, Joshua A. Tucker y Jay J. Van Bavel, «Emotion Shapes the Diffusion of Moralized Content in Social Networks», <em>Proceedings of the National Academy of Sciences</em> 114, n.º 28 (2017): 7313-7318. Paráfrasis del método y de los resultados.</li><li id="nota-5">Søren Kierkegaard, «Ese individuo» («Den Enkelte»), notas sobre la dedicatoria escritas en 1847 y publicadas en 1859 junto con <em>Mi punto de vista como escritor</em>. Traducción propia sobre la versión inglesa de Charles K. Bellinger, «The Crowd Is Untruth»; la frase, en el danés original, <em>Mængde er Usandheden</em>. La imagen de Cayo Mario, en paráfrasis.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>Psicología Cuántica</em>, Trinity Origen, Libro I, Nodo 4, «Tipos de campos morfogenéticos humanos», «Campos familiares». Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 10 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

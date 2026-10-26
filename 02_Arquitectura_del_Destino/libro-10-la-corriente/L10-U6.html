@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L10">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="no toda corriente arrastra">
+<title>El ojo calmo · Umbral VI · La Corriente</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L10.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span></div><div class="cual">Umbral VI</div><h1>El ojo calmo</h1><p class="sub">no toda corriente arrastra</p></header><main><h2>Cinco veces</h2>
+<p>Un mes después del sábado de la escuela abierta, cuando el rumor ya era una anécdota, Elena le pidió a Ismael que le contara las cinco veces que la escuela había cerrado.</p>
+<p>Ismael dejó la escoba apoyada contra la pared y las contó con los dedos. La primera, el año en que se inundó la planta baja y alguien dijo que el edificio no se podía recuperar. La segunda, cuando abrieron la escuela nueva de la avenida y se dijo que la 14 sobraba. La tercera, cuando cerró la fábrica. La cuarta, durante la epidemia, cuando todas las escuelas estuvieron vacías y se dijo que esta no iba a volver a abrir. La quinta era la de este año.</p>
+<p>—¿Y usted qué hacía, cada vez?</p>
+<p>—Lo mismo que siempre —dijo él—. Abría a las siete y media.</p>
+<p>Durante treinta y cinco años, mientras directoras, maestros y familias pasaban por cada una de esas tormentas, Ismael había hecho una sola cosa: seguir. No discutía los rumores. No los desmentía. Aceitaba la cerradura del portón, barría el patio, saludaba a cada niño por su nombre, y hacía chistes. Elena entendió que la escuela había tenido, todo ese tiempo, un centro quieto, y que ese centro no estaba en la dirección.</p>
+<h2>El ojo del huracán</h2>
+<p>El primer nodo de <em>Campos de Torsión</em> describe un fenómeno que cualquiera puede ver en una imagen satelital. En el centro de un huracán, el aire desciende, el viento amaina y a veces se abre el cielo, mientras alrededor gira la pared más violenta de la tormenta. Trinity convierte esa imagen en una enseñanza en tres líneas:</p>
+<div class="cita"><p class="trad">Encontrar este punto mientras todo gira es la iluminación.<br>Mantenerlo mientras participas en el giro es la maestría.<br>Ser simultáneamente el punto quieto y el giro es la realización.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>La segunda línea es la que importa aquí. Ismael no estaba fuera de la escuela, mirando la tormenta desde lejos. Estaba en el medio, todos los días, y no giraba.</p>
+<p>En el segundo nodo del mismo libro hay un pasaje que parece escrito para estos años, en que tantos sienten que el mundo gira cada vez más rápido, con crisis encadenadas, noticias sin respiro y posiciones que se alejan unas de otras:</p>
+<div class="cita"><p class="trad">No es el fin del mundo.<br>Es un tiempo que pide ojos quietos.<br>Cada persona que encuentra el suyo<br>le da al remolino un lugar donde aquietarse.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<h2>El sistema ansioso</h2>
+<p>Edwin Friedman fue rabino y terapeuta familiar en Washington durante más de treinta años. Aprendió de Murray Bowen, uno de los fundadores de la terapia de familia, a mirar una familia no como una suma de personas sino como un sistema emocional, donde la ansiedad de uno se transmite a todos. Y llevó esa mirada a las congregaciones, las escuelas, las empresas, y hasta a las naciones.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>En su libro póstumo, <em>A Failure of Nerve</em>, Friedman describe cinco rasgos que aparecen en cualquier grupo cuando la ansiedad se vuelve crónica. La reactividad: cada pequeño estímulo dispara una respuesta desmedida. El rebaño: la cohesión se vuelve un fin en sí misma, y se castiga al que piensa distinto. La culpa desplazada: siempre hay alguien de afuera a quien responsabilizar. La urgencia de una solución rápida: nadie tolera el tiempo que necesitan los procesos. Y la falta de alguien que conduzca sin contagiarse.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Agrega una observación que Elena leyó dos veces. En los sistemas ansiosos, dice, el tema que preocupa a todos suele ser el foco de la ansiedad, no su causa.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> El cierre de la 14 era el tema. La causa era más vieja y más honda: un barrio que había perdido su fábrica y temía, con razón, quedarse sin lo poco que le quedaba.</p>
+<p>Y advierte algo más, que no esperaba encontrar en un libro sobre liderazgo: los sistemas ansiosos pierden el sentido del humor. Todo se vuelve serio, todo se toma como una ofensa, ya nadie juega.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> Ismael seguía jugando.</p>
+<h2>Presencia no ansiosa</h2>
+<p>Para Friedman, lo que cura a un sistema ansioso no es un argumento ni una técnica. Es una presencia. La llamó presencia no ansiosa: alguien que sigue conectado con el grupo, que no se aparta ni se encierra, pero que no se contagia de la ansiedad que circula, que puede decir lo que piensa sin necesitar que todos estén de acuerdo, y que soporta la presión que el sistema ejerce para devolverlo a su lugar.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Detrás de esa idea está la de Bowen, que la llamó diferenciación del yo: la capacidad de seguir siendo uno mismo dentro del clima emocional de una familia, sin fundirse en él y sin cortar el vínculo.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> Fundirse es atender al primer timbre y contagiarse de la alarma. Cortar es dejar de atender. Bowen y Friedman proponen un tercer camino, el más difícil: atender sin contagiarse.</p>
+<p>Una semana después, a las siete de la mañana, sonó el teléfono fijo. Elena lo dejó sonar dos veces. Después atendió.</p>
+<p>—Dijeron en el noticiero que todo está cada vez peor —dijo su madre—. ¿Ustedes están bien?</p>
+<p>—Te escucho, mamá —dijo Elena—. Estamos bien. ¿Cómo están tus begonias?</p>
+<p>Doña Rosa habló diez minutos de sus begonias, de una hoja que se había puesto amarilla, de la vecina del tercero que le había regalado un esqueje. Al final, antes de cortar, dijo:</p>
+<p>—Bueno, quizá no está todo tan mal.</p>
+<p>Elena no había discutido nada. No había cortado el vínculo, ni se había fundido en la alarma. Había atendido, y desde el centro.</p>
+<h2>Cuando muchos corazones se aquietan</h2>
+<p>Ese mismo mes, en la primera reunión de familias del año, Elena contó una historia. Les habló de los estudiantes de Princeton que creían ser los únicos incómodos con la costumbre de beber de su universidad, cuando casi todos lo estaban. No dijo nada sobre el rumor. No hizo falta: hubo risas, y alguien dijo en voz alta lo que muchos pensaban, que al comienzo del curso cada uno creía que los demás creían. Unos años después del estudio de 1993, una de aquellas investigadoras comprobó que explicarles a los recién llegados esa ilusión colectiva ayudaba a que, en los meses siguientes, bebieran menos.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Nombrar una corriente ya afloja un poco su fuerza.</p>
+<p>El cuarto nodo de <em>Campos de Torsión</em> habla del corazón, y en una de sus secciones mira lo que pasa cuando muchos corazones laten cerca. Cuenta que se ha medido cómo, en un coro, los corazones de los cantantes se aceleran y se frenan juntos, guiados por la respiración del canto. Y describe qué ocurre en un grupo cuando, en lugar de contagiarse el miedo, se contagia la calma:</p>
+<div class="cita"><p class="trad">El miedo circula menos.<br>Quien llega agitado encuentra dónde calmarse.<br>Un grupo puede sostener a uno de los suyos.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>Esa es la otra cara de la corriente. La misma capacidad de contagio que lleva un rumor de casa en casa puede llevar la serenidad. Jung lo reconocía en el pasaje que se leyó en el cuarto umbral: el grupo puede dar valor, dignidad, solidaridad.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup> El problema nunca fue que circule algo entre muchos. El problema es qué circula, y quién lo alimenta.</p>
+<h2>Lo que sube</h2>
+<p>Después del sábado, un grupo de familias propuso pintar los muros del patio, que estaban descascarados desde la inundación. Lo organizaron en el mismo grupo de mensajes que un mes antes ardía. Un domingo, Elena vio a Gustavo y a Verónica subidos a la misma escalera, discutiendo el color de una guarda.</p>
+<p>En cuarto grado, Sofía, la maestra más joven de la escuela, preparaba con sus alumnos un trabajo sobre las aves que planean. Les explicó lo que el séptimo nodo de <em>Campos de Torsión</em> cuenta sobre las térmicas: en un día de sol, el suelo calienta el aire, y se forma una columna tibia que sube. Las aves grandes la buscan, entran en ella y ganan altura dando vueltas, sin batir las alas. En la Patagonia, un equipo de investigadores siguió a ocho cóndores jóvenes y encontró que pasaban casi todo el tiempo de vuelo sin aletear; uno recorrió unos ciento setenta kilómetros, durante más de cinco horas, sin un solo aleteo.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p>
+<p>Y les leyó lo que el nodo dice a continuación:</p>
+<div class="cita"><p class="trad">Las aves que planean encuentran las térmicas mirándose unas a otras: cuando una empieza a girar y ganar altura, las demás se acercan y suben con ella. Entre personas pasa lo mismo: quien encuentra un poco de calma se vuelve señal para otros.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p></div>
+<p>El 8 de julio de 2017, en una playa de Florida, nueve personas, seis de ellas de una misma familia, quedaron atrapadas en una corriente de resaca. No había salvavidas de guardia, y desde la arena nadie podía alcanzarlos. Entonces unos bañistas que no se conocían entre sí se tomaron de las manos y empezaron a formar una cadena desde la orilla. Eran cinco, después quince, y al final unas ochenta personas, a lo largo de casi cien metros de mar. Algunos no sabían nadar y se quedaron donde hacían pie. Una pareja llevó a los nadadores, con una tabla, hasta la punta de la cadena, y la cadena los fue pasando de mano en mano hasta la arena.<sup class="ref"><a href="#nota-10" aria-label="nota 10">10</a></sup> Los socorristas recordaron después que entrar al agua a rescatar sin preparación pone en riesgo a quien ayuda. Aquella vez, la cadena funcionó porque nadie entró solo.</p>
+<p>Es el mismo mar que arrastra. Son los mismos muchos. Lo que cambia es hacia dónde gira la corriente.</p>
+<h2>La gota y el océano</h2>
+<p>El nodo de <em>Psicología Cuántica</em> que dio comienzo a este libro se abre con una frase que ahora puede leerse entera:</p>
+<div class="cita"><p class="trad">No estás solo. Cada gesto que nace desde tu coherencia pulsa en campos invisibles donde la historia, el presente y el porvenir aprenden nuevos caminos para amar.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p></div>
+<p>Y se cierra con otra:</p>
+<div class="cita"><p class="trad">Cada conciencia individual es simultáneamente una gota en el océano de la conciencia colectiva y el océano completo expresándose como una gota.<sup class="ref"><a href="#nota-11" aria-label="nota 11">11</a></sup></p></div>
+<p>Salir de una corriente no es salir del océano. Nadie puede, y nadie debería querer. Es dejar de alimentar el giro que arrastra para poder elegir con quién subir. La gota que se aparta del remolino no se seca: vuelve a ser parte del agua que sostiene.</p>
+<div class="perla"><p>Quien encuentra un poco de calma<br>se vuelve señal para otros.</p></div>
+<div class="perla"><p>No se sale de la corriente para quedarse solo.<br>Se sale para poder elegir con quién subir.</p></div>
+<h2>Tú también</h2>
+<p>Esta semana, en alguna conversación que empiece a girar —una sobremesa que se calienta, una reunión que se acelera, una llamada que trae una alarma—, intenta ser el ojo quieto. No discutas ni te apartes. Respira con la salida del aire más larga, como aprendiste en el cuarto libro, y quédate. Si puedes, haz una pregunta sencilla, o cambia de tema con amabilidad, como Elena con las begonias.</p>
+<p>Después fíjate en lo que pasó alrededor. A veces, no pasa nada. A veces, alguien se calma contigo.</p>
+<div class="sigue"><a href="L10-U5.html">Anterior: Salir de costado</a><a class="prox" href="L10-U7.html">Siguiente: La operación</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>Campos de Torsión</em>, Trinity Quantum, Libro 10, Nodo 1: «El giro del alma», «El ojo del huracán», versión depurada (2026). Fragmento.</li><li id="nota-2">Ídem, Nodo 2: «Vórtices de transformación», «El vórtice de este tiempo». Fragmento.</li><li id="nota-3">Edwin H. Friedman, <em>Generation to Generation: Family Process in Church and Synagogue</em> (1985). Paráfrasis.</li><li id="nota-4">Edwin H. Friedman, <em>A Failure of Nerve: Leadership in the Age of the Quick Fix</em> (edición póstuma, 1999; nueva edición, 2007). Paráfrasis.</li><li id="nota-5">Murray Bowen, <em>Family Therapy in Clinical Practice</em> (1978). Paráfrasis.</li><li id="nota-6">Christine M. Schroeder y Deborah A. Prentice, «Exposing Pluralistic Ignorance to Reduce Alcohol Use Among College Students», <em>Journal of Applied Social Psychology</em> 28, n.º 23 (1998): 2150-2180. Paráfrasis.</li><li id="nota-7">Lic. Arturo Rodríguez, <em>Campos de Torsión</em>, Nodo 4: «Campos torsionales del corazón», «El corazón colectivo». Fragmento y paráfrasis.</li><li id="nota-8">C. G. Jung, «Sobre el renacimiento» (1940; revisado en 1950), <em>Obra completa</em>, vol. 9/1, §§ 225-226. Ver el Umbral IV, nota 3.</li><li id="nota-9">Lic. Arturo Rodríguez, <em>Campos de Torsión</em>, Nodo 7: «El tornado ascensional», «La espiral hacia la luz» y «El tornado colectivo». Fragmento y paráfrasis. El estudio de los cóndores: Hannah J. Williams, Emily L. C. Shepard, Sergio A. Lambertucci y otros, «Physical Limits of Flight Performance in the Heaviest Soaring Bird», <em>Proceedings of the National Academy of Sciences</em> 117, n.º 30 (2020): 17884-17890.</li><li id="nota-10">Sobre la cadena humana de Panama City Beach, Florida, el 8 de julio de 2017: crónicas de <em>The News Herald</em> de Panama City, <em>The Washington Post</em>, Associated Press y NPR, 11 a 13 de julio de 2017. Paráfrasis.</li><li id="nota-11">Lic. Arturo Rodríguez, <em>Psicología Cuántica</em>, Trinity Origen, Libro I, Nodo 4: «Campos morfogenéticos y conciencia colectiva», epígrafe y conclusión. Fragmentos.</li></ol></section></main></div><footer class="pie">Libro 10 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
