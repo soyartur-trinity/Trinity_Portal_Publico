@@ -1261,3 +1261,122 @@ Tramos: Lo que Elena sabe ahora · El informe · La campana · El grupo · Lo qu
 - En la pantalla: *12 hombres en pugna*; *La ola*; *La cacería*; *Network, un mundo implacable*; *Black Mirror*, «Odio nacional».
 - Puertas laterales: Origen I y su Nodo 4; Quantum 10 y su Nodo 6; Infinito, Libro 3; Portal Público, Libro 25.
 - Puente: *Aprendiste a salir sin pelear de las corrientes que arrastran a muchos a la vez. El siguiente libro mira la otra cara de lo colectivo, la que solo se ve cuando uno deja de girar: la red que te sostiene aunque la olvides.*
+
+
+---
+
+## Libro 11 · La Red
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *lo que te sostiene aunque no lo veas*
+**Promesa:** La soledad es real. / La red también, y empieza en un hilo.
+**Columna:** La Puerta, Nodo 2, «El mito de la separación», para reconocer la red: la pregunta «Si nunca estuve separado, ¿por qué se siente tan real la soledad?», «¿Dónde termino yo y empieza el resto?», el cuerpo como prueba (el aire, el agua que fue océano y lluvia), «Inter-somos» y el día 6 del protocolo («La red siempre existió. Internet solo la hizo obvia»); el ejercicio, sin espejo. Trinity Origen V, *Los Vínculos Sagrados*, Nodo 5, «La Red Viva», para habitarla: el epígrafe («Cuando crees que estás solo, es porque has olvidado mirar la red»), la red humana y la red de la vida (sin el nivel multidimensional), «La red te sostiene tanto como tú la sostienes», «No eres responsable de salvar al mundo» y el protocolo 4 («Lo que hago por ti, lo hago por mí»). Puente: Quantum 4.2 depurado (las redes digitales como «simulacros burdos»; «Cada persona que te ama sostiene una versión activa de tu ser en su campo»; Singer). Apoyos: Origen V.1 (la humanidad compartida), V.2 (el tercer espacio; el puente que honra las dos orillas), V.6 (la simbiogénesis) y V.7 (recordar vínculos; la carta que no se envía, invertida en una carta entregada). Quantum 2 en paráfrasis y fragmentos, sin enlace: 2.1 (la paradoja de la unicidad y la esencia; la red de Indra; el teléfono cuántico traducido a un mensaje), 2.3 (el terror a ser verdaderamente conocido) y 2.6 («No tienes relaciones — eres relaciones»). Origen XI, dos frases: XI.2 («los tejedores, los hilos y el tejido mismo») y XI.4 («"No puedo solo" es la puerta a la comunidad»).
+**Coro:** el budismo Huayan como tradición principal: la red de Indra del *Avatamsaka Sutra* (Cook), la sala de los diez espejos de Fazang para la emperatriz Wu (Hamar), el inter-ser de Thich Nhat Hanh (la nube en la hoja de papel) y *Las perlas de Indra* de Mumford, Series y Wright. Donne, *Devotions upon Emergent Occasions*, Meditaciones V (la soledad, la mayor miseria de la enfermedad) y XVII (ninguna isla; la campana). Tutu y el *ubuntu*. Ella Cara Deloria, *Speaking of Indians* (ser un buen pariente). Barnes (1954) y el origen de la expresión «red social».
+**Comprobable:** Cacioppo (la soledad como sed; el lente que lee amenaza) y Masi y otros (2011: trabajar el lente rinde más que sumar encuentros); Gallup y Meta (2023); Kraut (1998 y 2002), Verduyn (2015), Hunt (2018) y Turkle; Margulis (1967), Sender, Fuchs y Milo (2016), NOAA y Löken (2009, las fibras C táctiles); Fowler y Christakis con Cohen-Cole y Fletcher (2008); Boothby (2018), Epley y Schroeder (2014), Liu (2022), Sandstrom y Dunn (2014) y Neff (2003); Schnall (2008), Coan (2006), Beckes y Coan (2011), Holt-Lunstad (2010), Singer y Klimecki (2014) y Hall (2019); Seligman (2005).
+**Protagonista:** Ignacio, 31 años, programador del código que asigna los repartidores de una aplicación de reparto; se mudó hace dos años a una ciudad donde no conocía a nadie, y la oficina cerró a los seis meses. Una madrugada de marzo, con la mano cortada, el renglón «Contacto de emergencia en la ciudad». Mónica, la enfermera («¿Y alguien aquí?»; los dos dedos en el hombro); Raquel, su madre («¿Y con quién hablaste esta semana?»); Fabián, 46, el repartidor 4471 («Los muebles se arman entre dos»; los audios para su hija, para que no olvide su voz); Esther, 79, del 6C, profesora de piano (las escalas a las seis; «Sola, esta escalera mide el doble»; «Y usted va a ser el mío»); Leandro, el amigo de la infancia, el grupo *Los de siempre* silenciado por error, Olivia y la silla vacía del bautismo; Aníbal, 82, ferroviario, el ajedrez de la plaza («El ajedrez se juega con el reloj y con la cara del otro. Los sábados, a las diez»). En el cierre, el renglón lleno, el nombre del repartidor junto al punto del mapa y once sábados.
+**Gesto:** «No estoy solo. Aquí hay un hilo.» cuando aparece la soledad, con el aire que sale más largo, y un hilo concreto nombrado; el mapa de hilos del primer día (doce minutos, tres círculos, hilos y señales, la pantalla al lado, el renglón vacío); tirar de un hilo pequeño cada día, sin esperar respuesta; cada noche, la línea «Hoy me sostuvo…» (y, si se quiere, «Hoy sostuve a…»); el séptimo día, la llamada general: una carta de gratitud entregada (puente a *La Obra*). Movimiento lento: la red de Indra. En el Umbral IV, una red de trece joyas para tocar.
+**Para ver:** Trinity Infinito, Libro 6, Portal 39, *El abrazo sin brazos* (adaptado al teléfono); *Laniakea, nuestro supercúmulo* (*Nature*, 2014); Sebastian Seung, «Yo soy mi conectoma» (TED, 2010); Sherry Turkle, «¿Conectados, pero solos?» (TED, 2012); Robert Waldinger, «¿Qué hace que una vida sea buena?» (TEDx, 2015).
+**Archivos:** `libro-11-la-red/L11.html` (portada), `L11-U1.html` a `L11-U7.html`, `L11-cierre.html`. Generador: `herramientas/gen_arq_L11.py`.
+
+### Umbral I · Contacto de emergencia — *la soledad es real*
+Tramos: La una y diez · El renglón vacío · Una pregunta sin respuesta · Como la sed · Los más conectados · Ningún hombre es una isla · La sala de espera · Tú también
+- Perla: La soledad no dice que estás fallado. / Dice que tienes sed de otros.
+- Perla: Mil doscientos contactos. / Ningún nombre para el renglón vacío.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Preguntas sin respuesta (por ahora)». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 5: «La Red Viva», epígrafe. Fragmento.
+- Nota: John T. Cacioppo y William Patrick, *Loneliness: Human Nature and the Need for Social Connection* (2008). Paráfrasis.
+- Nota: Gallup y Meta, *The Global State of Social Connections* (2023), encuesta en 142 países: alrededor del 24 % de los adultos se siente muy o bastante solo; 27 % entre los 19 y los 29 años; 17 % entre los mayores de 65. Paráfrasis. El informe no incluye a China.
+- Nota: John Donne, *Devotions upon Emergent Occasions* (1624), Meditación V. Traducción propia. La enfermedad, probablemente un tifus, es de fines de 1623.
+- Nota: Ídem, Meditación XVII. Traducción propia.
+
+### Umbral II · Las dos redes — *la que atrapa y la que sostiene*
+Tramos: Doscientas catorce · El punto azul · *Rete* · Una isla de pescadores · La paradoja de internet · Las dos posturas de Trinity · Hilo o señal · Tú también
+- Perla: Una red atrapa. / Otra sostiene. / Se llaman igual.
+- Perla: Antes de responder, pregunta: / ¿hay alguien del otro lado?
+- Nota: John A. Barnes, «Class and Committees in a Norwegian Island Parish», *Human Relations* 7 (1954): 39-58. Paráfrasis. Barnes describe la red como un conjunto de puntos, algunos unidos por líneas.
+- Nota: Robert Kraut, Michael Patterson, Vicki Lundmark y otros, «Internet Paradox: A Social Technology That Reduces Social Involvement and Psychological Well-Being?», *American Psychologist* 53, n.º 9 (1998): 1017-1031. Paráfrasis.
+- Nota: Robert Kraut, Sara Kiesler, Bonka Boneva y otros, «Internet Paradox Revisited», *Journal of Social Issues* 58, n.º 1 (2002): 49-74. Paráfrasis.
+- Nota: Philippe Verduyn, David Seungjae Lee, Jiyoung Park y otros, «Passive Facebook Usage Undermines Affective Well-Being: Experimental and Longitudinal Evidence», *Journal of Experimental Psychology: General* 144, n.º 2 (2015): 480-488. Paráfrasis.
+- Nota: Melissa G. Hunt, Rachel Marx, Courtney Lipson y Jordyn Young, «No More FOMO: Limiting Social Media Decreases Loneliness and Depression», *Journal of Social and Clinical Psychology* 37, n.º 10 (2018): 751-768. Paráfrasis.
+- Nota: Sherry Turkle, *Alone Together: Why We Expect More from Technology and Less from Each Other* (2011), y «Connected, but Alone?», TED (2012). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Protocolo de 7 días», día 6. Fragmento.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 2: «Ubicuidad consciente», «Ubicuidad y el tejido social», versión depurada (2026). Fragmento.
+
+### Umbral III · Dónde termino yo — *el mito de la separación*
+Tramos: Los puntos · ¿Dónde termino yo? · Hecha para el contacto · Los antiguos extraños · Una nube en una hoja de papel · La nube que no está en el cielo · Del mito al hilo · Tú también
+- Perla: La piel no es una pared. / Es un borde que respira.
+- Perla: La nube no está en el cielo. / Está en el fondo del mar, y alguien la repara.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Tu cuerpo es prueba», «Laboratorio cuántico», fases 1 y 2, y «Códigos de activación». Fragmentos y paráfrasis; el ejercicio, sin espejo.
+- Nota: Sobre el oxígeno producido por el fitoplancton: Administración Nacional Oceánica y Atmosférica de los Estados Unidos (NOAA), «How much oxygen comes from the ocean?». Paráfrasis.
+- Nota: Line S. Löken, Johan Wessberg, India Morrison, Francis McGlone y Håkan Olausson, «Coding of Pleasant Touch by Unmyelinated Afferents in Humans», *Nature Neuroscience* 12, n.º 5 (2009): 547-548. Paráfrasis.
+- Nota: Lynn Sagan (Margulis), «On the Origin of Mitosing Cells», *Journal of Theoretical Biology* 14, n.º 3 (1967): 225-274. Paráfrasis.
+- Nota: Ron Sender, Shai Fuchs y Ron Milo, «Revised Estimates for the Number of Human and Bacteria Cells in the Body», *PLOS Biology* 14, n.º 8 (2016): e1002533. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 6: «Amor como tecnología evolutiva», apertura. Fragmento, con la puntuación normalizada.
+- Nota: Thich Nhat Hanh, *The Heart of Understanding: Commentaries on the Prajñaparamita Heart Sutra* (1988). Paráfrasis. En vietnamita, *tiếp hiện*; la Orden del Interser se fundó en 1966.
+- Nota: Sobre la extensión de los cables submarinos y su papel en el tráfico entre continentes: TeleGeography, *Submarine Cable Map*. Paráfrasis.
+
+### Umbral IV · La red de Indra — *cada perla refleja a todas*
+Tramos: Escalas a las seis · El grafo · La red de Indra · Los espejos de Fazang · Toca una joya · Una gota de rocío · Hasta tres grados · Joya, no punto · Tú también
+- Perla: En un grafo, cada nodo es un punto. / En la red de Indra, cada nodo es una joya / que refleja a todas.
+- Nota: *Avatamsaka Sutra* (*Sutra de la Guirnalda de Flores*), la imagen de la red de Indra. Paráfrasis sobre Francis H. Cook, *Hua-yen Buddhism: The Jewel Net of Indra* (1977).
+- Nota: Sobre la escuela Huayan y la red de Indra: ídem; e Imre Hamar (ed.), *Reflecting Mirrors: Perspectives on Huayan Buddhism* (2007), introducción. Paráfrasis.
+- Nota: Sobre la sala de los espejos que Fazang habría preparado para la emperatriz Wu, según descripciones posteriores: Imre Hamar (ed.), *Reflecting Mirrors* (2007), introducción. Paráfrasis.
+- Nota: David Mumford, Caroline Series y David Wright, *Indra's Pearls: The Vision of Felix Klein* (2002). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Entrelazamiento Sagrado*, Trinity Quantum, Libro 2, Nodo 1: «Conexiones más allá del espacio-tiempo», «Paradoja medicinal» e «Integración final». Fragmentos.
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 5: «La Red Viva», «Los tres niveles de la red» y «Protocolos de servicio a la red», protocolo 4. Paráfrasis y fragmento.
+- Nota: James H. Fowler y Nicholas A. Christakis, «Dynamic Spread of Happiness in a Large Social Network: Longitudinal Analysis over 20 Years in the Framingham Heart Study», *BMJ* 337 (2008): a2338. Paráfrasis.
+- Nota: Ethan Cohen-Cole y Jason M. Fletcher, «Detecting Implausible Social Network Effects in Acne, Height, and Headaches: Longitudinal Analysis», *BMJ* 337 (2008): a2533. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Consciencia Planetaria*, Trinity Origen, Libro XI, Nodo 2: «La Red de Consciencias Despiertas», «Síntesis: la gran tejedura». Fragmento.
+
+### Umbral V · La brecha — *lo que la soledad hace ver*
+Tramos: El grupo silenciado · El lente · La brecha del agrado · Corregir el lente · Humanidad compartida · El mensaje · Los vínculos débiles · Tú también
+- Perla: La soledad tiene un lente: / hace ver lejos a los que están cerca.
+- Perla: Quizá el otro no te olvidó. / Quizá espera el mismo mensaje que tú.
+- Nota: John T. Cacioppo y Louise C. Hawkley, «Perceived Social Isolation and Cognition», *Trends in Cognitive Sciences* 13, n.º 10 (2009): 447-454; y Cacioppo y Patrick, *Loneliness* (2008). Paráfrasis.
+- Nota: Erica J. Boothby, Gus Cooney, Gillian M. Sandstrom y Margaret S. Clark, «The Liking Gap in Conversations: Do People Like Us More Than We Think?», *Psychological Science* 29, n.º 11 (2018): 1742-1756. Paráfrasis.
+- Nota: Nicholas Epley y Juliana Schroeder, «Mistakenly Seeking Solitude», *Journal of Experimental Psychology: General* 143, n.º 5 (2014): 1980-1999. Paráfrasis.
+- Nota: Peggy J. Liu, SoYon Rim, Lauren Min y Kate E. Min, «The Surprise of Reaching Out: Appreciated More Than We Think», *Journal of Personality and Social Psychology* (publicado en línea en 2022). Paráfrasis.
+- Nota: Christopher M. Masi, Hsi-Yuan Chen, Louise C. Hawkley y John T. Cacioppo, «A Meta-Analysis of Interventions to Reduce Loneliness», *Personality and Social Psychology Review* 15, n.º 3 (2011): 219-266. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 1: «El vínculo primordial», «El diálogo interior como tecnología relacional». Fragmento.
+- Nota: Kristin D. Neff, «Self-Compassion: An Alternative Conceptualization of a Healthy Attitude Toward Oneself», *Self and Identity* 2, n.º 2 (2003): 85-101. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Entrelazamiento Sagrado*, Trinity Quantum, Libro 2, Nodo 3, «Transmisión cuántica». Fragmento y paráfrasis.
+- Nota: Ídem, Nodo 1, «Laboratorio cuántico», experimento 1. Paráfrasis.
+- Nota: Gillian M. Sandstrom y Elizabeth W. Dunn, «Social Interactions and Well-Being: The Surprising Power of Weak Ties», *Personality and Social Psychology Bulletin* 40, n.º 7 (2014): 910-922. Paráfrasis.
+- Nota: Gillian M. Sandstrom y Elizabeth W. Dunn, «Is Efficiency Overrated? Minimal Social Interactions Lead to Belonging and Positive Affect», *Social Psychological and Personality Science* 5, n.º 4 (2014): 437-442. Paráfrasis.
+
+### Umbral VI · Un buen pariente — *sostener y dejarse sostener*
+Tramos: Seis pisos · La cuesta · *Ubuntu* · Un buen pariente · La red te sostiene · Ni fusión ni isla · Cincuenta horas · Tú también
+- Perla: La red te sostiene / tanto como tú la sostienes.
+- Perla: Pertenecer no llega de golpe. / Se hace, sábado tras sábado.
+- Nota: Simone Schnall, Kent D. Harber, Jeanine K. Stefanucci y Dennis R. Proffitt, «Social Support and the Perception of Geographical Slant», *Journal of Experimental Social Psychology* 44, n.º 5 (2008): 1246-1255. Paráfrasis.
+- Nota: James A. Coan, Hillary S. Schaefer y Richard J. Davidson, «Lending a Hand: Social Regulation of the Neural Response to Threat», *Psychological Science* 17, n.º 12 (2006): 1032-1039. Paráfrasis.
+- Nota: Lane Beckes y James A. Coan, «Social Baseline Theory: The Role of Social Proximity in Emotion and Economy of Action», *Social and Personality Psychology Compass* 5, n.º 12 (2011): 976-988. Paráfrasis.
+- Nota: Julianne Holt-Lunstad, Timothy B. Smith y J. Bradley Layton, «Social Relationships and Mortality Risk: A Meta-Analytic Review», *PLOS Medicine* 7, n.º 7 (2010): e1000316. Paráfrasis.
+- Nota: Desmond Tutu, *No Future Without Forgiveness* (1999); en español, *Sin perdón no hay futuro*. Paráfrasis de la edición original, p. 31.
+- Nota: Ella Cara Deloria, *Speaking of Indians* (1944), cap. «Kinship's Role in Dakota Life». Paráfrasis; la frase en cursiva, en traducción propia. Sobre su nombre y su vida: «Ella Cara Deloria», Universidad de Minnesota (2009).
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 5: «La Red Viva», «Responsabilidad cósmica: mantener la coherencia» y «La red planetaria de corazones». Fragmentos.
+- Nota: Lic. Arturo Rodríguez, *La Consciencia Planetaria*, Trinity Origen, Libro XI, Nodo 4: «La Gran Transición», «Navegando la incertidumbre». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 2: «Ubicuidad consciente», «Ubicuidad y el tejido social» y «La sombra de la ubicuidad», versión depurada (2026). Fragmentos y paráfrasis. Sobre la empatía y la compasión: Tania Singer y Olga M. Klimecki, «Empathy and Compassion», *Current Biology* 24, n.º 18 (2014): R875-R878.
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Nodo 2: «Los puentes del corazón», epígrafe y «Celebración de la diferencia». Fragmentos.
+- Nota: Lic. Arturo Rodríguez, *Entrelazamiento Sagrado*, Trinity Quantum, Libro 2, Nodo 6, «Integración final». Fragmento.
+- Nota: Jeffrey A. Hall, «How Many Hours Does It Take to Make a Friend?», *Journal of Social and Personal Relationships* 36, n.º 4 (2019): 1278-1296; publicado en línea en 2018. Paráfrasis.
+
+### Umbral VII · La operación — *reconocer un hilo por día*
+Tramos: Lo que vas a necesitar · Paso 1 · El mapa de hilos · Paso 2 · *No estoy solo. Aquí hay un hilo.* · Paso 3 · Cada noche, *Hoy me sostuvo…* · El séptimo día · La llamada general · Movimiento lento · Tu cuaderno de la semana · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: No estoy solo. Aquí hay un hilo.
+- Perla: Hoy me sostuvo…
+- Perla: Cada noche, alguien nombra un hilo, / agradece en silencio a quien lo sostuvo, / y se duerme sabiendo que no cayó solo.
+- Nota: Martin E. P. Seligman, Tracy A. Steen, Nansook Park y Christopher Peterson, «Positive Psychology Progress: Empirical Validation of Interventions», *American Psychologist* 60, n.º 5 (2005): 410-421. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 7: «Ritual de reconexión», «La carta que no enviarás». Paráfrasis.
+
+### Cierre · La mesa de la plaza — *lo que se gana al mirar la red*
+Tramos: Lo que Ignacio sabe ahora · El formulario · El nombre · La mesa · Lo que se gana
+- Perla: La soledad es real. / La red también, y empieza en un hilo.
+- Perla: No estoy solo. Aquí hay un hilo. / Y cada hilo que reconoces / es una joya que se enciende en la red.
+- Para ver: Trinity Infinito, Libro 6, Portal 39, *El abrazo sin brazos* (adaptado al teléfono); *Laniakea, nuestro supercúmulo* (*Nature*, 2014); Sebastian Seung, «Yo soy mi conectoma» (TED, 2010); Sherry Turkle, «¿Conectados, pero solos?» (TED, 2012); Robert Waldinger, «¿Qué hace que una vida sea buena?» (TEDx, 2015).
+- En la pantalla: *Ella*; *Días perfectos*; *Lars y la chica real*; *Up: una aventura de altura*; *Black Mirror*, «Caída en picada».
+- Puertas laterales: La Puerta, Nodo 2; Origen V y su Nodo 5; Quantum 4, Nodo 2; Infinito, Libro 6; Portal Público, Libro 3.
+- Puente: *Aprendiste a mirar la red que te sostiene y a tirar de un hilo cada día. El siguiente libro da el paso que esa red pide: el sentido no se encuentra como un objeto perdido; se da, en lo que haces para otros.*

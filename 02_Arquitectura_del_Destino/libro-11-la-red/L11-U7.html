@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L11">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="reconocer un hilo por día">
+<title>La operación · Umbral VII · La Red</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L11.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span></div><div class="cual">Umbral VII</div><h1>La operación</h1><p class="sub">reconocer un hilo por día</p></header><main><p>Siete días. El primero pide doce minutos; los demás, un gesto que aparece cuando aparece la soledad, un acto pequeño y una línea antes de dormir. Si vienes practicando los libros anteriores, esta operación no reemplaza ninguna: los despertadores, la pregunta <em>¿desde dónde?</em>, las tres líneas de la noche y las frases que ya aprendiste siguen en su lugar. Esta suma un gesto, el primero que mira hacia afuera.</p>
+<h2>Lo que vas a necesitar</h2>
+<p>El mismo cuaderno de las semanas anteriores, un bolígrafo y la hoja del renglón vacío, si la guardaste. También el teléfono: esta semana no se trata de apagarlo, sino de usarlo como lo que puede ser, un lugar por donde pasan hilos.</p>
+<div class="paso"><h2>Paso 1 · El mapa de hilos</h2></div>
+<p>El primer día, busca doce minutos sin interrupciones. Dibuja en una hoja tres círculos, uno dentro del otro, como los anillos de un árbol. En el centro, escribe tu nombre.</p>
+<p>En el círculo más cercano, anota a las personas con quienes tienes un vínculo de ida y vuelta, vivan cerca o lejos: familia, amigos, alguien con quien hablas de verdad aunque sea poco.</p>
+<p>En el círculo del medio, anota a quienes te sostienen sin que lo pienses: quien te trae los pedidos, quien maneja el autobús, la vecina del piano, quien atiende la farmacia, quien te cosió una herida. Son los vínculos débiles y los antiguos extraños de este libro. No hace falta saber sus nombres; basta con una descripción.</p>
+<p>En el círculo de afuera, anota lo que <em>Los Vínculos Sagrados</em> llama la red de la vida: el aire, el agua, la tierra que dio lo que comes, los animales con los que convives, el árbol que ves desde la ventana.</p>
+<p>Después marca cada nombre con una letra: <strong>H</strong> si es un hilo, de ida y vuelta, que te sostendría si cayeras; <strong>S</strong> si es una señal, alguien que ves pasar pero que no espera tu respuesta. Y dibuja una pequeña pantalla junto a los que pasan por el teléfono. Vas a ver que algunos hilos pasan por la pantalla y que muchas señales también. Las dos cosas son normales.</p>
+<p>Por último, vuelve a la hoja del renglón vacío y mira si ahora aparece algún nombre que antes no apareció.</p>
+<p>Si el primer círculo te parece pobre, no lo tomes como un veredicto. Recuerda el lente del quinto umbral: la soledad hace ver lejos a los que están cerca. Lo que el mapa muestra el primer día no es la red entera; es lo que se alcanza a ver desde donde estás hoy.</p>
+<div class="paso"><h2>Paso 2 · <em>No estoy solo. Aquí hay un hilo.</em></h2></div>
+<p>Durante la semana, cada vez que aparezca la soledad, en la forma que tenga para ti, sea un vacío en el pecho, el pulgar que pasa imágenes sin mirarlas o una tarde de domingo demasiado larga, haz esto:</p>
+<p>Detente. Suelta el aire despacio, más largo de lo que entra, como en las semanas anteriores. Y di por dentro:</p>
+<div class="perla"><p>No estoy solo. Aquí hay un hilo.</p></div>
+<p>Enseguida, nombra un hilo concreto. Una persona, un gesto, algo que alguien hizo hoy por ti o tú por alguien. No hace falta que sea grande: el saludo del vendedor, la voz de tu madre el domingo, el piano a través de la pared. La frase no borra la soledad. La acompaña con un dato que la soledad no estaba viendo.</p>
+<p>Además, una vez por día, tira de un hilo. Un acto pequeño, de los que se pueden hacer en cinco minutos:</p>
+<ul><li>un mensaje a una persona, no una publicación: <em>me acordé de ti</em>;</li><li>un saludo con nombre a alguien del círculo del medio;</li><li>una pregunta en la puerta, en el ascensor, en la fila;</li><li>diez minutos de atención entera a alguien que te está hablando.</li></ul>
+<p>No esperes respuesta para dar el día por cumplido. Tirar del hilo es el gesto; lo que pase del otro lado ya no depende de ti.</p>
+<div class="paso"><h2>Paso 3 · Cada noche, <em>Hoy me sostuvo…</em></h2></div>
+<p>Antes de dormir, a las líneas de la noche que vienes escribiendo, <em>Hoy terminó…</em>, <em>Queda para mañana… y no sé cómo será</em>, <em>Viví este día</em>, y a las palabras de los libros anteriores, súmale una:</p>
+<div class="perla"><p>Hoy me sostuvo…</p></div>
+<p>Y completa con un nombre o una descripción. Si quieres, agrega otra debajo: <em>Hoy sostuve a…</em> Con los días, el cuaderno empieza a mostrar algo que el lente de la soledad no deja ver: que los hilos van y vienen, y que tú también eres uno.</p>
+<h2>El séptimo día · La llamada general</h2>
+<p>En la radio de los aficionados, llamar a cualquiera que esté escuchando se dice <em>llamada general</em>. El séptimo día, haz la tuya, con nombre y apellido.</p>
+<p>Piensa en alguien que te sostuvo en algún momento de tu vida y a quien nunca le agradeciste del todo. Escríbele una carta breve, de unas trescientas palabras: qué hizo, cuándo, qué cambió en ti. Después, si es posible, léesela en persona o por teléfono. Si no lo es, envíala.</p>
+<p>En 2005, el equipo de Martin Seligman pidió a un grupo de personas exactamente eso: escribir y entregar en persona una carta de gratitud a alguien a quien nunca le habían agradecido como correspondía. De todos los ejercicios que probaron, fue el que produjo el aumento de bienestar más grande en las semanas siguientes.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p><em>Los Vínculos Sagrados</em> propone, en su último nodo, una carta que no se envía, para cerrar un vínculo que terminó. Esta es la otra: la que se entrega, para que un hilo sepa que sostuvo.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<h2>Movimiento lento</h2>
+<p>Antes de dormir, o en cualquier momento de la semana en que la soledad pese, toca la red. Siete respiraciones: con cada salida del aire, una joya se enciende y su luz aparece, reflejada, en todas las demás.</p>
+<div class="indra" id="indra">
+  <button type="button" aria-describedby="indra-cuenta"><svg viewBox="0 6 200 156" aria-hidden="true"><g class="hilos"><line class="hilo" data-a="0" data-b="1" x1="100.0" y1="84.0" x2="100.0" y2="48.0"/><line class="hilo" data-a="0" data-b="2" x1="100.0" y1="84.0" x2="131.2" y2="66.0"/><line class="hilo" data-a="0" data-b="3" x1="100.0" y1="84.0" x2="131.2" y2="102.0"/><line class="hilo" data-a="0" data-b="4" x1="100.0" y1="84.0" x2="100.0" y2="120.0"/><line class="hilo" data-a="0" data-b="5" x1="100.0" y1="84.0" x2="68.8" y2="102.0"/><line class="hilo" data-a="0" data-b="6" x1="100.0" y1="84.0" x2="68.8" y2="66.0"/><line class="hilo" data-a="1" data-b="2" x1="100.0" y1="48.0" x2="131.2" y2="66.0"/><line class="hilo" data-a="2" data-b="3" x1="131.2" y1="66.0" x2="131.2" y2="102.0"/><line class="hilo" data-a="3" data-b="4" x1="131.2" y1="102.0" x2="100.0" y2="120.0"/><line class="hilo" data-a="4" data-b="5" x1="100.0" y1="120.0" x2="68.8" y2="102.0"/><line class="hilo" data-a="5" data-b="6" x1="68.8" y1="102.0" x2="68.8" y2="66.0"/><line class="hilo" data-a="6" data-b="1" x1="68.8" y1="66.0" x2="100.0" y2="48.0"/><line class="hilo" data-a="7" data-b="1" x1="135.0" y1="23.4" x2="100.0" y2="48.0"/><line class="hilo" data-a="8" data-b="2" x1="170.0" y1="84.0" x2="131.2" y2="66.0"/><line class="hilo" data-a="9" data-b="3" x1="135.0" y1="144.6" x2="131.2" y2="102.0"/><line class="hilo" data-a="10" data-b="4" x1="65.0" y1="144.6" x2="100.0" y2="120.0"/><line class="hilo" data-a="11" data-b="5" x1="30.0" y1="84.0" x2="68.8" y2="102.0"/><line class="hilo" data-a="12" data-b="6" x1="65.0" y1="23.4" x2="68.8" y2="66.0"/><line class="hilo" data-a="7" data-b="2" x1="135.0" y1="23.4" x2="131.2" y2="66.0"/><line class="hilo" data-a="8" data-b="3" x1="170.0" y1="84.0" x2="131.2" y2="102.0"/><line class="hilo" data-a="9" data-b="4" x1="135.0" y1="144.6" x2="100.0" y2="120.0"/><line class="hilo" data-a="10" data-b="5" x1="65.0" y1="144.6" x2="68.8" y2="102.0"/><line class="hilo" data-a="11" data-b="6" x1="30.0" y1="84.0" x2="68.8" y2="66.0"/><line class="hilo" data-a="12" data-b="1" x1="65.0" y1="23.4" x2="100.0" y2="48.0"/><line class="hilo" data-a="7" data-b="8" x1="135.0" y1="23.4" x2="170.0" y2="84.0"/><line class="hilo" data-a="8" data-b="9" x1="170.0" y1="84.0" x2="135.0" y2="144.6"/><line class="hilo" data-a="9" data-b="10" x1="135.0" y1="144.6" x2="65.0" y2="144.6"/><line class="hilo" data-a="10" data-b="11" x1="65.0" y1="144.6" x2="30.0" y2="84.0"/><line class="hilo" data-a="11" data-b="12" x1="30.0" y1="84.0" x2="65.0" y2="23.4"/><line class="hilo" data-a="12" data-b="7" x1="65.0" y1="23.4" x2="135.0" y2="23.4"/></g><g class="nodo" data-i="0"><circle class="brillo" cx="100.0" cy="84.0" r="11"/><circle class="joya" cx="100.0" cy="84.0" r="8.6"/><circle class="r r0" cx="100.00" cy="84.00" r="0.8"/><circle class="r r1" cx="100.00" cy="80.94" r="0.8"/><circle class="r r2" cx="102.65" cy="82.47" r="0.8"/><circle class="r r3" cx="102.65" cy="85.53" r="0.8"/><circle class="r r4" cx="100.00" cy="87.06" r="0.8"/><circle class="r r5" cx="97.35" cy="85.53" r="0.8"/><circle class="r r6" cx="97.35" cy="82.47" r="0.8"/><circle class="r r7" cx="102.97" cy="78.85" r="0.8"/><circle class="r r8" cx="105.95" cy="84.00" r="0.8"/><circle class="r r9" cx="102.97" cy="89.15" r="0.8"/><circle class="r r10" cx="97.03" cy="89.15" r="0.8"/><circle class="r r11" cx="94.05" cy="84.00" r="0.8"/><circle class="r r12" cx="97.02" cy="78.85" r="0.8"/></g><g class="nodo" data-i="1"><circle class="brillo" cx="100.0" cy="48.0" r="11"/><circle class="joya" cx="100.0" cy="48.0" r="8.6"/><circle class="r r0" cx="100.00" cy="48.00" r="0.8"/><circle class="r r1" cx="100.00" cy="44.94" r="0.8"/><circle class="r r2" cx="102.65" cy="46.47" r="0.8"/><circle class="r r3" cx="102.65" cy="49.53" r="0.8"/><circle class="r r4" cx="100.00" cy="51.06" r="0.8"/><circle class="r r5" cx="97.35" cy="49.53" r="0.8"/><circle class="r r6" cx="97.35" cy="46.47" r="0.8"/><circle class="r r7" cx="102.97" cy="42.85" r="0.8"/><circle class="r r8" cx="105.95" cy="48.00" r="0.8"/><circle class="r r9" cx="102.97" cy="53.15" r="0.8"/><circle class="r r10" cx="97.03" cy="53.15" r="0.8"/><circle class="r r11" cx="94.05" cy="48.00" r="0.8"/><circle class="r r12" cx="97.02" cy="42.85" r="0.8"/></g><g class="nodo" data-i="2"><circle class="brillo" cx="131.2" cy="66.0" r="11"/><circle class="joya" cx="131.2" cy="66.0" r="8.6"/><circle class="r r0" cx="131.18" cy="66.00" r="0.8"/><circle class="r r1" cx="131.18" cy="62.94" r="0.8"/><circle class="r r2" cx="133.83" cy="64.47" r="0.8"/><circle class="r r3" cx="133.83" cy="67.53" r="0.8"/><circle class="r r4" cx="131.18" cy="69.06" r="0.8"/><circle class="r r5" cx="128.53" cy="67.53" r="0.8"/><circle class="r r6" cx="128.53" cy="64.47" r="0.8"/><circle class="r r7" cx="134.15" cy="60.85" r="0.8"/><circle class="r r8" cx="137.13" cy="66.00" r="0.8"/><circle class="r r9" cx="134.15" cy="71.15" r="0.8"/><circle class="r r10" cx="128.20" cy="71.15" r="0.8"/><circle class="r r11" cx="125.23" cy="66.00" r="0.8"/><circle class="r r12" cx="128.20" cy="60.85" r="0.8"/></g><g class="nodo" data-i="3"><circle class="brillo" cx="131.2" cy="102.0" r="11"/><circle class="joya" cx="131.2" cy="102.0" r="8.6"/><circle class="r r0" cx="131.18" cy="102.00" r="0.8"/><circle class="r r1" cx="131.18" cy="98.94" r="0.8"/><circle class="r r2" cx="133.83" cy="100.47" r="0.8"/><circle class="r r3" cx="133.83" cy="103.53" r="0.8"/><circle class="r r4" cx="131.18" cy="105.06" r="0.8"/><circle class="r r5" cx="128.53" cy="103.53" r="0.8"/><circle class="r r6" cx="128.53" cy="100.47" r="0.8"/><circle class="r r7" cx="134.15" cy="96.85" r="0.8"/><circle class="r r8" cx="137.13" cy="102.00" r="0.8"/><circle class="r r9" cx="134.15" cy="107.15" r="0.8"/><circle class="r r10" cx="128.20" cy="107.15" r="0.8"/><circle class="r r11" cx="125.23" cy="102.00" r="0.8"/><circle class="r r12" cx="128.20" cy="96.85" r="0.8"/></g><g class="nodo" data-i="4"><circle class="brillo" cx="100.0" cy="120.0" r="11"/><circle class="joya" cx="100.0" cy="120.0" r="8.6"/><circle class="r r0" cx="100.00" cy="120.00" r="0.8"/><circle class="r r1" cx="100.00" cy="116.94" r="0.8"/><circle class="r r2" cx="102.65" cy="118.47" r="0.8"/><circle class="r r3" cx="102.65" cy="121.53" r="0.8"/><circle class="r r4" cx="100.00" cy="123.06" r="0.8"/><circle class="r r5" cx="97.35" cy="121.53" r="0.8"/><circle class="r r6" cx="97.35" cy="118.47" r="0.8"/><circle class="r r7" cx="102.97" cy="114.85" r="0.8"/><circle class="r r8" cx="105.95" cy="120.00" r="0.8"/><circle class="r r9" cx="102.97" cy="125.15" r="0.8"/><circle class="r r10" cx="97.03" cy="125.15" r="0.8"/><circle class="r r11" cx="94.05" cy="120.00" r="0.8"/><circle class="r r12" cx="97.02" cy="114.85" r="0.8"/></g><g class="nodo" data-i="5"><circle class="brillo" cx="68.8" cy="102.0" r="11"/><circle class="joya" cx="68.8" cy="102.0" r="8.6"/><circle class="r r0" cx="68.82" cy="102.00" r="0.8"/><circle class="r r1" cx="68.82" cy="98.94" r="0.8"/><circle class="r r2" cx="71.47" cy="100.47" r="0.8"/><circle class="r r3" cx="71.47" cy="103.53" r="0.8"/><circle class="r r4" cx="68.82" cy="105.06" r="0.8"/><circle class="r r5" cx="66.17" cy="103.53" r="0.8"/><circle class="r r6" cx="66.17" cy="100.47" r="0.8"/><circle class="r r7" cx="71.80" cy="96.85" r="0.8"/><circle class="r r8" cx="74.77" cy="102.00" r="0.8"/><circle class="r r9" cx="71.80" cy="107.15" r="0.8"/><circle class="r r10" cx="65.85" cy="107.15" r="0.8"/><circle class="r r11" cx="62.87" cy="102.00" r="0.8"/><circle class="r r12" cx="65.85" cy="96.85" r="0.8"/></g><g class="nodo" data-i="6"><circle class="brillo" cx="68.8" cy="66.0" r="11"/><circle class="joya" cx="68.8" cy="66.0" r="8.6"/><circle class="r r0" cx="68.82" cy="66.00" r="0.8"/><circle class="r r1" cx="68.82" cy="62.94" r="0.8"/><circle class="r r2" cx="71.47" cy="64.47" r="0.8"/><circle class="r r3" cx="71.47" cy="67.53" r="0.8"/><circle class="r r4" cx="68.82" cy="69.06" r="0.8"/><circle class="r r5" cx="66.17" cy="67.53" r="0.8"/><circle class="r r6" cx="66.17" cy="64.47" r="0.8"/><circle class="r r7" cx="71.80" cy="60.85" r="0.8"/><circle class="r r8" cx="74.77" cy="66.00" r="0.8"/><circle class="r r9" cx="71.80" cy="71.15" r="0.8"/><circle class="r r10" cx="65.85" cy="71.15" r="0.8"/><circle class="r r11" cx="62.87" cy="66.00" r="0.8"/><circle class="r r12" cx="65.85" cy="60.85" r="0.8"/></g><g class="nodo" data-i="7"><circle class="brillo" cx="135.0" cy="23.4" r="11"/><circle class="joya" cx="135.0" cy="23.4" r="8.6"/><circle class="r r0" cx="135.00" cy="23.38" r="0.8"/><circle class="r r1" cx="135.00" cy="20.32" r="0.8"/><circle class="r r2" cx="137.65" cy="21.85" r="0.8"/><circle class="r r3" cx="137.65" cy="24.91" r="0.8"/><circle class="r r4" cx="135.00" cy="26.44" r="0.8"/><circle class="r r5" cx="132.35" cy="24.91" r="0.8"/><circle class="r r6" cx="132.35" cy="21.85" r="0.8"/><circle class="r r7" cx="137.97" cy="18.23" r="0.8"/><circle class="r r8" cx="140.95" cy="23.38" r="0.8"/><circle class="r r9" cx="137.97" cy="28.53" r="0.8"/><circle class="r r10" cx="132.03" cy="28.53" r="0.8"/><circle class="r r11" cx="129.05" cy="23.38" r="0.8"/><circle class="r r12" cx="132.03" cy="18.23" r="0.8"/></g><g class="nodo" data-i="8"><circle class="brillo" cx="170.0" cy="84.0" r="11"/><circle class="joya" cx="170.0" cy="84.0" r="8.6"/><circle class="r r0" cx="170.00" cy="84.00" r="0.8"/><circle class="r r1" cx="170.00" cy="80.94" r="0.8"/><circle class="r r2" cx="172.65" cy="82.47" r="0.8"/><circle class="r r3" cx="172.65" cy="85.53" r="0.8"/><circle class="r r4" cx="170.00" cy="87.06" r="0.8"/><circle class="r r5" cx="167.35" cy="85.53" r="0.8"/><circle class="r r6" cx="167.35" cy="82.47" r="0.8"/><circle class="r r7" cx="172.97" cy="78.85" r="0.8"/><circle class="r r8" cx="175.95" cy="84.00" r="0.8"/><circle class="r r9" cx="172.97" cy="89.15" r="0.8"/><circle class="r r10" cx="167.03" cy="89.15" r="0.8"/><circle class="r r11" cx="164.05" cy="84.00" r="0.8"/><circle class="r r12" cx="167.03" cy="78.85" r="0.8"/></g><g class="nodo" data-i="9"><circle class="brillo" cx="135.0" cy="144.6" r="11"/><circle class="joya" cx="135.0" cy="144.6" r="8.6"/><circle class="r r0" cx="135.00" cy="144.62" r="0.8"/><circle class="r r1" cx="135.00" cy="141.56" r="0.8"/><circle class="r r2" cx="137.65" cy="143.09" r="0.8"/><circle class="r r3" cx="137.65" cy="146.15" r="0.8"/><circle class="r r4" cx="135.00" cy="147.68" r="0.8"/><circle class="r r5" cx="132.35" cy="146.15" r="0.8"/><circle class="r r6" cx="132.35" cy="143.09" r="0.8"/><circle class="r r7" cx="137.97" cy="139.47" r="0.8"/><circle class="r r8" cx="140.95" cy="144.62" r="0.8"/><circle class="r r9" cx="137.97" cy="149.77" r="0.8"/><circle class="r r10" cx="132.03" cy="149.77" r="0.8"/><circle class="r r11" cx="129.05" cy="144.62" r="0.8"/><circle class="r r12" cx="132.03" cy="139.47" r="0.8"/></g><g class="nodo" data-i="10"><circle class="brillo" cx="65.0" cy="144.6" r="11"/><circle class="joya" cx="65.0" cy="144.6" r="8.6"/><circle class="r r0" cx="65.00" cy="144.62" r="0.8"/><circle class="r r1" cx="65.00" cy="141.56" r="0.8"/><circle class="r r2" cx="67.65" cy="143.09" r="0.8"/><circle class="r r3" cx="67.65" cy="146.15" r="0.8"/><circle class="r r4" cx="65.00" cy="147.68" r="0.8"/><circle class="r r5" cx="62.35" cy="146.15" r="0.8"/><circle class="r r6" cx="62.35" cy="143.09" r="0.8"/><circle class="r r7" cx="67.98" cy="139.47" r="0.8"/><circle class="r r8" cx="70.95" cy="144.62" r="0.8"/><circle class="r r9" cx="67.98" cy="149.77" r="0.8"/><circle class="r r10" cx="62.03" cy="149.77" r="0.8"/><circle class="r r11" cx="59.05" cy="144.62" r="0.8"/><circle class="r r12" cx="62.03" cy="139.47" r="0.8"/></g><g class="nodo" data-i="11"><circle class="brillo" cx="30.0" cy="84.0" r="11"/><circle class="joya" cx="30.0" cy="84.0" r="8.6"/><circle class="r r0" cx="30.00" cy="84.00" r="0.8"/><circle class="r r1" cx="30.00" cy="80.94" r="0.8"/><circle class="r r2" cx="32.65" cy="82.47" r="0.8"/><circle class="r r3" cx="32.65" cy="85.53" r="0.8"/><circle class="r r4" cx="30.00" cy="87.06" r="0.8"/><circle class="r r5" cx="27.35" cy="85.53" r="0.8"/><circle class="r r6" cx="27.35" cy="82.47" r="0.8"/><circle class="r r7" cx="32.98" cy="78.85" r="0.8"/><circle class="r r8" cx="35.95" cy="84.00" r="0.8"/><circle class="r r9" cx="32.98" cy="89.15" r="0.8"/><circle class="r r10" cx="27.03" cy="89.15" r="0.8"/><circle class="r r11" cx="24.05" cy="84.00" r="0.8"/><circle class="r r12" cx="27.02" cy="78.85" r="0.8"/></g><g class="nodo" data-i="12"><circle class="brillo" cx="65.0" cy="23.4" r="11"/><circle class="joya" cx="65.0" cy="23.4" r="8.6"/><circle class="r r0" cx="65.00" cy="23.38" r="0.8"/><circle class="r r1" cx="65.00" cy="20.32" r="0.8"/><circle class="r r2" cx="67.65" cy="21.85" r="0.8"/><circle class="r r3" cx="67.65" cy="24.91" r="0.8"/><circle class="r r4" cx="65.00" cy="26.44" r="0.8"/><circle class="r r5" cx="62.35" cy="24.91" r="0.8"/><circle class="r r6" cx="62.35" cy="21.85" r="0.8"/><circle class="r r7" cx="67.97" cy="18.23" r="0.8"/><circle class="r r8" cx="70.95" cy="23.38" r="0.8"/><circle class="r r9" cx="67.97" cy="28.53" r="0.8"/><circle class="r r10" cx="62.02" cy="28.53" r="0.8"/><circle class="r r11" cx="59.05" cy="23.38" r="0.8"/><circle class="r r12" cx="62.02" cy="18.23" r="0.8"/></g></svg><span class="frase">Toca la red para empezar</span></button>
+  <div class="cuenta" id="indra-cuenta" aria-live="polite">Siete respiraciones. Con cada salida del aire, una joya se enciende y su luz aparece en todas las demás.</div>
+</div>
+<h2>Tu cuaderno de la semana</h2>
+<p>Si prefieres llevar aquí el cuaderno, cada día tiene su página: el hilo que nombraste, el hilo del que tiraste, la frase, las líneas de la noche. Arriba, el renglón vacío; al final, la carta del séptimo día.</p>
+<div class="diario" id="diario">
+  <label class="rotulo" for="renglon">Contacto de emergencia en la ciudad</label>
+  <input type="text" id="renglon" data-k="renglon" placeholder="El nombre que hoy escribirías en el renglón">
+  <details open><summary>Día 1</summary><div class="dia">
+    <label for="d1-hilo">Un hilo que nombré hoy</label><input type="text" id="d1-hilo" data-k="d1-hilo" placeholder="La voz de mi madre, el saludo del vendedor, el piano de la vecina">
+    <label for="d1-tire">El hilo del que tiré</label><input type="text" id="d1-tire" data-k="d1-tire" placeholder="Un mensaje, un saludo con nombre, una pregunta">
+    <label class="marca"><input type="checkbox" data-k="d1-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «No estoy solo. Aquí hay un hilo»</span><button type="button" data-menos="d1-frase" aria-label="Una vez menos">−</button><output data-k="d1-frase" aria-live="polite">0</output><button type="button" data-mas="d1-frase" aria-label="Una vez más">+</button></div>
+    <label for="d1-term">Hoy terminó…</label><textarea id="d1-term" data-k="d1-term" rows="2"></textarea>
+    <label for="d1-queda">Queda para mañana… y no sé cómo será</label><textarea id="d1-queda" data-k="d1-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d1-vivi"> Viví este día</label>
+    <label for="d1-sost">Hoy me sostuvo…</label><input type="text" id="d1-sost" data-k="d1-sost" placeholder="Un nombre o una descripción">
+    <label for="d1-sosti">Hoy sostuve a… (si quieres)</label><input type="text" id="d1-sosti" data-k="d1-sosti" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 2</summary><div class="dia">
+    <label for="d2-hilo">Un hilo que nombré hoy</label><input type="text" id="d2-hilo" data-k="d2-hilo" placeholder="La voz de mi madre, el saludo del vendedor, el piano de la vecina">
+    <label for="d2-tire">El hilo del que tiré</label><input type="text" id="d2-tire" data-k="d2-tire" placeholder="Un mensaje, un saludo con nombre, una pregunta">
+    <label class="marca"><input type="checkbox" data-k="d2-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «No estoy solo. Aquí hay un hilo»</span><button type="button" data-menos="d2-frase" aria-label="Una vez menos">−</button><output data-k="d2-frase" aria-live="polite">0</output><button type="button" data-mas="d2-frase" aria-label="Una vez más">+</button></div>
+    <label for="d2-term">Hoy terminó…</label><textarea id="d2-term" data-k="d2-term" rows="2"></textarea>
+    <label for="d2-queda">Queda para mañana… y no sé cómo será</label><textarea id="d2-queda" data-k="d2-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d2-vivi"> Viví este día</label>
+    <label for="d2-sost">Hoy me sostuvo…</label><input type="text" id="d2-sost" data-k="d2-sost" placeholder="Un nombre o una descripción">
+    <label for="d2-sosti">Hoy sostuve a… (si quieres)</label><input type="text" id="d2-sosti" data-k="d2-sosti" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 3</summary><div class="dia">
+    <label for="d3-hilo">Un hilo que nombré hoy</label><input type="text" id="d3-hilo" data-k="d3-hilo" placeholder="La voz de mi madre, el saludo del vendedor, el piano de la vecina">
+    <label for="d3-tire">El hilo del que tiré</label><input type="text" id="d3-tire" data-k="d3-tire" placeholder="Un mensaje, un saludo con nombre, una pregunta">
+    <label class="marca"><input type="checkbox" data-k="d3-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «No estoy solo. Aquí hay un hilo»</span><button type="button" data-menos="d3-frase" aria-label="Una vez menos">−</button><output data-k="d3-frase" aria-live="polite">0</output><button type="button" data-mas="d3-frase" aria-label="Una vez más">+</button></div>
+    <label for="d3-term">Hoy terminó…</label><textarea id="d3-term" data-k="d3-term" rows="2"></textarea>
+    <label for="d3-queda">Queda para mañana… y no sé cómo será</label><textarea id="d3-queda" data-k="d3-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d3-vivi"> Viví este día</label>
+    <label for="d3-sost">Hoy me sostuvo…</label><input type="text" id="d3-sost" data-k="d3-sost" placeholder="Un nombre o una descripción">
+    <label for="d3-sosti">Hoy sostuve a… (si quieres)</label><input type="text" id="d3-sosti" data-k="d3-sosti" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 4</summary><div class="dia">
+    <label for="d4-hilo">Un hilo que nombré hoy</label><input type="text" id="d4-hilo" data-k="d4-hilo" placeholder="La voz de mi madre, el saludo del vendedor, el piano de la vecina">
+    <label for="d4-tire">El hilo del que tiré</label><input type="text" id="d4-tire" data-k="d4-tire" placeholder="Un mensaje, un saludo con nombre, una pregunta">
+    <label class="marca"><input type="checkbox" data-k="d4-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «No estoy solo. Aquí hay un hilo»</span><button type="button" data-menos="d4-frase" aria-label="Una vez menos">−</button><output data-k="d4-frase" aria-live="polite">0</output><button type="button" data-mas="d4-frase" aria-label="Una vez más">+</button></div>
+    <label for="d4-term">Hoy terminó…</label><textarea id="d4-term" data-k="d4-term" rows="2"></textarea>
+    <label for="d4-queda">Queda para mañana… y no sé cómo será</label><textarea id="d4-queda" data-k="d4-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d4-vivi"> Viví este día</label>
+    <label for="d4-sost">Hoy me sostuvo…</label><input type="text" id="d4-sost" data-k="d4-sost" placeholder="Un nombre o una descripción">
+    <label for="d4-sosti">Hoy sostuve a… (si quieres)</label><input type="text" id="d4-sosti" data-k="d4-sosti" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 5</summary><div class="dia">
+    <label for="d5-hilo">Un hilo que nombré hoy</label><input type="text" id="d5-hilo" data-k="d5-hilo" placeholder="La voz de mi madre, el saludo del vendedor, el piano de la vecina">
+    <label for="d5-tire">El hilo del que tiré</label><input type="text" id="d5-tire" data-k="d5-tire" placeholder="Un mensaje, un saludo con nombre, una pregunta">
+    <label class="marca"><input type="checkbox" data-k="d5-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «No estoy solo. Aquí hay un hilo»</span><button type="button" data-menos="d5-frase" aria-label="Una vez menos">−</button><output data-k="d5-frase" aria-live="polite">0</output><button type="button" data-mas="d5-frase" aria-label="Una vez más">+</button></div>
+    <label for="d5-term">Hoy terminó…</label><textarea id="d5-term" data-k="d5-term" rows="2"></textarea>
+    <label for="d5-queda">Queda para mañana… y no sé cómo será</label><textarea id="d5-queda" data-k="d5-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d5-vivi"> Viví este día</label>
+    <label for="d5-sost">Hoy me sostuvo…</label><input type="text" id="d5-sost" data-k="d5-sost" placeholder="Un nombre o una descripción">
+    <label for="d5-sosti">Hoy sostuve a… (si quieres)</label><input type="text" id="d5-sosti" data-k="d5-sosti" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 6</summary><div class="dia">
+    <label for="d6-hilo">Un hilo que nombré hoy</label><input type="text" id="d6-hilo" data-k="d6-hilo" placeholder="La voz de mi madre, el saludo del vendedor, el piano de la vecina">
+    <label for="d6-tire">El hilo del que tiré</label><input type="text" id="d6-tire" data-k="d6-tire" placeholder="Un mensaje, un saludo con nombre, una pregunta">
+    <label class="marca"><input type="checkbox" data-k="d6-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «No estoy solo. Aquí hay un hilo»</span><button type="button" data-menos="d6-frase" aria-label="Una vez menos">−</button><output data-k="d6-frase" aria-live="polite">0</output><button type="button" data-mas="d6-frase" aria-label="Una vez más">+</button></div>
+    <label for="d6-term">Hoy terminó…</label><textarea id="d6-term" data-k="d6-term" rows="2"></textarea>
+    <label for="d6-queda">Queda para mañana… y no sé cómo será</label><textarea id="d6-queda" data-k="d6-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d6-vivi"> Viví este día</label>
+    <label for="d6-sost">Hoy me sostuvo…</label><input type="text" id="d6-sost" data-k="d6-sost" placeholder="Un nombre o una descripción">
+    <label for="d6-sosti">Hoy sostuve a… (si quieres)</label><input type="text" id="d6-sosti" data-k="d6-sosti" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <details><summary>Día 7</summary><div class="dia">
+    <label for="d7-hilo">Un hilo que nombré hoy</label><input type="text" id="d7-hilo" data-k="d7-hilo" placeholder="La voz de mi madre, el saludo del vendedor, el piano de la vecina">
+    <label for="d7-tire">El hilo del que tiré</label><input type="text" id="d7-tire" data-k="d7-tire" placeholder="Un mensaje, un saludo con nombre, una pregunta">
+    <label class="marca"><input type="checkbox" data-k="d7-hecho"> Lo hice</label>
+    <div class="contador"><span class="t">Dije «No estoy solo. Aquí hay un hilo»</span><button type="button" data-menos="d7-frase" aria-label="Una vez menos">−</button><output data-k="d7-frase" aria-live="polite">0</output><button type="button" data-mas="d7-frase" aria-label="Una vez más">+</button></div>
+    <label for="d7-term">Hoy terminó…</label><textarea id="d7-term" data-k="d7-term" rows="2"></textarea>
+    <label for="d7-queda">Queda para mañana… y no sé cómo será</label><textarea id="d7-queda" data-k="d7-queda" rows="2"></textarea>
+    <label class="marca"><input type="checkbox" data-k="d7-vivi"> Viví este día</label>
+    <label for="d7-sost">Hoy me sostuvo…</label><input type="text" id="d7-sost" data-k="d7-sost" placeholder="Un nombre o una descripción">
+    <label for="d7-sosti">Hoy sostuve a… (si quieres)</label><input type="text" id="d7-sosti" data-k="d7-sosti" placeholder="Unas pocas palabras alcanzan">
+  </div></details>
+  <label class="rotulo" for="carta" style="margin-top:1.2rem">El séptimo día, la llamada general: a quién le escribí, y qué le dije</label>
+  <textarea id="carta" data-k="carta" rows="5" placeholder="Qué hizo, cuándo, qué cambió en ti"></textarea>
+  <div class="acciones"><button type="button" id="copiar">Copiar mis notas</button><button type="button" id="borrar">Borrar mis notas</button></div>
+  <p class="estado" id="estado" aria-live="polite">Lo que escribes se guarda solo en este dispositivo. Nadie más lo ve.</p>
+</div>
+<h2>Lo que puede pasar</h2>
+<p>El primer día, el mapa puede parecerte escaso, y eso duele. Es el lente. Al final de la semana, vuelve a mirarlo y agrega los nombres que fueron apareciendo: casi siempre son más.</p>
+<p>Algún mensaje puede quedar sin respuesta. Eso no anula el gesto. Tiraste del hilo; del otro lado puede haber alguien ocupado, cansado, o mirando a través de su propio lente.</p>
+<p>Habrá momentos en que la frase no alcance, y la soledad siga ahí. Está bien. La frase no viene a quitarla, sino a recordarte, en medio de ella, que no es toda la verdad.</p>
+<p>Y puede pasar algo que no esperabas: que descubras que eres un hilo en la vida de más personas de las que creías. Como Ignacio con Esther, sin saberlo, durante dos años.</p>
+<section class="cuidado"><h2>Cuándo no hacer esta práctica</h2>
+<p>Si estás atravesando una crisis, o la soledad viene desde hace semanas con tristeza honda, desesperanza o la idea de no querer estar, esta operación no es lo primero: lo primero es pedir ayuda, esta misma semana. Si la idea es intensa, hoy.</p>
+<p>Si el contacto con alguien en particular te pone en riesgo, ese nombre no va en el mapa como un hilo del que tirar. Un vínculo que daña no se sostiene: se deja, y se pide ayuda para dejarlo.</p>
+<p>Si estar con otros te provoca un miedo intenso, deja de lado por ahora los gestos con desconocidos y quédate con el mapa, la frase y la línea de la noche. Lo demás puede esperar, y ese miedo tiene tratamiento.</p>
+<p>Si atraviesas un duelo reciente, el primer círculo puede doler por los que ya no están. Puedes anotarlos igual: también ellos te sostuvieron, y lo siguen haciendo en lo que dejaron en ti. Ve despacio, y no lo atravieses solo.</p>
+</section><div class="perla"><p>Cada noche, alguien nombra un hilo,<br>agradece en silencio a quien lo sostuvo,<br>y se duerme sabiendo que no cayó solo.</p></div>
+<div class="sigue"><a href="L11-U6.html">Anterior: Un buen pariente</a><a class="prox" href="L11-cierre.html">Siguiente: La mesa de la plaza</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Martin E. P. Seligman, Tracy A. Steen, Nansook Park y Christopher Peterson, «Positive Psychology Progress: Empirical Validation of Interventions», <em>American Psychologist</em> 60, n.º 5 (2005): 410-421. Paráfrasis.</li><li id="nota-2">Lic. Arturo Rodríguez, <em>Los Vínculos Sagrados</em>, Trinity Origen, Libro V, Nodo 7: «Ritual de reconexión», «La carta que no enviarás». Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 11 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer><script>
+(function(){
+
+  function Red(raiz){
+    var nodos=[].slice.call(raiz.querySelectorAll('.nodo')), hilos=[].slice.call(raiz.querySelectorAll('.hilo')), N=nodos.length, ady=[], timers=[], red=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    for(var i=0;i<N;i++){ ady.push([]); }
+    hilos.forEach(function(h){ var a=+h.getAttribute('data-a'), b=+h.getAttribute('data-b'); ady[a].push(b); ady[b].push(a); });
+    function dist(s){ var d=[], q=[s]; for(var i=0;i<N;i++){ d.push(-1); } d[s]=0; while(q.length){ var u=q.shift(); ady[u].forEach(function(v){ if(d[v]<0){ d[v]=d[u]+1; q.push(v); } }); } return d; }
+    function hiloEntre(a,b){ for(var i=0;i<hilos.length;i++){ var x=+hilos[i].getAttribute('data-a'), y=+hilos[i].getAttribute('data-b'); if((x===a&&y===b)||(x===b&&y===a)){ return hilos[i]; } } return null; }
+    function llega(s,k,d){
+      var r=nodos[k].querySelector('.r'+s); if(r){ r.classList.add('on'); }
+      ady[k].forEach(function(v){ if(d[v]===d[k]-1){ var h=hiloEntre(k,v); if(h){ h.classList.add('vivo'); timers.push(setTimeout(function(){ h.classList.remove('vivo'); h.classList.add('tocado'); }, red?0:800)); } } });
+    }
+    this.N=N; this.nodos=nodos;
+    this.encender=function(s,paso){
+      var d=dist(s); nodos[s].classList.add('luz');
+      for(var k=0;k<N;k++){ (function(k){ if(red||d[k]===0){ llega(s,k,d); } else { timers.push(setTimeout(function(){ llega(s,k,d); }, d[k]*paso)); } })(k); }
+    };
+    this.parar=function(){ timers.forEach(function(x){ clearTimeout(x); }); timers=[]; };
+    this.todo=function(){ nodos.forEach(function(g){ g.classList.add('luz'); [].forEach.call(g.querySelectorAll('.r'),function(r){ r.classList.add('on'); }); }); };
+    this.apagar=function(){ this.parar(); nodos.forEach(function(g){ g.classList.remove('luz'); [].forEach.call(g.querySelectorAll('.r'),function(r){ r.classList.remove('on'); }); }); hilos.forEach(function(h){ h.classList.remove('vivo'); h.classList.remove('tocado'); }); };
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ raiz.classList.toggle('vista',e[0].isIntersecting); }).observe(raiz); } else { raiz.classList.add('vista'); }
+  }
+
+  var mm=document.getElementById('indra'); if(mm){
+    var R=new Red(mm), b=mm.querySelector('button'), fr=mm.querySelector('.frase'), cu=document.getElementById('indra-cuenta');
+    var CICLOS=7, SEQ=[0,1,2,3,4,5,6], k=0, estado='quieto', timers=[];
+    function limpiar(){ timers.forEach(function(x){ clearTimeout(x); }); timers=[]; R.parar(); }
+    function fin(){ limpiar(); estado='fin'; R.todo(); mm.classList.add('fin'); fr.textContent='No estoy solo. Aquí hay un hilo.'; cu.textContent='Toda la red brilla. Que descanses.'; }
+    function ciclo(){
+      if(k>=CICLOS){ fin(); return; }
+      fr.textContent='Toma aire…'; cu.textContent='Respiración '+(k+1)+' de '+CICLOS+'.';
+      timers.push(setTimeout(function(){
+        fr.textContent='Suelta el aire despacio…';
+        R.encender(SEQ[k],1100); k++;
+        timers.push(setTimeout(ciclo,6000));
+      },4000));
+    }
+    b.addEventListener('click',function(){
+      if(estado==='corre'){ limpiar(); estado='pausa'; fr.textContent='En pausa'; cu.textContent='Toca otra vez para seguir. La red espera.'; return; }
+      if(estado==='quieto'||estado==='fin'){ k=0; R.apagar(); mm.classList.remove('fin'); }
+      estado='corre'; ciclo();
+    });
+  }
+  var K='arq-'+document.documentElement.getAttribute('data-libro')+'-red-v1', d={};
+  try{ d=JSON.parse(localStorage.getItem(K)||'{}')||{}; }catch(e){ d={}; }
+  function guardar(){ try{ localStorage.setItem(K,JSON.stringify(d)); }catch(e){} }
+  var campos=document.querySelectorAll('#diario [data-k]');
+  campos.forEach(function(el){
+    var k=el.getAttribute('data-k');
+    if(el.tagName==='OUTPUT'){ el.textContent=String(d[k]||0); }
+    else if(el.type==='checkbox'){ if(d[k]){ el.checked=true; } el.addEventListener('change',function(){ d[k]=el.checked; guardar(); }); }
+    else { if(d[k]){ el.value=d[k]; } el.addEventListener('input',function(){ d[k]=el.value; guardar(); }); }
+  });
+  function cuenta(k,delta){ var v=Math.max(0,(d[k]||0)+delta); d[k]=v; guardar(); var o=document.querySelector('#diario output[data-k="'+k+'"]'); if(o){ o.textContent=String(v); } }
+  document.querySelectorAll('#diario [data-mas]').forEach(function(x){ x.addEventListener('click',function(){ cuenta(x.getAttribute('data-mas'),1); }); });
+  document.querySelectorAll('#diario [data-menos]').forEach(function(x){ x.addEventListener('click',function(){ cuenta(x.getAttribute('data-menos'),-1); }); });
+  var est=document.getElementById('estado');
+  var cp=document.getElementById('copiar'); if(cp){ cp.addEventListener('click',function(){
+    var txt=[];
+    if(d['renglon']){ txt.push('Contacto de emergencia en la ciudad: '+d['renglon']); }
+    for(var i=1;i<=7;i++){ var hi=d['d'+i+'-hilo']||'', ti=d['d'+i+'-tire']||'', hc=d['d'+i+'-hecho'], fz=d['d'+i+'-frase']||0, h=d['d'+i+'-term']||'', q=d['d'+i+'-queda']||'', v=d['d'+i+'-vivi'], so=d['d'+i+'-sost']||'', si=d['d'+i+'-sosti']||'';
+      if(hi||ti||hc||fz||h||q||v||so||si){ txt.push('Día '+i+(hi?'\nUn hilo que nombré: '+hi:'')+(ti?'\nEl hilo del que tiré: '+ti+(hc?' (hecho)':''):(hc?'\nLo hice.':''))+(fz?'\nDije «No estoy solo. Aquí hay un hilo»: '+fz+(fz===1?' vez':' veces'):'')+(h?'\nHoy terminó '+h:'')+(q?'\nQueda para mañana '+q+'… y no sé cómo será.':'')+(v?'\nViví este día.':'')+(so?'\nHoy me sostuvo '+so:'')+(si?'\nHoy sostuve a '+si:'')); } }
+    if(d['carta']){ txt.push('El séptimo día, la llamada general:\n'+d['carta']); }
+    var s=txt.join('\n\n')||'Todavía no escribiste nada.';
+    if(navigator.clipboard){ navigator.clipboard.writeText(s).then(function(){ est.textContent='Notas copiadas.'; },function(){ est.textContent='No se pudieron copiar. Selecciona el texto a mano.'; }); }
+    else { est.textContent='Este navegador no permite copiar automáticamente.'; }
+  }); }
+  var br=document.getElementById('borrar'); if(br){ br.addEventListener('click',function(){
+    if(!confirm('¿Borrar las notas de esta semana? No se pueden recuperar.')){ return; }
+    d={}; guardar(); campos.forEach(function(el){ if(el.tagName==='OUTPUT'){ el.textContent='0'; } else if(el.type==='checkbox'){ el.checked=false; } else { el.value=''; } }); est.textContent='Notas borradas.';
+  }); }
+})();
+</script>
+</body>
+</html>

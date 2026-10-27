@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L11">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="el mito de la separación">
+<title>Dónde termino yo · Umbral III · La Red</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L11.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral III</div><h1>Dónde termino yo</h1><p class="sub">el mito de la separación</p></header><main><h2>Los puntos</h2>
+<p>Mónica le quitó los puntos al décimo día, en la misma sala, con una tijera pequeña y una pinza. Cortó cada nudo y tiró del hilo con un movimiento corto. Ignacio sintió cuatro tirones mínimos, casi cosquillas.</p>
+<p>—Cicatrizó bien —dijo ella, y le mostró la palma bajo la luz.</p>
+<p>Quedaba una línea rosada, fina, de unos tres centímetros. Ignacio la miró un rato largo. Durante diez días, cuatro hilos habían mantenido juntos los dos bordes de la herida, sin hacer nada más que eso: sostenerlos cerca. El resto lo hizo el cuerpo, sin pedirle permiso ni instrucciones. Cuando los bordes ya podían sostenerse solos, el hilo se retiró.</p>
+<p>Pensó que nunca había mirado así una sutura: un hilo que sostiene dos orillas hasta que la piel aprende a unirlas.</p>
+<h2>¿Dónde termino yo?</h2>
+<p>El segundo nodo de La Puerta, el del mito de la separación, propone un ejercicio que empieza con una pregunta en voz alta:</p>
+<div class="cita"><p class="trad">¿Dónde termino yo y empieza el resto?<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Y la recorre por partes. ¿Termino en la piel? Pero la piel se descama, se renueva, intercambia con el aire. ¿En mis pensamientos? Pero vienen de una cultura, de una lengua, de lo que otros me contaron. ¿En lo que siento? Pero casi todo lo que siento surgió en el trato con alguien. Después lleva la pregunta a la respiración:</p>
+<div class="cita"><p class="trad">Con cada inhalación, siente cómo el «afuera» entra.<br>Con cada exhalación, siente cómo el «adentro» sale.<br>¿Dónde está la frontera?<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>El aire que ahora está en tus pulmones estaba, hace un momento, en la habitación, y antes en la calle, y antes en otros pulmones. Cerca de la mitad del oxígeno de la Tierra lo producen organismos diminutos que flotan en el océano.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> El agua que forma la mayor parte de tu cuerpo, dice el mismo nodo, <em>fue océano, fue lluvia, fue lágrima de alguien más</em>.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup> Y concluye con una línea que no es un argumento sino una constatación:</p>
+<div class="cita"><p class="trad">¿Dónde terminas «tú» y empieza «el universo»?<br>No hay línea.<br>Nunca la hubo.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Conviene leerla bien. La Puerta no dice que no existan los bordes. La línea rosada en la palma de Ignacio es un borde, y fue necesario que hubiera dos bordes para que un hilo pudiera unirlos. Lo que no existe es la pared. La piel no es un muro que separa: es una superficie de intercambio que respira, suda, siente el frío y la mano de otro. El borde existe; lo que es un mito es el aislamiento.</p>
+<div class="perla"><p>La piel no es una pared.<br>Es un borde que respira.</p></div>
+<h2>Hecha para el contacto</h2>
+<p>La piel, además, parece hecha para otros. En 2009, un equipo de la Universidad de Gotemburgo, con colegas británicos, registró la actividad de unas fibras nerviosas finas de la piel humana, las llamadas fibras C táctiles. Encontraron que responden mejor a un roce lento y suave, a la velocidad de una caricia, y que cuanto más intensa era su respuesta, más agradable describían las personas ese contacto.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> No sirven para reconocer una textura ni para medir una presión. Su trabajo parece ser otro: registrar que alguien está cerca y nos toca con cuidado.</p>
+<p>Ignacio leyó sobre ese estudio una semana después de la noche de urgencias, y se acordó de los dos dedos de Mónica en su hombro al despedirse. Había sido el único momento de esa madrugada en que algo en él se aflojó. La piel que el hilo de la sutura acababa de unir era la misma que, minutos antes, había recibido ese gesto mínimo como lo que era: una mano del otro lado del borde.</p>
+<h2>Los antiguos extraños</h2>
+<p>En 1967, una joven bióloga llamada Lynn Margulis publicó un artículo que, según contó ella misma años después, unas quince revistas habían rechazado antes. Proponía algo que entonces sonaba a disparate: que las mitocondrias, las pequeñas estructuras que dentro de cada célula producen la energía con que vivimos, habían sido alguna vez bacterias independientes. Hace más de mil quinientos millones de años, unas células más grandes las incorporaron, y en lugar de digerirlas, convivieron con ellas. Se quedaron. Siguen ahí, con su propio ADN, que se hereda solo por línea materna.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Hoy esa idea es parte de cualquier libro de biología. Cada una de las células de tu cuerpo aloja a los descendientes de un antiguo extraño que se volvió familia. Y no son los únicos: en el cuerpo de una persona viven aproximadamente tantas bacterias como células propias: decenas de billones de cada lado.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup> El cuerpo que llamas tuyo es, desde su origen, una comunidad.</p>
+<p>Trinity lo menciona en <em>Los Vínculos Sagrados</em>, al hablar de la cooperación como fuerza de la vida:</p>
+<div class="cita"><p class="trad">Cuando los biólogos hablan de simbiogénesis —la idea de que la evolución avanza no solo por competencia sino por cooperación—, están viendo el amor en acción a nivel celular.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Se puede discutir la palabra <em>amor</em> aplicada a una bacteria. Lo que no se discute es el hecho: no estás hecho de una sola pieza. Estás hecho de alianzas.</p>
+<h2>Una nube en una hoja de papel</h2>
+<p>El monje vietnamita Thich Nhat Hanh enseñó durante décadas una forma de mirar que sirve para esto mejor que cualquier argumento. En un comentario al <em>Sutra del Corazón</em> publicado en 1988, propone tomar una hoja de papel y mirarla con ojos de poeta. Si la miras así, dice, verás una nube flotando en ella: sin nube no hay lluvia, sin lluvia no crecen los árboles, sin árboles no hay papel. Y si sigues mirando, verás también el sol, al leñador que cortó el árbol, el trigo del pan que comió el leñador, a sus padres. La hoja no está hecha de papel: está hecha de todo lo que no es papel.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>Para nombrar esa forma de existir, Thich Nhat Hanh usó una palabra que tomó de su tradición y le dio a la orden que fundó en 1966, en plena guerra: <em>inter-ser</em>.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup> Nada <em>es</em> por separado; todo <em>inter-es</em>. Trinity la recoge en ese mismo nodo de La Puerta, entre las frases para repetir cuando uno se siente solo, separado o pequeño:</p>
+<div class="cita"><p class="trad">Inter-somos.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>La imagen viene de una tradición budista muy antigua, la misma que en el próximo umbral tejerá una red de joyas. Por ahora basta la hoja de papel, que cualquiera tiene a mano.</p>
+<h2>La nube que no está en el cielo</h2>
+<p>Ignacio hizo el ejercicio sin proponérselo, un miércoles por la mañana.</p>
+<p>Le llegó un aviso de trabajo: los usuarios de otro continente estaban recibiendo las respuestas de la aplicación con el doble de demora. Investigó durante una hora y encontró la causa. Un cable submarino que cruza el Atlántico se había dañado frente a una costa, probablemente por el ancla de un barco, y el tráfico se desviaba por rutas más largas. Un buque cablero ya estaba en camino. La tripulación tendría que localizar el tramo roto en el fondo del mar, izarlo a la cubierta, empalmar las fibras una por una y devolverlo al agua. Calculaban diez días.</p>
+<p>Ignacio trabaja todos los días en lo que su oficio llama <em>la nube</em>. Esa mañana se dio cuenta de que la nube no está en el cielo. Está en edificios llenos de máquinas que alguien enfría y vigila, y en más de un millón de kilómetros de cables tendidos en el fondo de los océanos, por donde viaja casi todo lo que cruza de un continente a otro.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup> Y cuando un cable se corta, no lo arregla un algoritmo: lo arreglan personas que pasan semanas en un barco, lejos de sus casas, para que un programador en una ciudad cualquiera pueda decir que su código <em>está en la nube</em>.</p>
+<p>Esa noche repitió el ejercicio con su computadora portátil. El aluminio de la carcasa salió de una mina; las manos que la armaron estaban en una fábrica del otro lado del mundo; la electricidad que la cargaba venía de una represa que alguien opera. Y el pedido que llegó a las ocho, el de la venda, lo trajeron las piernas de Fabián, pedaleando bajo una llovizna fina.</p>
+<p>Contó, sin buscarlo, más de treinta personas que no conocía y sin las cuales esa noche no habría sido posible. Ninguna de ellas sabía su nombre. Todas lo sostenían.</p>
+<div class="perla"><p>La nube no está en el cielo.<br>Está en el fondo del mar, y alguien la repara.</p></div>
+<h2>Del mito al hilo</h2>
+<p>La Puerta llama <em>mito</em> a la separación, y la palabra es exacta. Un mito no es una mentira grosera: es un relato tan repetido que se confunde con la forma de las cosas. El mito de la separación dice que cada uno empieza y termina en su piel, que lo que pasa adentro es asunto privado, que los demás son paisaje. Se aprende tan temprano que parece evidente.</p>
+<p>Lo que Ignacio vio esa semana no lo convenció de lo contrario con un argumento. Se lo mostró. El hilo de la sutura, el aire que entra y sale, la bacteria que se quedó a vivir, la nube en el papel, el cable en el fondo del mar. Ninguna de esas cosas le quitó la soledad de un golpe. Pero le cambió la pregunta. Ya no era <em>¿por qué estoy solo?</em>, sino <em>¿por qué no lo veía?</em></p>
+<h2>Tú también</h2>
+<p>Elige un objeto que uses todos los días: el teléfono, una taza, la ropa que llevas puesta. Retrocede cinco pasos en su historia: de qué está hecho, de dónde salió cada material, quién lo fabricó, quién lo transportó, quién lo puso en tus manos. Es el primer día de la semana que propone La Puerta, y el ejercicio de la hoja de papel.</p>
+<p>Después respira tres veces y, con cada salida del aire, nota que lo que sale de ti entra en el aire de la habitación. Antes de dormir, escribe una línea: <em>Hoy encontré en ___ a ___ personas que no conozco.</em></p>
+<div class="sigue"><a href="L11-U2.html">Anterior: Las dos redes</a><a class="prox" href="L11-U4.html">Siguiente: La red de Indra</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>La Puerta</em>, Portal Trinity, Nodo 2: «El mito de la separación», «Tu cuerpo es prueba», «Laboratorio cuántico», fases 1 y 2, y «Códigos de activación». Fragmentos y paráfrasis; el ejercicio, sin espejo.</li><li id="nota-2">Sobre el oxígeno producido por el fitoplancton: Administración Nacional Oceánica y Atmosférica de los Estados Unidos (NOAA), «How much oxygen comes from the ocean?». Paráfrasis.</li><li id="nota-3">Line S. Löken, Johan Wessberg, India Morrison, Francis McGlone y Håkan Olausson, «Coding of Pleasant Touch by Unmyelinated Afferents in Humans», <em>Nature Neuroscience</em> 12, n.º 5 (2009): 547-548. Paráfrasis.</li><li id="nota-4">Lynn Sagan (Margulis), «On the Origin of Mitosing Cells», <em>Journal of Theoretical Biology</em> 14, n.º 3 (1967): 225-274. Paráfrasis.</li><li id="nota-5">Ron Sender, Shai Fuchs y Ron Milo, «Revised Estimates for the Number of Human and Bacteria Cells in the Body», <em>PLOS Biology</em> 14, n.º 8 (2016): e1002533. Paráfrasis.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>Los Vínculos Sagrados</em>, Trinity Origen, Libro V, Nodo 6: «Amor como tecnología evolutiva», apertura. Fragmento, con la puntuación normalizada.</li><li id="nota-7">Thich Nhat Hanh, <em>The Heart of Understanding: Commentaries on the Prajñaparamita Heart Sutra</em> (1988). Paráfrasis. En vietnamita, <em>tiếp hiện</em>; la Orden del Interser se fundó en 1966.</li><li id="nota-8">Sobre la extensión de los cables submarinos y su papel en el tráfico entre continentes: TeleGeography, <em>Submarine Cable Map</em>. Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 11 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

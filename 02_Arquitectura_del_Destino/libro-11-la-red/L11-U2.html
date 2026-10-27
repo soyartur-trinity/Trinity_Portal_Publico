@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L11">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="la que atrapa y la que sostiene">
+<title>Las dos redes · Umbral II · La Red</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L11.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral II</div><h1>Las dos redes</h1><p class="sub">la que atrapa y la que sostiene</p></header><main><h2>Doscientas catorce</h2>
+<p>El domingo siguiente, el teléfono le mostró a Ignacio su informe semanal: siete horas y cincuenta y dos minutos de pantalla por día, en promedio. Lo había visto otras veces y lo había deslizado hacia un costado. Esta vez, con la mano todavía vendada, hizo algo que no había hecho nunca: contó.</p>
+<p>El sábado había recibido doscientas catorce notificaciones. Reacciones a una foto, avisos de grupos que tenía silenciados, recordatorios de aplicaciones, ofertas, el seguimiento de un paquete, una alerta de tráfico, una sugerencia de personas que quizá conocía. Después buscó las conversaciones, las de verdad, aquellas en las que alguien le había dicho algo a él y él le había respondido algo a alguien. Encontró cero.</p>
+<p>Corrigió enseguida. Había dos excepciones, y las dos pasaban por la misma pantalla. La primera era la videollamada de los domingos con su madre, Raquel, que lo llama a las siete de la tarde desde la cocina de la casa donde él creció y siempre, antes de colgar, le pregunta lo mismo: <em>¿Y con quién hablaste esta semana?</em> La segunda era el grupo de los jueves, <em>Los de siempre</em>: cinco amigos de la infancia que durante años se conectaron a las diez de la noche para jugar en línea, con los auriculares puestos, riéndose de lo mismo que se reían a los doce. El grupo llevaba tres meses en silencio.</p>
+<p>Doscientas catorce señales. Dos hilos, uno de ellos cortado.</p>
+<h2>El punto azul</h2>
+<p>El trabajo de Ignacio consiste en escribir el código que decide qué repartidor lleva cada pedido. En su pantalla, la ciudad es un mapa gris cruzado por puntos azules que se mueven. Cada punto tiene un número. El programa calcula distancias, tiempos, el tránsito, la lluvia, y asigna. Un buen día de trabajo es un día en que los puntos llegan más rápido.</p>
+<p>El martes, a las ocho de la noche, sonó el timbre. Era el punto 4471.</p>
+<p>Se llamaba Fabián. Tenía cuarenta y seis años, una bicicleta con alforjas, un casco con una calcomanía de un club de fútbol y un teléfono con la pantalla rajada en diagonal. Mientras Ignacio firmaba en ese teléfono con el dedo de la mano sana, Fabián le miró la venda.</p>
+<p>—¿Se cortó armando algo?</p>
+<p>—Un estante.</p>
+<p>—Los muebles se arman entre dos —dijo Fabián, y se rió.</p>
+<p>Ignacio se rió también. Se dio cuenta, al cerrar la puerta, de que era la primera vez que se reía en voz alta desde la noche de urgencias. En el mapa de la pantalla, el 4471 ya se alejaba por la avenida, otra vez un punto azul.</p>
+<h2><em>Rete</em></h2>
+<p>La palabra <em>red</em> viene del latín <em>rete</em>, la red del pescador. En la Roma antigua había gladiadores que peleaban con una red y un tridente, y los llamaban <em>retiarios</em>: la red servía para atrapar al adversario. La misma palabra nombra, siglos después, la que se tiende bajo el trapecio en un circo, la red de seguridad. También esa atrapa, pero atrapa para sostener: para que la caída no termine en el suelo.</p>
+<p>Es una palabra con dos oficios opuestos. Una red captura; otra sostiene. Se llaman igual, se parecen de lejos, y se tejen con nudos parecidos. La diferencia está en lo que hacen con quien cae en ellas.</p>
+<div class="perla"><p>Una red atrapa.<br>Otra sostiene.<br>Se llaman igual.</p></div>
+<h2>Una isla de pescadores</h2>
+<p>Hay un dato que casi nadie conoce sobre la expresión <em>red social</em>. Nació en una isla de pescadores.</p>
+<p>A comienzos de los años cincuenta, el antropólogo John Barnes pasó casi dos años en Bremnes, una parroquia de la isla de Bømlo, en la costa oeste de Noruega, entre hombres que trabajaban la tierra y el mar. Quería entender cómo se organizaba la vida de esa comunidad, y encontró que lo más importante no cabía en las categorías que traía. Las clases sociales explicaban poco. El territorio, tampoco del todo. Lo que daba forma a la vida de esa gente era un tejido de parentesco, amistad y trato entre vecinos: cada persona en contacto con algunas que se conocían entre sí y con otras que no. En 1954 publicó sus conclusiones y, para describir ese tejido, escribió que le resultaba cómodo llamarlo <em>red</em>: un conjunto de puntos, algunos unidos por líneas.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>Antes de ser el nombre de una aplicación, la <em>red social</em> fue la imagen que un antropólogo encontró para describir a unos vecinos que se conocían por su nombre, en una isla donde muchos vivían de echar redes al mar.</p>
+<h2>La paradoja de internet</h2>
+<p>A mediados de los años noventa, cuando internet empezaba a entrar en los hogares, un equipo de la Universidad Carnegie Mellon, dirigido por Robert Kraut, siguió durante sus primeros años en línea a ciento sesenta y nueve personas de setenta y tres familias de Pittsburgh. Publicaron los resultados en 1998 con un título que era, en sí mismo, una advertencia: «La paradoja de internet». Una tecnología pensada para comunicar parecía, en esos primeros años, reducir la comunicación: quienes más horas pasaban conectados hablaban menos con su familia, veían achicarse su círculo cercano y decían sentirse más solos y más tristes.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>La historia no terminó ahí, y su continuación es lo que más le sirve a Ignacio. Cuatro años después, el mismo equipo volvió a esas familias y estudió otras nuevas. Los efectos negativos habían desaparecido y, en general, usar internet ahora traía beneficios. Pero no para todos por igual: ganaban más quienes ya tenían muchos vínculos, y ganaban menos, o nada, quienes tenían pocos.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> La lección no era que internet aísle. Era que depende de qué reemplaza a qué. Un mensaje a un amigo no es lo mismo que una hora mirando la vida de desconocidos.</p>
+<p>Una década después, otros investigadores lo midieron con precisión. En 2015, el equipo de Philippe Verduyn comparó a quienes usaban las redes de manera pasiva, pasando publicaciones con el pulgar, con quienes las usaban de manera activa, escribiendo y conversando. El uso pasivo bajaba el ánimo hacia el final del día, y una parte de esa caída se explicaba por la envidia. El uso activo, no.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup> En 2018, en la Universidad de Pensilvania, un grupo de estudiantes limitó su tiempo en las redes a media hora diaria durante tres semanas, y su soledad y su tristeza bajaron respecto de quienes siguieron como siempre.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p>
+<p>La psicóloga Sherry Turkle, que pasó décadas estudiando cómo vivimos con la tecnología, le puso a todo esto un nombre que se volvió título de libro: <em>solos juntos</em>. Esperamos cada vez más de las máquinas, escribió, y cada vez menos de los otros.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p>
+<p>En sus charlas, Turkle describió lo mismo como un desplazamiento: pasamos de la conversación a la conexión.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup> Conectarse es rápido, se puede interrumpir, se puede corregir antes de enviar. Conversar es lento, imprevisible, y obliga a quedarse mientras el otro piensa. La pregunta que Raquel le hace a su hijo cada domingo apunta, sin proponérselo, a esa diferencia. No le pregunta con quién se conectó. Le pregunta con quién habló.</p>
+<h2>Las dos posturas de Trinity</h2>
+<p>Trinity tiene sobre internet dos frases que, leídas juntas, parecen discutir entre sí.</p>
+<p>La primera está en La Puerta, en el mismo nodo de la separación. Entre las prácticas de una semana, propone mirar la conexión digital como una metáfora, y concluye:</p>
+<div class="cita"><p class="trad">Siempre estuviste conectado. La red siempre existió. Internet solo la hizo obvia.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>La segunda está en <em>La Paradoja Luminosa</em>, el cuarto libro de Trinity Quantum, en un nodo dedicado a la presencia que se extiende más allá del propio cuerpo:</p>
+<div class="cita"><p class="trad">Las redes sociales digitales son un intento tecnológico de replicar tu ubicuidad natural. Pero son simulacros burdos. Tu verdadera red social opera continuamente.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p></div>
+<p>Una dice que internet revela la red. La otra, que la imita mal. Las dos son verdaderas, y este libro no elige entre ellas. Las sostiene juntas, como Trinity enseña a sostener las paradojas: sin promediarlas, sin quedarse con la mitad que conviene. El mismo teléfono que lleva la videollamada de los domingos lleva también las doscientas catorce notificaciones. La misma pantalla donde Fabián es un punto azul es la que permite que, a las ocho de la noche, suene el timbre.</p>
+<h2>Hilo o señal</h2>
+<p>Para no confundir una red con la otra, este libro usa una distinción sencilla.</p>
+<p>Un <strong>hilo</strong> tiene a alguien del otro lado. Va y vuelve: lo que mandas recibe respuesta, lo que te dicen espera la tuya. Y te sostendría si cayeras: es el nombre que podrías escribir en el renglón vacío.</p>
+<p>Una <strong>señal</strong> es la marca de que alguien pasó. Va en una sola dirección. Nadie espera tu respuesta, y no sostiene a nadie. Una reacción a una foto, una notificación, un número de seguidores que sube o baja.</p>
+<p>Tres preguntas bastan para saber qué tienes delante: <em>¿Hay alguien del otro lado? ¿Va y vuelve? ¿Me sostendría si me caigo?</em></p>
+<p>Con esas preguntas, el sábado de Ignacio se ordena solo. La videollamada con su madre es un hilo, aunque pase por la pantalla. El grupo de los jueves es un hilo, aunque lleve tres meses quieto. Las doscientas catorce notificaciones son señales. Y el 4471, que en su mapa es un punto, se volvió por treinta segundos, en la puerta, un hilo con nombre: Fabián.</p>
+<p>Nada de esto pide tirar el teléfono. Para una abuela que vive lejos de sus nietos, para alguien que no puede salir de su casa, para quien emigró y deja a su familia del otro lado de un océano, la pantalla puede ser la ventana por donde entra la vida. La pregunta nunca es por el aparato. Es, cada vez, quién está del otro lado.</p>
+<div class="perla"><p>Antes de responder, pregunta:<br>¿hay alguien del otro lado?</p></div>
+<h2>Tú también</h2>
+<p>Durante un día, lleva la cuenta en dos columnas. En una, las señales: todo lo que te llega o envías sin que haya alguien esperando respuesta. En la otra, los hilos: los intercambios donde alguien te dijo algo a ti y tú le respondiste algo a alguien, en persona, por teléfono o por mensaje.</p>
+<p>No cambies nada todavía. Solo cuenta. A la noche, mira las dos columnas y anota un solo hilo que te gustaría que estuviera más vivo.</p>
+<div class="sigue"><a href="L11-U1.html">Anterior: Contacto de emergencia</a><a class="prox" href="L11-U3.html">Siguiente: Dónde termino yo</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">John A. Barnes, «Class and Committees in a Norwegian Island Parish», <em>Human Relations</em> 7 (1954): 39-58. Paráfrasis. Barnes describe la red como un conjunto de puntos, algunos unidos por líneas.</li><li id="nota-2">Robert Kraut, Michael Patterson, Vicki Lundmark y otros, «Internet Paradox: A Social Technology That Reduces Social Involvement and Psychological Well-Being?», <em>American Psychologist</em> 53, n.º 9 (1998): 1017-1031. Paráfrasis.</li><li id="nota-3">Robert Kraut, Sara Kiesler, Bonka Boneva y otros, «Internet Paradox Revisited», <em>Journal of Social Issues</em> 58, n.º 1 (2002): 49-74. Paráfrasis.</li><li id="nota-4">Philippe Verduyn, David Seungjae Lee, Jiyoung Park y otros, «Passive Facebook Usage Undermines Affective Well-Being: Experimental and Longitudinal Evidence», <em>Journal of Experimental Psychology: General</em> 144, n.º 2 (2015): 480-488. Paráfrasis.</li><li id="nota-5">Melissa G. Hunt, Rachel Marx, Courtney Lipson y Jordyn Young, «No More FOMO: Limiting Social Media Decreases Loneliness and Depression», <em>Journal of Social and Clinical Psychology</em> 37, n.º 10 (2018): 751-768. Paráfrasis.</li><li id="nota-6">Sherry Turkle, <em>Alone Together: Why We Expect More from Technology and Less from Each Other</em> (2011), y «Connected, but Alone?», TED (2012). Paráfrasis.</li><li id="nota-7">Lic. Arturo Rodríguez, <em>La Puerta</em>, Portal Trinity, Nodo 2: «El mito de la separación», «Protocolo de 7 días», día 6. Fragmento.</li><li id="nota-8">Lic. Arturo Rodríguez, <em>La Paradoja Luminosa</em>, Trinity Quantum, Libro 4, Nodo 2: «Ubicuidad consciente», «Ubicuidad y el tejido social», versión depurada (2026). Fragmento.</li></ol></section></main></div><footer class="pie">Libro 11 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

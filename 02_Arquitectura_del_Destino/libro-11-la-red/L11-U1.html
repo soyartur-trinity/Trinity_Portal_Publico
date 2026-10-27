@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L11">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="la soledad es real">
+<title>Contacto de emergencia · Umbral I · La Red</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L11.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral I</div><h1>Contacto de emergencia</h1><p class="sub">la soledad es real</p></header><main><h2>La una y diez</h2>
+<p>El estante se vino abajo un jueves de marzo, a la una y diez de la madrugada.</p>
+<p>Ignacio lo había comprado por internet tres semanas antes y llevaba dos noches armándolo, con las instrucciones abiertas en la computadora y una llave hexagonal que se le escurría entre los dedos. Al tercer intento de encajar la última tabla, la llave giró en falso, el borde de una escuadra metálica le abrió la palma de la mano izquierda y las seis repisas se desplomaron sobre la alfombra.</p>
+<p>Tiene treinta y un años. Es programador. Hace dos años se mudó a esta ciudad, a novecientos kilómetros de la suya, por un puesto en una empresa de reparto a domicilio, cuando todavía existía una oficina con plantas, ventanales y una mesa de pimpón. A los seis meses la oficina cerró. El equipo quedó repartido en cuatro países, cada uno en su casa, con las cámaras apagadas.</p>
+<p>Se envolvió la mano en una toalla, pidió un viaje por la aplicación y bajó los seis pisos por la escalera, para no manchar el ascensor.</p>
+<h2>El renglón vacío</h2>
+<p>En la sala de urgencias había cinco personas, cada una sola en su silla de plástico: una mujer joven con un niño dormido en brazos, un hombre mayor que se sostenía el pecho con la mano abierta, dos adolescentes con la cara pálida, un señor de traje que miraba el teléfono sin verlo. A la una y cuarenta, una administrativa le alcanzó a Ignacio un formulario sujeto a una tablilla. Nombre, documento, cobertura médica, alergias. Al pie de la hoja, un renglón:</p>
+<p><em>Contacto de emergencia en la ciudad.</em></p>
+<p>Sostuvo el bolígrafo con la mano sana y se quedó quieto. En el teléfono guardaba mil doscientos catorce contactos. Integraba diecisiete grupos de mensajes. Lo seguían ochocientas personas en una red y cuatrocientas en otra. Repasó la lista por dentro, despacio, como quien busca una llave en un manojo. Los del trabajo vivían en otros países. Los del gimnasio al que había ido dos meses no sabían su apellido. A los vecinos los saludaba en el ascensor sin saber cómo se llamaban.</p>
+<p>Escribió el número de su madre, que vive a novecientos kilómetros.</p>
+<p>La enfermera que lo atendió se llamaba Mónica. Tenía cincuenta y tantos años, el pelo atado y unas manos rápidas que no lastimaban. Mientras le limpiaba la herida, leyó el formulario.</p>
+<p>—¿Su madre?</p>
+<p>—Sí.</p>
+<p>—¿Y alguien aquí?</p>
+<p>Ignacio negó con la cabeza. Ella no comentó nada. Le dio cuatro puntos, le explicó cómo cuidar la sutura, le pidió que volviera en diez días para quitarlos. Al despedirse le tocó el hombro, apenas, con dos dedos.</p>
+<p>Llegó a su casa a las tres y media. Se acostó con la mano vendada sobre el pecho y el teléfono en la otra. Durante una hora pasó imágenes con el pulgar: un amigo de la secundaria en una playa, una pareja que se casaba, un perro con lentes de sol, un anuncio de estantes. No le escribió a nadie. ¿A quién se le escribe a las cuatro de la mañana para decir que uno se cortó la mano armando un mueble?</p>
+<p>Antes de dormirse, una frase le dio vueltas sin forma de pregunta: <em>estoy conectado con todo el mundo, y no tengo a nadie a quien llamar.</em></p>
+<h2>Una pregunta sin respuesta</h2>
+<p>Trinity tiene una puerta de entrada, un conjunto de trece nodos que abre toda su constelación. El segundo se titula «El mito de la separación», y su tesis cabe en su título: la sensación de estar separado de los demás y del mundo es un relato aprendido, no la forma última de las cosas. Lo notable es que el mismo nodo, al final, deja anotadas unas preguntas que no responde. La primera es la de Ignacio en la sala de urgencias, dicha con otras palabras:</p>
+<div class="cita"><p class="trad">Si nunca estuve separado, ¿por qué se siente tan real la soledad?<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Este libro toma esa pregunta en serio, y empieza por no esquivarla. La soledad de Ignacio a la una y cuarenta de la madrugada no es una ilusión que se disuelva con una idea. Le apretaba la garganta. Le hizo escribir un número a novecientos kilómetros. Lo dejó despierto hasta el amanecer. Quien diga que eso no es real no estuvo nunca frente a un renglón vacío.</p>
+<p>Pero Trinity dice también otra cosa, en el quinto nodo de <em>Los Vínculos Sagrados</em>, el libro de su serie Origen dedicado a los lazos que nos forman:</p>
+<div class="cita"><p class="trad">Cuando crees que estás solo, es porque has olvidado mirar la red.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Las dos frases conviven en este libro, y la promesa de la portada las junta: la soledad es real; la red también. No se contradicen. Hablan de dos cosas distintas que suceden al mismo tiempo: una se siente, la otra se olvida. Lo que este libro propone es aprender a mirar la segunda sin negar la primera.</p>
+<h2>Como la sed</h2>
+<p>John Cacioppo dedicó buena parte de su carrera, en la Universidad de Chicago, a estudiar qué le hace la soledad a una persona. Llegó a una conclusión que cambia el modo de mirarla: la soledad funciona como el hambre, la sed o el dolor físico.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup> Es una señal incómoda que el cuerpo heredó porque, durante cientos de miles de años, un ser humano apartado de su grupo corría peligro. El malestar empuja de regreso hacia los otros, como la sed empuja hacia el agua.</p>
+<p>Leída así, la soledad deja de ser un veredicto sobre quién eres. Nadie se avergüenza de tener sed. Nadie concluye, porque tiene la boca seca, que hay algo defectuoso en su carácter. La sed dice algo más simple y más útil: te falta agua. La soledad dice: te faltan otros. Es un aviso, no una sentencia.</p>
+<div class="perla"><p>La soledad no dice que estás fallado.<br>Dice que tienes sed de otros.</p></div>
+<h2>Los más conectados</h2>
+<p>Durante mucho tiempo se pensó en la soledad como un asunto de la vejez. En 2023, una encuesta de Gallup en ciento cuarenta y dos países mostró otra cosa: cerca de uno de cada cuatro adultos dijo sentirse muy solo o bastante solo, y el grupo que más lo dijo no fue el de los mayores de sesenta y cinco, sino el de los jóvenes de diecinueve a veintinueve años. Entre ellos, más de uno de cada cuatro. Entre los mayores, menos de uno de cada cinco.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>La generación que creció con el teléfono en la mano, la que nunca estuvo desconectada, es la que más soledad declara. Conectados y solos a la vez: es la frase que Ignacio llevaba en la cabeza a las cuatro de la mañana, convertida en estadística.</p>
+<p>No es un fracaso personal de nadie. Es una experiencia compartida por millones de personas que, cada una en su habitación, creen ser las únicas.</p>
+<h2>Ningún hombre es una isla</h2>
+<p>En el invierno de 1623, John Donne, poeta y deán de la catedral de San Pablo en Londres, cayó gravemente enfermo. Fue una fiebre que lo tuvo semanas en cama y que, por temor al contagio, apartó de su lado a casi todos. Desde ese lecho escribió un libro breve de meditaciones, que publicó al año siguiente con el título de <em>Devociones para ocasiones emergentes</em>. En la quinta, describe lo que más le dolía:</p>
+<div class="cita"><p class="trad">Así como la enfermedad es la mayor de las miserias, la mayor miseria de la enfermedad es la soledad: cuando el contagio aparta a quienes deberían asistir; hasta el médico apenas se atreve a venir.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Unos días después, todavía en cama, oyó doblar una campana. En el Londres de entonces, las campanas doblaban por quien estaba muriendo en la parroquia. Donne no sabía por quién era. Primero pensó que podía ser por él: quizá aquel por quien dobla está tan enfermo que no sabe que dobla por él. Y entonces escribió el pasaje que se convirtió, con el tiempo, en una de las frases más citadas de la lengua inglesa:</p>
+<div class="cita"><p class="trad">Ningún hombre es una isla, completo en sí mismo; cada hombre es un pedazo del continente, una parte de la tierra firme. Si el mar se lleva un terrón, Europa queda menor, como si fuera un promontorio, o la heredad de tus amigos o la tuya; la muerte de cualquier hombre me disminuye, porque estoy implicado en la humanidad; y por eso nunca mandes a preguntar por quién dobla la campana: dobla por ti.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Vale la pena mirar desde dónde se escribió. No lo dijo un hombre rodeado de gente, en una sobremesa feliz. Lo dijo alguien aislado, con fiebre, a quien hasta el médico visitaba con miedo. Donne no negó su soledad: la había descrito, días antes, como la peor parte de la enfermedad. Lo que hizo con ella fue otra cosa. Desde el fondo de su aislamiento, una campana que doblaba por un desconocido le hizo ver que estaba implicado en esa vida y en esa muerte. Que la isla era, mirada de cerca, un pedazo de continente.</p>
+<p>Esa es la operación que este libro enseña, y empieza donde empezó Donne: en la cama, con la soledad intacta, oyendo una campana.</p>
+<h2>La sala de espera</h2>
+<p>Diez días después, cuando volvió a que le quitaran los puntos, Ignacio se sentó en la misma sala de urgencias y recordó a las cinco personas de aquella noche: la mujer con el niño dormido, el hombre que se sostenía el pecho, los dos adolescentes, el señor de traje. Cada uno había llenado su formulario. Cada uno había tenido un renglón al pie de la hoja.</p>
+<p>Pensó que, a la una y cuarenta de aquella madrugada, en esa sala había seis personas solas. Y que también, al mismo tiempo, había seis personas juntas, en la misma sala, a la misma hora, por el mismo motivo, sin que ninguna lo supiera.</p>
+<p>La soledad era real. La otra cosa también.</p>
+<div class="perla"><p>Mil doscientos contactos.<br>Ningún nombre para el renglón vacío.</p></div>
+<h2>Tú también</h2>
+<p>Toma una hoja y escribe arriba, a mano: <em>Contacto de emergencia en la ciudad.</em> Debajo, anota los nombres que aparezcan sin pensarlo demasiado. Puede ser uno, varios o ninguno.</p>
+<p>Si aparecen nombres, mira cuántos de ellos sabrían qué hacer si los llamaras a las dos de la mañana. Si no aparece ninguno, no saques conclusiones todavía. Nota qué sientes en el cuerpo al ver el renglón vacío, y nómbralo por dentro con las palabras de este umbral: <em>esto es sed de otros.</em> No es un veredicto. Es una señal, y las señales se atienden.</p>
+<p>Guarda la hoja. Vas a volver a ella.</p>
+<div class="sigue"><a href="L11.html">Anterior: Portada</a><a class="prox" href="L11-U2.html">Siguiente: Las dos redes</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>La Puerta</em>, Portal Trinity, Nodo 2: «El mito de la separación», «Preguntas sin respuesta (por ahora)». Fragmento.</li><li id="nota-2">Lic. Arturo Rodríguez, <em>Los Vínculos Sagrados</em>, Trinity Origen, Libro V, Nodo 5: «La Red Viva», epígrafe. Fragmento.</li><li id="nota-3">John T. Cacioppo y William Patrick, <em>Loneliness: Human Nature and the Need for Social Connection</em> (2008). Paráfrasis.</li><li id="nota-4">Gallup y Meta, <em>The Global State of Social Connections</em> (2023), encuesta en 142 países: alrededor del 24 % de los adultos se siente muy o bastante solo; 27 % entre los 19 y los 29 años; 17 % entre los mayores de 65. Paráfrasis. El informe no incluye a China.</li><li id="nota-5">John Donne, <em>Devotions upon Emergent Occasions</em> (1624), Meditación V. Traducción propia. La enfermedad, probablemente un tifus, es de fines de 1623.</li><li id="nota-6">Ídem, Meditación XVII. Traducción propia.</li></ol></section></main></div><footer class="pie">Libro 11 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

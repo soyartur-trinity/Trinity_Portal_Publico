@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L11">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="cada perla refleja a todas">
+<title>La red de Indra · Umbral IV · La Red</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L11.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral IV</div><h1>La red de Indra</h1><p class="sub">cada perla refleja a todas</p></header><main><h2>Escalas a las seis</h2>
+<p>Todos los días, a las seis de la tarde, a través de la pared de la sala, se oían escalas en un piano. Do, re, mi, fa, sol, hacia arriba y hacia abajo, primero lentas y después más rápidas, y al final una pieza breve, siempre la misma, tocada sin prisa. Ignacio las había oído durante dos años como se oye el refrigerador: sin oírlas.</p>
+<p>Un miércoles de abril, las escalas no sonaron. El jueves tampoco. El viernes, a las seis menos cuarto, tocaron el timbre.</p>
+<p>Era la vecina del 6C. Se llamaba Esther, tenía setenta y nueve años y un teléfono en la mano que sostenía como si fuera un pájaro herido. Había sido profesora de piano durante cuarenta años. Su hija vivía en otro país con dos niñas, y cada domingo las veía por videollamada. Desde que el teléfono se había actualizado solo, la llamada no funcionaba. Se disculpó tres veces por molestar.</p>
+<p>Ignacio tardó cuatro minutos en arreglarlo. Cuando la pantalla se encendió, dos niñas gritaron <em>¡abuela!</em> al mismo tiempo, y Esther se tapó la boca con la mano. Ignacio se quedó en el umbral, sin saber dónde mirar, con un nudo en la garganta que no esperaba.</p>
+<p>Esa tarde, a las seis y diez, volvieron las escalas. Ignacio se dio cuenta de que el piano había sido, durante dos años, una de las pocas cosas fijas de sus días. Un hilo que nunca había contado. Y que él, sin saberlo, acababa de volverse un hilo en los días de ella.</p>
+<h2>El grafo</h2>
+<p>En el trabajo, Ignacio representa la ciudad como un <em>grafo</em>. Así se llama, en matemática, un conjunto de puntos unidos por líneas. Cada restaurante es un punto, cada cliente es un punto, cada repartidor es un punto que se mueve. Las líneas son los recorridos posibles. Un punto tiene un número, unas coordenadas y poco más. Por dentro está vacío: no le hace falta nada para que el cálculo funcione.</p>
+<p>Es, casi exactamente, la definición de red que John Barnes escribió en 1954 en una isla noruega. Y es una buena herramienta. Con ella se calcula en segundos cuál es el camino más corto para llevar un pedido a través de una ciudad de millones de personas.</p>
+<p>Pero esa semana, mientras miraba los puntos azules en el mapa, Ignacio pensó que algo se perdía en el dibujo. En su grafo, Esther era el 6C. Fabián era el 4471. Y él mismo, para algún sistema en algún lugar, era un punto más.</p>
+<h2>La red de Indra</h2>
+<p>Hay una imagen mucho más antigua de lo que es una red, y dice lo contrario.</p>
+<p>Viene del <em>Avatamsaka Sutra</em>, el <em>Sutra de la Guirnalda de Flores</em>, uno de los textos más extensos del budismo, compuesto en los primeros siglos de nuestra era. Sobre el palacio del dios Indra, dice la imagen, cuelga una red que se extiende sin fin en todas las direcciones. En cada nudo de la red hay una joya. Y cada joya, pulida como un espejo, refleja a todas las demás. Si te acercas a una sola, ves en ella a todas las otras, y en cada una de esas, de nuevo, a todas, sin término.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<p>En China, entre los siglos VI y VII, una escuela entera se formó alrededor de ese sutra: la escuela Huayan, que tomó su nombre del título chino del texto. Sus maestros hicieron de la red de Indra la imagen central de su enseñanza: nada existe por su cuenta; cada cosa contiene a todas, y todas están presentes en cada una.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p>
+<p>En un grafo, un nodo es un punto vacío. En la red de Indra, un nodo es una joya que contiene a todos los demás.</p>
+<div class="perla"><p>En un grafo, cada nodo es un punto.<br>En la red de Indra, cada nodo es una joya<br>que refleja a todas.</p></div>
+<h2>Los espejos de Fazang</h2>
+<p>Uno de esos maestros, Fazang, vivió entre los años 643 y 712 y fue maestro de la emperatriz Wu, la única mujer que gobernó China en su propio nombre. Las crónicas posteriores cuentan que la emperatriz le pidió una demostración simple de una enseñanza que le parecía demasiado abstracta. Fazang preparó una sala con diez espejos: ocho en las paredes, uno por cada punto cardinal y por cada punto intermedio, uno en el techo y otro en el suelo, todos enfrentados. En el centro puso una pequeña estatua del Buda y, a su lado, una lámpara encendida.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Cuando la emperatriz entró, vio la estatua reflejada en cada espejo. Y en cada espejo, los reflejos de todos los otros espejos, y los reflejos de esos reflejos, hasta perderse de vista. Una sola llama se había vuelto incontables llamas. Ningún espejo se quedaba con la luz: la devolvía a todos, y la recibía de todos.</p>
+<p>Es una lección que se entiende con el cuerpo antes que con la cabeza. Cada espejo es único: está en un lugar que ningún otro ocupa, refleja desde un ángulo que ningún otro tiene. Y ninguno está solo: lo que muestra está hecho, entero, de los demás.</p>
+<h2>Toca una joya</h2>
+<p>La imagen no se quedó en los templos. En 2002, tres matemáticos, David Mumford, Caroline Series y David Wright, publicaron un libro sobre unas figuras que aparecen al repetir sin fin ciertas transformaciones de círculos: cada círculo guarda copias de todos los demás, cada vez más pequeñas, hasta perderse de vista. Le pusieron por título <em>Las perlas de Indra</em>.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>Aquí abajo hay una red pequeña, de trece joyas. Toca una: su luz recorre los hilos y aparece, reflejada, dentro de cada una de las otras. Toca otra, y otra. Al final, cada joya guarda la luz de todas.</p>
+<figure class="indra joyas" id="joyas"><svg viewBox="0 6 200 156" role="group" aria-label="Una red de trece joyas unidas por hilos; dentro de cada joya, un reflejo pequeño de todas las demás"><g class="hilos"><line class="hilo" data-a="0" data-b="1" x1="100.0" y1="84.0" x2="100.0" y2="48.0"/><line class="hilo" data-a="0" data-b="2" x1="100.0" y1="84.0" x2="131.2" y2="66.0"/><line class="hilo" data-a="0" data-b="3" x1="100.0" y1="84.0" x2="131.2" y2="102.0"/><line class="hilo" data-a="0" data-b="4" x1="100.0" y1="84.0" x2="100.0" y2="120.0"/><line class="hilo" data-a="0" data-b="5" x1="100.0" y1="84.0" x2="68.8" y2="102.0"/><line class="hilo" data-a="0" data-b="6" x1="100.0" y1="84.0" x2="68.8" y2="66.0"/><line class="hilo" data-a="1" data-b="2" x1="100.0" y1="48.0" x2="131.2" y2="66.0"/><line class="hilo" data-a="2" data-b="3" x1="131.2" y1="66.0" x2="131.2" y2="102.0"/><line class="hilo" data-a="3" data-b="4" x1="131.2" y1="102.0" x2="100.0" y2="120.0"/><line class="hilo" data-a="4" data-b="5" x1="100.0" y1="120.0" x2="68.8" y2="102.0"/><line class="hilo" data-a="5" data-b="6" x1="68.8" y1="102.0" x2="68.8" y2="66.0"/><line class="hilo" data-a="6" data-b="1" x1="68.8" y1="66.0" x2="100.0" y2="48.0"/><line class="hilo" data-a="7" data-b="1" x1="135.0" y1="23.4" x2="100.0" y2="48.0"/><line class="hilo" data-a="8" data-b="2" x1="170.0" y1="84.0" x2="131.2" y2="66.0"/><line class="hilo" data-a="9" data-b="3" x1="135.0" y1="144.6" x2="131.2" y2="102.0"/><line class="hilo" data-a="10" data-b="4" x1="65.0" y1="144.6" x2="100.0" y2="120.0"/><line class="hilo" data-a="11" data-b="5" x1="30.0" y1="84.0" x2="68.8" y2="102.0"/><line class="hilo" data-a="12" data-b="6" x1="65.0" y1="23.4" x2="68.8" y2="66.0"/><line class="hilo" data-a="7" data-b="2" x1="135.0" y1="23.4" x2="131.2" y2="66.0"/><line class="hilo" data-a="8" data-b="3" x1="170.0" y1="84.0" x2="131.2" y2="102.0"/><line class="hilo" data-a="9" data-b="4" x1="135.0" y1="144.6" x2="100.0" y2="120.0"/><line class="hilo" data-a="10" data-b="5" x1="65.0" y1="144.6" x2="68.8" y2="102.0"/><line class="hilo" data-a="11" data-b="6" x1="30.0" y1="84.0" x2="68.8" y2="66.0"/><line class="hilo" data-a="12" data-b="1" x1="65.0" y1="23.4" x2="100.0" y2="48.0"/><line class="hilo" data-a="7" data-b="8" x1="135.0" y1="23.4" x2="170.0" y2="84.0"/><line class="hilo" data-a="8" data-b="9" x1="170.0" y1="84.0" x2="135.0" y2="144.6"/><line class="hilo" data-a="9" data-b="10" x1="135.0" y1="144.6" x2="65.0" y2="144.6"/><line class="hilo" data-a="10" data-b="11" x1="65.0" y1="144.6" x2="30.0" y2="84.0"/><line class="hilo" data-a="11" data-b="12" x1="30.0" y1="84.0" x2="65.0" y2="23.4"/><line class="hilo" data-a="12" data-b="7" x1="65.0" y1="23.4" x2="135.0" y2="23.4"/></g><g class="nodo" data-i="0" tabindex="0" role="button" aria-label="Joya 1"><circle class="toque" cx="100.0" cy="84.0" r="13"/><circle class="brillo" cx="100.0" cy="84.0" r="11"/><circle class="joya" cx="100.0" cy="84.0" r="8.6"/><circle class="r r0" cx="100.00" cy="84.00" r="0.8"/><circle class="r r1" cx="100.00" cy="80.94" r="0.8"/><circle class="r r2" cx="102.65" cy="82.47" r="0.8"/><circle class="r r3" cx="102.65" cy="85.53" r="0.8"/><circle class="r r4" cx="100.00" cy="87.06" r="0.8"/><circle class="r r5" cx="97.35" cy="85.53" r="0.8"/><circle class="r r6" cx="97.35" cy="82.47" r="0.8"/><circle class="r r7" cx="102.97" cy="78.85" r="0.8"/><circle class="r r8" cx="105.95" cy="84.00" r="0.8"/><circle class="r r9" cx="102.97" cy="89.15" r="0.8"/><circle class="r r10" cx="97.03" cy="89.15" r="0.8"/><circle class="r r11" cx="94.05" cy="84.00" r="0.8"/><circle class="r r12" cx="97.02" cy="78.85" r="0.8"/></g><g class="nodo" data-i="1" tabindex="0" role="button" aria-label="Joya 2"><circle class="toque" cx="100.0" cy="48.0" r="13"/><circle class="brillo" cx="100.0" cy="48.0" r="11"/><circle class="joya" cx="100.0" cy="48.0" r="8.6"/><circle class="r r0" cx="100.00" cy="48.00" r="0.8"/><circle class="r r1" cx="100.00" cy="44.94" r="0.8"/><circle class="r r2" cx="102.65" cy="46.47" r="0.8"/><circle class="r r3" cx="102.65" cy="49.53" r="0.8"/><circle class="r r4" cx="100.00" cy="51.06" r="0.8"/><circle class="r r5" cx="97.35" cy="49.53" r="0.8"/><circle class="r r6" cx="97.35" cy="46.47" r="0.8"/><circle class="r r7" cx="102.97" cy="42.85" r="0.8"/><circle class="r r8" cx="105.95" cy="48.00" r="0.8"/><circle class="r r9" cx="102.97" cy="53.15" r="0.8"/><circle class="r r10" cx="97.03" cy="53.15" r="0.8"/><circle class="r r11" cx="94.05" cy="48.00" r="0.8"/><circle class="r r12" cx="97.02" cy="42.85" r="0.8"/></g><g class="nodo" data-i="2" tabindex="0" role="button" aria-label="Joya 3"><circle class="toque" cx="131.2" cy="66.0" r="13"/><circle class="brillo" cx="131.2" cy="66.0" r="11"/><circle class="joya" cx="131.2" cy="66.0" r="8.6"/><circle class="r r0" cx="131.18" cy="66.00" r="0.8"/><circle class="r r1" cx="131.18" cy="62.94" r="0.8"/><circle class="r r2" cx="133.83" cy="64.47" r="0.8"/><circle class="r r3" cx="133.83" cy="67.53" r="0.8"/><circle class="r r4" cx="131.18" cy="69.06" r="0.8"/><circle class="r r5" cx="128.53" cy="67.53" r="0.8"/><circle class="r r6" cx="128.53" cy="64.47" r="0.8"/><circle class="r r7" cx="134.15" cy="60.85" r="0.8"/><circle class="r r8" cx="137.13" cy="66.00" r="0.8"/><circle class="r r9" cx="134.15" cy="71.15" r="0.8"/><circle class="r r10" cx="128.20" cy="71.15" r="0.8"/><circle class="r r11" cx="125.23" cy="66.00" r="0.8"/><circle class="r r12" cx="128.20" cy="60.85" r="0.8"/></g><g class="nodo" data-i="3" tabindex="0" role="button" aria-label="Joya 4"><circle class="toque" cx="131.2" cy="102.0" r="13"/><circle class="brillo" cx="131.2" cy="102.0" r="11"/><circle class="joya" cx="131.2" cy="102.0" r="8.6"/><circle class="r r0" cx="131.18" cy="102.00" r="0.8"/><circle class="r r1" cx="131.18" cy="98.94" r="0.8"/><circle class="r r2" cx="133.83" cy="100.47" r="0.8"/><circle class="r r3" cx="133.83" cy="103.53" r="0.8"/><circle class="r r4" cx="131.18" cy="105.06" r="0.8"/><circle class="r r5" cx="128.53" cy="103.53" r="0.8"/><circle class="r r6" cx="128.53" cy="100.47" r="0.8"/><circle class="r r7" cx="134.15" cy="96.85" r="0.8"/><circle class="r r8" cx="137.13" cy="102.00" r="0.8"/><circle class="r r9" cx="134.15" cy="107.15" r="0.8"/><circle class="r r10" cx="128.20" cy="107.15" r="0.8"/><circle class="r r11" cx="125.23" cy="102.00" r="0.8"/><circle class="r r12" cx="128.20" cy="96.85" r="0.8"/></g><g class="nodo" data-i="4" tabindex="0" role="button" aria-label="Joya 5"><circle class="toque" cx="100.0" cy="120.0" r="13"/><circle class="brillo" cx="100.0" cy="120.0" r="11"/><circle class="joya" cx="100.0" cy="120.0" r="8.6"/><circle class="r r0" cx="100.00" cy="120.00" r="0.8"/><circle class="r r1" cx="100.00" cy="116.94" r="0.8"/><circle class="r r2" cx="102.65" cy="118.47" r="0.8"/><circle class="r r3" cx="102.65" cy="121.53" r="0.8"/><circle class="r r4" cx="100.00" cy="123.06" r="0.8"/><circle class="r r5" cx="97.35" cy="121.53" r="0.8"/><circle class="r r6" cx="97.35" cy="118.47" r="0.8"/><circle class="r r7" cx="102.97" cy="114.85" r="0.8"/><circle class="r r8" cx="105.95" cy="120.00" r="0.8"/><circle class="r r9" cx="102.97" cy="125.15" r="0.8"/><circle class="r r10" cx="97.03" cy="125.15" r="0.8"/><circle class="r r11" cx="94.05" cy="120.00" r="0.8"/><circle class="r r12" cx="97.02" cy="114.85" r="0.8"/></g><g class="nodo" data-i="5" tabindex="0" role="button" aria-label="Joya 6"><circle class="toque" cx="68.8" cy="102.0" r="13"/><circle class="brillo" cx="68.8" cy="102.0" r="11"/><circle class="joya" cx="68.8" cy="102.0" r="8.6"/><circle class="r r0" cx="68.82" cy="102.00" r="0.8"/><circle class="r r1" cx="68.82" cy="98.94" r="0.8"/><circle class="r r2" cx="71.47" cy="100.47" r="0.8"/><circle class="r r3" cx="71.47" cy="103.53" r="0.8"/><circle class="r r4" cx="68.82" cy="105.06" r="0.8"/><circle class="r r5" cx="66.17" cy="103.53" r="0.8"/><circle class="r r6" cx="66.17" cy="100.47" r="0.8"/><circle class="r r7" cx="71.80" cy="96.85" r="0.8"/><circle class="r r8" cx="74.77" cy="102.00" r="0.8"/><circle class="r r9" cx="71.80" cy="107.15" r="0.8"/><circle class="r r10" cx="65.85" cy="107.15" r="0.8"/><circle class="r r11" cx="62.87" cy="102.00" r="0.8"/><circle class="r r12" cx="65.85" cy="96.85" r="0.8"/></g><g class="nodo" data-i="6" tabindex="0" role="button" aria-label="Joya 7"><circle class="toque" cx="68.8" cy="66.0" r="13"/><circle class="brillo" cx="68.8" cy="66.0" r="11"/><circle class="joya" cx="68.8" cy="66.0" r="8.6"/><circle class="r r0" cx="68.82" cy="66.00" r="0.8"/><circle class="r r1" cx="68.82" cy="62.94" r="0.8"/><circle class="r r2" cx="71.47" cy="64.47" r="0.8"/><circle class="r r3" cx="71.47" cy="67.53" r="0.8"/><circle class="r r4" cx="68.82" cy="69.06" r="0.8"/><circle class="r r5" cx="66.17" cy="67.53" r="0.8"/><circle class="r r6" cx="66.17" cy="64.47" r="0.8"/><circle class="r r7" cx="71.80" cy="60.85" r="0.8"/><circle class="r r8" cx="74.77" cy="66.00" r="0.8"/><circle class="r r9" cx="71.80" cy="71.15" r="0.8"/><circle class="r r10" cx="65.85" cy="71.15" r="0.8"/><circle class="r r11" cx="62.87" cy="66.00" r="0.8"/><circle class="r r12" cx="65.85" cy="60.85" r="0.8"/></g><g class="nodo" data-i="7" tabindex="0" role="button" aria-label="Joya 8"><circle class="toque" cx="135.0" cy="23.4" r="13"/><circle class="brillo" cx="135.0" cy="23.4" r="11"/><circle class="joya" cx="135.0" cy="23.4" r="8.6"/><circle class="r r0" cx="135.00" cy="23.38" r="0.8"/><circle class="r r1" cx="135.00" cy="20.32" r="0.8"/><circle class="r r2" cx="137.65" cy="21.85" r="0.8"/><circle class="r r3" cx="137.65" cy="24.91" r="0.8"/><circle class="r r4" cx="135.00" cy="26.44" r="0.8"/><circle class="r r5" cx="132.35" cy="24.91" r="0.8"/><circle class="r r6" cx="132.35" cy="21.85" r="0.8"/><circle class="r r7" cx="137.97" cy="18.23" r="0.8"/><circle class="r r8" cx="140.95" cy="23.38" r="0.8"/><circle class="r r9" cx="137.97" cy="28.53" r="0.8"/><circle class="r r10" cx="132.03" cy="28.53" r="0.8"/><circle class="r r11" cx="129.05" cy="23.38" r="0.8"/><circle class="r r12" cx="132.03" cy="18.23" r="0.8"/></g><g class="nodo" data-i="8" tabindex="0" role="button" aria-label="Joya 9"><circle class="toque" cx="170.0" cy="84.0" r="13"/><circle class="brillo" cx="170.0" cy="84.0" r="11"/><circle class="joya" cx="170.0" cy="84.0" r="8.6"/><circle class="r r0" cx="170.00" cy="84.00" r="0.8"/><circle class="r r1" cx="170.00" cy="80.94" r="0.8"/><circle class="r r2" cx="172.65" cy="82.47" r="0.8"/><circle class="r r3" cx="172.65" cy="85.53" r="0.8"/><circle class="r r4" cx="170.00" cy="87.06" r="0.8"/><circle class="r r5" cx="167.35" cy="85.53" r="0.8"/><circle class="r r6" cx="167.35" cy="82.47" r="0.8"/><circle class="r r7" cx="172.97" cy="78.85" r="0.8"/><circle class="r r8" cx="175.95" cy="84.00" r="0.8"/><circle class="r r9" cx="172.97" cy="89.15" r="0.8"/><circle class="r r10" cx="167.03" cy="89.15" r="0.8"/><circle class="r r11" cx="164.05" cy="84.00" r="0.8"/><circle class="r r12" cx="167.03" cy="78.85" r="0.8"/></g><g class="nodo" data-i="9" tabindex="0" role="button" aria-label="Joya 10"><circle class="toque" cx="135.0" cy="144.6" r="13"/><circle class="brillo" cx="135.0" cy="144.6" r="11"/><circle class="joya" cx="135.0" cy="144.6" r="8.6"/><circle class="r r0" cx="135.00" cy="144.62" r="0.8"/><circle class="r r1" cx="135.00" cy="141.56" r="0.8"/><circle class="r r2" cx="137.65" cy="143.09" r="0.8"/><circle class="r r3" cx="137.65" cy="146.15" r="0.8"/><circle class="r r4" cx="135.00" cy="147.68" r="0.8"/><circle class="r r5" cx="132.35" cy="146.15" r="0.8"/><circle class="r r6" cx="132.35" cy="143.09" r="0.8"/><circle class="r r7" cx="137.97" cy="139.47" r="0.8"/><circle class="r r8" cx="140.95" cy="144.62" r="0.8"/><circle class="r r9" cx="137.97" cy="149.77" r="0.8"/><circle class="r r10" cx="132.03" cy="149.77" r="0.8"/><circle class="r r11" cx="129.05" cy="144.62" r="0.8"/><circle class="r r12" cx="132.03" cy="139.47" r="0.8"/></g><g class="nodo" data-i="10" tabindex="0" role="button" aria-label="Joya 11"><circle class="toque" cx="65.0" cy="144.6" r="13"/><circle class="brillo" cx="65.0" cy="144.6" r="11"/><circle class="joya" cx="65.0" cy="144.6" r="8.6"/><circle class="r r0" cx="65.00" cy="144.62" r="0.8"/><circle class="r r1" cx="65.00" cy="141.56" r="0.8"/><circle class="r r2" cx="67.65" cy="143.09" r="0.8"/><circle class="r r3" cx="67.65" cy="146.15" r="0.8"/><circle class="r r4" cx="65.00" cy="147.68" r="0.8"/><circle class="r r5" cx="62.35" cy="146.15" r="0.8"/><circle class="r r6" cx="62.35" cy="143.09" r="0.8"/><circle class="r r7" cx="67.98" cy="139.47" r="0.8"/><circle class="r r8" cx="70.95" cy="144.62" r="0.8"/><circle class="r r9" cx="67.98" cy="149.77" r="0.8"/><circle class="r r10" cx="62.03" cy="149.77" r="0.8"/><circle class="r r11" cx="59.05" cy="144.62" r="0.8"/><circle class="r r12" cx="62.03" cy="139.47" r="0.8"/></g><g class="nodo" data-i="11" tabindex="0" role="button" aria-label="Joya 12"><circle class="toque" cx="30.0" cy="84.0" r="13"/><circle class="brillo" cx="30.0" cy="84.0" r="11"/><circle class="joya" cx="30.0" cy="84.0" r="8.6"/><circle class="r r0" cx="30.00" cy="84.00" r="0.8"/><circle class="r r1" cx="30.00" cy="80.94" r="0.8"/><circle class="r r2" cx="32.65" cy="82.47" r="0.8"/><circle class="r r3" cx="32.65" cy="85.53" r="0.8"/><circle class="r r4" cx="30.00" cy="87.06" r="0.8"/><circle class="r r5" cx="27.35" cy="85.53" r="0.8"/><circle class="r r6" cx="27.35" cy="82.47" r="0.8"/><circle class="r r7" cx="32.98" cy="78.85" r="0.8"/><circle class="r r8" cx="35.95" cy="84.00" r="0.8"/><circle class="r r9" cx="32.98" cy="89.15" r="0.8"/><circle class="r r10" cx="27.03" cy="89.15" r="0.8"/><circle class="r r11" cx="24.05" cy="84.00" r="0.8"/><circle class="r r12" cx="27.02" cy="78.85" r="0.8"/></g><g class="nodo" data-i="12" tabindex="0" role="button" aria-label="Joya 13"><circle class="toque" cx="65.0" cy="23.4" r="13"/><circle class="brillo" cx="65.0" cy="23.4" r="11"/><circle class="joya" cx="65.0" cy="23.4" r="8.6"/><circle class="r r0" cx="65.00" cy="23.38" r="0.8"/><circle class="r r1" cx="65.00" cy="20.32" r="0.8"/><circle class="r r2" cx="67.65" cy="21.85" r="0.8"/><circle class="r r3" cx="67.65" cy="24.91" r="0.8"/><circle class="r r4" cx="65.00" cy="26.44" r="0.8"/><circle class="r r5" cx="62.35" cy="24.91" r="0.8"/><circle class="r r6" cx="62.35" cy="21.85" r="0.8"/><circle class="r r7" cx="67.97" cy="18.23" r="0.8"/><circle class="r r8" cx="70.95" cy="23.38" r="0.8"/><circle class="r r9" cx="67.97" cy="28.53" r="0.8"/><circle class="r r10" cx="62.02" cy="28.53" r="0.8"/><circle class="r r11" cx="59.05" cy="23.38" r="0.8"/><circle class="r r12" cx="62.02" cy="18.23" r="0.8"/></g></svg>
+  <figcaption class="cuenta" id="joyas-cuenta" aria-live="polite">Toca una joya.</figcaption>
+  <button type="button" class="apagar" id="joyas-apagar">Apagar la red</button>
+</figure>
+<h2>Una gota de rocío</h2>
+<p>Trinity conoce esta imagen. <em>Entrelazamiento Sagrado</em>, el segundo libro de Trinity Quantum, termina su primer nodo nombrándola:</p>
+<div class="cita"><p class="trad">La Red de Indra se revela: cada gota de rocío refleja todas las demás, infinitamente, eternamente, instantáneamente.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Y en ese mismo nodo deja una frase que es, quizá, la respuesta más precisa a la pregunta de La Puerta, la de por qué se siente tan real la soledad:</p>
+<div class="cita"><p class="trad">Estás infinitamente solo en tu unicidad y eternamente acompañado en tu esencia.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Las dos mitades son verdaderas, y ninguna anula a la otra. Nadie vive tu vida por ti; nadie ve el mundo desde tu ángulo exacto; nadie siente tu cansancio desde adentro. En eso, estás solo, y está bien que lo sepas. Y al mismo tiempo, lo que eres está hecho de lo que otros te dieron, y lo que ves está lleno de ellos. En eso, nunca estuviste solo. La joya es única, y refleja a todas. Trinity enseña a sostener las paradojas así, con los dos polos enteros, sin promediarlos en una frase tibia.</p>
+<p><em>Los Vínculos Sagrados</em> lo dice de otra manera, al describir dos niveles de la red: la red humana, que te une con cada persona viva, y la red de la vida, que te une con plantas, animales, océanos y montañas. Y propone llevarlo a cada encuentro del día con una frase:</p>
+<div class="cita"><p class="trad">Somos nodos conectados en una red infinita. Lo que hago por ti, lo hago por mí. Lo que hago por mí, lo hago por ti.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Ignacio pensó en los cuatro minutos del teléfono de Esther. No los había hecho por él. Y sin embargo, esa tarde, las escalas habían vuelto para los dos.</p>
+<h2>Hasta tres grados</h2>
+<p>En 2008, dos investigadores, Nicholas Christakis y James Fowler, analizaron los datos de casi cinco mil personas de una ciudad de Massachusetts, seguidas durante veinte años por un estudio médico. Encontraron que la felicidad no se distribuía al azar: se agrupaba. Tener un amigo cercano que se volvía más feliz aumentaba la probabilidad de volverse más feliz. Y el efecto se detectaba hasta tres grados de distancia: en los amigos de los amigos de los amigos, personas que quizá nunca se habían visto.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>El hallazgo se discutió mucho. Otros investigadores mostraron que el método podía confundir el contagio con la simple afinidad, la de quienes se eligen porque ya se parecen.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup> Pero la imagen que deja coincide con lo que cualquiera ha visto en su propia vida: lo que se enciende en una joya se ve en otras que nunca conocerás. El ánimo de Esther al ver a sus nietas llegó, a través de una pared, a la tarde de Ignacio. Y lo que él sintiera esa noche iba a llegar, de algún modo, a alguien más.</p>
+<p>Esto no es una carga. Nadie es responsable del ánimo de toda la red, y nadie tiene la culpa de lo que otros sienten. Es una noticia, y es buena: lo que cuidas en ti no se queda en ti.</p>
+<h2>Joya, no punto</h2>
+<p>El viernes siguiente, Ignacio abrió el grafo de su trabajo y miró los puntos un rato largo, sin cambiar nada. Pensó que el dibujo seguía siendo útil para lo que servía. Pero que ya no podría mirarlo sin saber que cada punto era una joya: que el 4471 llevaba dentro, reflejada, a una hija de doce años a la que le mandaba audios cada noche; que el 6C llevaba dentro dos niñas en otro país y cuarenta años de alumnos que habían aprendido escalas; que él mismo llevaba dentro a su madre en una cocina lejana y a cuatro amigos que antes jugaban los jueves.</p>
+<p>Otro libro de Trinity, <em>La Consciencia Planetaria</em>, tiene para ese momento una imagen que podría estar bordada en el centro de la red de Indra:</p>
+<div class="cita"><p class="trad">Somos simultáneamente los tejedores, los hilos y el tejido mismo.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p></div>
+<h2>Tú también</h2>
+<p>Elige a una persona con la que te cruzaste hoy, aunque haya sido un instante: quien te vendió algo, quien te abrió una puerta, quien viajaba a tu lado. Piensa en tres personas que esa persona lleva reflejadas: alguien a quien quiere, alguien que le enseñó algo, alguien que la espera en su casa. No necesitas saberlo: basta con saber que existen.</p>
+<p>Después haz lo mismo contigo: tres personas que llevas reflejadas. Escribe la frase: <em>joya, no punto.</em></p>
+<div class="sigue"><a href="L11-U3.html">Anterior: Dónde termino yo</a><a class="prox" href="L11-U5.html">Siguiente: La brecha</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1"><em>Avatamsaka Sutra</em> (<em>Sutra de la Guirnalda de Flores</em>), la imagen de la red de Indra. Paráfrasis sobre Francis H. Cook, <em>Hua-yen Buddhism: The Jewel Net of Indra</em> (1977).</li><li id="nota-2">Sobre la escuela Huayan y la red de Indra: ídem; e Imre Hamar (ed.), <em>Reflecting Mirrors: Perspectives on Huayan Buddhism</em> (2007), introducción. Paráfrasis.</li><li id="nota-3">Sobre la sala de los espejos que Fazang habría preparado para la emperatriz Wu, según descripciones posteriores: Imre Hamar (ed.), <em>Reflecting Mirrors</em> (2007), introducción. Paráfrasis.</li><li id="nota-4">David Mumford, Caroline Series y David Wright, <em>Indra's Pearls: The Vision of Felix Klein</em> (2002). Paráfrasis.</li><li id="nota-5">Lic. Arturo Rodríguez, <em>Entrelazamiento Sagrado</em>, Trinity Quantum, Libro 2, Nodo 1: «Conexiones más allá del espacio-tiempo», «Paradoja medicinal» e «Integración final». Fragmentos.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>Los Vínculos Sagrados</em>, Trinity Origen, Libro V, Nodo 5: «La Red Viva», «Los tres niveles de la red» y «Protocolos de servicio a la red», protocolo 4. Paráfrasis y fragmento.</li><li id="nota-7">James H. Fowler y Nicholas A. Christakis, «Dynamic Spread of Happiness in a Large Social Network: Longitudinal Analysis over 20 Years in the Framingham Heart Study», <em>BMJ</em> 337 (2008): a2338. Paráfrasis.</li><li id="nota-8">Ethan Cohen-Cole y Jason M. Fletcher, «Detecting Implausible Social Network Effects in Acne, Height, and Headaches: Longitudinal Analysis», <em>BMJ</em> 337 (2008): a2533. Paráfrasis.</li><li id="nota-9">Lic. Arturo Rodríguez, <em>La Consciencia Planetaria</em>, Trinity Origen, Libro XI, Nodo 2: «La Red de Consciencias Despiertas», «Síntesis: la gran tejedura». Fragmento.</li></ol></section></main></div><footer class="pie">Libro 11 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer><script>
+(function(){
+
+  function Red(raiz){
+    var nodos=[].slice.call(raiz.querySelectorAll('.nodo')), hilos=[].slice.call(raiz.querySelectorAll('.hilo')), N=nodos.length, ady=[], timers=[], red=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    for(var i=0;i<N;i++){ ady.push([]); }
+    hilos.forEach(function(h){ var a=+h.getAttribute('data-a'), b=+h.getAttribute('data-b'); ady[a].push(b); ady[b].push(a); });
+    function dist(s){ var d=[], q=[s]; for(var i=0;i<N;i++){ d.push(-1); } d[s]=0; while(q.length){ var u=q.shift(); ady[u].forEach(function(v){ if(d[v]<0){ d[v]=d[u]+1; q.push(v); } }); } return d; }
+    function hiloEntre(a,b){ for(var i=0;i<hilos.length;i++){ var x=+hilos[i].getAttribute('data-a'), y=+hilos[i].getAttribute('data-b'); if((x===a&&y===b)||(x===b&&y===a)){ return hilos[i]; } } return null; }
+    function llega(s,k,d){
+      var r=nodos[k].querySelector('.r'+s); if(r){ r.classList.add('on'); }
+      ady[k].forEach(function(v){ if(d[v]===d[k]-1){ var h=hiloEntre(k,v); if(h){ h.classList.add('vivo'); timers.push(setTimeout(function(){ h.classList.remove('vivo'); h.classList.add('tocado'); }, red?0:800)); } } });
+    }
+    this.N=N; this.nodos=nodos;
+    this.encender=function(s,paso){
+      var d=dist(s); nodos[s].classList.add('luz');
+      for(var k=0;k<N;k++){ (function(k){ if(red||d[k]===0){ llega(s,k,d); } else { timers.push(setTimeout(function(){ llega(s,k,d); }, d[k]*paso)); } })(k); }
+    };
+    this.parar=function(){ timers.forEach(function(x){ clearTimeout(x); }); timers=[]; };
+    this.todo=function(){ nodos.forEach(function(g){ g.classList.add('luz'); [].forEach.call(g.querySelectorAll('.r'),function(r){ r.classList.add('on'); }); }); };
+    this.apagar=function(){ this.parar(); nodos.forEach(function(g){ g.classList.remove('luz'); [].forEach.call(g.querySelectorAll('.r'),function(r){ r.classList.remove('on'); }); }); hilos.forEach(function(h){ h.classList.remove('vivo'); h.classList.remove('tocado'); }); };
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(e){ raiz.classList.toggle('vista',e[0].isIntersecting); }).observe(raiz); } else { raiz.classList.add('vista'); }
+  }
+
+  var raiz=document.getElementById('joyas'); if(!raiz){ return; }
+  var R=new Red(raiz), cu=document.getElementById('joyas-cuenta'), hechas={};
+  function tocar(i){
+    if(hechas[i]){ return; } hechas[i]=true; R.encender(i,380);
+    var n=Object.keys(hechas).length;
+    cu.textContent = n===1 ? 'Su luz ya está dentro de todas. Toca otra.' : (n<R.N ? 'Encendiste '+n+' de '+R.N+'. Cada una guarda la luz de las otras.' : 'Cada joya refleja a todas.');
+  }
+  R.nodos.forEach(function(g){ var i=+g.getAttribute('data-i');
+    g.addEventListener('click',function(){ tocar(i); });
+    g.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); tocar(i); } });
+  });
+  document.getElementById('joyas-apagar').addEventListener('click',function(){ R.apagar(); hechas={}; cu.textContent='Toca una joya.'; });
+})();
+</script>
+</body>
+</html>
