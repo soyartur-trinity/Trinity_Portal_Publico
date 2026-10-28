@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L12">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="cuando la obra se vuelve espejo">
+<title>El hambre de ser visto · Umbral III · La Obra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+/* la llama que pasa */
+.llama{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.llama button{appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.llama button:hover{border-color:var(--border-strong)}
+.llama svg{display:block;width:17rem;max-width:100%;height:auto}
+.llama .cuerpo{fill:rgba(212,228,244,.10);stroke:rgba(168,196,224,.42);stroke-width:.8}
+.llama .mecha{stroke:rgba(200,215,235,.55);stroke-width:1.1;stroke-linecap:round}
+.llama .fuego{fill:var(--ambar);opacity:0;transform-origin:50% 100%;transform-box:fill-box;transition:opacity 1.1s ease}
+.llama .resplandor{fill:url(#g-llama);opacity:0;transition:opacity 1.4s ease}
+.llama .vela.on .fuego{opacity:1}
+.llama .vela.on .resplandor{opacity:.75}
+.llama.vista .vela.on .fuego{animation:titila 3.2s ease-in-out infinite}
+@keyframes titila{0%,100%{transform:scale(1,1)}50%{transform:scale(.93,1.07)}}
+.llama .arco{fill:none;stroke:rgba(217,179,108,.75);stroke-width:.9;stroke-linecap:round;stroke-dasharray:40;stroke-dashoffset:40;opacity:0}
+.llama .arco.pasa{opacity:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.2s ease-out,opacity .3s ease}
+.llama .arco.hecho{opacity:.22;stroke-dashoffset:0}
+.llama.fin .vela.on .resplandor{opacity:1}
+.llama .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .paso{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .paso-halo{fill:none;stroke:var(--ambar);stroke-width:.8;opacity:0;animation:tenue .9s ease-out forwards}
+@keyframes tenue{to{opacity:.35}}
+@media (prefers-reduced-motion:reduce){
+  .llama.vista .vela.on .fuego{animation:none}
+  .llama .fuego,.llama .resplandor,.llama .arco.pasa{transition:none}
+  .campo-svg .paso{animation:none;opacity:.85}
+  .campo-svg .paso-halo{animation:none;opacity:.35}
+}
+
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L12.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral III</div><h1>El hambre de ser visto</h1><p class="sub">cuando la obra se vuelve espejo</p></header><main><h2>La foto</h2>
+<p>Renata volvió el lunes siguiente, y el otro. Ofelia no le preguntó si iba a seguir viniendo. Le dio una carpeta con el nombre de Celestino escrito en la tapa y le dijo que los martes y jueves lo acompañaba otro voluntario, que se anotaran en la hoja lo que habían hecho para no repetir.</p>
+<p>El tercer lunes, a las siete y cuarto, Celestino escribió su nombre completo por primera vez. Le costó casi diez minutos. La C le salió grande y la O, torcida; la última letra rozó el borde de la hoja. Cuando terminó, dejó el lápiz sobre el pupitre y se quedó mirando la palabra como quien mira una pared recién levantada, buscándole el plomo.</p>
+<p>Renata sintió un golpe de alegría en el pecho. Y casi sin pensarlo sacó el teléfono para fotografiar la página.</p>
+<p>Ya tenía el texto armado en la cabeza. <em>El mejor momento de mi semana.</em> Una foto del cuaderno, desde arriba, con la mano de Celestino en el borde. Quizá un corazón.</p>
+<p>Ofelia pasaba por detrás con una pila de fotocopias. Sin detenerse del todo, apoyó dos dedos sobre el teléfono y lo bajó con suavidad.</p>
+<p>—Aquí nadie sale en fotos —dijo—. Ni los alumnos ni nosotros.</p>
+<p>No había reproche en la voz. Lo explicó en dos frases, mientras seguía caminando hacia el otro pupitre: muchos de los que venían habían tardado años en animarse a cruzar esa puerta, y algunos todavía no se lo habían contado a sus hijos. Que nadie se enterara era parte de la clase.</p>
+<p>Renata guardó el teléfono. Sintió calor en la cara. En el autobús, de regreso, se dio cuenta de algo que la incomodó más que la vergüenza: la mitad de la alegría de esa tarde había sido el mensaje que estaba escribiendo por dentro, y la reacción que imaginaba en los demás.</p>
+<h2>Sin mí, nada</h2>
+<p>El primer nodo de <em>Liderazgo Consciente</em> hace un inventario de lo que Trinity llama el ego que necesita dominar. Lo describe con la franqueza de un diagnóstico, en siete síntomas. El segundo se titula <em>hambre de reconocimiento</em>, y lo pinta como un agujero que nunca termina de llenarse. Entre sus señales observables enumera estas:</p>
+<div class="cita"><p class="trad">Nombre en todo proyecto.<br>Narrativa del «sin mí, nada».<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Y cuando busca debajo, en lo que el nodo llama la herida, encuentra dos raíces:</p>
+<div class="cita"><p class="trad">Valía atada a logros.<br>Confusión entre ser y hacer.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Renata no tenía un nombre en ningún proyecto, salvo en una placa de acrílico que no le había servido para nada. Pero reconoció la raíz. Había aprendido muy temprano que valía lo que rendía, y ahora estaba a punto de convertir en rendimiento, también, la hora de los lunes.</p>
+<p>En otro pasaje del mismo nodo, Trinity describe un arquetipo que llama <em>el Salvador</em>. Entre sus sombras anota una frase breve, de las que no se olvidan:</p>
+<div class="cita"><p class="trad">Necesita ser necesitado.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p></div>
+<p>No es una condena. Es una descripción de algo que casi todos los que ayudan conocen por dentro: el pequeño placer de ser imprescindible, el miedo a que el otro deje de necesitarnos. Lo que hace es correr el centro del acto. El acto, que miraba al otro, empieza a mirar al que lo hace.</p>
+<h2>Mejor a los ojos de otros</h2>
+<p>El hambre de ser visto no es un defecto de principiantes. En las primeras páginas de su <em>Confesión</em>, Tolstói hace la cuenta de su propia juventud. Cuenta que su única fe verdadera, a los veinte años, era la de perfeccionarse: estudiar todo, fortalecer la voluntad, endurecer el cuerpo. Y cuenta cómo esa fe se torció sin que lo notara. Pronto ya no quiso ser mejor a sus propios ojos, ni a los de Dios, sino a los ojos de los demás. Y muy poco después, ni siquiera mejor: más famoso, más importante y más rico que los otros. Admite que empezó a escribir por vanidad, por codicia y por orgullo.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<p>El autor de <em>Guerra y paz</em> conoció esa hambre como cualquiera. Y algo de lo que se le apagó en la cima, aquella noche de las seis mil desiatinas y los trescientos caballos, fue eso: la mirada de los demás, que lo había alimentado durante treinta años, ya no le alcanzaba para vivir.</p>
+<h2>No eliminar el ego</h2>
+<p>Sería fácil sacar de aquí una conclusión equivocada: que el deseo de ser visto es malo y hay que extirparlo. Trinity no dice eso.</p>
+<p>El octavo nodo de <em>La Puerta</em>, el que separaba el crear del servir, se detiene en una trampa. Quien se propone actuar sin ego, observa, ya está actuando desde el ego: el propio deseo de ser puro es una forma más fina de la misma vanidad. Y propone otra salida, en cuatro palabras:</p>
+<div class="cita"><p class="trad">No eliminar ego. Transparentar ego.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Transparentarlo es verlo actuar, sin pelear con él y sin obedecerle. Saber que está ahí, pidiendo su foto, y elegir igual adónde mira el acto. Este sistema lo dice desde el principio: el ego no se combate ni se infla, es el vehículo, y lo que importa es con qué se sincroniza.</p>
+<p><em>El Vacío Fértil</em>, el libro de Origen sobre la creación que nace del silencio, describe el mismo peligro en quien crea: la tentación de decir <em>yo hice esto</em>, la inflación de creerse elegido. Y para ese riesgo, entre otros antídotos, propone uno muy sencillo:</p>
+<div class="cita"><p class="trad">Servicio anónimo.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>No como penitencia. Como un ejercicio que devuelve el acto a su lugar.</p>
+<h2>Si yo no soy para mí</h2>
+<p>Hacia el siglo I antes de nuestra era vivió en Jerusalén un sabio llamado Hillel, a quien la tradición judía recuerda por su paciencia y su humildad. Una de sus enseñanzas quedó guardada en el tratado de la Mishná que reúne las máximas de los maestros, los <em>Pirkei Avot</em>. Son tres preguntas seguidas:</p>
+<div class="cita"><p class="trad">Si yo no soy para mí, ¿quién será para mí? Y si soy solo para mí, ¿qué soy? Y si no es ahora, ¿cuándo?<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p></div>
+<p>La primera pregunta defiende al yo. Nadie va a cuidar de ti si tú no lo haces, y no hay nada de vergonzoso en necesitar, en querer, en desear ser visto. La segunda pone el límite: un yo que solo existe para sí se queda vacío, sin forma. La tercera saca las dos de la teoría y las pone en el día de hoy.</p>
+<p>Hillel no pide dejar de ser alguien. Pide no ser solo alguien. El hambre de ser visto no es un pecado: es hambre, como la sed de otros que describía el libro anterior. Se atiende. Lo que no conviene es darle de comer con lo que era para otro.</p>
+<h2>Por qué das</h2>
+<p>En 1957, más de diez mil jóvenes terminaron la escuela secundaria en el estado de Wisconsin, en los Estados Unidos. Desde entonces, un grupo de investigadores los viene siguiendo a lo largo de la vida. En 2004, ya cerca de los setenta años, se les preguntó si hacían trabajo voluntario y por qué. Unos años después, Sara Konrath y su equipo cruzaron esas respuestas con los registros de quiénes seguían vivos.</p>
+<p>Los voluntarios que daban motivos centrados en los otros, como ayudar o ser útiles a alguien, tuvieron menos riesgo de morir en esos años que quienes no colaboraban con nada. Los que daban razones referidas a sí mismos, como sentirse mejor o escapar de sus propios problemas, mostraron un riesgo parecido al de los que no hacían voluntariado.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>Es una asociación, no una receta: nadie debería ayudar para vivir más, lo que sería volver a mirar el espejo. Pero es una pista sobre algo que las tradiciones dicen desde hace siglos. El mismo acto no es el mismo acto. Importa hacia dónde mira.</p>
+<p>Netta Weinstein y Richard Ryan agregaron otra pieza en 2010. En varios estudios compararon a quienes ayudaban porque querían con otros que lo hacían porque se sentían obligados o presionados. Solo la ayuda elegida mejoró el bienestar de quien ayudaba. Y algo más sorprendente: también fue la que más bien le hizo a quien la recibía.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup> El otro nota la diferencia, aunque nadie se la diga.</p>
+<div class="perla"><p>El acto que necesita aplauso<br>mira a un espejo.<br>El que no, mira a alguien.</p></div>
+<h2>Hacia dónde mira</h2>
+<p>El jueves, Renata le preguntó a Ofelia por qué no tenían una página en las redes, si con eso podrían conseguir más voluntarios.</p>
+<p>Ofelia se rio.</p>
+<p>—Tuvimos una. La cerré.</p>
+<p>Contó que, durante un tiempo, la página había funcionado: venían voluntarios nuevos, entusiastas, que se sacaban una foto el primer día y no volvían el segundo. Los alumnos dejaban de venir cuando sabían que habría alguien con un teléfono en la mano. Ahora llegaban menos, y se quedaban más.</p>
+<p>—El que viene por la foto —dijo— se va cuando ya tiene la foto.</p>
+<p>Renata no se defendió. Pensó en la placa boca abajo. Pensó que no había nada de malo en querer que alguien supiera lo que hacía: lo había querido toda la vida, en el colegio, en la facultad, en el piso de la aseguradora. Pero esa tarde, como nunca antes, vio con claridad la diferencia entre las dos alegrías que había sentido el lunes: la de ver el nombre de Celestino en el papel, y la del mensaje que nunca publicó. La primera seguía ahí. La segunda se había apagado sola.</p>
+<h2>Tú también</h2>
+<p>Piensa en algo que hiciste por otra persona en los últimos días. Un favor, una ayuda, un regalo, un tiempo.</p>
+<p>Pregúntate, sin juzgarte: mientras lo hacía, ¿a quién imaginaba mirando? Puede que a nadie. Puede que a la persona que recibía. Puede que a alguien más: un jefe, una pareja, un público entero en una pantalla, o una versión de ti mismo que llevaba la cuenta.</p>
+<p>No se trata de corregir nada todavía. Se trata de ver. Lo que se ve, como dice Trinity, se vuelve transparente.</p>
+<p>Y elige un acto pequeño, para esta semana, que nadie más que tú vaya a conocer. El umbral que sigue te dice por qué.</p>
+<div class="sigue"><a href="L12-U2.html">Anterior: La pregunta invertida</a><a class="prox" href="L12-U4.html">Siguiente: Sin firma</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Lic. Arturo Rodríguez, <em>Liderazgo Consciente</em>, Trinity Origen, Libro IX, Nodo 1: «La Muerte del Líder-Ego», «Los 7 Síntomas del Líder-Ego Terminal», 2, «Hambre de Reconocimiento». Fragmentos.</li><li id="nota-2">Ídem. Fragmentos.</li><li id="nota-3">Ídem, «Arquetipos de Poder Transformado», «El Salvador → El Facilitador». Fragmento.</li><li id="nota-4">León Tolstói, <em>Confesión</em>, caps. I y II. Paráfrasis.</li><li id="nota-5">Lic. Arturo Rodríguez, <em>La Puerta</em>, Portal Trinity, Nodo 8: «El arte de canalizar sin ego», «La paradoja medicinal». Paráfrasis y fragmento.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>El Vacío Fértil</em>, Trinity Origen, Libro VI, Nodo 4: «Creatividad desde la nada», «Peligros de la Creatividad Vacua», «Inflación creativa». Fragmento.</li><li id="nota-7"><em>Pirkei Avot</em>, 1, 14. Traducción propia del hebreo.</li><li id="nota-8">Sara Konrath, Andrea Fuhrel-Forbis, Alina Lou y Stephanie Brown, «Motives for Volunteering Are Associated with Mortality Risk in Older Adults», <em>Health Psychology</em> 31, n.º 1 (2012): 87-96, sobre el Estudio Longitudinal de Wisconsin. Paráfrasis.</li><li id="nota-9">Netta Weinstein y Richard M. Ryan, «When Helping Helps: Autonomous Motivation for Prosocial Behavior and Its Influence on Well-Being for the Helper and Recipient», <em>Journal of Personality and Social Psychology</em> 98, n.º 2 (2010): 222-244. Paráfrasis.</li></ol></section></main></div><footer class="pie">Libro 12 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

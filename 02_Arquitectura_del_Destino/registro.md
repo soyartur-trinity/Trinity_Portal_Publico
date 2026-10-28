@@ -1380,3 +1380,135 @@ Tramos: Lo que Ignacio sabe ahora · El formulario · El nombre · La mesa · Lo
 - En la pantalla: *Ella*; *Días perfectos*; *Lars y la chica real*; *Up: una aventura de altura*; *Black Mirror*, «Caída en picada».
 - Puertas laterales: La Puerta, Nodo 2; Origen V y su Nodo 5; Quantum 4, Nodo 2; Infinito, Libro 6; Portal Público, Libro 3.
 - Puente: *Aprendiste a mirar la red que te sostiene y a tirar de un hilo cada día. El siguiente libro da el paso que esa red pide: el sentido no se encuentra como un objeto perdido; se da, en lo que haces para otros.*
+
+---
+
+## Libro 12 · La Obra
+
+*Publicado en octubre de 2026.*
+
+---
+
+**Subtítulo:** *el sentido que se da*
+**Promesa:** No te toca terminar la obra. / Te toca la parte de hoy.
+**Columna:** Origen IX, *Liderazgo Consciente*, en lugar del legado de Origen VII que preveía el mapa (el legado ya había sido el corazón del Umbral VI de *Las Pequeñas Muertes*, y la obra sin autor ya tenía libro en el Portal: *Lo que se recibe*, 38). Para dar: IX.1 («La crisis (El llamado)», «Éxito que sabe a ceniza», «Sentido perdido», «No llenar el vacío prematuramente»; el hambre de reconocimiento, «sin mí, nada», «Valía atada a logros», «Confusión entre ser y hacer»; el Salvador que «Necesita ser necesitado» y el Facilitador que «Fomenta autonomía»; «¿A quién serví hoy?») e IX.7 («No tienes que esperar permiso…», «Con lo que tienes. Donde estás. Como eres.», «Imperfecto, incompleto, inseguro. Pero dispuesto.»), con IX.6 como baranda (la vela que se consume, corregida; el salvador exhausto; el síndrome de Atlas; «Mi pieza es suficiente», «Otros también sostienen»; «Soy canal, no fuente. Soy río, no represa.»). Para soltar la firma: Origen VI.4 («Eres la partera, no la creadora», «No te apegues: No es "tuya"», «Servicio anónimo») y La Puerta, Nodo 8 («El ego quiere crear. / El alma quiere servir.», «No eliminar ego. Transparentar ego.»). Contemplación: Infinito 10, portales 64 y 65. Origen VII, solo dos preguntas: «¿Puedo amar sin necesitar ser recordado?» (VII.6) y «¿Vienes a servir o a resolver tu propio miedo?» (VII.3). Los nodos 2 a 5 de Origen IX no entran (ropaje empresarial y economía política).
+**Coro:** la ética judía de la obra como tradición principal: Hillel (*Avot* 1, 14), Rabí Tarfón (*Avot* 2, 15-16: no te corresponde terminar la obra), la cámara de los discretos (*Shekalim* 5, 6), la escalera de Maimónides (*Matanot Aniyim* 10, 7-14), los treinta y seis justos (*Sanhedrín* 97b; Scholem), Honi y el algarrobo (*Taanit* 23a) y el quinto de Usha (*Ketubot* 50a); Tolstói (*Confesión*, caps. I-IV y XI, y «Tres preguntas», 1903, escrito para la antología de Sholem Aleijem a beneficio de las víctimas de Kishinev); Frankl (la pregunta invertida, los tres caminos, la autotrascendencia); George Eliot (final de *Middlemarch*); Borges («Los justos», en paráfrasis); la *minka* y el *ayni* andinos (Mayer; Gelles), solo el trabajo; Jefferson (la vela que enciende otra).
+**Comprobable:** Yalom (la cuarta inquietud; el *engagement*); Steger (buscar sentido sin hallarlo); Zuzunaga y Winn (el diagrama del *ikigai*) con Kamiya y Mogi; Grant (los telefonistas y el becado, 2007); Konrath (motivos del voluntariado, 2012); Weinstein y Ryan (ayuda elegida, 2010); Werner y Smith (Kauai); Erikson (generatividad); Figley (fatiga por compasión); Klimecki, Leiberg, Ricard y Singer (2014).
+**Protagonista:** Renata, 28 años, analista de reclamos en una aseguradora; nombrada empleada del trimestre, deja la placa boca abajo junto al diagrama vacío de un curso de propósito: «¿Y después?». Celestino Rojas, 74, albañil que levantó el ala nueva del hospital y firmó toda su vida con el pulgar («Quiero firmar con mi nombre. Mientras pueda»; el ladrillo torcido de la tercera hilada; la copia de la llave y «HOY HAY CLASE»); Ofelia, 63, maestra jubilada que abrió durante veintidós años el centro de alfabetización de adultos sin un día de descanso («Aquí nadie sale en fotos»; «El que viene por la foto se va cuando ya tiene la foto»); Teodoro, 83, el abuelo de la sierra que limpia el tramo de acequia de su padre («El agua no pregunta quién limpió»); doña Lidia y su andador; Graciela Ponce, el primer nombre leído en un expediente. En el cierre, la rampa hecha en *minka* y la única firma de Celestino en el cemento fresco.
+**Gesto:** «No sé para qué. Sé para quién.» cuando aparece la pregunta por el sentido, con el aire que sale más largo, y una persona nombrada; el mapa de la obra del primer día (doce minutos, tres columnas: lo que ya doy sin contarlo, quién lo recibe, dónde doy de más; si la tercera es más larga, la semana empieza recibiendo); un acto dado por día, pequeño, para alguien con nombre, reversible y elegido, una vez en la semana sin firma; cada noche, la línea «Hoy hice mi parte de…»; el séptimo día, una hora de *minka*. Movimiento lento: la llama que pasa.
+**Para ver:** Trinity Infinito, Libro 10, Portal 65, «La obra sin autor» (adaptado al teléfono); Emily Esfahani Smith, «There's more to life than being happy» (TED, 2017); Adam Grant, «Are you a giver or a taker?» (TED, 2016).
+**Archivos:** `libro-12-la-obra/L12.html` (portada), `L12-U1.html` a `L12-U7.html`, `L12-cierre.html`. Generador: `herramientas/gen_arq_L12.py`.
+
+
+### Umbral I · ¿Y después? — *cuando la vida se detiene*
+Tramos: La placa · Una pregunta de dos palabras · La cuarta inquietud · El llamado · Lo que se busca como un objeto · Pregunta o síntoma · Lo que quedó en la mesa · Tú también
+- Perla: La pregunta por el sentido / no siempre llega cuando falta algo. / A veces llega cuando ya no falta nada.
+- Perla: El sentido no se encuentra / como un objeto perdido. / Se da.
+- Nota: León Tolstói, *Confesión* (escrita entre 1879 y 1882; publicada en Ginebra en 1884), cap. III. Paráfrasis, cotejada con la traducción inglesa de Louise y Aylmer Maude.
+- Nota: Ídem, cap. III. Paráfrasis.
+- Nota: Ídem, cap. IV, primera frase. Traducción propia, cotejada con la versión de los Maude.
+- Nota: Ídem, cap. IV. Paráfrasis. El propio Tolstói la llama «una fábula oriental», y en el cap. XV la cuenta entre las historias de las vidas de santos que leía, donde llegó por la versión cristiana de *Barlaam y Josafat*.
+- Nota: Irvin D. Yalom, *Existential Psychotherapy* (1980), cap. 10, «Meaninglessness»; en español, *Psicoterapia existencial* (Herder, 1984). Paráfrasis.
+- Nota: Ídem, cap. 11, «Meaninglessness and Psychotherapy». Paráfrasis de la idea de *engagement* como respuesta a la falta de sentido.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Trinity Origen, Libro IX, Nodo 1: «La Muerte del Líder-Ego», «Las 7 Etapas del Descenso», etapa 1, «La Crisis (El Llamado)». Fragmentos.
+- Nota: Ídem, etapa 4, «El Vacío (La Noche Oscura)». Fragmento.
+- Nota: Michael F. Steger, Todd B. Kashdan, Brandon A. Sullivan y Danielle Lorentz, «Understanding the Search for Meaning in Life: Personality, Cognitive Style, and the Dynamic Between Seeking and Experiencing Meaning», *Journal of Personality* 76, n.º 2 (2008): 199-228. Paráfrasis.
+- Nota: Andrés Zuzunaga, «Propósito» (2011), publicado por primera vez en el libro de Borja Vilaseca *Qué harías si no tuvieras miedo* (2012); Marc Winn, «What's Your Ikigai?», *The View Inside Me* (blog, 14 de mayo de 2014). Paráfrasis.
+- Nota: Mieko Kamiya, *Ikigai ni tsuite* (*Sobre el ikigai*, 1966); Ken Mogi, *The Little Book of Ikigai* (2017). Paráfrasis.
+
+### Umbral II · La pregunta invertida — *lo que la vida te pregunta*
+Tramos: Dos aulas prestadas · Lo que la vida espera · Tres preguntas · El alma quiere servir · Cinco minutos con un becado · Para quién · Tú también
+- Perla: No sé para qué. / Sé para quién.
+- Nota: Viktor E. Frankl, *…trotzdem Ja zum Leben sagen. Ein Psychologe erlebt das Konzentrationslager* (1946); en español, *El hombre en busca de sentido* (Herder), primera parte. Traducción propia, cotejada con la versión inglesa, *Man's Search for Meaning* (1959).
+- Nota: Ídem, primera parte. Paráfrasis.
+- Nota: Ídem, primera parte. Paráfrasis.
+- Nota: Ídem, segunda parte, «Conceptos básicos de logoterapia», incorporada en las ediciones posteriores. Paráfrasis.
+- Nota: Ídem, segunda parte, sobre la autotrascendencia de la existencia humana. Paráfrasis.
+- Nota: León Tolstói, *Confesión*, cap. XI. Paráfrasis.
+- Nota: Sobre el pedido de Sholem Aleijem y la antología en ídish a beneficio de las víctimas del pogromo de Kishinev (Varsovia, 1903), a la que Tolstói envió «Asarhaddón, rey de Asiria», «El trabajo, la muerte y la enfermedad» y «Tres preguntas»: Roberta De Giorgi, «Ne roman, a putanica v pis'mach i telegrammach: Sholem-Aleichem i Lev Tolstoj» (Universidad de Udine, 2022). Paráfrasis.
+- Nota: León Tolstói, «Три вопроса» («Tres preguntas», 1903). Paráfrasis del relato; la respuesta final, en traducción propia del ruso.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 8: «El arte de canalizar sin ego», epígrafe. Fragmento.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Trinity Origen, Libro IX, Nodo 7: «Liderazgo al Servicio de la Vida», «Llamado Final a los Guardianes». Fragmento.
+- Nota: Ídem, «Reflexión Cuántica Final del Libro». Fragmento.
+- Nota: Adam M. Grant, Elizabeth M. Campbell, Grace Chen, Keenan Cottone, David Lapedis y Karen Lee, «Impact and the Art of Motivation Maintenance: The Effects of Contact with Beneficiaries on Persistence Behavior», *Organizational Behavior and Human Decision Processes* 103, n.º 1 (2007): 53-67, primer estudio. Paráfrasis.
+
+### Umbral III · El hambre de ser visto — *cuando la obra se vuelve espejo*
+Tramos: La foto · Sin mí, nada · Mejor a los ojos de otros · No eliminar el ego · Si yo no soy para mí · Por qué das · Hacia dónde mira · Tú también
+- Perla: El acto que necesita aplauso / mira a un espejo. / El que no, mira a alguien.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Trinity Origen, Libro IX, Nodo 1: «La Muerte del Líder-Ego», «Los 7 Síntomas del Líder-Ego Terminal», 2, «Hambre de Reconocimiento». Fragmentos.
+- Nota: Ídem. Fragmentos.
+- Nota: Ídem, «Arquetipos de Poder Transformado», «El Salvador → El Facilitador». Fragmento.
+- Nota: León Tolstói, *Confesión*, caps. I y II. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 8: «El arte de canalizar sin ego», «La paradoja medicinal». Paráfrasis y fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 4: «Creatividad desde la nada», «Peligros de la Creatividad Vacua», «Inflación creativa». Fragmento.
+- Nota: *Pirkei Avot*, 1, 14. Traducción propia del hebreo.
+- Nota: Sara Konrath, Andrea Fuhrel-Forbis, Alina Lou y Stephanie Brown, «Motives for Volunteering Are Associated with Mortality Risk in Older Adults», *Health Psychology* 31, n.º 1 (2012): 87-96, sobre el Estudio Longitudinal de Wisconsin. Paráfrasis.
+- Nota: Netta Weinstein y Richard M. Ryan, «When Helping Helps: Autonomous Motivation for Prosocial Behavior and Its Influence on Well-Being for the Helper and Recipient», *Journal of Personality and Social Psychology* 98, n.º 2 (2010): 222-244. Paráfrasis.
+
+### Umbral IV · Sin firma — *la cámara de los discretos*
+Tramos: El ladrillo torcido · La cámara de los discretos · La escalera · Ningún nombre al pie de la página · Treinta y seis · Alguien que estuvo · La firma del otro · Tú también
+- Perla: Muchas vidas se sostienen / en alguien que nunca supo / que las sostuvo.
+- Perla: La obra sin firma de uno / puede ser la firma de otro.
+- Nota: Mishná, tratado *Shekalim*, 5, 6. Traducción propia del hebreo.
+- Nota: Ovadia de Bartenura, comentario a *Shekalim* 5, 6. Paráfrasis.
+- Nota: Moisés Maimónides, *Mishné Torá*, «Leyes de los dones a los pobres» (*Hiljot Matanot Aniyim*), 10, 7-14. Paráfrasis.
+- Nota: Ídem, 10, 7. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Trinity Origen, Libro IX, Nodo 1: «La Muerte del Líder-Ego», «Arquetipos de Poder Transformado», «El Salvador → El Facilitador». Fragmento.
+- Nota: Ídem. Paráfrasis.
+- Nota: Trinity Infinito, Libro 10: *La creatividad increada*, Portal 64 (Nodo 1): «El artista ausente». Fragmento.
+- Nota: Ídem, Portal 65 (Nodo 2): «La obra sin autor». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Vacío Fértil*, Trinity Origen, Libro VI, Nodo 4: «Creatividad desde la nada», «Las Cinco Fases de la Creación Vacua», «El Parto Creativo» y «Crianza de la Creación». Fragmentos.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 6: «El Legado Cuántico», «Preguntas para el Alma Inmortal». Fragmento.
+- Nota: Talmud de Babilonia, tratado *Sanhedrín*, 97b; la misma enseñanza, en *Sucá*, 45b. Paráfrasis.
+- Nota: Gershom Scholem, «The Tradition of the Thirty-Six Hidden Just Men», en *The Messianic Idea in Judaism and Other Essays on Jewish Spirituality* (1971). Paráfrasis.
+- Nota: Jorge Luis Borges, «Los justos», en *La cifra* (1981). Paráfrasis. La leyenda de los treinta y seis aparece también en su *Manual de zoología fantástica* (1957), en la entrada «Los lamed wufniks».
+- Nota: George Eliot, *Middlemarch* (1871-1872), «Finale». Traducción propia.
+- Nota: Emmy E. Werner y Ruth S. Smith, *Vulnerable but Invincible: A Longitudinal Study of Resilient Children and Youth* (1982) y *Overcoming the Odds: High Risk Children from Birth to Adulthood* (1992). Paráfrasis.
+
+### Umbral V · Entre muchos — *no te toca terminarla*
+Tramos: Lo que pesa el mundo · La acequia · No te toca terminarla · Mi pieza es suficiente · Minka · El algarrobo · Lo que dura más que uno · El tramo de los lunes · Tú también
+- Perla: No te toca terminar la obra. / Te toca la parte de hoy.
+- Nota: *Pirkei Avot*, 2, 15 (2, 20 en algunas ediciones). Traducción propia del hebreo.
+- Nota: Ídem, 2, 16 (2, 21 en algunas ediciones). Traducción propia del hebreo.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Trinity Origen, Libro IX, Nodo 6: «Resiliencia y Sostén del Líder», «Salud Mental del Líder Transformador», «Peso de la Responsabilidad». Paráfrasis.
+- Nota: Ídem, «Reframes necesarios». Fragmentos.
+- Nota: Ídem, Nodo 7: «Liderazgo al Servicio de la Vida», «Reflexión Cuántica Final del Libro». Fragmento.
+- Nota: Enrique Mayer, *The Articulated Peasant: Household Economies in the Andes* (2002); y Giorgio Alberti y Enrique Mayer (comps.), *Reciprocidad e intercambio en los Andes peruanos* (Instituto de Estudios Peruanos, 1974). Paráfrasis.
+- Nota: Paul H. Gelles, *Water and Power in Highland Peru: The Cultural Politics of Irrigation and Development* (2000). Paráfrasis; se describe solo el trabajo, no los ritos que lo acompañan.
+- Nota: Talmud de Babilonia, tratado *Taanit*, 23a. Traducción propia del arameo.
+- Nota: Erik H. Erikson, *Childhood and Society* (1950), cap. 7, «Eight Ages of Man»; en español, *Infancia y sociedad*. Paráfrasis.
+
+### Umbral VI · Arder sin consumirse — *dar no es vaciarse*
+Tramos: Veintidós años · La vela · La llama que pasa · El quinto de Usha · Empatía que agota, compasión que sostiene · Cuando dar es todo lo que haces · La copia de la llave · Tú también
+- Perla: Dar no es vaciarse. / La llama que pasa / no se apaga.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Trinity Origen, Libro IX, Nodo 6: «Resiliencia y Sostén del Líder», epígrafe. Fragmento.
+- Nota: Ídem. Paráfrasis.
+- Nota: Ídem, «El Fenómeno del Salvador Exhausto». Fragmentos.
+- Nota: Ídem, Nodo 1: «La Muerte del Líder-Ego», «Los 7 Síntomas del Líder-Ego Terminal», 4, «Mesianismo Corporativo». Fragmento.
+- Nota: Ídem, Nodo 6, «Meditación de Renovación». Fragmentos.
+- Nota: Thomas Jefferson, carta a Isaac McPherson, Monticello, 13 de agosto de 1813. Traducción propia.
+- Nota: Talmud de Babilonia, tratado *Ketubot*, 50a. Traducción propia del arameo y del hebreo.
+- Nota: Ídem. Paráfrasis. El Talmud trae también otra versión, en la que Rabí Yeshevav es quien quiso dar más y un colega se lo impidió.
+- Nota: Charles R. Figley (ed.), *Compassion Fatigue: Coping with Secondary Traumatic Stress Disorder in Those Who Treat the Traumatized* (1995). Paráfrasis.
+- Nota: Olga M. Klimecki, Susanne Leiberg, Matthieu Ricard y Tania Singer, «Differential Pattern of Functional Brain Plasticity after Compassion and Empathy Training», *Social Cognitive and Affective Neuroscience* 9, n.º 6 (2014): 873-879. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *La Muerte como Maestra*, Trinity Origen, Libro VII, Nodo 3: «El Arte del Acompañamiento», «Práctica: Preparándose para Ser Estudiante». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Nodo 6, «Protocolo de Salud Mental». Paráfrasis.
+
+### Umbral VII · La operación — *un acto dado por día*
+Tramos: Lo que vas a necesitar · Paso 1 · El mapa de la obra · Paso 2 · *No sé para qué. Sé para quién.* · Paso 3 · Cada noche, *Hoy hice mi parte de…* · El séptimo día · Una hora de minka · Movimiento lento · Tu cuaderno de la semana · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Cada noche, alguien anota su parte, / la deja en la obra que nadie termina solo, / y se duerme sin necesitar su nombre al pie.
+- Nota: León Tolstói, «Tres preguntas» (1903). Ver el Umbral II.
+- Nota: Talmud de Babilonia, *Ketubot*, 50a. Ver el Umbral VI.
+- Nota: Netta Weinstein y Richard M. Ryan, *Journal of Personality and Social Psychology* 98 (2010): 222-244. Ver el Umbral III.
+- Nota: Moisés Maimónides, *Mishné Torá*, «Leyes de los dones a los pobres», 10, 7. Ver el Umbral IV.
+- Nota: Lic. Arturo Rodríguez, *Liderazgo Consciente*, Trinity Origen, Libro IX, Nodo 1: «La Muerte del Líder-Ego», «Arquetipos de Poder Transformado», «El Tirano → El Servidor», «Práctica de transmutación». Fragmento.
+- Nota: *Pirkei Avot*, 2, 16. Ver el Umbral V.
+
+### Cierre · La firma — *lo que se gana al dar*
+Tramos: Lo que Renata sabe ahora · La rampa · Los expedientes · Lo que se gana
+- Perla: No te toca terminar la obra. / Te toca la parte de hoy.
+- Perla: No sé para qué. Sé para quién. / Y cada acto dado sin firma / es una parte de la obra que nadie termina solo.
+- Para ver: Trinity Infinito, Libro 10, Portal 65: «La obra sin autor»; Emily Esfahani Smith: «There's more to life than being happy» (TED, 2017); Adam Grant: «Are you a giver or a taker?» (TED, 2016).
+- En la pantalla: Soul; Mr. Holland's Opus; Las confesiones del Sr. Schmidt; Amélie; El hombre que plantaba árboles.
+- Puertas laterales: Origen IX y su Nodo 6 (tras la depuración breve de una línea); Origen VI, Nodo 4; Infinito, Libro 10; La Puerta, Nodo 8; Portal Público, Libro 38.
+- Puente: *Aprendiste a dar un acto por día, sin firmarlo y sin cargar la obra entera. El último libro reúne el movimiento completo en un solo día: despertar, encarnar, soltar y pertenecer, no para volver a casa, sino para quedarse despierto adentro.*
