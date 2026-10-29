@@ -39,7 +39,7 @@ Cada libro termina con una práctica de siete días, y cada práctica se suma a 
 
 11. **La Red** ✅ — Cuando crees que estás solo, es que olvidaste mirar la red.
 12. **La Obra** ✅ — El sentido no se encuentra: se da, en lo que haces para otros.
-13. **⟐ Habitar** — Casa es donde recuerdas quién eres.
+13. **⟐ Habitar** ✅ — Casa es donde recuerdas quién eres: el cierre no es volver, es quedarse despierto adentro.
 
 ### Fuentes
 

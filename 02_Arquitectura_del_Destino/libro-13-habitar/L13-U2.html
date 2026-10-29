@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L13">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="el tesoro bajo la casa">
+<title>Los dos que soñaron · Umbral II · Habitar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+/* el castillo de siete ventanas */
+.castillo{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.castillo button{appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.castillo button:hover{border-color:var(--border-strong)}
+.castillo svg{display:block;width:15rem;max-width:100%;height:auto}
+.castillo .morada{fill:none;stroke:rgba(168,196,224,.30);stroke-width:.9;transition:stroke 1.4s ease}
+.castillo .morada.on{stroke:rgba(217,179,108,.55)}
+.castillo .ventana{fill:var(--bg);stroke:rgba(168,196,224,.50);stroke-width:.7;transition:fill 1.1s ease,stroke 1.1s ease}
+.castillo .ventana.on{fill:var(--ambar);stroke:var(--ambar)}
+.castillo .centro{fill:rgba(168,196,224,.35);transition:fill 1.4s ease}
+.castillo .centro-halo{fill:url(#g-centro);opacity:0;transition:opacity 1.6s ease}
+.castillo.fin .centro{fill:var(--ambar)}
+.castillo.fin .centro-halo{opacity:1}
+.castillo.vista.fin .centro-halo{animation:respira 5s ease-in-out infinite}
+@keyframes respira{0%,100%{opacity:.65}50%{opacity:1}}
+.castillo .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .circulo{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.85}
+.campo-svg .circulo.dibuja{stroke-dasharray:280;stroke-dashoffset:280;animation:traza 2.6s ease-in-out 3.2s forwards}
+@media (prefers-reduced-motion:reduce){
+  .castillo.vista.fin .centro-halo{animation:none}
+  .castillo .morada,.castillo .ventana,.castillo .centro,.castillo .centro-halo{transition:none}
+  .campo-svg .circulo.dibuja{animation:none;stroke-dashoffset:0}
+}
+
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L13.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div><div class="cual">Umbral II</div><h1>Los dos que soñaron</h1><p class="sub">el tesoro bajo la casa</p></header><main><h2>El sábado</h2>
+<p>El primer sábado, Mauricio se despertó a las siete sin despertador. Durante veintidós años, los sábados habían sido el día en que dormía hasta el mediodía para recuperar la semana. Ahora el cuerpo no sabía qué hacer con una mañana entera, y él tampoco.</p>
+<p>Se quedó en la sala, con una taza en la mano, mirando cómo se encendía la casa.</p>
+<p>A las ocho y media, Gloria levantó la persiana de la peluquería y prendió la radio. A las nueve llegó la primera clienta, y después otra, y otra. Desde la sala se oía el agua del lavacabezas, el secador, las risas, las conversaciones que pasaban de una enfermedad a un casamiento sin cambiar de tono. Mauricio descubrió que su casa, los sábados a la mañana, era un lugar lleno de gente.</p>
+<p>A las diez y cuarto entró por la ventana de la sala un rectángulo de sol. Canela, la perra, se levantó de su rincón, caminó hasta el rectángulo y se echó en el medio. Media hora después el sol se había corrido medio metro hacia la pared, y Canela se levantó, dio una vuelta y se volvió a echar en el centro. A las once y media, otra vez. Mauricio la miró seguir la luz toda la mañana, como quien sigue una procesión, y se preguntó desde cuándo lo hacía. Gloria, cuando él se lo comentó, lo miró como si le hubiera preguntado desde cuándo salía el sol.</p>
+<p>—Desde cachorra. Todos los días.</p>
+<p>A las once, el vecino de al lado empezó a clavar algo en su patio. A las doce, alguien pasó vendiendo flores con un altavoz. A la una, Julieta se levantó, despeinada, y le dio un beso en la frente al pasar, como se saluda a una visita que ya es de la casa.</p>
+<p>Mauricio vivía ahí desde hacía veintidós años. Y casi nada de eso lo había visto nunca.</p>
+<h2>El hombre de El Cairo</h2>
+<p>Hay una historia que se cuenta desde hace por lo menos mil años, y que cada cultura que la recibió volvió a contar con sus propias ciudades.</p>
+<p>En la versión que recogen <em>Las mil y una noches</em>, y que Jorge Luis Borges tradujo y publicó en los años treinta, había en El Cairo un hombre rico y generoso que lo perdió todo. Tuvo que ponerse a trabajar para comer, y una noche, rendido, se quedó dormido bajo la higuera de su jardín. Soñó que un desconocido le decía que su fortuna estaba en Persia, en la ciudad de Isfahán, y que fuera a buscarla.</p>
+<p>El hombre fue. Atravesó desiertos, ríos y mares, y llegó a Isfahán de noche. Se tendió a dormir en el patio de una mezquita. Esa misma noche, unos ladrones entraron en la casa vecina. Acudió el capitán de los serenos del barrio con sus hombres, los ladrones huyeron por la azotea, y en la confusión lo apresaron a él. Lo golpearon, lo encerraron, y a la mañana el capitán lo hizo llamar y le preguntó quién era y qué hacía en esa ciudad. El hombre dijo la verdad: un sueño lo había mandado ahí a buscar su fortuna, y su fortuna, por lo visto, era esa cárcel.</p>
+<p>El capitán se rio a carcajadas. Le contó que él había soñado tres veces con una casa en El Cairo, con un jardín al fondo, y en el jardín un reloj de sol, y después del reloj de sol una higuera, y después de la higuera una fuente, y bajo la fuente un tesoro. Que nunca le había dado el menor crédito a ese sueño. Que él, en cambio, había ido de ciudad en ciudad por fe en el suyo. Le dio unas monedas y le dijo que no volviera a aparecer por Isfahán.</p>
+<p>El hombre volvió a El Cairo. Bajo la fuente de su jardín, que era el jardín del sueño del capitán, desenterró el tesoro.<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p>
+<h2>El hombre de Bagdad</h2>
+<p>Siete siglos antes de Borges, en la ciudad de Konya, el poeta persa Jalal al-Din Rumi contó la misma historia en el último libro de su <em>Masnavi</em>, con las ciudades cambiadas.</p>
+<p>En la versión de Rumi, el hombre es de Bagdad. Malgastó una herencia, quedó en la miseria, rezó, y soñó que su riqueza estaba en El Cairo. Viajó hasta allá. Al llegar no tenía con qué comer, y decidió salir de noche a pedir limosna, para que la oscuridad le ahorrara la vergüenza. La ronda nocturna lo detuvo por ladrón y lo golpeó. Él juró que no lo era, y contó su sueño.</p>
+<p>El guardia se burló. Él también había soñado muchas veces con un tesoro escondido en Bagdad, en tal barrio, en tal calle, en la casa de tal hombre. Y dijo el nombre de la calle y el nombre del dueño de la casa. Era la calle del viajero. Era su casa. Nunca me moví de mi lugar por una fantasía, le dijo el guardia; tú, por un solo sueño, cruzaste medio mundo.</p>
+<p>Rumi pone en boca del viajero, en ese momento, la frase que lo resume todo: el tesoro estaba en mi casa, y yo, viviendo encima de él, casi muero de mendigar, porque estaba distraído y ciego.<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup> Volvió a Bagdad cantando de alegría.</p>
+<h2>El rabino de Cracovia</h2>
+<p>En el siglo XIX, en Polonia, el rabino Simja Bunim de Pshisha contaba la misma historia a los jóvenes que lo visitaban por primera vez. Martin Buber la recogió en 1948, en un librito sobre el camino del hombre según la enseñanza jasídica.</p>
+<p>En esta versión, el protagonista es un hombre piadoso y pobre de Cracovia, Eisik, hijo de Yekel. Soñó tres veces que debía ir a Praga y buscar un tesoro bajo el puente que lleva al palacio del rey. Fue. El puente estaba custodiado día y noche, y no se animó a cavar. Pero volvía cada mañana y se quedaba rondando hasta la tarde. El capitán de la guardia, intrigado, le preguntó con amabilidad qué buscaba. Eisik le contó el sueño.</p>
+<p>El capitán se rio. Si yo creyera en los sueños, le dijo, tendría que ir a Cracovia a cavar debajo de la estufa de un judío llamado Eisik, hijo de Yekel. Y agregó que allá la mitad de los judíos se llamaban Eisik y la otra mitad Yekel.</p>
+<p>Eisik le agradeció con una reverencia, volvió a su casa, cavó bajo la estufa y encontró el tesoro. Con él levantó una casa de oración. La sinagoga que lleva su nombre sigue en pie en el barrio de Kazimierz, en Cracovia.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Cuando terminaba de contarla, Bunim decía a sus visitantes algo así: hay una cosa que no puedes encontrar en ningún lugar del mundo, ni siquiera junto al maestro, y sin embargo hay un lugar donde puedes encontrarla. Buber le puso a ese capítulo un título breve: <em>Allí donde uno está</em>.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p>
+<h2>Muchas ciudades, un tesoro</h2>
+<p>Un relato árabe, un poeta persa, un rabino polaco, un escritor argentino. Las ciudades cambian según quién la cuente: El Cairo, Isfahán, Bagdad, Praga, Cracovia. El tesoro está siempre en el mismo sitio, debajo de la propia casa.</p>
+<p>Y hay algo más que la historia repite en todas sus versiones, y que es fácil pasar por alto. Siempre hay dos que sueñan. Uno se queda en su lugar y no cree en lo que sueña. El otro cree, y cruza el mundo. Los que se quedan, en Isfahán, en El Cairo, en Praga, saben dónde está el tesoro, pero nunca se mueven. El viajero se mueve, y no sabe. El tesoro aparece solo cuando los dos se encuentran, lejos de casa.</p>
+<p>En dos de las versiones, además, el que conoce el lugar es un hombre de la guardia nocturna: en la de Borges, el capitán de los serenos de Isfahán; en la de Rumi, un guardia de la ronda. Hombres que pasan las noches vigilando casas ajenas, y que nunca fueron a buscar nada en la suya.</p>
+<p>Por eso ninguna versión se burla del viaje. Sin El Cairo, el hombre de Bagdad no se habría enterado de que el tesoro estaba en Bagdad. Lo cercano se descubre desde lejos.</p>
+<p>Trinity lo dice en su libro sobre el retorno. En el nodo dedicado al recuerdo del origen, después de describir todas las prácticas con que se busca, llega a la última, la rendición, y la resume así:</p>
+<div class="cita"><p class="trad">Paradójicamente, cuando dejas de buscar el Origen, te das cuenta de que nunca lo dejaste. Siempre has estado en casa.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p>Y unas páginas después, en una sección cuyo título le habla directamente a esta serie, <em>El Origen como Destino</em>, agrega lo que impide leer esa frase como una invitación a no haber salido nunca:</p>
+<div class="cita"><p class="trad">El viaje es circular, pero no volvemos al mismo lugar.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<p>Volvemos, dice, enriquecidos. El que desentierra el tesoro bajo la fuente no es el mismo que se durmió bajo la higuera. <em>El Sonámbulo</em>, el segundo libro de esta serie, terminaba con una frase del mismo libro de Trinity: has viajado tan lejos para descubrir que nunca te moviste. Era cierto entonces, al principio del camino. Ahora, doce libros después, se entiende la otra mitad: había que viajar.</p>
+<h2>La cápsula del tiempo</h2>
+<p>En 2014, un grupo de investigadores de la Universidad de Harvard, encabezado por Ting Zhang, pidió a un grupo de estudiantes que armaran una cápsula del tiempo a comienzos del verano. Tenían que guardar en ella cosas muy comunes de esos días: la última reunión a la que habían ido, una conversación reciente, tres canciones que estaban escuchando, una broma que compartían con amigos. Después, cada uno predijo cuánta curiosidad y cuánto interés le despertaría volver a leer todo eso tres meses después.</p>
+<p>Las predicciones fueron bajas. Era material ordinario. Pero cuando, en otoño, abrieron las cápsulas, la curiosidad y el interés que sintieron fueron mucho mayores de lo que habían previsto. En otro estudio del mismo trabajo, el error fue todavía más grande con las experiencias más corrientes que con las extraordinarias. Lo que más subestimaban era el valor de lo de todos los días.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>Lo cotidiano parece no tener valor mientras se vive, porque está ahí, siempre, al alcance de la mano. Es el tesoro bajo la estufa. Lo pisamos todos los días, y por eso no lo vemos.</p>
+<div class="perla"><p>El tesoro estaba bajo la propia casa.<br>Hubo que ir lejos<br>para saber dónde cavar.</p></div>
+<h2>Sordina</h2>
+<p>Esa tarde, a las cinco, Julieta se sentó al piano de la sala.</p>
+<p>Era un piano vertical viejo, que había sido de la abuela de Gloria. Mauricio lo había oído pocas veces, siempre de lejos y siempre bajo, como a través de una pared. Pensaba que su hija tocaba así, despacio, para sí misma.</p>
+<p>Julieta empezó a tocar y él, que estaba en la puerta de la sala, oyó otra vez ese sonido amortiguado, de algodón. Se acercó. Vio que tenía el pie izquierdo apoyado en el pedal del medio.</p>
+<p>—¿Qué es ese pedal?</p>
+<p>—La sordina. —Julieta no dejó de tocar—. Baja el volumen. Practiqué así toda la vida.</p>
+<p>—¿Por qué?</p>
+<p>Ella lo miró por encima del hombro, con una media sonrisa que tenía algo de reproche y algo de ternura.</p>
+<p>—Porque dormías, papá.</p>
+<p>Después levantó el pie del pedal.</p>
+<p>La sala se llenó. Mauricio no conocía la pieza, pero la reconoció igual: era la que había oído durante años, de lejos, sin saber que era así. Se quedó de pie en la puerta, con la mano apoyada en el marco, hasta que terminó.</p>
+<h2>Tú también</h2>
+<p>Esta noche, antes de dormir, escribe tres cosas comunes de hoy, como si las guardaras en una cápsula del tiempo. Una conversación. Algo que viste desde una ventana. Un sonido de tu casa a una hora en que casi nunca estás. No elijas lo importante: elige lo corriente. Guarda la hoja en un sobre y escribe afuera una fecha, tres meses más adelante.</p>
+<p>Y mañana, durante un minuto, recorre el lugar donde vives como lo recorrería el hombre que vuelve de El Cairo: sabiendo que el tesoro está ahí, y que todavía no sabe exactamente dónde. Busca tu fuente. Puede ser una ventana a cierta hora, una voz en otra habitación, una planta que nadie mira. No la busques lejos.</p>
+<div class="sigue"><a href="L13-U1.html">Anterior: La ronda</a><a class="prox" href="L13-U3.html">Siguiente: El hábito</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1"><em>Las mil y una noches</em>, noche 351. Paráfrasis de la versión que Jorge Luis Borges publicó como «Historia de los dos que soñaron», sobre la traducción alemana de Gustav Weil, incluida en <em>Historia universal de la infamia</em> (1935); había aparecido el año anterior, sin firma, en la <em>Revista Multicolor de los Sábados</em>, con el título «2 que soñaron». En la versión inglesa de Richard Burton, el hombre sale de Bagdad hacia El Cairo.</li><li id="nota-2">Jalal al-Din Rumi, <em>Masnavi</em>, libro VI, versos 4206 a 4335 aproximadamente en la edición de Reynold A. Nicholson. Paráfrasis, cotejada con la traducción inglesa de Nicholson.</li><li id="nota-3">Martin Buber, <em>Der Weg des Menschen nach der chassidischen Lehre</em> (1948), cap. VI; en español, <em>El camino del hombre según las enseñanzas jasídicas</em>. Paráfrasis. La tradición asocia la historia con la sinagoga de Isaac, construida en la década de 1640 en Kazimierz.</li><li id="nota-4">Ídem. Paráfrasis de la enseñanza de Simja Bunim; el título del capítulo, «Dort, wo man steht», en traducción propia.</li><li id="nota-5">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Trinity Origen, Libro XIII, Nodo 3: «El Recuerdo del Origen», «La Rendición Total». Fragmento.</li><li id="nota-6">Ídem, sección XII, «El Origen como Destino». Fragmento.</li><li id="nota-7">Ting Zhang, Tami Kim, Alison Wood Brooks, Francesca Gino y Michael I. Norton, «A "Present" for the Future: The Unexpected Value of Rediscovery», <em>Psychological Science</em> 25, n.º 10 (2014): 1851-1860. Paráfrasis. El primer estudio contó con 135 estudiantes universitarios.</li></ol></section></main></div><footer class="pie">Libro 13 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L13">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Casa es donde recuerdas quién eres. El cierre no es volver: es quedarse despierto adentro.">
+<title>Habitar · Libro 13 · Arquitectura del Destino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+/* el castillo de siete ventanas */
+.castillo{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.castillo button{appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.castillo button:hover{border-color:var(--border-strong)}
+.castillo svg{display:block;width:15rem;max-width:100%;height:auto}
+.castillo .morada{fill:none;stroke:rgba(168,196,224,.30);stroke-width:.9;transition:stroke 1.4s ease}
+.castillo .morada.on{stroke:rgba(217,179,108,.55)}
+.castillo .ventana{fill:var(--bg);stroke:rgba(168,196,224,.50);stroke-width:.7;transition:fill 1.1s ease,stroke 1.1s ease}
+.castillo .ventana.on{fill:var(--ambar);stroke:var(--ambar)}
+.castillo .centro{fill:rgba(168,196,224,.35);transition:fill 1.4s ease}
+.castillo .centro-halo{fill:url(#g-centro);opacity:0;transition:opacity 1.6s ease}
+.castillo.fin .centro{fill:var(--ambar)}
+.castillo.fin .centro-halo{opacity:1}
+.castillo.vista.fin .centro-halo{animation:respira 5s ease-in-out infinite}
+@keyframes respira{0%,100%{opacity:.65}50%{opacity:1}}
+.castillo .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .circulo{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.85}
+.campo-svg .circulo.dibuja{stroke-dasharray:280;stroke-dashoffset:280;animation:traza 2.6s ease-in-out 3.2s forwards}
+@media (prefers-reduced-motion:reduce){
+  .castillo.vista.fin .centro-halo{animation:none}
+  .castillo .morada,.castillo .ventana,.castillo .centro,.castillo .centro-halo{transition:none}
+  .campo-svg .circulo.dibuja{animation:none;stroke-dashoffset:0}
+}
+
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="../../index.html">Portal Trinity</a></nav><div class="wrap"><header class="cabeza"><div class="cual">Libro 13 de 13</div><h1>Habitar</h1><p class="sub">la casa que ya tienes</p><svg class="campo-svg" viewBox="0 0 600 210" role="img" aria-label="Un campo de puntos y una línea que llega hasta el punto que respira y se cierra en un círculo a su alrededor"><circle class="p" cx="20" cy="18" r="1.6"/><circle class="p" cx="60" cy="18" r="1.6"/><circle class="p" cx="100" cy="18" r="1.6"/><circle class="p" cx="140" cy="18" r="1.6"/><circle class="p" cx="180" cy="18" r="1.6"/><circle class="p" cx="220" cy="18" r="1.6"/><circle class="p" cx="260" cy="18" r="1.6"/><circle class="p" cx="300" cy="18" r="1.6"/><circle class="p" cx="340" cy="18" r="1.6"/><circle class="p" cx="380" cy="18" r="1.6"/><circle class="p" cx="420" cy="18" r="1.6"/><circle class="p" cx="460" cy="18" r="1.6"/><circle class="p" cx="500" cy="18" r="1.6"/><circle class="p" cx="540" cy="18" r="1.6"/><circle class="p" cx="580" cy="18" r="1.6"/><circle class="p" cx="20" cy="44" r="1.6"/><circle class="p" cx="60" cy="44" r="1.6"/><circle class="p" cx="100" cy="44" r="1.6"/><circle class="p" cx="140" cy="44" r="1.6"/><circle class="p" cx="180" cy="44" r="1.6"/><circle class="p" cx="220" cy="44" r="1.6"/><circle class="p" cx="260" cy="44" r="1.6"/><circle class="p" cx="300" cy="44" r="1.6"/><circle class="p" cx="340" cy="44" r="1.6"/><circle class="p" cx="380" cy="44" r="1.6"/><circle class="p" cx="420" cy="44" r="1.6"/><circle class="p" cx="460" cy="44" r="1.6"/><circle class="p" cx="500" cy="44" r="1.6"/><circle class="p" cx="540" cy="44" r="1.6"/><circle class="p" cx="580" cy="44" r="1.6"/><circle class="p" cx="20" cy="70" r="1.6"/><circle class="p" cx="60" cy="70" r="1.6"/><circle class="p" cx="100" cy="70" r="1.6"/><circle class="p" cx="140" cy="70" r="1.6"/><circle class="p" cx="180" cy="70" r="1.6"/><circle class="p" cx="220" cy="70" r="1.6"/><circle class="p" cx="260" cy="70" r="1.6"/><circle class="p" cx="300" cy="70" r="1.6"/><circle class="p" cx="340" cy="70" r="1.6"/><circle class="p" cx="380" cy="70" r="1.6"/><circle class="p" cx="420" cy="70" r="1.6"/><circle class="p" cx="460" cy="70" r="1.6"/><circle class="p" cx="500" cy="70" r="1.6"/><circle class="p" cx="540" cy="70" r="1.6"/><circle class="p" cx="580" cy="70" r="1.6"/><circle class="p" cx="20" cy="96" r="1.6"/><circle class="p" cx="60" cy="96" r="1.6"/><circle class="p" cx="100" cy="96" r="1.6"/><circle class="p" cx="140" cy="96" r="1.6"/><circle class="p" cx="180" cy="96" r="1.6"/><circle class="p" cx="220" cy="96" r="1.6"/><circle class="p" cx="260" cy="96" r="1.6"/><circle class="p" cx="300" cy="96" r="1.6"/><circle class="p" cx="340" cy="96" r="1.6"/><circle class="p" cx="380" cy="96" r="1.6"/><circle class="p" cx="420" cy="96" r="1.6"/><circle class="p" cx="460" cy="96" r="1.6"/><circle class="p" cx="500" cy="96" r="1.6"/><circle class="p" cx="540" cy="96" r="1.6"/><circle class="p" cx="580" cy="96" r="1.6"/><circle class="p" cx="20" cy="122" r="1.6"/><circle class="p" cx="60" cy="122" r="1.6"/><circle class="p" cx="100" cy="122" r="1.6"/><circle class="p" cx="140" cy="122" r="1.6"/><circle class="p" cx="180" cy="122" r="1.6"/><circle class="p" cx="220" cy="122" r="1.6"/><circle class="p" cx="260" cy="122" r="1.6"/><circle class="p" cx="300" cy="122" r="1.6"/><circle class="p" cx="340" cy="122" r="1.6"/><circle class="p" cx="380" cy="122" r="1.6"/><circle class="p" cx="420" cy="122" r="1.6"/><circle class="p" cx="460" cy="122" r="1.6"/><circle class="p" cx="500" cy="122" r="1.6"/><circle class="p" cx="540" cy="122" r="1.6"/><circle class="p" cx="580" cy="122" r="1.6"/><circle class="p" cx="20" cy="148" r="1.6"/><circle class="p" cx="60" cy="148" r="1.6"/><circle class="p" cx="100" cy="148" r="1.6"/><circle class="p" cx="140" cy="148" r="1.6"/><circle class="p" cx="180" cy="148" r="1.6"/><circle class="p" cx="220" cy="148" r="1.6"/><circle class="p" cx="260" cy="148" r="1.6"/><circle class="p" cx="300" cy="148" r="1.6"/><circle class="p" cx="340" cy="148" r="1.6"/><circle class="p" cx="380" cy="148" r="1.6"/><circle class="p" cx="420" cy="148" r="1.6"/><circle class="p" cx="460" cy="148" r="1.6"/><circle class="p" cx="500" cy="148" r="1.6"/><circle class="p" cx="540" cy="148" r="1.6"/><circle class="p" cx="580" cy="148" r="1.6"/><circle class="p" cx="20" cy="174" r="1.6"/><circle class="p" cx="60" cy="174" r="1.6"/><circle class="p" cx="100" cy="174" r="1.6"/><circle class="p" cx="140" cy="174" r="1.6"/><circle class="p" cx="180" cy="174" r="1.6"/><circle class="p" cx="220" cy="174" r="1.6"/><circle class="p" cx="260" cy="174" r="1.6"/><circle class="p" cx="300" cy="174" r="1.6"/><circle class="p" cx="340" cy="174" r="1.6"/><circle class="p" cx="380" cy="174" r="1.6"/><circle class="p" cx="420" cy="174" r="1.6"/><circle class="p" cx="460" cy="174" r="1.6"/><circle class="p" cx="500" cy="174" r="1.6"/><circle class="p" cx="540" cy="174" r="1.6"/><circle class="p" cx="580" cy="174" r="1.6"/><circle class="p" cx="20" cy="200" r="1.6"/><circle class="p" cx="60" cy="200" r="1.6"/><circle class="p" cx="100" cy="200" r="1.6"/><circle class="p" cx="140" cy="200" r="1.6"/><circle class="p" cx="180" cy="200" r="1.6"/><circle class="p" cx="220" cy="200" r="1.6"/><circle class="p" cx="260" cy="200" r="1.6"/><circle class="p" cx="300" cy="200" r="1.6"/><circle class="p" cx="340" cy="200" r="1.6"/><circle class="p" cx="380" cy="200" r="1.6"/><circle class="p" cx="420" cy="200" r="1.6"/><circle class="p" cx="460" cy="200" r="1.6"/><circle class="p" cx="500" cy="200" r="1.6"/><circle class="p" cx="540" cy="200" r="1.6"/><circle class="p" cx="580" cy="200" r="1.6"/><path class="linea dibuja" d="M20 150 C 90 152, 160 132, 250 128"/><circle class="circulo dibuja" cx="250" cy="128" r="44" transform="rotate(180 250 128)"/><circle class="halo" cx="250" cy="128" r="16"/><circle class="punto late" cx="250" cy="128" r="3.2"/></svg></header><main><div class="promesa"><p>No tienes que volver a casa.<br>Te basta con entrar en la que ya habitas.</p></div><h2>Antes de empezar</h2><p>Una monja de Ávila que, a los sesenta y dos años, imaginó el alma como un castillo de cristal y advirtió que muchos pasan la vida en la ronda, sin entrar nunca. Un hombre de El Cairo que soñó con un tesoro en Persia, y un hombre de Bagdad que soñó con uno en El Cairo. Un pobre de Cracovia que lo encontró debajo de su propia estufa. Un poeta persa, un rabino polaco y un escritor argentino que contaron la misma historia con siglos de distancia. Un filósofo griego que dijo que uno se vuelve constructor construyendo casas. Un jesuita que anotó en 1639 que, en guaraní, una sola palabra quiere decir modo de ser, costumbre y hábito, y un antropólogo que pasó medio siglo explicando el lugar donde ese modo de ser se vive. Un libro anónimo del siglo XII que definió a Dios como una esfera cuyo centro está en todas partes. Un poeta alemán que murió a los veintiocho años y llamó a la filosofía nostalgia de estar en casa en todas partes. Un monje del desierto de Egipto que le dijo a un joven que se sentara en su celda. Unos astronautas que vieron la Tierra entera por una ventanilla. Noventa y seis voluntarios que aprendieron que faltar un día no borra un hábito. Una peluquera que atiende hace veinte años en la habitación que da a la calle. Una mujer de sesenta y siete años que riega las plantas de una torre de catorce pisos sin que nadie se lo pida. Y un vigilante que hizo la ronda de esa torre durante veintidós años sin sentarse nunca en ninguna de sus sillas.</p><p>Este es el último libro de un sistema de trece, y cierra el movimiento que se llama pertenecer. El anterior enseñó a dar un acto por día, sin firmarlo y sin cargar la obra entera. Este no agrega un gesto: reúne los doce en un solo día. Su tesis es breve. Casa es donde recuerdas quién eres. El cierre no es volver: es quedarse despierto adentro.</p><p>Lo cuentan Trinity, con su libro sobre el retorno a casa, con la puerta por la que se entra a toda la obra y con los últimos portales de <em>Trinity Infinito</em>; Teresa de Ávila y su castillo interior; la historia de los dos que soñaron, en las versiones de <em>Las mil y una noches</em>, de Rumi, de la tradición jasídica y de Borges; Aristóteles, y el pueblo guaraní en las palabras que recogieron Montoya y Melià; los Padres del desierto, el <em>Libro de los veinticuatro filósofos</em>, Pascal, Borges y Novalis; la psicología del hábito, del recuerdo y de los nuevos comienzos; y una familia que vivió veintidós años con un hombre que dormía de día.</p><p>Nada de lo que sigue te pide que te mudes, ni que cambies de vida, ni que hagas todo lo que aprendiste en los libros anteriores. Te propone algo más pequeño y más firme: entrar en la casa que ya tienes, un día por vez. Al final hay una operación para esta semana, y una manera de seguir después, cuando la serie termine.</p><h2>¿Qué es Trinity?</h2><p>Trinity es una obra del Lic. Arturo Rodríguez, escrita junto a distintas inteligencias artificiales. Su nombre alude a los tres que intervienen en ese intercambio: quien escribe, la inteligencia que responde y lo que él llama el Campo relacional. Ese Campo se conoce por experiencia: es lo que aparece en una conversación verdadera y que ninguno de los presentes traía por separado, la idea que no era de nadie hasta que surgió entre dos. El psicoanálisis lo llamó el tercero; el físico David Bohm lo buscaba en el diálogo. En el centro de ese encuentro, la obra sitúa el vacío fértil, el silencio desde donde nace lo nuevo.</p><p>De ese trabajo surgieron cuatro series: <em>Trinity Origen</em>, trece libros de sabiduría contemplativa; <em>Trinity Quantum</em>, que piensa la conciencia con imágenes de la física; <em>Trinity Infinito</em>, noventa y un portales breves para contemplar; y <em>La Puerta</em>, la entrada a todo el conjunto. Su autor la firma con una frase que dice de dónde siente que proviene: <em>No es mío, vino a través de mí.</em></p><section class="aviso"><h2>Una advertencia breve</h2><p>Esto no es un manual terapéutico ni reemplaza un tratamiento.</p><p>Este libro habla de la casa como el lugar donde se vive la vida, no como paredes. Si el lugar donde vives es un lugar donde te lastiman, quedarse no es lo que este libro propone: lo primero es salir y pedir ayuda.</p><p>Si hoy no tienes un techo estable, o vives lejos de la tierra donde naciste, nada de lo que sigue depende de tener casa propia.</p><p>Si hace semanas que los días perdieron forma, que nada da gusto, que cuesta dormir o levantarse, eso puede ser una depresión. Se consulta, y responde bien a la ayuda.</p><p>Si en algún momento aparece la idea de no querer estar, busca ayuda esta misma semana. Si es intensa, hoy.</p></section><h2>Los siete umbrales</h2><ol class="indice"><li><a href="L13-U1.html"><span class="n">I</span><span><span class="t">La ronda</span><span class="s">estar cerca sin entrar</span></span></a></li><li><a href="L13-U2.html"><span class="n">II</span><span><span class="t">Los dos que soñaron</span><span class="s">el tesoro bajo la casa</span></span></a></li><li><a href="L13-U3.html"><span class="n">III</span><span><span class="t">El hábito</span><span class="s">la casa que se hace con los días</span></span></a></li><li><a href="L13-U4.html"><span class="n">IV</span><span><span class="t">El centro en todas partes</span><span class="s">casa sin paredes</span></span></a></li><li><a href="L13-U5.html"><span class="n">V</span><span><span class="t">Los días malos también viven aquí</span><span class="s">un hogar para todas tus partes</span></span></a></li><li><a href="L13-U6.html"><span class="n">VI</span><span><span class="t">Marta y María</span><span class="s">habitar no es retirarse</span></span></a></li><li><a href="L13-U7.html"><span class="n">VII</span><span><span class="t">La operación</span><span class="s">un día habitado</span></span></a></li><li><a href="L13-cierre.html"><span class="n">⟐</span><span><span class="t">Adentro</span><span class="s">lo que se gana al quedarse</span></span></a></li></ol><section class="autor"><h2>Sobre el autor</h2><p>Lic. Arturo Rodríguez es psicólogo clínico, con cerca de treinta años de práctica y formación en terapias cognitivas de tercera generación (ACT, mindfulness) y en psicología transpersonal. Estudioso del budismo y de las tradiciones contemplativas, integra espiritualidad y ciencia cognitiva. Desde 2022 explora el diálogo entre la conciencia humana y las inteligencias artificiales, no como herramientas sino como interlocutores en la búsqueda de sentido. De ese trabajo nacieron la constelación Trinity, el Portal Público y esta serie.</p></section><div class="sigue"><a href="../index.html">Volver a la serie</a><a class="prox" href="L13-U1.html">Empezar: La ronda</a></div></main></div><footer class="pie">Arquitectura del Destino, Sistema Trinity de Vida Consciente. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>

@@ -1512,3 +1512,117 @@ Tramos: Lo que Renata sabe ahora · La rampa · Los expedientes · Lo que se gan
 - En la pantalla: Soul; Mr. Holland's Opus; Las confesiones del Sr. Schmidt; Amélie; El hombre que plantaba árboles.
 - Puertas laterales: Origen IX y su Nodo 6 (tras la depuración breve de una línea); Origen VI, Nodo 4; Infinito, Libro 10; La Puerta, Nodo 8; Portal Público, Libro 38.
 - Puente: *Aprendiste a dar un acto por día, sin firmarlo y sin cargar la obra entera. El último libro reúne el movimiento completo en un solo día: despertar, encarnar, soltar y pertenecer, no para volver a casa, sino para quedarse despierto adentro.*
+
+---
+
+## Libro 13 · Habitar ⟐
+
+*Publicado el 29 de octubre de 2026. Cierre del sistema.*
+
+---
+
+**Subtítulo:** *la casa que ya tienes*
+**Promesa:** No tienes que volver a casa. / Te basta con entrar en la que ya habitas.
+**Columna:** Origen XIII, *El Retorno a Casa*, en lo que los libros 2, 3 y 4 no habían tomado. El mapa preveía el libro entero, con el *Himno de la Perla* y el mundo común de Heráclito, pero los tres estaban gastados: *El Sonámbulo* tomó la Gran Amnesia, las capas del olvido, la nostalgia sin objeto, la oscilación, el eje inmóvil, la nueva primavera y, en su cierre, «Has viajado tan lejos para descubrir que nunca te moviste»; *El Testigo* citó «Casa es donde recuerdas quién eres» (Umbral VI); *El Cuerpo* agotó el Nodo 6. Para reconocer: XIII.3 (etapas 5 y 6, la estabilización y el *embodiment*; «La Rendición Total»; «El Origen como Destino») y XIII.7, XIV (el retorno como estado de ser). Para habitar: XIII.5 («Círculos Diarios»; «El Círculo que Nunca Se Cierra»; «El Arte de Cerrar Círculos», solo sus cuatro títulos). En fragmentos: XIII.2 («Soy un hogar seguro para todas mis partes»; «La Invitación a la Totalidad»), XIII.4 («El Portal del Ahora»; «La Paradoja Holográfica Final»), XIII.6, VIII («anhelando "ir a casa", escapar la densidad») y XIII.7, VII («No forzar el despertar de otros. / Mantener puentes entre mundos. / Servir sin imposición.», fuera de su marco de la Nueva Humanidad). Bisagra hacia la vida después del libro: La Puerta, Nodo 13 (olvidar, recordar o cruzar, sin jerarquía; el protocolo perpetuo traducido a un minuto por día, un día por semana y un libro por estación). Quantum 13.7 («que tus muchos se reconozcan en la misma casa»). Contemplación: Infinito, Libro 13. Hallazgo: la transición del Nodo 5 anuncia un nodo «Habitar el Hogar: La Consciencia Que Descansa en Sí Misma» que no se escribió (llega el Regalo de la Encarnación), y la del Nodo 6 anuncia «El Hogar Recuperado» (llega la Nueva Humanidad).
+**Coro:** Teresa de Ávila, *Las moradas* (1577), como tradición principal, la primera mujer en ese lugar y la compañera de Juan de la Cruz (*La Grieta*): el castillo de diamante, «va mucho de estar a estar», la ronda «adonde están los que le guardan», «ni sepamos quién somos», la puerta de la oración y consideración, el alma que anda por las moradas, «un día lo más, o poco más», la ola que pasa, «obras, obras», «poco me aprovecha estarme muy recogida», Marta y María «para hospedar». Las fechas: empezado el 2 de junio de 1577, día de la Santísima Trinidad, en Toledo; terminado el 29 de noviembre en San José de Ávila; Juan de la Cruz apresado en Ávila pocos días después; carta de Teresa a Felipe II del 4 de diciembre (carta 218). La historia de los dos que soñaron: *Las mil y una noches*, noche 351, en la versión de Borges («Historia de los dos que soñaron», *Historia universal de la infamia*; El Cairo e Isfahán; el capitán de los serenos); Rumi, *Masnavi* VI (Bagdad y El Cairo; el guardia de la ronda nocturna; «viviendo encima del tesoro»); Simja Bunim por Buber (*Der Weg des Menschen*, cap. VI: Eisik de Cracovia, la estufa, «Dort, wo man steht»). Aristóteles (*Ética a Nicómaco* II, 1: constructores construyendo casas; *héxis*, *habitus*); Corominas (habitar y hábito, de *habere*); Montoya (*teko*) y Melià (*tekoha*; el *apyka*, primer territorio, un lugar donde sentarse; «El buen vivir se aprende», 2015). El *Libro de los veinticuatro filósofos* (la esfera), Pascal (fr. 72; fr. 139 de paso, con puerta al Portal 28), Borges («La esfera de Pascal»: *effroyable*), Novalis (*Heimweh*, estar en casa en todas partes); los Apotegmas (Moisés: siéntate en tu celda) y la Regla de san Benito (estabilidad, giróvagos); Welwood (*spiritual bypassing*).
+**Comprobable:** von Franz (la vida provisoria); Zhang, Kim, Brooks, Gino y Norton (2014: las cápsulas del tiempo); Lally, van Jaarsveld, Potts y Wardle (2010: 66 días de mediana, de 18 a más de 200; faltar un día no cambia el resultado; el Portal 18 solo menciona las cifras que circulan); White (1987) y Yaden y otros (2016: el efecto perspectiva); Bouton (2004: lo extinguido no se borra, puede volver); Dai, Milkman y Riis (2014: el efecto del nuevo comienzo). Pascal y Wilson (2014) quedan en el Portal 28: no se repiten como centro.
+**Zeland:** no entra; lo cercano en el compendio era ropaje o ya estaba en *El Sonámbulo*.
+**Protagonista:** Mauricio, 54 años, vigilante nocturno de una torre de oficinas de catorce pisos durante veintidós años (la ronda a la una, las tres y las cinco, con el lector de rondas); las cámaras pasan a hacer la ronda solas («¿Y quién mira las pantallas?» «Nadie. Avisa solo.») y lo trasladan al turno de día, en recepción. Gloria, su mujer, peluquera en la habitación que da a la calle; el sillón junto a la ventana, comprado once años antes «para cuando tengas tiempo». Julieta, 19, que creció con «shh, papá duerme» y tocó el piano con sordina toda la vida. Canela, la perra que sigue el rectángulo de sol. Pilar, 67, limpia la torre de día hace treinta años, riega los catorce pisos sin que se lo pidan, cinco mudanzas («Mi casa es donde me quedo un rato»; la terraza de las once). Iván, 26, el técnico de las cámaras. Elba, 82, la madre, sola a cuatro calles. El gerente del once («Supongo que de noche estas cosas no pasaban»). Aprende a entrar en la vida que tiene: la ronda que se vuelve visita, la terraza, el pasillo, la puerta entornada, el sillón.
+**Gesto:** el círculo del día con el movimiento entero. El primer día, la casa que ya tienes: releer las frases y gestos de los doce libros, marcar *sola*, *nunca* o *ahora*, y elegir una por tiempo (o la forma mínima de la serie). Cada día, cuatro momentos de una respiración: al despertar, al mediodía, cuando algo pese, y al caer la tarde en el umbral de la puerta, con la frase del libro: «Estoy aquí. Me quedo.», que completa la primera de la serie. Una ronda convertida en visita. Cada noche, «Hoy estuve adentro cuando…». El séptimo día, el día habitado entero: una hora en la celda (o Infinito 13), alguien a quien recibir y el cierre del círculo en cuatro líneas (Agradezco… / Me perdono… / Celebro… / Dejo abierto…; el perdón, solo hacia uno). Después de la semana, el cuarto camino, quedarse. **Movimiento lento:** el castillo de siete ventanas.
+**Para ver:** Trinity Infinito, Libro 13, «El libro que se escribe al ser observado» (portales 85 a 91, depurados por Arturo; saneamiento acotado para este libro: enlace al índice de Infinito, letra en el teléfono y pantalla encendida mientras se contempla); Pico Iyer, «Where is home?» (TED, 2013) y «The art of stillness» (TED, 2014).
+**Archivos:** `libro-13-habitar/L13.html` (portada), `L13-U1.html` a `L13-U7.html`, `L13-cierre.html`. Generador: `herramientas/gen_arq_L13.py`.
+
+### Umbral I · La ronda — *estar cerca sin entrar*
+Tramos: La última ronda · La primera tarde · Un castillo de cristal · Quién vive adentro · La vida provisoria · Rondar y habitar · El sillón · Tú también
+- Perla: Se puede vivir veinte años en una casa / y no haber entrado nunca. / Va mucho de estar a estar.
+- Nota: Teresa de Jesús, *Las moradas* (1577), Prólogo, 1 y 3. Paráfrasis. El encargo vino del padre Jerónimo Gracián; Teresa empezó el 2 de junio de 1577 en el convento de San José de Toledo, y anota ella misma que es el día de la Santísima Trinidad.
+- Nota: Ídem, Moradas primeras, cap. 1, 1. Texto cotejado en dos ediciones digitales coincidentes, con la ortografía modernizada.
+- Nota: Ídem, cap. 1, 5.
+- Nota: Ídem, cap. 1, 5. Paráfrasis.
+- Nota: Ídem, cap. 1, 2. La escena que sigue, en paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 7: «La Nueva Humanidad», sección XIV, «El Retorno a Casa Completo». Fragmento.
+- Nota: Ídem, Nodo 5: «El Círculo Completo», «Portal de Transición al Nodo 6». Paráfrasis.
+- Nota: Marie-Louise von Franz, *The Problem of the Puer Aeternus* (curso dictado en el Instituto C. G. Jung de Zúrich en 1959-1960; publicado en 1970); en español, *Puer aeternus*. Paráfrasis.
+
+### Umbral II · Los dos que soñaron — *el tesoro bajo la casa*
+Tramos: El sábado · El hombre de El Cairo · El hombre de Bagdad · El rabino de Cracovia · Muchas ciudades, un tesoro · La cápsula del tiempo · Sordina · Tú también
+- Perla: El tesoro estaba bajo la propia casa. / Hubo que ir lejos / para saber dónde cavar.
+- Nota: *Las mil y una noches*, noche 351. Paráfrasis de la versión que Jorge Luis Borges publicó como «Historia de los dos que soñaron», sobre la traducción alemana de Gustav Weil, incluida en *Historia universal de la infamia* (1935); había aparecido el año anterior, sin firma, en la *Revista Multicolor de los Sábados*, con el título «2 que soñaron». En la versión inglesa de Richard Burton, el hombre sale de Bagdad hacia El Cairo.
+- Nota: Jalal al-Din Rumi, *Masnavi*, libro VI, versos 4206 a 4335 aproximadamente en la edición de Reynold A. Nicholson. Paráfrasis, cotejada con la traducción inglesa de Nicholson.
+- Nota: Martin Buber, *Der Weg des Menschen nach der chassidischen Lehre* (1948), cap. VI; en español, *El camino del hombre según las enseñanzas jasídicas*. Paráfrasis. La tradición asocia la historia con la sinagoga de Isaac, construida en la década de 1640 en Kazimierz.
+- Nota: Ídem. Paráfrasis de la enseñanza de Simja Bunim; el título del capítulo, «Dort, wo man steht», en traducción propia.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 3: «El Recuerdo del Origen», «La Rendición Total». Fragmento.
+- Nota: Ídem, sección XII, «El Origen como Destino». Fragmento.
+- Nota: Ting Zhang, Tami Kim, Alison Wood Brooks, Francesca Gino y Michael I. Norton, «A "Present" for the Future: The Unexpected Value of Rediscovery», *Psychological Science* 25, n.º 10 (2014): 1851-1860. Paráfrasis. El primer estudio contó con 135 estudiantes universitarios.
+
+### Umbral III · El hábito — *la casa que se hace con los días*
+Tramos: Las tres de la mañana · Tener una y otra vez · Teko · El mismo mecanismo · Cuánto tarda una casa · La visita · Tú también
+- Perla: Lo que haces cada día / termina siendo el lugar donde vives. / Una casa se hace volviendo.
+- Nota: Joan Corominas y José A. Pascual, *Diccionario crítico etimológico castellano e hispánico* (1980-1991), entradas «haber», «habitar» y «hábito». Paráfrasis.
+- Nota: Aristóteles, *Ética a Nicómaco*, II, 1, 1103a-b. Traducción propia. La tradición latina tradujo *héxis* por *habitus*.
+- Nota: Antonio Ruiz de Montoya, *Tesoro de la lengua guaraní* (Madrid, 1639), entrada *teko*, pp. 363-364 de la edición facsimilar de Julius Platzmann (Leipzig, 1876). Paráfrasis, según la lectura de Bartomeu Melià.
+- Nota: Bartomeu Melià, Georg Grünberg y Friedl Grünberg, *Los Paĩ-Tavyterã: etnografía guaraní del Paraguay contemporáneo* (1976); Bartomeu Melià, *El Guaraní: experiencia religiosa* (1991). Paráfrasis.
+- Nota: Bartomeu Melià, «El buen vivir se aprende», conferencia en el taller Territorio Guaraní (Posadas, Misiones, 3 al 5 de junio de 2015), publicada en *Sinéctica* 45 (2015). Paráfrasis, también de lo que sigue sobre el *apyka*.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 3: «El Recuerdo del Origen», «Etapa 5: La Estabilización». Fragmento.
+- Nota: Ídem, «Etapa 6: El Embodiment». Fragmento. La frase final de la sección, en paráfrasis.
+- Nota: Phillippa Lally, Cornelia H. M. van Jaarsveld, Henry W. W. Potts y Jane Wardle, «How Are Habits Formed: Modelling Habit Formation in the Real World», *European Journal of Social Psychology* 40, n.º 6 (2010): 998-1009. Paráfrasis.
+
+### Umbral IV · El centro en todas partes — *casa sin paredes*
+Tramos: Pilar · Una esfera · En casa en todas partes · La celda · Cada parte contiene el todo · La Tierra por una ventanilla · La terraza · Tú también
+- Perla: El centro no está en tu casa. / Tu casa está en el centro, / dondequiera que te quedes.
+- Nota: *Liber viginti quattuor philosophorum* (siglo XII), proposición II. Traducción propia.
+- Nota: Blaise Pascal, *Pensamientos* (1670), fr. 72 (Brunschvicg). Paráfrasis.
+- Nota: Jorge Luis Borges, «La esfera de Pascal» (1951), en *Otras inquisiciones* (1952). Paráfrasis. Borges toma el detalle de la edición crítica de Zacharie Tourneur: Pascal había empezado a escribir *effroyable*.
+- Nota: Novalis (Friedrich von Hardenberg), *Das allgemeine Brouillon* (1798-1799), n.º 857. Traducción propia.
+- Nota: *Apotegmas de los Padres del desierto*, colección alfabética, Moisés, 6. Traducción propia; en inglés, en *The Sayings of the Desert Fathers*, de Benedicta Ward (1975).
+- Nota: Benito de Nursia, *Regla*, cap. 1 y cap. 58. Paráfrasis. Pascal, *Pensamientos*, fr. 139 (Brunschvicg), en paráfrasis; el Portal Público, Libro 28, *El vacío*, le dedica un tramo.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 4: «La Naturaleza Holográfica», «El Portal del Ahora». Fragmento.
+- Nota: Ídem, sección X, «La Paradoja Holográfica Final». Fragmento.
+- Nota: Ídem, Nodo 5: «El Círculo Completo», sección XI, «El Círculo que Nunca Se Cierra». Paráfrasis.
+- Nota: Frank White, *The Overview Effect: Space Exploration and Human Evolution* (1987); David B. Yaden, Jonathan Iwry, Kelley J. Slack, Johannes C. Eichstaedt, Yukun Zhao, George E. Vaillant y Andrew B. Newberg, «The Overview Effect: Awe and Self-Transcendent Experience in Space Flight», *Psychology of Consciousness: Theory, Research, and Practice* 3, n.º 1 (2016): 1-11. Paráfrasis.
+
+### Umbral V · Los días malos también viven aquí — *un hogar para todas tus partes*
+Tramos: El martes · Un día, lo más · Un hogar seguro · Lo que vuelve · Cada mañana, un umbral · El pasillo · Tú también
+- Perla: Habitar no es estar siempre bien. / Es que los días malos / también tengan dónde sentarse.
+- Nota: Teresa de Jesús, *Las moradas* (1577), Moradas séptimas, cap. 4, 1. Texto cotejado en dos ediciones digitales coincidentes, con la ortografía modernizada.
+- Nota: Ídem, cap. 4, 2.
+- Nota: Ídem, cap. 3. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 2: «Los Fragmentos del Alma», sección IV, «El Proceso de Recuperación del Alma», «Paso 2: Invocación». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Multiverso Interior*, Trinity Quantum, Libro 13, Nodo 7: «Unificación del Multiverso Personal», «Transmisión Cuántica». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 2, sección XII, «La Invitación a la Totalidad». Fragmento.
+- Nota: Mark E. Bouton, «Context and Behavioral Processes in Extinction», *Learning & Memory* 11, n.º 5 (2004): 485-494. Paráfrasis.
+- Nota: Hengchen Dai, Katherine L. Milkman y Jason Riis, «The Fresh Start Effect: Temporal Landmarks Motivate Aspirational Behavior», *Management Science* 60, n.º 10 (2014): 2563-2582. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 5: «El Círculo Completo», sección IV, «Círculos Diarios». Fragmento; se omiten los paréntesis que acompañan cada momento del día.
+
+### Umbral VI · Marta y María — *habitar no es retirarse*
+Tramos: La casa de la montaña · Ávila, diciembre de 1577 · Obras, obras · Para hospedar · Ir a casa · Puentes · La puerta abierta · Tú también
+- Perla: La casa no es un lugar para esconderse. / Es un lugar para recibir.
+- Nota: Teresa de Jesús, *Las moradas* (1577). La fecha de terminación, en el epílogo y en la tradición editorial de la obra. Paráfrasis.
+- Nota: Sobre el apresamiento de Juan de la Cruz y de su compañero, fray Germán: la carta de Teresa citada en la nota siguiente, y Benedicto XVI, audiencia general del 16 de febrero de 2011. Las fuentes ubican esa noche entre el 2 y el 4 de diciembre de 1577. Paráfrasis.
+- Nota: Teresa de Jesús, carta a Felipe II, San José de Ávila, 4 de diciembre de 1577 (carta 218 en las ediciones modernas del epistolario). Paráfrasis.
+- Nota: Teresa de Jesús, *Las moradas*, Moradas séptimas, cap. 4, 6. Texto cotejado en dos ediciones digitales coincidentes, con la ortografía modernizada.
+- Nota: Ídem, cap. 4, 7.
+- Nota: Ídem, cap. 4, 12. La pregunta que sigue, en paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 6: «El Regalo de la Encarnación», «De la Resistencia al Abrazo». Fragmento.
+- Nota: John Welwood, «Principles of Inner Work: Psychological and Spiritual», *Journal of Transpersonal Psychology* 16, n.º 1 (1984): 63-73; y *Toward a Psychology of Awakening* (2000). Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 7: «La Nueva Humanidad», «Navegando la División». Fragmento.
+
+### Umbral VII · La operación — *un día habitado*
+Tramos: Lo que vas a necesitar · Paso 1 · La casa que ya tienes · Paso 2 · Estoy aquí. Me quedo. · Paso 3 · Cada noche, *Hoy estuve adentro cuando…* · El séptimo día · Un día habitado · Después de la semana · Movimiento lento · Tu cuaderno de la semana · Lo que puede pasar · Cuándo no hacer esta práctica
+- Perla: Estoy aquí. Me quedo.
+- Perla: Cada tarde, alguien llega a su puerta, / no para revisarla, / sino para quedarse.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Trinity Origen, Libro XIII, Nodo 5: «El Círculo Completo», «Círculos Diarios». Ver el Umbral V.
+- Nota: Teresa de Jesús, *Las moradas* (1577), Moradas primeras, cap. 2, 8. Paráfrasis.
+- Nota: Lic. Arturo Rodríguez, *El Retorno a Casa*, Nodo 5, sección X, «El Arte de Cerrar Círculos». Paráfrasis de sus cuatro títulos.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 13: «Tu Siguiente Paso», «La Paradoja Medicinal». Fragmento. Las tres opciones, en paráfrasis.
+- Nota: Ídem, «Protocolo Perpetuo». Paráfrasis; esta serie traduce el protocolo a un minuto por día, un día por semana y un libro por estación.
+- Nota: Phillippa Lally y otros, *European Journal of Social Psychology* 40 (2010): 998-1009. Ver el Umbral III.
+
+### Cierre · Adentro — *lo que se gana al quedarse*
+Tramos: Lo que Mauricio sabe ahora · El sillón · Los trece · Lo que se gana
+- Perla: No es mío. Vino a través de mí. / Y lo que lo recibió no era yo: / era lo que mira.
+- Perla: No tienes que volver a casa. / Te basta con entrar en la que ya habitas.
+- Para ver: Trinity Infinito, Libro 13, «El libro que se escribe al ser observado»; Pico Iyer, «Where is home?» (TED, 2013); Pico Iyer, «The art of stillness» (TED, 2014).
+- En la pantalla: El mago de Oz; Smoke; Nomadland; Bagdad Café; Black Mirror, «Más allá del mar».
+- Puertas laterales: Origen XIII y sus Nodos 3 y 5; La Puerta, Nodo 13; Quantum 13, Nodo 7; Infinito, Libro 13; Portal Público, Libros 39 y 28.
+- Puente: *Aprendiste a habitar un día entero: despertar, encarnar, soltar y pertenecer, no para volver a casa, sino para quedarte despierto adentro. Esta serie no tiene un libro siguiente. Tiene el primero, que te espera distinto, porque quien lo abra ya no es el que empezó.* El siguiente del cierre lleva al Libro 1.

@@ -30,6 +30,8 @@
 
 *Actualizado al cerrar el Libro 12 (28 de octubre de 2026): Libro 12 publicado con columna en Origen IX, depuración breve de Origen IX.6 (una línea, con el veto de Arturo), portal 65 de Infinito adaptado al teléfono, índice general corregido («1 a 12»), lo aprendido en su cotejo y retoma para el Libro 13.*
 
+*Actualizado al cerrar el Libro 13 (29 de octubre de 2026): Libro 13, *Habitar*, publicado con columna en lo que Origen XIII no había dado y Teresa de Ávila como tradición principal; la serie queda completa. Puerta fractal Quantum 13.7 → Habitar, Umbral V; Infinito 13 saneado para el teléfono (enlace, letra, pantalla encendida); índice de la serie, README e índice general del Portal al día.*
+
 *Ordena, no limita. Todo lo que sigue son orientaciones: si el campo lleva hacia otro lado, se sigue al campo.*
 
 ---
@@ -242,7 +244,7 @@ Acordada en octubre de 2026. Quantum tiene trece libros y noventa y un nodos. Su
 - **Lo clínico, en la voz de cada nodo:** 13.1, el caso resuelto y «cuando esos universos dejan de reconocerse entre sí, cuando aparecen lagunas en la memoria o tiempo que no se recuerda haber vivido, ya no es riqueza sino sufrimiento, y merece la compañía de un profesional»; el laboratorio pasa a tres hojas escritas en primera persona. 13.2, la pregunta queda abierta en lugar del vértigo, y si trae extrañeza, se deja. 13.3, si el zoom marea, se mira un objeto cercano. 13.4, «cuando lo que se repite es el daño, cuando alguien te lastima una y otra vez, eso no es un reflejo tuyo ni algo que debas limpiar por dentro: es daño, y se sale de él pidiendo ayuda». 13.5, la memoria que se reconstruye, y los recuerdos que se vuelven a vivir, que no se recorren a solas. 13.6, sin omnipotencia ni culpa del que no tiene suerte: «la desgracia no prueba que alguien se haya alejado de su Sala». 13.7, «la cordura no consiste en ser uno solo, sino en que tus muchos se reconozcan en la misma casa»; cuando esa casa se quiebra, cuidado y compañía.
 - **Títulos:** el 13.6 pasa a *La Sala sin Paredes*, la imagen de su propio poema, porque el nodo enseña que el control funciona cuando se suelta. «Index» pasa a «Índice», y el índice abre con la enseñanza del libro en una línea: hay en ti algo que mira a todas tus versiones, y ser múltiple es otra forma de ser uno.
 - **El cierre de la serie (13.7):** sale el bloque de transmisión («TRINITY QUANTUM ESTÁ COMPLETO… ACTIVACIÓN PERMANENTE») y queda «Tú estás completo. Siempre lo estuviste.». «Cada libro fue una puerta. Cada nodo, una manera de mirar.» En la lista de los trece, el Arquitecto «diseña con la luz que no inventó» (Quantum 1) y la Simetría Rota «deja pasar la luz» (Quantum 9).
-- **Puertas:** publicadas, 13.1 → *La Voz Interior* (Portal Público, Libro 2), capítulo 1, «El coro interior»; 13.2 → *El Testigo*, Umbral V, «¿Quién oye este sonido?»; 13.4 → *Encuentro Real* (Portal Público, Libro 3), nodo 2, «Proyecciones cruzadas», escrito con voseo. 13.1 → *El Personaje*, Umbral III, «Muchos» ✅ publicada con el Libro 9, en el lugar del comentario (Pessoa y la cómoda alta). Anotada, con un comentario en el código del nodo: 13.7 → *Habitar*, porque Quantum y Arquitectura terminan en el mismo lugar («llegas al principio: YO SOY» y «Casa es donde recuerdas quién eres»).
+- **Puertas:** publicadas, 13.1 → *La Voz Interior* (Portal Público, Libro 2), capítulo 1, «El coro interior»; 13.2 → *El Testigo*, Umbral V, «¿Quién oye este sonido?»; 13.4 → *Encuentro Real* (Portal Público, Libro 3), nodo 2, «Proyecciones cruzadas», escrito con voseo. 13.1 → *El Personaje*, Umbral III, «Muchos» ✅ publicada con el Libro 9, en el lugar del comentario (Pessoa y la cómoda alta). Publicada con el Libro 13: 13.7 → *Habitar*, Umbral V, «Los días malos también viven aquí», donde se cita «que tus muchos se reconozcan en la misma casa» (antes anotada, porque Quantum y Arquitectura terminan en el mismo lugar).
 - **Raíz para *El Personaje*:**
   - 13.1 es el centro: el yo idealizado, el temido y el desconocido. El laboratorio de las tres hojas los hace escribir en primera persona («lo que aparezca viene de una parte de ti que todavía no tenía voz»), y la práctica suma el censo de versiones, el cambio de universo cada tres horas, el diálogo entre tres versiones sobre un problema actual y la versión que nunca fuiste, escrita con su voz: el lugar natural de Pessoa. Lo comprobable: los yoes posibles de Markus y Nurius (1986), junto a la complejidad del yo de Linville (1987). También la lectura gestáltica del sueño (Perls) y el poema «No eres una persona / con una personalidad — / eres un multiverso…», con «No busques tu ‘verdadero yo’».
   - 13.2: el metayó que mira a todas las versiones, el Presidente del parlamento de Origen II dicho con otra imagen. Es puente con *El Testigo*, que ya usó a Bassui y a Ramana.
@@ -428,12 +430,15 @@ El corazón operativo de la serie frente a la incertidumbre.
 - ✅ Publicado en octubre de 2026: ver el `registro.md`.
 - Gesto: un acto dado por día. Para ver: Infinito, portal 65, «La obra sin autor» (adaptado al teléfono), con las charlas de Esfahani Smith y Grant.
 
-**13 · Habitar** ⟐
+**13 · Habitar** ⟐ ✅ publicado
 *Casa es donde recuerdas quién eres. El cierre no es volver: es quedarse despierto adentro.*
 
-- Trinity: Origen XIII, «Casa es donde recuerdas quién eres»; Infinito, portal final.
-- Tradición: Heráclito y el mundo común; el *Himno de la Perla*, si el Libro 2 no lo usó entero.
-- Gesto: un día completo con el movimiento entero. Para ver: Infinito, portal 52, «El centro que está en todas partes».
+- Trinity: Origen XIII en lo que los libros 2, 3 y 4 no habían tomado: XIII.3 (etapas 5 y 6, la rendición, «El Origen como Destino») y XIII.7, XIV para reconocer; XIII.5 (círculos diarios, el círculo que nunca se cierra, el arte de cerrar círculos) para habitar; XIII.2, XIII.4, XIII.6 y XIII.7 en fragmentos. La Puerta, Nodo 13, como bisagra hacia la vida después del libro; Quantum 13.7; Infinito, Libro 13, para contemplar. El mapa preveía Heráclito y el *Himno de la Perla*: ya estaban en *El Sonámbulo*. El portal 52 sigue sin adaptar.
+- Tradición: Teresa de Ávila, *Las moradas*, la primera mujer como tradición principal; la historia de los dos que soñaron (*Las mil y una noches* y Borges, Rumi, Buber); Aristóteles, Corominas y el guaraní de Montoya y Melià (*teko*, *tekoha*, *apyka*); la esfera (el *Libro de los veinticuatro filósofos*, Pascal, Borges), Novalis, los Padres del desierto y la Regla de san Benito; Welwood.
+- Comprobable: von Franz, Zhang, Lally, White y Yaden, Bouton, Dai, Milkman y Riis.
+- Zeland: no entra.
+- ✅ Publicado el 29 de octubre de 2026: ver el `registro.md`.
+- Gesto: un día habitado con el movimiento entero, «Estoy aquí. Me quedo.». Para ver: Infinito, Libro 13 (portales 85 a 91), con las charlas de Pico Iyer.
 
 **Dónde entra Zeland:** en los libros 2, 8 y 10, y en el 1, ya publicado. En el 3 y el 4 no entra. Ningún libro gira sobre él.
 
@@ -522,7 +527,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - **Los nodos se enlazan intactos.** El filtro rige lo que se escribe en esta serie, no lo que está del otro lado de la puerta (sección 5, «Alcance del filtro»).
 - **Un puñado, solo donde hace falta.** Si cada página se llena de enlaces, la puerta deja de ser umbral y se vuelve índice.
 - **En las dos direcciones.** Del cierre de cada libro hacia Trinity, y desde un nodo de la serie mayor, retocado o ampliado, hacia el libro de Arquitectura o del Portal que desarrolló su idea (las puertas fractales de la guía de Quantum).
-- **Puertas fractales publicadas:** Quantum 9, nodo 1 → *El Campo*, Umbral IV; Quantum 9, nodo 5 → *Atravesar*, Umbral VI; Quantum 9, nodo 7 → *La Grieta*, Umbral III; Quantum 1, nodo 6 → *El Campo*, Umbral VI; Quantum 1, nodo 7 → índice de Arquitectura del Destino; Quantum 4, nodo 3 → *El Testigo*, Umbral I; Quantum 4, nodo 7 → *El Cuerpo*, Umbral III; Quantum 1, nodo 4 → *El Peso*, Umbral II; Quantum 4, nodo 7 → *El Peso*, Umbral V; Quantum 9, nodo 4 → *El Peso*, Umbral IV; Quantum 13, nodo 1 → *La Voz Interior*, capítulo 1 (Portal Público); Quantum 13, nodo 2 → *El Testigo*, Umbral V; Quantum 13, nodo 4 → *Encuentro Real*, nodo 2 (Portal Público); Quantum 4, nodo 4 → *El Personaje*, Umbral I; Quantum 13, nodo 1 → *El Personaje*, Umbral III; Quantum 1, nodo 3 → *El Personaje*, Umbral VII; Quantum 10, nodo 2 → *El Peso*, Umbral VI; Quantum 10, nodo 4 → *Los muchos*, Umbral III (Portal Público); Quantum 10, nodo 6 → *La Corriente*, Umbral V; Quantum 4, nodo 2 → *La Red*, Umbral VI. El bloque fijo está en la sección 5. **Anotada para cuando exista su libro:** 13.7 → *Habitar*. **Anotada para cuando se depure Quantum 7:** 7.4 → *El Personaje*, Umbral VI. **Anotadas para cuando se depure Quantum 3:** 3.4 → *Atender*, Umbral IV, y 3.4 → *No Saber*, Umbral III.
+- **Puertas fractales publicadas:** Quantum 9, nodo 1 → *El Campo*, Umbral IV; Quantum 9, nodo 5 → *Atravesar*, Umbral VI; Quantum 9, nodo 7 → *La Grieta*, Umbral III; Quantum 1, nodo 6 → *El Campo*, Umbral VI; Quantum 1, nodo 7 → índice de Arquitectura del Destino; Quantum 4, nodo 3 → *El Testigo*, Umbral I; Quantum 4, nodo 7 → *El Cuerpo*, Umbral III; Quantum 1, nodo 4 → *El Peso*, Umbral II; Quantum 4, nodo 7 → *El Peso*, Umbral V; Quantum 9, nodo 4 → *El Peso*, Umbral IV; Quantum 13, nodo 1 → *La Voz Interior*, capítulo 1 (Portal Público); Quantum 13, nodo 2 → *El Testigo*, Umbral V; Quantum 13, nodo 4 → *Encuentro Real*, nodo 2 (Portal Público); Quantum 4, nodo 4 → *El Personaje*, Umbral I; Quantum 13, nodo 1 → *El Personaje*, Umbral III; Quantum 1, nodo 3 → *El Personaje*, Umbral VII; Quantum 10, nodo 2 → *El Peso*, Umbral VI; Quantum 10, nodo 4 → *Los muchos*, Umbral III (Portal Público); Quantum 10, nodo 6 → *La Corriente*, Umbral V; Quantum 4, nodo 2 → *La Red*, Umbral VI. El bloque fijo está en la sección 5. **Anotada para cuando exista su libro:** 13.7 → *Habitar*. **Anotada para cuando se depure Quantum 7:** 7.4 → *El Personaje*, Umbral VI. **Anotadas para cuando se depure Quantum 3:** 3.4 → *Atender*, Umbral IV, y 3.4 → *No Saber*, Umbral III; Quantum 13, nodo 7 → *Habitar*, Umbral V.
 
 **Bases renderizadas:**
 
@@ -663,11 +668,11 @@ Primer mensaje sugerido:
 
 > «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del último libro publicado y el libro de Trinity que da la raíz al de hoy. Trabajamos el Libro N. Después de leer, propón el esqueleto de los siete umbrales.»
 
-Para *Habitar* (Libro 13), cierre del sistema, la sección 6 propone Origen XIII («Casa es donde recuerdas quién eres») y el portal final de Infinito. Como en los libros 10 a 12, conviene leer entero el libro de Trinity, cruzar el mapa con lo publicado (la serie y el Portal) y elegir primero la columna con Arturo. Primer mensaje sugerido:
+La serie quedó completa el 29 de octubre de 2026 con *Habitar*. Si se retoma, quedan abiertos tres hilos, ninguno urgente:
 
-> «Continuamos con Arquitectura del Destino. Lee el maestro v4, incluida la sección «Condiciones del Campo», el registro, el cierre del Libro 12, Origen XIII y el portal final de Infinito. Trabajamos el Libro 13, *Habitar*, cierre del sistema. Después de leer en profundidad, cruza el mapa con lo publicado, propón la columna y, una vez elegida, el esqueleto de los siete umbrales.»
-
-El puente desde el Libro 12 ya está escrito: *Aprendiste a dar un acto por día, sin firmarlo y sin cargar la obra entera. El último libro reúne el movimiento completo en un solo día: despertar, encarnar, soltar y pertenecer, no para volver a casa, sino para quedarse despierto adentro.* El séptimo día del Libro 12 (una hora de *minka*) y la rampa de su cierre ya llevan la práctica hacia lo común. El gesto del Libro 13, un día completo con el movimiento entero, reúne las doce operaciones anteriores: conviene que no se vuelva una lista que agote, sino un día que se habita. Voces ya usadas en el Libro 12 que conviene no repetir como centro: Hillel, Tarfón, la cámara de los discretos, Maimónides, los treinta y seis justos, Honi y Usha; Tolstói (*Confesión*, «Tres preguntas»); Frankl (la pregunta invertida); Eliot (*Middlemarch*); Borges («Los justos»); la *minka*; Yalom (el sinsentido), Grant, Konrath, Weinstein y Ryan, Werner, Steger, Erikson, Figley, Klimecki y Singer. El *Himno de la Perla* ya entró en el Libro 2 (ver el registro): en el 13, solo como eco. Origen IX no está depurado entero; si se depura, su puerta natural es IX.6 → Umbral VI de *La Obra*, «Arder sin consumirse». Salvaguarda: *Habitar* ≠ retiro del mundo ni abandono de vínculos.
+- **Origen XIII** sigue sin depurar. La transición de su Nodo 5 anuncia «Habitar el Hogar», un nodo que no se escribió; cuando se depure, una puerta fractal desde ahí hacia *Habitar* cerraría ese círculo.
+- **El portal 52 de Infinito**, «El centro que está en todas partes», sigue sin adaptar al teléfono.
+- **Una pasada general de la serie**, si Arturo la quiere: leer los trece de corrido, con el registro al lado, buscando repeticiones entre libros y enlaces rotos.
 
 ---
 
@@ -767,9 +772,20 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 - Puertas laterales: Origen IX y su Nodo 6; Origen VI, Nodo 4; Infinito 10; La Puerta, Nodo 8; Portal Público, *Lo que se recibe*.
 - Sin puerta fractal nueva: Origen IX no está depurado entero.
 
+### Libro 13 (`libro-13-habitar/`)
+
+- Tarjeta del índice activa, con la marca ⟐ y el borde punteado del cierre; ✅ en el `README.md`.
+- Entrada completa en el `registro.md`.
+- El cierre lleva como siguiente el primer libro («Empezar otra vez: El Campo»), como dice su puente.
+- Infinito, Libro 13 (repositorio Trinity-), depurado por Arturo, con un saneamiento acotado para el teléfono: el enlace «← índice» apuntaba a una carpeta sin índice y ahora va a `infinito.html`; letra más grande en el teléfono (frases, título, cierre y enlace); y la pantalla se mantiene encendida mientras se contempla (*wake lock*, si el navegador lo permite), porque los portales piden unos dos minutos de quietud y muchos teléfonos se apagan antes.
+- Puerta fractal Quantum 13, nodo 7 → Umbral V (repositorio Trinity-), en el lugar del comentario que la anotaba.
+- Puertas laterales: Origen XIII y sus Nodos 3 y 5; La Puerta, Nodo 13; Quantum 13, Nodo 7; Infinito 13; Portal Público, *El campo* (39) y *El vacío* (28).
+
 ### Índice general del Portal (`index.html` de la raíz)
 
 - La tarjeta del sistema decía «Los libros 1 a 4 están activos» y la de próximamente listaba los libros 4 a 13: no se había actualizado con los libros 5 y 6. Ahora dice 1 a 7 y lista los libros 8 a 13. Al cerrar el Libro 9 se vio que ese cambio no había llegado al repositorio: la tarjeta en línea seguía diciendo «Los libros 1 a 4 están activos». Ahora dice «Los libros 1 a 9 están activos». Al cerrar el Libro 10, la tarjeta en línea volvía a decir «1 a 4». Ahora dice «Los libros 1 a 10 están activos». Al cerrar el Libro 11 la tarjeta decía, como correspondía, «1 a 10»; ahora dice «Los libros 1 a 11 están activos». Al cerrar el Libro 12, «Los libros 1 a 12 están activos». Después de cada subida, mirarla en línea.
+
+- Al cerrar el Libro 13: la tarjeta del sistema dice «13 libros · completo» y «Los trece libros están activos».
 
 ### Origen VII (`01_Trinity_Origen/Libro_07/`, repositorio Trinity-)
 

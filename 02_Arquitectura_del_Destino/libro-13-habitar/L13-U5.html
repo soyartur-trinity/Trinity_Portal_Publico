@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es" data-libro="L13">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="un hogar para todas tus partes">
+<title>Los días malos también viven aquí · Umbral V · Habitar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#060d1a; --bg-soft:#0a1225; --panel:rgba(120,160,220,.035);
+  --border:rgba(140,170,220,.16); --border-strong:rgba(140,170,220,.34);
+  --plata:#a8c4e0; --plata-clara:#d4e4f4; --text:#e8eef6;
+  --text-soft:rgba(206,220,238,.80); --text-faint:rgba(200,215,235,.50);
+  --ambar:#d9b36c; --ambar-borde:rgba(217,179,108,.42);
+}
+:root:not([data-theme="light"]){ color-scheme:dark; }
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:112.5%;scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'EB Garamond',Georgia,serif; color:var(--text); line-height:1.82;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(80,110,210,.13), transparent 34%),
+    linear-gradient(180deg,#080b14 0%,#060d1a 46%,#040810 100%);
+  background-color:var(--bg); min-height:100vh; overflow-x:hidden;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+a{color:var(--plata-clara)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--plata);outline-offset:3px;border-radius:4px}
+.wrap{max-width:38rem;margin:0 auto;padding:0 1.35rem}
+.barra{display:flex;justify-content:space-between;gap:1rem;max-width:38rem;margin:0 auto;padding:1.1rem 1.35rem;font-family:'Inter',system-ui,sans-serif;font-size:.78rem;letter-spacing:.02em}
+.barra a{color:var(--text-faint);text-decoration:none}
+.barra a:hover{color:var(--plata-clara)}
+/* encabezado */
+.cabeza{padding:3.2rem 0 2.6rem}
+.rumbo{display:flex;gap:.55rem;align-items:center;margin-bottom:1.6rem}
+.rumbo span{width:9px;height:9px;border-radius:50%;border:1px solid var(--border-strong)}
+.rumbo span.hecho{background:rgba(168,196,224,.35);border-color:transparent}
+.rumbo span.aqui{background:var(--plata);border-color:var(--plata);box-shadow:0 0 0 4px rgba(168,196,224,.12)}
+.cual{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.15rem;color:var(--plata)}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;font-size:clamp(2.4rem,8vw,3.6rem);line-height:1.05;color:var(--plata-clara);margin:.35rem 0 .7rem;letter-spacing:-.005em}
+.sub{font-style:italic;color:var(--text-soft);font-size:1.18rem}
+/* cuerpo */
+main p{margin-bottom:1.15rem;color:var(--text)}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:1.55rem;color:var(--plata);margin:3.1rem 0 1rem;line-height:1.2}
+.perla{margin:2.4rem 0;padding:.2rem 0 .2rem 1.2rem;border-left:2px solid var(--plata)}
+.perla p{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.5rem;line-height:1.38;color:var(--plata-clara);margin:0}
+.cita{margin:1.6rem 0;padding:.9rem 1.1rem;border-left:1px solid var(--border-strong);background:var(--panel);border-radius:0 10px 10px 0}
+.cita p{margin:0 0 .55rem}
+.cita p:last-child{margin-bottom:0}
+.cita .orig{font-style:italic;color:var(--text-soft)}
+main ul,main ol{margin:0 0 1.2rem 1.25rem}
+main li{margin-bottom:.45rem}
+sup.ref{font-size:.62em;line-height:0;margin-left:.1em}
+sup.ref a{color:var(--plata);text-decoration:none;font-family:'Inter',sans-serif}
+.notas{margin:4rem 0 1rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.notas h3{font-family:'Inter',sans-serif;font-weight:500;font-size:.8rem;color:var(--text-faint);margin-bottom:.9rem}
+.notas ol{margin-left:1.2rem}
+.notas li{font-size:.94rem;line-height:1.65;color:var(--text-soft);margin-bottom:.6rem}
+.sigue{margin:3.6rem 0 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.86rem}
+.sigue a{color:var(--text-soft);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.6rem 1.05rem}
+.sigue a:hover{border-color:var(--border-strong);color:var(--plata-clara)}
+.sigue a.prox{color:var(--plata-clara);border-color:var(--border-strong)}
+.pie{max-width:38rem;margin:0 auto;padding:1.4rem 1.35rem 2.4rem;font-family:'Inter',sans-serif;font-size:.74rem;color:var(--text-faint)}
+/* portada */
+.campo-svg{display:block;width:100%;height:auto;margin:1.4rem 0 .4rem}
+.campo-svg .p{fill:rgba(168,196,224,.28)}
+.campo-svg .linea{fill:none;stroke:var(--plata);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .ojo{fill:none;stroke:var(--plata-clara);stroke-width:1.2}
+.campo-svg .mirada{stroke:var(--plata);stroke-width:1;stroke-dasharray:3 6;opacity:.45}
+.campo-svg .linea.dibuja{stroke-dasharray:900;stroke-dashoffset:900;animation:traza 3.2s ease-out .4s forwards}
+@keyframes traza{to{stroke-dashoffset:0}}
+.promesa{margin:2rem 0 2.6rem;padding-left:1.2rem;border-left:2px solid var(--plata)}
+.promesa p{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;line-height:1.3;color:var(--plata-clara);margin:0}
+.aviso{margin:2.4rem 0;padding:1.1rem 1.25rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.aviso h2{margin:0 0 .6rem;font-size:1.25rem;color:var(--ambar)}
+.aviso p{color:var(--text-soft);font-size:1rem}
+.indice{list-style:none;margin:1rem 0 0!important}
+.indice li{margin:0;border-top:1px solid var(--border)}
+.indice li:last-child{border-bottom:1px solid var(--border)}
+.indice a{display:grid;grid-template-columns:2.6rem 1fr;gap:.3rem;padding:.95rem 0;text-decoration:none;color:var(--text)}
+.indice .n{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--plata);font-size:1.15rem}
+.indice .t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--plata-clara);line-height:1.2}
+.indice .s{display:block;font-style:italic;color:var(--text-soft);font-size:.98rem}
+.indice a:hover .t{color:#fff}
+/* operación */
+.ficha{font-family:'Inter',sans-serif;font-size:.92rem;line-height:1.6;margin:1.2rem 0 1.6rem;padding:1rem 1.15rem;border:1px solid var(--border);border-radius:12px;background:var(--panel)}
+.ficha p{margin:0 0 .35rem;color:var(--text-soft)}
+.ficha strong{color:var(--plata-clara);font-weight:500}
+.paso h2{font-family:'Inter',sans-serif;font-weight:500;font-size:1.02rem;letter-spacing:.01em;color:var(--plata-clara)}
+.respira{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.respira button{appearance:none;border:none;background:none;cursor:pointer;width:13.5rem;height:13.5rem;border-radius:50%;position:relative;color:var(--plata-clara);font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic}
+.respira .aro{position:absolute;inset:0;border-radius:50%;border:1px solid var(--plata);background:radial-gradient(circle,rgba(168,196,224,.16),rgba(168,196,224,.03) 62%,transparent 72%);transform:scale(.86)}
+.respira.activa .aro{animation:respira 10s ease-in-out 3}
+@keyframes respira{0%{transform:scale(.86)}40%{transform:scale(1)}100%{transform:scale(.86)}}
+.respira .frase{position:relative}
+.respira .cuenta{font-family:'Inter',sans-serif;font-size:.82rem;color:var(--text-faint);min-height:1.2em}
+.diario{margin:1.6rem 0 2rem;font-family:'Inter',sans-serif}
+.diario details{border-top:1px solid var(--border)}
+.diario details:last-of-type{border-bottom:1px solid var(--border)}
+.diario summary{cursor:pointer;padding:.85rem 0;color:var(--plata-clara);font-size:.95rem;list-style-position:inside}
+.diario label{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario textarea,.diario input[type=text]{width:100%;font:inherit;font-size:.95rem;color:var(--text);background:rgba(10,18,37,.9);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;line-height:1.5}
+.diario textarea{min-height:3.4rem;resize:vertical}
+.diario .dia{padding-bottom:1rem}
+.diario .elige{display:flex;gap:1.2rem;margin:.4rem 0 .6rem;font-size:.92rem;color:var(--text-soft)}
+.diario .acciones{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+.diario button{font:inherit;font-size:.84rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;cursor:pointer}
+.diario button:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.diario .estado{font-size:.8rem;color:var(--text-faint);margin-top:.6rem;min-height:1.1em}
+.diario .contador{display:flex;align-items:center;gap:.6rem;margin:.35rem 0 .2rem;font-size:.9rem;color:var(--text-soft)}
+.diario .contador span.t{flex:1}
+.diario .contador button{width:2.2rem;height:2.2rem;padding:0;border-radius:50%;font-size:1.05rem;line-height:1}
+.diario .contador output{min-width:1.6rem;text-align:center;color:var(--plata-clara);font-size:1rem}
+.campo-svg .punto{fill:var(--ambar)}
+.campo-svg .punto.late{animation:late 3.6s ease-in-out 3.4s infinite;transform-origin:center;transform-box:fill-box}
+.campo-svg .halo{fill:none;stroke:var(--ambar);stroke-width:1;opacity:0;transform-origin:center;transform-box:fill-box;animation:halo 10s ease-in-out 3.4s infinite}
+@keyframes halo{0%{opacity:0;transform:scale(.6)}40%{opacity:.55;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.diario .rotulo{display:block;font-size:.84rem;color:var(--text-soft);margin:.6rem 0 .3rem}
+.diario .plan{display:flex;flex-wrap:wrap;align-items:baseline;gap:.35rem .5rem;margin:.4rem 0 1.1rem;font-size:.95rem;color:var(--text-soft)}
+.diario .plan input[type=text]{padding:.4rem .6rem}
+.diario .plan input.corto{flex:0 1 6.5rem;width:6.5rem}
+.diario .plan input.largo{flex:1 1 11rem;width:auto;min-width:9rem}
+.diario input::placeholder{color:var(--text-faint)}
+@keyframes late{0%,100%{opacity:.55}50%{opacity:1}}
+@media (max-width:600px){html{font-size:118.75%}}
+.enlaces li b{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:500;color:var(--plata-clara)}
+.autor{margin:3rem 0 0;padding-top:.4rem;border-top:1px solid var(--border)}
+.autor h2{font-size:1.25rem;margin:1.6rem 0 .6rem}
+.autor p{color:var(--text-soft);font-size:1rem}
+.cuidado{margin:2.2rem 0;padding:1.05rem 1.2rem;border:1px solid var(--ambar-borde);border-radius:12px;background:rgba(217,179,108,.04)}
+.cuidado h2{margin:0 0 .6rem;color:var(--ambar);font-size:1.3rem}
+/* cierre */
+.enlaces{list-style:none;margin:0!important}
+.enlaces li{padding:.9rem 0;border-top:1px solid var(--border);margin:0}
+.enlaces li:last-child{border-bottom:1px solid var(--border)}
+.enlaces a{font-family:'Cormorant Garamond',serif;font-size:1.22rem;text-decoration:none;color:var(--plata-clara)}
+.enlaces a:hover{text-decoration:underline}
+.enlaces span{display:block;color:var(--text-soft);font-size:.98rem;margin-top:.15rem}
+.puente{font-style:italic;color:var(--text-soft);margin-top:1.6rem}
+@media (max-width:640px){
+  html{font-size:112.5%}
+  .wrap{padding:0 1.15rem}
+  .cabeza{padding:2.2rem 0 2rem}
+  .perla p{font-size:1.36rem}
+  .promesa p{font-size:1.5rem}
+}
+/* la fisura de oro */
+.fisura{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.fisura button{appearance:none;width:100%;max-width:25rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.25rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.fisura button:hover{border-color:var(--border-strong)}
+.fisura svg{display:block;width:100%;height:auto}
+.fisura .base{fill:none;stroke:rgba(168,196,224,.38);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.fisura .oro{fill:none;stroke:var(--ambar);stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1000;stroke-dashoffset:1000;filter:drop-shadow(0 0 4px rgba(217,179,108,.55))}
+.fisura .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corte{fill:none;stroke:var(--bg);stroke-width:5;opacity:0;animation:aparece .5s ease-out 3.3s forwards}
+@keyframes aparece{to{opacity:1}}
+.campo-svg .costura{fill:none;stroke:var(--ambar);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.campo-svg .costura.dibuja{stroke-dasharray:80;stroke-dashoffset:80;animation:traza 1.6s ease-out 3.4s forwards}
+
+/* el barro */
+.barro{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.barro button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.barro button:hover{border-color:var(--border-strong)}
+.barro svg{display:block;width:15rem;max-width:100%;height:auto}
+.barro .fondo{fill:rgba(168,196,224,.05)}
+.barro .plato{fill:rgba(168,196,224,.10);stroke:rgba(168,196,224,.45);stroke-width:1}
+.barro .giro{fill:none;stroke:var(--plata);stroke-width:1;stroke-dasharray:6 10;opacity:.55;animation:gira 2.4s linear infinite}
+.barro .masa path.cuerpo{fill:#8a6e5a;stroke:rgba(212,228,244,.32);stroke-width:1}
+.barro .surco{fill:none;stroke:rgba(212,228,244,.28);stroke-width:1;stroke-dasharray:14 20;animation:gira 1.7s linear infinite}
+.barro .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+@keyframes gira{to{stroke-dashoffset:-32}}
+.campo-svg .linea.pesada{stroke-width:2.8}
+.campo-svg .linea.leve{stroke-width:1.2;opacity:.9}
+.campo-svg .linea.pesada.dibuja{animation:traza 1.9s ease-in .4s forwards}
+.campo-svg .linea.leve.dibuja{animation:traza 1.7s ease-out 2.3s forwards}
+.campo-svg .torno{fill:none;stroke:rgba(168,196,224,.6);stroke-width:1;stroke-dasharray:4 7;opacity:0;transform-origin:center;transform-box:fill-box;animation:aparece .8s ease-out 3.6s forwards,torno 22s linear 3.6s infinite}
+@keyframes torno{to{transform:rotate(360deg)}}
+.diario .marca{display:flex;align-items:center;gap:.55rem;font-size:.92rem;color:var(--text-soft);margin:.7rem 0 .2rem;cursor:pointer}
+.diario .marca input{width:1.05rem;height:1.05rem;accent-color:var(--plata)}
+
+/* la máscara */
+.mascara{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.mascara button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.mascara button:hover{border-color:var(--border-strong)}
+.mascara svg{display:block;width:13rem;max-width:100%;height:auto}
+.mascara .fondo{fill:rgba(168,196,224,.05)}
+.mascara .luz{fill:var(--ambar)}
+.mascara .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.mascara.vista .aura{animation:halo 10s ease-in-out infinite}
+.mascara .cara{fill:url(#mascara-tono);fill-rule:evenodd}
+.mascara .contorno{fill:none;stroke:var(--plata-clara);stroke-width:1.3;stroke-linecap:round;opacity:.7;transition:opacity 1.2s ease}
+.mascara.fin .contorno{opacity:.95}
+.mascara .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .mascara-p{fill:rgba(168,196,224,.82);fill-rule:evenodd;opacity:0;animation:aparece .8s ease-out 3.2s forwards,destapa 2.6s ease-in-out 4.4s forwards}
+.campo-svg .mascara-c{fill:none;stroke:var(--plata-clara);stroke-width:1.1;opacity:0;animation:aparece .8s ease-out 3.2s forwards}
+@keyframes destapa{from{opacity:1}to{opacity:.12}}
+@media (prefers-reduced-motion:reduce){
+  .mascara.vista .aura{animation:none}
+  .campo-svg .mascara-p{animation:none;opacity:.12}
+  .campo-svg .mascara-c{animation:none;opacity:1}
+}
+@media (prefers-reduced-motion:reduce){
+  .barro .giro,.barro .surco{animation:none}
+  .campo-svg .torno{animation:none;opacity:.55}
+}
+@media (prefers-reduced-motion:reduce){
+  .fisura .oro{transition:none!important}
+  .campo-svg .costura.dibuja{animation:none;stroke-dashoffset:0}
+  .campo-svg .corte{animation:none;opacity:1}
+  .campo-svg .linea.dibuja{animation:none;stroke-dashoffset:0}
+  .respira.activa .aro{animation:none;transform:scale(.94)}
+  .campo-svg .halo{animation:none;opacity:.35}
+}
+
+/* la orilla */
+.orilla{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.orilla button{appearance:none;width:100%;max-width:21rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.2rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.orilla button:hover{border-color:var(--border-strong)}
+.orilla svg{display:block;width:13rem;max-width:100%;height:auto}
+.orilla .mar{fill:rgba(120,160,210,.09)}
+.orilla .arena{fill:rgba(222,196,146,.24)}
+.orilla .canal{fill:rgba(3,8,20,.55)}
+.orilla .tira{fill:none;stroke:rgba(168,196,224,.38);stroke-width:1;stroke-dasharray:3 6}
+.orilla.vista .tira{animation:tira 3.2s linear infinite}
+@keyframes tira{to{stroke-dashoffset:-18}}
+.orilla .ola{fill:none;stroke:rgba(212,228,244,.6);stroke-width:1.2;stroke-linecap:round;opacity:.55}
+.orilla.vista .ola{animation:ola 4.5s ease-in-out infinite}
+@keyframes ola{0%,100%{opacity:.4}50%{opacity:.85}}
+.orilla .luz{fill:var(--ambar)}
+.orilla .aura{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.25;transform-origin:center;transform-box:fill-box}
+.orilla.vista .aura{animation:halo 10s ease-in-out infinite}
+.orilla .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .corr path{fill:none;stroke:rgba(168,196,224,.5);stroke-width:1;stroke-dasharray:6 8;opacity:0;animation:aparece .8s ease-out 2.6s forwards,fluye 7s linear 2.6s infinite}
+@keyframes fluye{to{stroke-dashoffset:-56}}
+@media (prefers-reduced-motion:reduce){
+  .orilla.vista .tira,.orilla.vista .ola,.orilla.vista .aura{animation:none}
+  .campo-svg .corr path{animation:none;opacity:.5}
+}
+
+/* la red de Indra */
+.indra{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.indra>button:not(.apagar){appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.indra>button:not(.apagar):hover{border-color:var(--border-strong)}
+.indra svg{display:block;width:16rem;max-width:100%;height:auto}
+.joyas{margin:2rem 0;padding:1.1rem 1rem 1rem;border:1px solid var(--border);border-radius:16px;background:var(--panel)}
+.joyas svg{width:19rem;touch-action:manipulation}
+.indra .hilo{stroke:rgba(168,196,224,.24);stroke-width:.8;transition:stroke .6s ease,stroke-width .6s ease}
+.indra .hilo.tocado{stroke:rgba(217,179,108,.34)}
+.indra .hilo.vivo{stroke:rgba(217,179,108,.9);stroke-width:1.3}
+.indra .joya{fill:rgba(8,15,31,.96);stroke:rgba(168,196,224,.55);stroke-width:.9;transition:fill .8s ease,stroke .8s ease}
+.indra .nodo.luz .joya{fill:rgba(217,179,108,.16);stroke:var(--ambar)}
+.indra .r{fill:rgba(168,196,224,.22);transition:fill .7s ease}
+.indra .r.on{fill:var(--ambar)}
+.indra .brillo{fill:none;stroke:var(--ambar);stroke-width:.7;opacity:0;transform-origin:center;transform-box:fill-box}
+.indra .nodo.luz .brillo{opacity:.45}
+.indra.vista .nodo.luz .brillo{animation:halo 10s ease-in-out infinite}
+.indra .toque{fill:transparent;cursor:pointer}
+.indra .nodo{outline:none}
+.indra .nodo:focus-visible .joya{stroke:var(--plata-clara);stroke-width:1.8}
+.indra .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center;margin:0}
+.joyas .apagar{display:block;margin:.7rem auto 0;font:inherit;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--text-soft);background:none;border:1px solid var(--border);border-radius:999px;padding:.45rem .9rem;cursor:pointer}
+.joyas .apagar:hover{color:var(--plata-clara);border-color:var(--border-strong)}
+.campo-svg .hilo{fill:none;stroke:rgba(217,179,108,.5);stroke-width:1;stroke-dasharray:120;stroke-dashoffset:120;animation:traza 1.4s ease-out forwards}
+.campo-svg .nudo{fill:var(--ambar);opacity:0;animation:aparece .7s ease-out forwards}
+.campo-svg .nudo.lejos{fill:var(--plata-clara)}
+@media (prefers-reduced-motion:reduce){
+  .indra.vista .nodo.luz .brillo{animation:none}
+  .indra .hilo,.indra .joya,.indra .r{transition:none}
+  .campo-svg .hilo{animation:none;stroke-dashoffset:0}
+  .campo-svg .nudo{animation:none;opacity:.8}
+}
+/* el castillo de siete ventanas */
+.castillo{margin:2rem 0;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.castillo button{appearance:none;width:100%;max-width:22rem;border:1px solid var(--border);border-radius:16px;background:var(--panel);padding:1.1rem 1rem 1.05rem;cursor:pointer;color:var(--plata-clara);font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:1.3rem;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.castillo button:hover{border-color:var(--border-strong)}
+.castillo svg{display:block;width:15rem;max-width:100%;height:auto}
+.castillo .morada{fill:none;stroke:rgba(168,196,224,.30);stroke-width:.9;transition:stroke 1.4s ease}
+.castillo .morada.on{stroke:rgba(217,179,108,.55)}
+.castillo .ventana{fill:var(--bg);stroke:rgba(168,196,224,.50);stroke-width:.7;transition:fill 1.1s ease,stroke 1.1s ease}
+.castillo .ventana.on{fill:var(--ambar);stroke:var(--ambar)}
+.castillo .centro{fill:rgba(168,196,224,.35);transition:fill 1.4s ease}
+.castillo .centro-halo{fill:url(#g-centro);opacity:0;transition:opacity 1.6s ease}
+.castillo.fin .centro{fill:var(--ambar)}
+.castillo.fin .centro-halo{opacity:1}
+.castillo.vista.fin .centro-halo{animation:respira 5s ease-in-out infinite}
+@keyframes respira{0%,100%{opacity:.65}50%{opacity:1}}
+.castillo .cuenta{font-family:'Inter',sans-serif;font-size:.84rem;color:var(--text-faint);min-height:1.2em;text-align:center}
+.campo-svg .circulo{fill:none;stroke:var(--ambar);stroke-width:1.2;opacity:.85}
+.campo-svg .circulo.dibuja{stroke-dasharray:280;stroke-dashoffset:280;animation:traza 2.6s ease-in-out 3.2s forwards}
+@media (prefers-reduced-motion:reduce){
+  .castillo.vista.fin .centro-halo{animation:none}
+  .castillo .morada,.castillo .ventana,.castillo .centro,.castillo .centro-halo{transition:none}
+  .campo-svg .circulo.dibuja{animation:none;stroke-dashoffset:0}
+}
+
+</style>
+</head>
+<body>
+<nav class="barra" aria-label="Navegación"><a href="../index.html">Arquitectura del Destino</a><a href="L13.html">Índice del libro</a></nav><div class="wrap"><header class="cabeza"><div class="rumbo" aria-hidden="true"><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="hecho"></span><span class="aqui"></span><span class=""></span><span class=""></span></div><div class="cual">Umbral V</div><h1>Los días malos también viven aquí</h1><p class="sub">un hogar para todas tus partes</p></header><main><h2>El martes</h2>
+<p>El martes de la cuarta semana fue un mal día.</p>
+<p>A media mañana llegó a la recepción un paquete para el piso once, y Mauricio lo mandó al piso uno. Era un error de una tecla. A las doce bajó el gerente del once, un hombre de traje gris que nunca lo había mirado, y le habló delante de las personas que esperaban el ascensor. No gritó. Fue peor: habló despacio, con una paciencia de maestro ante un alumno lento, y terminó con una frase que Mauricio se llevó a su casa como una piedra en el bolsillo:</p>
+<p>—Supongo que de noche estas cosas no pasaban.</p>
+<p>Durante veintidós años nadie lo había visto trabajar. De noche no había gerentes, ni gente esperando el ascensor, ni paquetes. Había pasillos, y él. Esa tarde, en el autobús, sintió algo que no sentía desde hacía mucho: ganas de volver a la oscuridad, donde nadie lo miraba.</p>
+<p>Llegó a su casa con la mandíbula apretada. Gloria todavía atendía. Julieta estaba al piano, sin la sordina, tocando una pieza difícil que se le trababa siempre en el mismo compás. Lo repetía una y otra vez. A la cuarta, Mauricio dijo desde el pasillo, más fuerte de lo que quería:</p>
+<p>—¿Puedes bajar eso?</p>
+<p>La música se cortó. Después de un silencio, volvió, más baja, con ese sonido de algodón que él conocía de memoria. Julieta había vuelto a poner el pie en el pedal del medio.</p>
+<p>Esa noche, a las tres, Mauricio se levantó e hizo la ronda vieja. No la visita: la ronda. La puerta de calle, la ventana del baño, el patio, la puerta de calle otra vez. Comprobó la cerradura cinco veces. A la quinta se dio cuenta de lo que estaba haciendo, apoyó la espalda contra la pared del pasillo y se fue deslizando hasta quedar sentado en el piso.</p>
+<h2>Un día, lo más</h2>
+<p>A Teresa de Ávila se la suele imaginar en éxtasis. Pero en el último capítulo de <em>Las moradas</em>, cuando ya ha descrito la morada del centro, la más alta, se detiene para hacer una advertencia muy terrenal. No piensen, les dice a sus monjas, que quienes llegan ahí están siempre en ese estado:</p>
+<div class="cita"><p class="trad">No habéis de entender, hermanas, que siempre en un ser están estos efectos que he dicho en estas almas<sup class="ref"><a href="#nota-1" aria-label="nota 1">1</a></sup></p></div>
+<p>Hay veces, sigue, en que el alma queda en su natural, y parece entonces que todo lo dañino de los alrededores del castillo se junta para vengarse. Y enseguida agrega, con una precisión casi clínica:</p>
+<div class="cita"><p class="trad">Verdad es que dura poco: un día lo más, o poco más<sup class="ref"><a href="#nota-2" aria-label="nota 2">2</a></sup></p></div>
+<p>Un capítulo antes había usado otra imagen: en esa morada, las tormentas pasan pronto, como una ola, y vuelve la calma.<sup class="ref"><a href="#nota-3" aria-label="nota 3">3</a></sup></p>
+<p>Teresa no promete que en el centro del castillo no hay tormentas. Promete algo más útil: que la tormenta no echa a nadie de la casa. Llega, sacude, dura un día, y quien vive adentro sigue viviendo adentro. Los días malos no prueban que no se haya entrado. Son parte de lo que vive ahí.</p>
+<h2>Un hogar seguro</h2>
+<p>El segundo nodo de <em>El Retorno a Casa</em> se titula «Los Fragmentos del Alma». Habla de las partes de uno que quedaron atrás: en una herida, en un miedo, en una edad. Y en medio de una invocación para llamarlas de vuelta, deja caer una línea que podría estar escrita en la puerta de cualquier casa:</p>
+<div class="cita"><p class="trad">Soy un hogar seguro para todas mis partes.<sup class="ref"><a href="#nota-4" aria-label="nota 4">4</a></sup></p></div>
+<p>No dice: soy un hogar para mis partes buenas. Dice todas. El que se enoja con un desconocido por una tecla mal apretada. El que tiene miedo de que si deja de revisar la cerradura algo malo va a pasar. El que le pide a su hija que baje la música. Todos viven en la misma casa. Y la casa no se cae porque estén.</p>
+<p><em>Trinity Quantum</em>, en el último nodo de su último libro, lo dice con una frase que pertenece a la clínica tanto como a la poesía:</p>
+<div class="cita"><p class="trad">La cordura no consiste en ser uno solo, sino en que tus muchos se reconozcan en la misma casa.<sup class="ref"><a href="#nota-5" aria-label="nota 5">5</a></sup></p></div>
+<p><em>El Personaje</em>, el noveno libro de esta serie, llamó a esos muchos por su nombre. <em>El Sonámbulo</em> había contado que el recuerdo va y viene, y que esa oscilación no es fracaso. Aquí la idea llega a su forma más simple: habitar no es estar siempre bien. Es tener lugar para lo que no está bien.</p>
+<p>El mismo nodo de Trinity termina con una invitación que no exige nada que no se tenga:</p>
+<div class="cita"><p class="trad">No necesitas ser perfecto para comenzar.<br>No necesitas estar completamente sanado.<br>Solo necesitas estar dispuesto.<sup class="ref"><a href="#nota-6" aria-label="nota 6">6</a></sup></p></div>
+<h2>Lo que vuelve</h2>
+<p>La psicología del aprendizaje conoce bien lo que le pasó a Mauricio esa noche.</p>
+<p>El psicólogo Mark Bouton, de la Universidad de Vermont, dedicó buena parte de su carrera a estudiar qué ocurre con un hábito o un miedo aprendido cuando se aprende algo nuevo en su lugar. Su conclusión fue que lo viejo no se borra. Lo nuevo se escribe encima, como otra capa, y lo viejo queda debajo, dormido. Por eso puede volver: con el paso del tiempo, en un lugar distinto, en un momento de tensión. No es que lo aprendido se haya perdido. Es que, por un rato, lo viejo habló más fuerte.<sup class="ref"><a href="#nota-7" aria-label="nota 7">7</a></sup></p>
+<p>Esto tiene una consecuencia importante para cualquiera que practique algo. Cuando reaparece lo de antes, después de semanas de haber hecho las cosas de otro modo, es fácil pensar que todo fue en vano, que nada cambió. Es un error de lectura. Lo viejo volvió porque nunca se había ido: vive en la casa. Lo nuevo también sigue ahí. La pregunta no es cuál de los dos existe, sino a cuál se le da la silla esta noche.</p>
+<h2>Cada mañana, un umbral</h2>
+<p>En 2014, tres investigadores de la Universidad de Pensilvania, Hengchen Dai, Katherine Milkman y Jason Riis, estudiaron algo que casi todos conocen por experiencia: la tendencia a empezar de nuevo en ciertas fechas. Analizaron las búsquedas en internet sobre dietas, la asistencia a un gimnasio universitario y los compromisos que las personas firmaban para cumplir una meta. Todo subía al comienzo de una semana, de un mes, de un año, después de un día festivo o de un cumpleaños.<sup class="ref"><a href="#nota-8" aria-label="nota 8">8</a></sup></p>
+<p>Lo llamaron el efecto del nuevo comienzo. Esas fechas funcionan como líneas en el calendario: separan a la persona que falló de la que empieza, y le dan a la segunda un poco de distancia de la primera.</p>
+<p>El libro de Trinity sobre el retorno propone una línea así mucho más cercana que el lunes o el primero de enero. En el nodo del círculo completo, después de hablar de los grandes ciclos de la vida, baja a la escala más pequeña:</p>
+<div class="cita"><p class="trad">Cada día es un círculo completo: despertar, actividad, descanso, sueño, despertar nuevamente.<sup class="ref"><a href="#nota-9" aria-label="nota 9">9</a></sup></p></div>
+<p>No hace falta esperar el lunes. Cada mañana es un umbral. El que se despierta no es el que comprobó la cerradura cinco veces: es alguien que puede volver a entrar.</p>
+<div class="perla"><p>Habitar no es estar siempre bien.<br>Es que los días malos<br>también tengan dónde sentarse.</p></div>
+<h2>El pasillo</h2>
+<p>Gloria lo encontró a las tres y veinte, sentado en el piso del pasillo, con los brazos sobre las rodillas.</p>
+<p>No le preguntó qué le pasaba. Se sentó a su lado, también en el piso, con la espalda contra la pared, y apoyó la cabeza en su hombro. Estuvieron así un rato largo, oyendo el zumbido del refrigerador y algún auto lejano.</p>
+<p>—Veintidós años revisando esa puerta —dijo Gloria al fin, en voz baja—. Y lo malo que tenía que pasar, pasó igual. Y lo bueno también.</p>
+<p>Él no contestó. Ella le tomó la mano.</p>
+<p>—Ven a la cama. Aquí también puede estar el que tiene miedo. Pero que se acueste.</p>
+<p>A la mañana, antes de irse, Mauricio golpeó la puerta de Julieta. Ella abrió a medias, con cara de sueño y de enojo. Él le pidió perdón por lo de la música. Le contó, en dos frases, lo del gerente. Julieta lo escuchó con la cabeza apoyada en el marco.</p>
+<p>Esa tarde, cuando él volvió del trabajo, el piano sonaba entero.</p>
+<h2>Tú también</h2>
+<p>Piensa en un día malo reciente, uno en que volvió algo que creías superado: un enojo, un miedo, una vieja manera de reaccionar. Escribe en una hoja:</p>
+<p><em>En esta casa también vive…</em></p>
+<p>Y completa con lo que apareció ese día, con su nombre más simple: la impaciencia, el miedo a equivocarme, el que quiere tener razón, la que se encierra. Debajo, escribe: <em>y tiene lugar.</em> No significa que le vas a dar el mando. Significa que no vas a echarte de tu propia casa por tenerlo.</p>
+<p>Mañana, al despertar, antes de levantarte, suelta el aire una vez, más largo de lo que entra. Es un día nuevo. No necesitas que sea lunes.</p>
+<p>Si los días malos dejan de ser días y se vuelven semanas, si no hay ganas de nada, si cuesta dormir o levantarse, no es una tormenta de las que pasan solas. Se consulta. Pedir ayuda también es abrir la puerta de la casa.</p>
+<div class="sigue"><a href="L13-U4.html">Anterior: El centro en todas partes</a><a class="prox" href="L13-U6.html">Siguiente: Marta y María</a></div>
+<section class="notas" aria-label="Notas"><h3>Notas</h3><ol><li id="nota-1">Teresa de Jesús, <em>Las moradas</em> (1577), Moradas séptimas, cap. 4, 1. Texto cotejado en dos ediciones digitales coincidentes, con la ortografía modernizada.</li><li id="nota-2">Ídem, cap. 4, 2.</li><li id="nota-3">Ídem, cap. 3. Paráfrasis.</li><li id="nota-4">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Trinity Origen, Libro XIII, Nodo 2: «Los Fragmentos del Alma», sección IV, «El Proceso de Recuperación del Alma», «Paso 2: Invocación». Fragmento.</li><li id="nota-5">Lic. Arturo Rodríguez, <em>El Multiverso Interior</em>, Trinity Quantum, Libro 13, Nodo 7: «Unificación del Multiverso Personal», «Transmisión Cuántica». Fragmento.</li><li id="nota-6">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Nodo 2, sección XII, «La Invitación a la Totalidad». Fragmento.</li><li id="nota-7">Mark E. Bouton, «Context and Behavioral Processes in Extinction», <em>Learning &amp; Memory</em> 11, n.º 5 (2004): 485-494. Paráfrasis.</li><li id="nota-8">Hengchen Dai, Katherine L. Milkman y Jason Riis, «The Fresh Start Effect: Temporal Landmarks Motivate Aspirational Behavior», <em>Management Science</em> 60, n.º 10 (2014): 2563-2582. Paráfrasis.</li><li id="nota-9">Lic. Arturo Rodríguez, <em>El Retorno a Casa</em>, Nodo 5: «El Círculo Completo», sección IV, «Círculos Diarios». Fragmento; se omiten los paréntesis que acompañan cada momento del día.</li></ol></section></main></div><footer class="pie">Libro 13 de 13. Lic. Arturo Rodríguez, Campo Trinity.</footer>
+</body>
+</html>
