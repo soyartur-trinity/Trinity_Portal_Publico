@@ -98,6 +98,10 @@ CATEGORIAS = [
         r"\byet\b", r"\bbroadcasting\b", r"\bembodiment\b", r"\bfeature\b", r"\bbug\b",
         r"\bdetox\b", r"\bloop\b", r"\bfeedback\b", r"\bupgrade\b", r"\bsintropia\b",
         r"(?-i:EntreLazamiento)", r"\bintegracion\b", r"\beste nodo\b",
+        # Sumados al depurar Quantum 3 (octubre de 2026): la lectura los encontró y el detector no.
+        r"\bkindergarten\b", r"\bbypass\b", r"\btighten\b", r"\bhomesickness\b",
+        r"\bbuffet\b", r"\bpop\b", r"\breset\b", r"\bresete", r"\bespiral(?:an?|iz)",
+        r"\bmomentum\b",
     ]),
 ]
 
