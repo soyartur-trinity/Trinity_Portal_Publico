@@ -102,6 +102,10 @@ CATEGORIAS = [
         r"\bkindergarten\b", r"\bbypass\b", r"\btighten\b", r"\bhomesickness\b",
         r"\bbuffet\b", r"\bpop\b", r"\breset\b", r"\bresete", r"\bespiral(?:an?|iz)",
         r"\bmomentum\b",
+        # Sumados al depurar Quantum 5 (octubre de 2026): la lectura los encontró y el detector no.
+        r"\bmatching\b", r"\bawareness\b", r"\bnumbness\b", r"\bmeaninglessness\b",
+        r"\bbirth\b", r"\bphenomena\b", r"\bclick\b", r"\bjet lag\b", r"\batravés\b",
+        r"\bdigestion\b",
     ]),
 ]
 
