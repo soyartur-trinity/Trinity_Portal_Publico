@@ -106,6 +106,10 @@ CATEGORIAS = [
         r"\bmatching\b", r"\bawareness\b", r"\bnumbness\b", r"\bmeaninglessness\b",
         r"\bbirth\b", r"\bphenomena\b", r"\bclick\b", r"\bjet lag\b", r"\batravés\b",
         r"\bdigestion\b",
+        # Sumados al depurar Quantum 6 (noviembre de 2026): la lectura los encontró y el detector no.
+        r"\bfeatures\b", r"\bbugs\b", r"\bbuffer\b", r"\bdownload\b", r"\brouter\b",
+        r"\bruntime\b", r"\boutput\b", r"\battachment\b", r"\bhacke", r"\bcrystalliz",
+        r"\bdissoluci", r"\bminimal\b", r"\bicionantes\b", r"\binsight moments\b",
     ]),
 ]
 
