@@ -110,6 +110,10 @@ CATEGORIAS = [
         r"\bfeatures\b", r"\bbugs\b", r"\bbuffer\b", r"\bdownload\b", r"\brouter\b",
         r"\bruntime\b", r"\boutput\b", r"\battachment\b", r"\bhacke", r"\bcrystalliz",
         r"\bdissoluci", r"\bminimal\b", r"\bicionantes\b", r"\binsight moments\b",
+        # Sumados al depurar Quantum 7 (noviembre de 2026): la lectura los encontró y el detector no.
+        r"(?-i:\bAS you\b)", r"\btimeline\b", r"\bripple", r"\bjournaling\b", r"\bmeasurablemente\b",
+        r"\bremake\b", r"\bshow\b", r"\bboundaries\b", r"\bdefault\b", r"\btick\b",
+        r"\bdissolvi", r"\bambos son real\b", r"\bel mismo consciencia\b", r"\bservidor\b",
     ]),
 ]
 
