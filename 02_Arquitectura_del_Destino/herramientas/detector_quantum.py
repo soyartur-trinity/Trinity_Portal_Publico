@@ -121,6 +121,8 @@ CATEGORIAS = [
         r"\bdissolvi", r"\bambos son real\b", r"\bel mismo consciencia\b", r"\bservidor\b",
         # Sumados al depurar Quantum 8 (noviembre de 2026): la lectura los encontró y el detector no.
         r"\binsights?\b", r"\bgrados kelvin\b",
+        # Sumados al depurar Quantum 12 (noviembre de 2026): la lectura los encontró y el detector no.
+        r"\bevent horizon\b", r"\bcore\b", r"\bfomo\b", r"\bfear of missing out\b",
     ]),
 ]
 
