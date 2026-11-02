@@ -31,6 +31,8 @@ CATEGORIAS = [
         r"\d[\d.,]*\s*(neuronas|c[eé]lulas|sentidos|fotones|segundos)\b",
         r"\b(miles|millones|billones|trillones) de\b", r"\d+\s*[-–]\s*\d+",
         r"\b\d{2,}[.,]\d{3}\b",
+        # Sumado al depurar Quantum 8 (noviembre de 2026): temperaturas en kelvin.
+        r"\d[\d.,]*\s*°\s*K\b",
     ]),
     ("experimentos", "Experimentos, estudios y ciencia invocada (precisión 1)", [
         r"\bestudios?\b", r"\binvestigaci[oó]n", r"\binvestigador", r"\bcient[ií]fic",
@@ -65,6 +67,9 @@ CATEGORIAS = [
         r"\bc[oó]digos? (gen[eé]tic|binari)", r"\bmemoria celular|memorias celulares\b",
         r"\bescritura autom[aá]tica\b", r"\bcanal(izar|izaci[oó]n)?\b", r"\bdescargas? de informaci[oó]n\b",
         r"\bmensajes? del campo\b", r"\bkarma|k[aá]rmic", r"\bvidas? (pasadas|anteriores)|mil vidas|encarnaci",
+        # Sumados al depurar Quantum 8 (noviembre de 2026).
+        r"\bmerkaba\b", r"\bkirlian\b", r"\bmaestros? ascendidos?\b", r"\bvampirismo\b",
+        r"\bataques? ps[ií]quicos?\b", r"\bentidades par[aá]sitas\b", r"\bvivir de luz\b",
     ]),
     ("plan", "Plan del universo y providencia (criterio 2)", [
         r"\bpor dise[nñ]o\b", r"\bdise[nñ]ad[oa]s? para\b", r"\bperfect[oa]\b", r"\belegiste\b",
@@ -114,6 +119,8 @@ CATEGORIAS = [
         r"(?-i:\bAS you\b)", r"\btimeline\b", r"\bripple", r"\bjournaling\b", r"\bmeasurablemente\b",
         r"\bremake\b", r"\bshow\b", r"\bboundaries\b", r"\bdefault\b", r"\btick\b",
         r"\bdissolvi", r"\bambos son real\b", r"\bel mismo consciencia\b", r"\bservidor\b",
+        # Sumados al depurar Quantum 8 (noviembre de 2026): la lectura los encontró y el detector no.
+        r"\binsights?\b", r"\bgrados kelvin\b",
     ]),
 ]
 
