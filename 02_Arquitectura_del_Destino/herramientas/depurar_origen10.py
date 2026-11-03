@@ -1,4 +1,5 @@
 # Depuración de Origen X, Sanación Integral (noviembre de 2026), con el veto del Lic. Arturo Rodríguez.
+# 3 de noviembre: a pedido de Arturo, vuelve la muerte como «sanación definitiva», «graduación cósmica» y «regalo final» (X.7), con su frase de cuidado.
 # Aplica cada reemplazo aprobado exactamente una vez sobre el original de la etiqueta origen-original.
 # Etapa 1: nodo 1 (riesgo clínico, enlazado desde El Cuerpo). Los nodos siguientes se suman al aprobarse.
 import os, sys
@@ -2512,13 +2513,16 @@ R07 += [
       <li>Regalo final</li>
       <li>Puerta a lo eterno</li>
     </ul>''',
-  '''    <h3>Muerte como Culminación</h3>
-    <p>La muerte no es fracaso médico. Las tradiciones la nombran:</p>
+  '''    <h3>Muerte como Sanación Última</h3>
+    <p>La muerte no es fracaso médico sino:</p>
     <ul>
       <li>Culminación natural</li>
       <li>Transición dimensional</li>
       <li>Liberación del alma</li>
+      <li>Sanación definitiva</li>
       <li>Retorno a la Fuente</li>
+      <li>Graduación cósmica</li>
+      <li>Regalo final</li>
       <li>Puerta a lo eterno</li>
     </ul>
     <p>Mirarla no es desearla: es aprender a no vivir de espaldas a ella. Y si alguna vez contemplar la muerte se vuelve deseo de no estar, es momento de pedir ayuda, sin esperar.</p>'''),
