@@ -169,7 +169,7 @@ def revisar_html(src: str):
         avisos.append("asteriscos de markdown en encabezados")
     if not re.search(r"font-size:\s*18px", src):
         avisos.append("sin la letra de 18 px en el teléfono")
-    if "quantum-original" not in src:
+    if "quantum-original" not in src and "origen-original" not in src:
         avisos.append("sin nota de procedencia")
     return avisos
 
