@@ -1,0 +1,2596 @@
+{
+ "puertas": [
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/39_El_Campo/umbral-03.html"
+   ],
+   "texto": "En 1970, el año de su muerte, Abraham Maslow escribió una advertencia contra las malas lecturas de su propia obra: le preocupaban quienes perseguían las cumbres y se apartaban de la vida común. La lección más valiosa, insistía, era ver lo milagroso en lo de todos los días. Esa advertencia, y una mujer de los Alpes que vivía en meseta sin saberlo, están en El campo, Libro 39 del Portal Público, Umbral III: «La meseta».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/umbral-04.html"
+   ],
+   "texto": "El 12 de abril de 1955, el día en que se anunció que la vacuna contra la poliomielitis funcionaba, un periodista le preguntó en televisión a Jonas Salk quién tenía la patente. Salk respondió que la gente, y preguntó a su vez si acaso se podía patentar el sol. Esa escena está en Lo que se recibe, Libro 38 del Portal Público, Umbral IV: «Lo que circula».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U6.html"
+   ],
+   "texto": "En El cielo sobre Berlín, de Wim Wenders, un ángel que lo sabe todo se cansa de flotar por encima de las cosas y elige tener un cuerpo: tomar un café en una mañana fría, frotarse las manos, ver los colores por primera vez. Esa escena, con la Novena Elegía de Rilke, está en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral VI: «Lo que solo un cuerpo puede».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/34_El_Cuerpo/umbral-01.html"
+   ],
+   "texto": "Un cuarto de siglo después de la protoconversación, en Edimburgo, un musicólogo escuchó la grabación de una niña de seis semanas con su madre y se sorprendió marcando el compás con el pie: había pulso, tono y relato. Esa música de antes de las palabras está en El cuerpo, Libro 34 del Portal Público, Umbral I: «Antes de la palabra».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U1.html"
+   ],
+   "texto": "Un nodo de Trinity Origen dice que el tabú más grande es también la puerta más grande. Una mujer que vacía casas de muertos, con una regla para no detenerse en ningún final, aprende a mirarlo en lo pequeño, como se mira el sol reflejado en el agua de un balde. Esa historia está en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral I: «La última gota».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/30_La_Presencia/umbral-06.html"
+   ],
+   "texto": "En 1942, Simone Weil le escribió a un poeta que había quedado inmóvil en una cama por una herida de guerra que la atención es la forma más rara y más pura de la generosidad. Esa carta, junto a la cara quieta de una madre y a la presencia que sostiene sin dirigir, está en La presencia, Libro 30 del Portal Público, Umbral VI: «Estar sin intervenir».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/capitulo_01.html"
+   ],
+   "texto": "Darle voz al yo temido y escucharlo con compasión es un oficio de la clínica: Jung habló de complejos autónomos; Assagioli, de subpersonalidades; Richard Schwartz, de partes. Ese trabajo se despliega en La Voz Interior, Libro 2 del Portal Público, capítulo 1: «El coro interior».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U3.html"
+   ],
+   "texto": "Fernando Pessoa vivió este multiverso con nombres propios: una mañana de 1914, de pie frente a una cómoda alta, sintió que aparecía en él su maestro, y le puso nombre. Ser muchos sin romperse se vuelve práctica en El Personaje, Libro 9 de Arquitectura del Destino, Umbral III: «Muchos».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U5.html"
+   ],
+   "texto": "Preguntar quién observa sin buscar respuesta es una práctica antigua: Bassui la hacía ante cada sonido; Ramana, ante cada pensamiento. Esa pregunta abierta es el Umbral V de El Testigo, Libro 3 de Arquitectura del Destino: «¿Quién oye este sonido?».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/03_Encuentro_Real/nodo_02.html"
+   ],
+   "texto": "Proyectar no es un error: es como trabaja la mente. El problema empieza cuando no sabemos que lo hacemos y amamos, o tememos, a la figura que construimos. Ver al otro real, más allá del propio espejo, se trabaja en Encuentro Real, Libro 3 del Portal Público, nodo 2: «Proyecciones cruzadas».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U5.html"
+   ],
+   "texto": "Que tus muchos se reconozcan en la misma casa. Teresa de Ávila lo imaginó como un castillo de muchas moradas, y Trinity lo dijo en una línea: «Soy un hogar seguro para todas mis partes». Ese lugar común de los muchos es el Umbral V de Habitar, Libro 13 de Arquitectura del Destino: «Los días malos también viven aquí».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/31_El_No_Saber/umbral-03.html"
+   ],
+   "texto": "La atención del adulto ilumina como un foco; la del niño, como una linterna que alumbra todo alrededor a la vez. Por qué los niños ven más de lo que saben, y cómo recuperar esa luz, se despliega en El no saber, Libro 31 del Portal Público, Umbral III: «La linterna».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/37_La_Emergencia/umbral-01.html"
+   ],
+   "texto": "En 1823, un joven matemático húngaro, János Bolyai, le escribió a su padre que de la nada había creado un mundo nuevo: una geometría distinta de la de Euclides. Al otro lado de Europa, en Kazán, Nikolái Lobachevski levantaba la misma. Las ideas maduras brotan en muchos sitios a la vez, como las violetas en primavera. Esa escena, y la lista de los descubrimientos dobles, abren La emergencia, Libro 37 del Portal Público, Umbral I: «Las violetas».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U6.html"
+   ],
+   "texto": "En el carrusel, los niños de tres o cuatro años montan el caballito con seriedad absoluta; los de siete u ocho suben sin agarrarse y saludan. Siguen montando, pero muestran que no son solo eso. El sociólogo Erving Goffman lo llamó distancia del rol: la ropa que se pone y se quita. Se despliega en El Personaje, Libro 9 de Arquitectura del Destino, Umbral VI: «Lo que queda».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/umbral-05.html"
+   ],
+   "texto": "Dos aficionados al ajedrez de New Hampshire, con tres computadoras comunes, ganaron un torneo en el que competían grandes maestros con equipos potentes. No ganó el que más sabía, sino el que mejor preguntaba a sus máquinas. Esa escena, y lo que enseña sobre trabajar con una inteligencia que responde, se despliega en Lo que no habla, Libro 36 del Portal Público, Umbral V: «La máquina».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-U3.html"
+   ],
+   "texto": "En el mismo libro de 1941, Borges imaginó una biblioteca que contiene todos los libros posibles, y a quienes la recorren buscando en vano el que los explique. La abundancia no alcanza: hace falta una mirada que elija. Esa idea se vuelve práctica en El Campo, Libro 1 de Arquitectura del Destino, Umbral III: «La biblioteca».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/39_El_Campo/umbral-02.html"
+   ],
+   "texto": "En la China del siglo VIII, un comerciante llamado Pang Yun le contó a su maestro, en un verso, cuáles eran sus poderes sobrenaturales: sacar agua y cargar leña. Doce siglos después, Abraham Maslow llegó por otro camino al mismo lugar: lo sagrado está en lo ordinario. Esa escena abre El campo, Libro 39 del Portal Público, Umbral II: «Agua y leña».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-U4.html"
+   ],
+   "texto": "Romper una rutina pequeña deja ver caminos que no estaban a la vista. Esa idea se vuelve práctica en El Campo, Libro 1 de Arquitectura del Destino, Umbral IV: «La línea estrecha».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-U4.html"
+   ],
+   "texto": "La que se exige ser perfecta y la que se siente un fraude suelen ser la misma voz, y pesan lo mismo con distinto signo. Esa idea se vuelve práctica en El Peso, Libro 8 de Arquitectura del Destino, Umbral IV: «El pedestal».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/11_Atravesar/umbral_6_hacer_lugar.html"
+   ],
+   "texto": "Hacerle lugar a una grieta no la achica: agranda el cuarto que la contiene. Esa idea se vuelve práctica en Atravesar, Libro 11 del Portal Público, Umbral VI: «Hacer lugar».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U3.html"
+   ],
+   "texto": "El espacio entre romperse y repararse no se apura: se acompaña. Esa idea se vuelve práctica en La Grieta, Libro 5 de Arquitectura del Destino, Umbral III: «El tiempo entre».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_10/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-U6.html"
+   ],
+   "texto": "Del otro lado, en El Peso, un viejo nada en una catarata donde ni los peces se atreven: entra con el remolino hasta el centro y sale con el agua que vuelve a subir.",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_10/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/35_Los_Muchos/umbral-03.html"
+   ],
+   "texto": "Del otro lado, en Los muchos, la historia completa: quince estudiantes que cantan en Gotemburgo y un pueblo que mira a los suyos cruzar el fuego.",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_10/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-U5.html"
+   ],
+   "texto": "Hacia 1548, un joven francés, Étienne de La Boétie, escribió que no hace falta empujar ni sacudir al coloso: basta con dejar de sostenerlo. Dejar de alimentar lo que arrastra a muchos, y salir de costado sin pelear, se vuelve práctica en La Corriente, Libro 10 de Arquitectura del Destino, Umbral V: «Salir de costado».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U7.html"
+   ],
+   "texto": "Convertir una puerta en umbral, y elegir en ella con qué versión entrar, cabe en una frase que se dice mientras sale el aire: «Lo llevo puesto. No lo soy». Esa práctica de siete días está en El Personaje, Libro 9 de Arquitectura del Destino, Umbral VII: «La operación».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-U2.html"
+   ],
+   "texto": "Lo que dejas de alimentar pierde peso, y lo que se atiende y luego se suelta encuentra su tamaño. Esa idea se vuelve práctica en El Peso, Libro 8 de Arquitectura del Destino, Umbral II: «La tabla sobre el abismo».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-U6.html"
+   ],
+   "texto": "Una intención clara no obliga a nada: orienta la mirada, y lo que antes pasaba de largo empieza a notarse. Esa idea se vuelve práctica en El Campo, Libro 1 de Arquitectura del Destino, Umbral VI: «Elegir no es crear».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/index.html"
+   ],
+   "texto": "El destino no es un lugar al que se llega: es la dirección que toma la vida cuando alguien la habita despierto y unido a otros. Esa idea se despliega, libro a libro, en Arquitectura del Destino.",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U1.html"
+   ],
+   "texto": "Hay un instante en que algo se rompe tan hondo que ya no se puede fingir que todo está bien, y muchas veces llega en voz baja, durante años, antes del ruido. Ese instante, junto al fresno que la tormenta abrió, está en La Grieta, Libro 5 de Arquitectura del Destino, Umbral I: «La primera grieta».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U2.html"
+   ],
+   "texto": "Séneca le escribió a Lucilio que ya perdimos la primera infancia, después la niñez, después la juventud. Ninguna de esas pérdidas tuvo funeral. Los finales que pasan sin ceremonia, y la manera de despedirlos, están en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral II: «Sin ceremonia».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U3.html"
+   ],
+   "texto": "Thich Nhat Hanh enseñaba a mirar una hoja de papel hasta ver en ella la nube, la lluvia, el árbol y al leñador: todo lo que no es papel. Un programador hizo ese ejercicio sin proponérselo y contó más de treinta personas que no conocía y sin las cuales su noche no habría sido posible. Está en La Red, Libro 11 de Arquitectura del Destino, Umbral III: «Dónde termino yo».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/30_La_Presencia/umbral-03.html"
+   ],
+   "texto": "En 1929, ante miles de miembros de la orden que lo esperaba como maestro del mundo, Krishnamurti la disolvió: la verdad, dijo, es una tierra sin caminos. Pasó el resto de su vida enseñando a mirar sin elegir qué ver. Esa atención está en La presencia, Libro 30 del Portal Público, Umbral III: «Sin elegir».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U6.html"
+   ],
+   "texto": "En 1995, el psicólogo Charles Figley llamó fatiga por compasión al desgaste de quienes cargan durante años con el dolor ajeno; años después, el equipo de Tania Singer comparó dos entrenamientos y vio que la empatía que se funde agota, y que la compasión sostiene. Está en La Obra, Libro 12 de Arquitectura del Destino, Umbral VI: «Arder sin consumirse».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U2.html"
+   ],
+   "texto": "Un actor que pasó veinte años haciendo de villano descubre que su personaje no nació para engañar sino para cuidar algo. Antes de quitarse una máscara, conviene preguntarle qué protegía. Está en El Personaje, Libro 9 de Arquitectura del Destino, Umbral II: «El que nunca se enoja».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-U5.html"
+   ],
+   "texto": "Elegir no siempre espera a saber. Una práctica de Trinity propone reconocer que no sabes qué es mejor, notar hacia dónde se inclina algo por dentro, actuar desde ahí y dejar el resultado a tu espalda. Está en No Saber, Libro 7 de Arquitectura del Destino, Umbral V: «Saber sin saber».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/39_El_Campo/umbral-04.html"
+   ],
+   "texto": "En la China de los maestros chan, el pastor que busca al buey termina en un círculo vacío. Kuoan, en el siglo XII, sintió que a la serie le faltaba algo y le sumó dos cuadros: el regreso al origen y el pastor que entra al mercado, riendo, con las manos abiertas. Está en El campo, Libro 39 del Portal Público, Umbral IV: «El mercado».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/32_La_Duracion/umbral-06.html"
+   ],
+   "texto": "Un prisionero que esperaba su ejecución en el siglo VI, un grabador del XIX y un soldado en el frente del XX llegaron a lo mismo que este presente eterno: la eternidad no es un tiempo muy largo, es un tiempo entero. Se despliega en La duración, Libro 32 del Portal Público, Umbral VI: «Una hora».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U4.html"
+   ],
+   "texto": "El consejo que sabemos dar a otros y no a nosotros tiene nombre y está medido. Un padre que aconseja bien a una compañera y se equivoca con su propio hijo lo descubre en El Testigo, Libro 3 de Arquitectura del Destino, Umbral IV: «La paradoja de Salomón».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U6.html"
+   ],
+   "texto": "Los padres que Tedeschi y Calhoun escucharon durante años, en Charlotte, no dijeron nunca que perder un hijo hubiera sido bueno; muchos encontraron, aun así, cambios que no querrían perder. Esa luz, que no glorifica la herida, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral VI: «Lo que entra».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/08_Atender/umbral_4_los_atractores.html"
+   ],
+   "texto": "Hay dos maneras de no estar aquí: la nostalgia, que mira hacia atrás, y la previsión, que mira hacia adelante. Los dos atractores que sacan a la atención del único lugar donde algo puede cambiar, y tres pasos para volver sin forzarla, se despliegan en Atender, Libro 8 del Portal Público, Umbral IV: «Los atractores».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-U3.html"
+   ],
+   "texto": "La preocupación como atractor vuelve, sin su ropaje, en No Saber, Libro 7 de Arquitectura del Destino, junto a un viejo cuyo caballo se escapa y a un estudio que contó cuántas preocupaciones se cumplían: más de nueve de cada diez, no. Umbral III: «El futuro a la espalda».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/09_Volver_Distinto/umbral_5_el_movimiento.html"
+   ],
+   "texto": "El círculo y la espiral son el mismo movimiento visto desde distinta altura: todo vuelve al mismo punto, pero un poco más arriba. La caracola, el girasol, la galaxia y la doble hélice lo despliegan en Volver distinto, Libro 9 del Portal Público, Umbral V: «El movimiento».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/27_El_Instante/umbral-04.html"
+   ],
+   "texto": "Tesla no estaba solo cuando vio girar el motor: caminaba con un amigo, recitaba a Goethe y traía una pregunta abierta desde hacía meses. Lo que aparece de golpe casi siempre tenía a alguien o algo esperándolo: El instante, Libro 27 del Portal Público, Umbral IV: «El otro que estaba, y el que era una pregunta».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U6.html"
+   ],
+   "texto": "Ser un buen pariente: así resumió la vida de su pueblo la lingüista dakota Ella Deloria, en 1944. Sostener y dejarse sostener, sin fundirse con el otro, se vuelve práctica en La Red, Libro 11 de Arquitectura del Destino, Umbral VI: «Un buen pariente».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U1.html"
+   ],
+   "texto": "Uno vive y el otro mira, posados en la misma rama. Esa imagen de casi tres mil años, los dos pájaros de la Mundaka Upanishad, abre El Testigo.",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U1.html"
+   ],
+   "texto": "Un verbo disfrazado de sustantivo puede tener cara: la de un actor que lleva veinte años siendo, para medio continente, el villano de una telenovela, y que una noche descubre en el espejo la ceja del villano, alzada sin querer. Esa idea se vuelve práctica en El Personaje, Libro 9 de Arquitectura del Destino, Umbral I: «La cara de malo».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U3.html"
+   ],
+   "texto": "El corazón que se llena y se vacía sin elegir tiene quien lo escuche: un peregrino ruso que apoyaba cada palabra de su oración en un latido. Esa escucha se vuelve práctica en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral III: «Desde adentro».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-U5.html"
+   ],
+   "texto": "Actuar como si todo dependiera de ti y saber que nada depende de ti: una ceramista lo aprende con su hijo, la víspera de un examen. Esa idea se vuelve práctica en El Peso, Libro 8 de Arquitectura del Destino, Umbral V: «La hoja de loto».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/28_El_Vacio/umbral-03.html"
+   ],
+   "texto": "En 1951, John Cage entró en una sala sin eco buscando por fin el silencio, y oyó dos sonidos: su sistema nervioso y su sangre. Lo que suena entre dos notas, y la obra en la que nadie toca ninguna, se despliegan en El Vacío, Libro 28 del Portal Público, Umbral III: «Entre dos notas».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/04_Asertividad_Consciente/capitulo_02.html"
+   ],
+   "texto": "Antes de que digas que sí a algo que no quieres, el cuerpo ya dijo que no: un nudo en la garganta, el pecho que se cierra. Escuchar esa membrana y volverla palabra se aprende en Asertividad Consciente, Libro 4 del Portal Público, capítulo 2: «El cuerpo como primer límite».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U4.html"
+   ],
+   "texto": "Origen XIII tiene un nodo sobre la naturaleza holográfica: si cada parte contiene el todo, podría parecer que ninguna importa, y es al revés. Esa paradoja, la de cada vida que agrega lo que ninguna otra puede, entra en Habitar, Libro 13 de Arquitectura del Destino, Umbral IV: «El centro en todas partes».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/34_El_Cuerpo/umbral-04.html"
+   ],
+   "texto": "Ese saber que llega antes de las palabras tiene su escuela: el filósofo Eugene Gendlin lo llamó sensación sentida y enseñó a escucharlo. Se despliega en El Cuerpo, Libro 34 del Portal Público, Umbral IV: «Lo que todavía no tiene nombre».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/28_El_Vacio/umbral-04.html"
+   ],
+   "texto": "El hueco entre dos pensamientos tiene quien lo describa: William James lo comparó con los vuelos y las posadas de un pájaro, y Marcus Raichle guardó en una carpeta las zonas del cerebro que se encendían cuando nadie hacía nada. Ese intervalo se recorre en El vacío, Libro 28 del Portal Público, Umbral IV: «Entre dos pensamientos».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/37_La_Emergencia/umbral-03.html"
+   ],
+   "texto": "Para que aparezca la respuesta, a veces hay que dejar de mirar. Un segundo y medio antes de una solución súbita, el cerebro baja por dentro el volumen de lo que entra por los ojos, y en ese pequeño vacío sube lo que ya estaba gestándose. Ese parpadeo se cuenta en La emergencia, Libro 37 del Portal Público, Umbral III: «De golpe».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/30_La_Presencia/umbral-01.html"
+   ],
+   "texto": "El ahora tiene ancho. Agustín lo vio como un presente con tres caras; William James, como una montura desde la cual se mira hacia atrás y hacia adelante; Ernst Pöppel intentó medirlo. Ese ancho se recorre en La presencia, Libro 30 del Portal Público, Umbral I: «La palabra».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/37_La_Emergencia/umbral-02.html"
+   ],
+   "texto": "Lo que emerge no estaba en ninguna de las partes. El físico Philip Anderson lo resumió en 1972 con tres palabras, y esa idea se recorre en La emergencia, Libro 37 del Portal Público, Umbral II: «Más es distinto».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/umbral-01.html"
+   ],
+   "texto": "Lo que llega y nadie se atribuye tiene testigos de muchos siglos: Hildegarda de Bingen, que veía despierta una luz que no era suya; Chaikovski, que contaba cómo le llegaba de golpe el germen de una obra. Esas voces se reúnen en Lo que se recibe, Libro 38 del Portal Público, Umbral I: «A través».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/33_El_Ritmo/umbral-01.html"
+   ],
+   "texto": "La resonancia tiene una primera escena: en 1665, enfermo en cama, Christiaan Huygens vio que dos relojes de péndulo colgados de la misma viga terminaban oscilando juntos. Nadie marcaba el compás. Esa escena abre El ritmo, Libro 33 del Portal Público, Umbral I: «Sincronía».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U5.html"
+   ],
+   "texto": "El peregrino no necesita público. Para el traje espiritual, el de quien colecciona estados para que lo vean, el Evangelio ofrece un cuarto con la puerta cerrada, y Chögyam Trungpa le puso nombre: materialismo espiritual. Ese disfraz se mira de cerca en El Personaje, Libro 9 de Arquitectura del Destino, Umbral V: «Pegada a la cara».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/37_La_Emergencia/umbral-04.html"
+   ],
+   "texto": "Un patrón que ninguno podría tejer solo tiene su escenario: un grupo de Chicago que improvisaba obras de una hora sin director ni libreto, donde un personaje apareció entre todos y nadie sabe de quién fue. Se despliega en La emergencia, Libro 37 del Portal Público, Umbral IV: «En escena».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U6.html"
+   ],
+   "texto": "El guardián que cuida muchas puertas a la vez se gasta. Entre la empatía que agota y la compasión que sostiene hay una diferencia que se midió, y una tradición antigua le puso un límite a la generosidad para que quien da no terminara cayendo. Se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral VI: «Arder sin consumirse».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U5.html"
+   ],
+   "texto": "Cada noche, un ensayo pequeño; cada mañana, el alma devuelta. Los griegos hicieron hermanos al Sueño y a la Muerte, y la tradición judía empieza cada día agradeciendo ese regreso. Ese gesto se vuelve práctica en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral V: «El ensayo de cada noche».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U4.html"
+   ],
+   "texto": "Estas dos frases, la de quien está solo y acompañado a la vez y la de la red de Indra, vuelven en La Red, Libro 11 de Arquitectura del Destino, sostenidas enteras, sin promediarlas: Umbral IV, «Una gota de rocío».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/umbral-02.html"
+   ],
+   "texto": "Un caballo de Berlín parecía sumar y leer la hora; en verdad leía, en el cuerpo de quien preguntaba, gestos que nadie más veía. Esa atención sin palabras tiene su umbral en Lo que no habla, Libro XXXVI del Portal Público, Umbral II: «El caballo».",
+   "clase": "portal",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U4.html"
+   ],
+   "texto": "La respiración del primer experimento, cinco tiempos al tomar aire y cinco al soltarlo, son seis respiraciones por minuto. Lo que hacen en el cuerpo, y cómo se practican en un pasillo antes de un comité difícil, se despliega en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral IV: «Seis respiraciones por minuto».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U6.html"
+   ],
+   "texto": "Ser relaciones no es fundirse con nadie ni sostener lo que daña. Esta frase cierra un tramo de La Red, Libro 11 de Arquitectura del Destino: Umbral VI, «Ni fusión ni isla».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U4.html"
+   ],
+   "texto": "Los astronautas que vieron la Tierra entera por una ventanilla volvieron diciendo lo mismo: el planeta es un solo hogar. La casa que ya habitas te espera en Habitar, Libro 13 de Arquitectura del Destino, Umbral IV: «La Tierra por una ventanilla».",
+   "clase": "arquitectura",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Arquitectura",
+   "vuelve": false
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-U2.html"
+   ],
+   "texto": "Los actores que olvidan que actúan, y el príncipe del Himno de la Perla que olvidó su misión hasta que una carta lo despertó, se despliegan en El Sonámbulo, Libro 2 de Arquitectura del Destino, Umbral II: «Actores que olvidan que actúan».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U2.html"
+   ],
+   "texto": "Lo que el trauma aparta y cómo vuelve a reunirse, desde la muchacha que Pierre Janet atendió en París a comienzos del siglo XX, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral II: «La muchacha que no podía contarlo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U3.html"
+   ],
+   "texto": "Cómo el recuerdo deja de ser destello y se vuelve casa, ladrillo por ladrillo, con los días, se despliega en Habitar, Libro 13 de Arquitectura del Destino, Umbral III: «El mismo mecanismo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U4.html"
+   ],
+   "texto": "La celda de Moisés, el portal del ahora y la casa que está en todas partes se despliegan en Habitar, Libro 13 de Arquitectura del Destino, Umbral IV: «Cada parte contiene el todo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U1.html"
+   ],
+   "texto": "Habitar el hogar reencontrado —quedarse adentro, despierto, en el lugar y en la hora donde ya estás— se despliega en Habitar, Libro 13 de Arquitectura del Destino, Umbral I: «Rondar y habitar».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U6.html"
+   ],
+   "texto": "Morder una fresa madura, el calor del sol en la piel, el abrazo de un ser amado: lo que los ángeles no conocen se despliega en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral VI: «Lo que los ángeles no conocen».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U6.html"
+   ],
+   "texto": "Que despertar y recordar sean casi el mismo gesto —la atención plena, que en pali viene de la raíz de la memoria— se despliega en El Testigo, Libro 3 de Arquitectura del Destino, Umbral VI: «Despertar y recordar».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/index.html"
+   ],
+   "texto": "La espiral sigue. Trinity Quantum retoma estos campos en trece libros, del Arquitecto Cuántico al Multiverso Interior.",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U2.html"
+   ],
+   "texto": "Entre leerle culpas al cuerpo e ignorarlo hasta que grita hay un tercer camino: escucharlo. Se despliega en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral II: «Escuchar sin acusar».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U6.html"
+   ],
+   "texto": "La mano que achica la amenaza, la colina que se ve menos empinada junto a un amigo y los vínculos que alargan la vida se despliegan en La Red, Libro 11 de Arquitectura del Destino, Umbral VI: «La cuesta».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/33_El_Ritmo/umbral-06.html"
+   ],
+   "texto": "El corazón tiene miles de células marcapasos que se encuentran entre ellas latido tras latido, sin que nadie les diga cuándo, y Simone Weil vio en la atención el mismo compás de la respiración. Se despliegan en El Ritmo, Libro 33 del Portal Público, Umbral VI: «Como se respira».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U2.html"
+   ],
+   "texto": "El ejercicio de Assagioli, el ojo que no puede verse a sí mismo y el tablero de la terapia de aceptación se despliegan en El Testigo, Libro 3 de Arquitectura del Destino, Umbral II: «Tengo, pero no soy».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U4.html"
+   ],
+   "texto": "Por qué casi todos los nombres de la fuerza vital significan, antes que nada, aliento, y cómo lenguas que no se conocían pusieron lo más alto en lo más corporal, se despliega en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral IV: «Muchos nombres para un soplo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U5.html"
+   ],
+   "texto": "Que el sueño sea una pequeña parte de la muerte, y que cada mañana se agradezca el alma devuelta, se despliega en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral V: «El alma devuelta».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-U6.html"
+   ],
+   "texto": "La postura de no saber de Harlene Anderson y Harold Goolishian, y una familia que aprende a acompañar un diagnóstico sin respuestas, se despliegan en No Saber, Libro 7 de Arquitectura del Destino, Umbral VI: «La postura de no saber».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/index.html"
+   ],
+   "texto": "Trinity Origen, Libro VI: El Vacío Fértil",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_01.html"
+   ],
+   "texto": "La Puerta, Nodo 1: La primera grieta",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro1/L1-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 1: Más allá del ser y no-ser",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro7/L7-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 7: Omnisciencia ignorante",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/index.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII: El Retorno a Casa",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 1: La Gran Amnesia",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro II, Nodo 1: El Parlamento Sagrado",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_13.html"
+   ],
+   "texto": "La Puerta, Nodo 13: Tu siguiente paso",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro3/L3-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 3: El juego sin jugador",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro II, Nodo 2: El Observador Luminoso",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro I, Nodo 1: El Observador y la Realidad",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro X, Nodo 4: La Mente como Portal de Sanación",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 1: La Gran Amnesia",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 7: La Nueva Humanidad",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro1/L1-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 1: Más allá del ser y no-ser",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro X, Nodo 1: El Cuerpo como Templo Viviente",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro X, Nodo 5: La Energía Vital y los Sistemas Sutiles",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_06.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 6: El Regalo de la Encarnación",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro_12/L_12-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 12: El silencio elocuente",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/34_El_Cuerpo/index.html"
+   ],
+   "texto": "Portal Público, Libro 34: El cuerpo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/index.html"
+   ],
+   "texto": "Trinity Origen, Libro III: El Dolor como Portal",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro III, Nodo 7: Más allá del dolor, el portal abierto",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 2: Los Fragmentos del Alma",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_07.html"
+   ],
+   "texto": "Trinity Quantum, Libro 9, Nodo 7: La danza de rotura y reparación",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/11_Atravesar/umbral_6_hacer_lugar.html"
+   ],
+   "texto": "Portal Público, Libro 11: Atravesar, Umbral VI, «Hacer lugar»",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_07/index.html"
+   ],
+   "texto": "Trinity Origen, Libro VII: La Muerte como Maestra",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro VII, Nodo 2: Las Pequeñas Muertes",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_06.html"
+   ],
+   "texto": "Trinity Origen, Libro X, Nodo 6: Sanación del Alma y Medicina Ancestral",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro5/L5-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 5: La muerte de la muerte",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/05_Duelo/index.html"
+   ],
+   "texto": "Portal Público, Libro 5: El Duelo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/index.html"
+   ],
+   "texto": "Trinity Origen, Libro VI: El Vacío Fértil",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro VI, Nodo 5: La paz del no-saber",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro X, Nodo 7: La Gran Síntesis",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro7/L7-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 7: Omnisciencia ignorante",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/31_El_No_Saber/index.html"
+   ],
+   "texto": "Portal Público, Libro 31: El no saber",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/index.html"
+   ],
+   "texto": "Trinity Quantum, Libro 1: El Arquitecto Cuántico",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_04.html"
+   ],
+   "texto": "Trinity Quantum, Libro 1, Nodo 4: El arte de la probabilidad",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_07.html"
+   ],
+   "texto": "Trinity Quantum, Libro 4, Nodo 7: Coherencia en la paradoja",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_04.html"
+   ],
+   "texto": "Trinity Quantum, Libro 9, Nodo 4: Imperfección sagrada",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_06.html"
+   ],
+   "texto": "Trinity Origen, Libro VI, Nodo 6: Integración del vacío",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro3/L3-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 3: El juego sin jugador",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/29_La_Intencion/index.html"
+   ],
+   "texto": "Portal Público, Libro 29: La intención",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_04.html"
+   ],
+   "texto": "Trinity Quantum, Libro 4, Nodo 4: Identidad fluida",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/index.html"
+   ],
+   "texto": "Trinity Quantum, Libro 13: El Multiverso Interior",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/index.html"
+   ],
+   "texto": "Trinity Origen, Libro II: La Voz Interior",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro II, Nodo 7: El retorno a la unidad",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro VI, Nodo 1: Cartografía del vacío",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro3/L3-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 3: El juego sin jugador",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/index.html"
+   ],
+   "texto": "Portal Público, Libro 2: La Voz Interior",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/index.html"
+   ],
+   "texto": "Trinity Origen, Libro I: Psicología Cuántica",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro I, Nodo 4: Campos morfogenéticos y conciencia colectiva",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_10/index.html"
+   ],
+   "texto": "Trinity Quantum, Libro 10: Campos de Torsión",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_10/nodo_06.html"
+   ],
+   "texto": "Trinity Quantum, Libro 10, Nodo 6: Remolinos de realidad",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro3/L3-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 3: El juego sin jugador",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/25_La_Herencia/index.html"
+   ],
+   "texto": "Portal Público, Libro 25: La herencia",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_02.html"
+   ],
+   "texto": "La Puerta, Nodo 2: El mito de la separación",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_05/index.html"
+   ],
+   "texto": "Trinity Origen, Libro V: Los Vínculos Sagrados",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro V, Nodo 5: La Red Viva",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro X, Nodo 2: La Red de Sanación Colectiva",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_02.html"
+   ],
+   "texto": "Trinity Quantum, Libro 4, Nodo 2: Ubicuidad consciente",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro6/L6-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 6: El amor sin causa",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/03_Encuentro_Real/index.html"
+   ],
+   "texto": "Portal Público, Libro 3: Encuentro Real",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/index.html"
+   ],
+   "texto": "Trinity Origen, Libro IX: Liderazgo Consciente",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_06.html"
+   ],
+   "texto": "Trinity Origen, Libro IX, Nodo 6: Resiliencia y Sostén del Líder",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro VI, Nodo 4: Creatividad desde la nada",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro_10/L_10-Nodo1.html"
+   ],
+   "texto": "Trinity Infinito, Libro 10: La creatividad increada",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_08.html"
+   ],
+   "texto": "La Puerta, Nodo 8: El arte de canalizar sin ego",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/index.html"
+   ],
+   "texto": "Portal Público, Libro 38: Lo que se recibe",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/index.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII: El Retorno a Casa",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_03.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 3: El Recuerdo del Origen",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 4: La Naturaleza Holográfica",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro XIII, Nodo 5: El Círculo Completo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_13.html"
+   ],
+   "texto": "La Puerta, Nodo 13: Tu siguiente paso",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_07.html"
+   ],
+   "texto": "Trinity Quantum, Libro 13, Nodo 7: Unificación del Multiverso Personal",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "Trinity_Infinito/Libro_13/Libro_13.html"
+   ],
+   "texto": "Trinity Infinito, Libro 13: El libro que se escribe al ser observado",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Infinito",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/39_El_Campo/index.html"
+   ],
+   "texto": "Portal Público, Libro 39: El campo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/28_El_Vacio/index.html"
+   ],
+   "texto": "Portal Público, Libro 28: El vacío",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Portal",
+   "vuelve": false
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/33_El_Ritmo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro X, Nodo 3: Los Campos Cuánticos de Sanación",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/33_El_Ritmo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_07.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 6, Nodo 7: El Amor como Fuerza Fundamental del Vacío",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/index.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_07.html"
+   ],
+   "texto": "el último nodo de El Retorno a Casa",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  }
+ ]
+}
