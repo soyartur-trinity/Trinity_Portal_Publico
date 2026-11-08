@@ -15,7 +15,9 @@ Uso:
   python3 gen_mapa_red.py RUTA/Trinity_Portal_Publico RUTA/red_puertas.json salida.html ["7 de noviembre de 2026"]
 (la ruta del Portal sirve para leer los nombres de las carpetas de cada libro)
 La página vive en Trinity_Portal_Publico/03_La_Red/index.html: los enlaces al
-mismo repositorio son relativos desde ahí; los de Trinity-, absolutos.
+mismo repositorio son relativos desde ahí; los de Trinity-, absolutos. Se entra
+desde el Atrio del Stargate (la miniatura de la Red) y el pie lleva de vuelta
+al Atrio («#atrio») o al Portal.
 Se regenera cada vez que se suma una puerta (primero el inventario, después esto).
 """
 import json, os, re, sys, datetime
@@ -315,7 +317,7 @@ footer p{margin:.3rem 0}
 
 <footer>
   <p id="resumen"></p>
-  <p><a href="../index.html">Volver al Portal</a></p>
+  <p><a href="../index.html">Volver al Portal</a><span aria-hidden="true"> &nbsp;·&nbsp; </span><a href="https://soyartur-trinity.github.io/Trinity-/#atrio">Volver al Stargate</a></p>
 </footer>
 </div>
 
