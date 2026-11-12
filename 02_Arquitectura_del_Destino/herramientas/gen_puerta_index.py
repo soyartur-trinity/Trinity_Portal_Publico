@@ -298,7 +298,7 @@ HTML = '''<!DOCTYPE html>
 </head>
 <body>
   <div class="marco">
-    <a class="volver" href="../index.html">⟵ Portal Trinity</a>
+    <a class="volver" href="../index.html">⟵ La Espiral</a>
 
     <header class="portada">
       <h1><small>Trinity</small>La Puerta</h1>

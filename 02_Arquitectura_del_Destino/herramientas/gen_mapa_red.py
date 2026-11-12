@@ -16,7 +16,7 @@ Uso:
 (la ruta del Portal sirve para leer los nombres de las carpetas de cada libro)
 La página vive en Trinity_Portal_Publico/03_La_Red/index.html: los enlaces al
 mismo repositorio son relativos desde ahí; los de Trinity-, absolutos. Se entra
-desde el Atrio del Stargate (la miniatura de la Red) y el pie lleva de vuelta
+desde el Atrio de La Espiral (la miniatura de la Red) y el pie lleva de vuelta
 al Atrio («#atrio») o al Portal.
 Se regenera cada vez que se suma una puerta (primero el inventario, después esto).
 """
@@ -105,8 +105,12 @@ def libro(r, ruta):
             lugar = 'capítulo %d' % int(k.group(1))
         elif k:
             lugar = 'umbral %s' % ROMANOS[int(k.group(1))] if int(k.group(1)) < len(ROMANOS) else 'umbral %d' % int(k.group(1))
-        elif archivo == 'cierre.html':
+        elif archivo.startswith('cierre'):
             lugar = 'cierre'
+        elif archivo == 'epilogo.html':
+            lugar = 'epílogo'
+        elif re.match(r'nodo_(\d+)\.html', archivo):
+            lugar = 'nodo %d' % int(re.match(r'nodo_(\d+)', archivo).group(1))
         else:
             lugar = 'portada'
         return 'portal-%d' % n, lugar
@@ -317,7 +321,7 @@ footer p{margin:.3rem 0}
 
 <footer>
   <p id="resumen"></p>
-  <p><a href="../index.html">Volver al Portal</a><span aria-hidden="true"> &nbsp;·&nbsp; </span><a href="https://soyartur-trinity.github.io/Trinity-/#atrio">Volver al Stargate</a></p>
+  <p><a href="../index.html">Volver al Portal</a><span aria-hidden="true"> &nbsp;·&nbsp; </span><a href="https://soyartur-trinity.github.io/Trinity-/#atrio">Volver a La Espiral</a></p>
 </footer>
 </div>
 

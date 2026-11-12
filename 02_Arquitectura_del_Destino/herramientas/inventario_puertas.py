@@ -6,8 +6,10 @@ Recorre los dos repositorios y lee:
      de un nodo de la serie mayor hacia Arquitectura, el Portal o Trinity);
   2. la sección «Puertas laterales» de los cierres de Arquitectura del Destino;
   3. cualquier enlace de los libros del Portal Público (01_Libros) hacia Trinity-;
-  4. los enlaces marcados <a class="vuelta"> en los portales de serie de Trinity-
-     (por ejemplo, «Viene de Trinity Origen» en el portal de Quantum).
+  4. los enlaces marcados <a class="vuelta">: en los portales de serie de Trinity-
+     (por ejemplo, «Viene de Trinity Origen» en el portal de Quantum) y, desde el
+     9 de noviembre de 2026, en los cierres de Arquitectura del Destino (la línea
+     «Vienen de Trinity Quantum», debajo de las «Puertas laterales»).
 
 Para cada puerta decide si vuelve: si el libro de destino enlaza de regreso
 al nodo exacto de origen (o, para las puertas que salen de un cierre, si el
@@ -37,9 +39,16 @@ def canon(href, desde_url):
     return None
 
 
+# El índice de Arquitectura no enlaza la serie mayor: la puerta de Quantum 1.7,
+# que llega a él, vuelve desde el cierre de El Campo, su primer libro (el mapa
+# de la Red ya ubica el índice en el Libro 1).
+ALIAS = {('P', '02_Arquitectura_del_Destino/index.html'):
+         ('P', '02_Arquitectura_del_Destino/libro-01-el-campo')}
+
+
 def libro_de(r, ruta):
     """El libro al que pertenece una página: la carpeta que la contiene."""
-    return r, os.path.dirname(ruta)
+    return ALIAS.get((r, ruta), (r, os.path.dirname(ruta)))
 
 
 def texto(s):
@@ -120,19 +129,21 @@ def main():
                     'hacia': list(d) if d else [None, h], 'texto': texto(t), 'clase': '',
                 })
 
-    # 4. Vueltas marcadas en los portales de serie de Trinity-
-    for raiz, _, archivos in os.walk(rt):
-        for a in sorted(archivos):
-            if not a.endswith('.html'):
-                continue
-            rel = os.path.relpath(os.path.join(raiz, a), rt).replace(os.sep, '/')
-            s = open(os.path.join(rt, rel), encoding='utf-8').read()
-            for h, t in re.findall(r'<a class="vuelta" href="([^"]+)">(.*?)</a>', s, re.S):
-                d = canon(h, BASE_T + rel)
-                puertas.append({
-                    'tipo': 'vuelta', 'desde': ['T', rel],
-                    'hacia': list(d) if d else [None, h], 'texto': texto(t), 'clase': '',
-                })
+    # 4. Vueltas marcadas: portales de serie de Trinity- y cierres de Arquitectura
+    for repo, base, raiz_v in (('T', BASE_T, rt), ('P', BASE_P, arq)):
+        raiz_repo = rt if repo == 'T' else rp
+        for raiz, _, archivos in os.walk(raiz_v):
+            for a in sorted(archivos):
+                if not a.endswith('.html'):
+                    continue
+                rel = os.path.relpath(os.path.join(raiz, a), raiz_repo).replace(os.sep, '/')
+                s = open(os.path.join(raiz_repo, rel), encoding='utf-8').read()
+                for h, t in re.findall(r'<a class="vuelta" href="([^"]+)">(.*?)</a>', s, re.S):
+                    d = canon(h, base + rel)
+                    puertas.append({
+                        'tipo': 'vuelta', 'desde': [repo, rel],
+                        'hacia': list(d) if d else [None, h], 'texto': texto(t), 'clase': '',
+                    })
 
     # Vuelta: ¿el libro de destino enlaza de regreso a la página de origen?
     for x in puertas:
@@ -169,12 +180,18 @@ def main():
     print('Puertas laterales en los cierres de Arquitectura: %d (con vuelta %d)' % (len(lat), sum(x['vuelve'] for x in lat)))
     print('Enlaces del Portal Público hacia Trinity-: %d (con vuelta %d)' % (len(por), sum(x['vuelve'] for x in por)))
     vu = [x for x in puertas if x['tipo'] == 'vuelta']
-    print('Vueltas marcadas en portales de serie: %d' % len(vu))
+    print('Vueltas marcadas: %d (en Trinity- %d, en los cierres de Arquitectura %d)' % (
+        len(vu), sum(x['desde'][0] == 'T' for x in vu), sum(x['desde'][0] == 'P' for x in vu)))
     rotas = [x for x in puertas if not x['hacia'][0] or not os.path.exists(
         os.path.join(rt if x['hacia'][0] == 'T' else rp, x['hacia'][1]))]
     print('Destinos que no existen: %d' % len(rotas))
     for x in rotas:
         print('  ', x['desde'][1], '->', x['hacia'])
+    sin = [x for x in fract if not x['vuelve']]
+    if sin:
+        print('Puertas fractales sin vuelta: %d' % len(sin))
+        for x in sin:
+            print('  → %-42s -> %s' % (x['desde'][1], f(x['hacia'])))
     print()
     print('Puertas fractales de Origen:')
     for x in fract:

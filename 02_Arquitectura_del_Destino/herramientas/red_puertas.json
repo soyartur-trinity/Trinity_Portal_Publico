@@ -14,7 +14,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -30,7 +30,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -46,7 +46,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -62,7 +62,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -78,7 +78,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -94,7 +94,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -110,7 +110,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -126,7 +126,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -142,7 +142,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -158,7 +158,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -190,7 +190,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -206,7 +206,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -222,7 +222,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -238,7 +238,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -254,7 +254,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -270,7 +270,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -286,7 +286,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -318,7 +318,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -350,7 +350,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -366,7 +366,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -398,7 +398,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -430,7 +430,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -446,7 +446,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -462,7 +462,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -478,7 +478,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -494,7 +494,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -510,7 +510,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -526,7 +526,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -542,7 +542,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -558,7 +558,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -574,7 +574,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -590,7 +590,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -606,7 +606,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -622,7 +622,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -638,7 +638,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -654,7 +654,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -670,7 +670,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -686,7 +686,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -718,7 +718,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -750,7 +750,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -782,7 +782,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -798,7 +798,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -814,7 +814,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -830,7 +830,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -846,7 +846,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -862,7 +862,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -878,7 +878,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -894,7 +894,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -910,7 +910,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -942,7 +942,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -958,7 +958,7 @@
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -974,7 +974,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -990,7 +990,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -1006,7 +1006,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -1018,11 +1018,11 @@
     "P",
     "01_Libros/36_Lo_Que_No_Habla/umbral-02.html"
    ],
-   "texto": "Un caballo de Berlín parecía sumar y leer la hora; en verdad leía, en el cuerpo de quien preguntaba, gestos que nadie más veía. Esa atención sin palabras tiene su umbral en Lo que no habla, Libro XXXVI del Portal Público, Umbral II: «El caballo».",
+   "texto": "Un caballo de Berlín parecía sumar y leer la hora; en verdad leía, en el cuerpo de quien preguntaba, gestos que nadie más veía. Esa atención sin palabras tiene su umbral en Lo que no habla, Libro 36 del Portal Público, Umbral II: «El caballo».",
    "clase": "portal",
    "serie_desde": "Quantum",
    "serie_hacia": "Portal",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -1038,7 +1038,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -1054,7 +1054,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -1070,7 +1070,7 @@
    "clase": "arquitectura",
    "serie_desde": "Quantum",
    "serie_hacia": "Arquitectura",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "fractal",
@@ -2548,6 +2548,150 @@
    "tipo": "portal",
    "desde": [
     "P",
+    "01_Libros/08_Atender/cierre_el_gesto_que_se_repite.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 3, Nodo 4: Futuros Probables Como Elección",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/31_El_No_Saber/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_02.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 7, Nodo 2: Navegando Entre Escalas de Magnitud",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/03_Encuentro_Real/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 13, Nodo 4: El Espejo Holográfico Interior",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/27_El_Instante/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_06.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 3, Nodo 6: Memorias del Futuro",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/30_La_Presencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 6, Nodo 4: El Tiempo Cero — Pasado y Futuro en el Ahora",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/30_La_Presencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_07.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 8, Nodo 7: La Ascensión Ígnea",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/30_La_Presencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 12, Nodo 3: El Colapso Consciente",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/34_El_Cuerpo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 8, Nodo 5: Comunicación Plasmática",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/34_El_Cuerpo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_07.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 11, Nodo 7: El Intérprete Cuántico",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
     "01_Libros/33_El_Ritmo/cierre.html"
    ],
    "hacia": [
@@ -2577,6 +2721,310 @@
    "vuelve": true
   },
   {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 2, Nodo 3: El Silencio Compartido",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 7, Nodo 5: Co-creación Consciente con el Todo",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/37_La_Emergencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 5, Nodo 3: El Tejedor de Realidades",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/37_La_Emergencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 6, Nodo 3: El Observador como Arquitecto del Vacío",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/37_La_Emergencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 6, Nodo 5: Algoritmos del Vacío — Complejidad desde la Simplicidad",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/37_La_Emergencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 7, Nodo 3: Campos Morfogenéticos — La Memoria del Holofractal",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/09_Volver_Distinto/cierre_volver_distinto.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 3, Nodo 5: La Espiral Temporal",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/32_La_Duracion/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 3, Nodo 1: El Presente Eterno",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/39_El_Campo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_07.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 7, Nodo 7: Viviendo la Paradoja — Infinito Siendo Finito",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/39_El_Campo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_02.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 8, Nodo 2: Estados Plasmáticos de Consciencia",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/39_El_Campo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_07.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 12, Nodo 7: El Big Bang Personal",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/epilogo.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 13, Nodo 1: Universos Paralelos Internos",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_06.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 6, Nodo 6: El Vacío como Campo de Información Pura",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 8, Nodo 3: El Sol Interior",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/11_Atravesar/umbral_7_atravesar.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 9, Nodo 5: La Grieta Donde Entra la Luz",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/04_Asertividad_Consciente/epilogo.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 11, Nodo 4: Membranas Permeables",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/35_Los_Muchos/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_10/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 10, Nodo 4: Campos Torsionales del Corazón",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/28_El_Vacio/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_06/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 6, Nodo 1: El Silencio Antes del Big Bang",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/28_El_Vacio/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Quantum, Libro 11, Nodo 3: La Sintaxis del Vacío",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
    "tipo": "vuelta",
    "desde": [
     "T",
@@ -2590,6 +3038,486 @@
    "clase": "",
    "serie_desde": "Quantum",
    "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_07.html"
+   ],
+   "texto": "Libro 5, Nodo 7: El Portal Viviente",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_06.html"
+   ],
+   "texto": "Libro 8, Nodo 6: Portales de Plasma",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_01.html"
+   ],
+   "texto": "Libro 12, Nodo 1: El Punto de No Retorno",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_03.html"
+   ],
+   "texto": "Libro 1, Nodo 3: Realidades Superpuestas",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_02.html"
+   ],
+   "texto": "Libro 5, Nodo 2: El Viajero Dimensional",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_04.html"
+   ],
+   "texto": "Libro 7, Nodo 4: La Ilusión del Yo Separado",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_05.html"
+   ],
+   "texto": "Libro 12, Nodo 5: El Horizonte de Eventos Interior",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_01.html"
+   ],
+   "texto": "Libro 13, Nodo 1: Universos Paralelos Internos",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_06.html"
+   ],
+   "texto": "Libro 1, Nodo 6: El Lenguaje de las Sincronicidades",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_01/nodo_07.html"
+   ],
+   "texto": "Libro 1, Nodo 7: El Diseñador de Destinos",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_07/nodo_06.html"
+   ],
+   "texto": "Libro 7, Nodo 6: Portales Entre Realidades Paralelas",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_01.html"
+   ],
+   "texto": "Libro 9, Nodo 1: La Ruptura Que Crea",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_04.html"
+   ],
+   "texto": "Libro 2, Nodo 4: El Campo Unificado del Corazón",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_07.html"
+   ],
+   "texto": "Libro 4, Nodo 7: Coherencia en la Paradoja",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_08/nodo_04.html"
+   ],
+   "texto": "Libro 8, Nodo 4: El Cuerpo de Plasma",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_02.html"
+   ],
+   "texto": "Libro 3, Nodo 2: Vidas Paralelas",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_04/nodo_03.html"
+   ],
+   "texto": "Libro 4, Nodo 3: El Arte de la Bilocación",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_02.html"
+   ],
+   "texto": "Libro 13, Nodo 2: El Observador de Observadores",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_04.html"
+   ],
+   "texto": "Libro 3, Nodo 4: Futuros Probables Como Elección",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_06.html"
+   ],
+   "texto": "Libro 12, Nodo 6: Compresión de Todas las Posibilidades",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_03.html"
+   ],
+   "texto": "Libro 3, Nodo 3: El Pasado Desde el Ahora",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_01.html"
+   ],
+   "texto": "Libro 12, Nodo 1: El Punto de No Retorno",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_07.html"
+   ],
+   "texto": "Libro 2, Nodo 7: La Red Cuántica de Gaia",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_05.html"
+   ],
+   "texto": "Libro 11, Nodo 5: El Diccionario Holográfico",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_10/nodo_02.html"
+   ],
+   "texto": "Libro 10, Nodo 2: Vórtices de Transformación",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_05/nodo_04.html"
+   ],
+   "texto": "Libro 5, Nodo 4: El Guardián de los Umbrales",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_04.html"
+   ],
+   "texto": "Libro 12, Nodo 4: Densidad Infinita de Amor",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_01.html"
+   ],
+   "texto": "Libro 2, Nodo 1: Conexiones Más Allá del Espacio-Tiempo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_06.html"
+   ],
+   "texto": "Libro 2, Nodo 6: Relaciones Multidimensionales",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_12/nodo_02.html"
+   ],
+   "texto": "Libro 12, Nodo 2: Convergencia de Todas las Líneas",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Quantum",
    "vuelve": true
   }
  ]
