@@ -1444,6 +1444,134 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_01/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U5.html"
+   ],
+   "texto": "Que la pregunta «¿Quién observa?», dejada sin responder, es la misma que proponían Bassui en el Japón del siglo XIV y Ramana Maharshi en el sur de la India, y que el cuarto nivel de este protocolo la vuelve una práctica, se despliega en El Testigo, Libro 3 de Arquitectura del Destino, Umbral V: «Observar al que observa».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/11_Atravesar/umbral_1_lo_que_pasa_y_lo_que_se_queda.html"
+   ],
+   "texto": "Que una emoción, dejada sola, dura lo que dura una ola, y que lo que se queda meses no es la emoción sino algo que la vuelve a encender cada vez, está en Atravesar, Libro 11 del Portal Público, Umbral I: «La ola».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/31_El_No_Saber/umbral-05.html"
+   ],
+   "texto": "Que un hombre que había perdido la emoción que acompaña al pensamiento ya no podía decidir nada, y que la piel de quienes jugaban a las cartas sabía qué mazos evitar antes que ellos, está en El no saber, Libro 31 del Portal Público, Umbral V: «El cuerpo sabía antes».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-U1.html"
+   ],
+   "texto": "Que la primera pregunta del protocolo de este nodo —qué es mío y qué heredé o tomé de mi cultura— sostiene la historia de una directora de escuela que ve llegar un rumor por el grupo de padres, se despliega en La Corriente, Libro 10 de Arquitectura del Destino, Umbral I: «¿Es mío?».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U6.html"
+   ],
+   "texto": "Que unos padres que habían perdido a un hijo no encontraron nada bueno en esa muerte y, aun así, muchos de ellos crecieron, y que el crecimiento no lo da el golpe sino lo que uno hace después, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral VI: «Lo que encontraron en Charlotte».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/35_Los_Muchos/umbral-04.html"
+   ],
+   "texto": "Que un hombre que llevaba meses sin beber entendió, en el vestíbulo de un hotel de Akron, que no necesitaba un trago sino hablar con otro alcohólico, y que de esa conversación nació Alcohólicos Anónimos, está en Los muchos, Libro 35 del Portal Público, Umbral IV: «El vestíbulo».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-U6.html"
+   ],
+   "texto": "Que una intención escrita no es una orden que se le da al universo, sino algo más humilde y más comprobable —cambia lo que uno ve, y las oportunidades que pasaban de largo empiezan a notarse—, se despliega en El Campo, Libro 1 de Arquitectura del Destino, Umbral VI: «Lo que no es».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_07.html"
+   ],
+   "texto": "El salto evolutivo, sus pioneros y los desafíos de la transición vuelven al final de la serie como la visión de una nueva humanidad, en Trinity Origen, Libro XIII, Nodo 7: «La Nueva Humanidad». El primer libro de Origen termina donde termina el último.",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_06/index.html"
    ],
    "hacia": [
@@ -1624,6 +1752,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_01/nodo_06.html"
+   ],
+   "texto": "Trinity Origen, Libro I, Nodo 6: Manifestación consciente y co-creación de realidad",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_06/index.html"
    ],
    "texto": "Trinity Origen, Libro VI: El Vacío Fértil",
@@ -1790,7 +1934,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -1951,6 +2095,22 @@
    "serie_desde": "Arquitectura",
    "serie_hacia": "Portal",
    "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro I, Nodo 5: Sanación cuántica y transformación del trauma",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2478,7 +2638,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2968,6 +3128,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_01/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro I, Nodo 3: Entrelazamiento Mente-Corazón",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/31_El_No_Saber/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_07/nodo_02.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 7, Nodo 2: Navegando Entre Escalas de Magnitud",
@@ -3384,6 +3560,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_01/nodo_02.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro I, Nodo 2: Las Emociones como Información Cuántica",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/11_Atravesar/umbral_7_atravesar.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_09/nodo_05.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 9, Nodo 5: La Grieta Donde Entra la Luz",
@@ -3406,6 +3598,22 @@
    "clase": "",
    "serie_desde": "Portal",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/35_Los_Muchos/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro I, Nodo 5: Sanación Cuántica y Transformación del Trauma",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
@@ -3517,6 +3725,22 @@
    "texto": "el último nodo de El Vacío Fértil",
    "clase": "",
    "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_07.html"
+   ],
+   "texto": "el último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
    "serie_hacia": "Origen",
    "vuelve": true
   },
