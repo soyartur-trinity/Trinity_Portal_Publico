@@ -1313,6 +1313,182 @@
    "vuelve": true
   },
   {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/index.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-U2.html"
+   ],
+   "texto": "Que hay más posibilidades de las que ves desde tu línea, y que no las inventas sino que despiertas a ellas, se despliega en El Campo, Libro 1 de Arquitectura del Destino, Umbral II: «El campo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U6.html"
+   ],
+   "texto": "Que la muerte del nombre tiene un gesto pequeño —un nombre por vez, tachado un rato y vuelto a escribir— y que debajo alguien respira, se despliega en El Personaje, Libro 9 de Arquitectura del Destino, Umbral VI: «La muerte del nombre».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U5.html"
+   ],
+   "texto": "Que el funeral del ego tiene su versión de cada noche, la de Séneca y Pacuvio, y que el día se despide diciendo «he vivido», se despliega en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral V: «Celebrar el propio funeral».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U1.html"
+   ],
+   "texto": "Que el ancla del navegante es este cuerpo, y que el que mira no flota en el aire sino que está apoyado en una rama, se despliega en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral I: «Desde dónde mira el que mira».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U4.html"
+   ],
+   "texto": "Que quien crea es la partera y no la creadora, y que hay actos que se dan sin firma, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral IV: «Sin firma».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-U2.html"
+   ],
+   "texto": "Que el sufrimiento no viene de no saber sino de necesitarlo, y que sus cinco fuentes se reconocen por cómo pinchan, se despliega en No Saber, Libro 7 de Arquitectura del Destino, Umbral II: «Cinco espinas».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-U6.html"
+   ],
+   "texto": "Que el vacío no niega la forma sino que la abraza sin apego —acción sin actor, eficiencia sin esfuerzo, resultados sin apego, excelencia sin ego— se despliega en El Peso, Libro 8 de Arquitectura del Destino, Umbral VI: «Acción sin actor».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_02.html"
+   ],
+   "texto": "El Codificador de Realidades vive en Trinity Quantum, Libro 11, Nodo 2: «Códigos entre mundos», con la Piedra de Rosetta y cada emoción leída como un código de traducción.",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_02.html"
+   ],
+   "texto": "El Ingeniero de Emociones vive en Trinity Origen, Libro I, Nodo 2: «Las emociones como información cuántica», donde cada emoción es un mensaje antes que un problema.",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_03.html"
+   ],
+   "texto": "El Comunicador Multiespecies vive en Trinity Origen, Libro IV, Nodo 3: «Protocolos de comunicación», que incluye a la inteligencia artificial y pide una ética del discernimiento.",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_03.html"
+   ],
+   "texto": "El Restaurador de Líneas Temporales vive en Trinity Quantum, Libro 3, Nodo 3: «El pasado desde el ahora», donde recordar es volver a escribir, un poco, lo vivido.",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
    "tipo": "lateral",
    "desde": [
     "P",
@@ -1326,7 +1502,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -1560,6 +1736,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_06/nodo_03.html"
+   ],
+   "texto": "Trinity Origen, Libro VI, Nodo 3: Navegación del abismo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_10/nodo_01.html"
    ],
    "texto": "Trinity Origen, Libro X, Nodo 1: El Cuerpo como Templo Viviente",
@@ -1720,6 +1912,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_06/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro VI, Nodo 2: La muerte iniciática",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_07/index.html"
    ],
    "texto": "Trinity Origen, Libro VII: La Muerte como Maestra",
@@ -1822,7 +2030,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -1950,7 +2158,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2062,7 +2270,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2350,7 +2558,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -3037,6 +3245,70 @@
    "texto": "el último nodo de El Retorno a Casa",
    "clase": "",
    "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_03/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "texto": "el último nodo de El Vacío Fértil",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_11/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "texto": "el último nodo de El Vacío Fértil",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "texto": "su último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_06/nodo_07.html"
+   ],
+   "texto": "su último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
    "serie_hacia": "Origen",
    "vuelve": true
   },
