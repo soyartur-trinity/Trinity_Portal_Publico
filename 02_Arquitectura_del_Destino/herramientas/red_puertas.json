@@ -1076,6 +1076,134 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_08/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/29_La_Intencion/umbral-02.html"
+   ],
+   "texto": "Que el premio puede apagar lo que se hacía por gusto —los chicos que dibujaban por placer y dejaron de hacerlo cuando se les prometió un diploma— se despliega en La intención, Libro 29 del Portal Público, Umbral II: «Los marcadores».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_02.html"
+   ],
+   "texto": "Las seis tipologías de lo que piensa sin rostro humano, del cristal a la inteligencia artificial y al bosque que decide como un solo organismo, viven en Trinity Origen, Libro IV, Nodo 2: «Tipología de lo Innombrable».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/35_Los_Muchos/umbral-01.html"
+   ],
+   "texto": "Que una bandada de miles gira como un solo cuerpo sin que nadie la dirija, y que unos físicos de Roma filmaron a los estorninos para entender cómo lo hacen, se despliega en Los muchos, Libro 35 del Portal Público, Umbral I: «Sobre Termini».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/32_La_Duracion/umbral-02.html"
+   ],
+   "texto": "Que una niña de un barrio pobre de Roma repitió cuarenta y cuatro veces el mismo ejercicio sin que el canto ni el sillón levantado la distrajeran, y que de esa escena nació un método, se despliega en La duración, Libro 32 del Portal Público, Umbral II: «Cuarenta y cuatro veces».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U2.html"
+   ],
+   "texto": "Que la vocación no se elige del todo sino que se responde, porque la vida pregunta antes que uno —un albañil de setenta y cuatro años aprendiendo a escribir en un aula prestada—, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral II: «Lo que la vida espera».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/20_El_Ayudante/umbral-05.html"
+   ],
+   "texto": "Que hay una parte del aprendizaje que nadie puede hacer por otro —el rato de no entender— y que tres minutos de explicar en voz alta dicen más que seis páginas impecables se despliega en El ayudante, Libro 20 del Portal Público, Umbral V: «Los tres minutos».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-U4.html"
+   ],
+   "texto": "Que la exigencia de ser perfecto y la voz que dice «no eres nadie» son el mismo peso con distinto signo —una ceramista que rompe sus cuencos mientras una alumna la mira— se despliega en El Peso, Libro 8 de Arquitectura del Destino, Umbral IV: «El mismo peso con distinto signo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-U6.html"
+   ],
+   "texto": "Que una escuela anunciada cinco veces como perdida siguió abierta porque alguien abría el portón cada mañana a las siete y media, y que un sistema ansioso se calma con presencias que no giran, se despliega en La Corriente, Libro 10 de Arquitectura del Destino, Umbral VI: «Cinco veces».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_13/nodo_01.html"
    ],
    "hacia": [
@@ -2168,6 +2296,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_08/nodo_06.html"
+   ],
+   "texto": "Trinity Origen, Libro VIII, Nodo 6: Evaluación multidimensional",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "Trinity_Infinito/Libro3/L3-Nodo1.html"
    ],
    "texto": "Trinity Infinito, Libro 3: El juego sin jugador",
@@ -2335,6 +2479,22 @@
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
    "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro VIII, Nodo 7: Tejiendo la nueva tierra educativa",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2568,6 +2728,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_08/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro VIII, Nodo 4: Currículum del alma",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "Trinity_Infinito/Libro_10/L_10-Nodo1.html"
    ],
    "texto": "Trinity Infinito, Libro 10: La creatividad increada",
@@ -2756,6 +2932,22 @@
    "tipo": "portal",
    "desde": [
     "P",
+    "01_Libros/20_El_Ayudante/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro VIII, Nodo 5: Tecnologías de Consciencia Aplicadas",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
     "01_Libros/08_Atender/cierre_el_gesto_que_se_repite.html"
    ],
    "hacia": [
@@ -2814,6 +3006,22 @@
    "clase": "",
    "serie_desde": "Portal",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/29_La_Intencion/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro VIII, Nodo 1: El colapso del modelo industrial",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
@@ -3048,6 +3256,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_08/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro VIII, Nodo 3: El Aula como Campo Cuántico",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/32_La_Duracion/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_03/nodo_01.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 3, Nodo 1: El Presente Eterno",
@@ -3192,6 +3416,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_08/nodo_02.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro VIII, Nodo 2: Inteligencias Múltiples Cuánticas",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/35_Los_Muchos/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_10/nodo_04.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 10, Nodo 4: Campos Torsionales del Corazón",
@@ -3291,6 +3531,22 @@
     "01_Trinity_Origen/Libro_06/nodo_07.html"
    ],
    "texto": "su último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_02.html"
+   ],
+   "texto": "su segundo nodo",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
