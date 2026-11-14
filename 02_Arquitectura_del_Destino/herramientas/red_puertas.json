@@ -2353,6 +2353,166 @@
    "vuelve": true
   },
   {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/index.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U1.html"
+   ],
+   "texto": "Que la soledad es real y la red también, y que un programador de treinta y un años lo descubrió una madrugada, en una sala de urgencias, frente al renglón vacío del contacto de emergencia, se despliega en La Red, Libro 11 de Arquitectura del Destino, Umbral I: «Una pregunta sin respuesta».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/capitulo_05.html"
+   ],
+   "texto": "Que una profesora de yoga que enseñaba compasión y se hablaba a sí misma con crueldad descubrió que la voz que la atacaba intentaba protegerla, y que el diálogo empieza cuando el combate se vuelve curiosidad, se despliega en La Voz Interior, Libro 2 del Portal Público, capítulo 5: «La actitud del diálogo».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/03_Encuentro_Real/nodo_10.html"
+   ],
+   "texto": "Que tolerar al otro real no es resignarse ni aguantar en silencio lo que daña, sino poder quedarse frente a su diferencia sin huir ni pelear, y que el pensamiento que tienes sobre el otro no es el otro, se despliega en Encuentro Real, Libro 3 del Portal Público, Territorio 3: «Tolerancia al otro real».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/03_Encuentro_Real/nodo_02.html"
+   ],
+   "texto": "Que antes de conocer a alguien ya construimos una figura suya con los materiales de nuestra historia, y que el amor es muchas veces el encuentro de dos proyecciones antes que el de dos personas, se despliega en Encuentro Real, Libro 3 del Portal Público, Territorio 1: «Proyecciones cruzadas».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_02.html"
+   ],
+   "texto": "Que el entrelazamiento de almas no es un romance ni un destino escrito ni una deuda de otras vidas, sino lo que cada vínculo enseña cuando se lo mira con atención, y que de quien daña uno se protege, se despliega en Trinity Quantum, Libro 2, Nodo 2: «Almas Entrelazadas Cuánticamente».",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U2.html"
+   ],
+   "texto": "Que detrás del que nunca se enoja hay un niño de nueve años que aprendió que el enojo deja la casa en silencio, y que ningún personaje es una mentira porque todos nacieron para cuidar algo, se despliega en El Personaje, Libro 9 de Arquitectura del Destino, Umbral II: «Detrás de cada máscara».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U6.html"
+   ],
+   "texto": "Que una vecina de setenta y nueve años le pidió a un joven que la ayudara a bajar la escalera, y que al sostenerla él también se sintió sostenido, se despliega en La Red, Libro 11 de Arquitectura del Destino, Umbral VI: «La red te sostiene».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_06.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_03.html"
+   ],
+   "texto": "Que Dante cerró su Comedia con el amor que mueve el sol y las demás estrellas, y que para esta visión la gravedad es amor en la materia y la consciencia es amor conociéndose, se despliega en La Consciencia Planetaria, Libro XI de Trinity Origen, nodo 3: «El Campo Unificado de Consciencia».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_01.html"
+   ],
+   "texto": "Que olvidamos la Unidad como los actores olvidan que actúan, para que la obra sea real, y que ese olvido es el punto de partida del regreso, se despliega en El Retorno a Casa, Libro XIII de Trinity Origen, nodo 1: «La Gran Amnesia».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U3.html"
+   ],
+   "texto": "Que un ritual pequeño, inventado y privado alivia una pérdida aun en quien no cree en los rituales, y que en Harvard lo midieron con un dibujo, una pizca de sal y un papel roto, se despliega en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral III: «Lo que encontraron en Harvard».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
    "tipo": "lateral",
    "desde": [
     "P",
@@ -2888,6 +3048,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_05/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro V, Nodo 7: Ritual de Reconexión",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_06/nodo_02.html"
    ],
    "texto": "Trinity Origen, Libro VI, Nodo 2: La muerte iniciática",
@@ -3288,6 +3464,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_05/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro V, Nodo 4: Vínculos de Sombra y Sanación",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_06/nodo_01.html"
    ],
    "texto": "Trinity Origen, Libro VI, Nodo 1: Cartografía del vacío",
@@ -3502,7 +3694,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -3518,7 +3710,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -4024,6 +4216,38 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_05/nodo_02.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro V, Nodo 2: Los Puentes del Corazón",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/03_Encuentro_Real/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro V, Nodo 3: Contratos y Pactos Invisibles",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/03_Encuentro_Real/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_13/nodo_04.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 13, Nodo 4: El Espejo Holográfico Interior",
@@ -4424,6 +4648,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_05/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro V, Nodo 1: El Vínculo Primordial",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/epilogo.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_13/nodo_01.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 13, Nodo 1: Universos Paralelos Internos",
@@ -4724,6 +4964,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "02_Trinity_Quantum/Libro_02/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_03.html"
+   ],
+   "texto": "el tercer nodo",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "02_Trinity_Quantum/Libro_02/nodo_07.html"
    ],
    "hacia": [
@@ -4763,6 +5019,22 @@
     "01_Trinity_Origen/Libro_12/nodo_07.html"
    ],
    "texto": "la graduación cósmica",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_01.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_07.html"
+   ],
+   "texto": "el ritual de reconexión",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
@@ -4891,6 +5163,22 @@
     "01_Trinity_Origen/Libro_09/nodo_07.html"
    ],
    "texto": "el último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_05/nodo_06.html"
+   ],
+   "texto": "el sexto nodo",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
