@@ -1860,6 +1860,166 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_12/nodo_01.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_05.html"
+   ],
+   "texto": "Lo que consta del contacto que esta visión sueña —los contactados del siglo XX, las señales que la ciencia sigue escuchando y la única desviación de un asteroide, que hizo la humanidad— se despliega en La Consciencia Planetaria, Libro XI de Trinity Origen, nodo 5: «Colaboración Cósmica».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U5.html"
+   ],
+   "texto": "Que un maestro zen del siglo XIV, Bassui, enseñaba a preguntarse ante cada sonido «¿quién es el que oye?», hasta volver la escucha hacia quien escucha, se despliega en El Testigo, Libro 3 de Arquitectura del Destino, Umbral V: «El maestro de la pregunta».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/umbral-02.html"
+   ],
+   "texto": "Que hay una forma sutil de firmar lo recibido —no «yo lo hice», sino «a mí me lo dieron»— que convierte el haber sido atravesado en un título, y que Bach firmaba sus partituras señalando hacia otro lado, con Soli Deo gloria, se despliega en Lo que se recibe, Libro 38 del Portal Público, Umbral II: «El que se dice elegido».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U1.html"
+   ],
+   "texto": "Que en 2023 una encuesta en ciento cuarenta y dos países encontró que los más solos no son los mayores sino los jóvenes de diecinueve a veintinueve años, conectados y solos a la vez, se despliega en La Red, Libro 11 de Arquitectura del Destino, Umbral I: «Los más conectados».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_04.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_07.html"
+   ],
+   "texto": "Que las tecnologías del cuerpo que esta visión sueña ya tienen su primer paso —la edición genética que dejó sin crisis de dolor a casi todos los pacientes con anemia falciforme de sus ensayos, las ranas que regeneraron una pata, el riñón de cerdo trasplantado a una persona viva— se despliega en Sanación Integral, Libro X de Trinity Origen, nodo 7: «La Gran Síntesis».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/umbral-04.html"
+   ],
+   "texto": "Que Lewis Hyde escribió que un regalo que se detiene deja de ser regalo, y que Jonas Salk, el día en que se anunció la vacuna contra la poliomielitis, preguntó si acaso se podía patentar el sol, se despliega en Lo que se recibe, Libro 38 del Portal Público, Umbral IV: «El regalo tiene que moverse».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_05.html"
+   ],
+   "texto": "Que la economía que sirve a la vida ya tiene nombres propios —las cooperativas de Mondragón, la felicidad nacional bruta de Bután, la economía rosquilla de Kate Raworth— se despliega en Liderazgo Consciente, Libro IX de Trinity Origen, nodo 5: «Economías de la Consciencia».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U1.html"
+   ],
+   "texto": "Que Teresa de Ávila, en 1577, pidió considerar el alma como un castillo todo de un diamante o muy claro cristal, con muchas moradas y, en el centro de todas, la principal, se despliega en Habitar, Libro 13 de Arquitectura del Destino, Umbral I: «Un castillo de cristal».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-U6.html"
+   ],
+   "texto": "Que el sexto nodo de El Retorno a Casa mira el cuerpo desde los reinos donde no hay cuerpos, y encuentra que los ángeles no conocen el éxtasis de morder una fresa madura, se despliega en El Cuerpo, Libro 4 de Arquitectura del Destino, Umbral VI: «Lo que los ángeles no conocen».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_13/nodo_01.html"
+   ],
+   "texto": "Que la espiral sigue, y que el libro siguiente empieza por el olvido profundo desde el que se emprende el regreso, se despliega en El Retorno a Casa, Libro XIII de Trinity Origen, nodo 1: «La Gran Amnesia».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_01.html"
    ],
    "hacia": [
@@ -2424,6 +2584,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_12/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro XII, Nodo 2: El Protocolo de Contacto Interior",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_13/nodo_01.html"
    ],
    "texto": "Trinity Origen, Libro XIII, Nodo 1: La Gran Amnesia",
@@ -2507,6 +2683,22 @@
     "01_Trinity_Origen/Libro_10/nodo_05.html"
    ],
    "texto": "Trinity Origen, Libro X, Nodo 5: La Energía Vital y los Sistemas Sutiles",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-04-el-cuerpo/L04-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro XII, Nodo 7: La Graduación Cósmica",
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
@@ -3355,6 +3547,22 @@
     "01_Trinity_Origen/Libro_11/nodo_02.html"
    ],
    "texto": "Trinity Origen, Libro XI, Nodo 2: La Red de Consciencias Despiertas",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_03.html"
+   ],
+   "texto": "Trinity Origen, Libro XII, Nodo 3: Los Embajadores de la Humanidad",
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
@@ -4248,6 +4456,38 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_12/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro XII, Nodo 3: Los Embajadores de la Humanidad",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro XII, Nodo 5: La Economía Galáctica",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_06/nodo_06.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 6, Nodo 6: El Vacío como Campo de Información Pura",
@@ -4516,6 +4756,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_13/nodo_01.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_07.html"
+   ],
+   "texto": "la graduación cósmica",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_13/nodo_07.html"
    ],
    "hacia": [
@@ -4523,6 +4779,38 @@
     "01_Trinity_Origen/Libro_01/nodo_07.html"
    ],
    "texto": "el último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_05.html"
+   ],
+   "texto": "el quinto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_04.html"
+   ],
+   "texto": "el cuarto nodo",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
@@ -4619,6 +4907,22 @@
     "01_Trinity_Origen/Libro_07/nodo_07.html"
    ],
    "texto": "el último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_01.html"
+   ],
+   "texto": "el primer nodo",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
@@ -5022,6 +5326,22 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_12/nodo_06.html"
+   ],
+   "texto": "Libro XII, Nodo 6: Las Ciudades de Luz",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
