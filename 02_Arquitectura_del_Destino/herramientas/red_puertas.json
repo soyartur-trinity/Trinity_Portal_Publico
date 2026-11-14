@@ -1460,6 +1460,166 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_09/index.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U1.html"
+   ],
+   "texto": "Que liderar no es mandar sobre otros sino cuidar algo para ellos, y que la crisis de sentido no es una falla de quien la vive sino un llamado, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral I: «El llamado».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U3.html"
+   ],
+   "texto": "Que el hambre de reconocimiento crece sobre una raíz, la valía atada a los logros, y que debajo del «sin mí, nada» suele haber alguien que aprendió muy temprano que valía lo que rendía, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral III: «Sin mí, nada».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U4.html"
+   ],
+   "texto": "Que la noche oscura y la depresión se parecen, que Juan de la Cruz ya enseñaba a distinguirlas y que pedir ayuda no apaga la noche sino que le pone compañía, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral IV: «Noche no es depresión».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/35_Los_Muchos/umbral-02.html"
+   ],
+   "texto": "Que bastan unos pocos que saben adónde ir, sin que nadie los reconozca como jefes, para que un grupo entero encuentre el camino —en los cardúmenes y en un salón de una universidad inglesa—, se despliega en Los muchos, Libro 35 del Portal Público, Umbral II: «Orientar sin mandar».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/35_Los_Muchos/umbral-03.html"
+   ],
+   "texto": "Que el corazón de quien cruza las brasas en la noche de San Juan arrastra el de los suyos, aunque solo estén mirando, y que un coro respira hasta latir junto, se despliega en Los muchos, Libro 35 del Portal Público, Umbral III: «La noche de San Juan».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/37_La_Emergencia/umbral-04.html"
+   ],
+   "texto": "Que en el teatro improvisado ningún actor tiene en la cabeza la obra entera, y que la escena aparece entre todos sin que nadie pueda decir de quién fue, se despliega en La emergencia, Libro 37 del Portal Público, Umbral IV: «Sin director ni libreto».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_06.html"
+   ],
+   "texto": "Que John Maynard Keynes imaginó en 1930 que sus nietos trabajarían unas quince horas por semana, y que en 2022 sesenta y una empresas británicas probaron la semana de cuatro días con el mismo sueldo, se despliega en La Consciencia Planetaria, Libro XI de Trinity Origen, nodo 6: «La Nueva Tierra».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U6.html"
+   ],
+   "texto": "Que la vela que se consume es la que quiere iluminar sola toda la habitación, y que la compasión, a diferencia de la empatía que agota, es el amor que dura, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral VI: «Empatía que agota, compasión que sostiene».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U5.html"
+   ],
+   "texto": "Que Honi vio a un hombre plantar un árbol que no iba a ver dar fruto, y que a nadie le toca terminar la obra sino hacer su tramo, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral V: «El algarrobo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_01.html"
+   ],
+   "texto": "Que Lovelock y Andrew Watson imaginaron en 1983 un planeta poblado solo de margaritas, negras y blancas, que mantiene templada su temperatura sin que ninguna lo busque, se despliega en La Consciencia Planetaria, Libro XI de Trinity Origen, nodo 1: «Gaia como Ser Viviente».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_10/nodo_01.html"
    ],
    "hacia": [
@@ -2472,6 +2632,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_09/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro IX, Nodo 1: La Muerte del Líder-Ego",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_13/nodo_02.html"
    ],
    "texto": "Trinity Origen, Libro XIII, Nodo 2: Los Fragmentos del Alma",
@@ -3246,7 +3422,23 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro IX, Nodo 1: La Muerte del Líder-Ego",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -3262,7 +3454,23 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro IX, Nodo 7: Liderazgo al Servicio de la Vida",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -3816,6 +4024,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_09/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IX, Nodo 4: Liderazgo desde el Vacío",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/37_La_Emergencia/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_05/nodo_03.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 5, Nodo 3: El Tejedor de Realidades",
@@ -4136,6 +4360,38 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_09/nodo_02.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IX, Nodo 2: Liderazgo Holárquico",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/35_Los_Muchos/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IX, Nodo 3: Tecnologías de Coherencia Colectiva",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/35_Los_Muchos/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_10/nodo_04.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 10, Nodo 4: Campos Torsionales del Corazón",
@@ -4340,6 +4596,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_01.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_07.html"
+   ],
+   "texto": "el último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_04.html"
    ],
    "hacia": [
@@ -4347,6 +4619,22 @@
     "01_Trinity_Origen/Libro_07/nodo_07.html"
    ],
    "texto": "el último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_06.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_09/nodo_05.html"
+   ],
+   "texto": "el quinto nodo",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
