@@ -1332,6 +1332,134 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_07/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U1.html"
+   ],
+   "texto": "Que el tabú más grande es también la puerta más grande, y que se cruza despedida a despedida, en lo pequeño de cada día, se despliega en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral I: «La puerta más grande».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-U4.html"
+   ],
+   "texto": "Que el maestro zen que suelta su taza de té tiene un hermano en un monasterio del bosque, en Tailandia —Ajahn Chah, que disfrutaba su vaso de agua porque para él ya estaba roto—, se despliega en Las Pequeñas Muertes, Libro 6 de Arquitectura del Destino, Umbral IV: «El vaso que ya está roto».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_07.html"
+   ],
+   "texto": "Que en 1948, en Londres, un hombre que se moría y una joven trabajadora social hablaron de un lugar donde morir sin dolor y sin soledad, y que de esa conversación nació el primer hospicio moderno, donde la muerte, cuando llega, también se cuida, se despliega en Sanación Integral, Libro X de Trinity Origen, nodo 7: «La Gran Síntesis».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/05_Duelo/duelo_nodo_10.html"
+   ],
+   "texto": "Que el bardo no es solo lo que viene después de la muerte sino la condición de toda vida —el intervalo en que algo terminó y lo otro todavía no empezó—, y que el duelo se habita como se habita ese entre, se despliega en El Duelo, Libro 5 del Portal Público, nodo 10: «El Bardo Permanente».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U6.html"
+   ],
+   "texto": "Que Trinity pela el ego como una cebolla, capa por capa, y que Ibsen hizo pelar la suya a Peer Gynt hasta descubrir que no tenía centro —y que la obra no termina ahí—, se despliega en El Personaje, Libro 9 de Arquitectura del Destino, Umbral VI: «La cebolla».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U4.html"
+   ],
+   "texto": "Que la noche oscura no es una depresión, y que Juan de la Cruz ya sabía distinguirlas, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral IV: «Noche no es depresión».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U4.html"
+   ],
+   "texto": "Que en el Templo de Jerusalén había una cámara donde se daba y se recibía en secreto, para que nadie saliera debiéndole nada a un benefactor con nombre y cara, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral IV: «La cámara de los discretos».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_04.html"
+   ],
+   "texto": "Que dentro de la crisálida la oruga se deshace casi entera y la mariposa todavía recuerda lo que aprendió la oruga, y que solo podemos nacer, y nacer lleva su tiempo, se despliega en La Consciencia Planetaria, Libro XI de Trinity Origen, nodo 4: «La Gran Transición».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_10/nodo_01.html"
    ],
    "hacia": [
@@ -2328,6 +2456,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_07/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro VII, Nodo 5: La Muerte del Ego",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_13/nodo_02.html"
    ],
    "texto": "Trinity Origen, Libro XIII, Nodo 2: Los Fragmentos del Alma",
@@ -2408,13 +2552,29 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_07/nodo_01.html"
+   ],
+   "texto": "Trinity Origen, Libro VII, Nodo 1: El Tabú Primordial",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-06-las-pequenas-muertes/L06-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_07/nodo_02.html"
    ],
    "texto": "Trinity Origen, Libro VII, Nodo 2: Las Pequeñas Muertes",
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2763,6 +2923,22 @@
     "01_Trinity_Origen/Libro_06/nodo_01.html"
    ],
    "texto": "Trinity Origen, Libro VI, Nodo 1: Cartografía del vacío",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro VII, Nodo 5: La Muerte del Ego",
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
@@ -3144,6 +3320,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_07/nodo_06.html"
+   ],
+   "texto": "Trinity Origen, Libro VII, Nodo 6: El Legado Cuántico",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "Trinity_Infinito/Libro_10/L_10-Nodo1.html"
    ],
    "texto": "Trinity Infinito, Libro 10: La creatividad increada",
@@ -3502,6 +3694,22 @@
    "clase": "",
    "serie_desde": "Portal",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/05_Duelo/duelo_nodo_12.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro VII, Nodo 4: Tecnologías de Consciencia para el Tránsito",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
@@ -4068,6 +4276,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_10/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_03.html"
+   ],
+   "texto": "el tercer nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_01/nodo_02.html"
    ],
    "hacia": [
@@ -4107,6 +4331,22 @@
     "01_Trinity_Origen/Libro_06/nodo_07.html"
    ],
    "texto": "su último nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_04.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_07/nodo_07.html"
+   ],
+   "texto": "el último nodo",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
