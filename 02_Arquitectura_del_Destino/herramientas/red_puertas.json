@@ -1572,6 +1572,166 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_01.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_07.html"
+   ],
+   "texto": "Que la red de Gaia no necesita lo instantáneo para asombrar —los ríos voladores que llevan la lluvia de la Amazonía al sur, las ballenas que abonan el mar, los hongos que unen las raíces de los árboles— se despliega en Trinity Quantum, Libro 2, Nodo 7: «La Red Cuántica de Gaia».",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U2.html"
+   ],
+   "texto": "Que Trinity tiene sobre internet dos frases que parecen discutir —una dice que internet revela la red y la otra que la imita mal—, y tres preguntas sencillas para distinguir un hilo de una señal, se despliegan en La Red, Libro 11 de Arquitectura del Destino, Umbral II: «Las dos posturas de Trinity».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-U3.html"
+   ],
+   "texto": "Que una corriente se alimenta tanto de quienes la siguen como de quienes la combaten, y que la indignación corre más rápido entre los que ya piensan igual, se despliega en La Corriente, Libro 10 de Arquitectura del Destino, Umbral III: «Los dos lados del columpio».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/umbral-01.html"
+   ],
+   "texto": "Que una monja que veía despierta, un compositor al que la música le llegaba de golpe y un sacerdote de Delfos describieron lo mismo —algo que pasa a través de uno, y que lleva también la propia voz—, está en Lo que se recibe, Libro 38 del Portal Público, Umbral I: «La voz era de ella».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-U3.html"
+   ],
+   "texto": "Que los aymara ponen el futuro a la espalda, porque nadie lo vio, y el pasado delante, a la vista, y que la preocupación no sabe más que uno, solo habla más fuerte, se despliega en No Saber, Libro 7 de Arquitectura del Destino, Umbral III: «El futuro a la espalda».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/17_Idolo/umbral-00.html"
+   ],
+   "texto": "Que venerar y temer son la misma operación —atribuirle a lo que nos contesta un saber o un poder que no verificamos— y que la salida no es desconfiar de todo sino prestar bien, está en Ídolo, Libro 17 del Portal Público, Umbral 0: «Dos maneras de no pensar».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-U2.html"
+   ],
+   "texto": "Que la nostalgia de un hogar lejano ya la cantaba un himno del siglo II —un príncipe enviado a buscar una perla, que en tierra extraña olvidó quién era hasta que una carta se lo recordó— se despliega en El Sonámbulo, Libro 2 de Arquitectura del Destino, Umbral II: «El príncipe y la perla».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/39_El_Campo/umbral-02.html"
+   ],
+   "texto": "Que el campo no es un lugar adonde llegar sino la costumbre de volver, y que un laico chino del siglo VIII, cuando le preguntaron por sus poderes, contestó con sus tareas —sacar agua y cargar leña—, está en El campo, Libro 39 del Portal Público, Umbral II: «Agua y leña».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_06.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_07.html"
+   ],
+   "texto": "La educación de la Nueva Tierra tiene su propio nodo, con sus escuelas reales, sus primeros pasos y su manifiesto, en Trinity Origen, Libro VIII, Nodo 7: «Tejiendo la Nueva Tierra Educativa».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U5.html"
+   ],
+   "texto": "Que un sabio de los siglos I y II enseñó que no te corresponde terminar la obra, pero tampoco eres libre de desentenderte de ella —dos libertades y una sola obligación: hacer tu tramo—, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral V: «No te toca terminarla».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_06/index.html"
    ],
    "hacia": [
@@ -1871,6 +2031,22 @@
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
    "vuelve": false
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_05.html"
+   ],
+   "texto": "Trinity Origen, Libro XI, Nodo 5: Colaboración Cósmica",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2344,6 +2520,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro XI, Nodo 4: La Gran Transición",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "Trinity_Infinito/Libro7/L7-Nodo1.html"
    ],
    "texto": "Trinity Infinito, Libro 7: Omnisciencia ignorante",
@@ -2664,6 +2856,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro XI, Nodo 2: La Red de Consciencias Despiertas",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-10-la-corriente/L10-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_10/index.html"
    ],
    "texto": "Trinity Quantum, Libro 10: Campos de Torsión",
@@ -2792,6 +3000,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_02.html"
+   ],
+   "texto": "Trinity Origen, Libro XI, Nodo 2: La Red de Consciencias Despiertas",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_04/nodo_02.html"
    ],
    "texto": "Trinity Quantum, Libro 4, Nodo 2: Ubicuidad consciente",
@@ -2891,6 +3115,22 @@
     "01_Trinity_Origen/Libro_08/nodo_04.html"
    ],
    "texto": "Trinity Origen, Libro VIII, Nodo 4: Currículum del alma",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_07.html"
+   ],
+   "texto": "Trinity Origen, Libro XI, Nodo 7: El Servicio Planetario",
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
@@ -3099,6 +3339,22 @@
     "01_Trinity_Origen/Libro_08/nodo_05.html"
    ],
    "texto": "⟐ Trinity Origen, Libro VIII, Nodo 5: Tecnologías de Consciencia Aplicadas",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/17_Idolo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro XI, Nodo 5: Colaboración Cósmica",
    "clase": "",
    "serie_desde": "Portal",
    "serie_hacia": "Origen",
@@ -3464,6 +3720,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_06.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro XI, Nodo 6: La Nueva Tierra",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/39_El_Campo/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "02_Trinity_Quantum/Libro_07/nodo_07.html"
    ],
    "texto": "⟐ Trinity Quantum, Libro 7, Nodo 7: Viviendo la Paradoja — Infinito Siendo Finito",
@@ -3518,6 +3790,22 @@
    "clase": "",
    "serie_desde": "Portal",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro XI, Nodo 3: El Campo Unificado de Consciencia",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
@@ -3725,6 +4013,38 @@
    "texto": "el último nodo de El Vacío Fértil",
    "clase": "",
    "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_02/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_01.html"
+   ],
+   "texto": "el primer nodo",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_06.html"
+   ],
+   "texto": "el sexto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
    "serie_hacia": "Origen",
    "vuelve": true
   },
