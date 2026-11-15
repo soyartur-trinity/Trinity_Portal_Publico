@@ -2020,6 +2020,214 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_03/index.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U3.html"
+   ],
+   "texto": "Que un nodo de Trinity y otro escrito con imágenes de la física coinciden en no apurar la reparación, y que lo mismo enseñan el kintsugi, el Libro de Job y un ensayo clínico en Oxford, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral III: «Acompañar sin apurar».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U1.html"
+   ],
+   "texto": "Que algo se haya roto no quiere decir que tú estés roto, y que un arbolista lo aprendió frente a un fresno partido por la tormenta, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral I: «Lo que se rompe no siempre termina algo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/05_Duelo/duelo_nodo_01.html"
+   ],
+   "texto": "Que la pérdida de alguien amado abre en muchos su primera grieta, y que desde el consultorio se la acompaña con una práctica breve para estar con el dolor sin que arrastre, se despliega en El Duelo, Libro 5 del Portal Público, nodo 1: «La Primera Grieta».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U2.html"
+   ],
+   "texto": "Que Pierre Janet distinguió la memoria que cuenta de la que solo repite, y que una joven de París pudo narrar al fin la muerte de su madre, acompañada, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral II: «La muchacha que no podía contarlo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_01/nodo_05.html"
+   ],
+   "texto": "Que el trauma se acerca de a gotas, dentro de una ventana de tolerancia, y que el recuerdo se reconstruye cada vez que se evoca, se despliega en Psicología Cuántica, Libro I de Trinity Origen, nodo 5: «Sanación Cuántica y Transformación del Trauma».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U4.html"
+   ],
+   "texto": "Que Juan de la Cruz vio cómo el fuego primero seca, ennegrece y hace llorar al madero antes de volverlo llama, y que lo que se transforma a veces parece peor sin estarlo, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral IV: «El madero».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_04.html"
+   ],
+   "texto": "Que en la crisálida la oruga no se disuelve entera, y que el parto de un mundo nuevo se mira también desde ese capullo, se despliega en La Consciencia Planetaria, Libro XI de Trinity Origen, nodo 4: «La Gran Transición».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U3.html"
+   ],
+   "texto": "Que el que mira no es frío ni indiferente, y que el cielo no se defiende de la tormenta sino que la contiene, se despliega en El Testigo, Libro 3 de Arquitectura del Destino, Umbral III: «Las cualidades del que mira».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U5.html"
+   ],
+   "texto": "Que el dolor de todos mirado en una pantalla aplasta, y que puesto en un gesto del tamaño de las manos une, como en Ciudad de México en 1985, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral V: «Sentir sin hundirse».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_01.html"
+   ],
+   "texto": "Que la Tierra que siente tiene también su ciencia, la de Lovelock y Margulis, y que el miedo por el planeta no es una enfermedad sino una respuesta a algo real, se despliega en La Consciencia Planetaria, Libro XI de Trinity Origen, nodo 1: «Gaia como Ser Viviente».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U6.html"
+   ],
+   "texto": "Que las cinco señales de la reconfiguración se cruzan casi punto por punto con lo que Tedeschi y Calhoun encontraron escuchando a padres en duelo, y que nadie está obligado a crecer, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral VI: «Cinco señales».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U6.html"
+   ],
+   "texto": "Que el Buda distinguió la primera flecha, que nadie elige, de la segunda, que es la guerra contra ella, se despliega en La Grieta, Libro 5 de Arquitectura del Destino, Umbral VI: «El fin de la guerra».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_09/nodo_05.html"
+   ],
+   "texto": "Que la luz que entra por las grietas no viene de afuera, que siempre estuvo ahí y que la grieta solo quita lo que la ocultaba, se despliega en Simetrías Rotas, Libro 9 de Trinity Quantum, nodo 5: «La Grieta Donde Entra la Luz».",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_01.html"
    ],
    "hacia": [
@@ -2728,6 +2936,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_03/nodo_04.html"
+   ],
+   "texto": "Trinity Origen, Libro III, Nodo 4: El Silencio que el Dolor Revela",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "lateral",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_10/nodo_04.html"
    ],
    "texto": "Trinity Origen, Libro X, Nodo 4: La Mente como Portal de Sanación",
@@ -2942,7 +3166,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2958,7 +3182,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -4344,6 +4568,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_03/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro III, Nodo 1: La Primera Grieta",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/05_Duelo/duelo_nodo_12.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_07/nodo_04.html"
    ],
    "texto": "⟐ Trinity Origen, Libro VII, Nodo 4: Tecnologías de Consciencia para el Tránsito",
@@ -4932,6 +5172,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "02_Trinity_Quantum/Libro_09/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_07.html"
+   ],
+   "texto": "el último nodo de El Dolor como Portal",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "02_Trinity_Quantum/Libro_03/nodo_03.html"
    ],
    "hacia": [
@@ -5124,6 +5380,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_01/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_02.html"
+   ],
+   "texto": "el segundo nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_04/nodo_02.html"
    ],
    "hacia": [
@@ -5172,6 +5444,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_01.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_05.html"
+   ],
+   "texto": "el quinto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_03.html"
    ],
    "hacia": [
@@ -5179,6 +5467,22 @@
     "01_Trinity_Origen/Libro_05/nodo_06.html"
    ],
    "texto": "el sexto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_04.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_03.html"
+   ],
+   "texto": "fuego del dolor",
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
@@ -5582,6 +5886,86 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_01.html"
+   ],
+   "texto": "Libro III, Nodo 1: La Primera Grieta",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_02.html"
+   ],
+   "texto": "Libro III, Nodo 2: El Trauma como Memoria Suspendida",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_03.html"
+   ],
+   "texto": "Libro III, Nodo 3: El Fuego del Dolor",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_05.html"
+   ],
+   "texto": "Libro III, Nodo 5: Dolor Colectivo, Dolor Planetario",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_03/nodo_06.html"
+   ],
+   "texto": "Libro III, Nodo 6: Reconfiguración",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
