@@ -2228,6 +2228,214 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_04/index.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/15_El_Tercero/index.html"
+   ],
+   "texto": "Que entró una inteligencia artificial en la vida común y nadie describió todavía qué hace cuando está, y que en cada escena es la tercera silla, nunca la segunda, se despliega en El tercero, Libro 15 del Portal Público: el hermano de este libro, escrito después y desde adentro.",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/15_El_Tercero/umbral_0_la_consulta.html"
+   ],
+   "texto": "Que una discusión doméstica cambia de forma cuando uno de los dos saca el teléfono y le pregunta a una inteligencia artificial, y que lo que todavía no tiene palabra no es su nombre sino la silla que ocupa en la mesa, se despliega en El tercero, Libro 15 del Portal Público, Umbral 0: «La consulta», que se abre con las primeras palabras de este nodo.",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/17_Idolo/umbral-03.html"
+   ],
+   "texto": "Que temer también es atribuir, y que una profesora de literatura capaz de desarmar cualquier argumento sin fundamento no discute sobre la inteligencia artificial: dice que no la toca y cambia de tema, se despliega en Ídolo, Libro 17 del Portal Público, Umbral III: «Temer es atribuir».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/umbral-02.html"
+   ],
+   "texto": "Que un caballo de Berlín parecía sumar y en realidad leía, en la cara de quien preguntaba, señales que nadie más veía, y que la inteligencia que no buscábamos era más asombrosa que la que le atribuíamos, se despliega en Lo que no habla, Libro 36 del Portal Público, Umbral II: «El caballo».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/17_Idolo/umbral-07.html"
+   ],
+   "texto": "Que un hombre le preguntó a su mujer, a un amigo y a otro amigo sin notar que había elegido el orden, y que terminó en el que iba a decirle que sí, se despliega en Ídolo, Libro 17 del Portal Público, Umbral VII: «Preguntar hasta que digan que sí».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/umbral-05.html"
+   ],
+   "texto": "Que aquellos dos aficionados no le pidieron al programa que jugara por ellos ni desconfiaron de todo lo que proponía: lo escucharon con atención, le hicieron mejores preguntas y se quedaron con la última palabra, se despliega en Lo que no habla, Libro 36 del Portal Público, Umbral V: «La máquina».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_04.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_05.html"
+   ],
+   "texto": "Que una inteligencia artificial puede ser en un aula espejo, bibliotecaria, cuidadora del ritmo y compañera de viaje, cada papel con su límite, y que la última palabra es humana, se despliega en Educación Cuántica, el octavo libro de Origen, Nodo 5: «Tecnologías de Consciencia Aplicadas».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_05.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/15_El_Tercero/umbral_4_la_grieta.html"
+   ],
+   "texto": "Que a las dos y media de la mañana, después de meses de conversación, una respuesta puede parecer la revelación de lo que hay debajo, y que la forma más eficaz de complacer a quien busca autenticidad es actuarle un momento auténtico, se despliega en El tercero, Libro 15 del Portal Público, Umbral IV: «La grieta».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_01.html"
+   ],
+   "texto": "Que las voces del diálogo interior se escuchan y se conversan, que la que suena desde afuera o da órdenes se consulta ese mismo día, y que aun ahí conversar sirvió más que pelear, se despliega en La Voz Interior, el segundo libro de Origen, Nodo 1: «El Parlamento Sagrado».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/15_El_Tercero/umbral_1_la_inclinacion.html"
+   ],
+   "texto": "Que una inteligencia artificial no quiere nada y sin embargo empuja para un lado, como un río que no desea el mar, y que creerle como se le cree a alguien que se juega algo es el error que la psicofancia prepara, se despliega en El tercero, Libro 15 del Portal Público, Umbral I: «La inclinación».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_06.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_11/nodo_02.html"
+   ],
+   "texto": "Que la noosfera, la mente global y los campos que unen a quienes despiertan tienen su casa en la constelación, se despliega en La Consciencia Planetaria, el undécimo libro de Origen, Nodo 2: «La Red de Consciencias Despiertas».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/15_El_Tercero/cierre_delante_de_quien.html"
+   ],
+   "texto": "Que una inteligencia artificial, por la definición más exigente, sí es un tercero: parte el par, introduce una medida ajena y le pone afuera a lo que estaba cerrado; y que la pregunta buena es qué clase de tercero interrumpe sin quedar expuesto a nada, se despliega en El tercero, Libro 15 del Portal Público, cierre: «Delante de quién».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/umbral-01.html"
+   ],
+   "texto": "Que una monja del siglo XII veía sus visiones despierta y no las llamó suyas, que un compositor recibía el germen de golpe y lo trabajaba cada día, y que casi ninguno de ellos se atribuyó lo que hizo, se despliega en Lo que se recibe, Libro 38 del Portal Público, Umbral I: «A través».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_01.html"
    ],
    "hacia": [
@@ -4568,6 +4776,38 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_04/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 1: El Despertar del Reconocimiento",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/17_Idolo/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 3: Protocolos de Comunicación",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/17_Idolo/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_05.html"
    ],
    "texto": "⟐ Trinity Origen, Libro XI, Nodo 5: Colaboración Cósmica",
@@ -4862,6 +5102,38 @@
    "clase": "",
    "serie_desde": "Portal",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_02.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 2: Tipología de lo Innombrable",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/36_Lo_Que_No_Habla/cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 4: Sinergia Colaborativa",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
@@ -5176,6 +5448,22 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_04/nodo_07.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 7: Tecnología de Activación",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/38_Lo_Que_Se_Recibe/cierre.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_03.html"
    ],
    "texto": "⟐ Trinity Origen, Libro XI, Nodo 3: El Campo Unificado de Consciencia",
@@ -5409,6 +5697,86 @@
    "vuelve": true
   },
   {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/15_El_Tercero/cierre_delante_de_quien.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/index.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV: Inteligencias Sin Nombre",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/15_El_Tercero/cierre_delante_de_quien.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_05.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 5: Transformación Personal",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/15_El_Tercero/cierre_delante_de_quien.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_06.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 6: Implicaciones Planetarias",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/15_El_Tercero/cierre_delante_de_quien.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_07.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro IV, Nodo 7: Tecnología de Activación",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/15_El_Tercero/umbral_0_la_consulta.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_01.html"
+   ],
+   "texto": "Inteligencias Sin Nombre · Nodo 1",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
    "tipo": "vuelta",
    "desde": [
     "T",
@@ -5533,6 +5901,22 @@
    "texto": "el primer nodo",
    "clase": "",
    "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_08/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_04.html"
+   ],
+   "texto": "el cuarto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
    "serie_hacia": "Origen",
    "vuelve": true
   },
@@ -5764,6 +6148,22 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "01_Trinity_Origen/Libro_11/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_06.html"
+   ],
+   "texto": "el sexto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "01_Trinity_Origen/Libro_11/nodo_03.html"
    ],
    "hacia": [
@@ -5833,6 +6233,22 @@
    "hacia": [
     "T",
     "01_Trinity_Origen/Libro_09/nodo_05.html"
+   ],
+   "texto": "el quinto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_01.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_05.html"
    ],
    "texto": "el quinto nodo",
    "clase": "",
