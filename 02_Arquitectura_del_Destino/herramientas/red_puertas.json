@@ -2721,6 +2721,198 @@
    "vuelve": true
   },
   {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/index.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/index.html"
+   ],
+   "texto": "Que este viaje tiene un libro hermano con su mismo nombre, anterior y más clínico, trabajado durante meses de ida y vuelta, con casos, ejercicios y un interludio para cuando las voces gritan, se despliega en La Voz Interior, Libro 2 del Portal Público. Los dos dicen lo mismo con distinto ropaje, y se completan.",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-U4.html"
+   ],
+   "texto": "Que cuando falta el presidente el parlamento no se suspende, sino que sigue sesionando y decide la voz que más grita, y que esa es una manera precisa de describir al sonámbulo, se despliega en El Sonámbulo, Libro 2 de Arquitectura del Destino, Umbral IV: «Un parlamento sin presidente».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/capitulo_01.html"
+   ],
+   "texto": "Que las voces internas no son alucinaciones sino patrones de pensamiento con voluntad propia, que la mente es múltiple y que se puede empezar por hacer el inventario de las propias, se despliega en La Voz Interior, Libro 2 del Portal Público, capítulo 1: «El coro interior».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U1.html"
+   ],
+   "texto": "Que ese que mira no le quitó a un padre el enojo ni la preocupación en medio de una discusión en la cocina, pero le dio un lugar desde donde mirarlos y detenerse, se despliega en El Testigo, Libro 3 de Arquitectura del Destino, Umbral I: «Alguien que nunca ha sido herido».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_02.html"
+   ],
+   "texto": "Que el que mira puede también mirarse mirando, como entre dos espejos enfrentados, y que esa escalera sin fin termina en un descanso, se despliega en El Multiverso Interior, Libro 13 de Trinity Quantum, nodo 2: «El Observador de Observadores».",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/interludio.html"
+   ],
+   "texto": "Que una voz demasiado activada no está lista para conversar, que intentarlo entonces puede encenderla más, y que primero se la contiene con el cuerpo, la respiración y el papel, se despliega en La Voz Interior, Libro 2 del Portal Público, Interludio: «Cuando las voces gritan: contención antes del diálogo».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U2.html"
+   ],
+   "texto": "Que detrás del que nunca se enoja hay un niño de nueve años que aprendió que el enojo deja la casa en silencio, y que cada máscara nació para cuidar algo, se despliega en El Personaje, Libro 9 de Arquitectura del Destino, Umbral II: «Detrás de cada máscara».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_04.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/12_Cultivar/umbral_2_cuando_no_hay_ganas.html"
+   ],
+   "texto": "Que hay una diferencia entre un período apagado y algo que necesita otra ayuda, y que en un día sin ganas abrir la ventana alcanza, se despliega en Cultivar, Libro 12 del Portal Público, Umbral II: «Cuando no hay ganas».",
+   "clase": "portal",
+   "serie_desde": "Origen",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_05.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_03.html"
+   ],
+   "texto": "Que el cuerpo es también una orquesta de ritmos, con secciones que se desafinan y avisan, y que en las placas de Chladni la figura no la dibuja el temblor sino la quietud, se despliega en Sanación Integral, Libro X de Trinity Origen, nodo 3: «Los Campos Cuánticos de Sanación».",
+   "clase": "origen",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_06.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U5.html"
+   ],
+   "texto": "Que «soy un hogar seguro para todas mis partes» no dice las buenas sino todas, y que habitar no es estar siempre bien sino tener lugar para lo que duele, se despliega en Habitar, Libro 13 de Arquitectura del Destino, Umbral V: «Un hogar seguro».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-U6.html"
+   ],
+   "texto": "Que el templo, el jardín y la sinfonía son también trajes que pueden soltarse, y que debajo de todos alguien sigue respirando, se despliega en El Personaje, Libro 9 de Arquitectura del Destino, Umbral VI: «No eres el templo».",
+   "clase": "arquitectura",
+   "serie_desde": "Origen",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_07.html"
+   ],
+   "texto": "Que contener muchas realidades interiores no es locura sino lo humano, y que la cordura consiste en que tus muchos se reconozcan en la misma casa, se despliega en El Multiverso Interior, Libro 13 de Trinity Quantum, nodo 7: «Unificación del Multiverso Personal».",
+   "clase": "trinity",
+   "serie_desde": "Origen",
+   "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
    "tipo": "lateral",
    "desde": [
     "P",
@@ -2846,7 +3038,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -2910,7 +3102,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -3678,7 +3870,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Origen",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -4404,6 +4596,22 @@
    "tipo": "portal",
    "desde": [
     "P",
+    "01_Libros/12_Cultivar/cierre_cultivar.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_04.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro II, Nodo 4: El Jardín de la Mente",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
     "01_Libros/31_El_No_Saber/cierre.html"
    ],
    "hacia": [
@@ -4888,6 +5096,54 @@
    ],
    "hacia": [
     "T",
+    "01_Trinity_Origen/Libro_02/index.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro II: La Voz Interior",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/epilogo.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_01.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro II, Nodo 1: El Parlamento Sagrado",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/epilogo.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_03.html"
+   ],
+   "texto": "⟐ Trinity Origen, Libro II, Nodo 3: La Alquimia del Diálogo",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
+    "01_Libros/02_La_Voz_Interior/epilogo.html"
+   ],
+   "hacia": [
+    "T",
     "01_Trinity_Origen/Libro_05/nodo_01.html"
    ],
    "texto": "⟐ Trinity Origen, Libro V, Nodo 1: El Vínculo Primordial",
@@ -5172,6 +5428,38 @@
    "tipo": "vuelta",
    "desde": [
     "T",
+    "02_Trinity_Quantum/Libro_13/nodo_02.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_02.html"
+   ],
+   "texto": "el segundo nodo de La Voz Interior",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "02_Trinity_Quantum/Libro_13/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_07.html"
+   ],
+   "texto": "el último nodo de La Voz Interior",
+   "clase": "",
+   "serie_desde": "Quantum",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
     "02_Trinity_Quantum/Libro_09/nodo_05.html"
    ],
    "hacia": [
@@ -5321,6 +5609,22 @@
    "hacia": [
     "T",
     "01_Trinity_Origen/Libro_12/nodo_05.html"
+   ],
+   "texto": "el quinto nodo",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_10/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_05.html"
    ],
    "texto": "el quinto nodo",
    "clase": "",
@@ -5668,6 +5972,22 @@
    "tipo": "vuelta",
    "desde": [
     "P",
+    "02_Arquitectura_del_Destino/libro-09-el-personaje/L09-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_03.html"
+   ],
+   "texto": "Libro II, Nodo 3: La Alquimia del Diálogo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
     "02_Arquitectura_del_Destino/libro-01-el-campo/L01-cierre.html"
    ],
    "hacia": [
@@ -5998,6 +6318,22 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_02/nodo_06.html"
+   ],
+   "texto": "Libro II, Nodo 6: El Templo de la Integración",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "Origen",
    "vuelve": true
   },
   {
