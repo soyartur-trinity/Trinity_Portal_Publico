@@ -76,6 +76,8 @@
 
 *Actualizado al sanear el Libro 12 de Infinito (15 de noviembre de 2026): los siete portales de *La Palabra Antes del Verbo*, que repetían una misma escena, tienen ahora imagen y sonido propios; el 82, *Para ver* del Libro 4, conserva su ruta, sus frases y su invitación a tocar (sección 12).*
 
+*Actualizado al sanear el Libro 10 de Infinito (16 de noviembre de 2026): los siete portales de *La Creatividad Increada* tienen sonido propio y lectura en el teléfono; el 65, *Para ver* del Libro 12, conserva su ruta, sus palabras, su línea al pie y su invitación (sección 12), y el 64, por donde entran el Libro 12 y el mapa de la Red, conserva la suya.*
+
 *Ordena, no limita. Todo lo que sigue son orientaciones: si el campo lleva hacia otro lado, se sigue al campo.*
 
 ---
@@ -1009,6 +1011,8 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - Libro 6, Portal 39, *El abrazo sin brazos* (`L6-Nodo4.html`): adaptado al teléfono en octubre de 2026, para el Libro 11. Saneamiento acotado: invitación a tocar en tuteo, textos más grandes y lejos de los bordes, lienzo que se ajusta al girar el teléfono y el ∞ fuera del toque que enciende el sonido; el verso «El amor es el puente entre vos y todo» pasa a tuteo («entre tú y todo»). Las demás frases quedan intactas, del otro lado de la puerta.
 
 - Libro 8, Portal 52, *El Centro que Está en Todas Partes* (`L8-Nodo3.html`): saneado y adaptado al teléfono el 16 de noviembre de 2026, para el Libro 13, *Habitar*. Conserva la imagen del original: centros que nacen en cualquier lugar y se enlazan un instante, circunferencias que se expanden hacia ninguna parte, la red de Indra y la esfera de Pascal. Los hilos, que antes salían corridos, ahora tocan los puntos que unen. Sonido nuevo: la escala de tonos enteros, que no tiene tónica, y cada centro suena del lado donde aparece. Invitación «toca — cada punto es el centro». Las frases quedan intactas, del otro lado de la puerta.
+
+- Libro 10, Portal 65, *La Obra Sin Autor* (`L_10-Nodo2.html`): adaptado al teléfono en octubre de 2026, para el Libro 12, *La Obra*. Saneado el 16 de noviembre de 2026 con el Libro 10 entero, sin tocar nada de lo que describe el *Para ver*: las palabras que brotan del silencio, la línea al pie de la página, «obra pura» y la invitación «Toca la página. Con dos toques, revela lo que guarda.», que ahora respira y se apaga después de la revelación. Georgia sin fuentes externas, sin desenfoques, ∞ hacia el portal 66 y versión quieta. Sonido nuevo: la melodía que pasa de boca en boca (Anglada-Tort y otros, 2023): cada palabra que brota tiene su nota, cada vuelta la canta otra voz con los errores de la memoria, y en unas vueltas se vuelve canción sin que nadie la componga. El Libro 10 entra por su Nodo 1 (portal 64, *El Artista Ausente*, puerta lateral del Libro 12 y del mapa de la Red), también saneado: conserva su ruta.
 
 **Anotado para la sesión de Infinito:** los portales 14 (`L2-Nodo7`) y 43 (`L7-Nodo1`) comparten el título «El ojo que no puede verse». La gráfica repetida del Libro 12 quedó resuelta el 15 de noviembre de 2026.
 
