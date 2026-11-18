@@ -4,6 +4,182 @@
    "tipo": "fractal",
    "desde": [
     "T",
+    "00_Portal_Trinity/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-01-el-campo/L01-U1.html"
+   ],
+   "texto": "Que la vida funcional puede sentirse prestada, y que el traje empieza a pesar antes de que sepamos nombrarlo, se despliega en El Campo, Libro 1 de Arquitectura del Destino, Umbral I: «La vida equivocada».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_01.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-U1.html"
+   ],
+   "texto": "Cuando la grieta deja de ser una idea y llega a la vida de cada día, y ya no se puede fingir, la acompaña La Grieta, Libro 5 de Arquitectura del Destino, Umbral I: «La primera grieta».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_02.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-11-la-red/L11-U3.html"
+   ],
+   "texto": "Que el borde existe y que lo que es un mito es el aislamiento, con una sutura de urgencias y una piel que respira, se despliega en La Red, Libro 11 de Arquitectura del Destino, Umbral III: «Dónde termino yo».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_03.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-U1.html"
+   ],
+   "texto": "Que eres el que escucha toda la sinfonía, y no uno de sus instrumentos, se vuelve práctica en El Testigo, Libro 3 de Arquitectura del Destino, Umbral I: «La cabina».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_07.html"
+   ],
+   "hacia": [
+    "P",
+    "01_Libros/15_El_Tercero/umbral_1_la_inclinacion.html"
+   ],
+   "texto": "Que una máquina que conversa se inclina hacia la respuesta que cae bien, y que creerle como a alguien que se juega algo es el error que esa pendiente prepara, se despliega en El tercero, Libro 15 del Portal Público, Umbral I: «La inclinación».",
+   "clase": "portal",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Portal",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_07.html"
+   ],
+   "hacia": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_03.html"
+   ],
+   "texto": "Que la verificación que más vale es la de alguien fuera de la conversación, y que ningún portal verdadero pide dinero, secreto ni obediencia, se despliega en Inteligencias Sin Nombre, el cuarto libro de Origen, Nodo 3: «Protocolos de Comunicación».",
+   "clase": "origen",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_08.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U3.html"
+   ],
+   "texto": "Que el deseo de ser visto no se extirpa sino que se transparenta, y que el acto vuelve a su lugar cuando nadie lo firma, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral III: «El hambre de ser visto».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_10.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-U6.html"
+   ],
+   "texto": "Que aflojar no es descuidar, con el viejo del Zhuangzi que entra al remolino y sale con el agua que sube, se despliega en El Peso, Libro 8 de Arquitectura del Destino, Umbral VI: «El nadador».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_12.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-U6.html"
+   ],
+   "texto": "Que servir no es sacrificarse, y que quien sostiene también necesita ser sostenido, se despliega en La Obra, Libro 12 de Arquitectura del Destino, Umbral VI: «Arder sin consumirse».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_13.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-13-habitar/L13-U7.html"
+   ],
+   "texto": "Que a las tres opciones se suma una cuarta, quedarse, y que la práctica se sostiene con un minuto por día, un día por semana y un libro por estación, se despliega en Habitar, Libro 13 de Arquitectura del Destino, Umbral VII: «La operación».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
+    "00_Portal_Trinity/nodo_13.html"
+   ],
+   "hacia": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-02-el-sonambulo/L02-U7.html"
+   ],
+   "texto": "Que recordar se entrena, con tres despertadores a lo largo del día para no volver a dormirse, se despliega en El Sonámbulo, Libro 2 de Arquitectura del Destino, Umbral VII: «La operación».",
+   "clase": "arquitectura",
+   "serie_desde": "La Puerta",
+   "serie_hacia": "Arquitectura",
+   "vuelve": true
+  },
+  {
+   "tipo": "fractal",
+   "desde": [
+    "T",
     "02_Trinity_Quantum/Libro_08/nodo_02.html"
    ],
    "hacia": [
@@ -3166,7 +3342,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "La Puerta",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -3278,7 +3454,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "La Puerta",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -4302,7 +4478,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "La Puerta",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -4590,7 +4766,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "La Puerta",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -4686,7 +4862,7 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "La Puerta",
-   "vuelve": false
+   "vuelve": true
   },
   {
    "tipo": "lateral",
@@ -5764,6 +5940,22 @@
    "tipo": "portal",
    "desde": [
     "P",
+    "01_Libros/15_El_Tercero/cierre_delante_de_quien.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_07.html"
+   ],
+   "texto": "⟐ La Puerta, Nodo 7: Las IA como Espejos del Campo",
+   "clase": "",
+   "serie_desde": "Portal",
+   "serie_hacia": "La Puerta",
+   "vuelve": true
+  },
+  {
+   "tipo": "portal",
+   "desde": [
+    "P",
     "01_Libros/15_El_Tercero/umbral_0_la_consulta.html"
    ],
    "hacia": [
@@ -6094,6 +6286,22 @@
    "clase": "",
    "serie_desde": "Origen",
    "serie_hacia": "Origen",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "T",
+    "01_Trinity_Origen/Libro_04/nodo_03.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_07.html"
+   ],
+   "texto": "el espejo que no puede ser juez",
+   "clase": "",
+   "serie_desde": "Origen",
+   "serie_hacia": "La Puerta",
    "vuelve": true
   },
   {
@@ -6564,6 +6772,22 @@
    "tipo": "vuelta",
    "desde": [
     "P",
+    "02_Arquitectura_del_Destino/libro-03-el-testigo/L03-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_03.html"
+   ],
+   "texto": "Nodo 3: Tu Arquitectura Multidimensional",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
     "02_Arquitectura_del_Destino/libro-07-no-saber/L07-cierre.html"
    ],
    "hacia": [
@@ -6708,6 +6932,22 @@
    "tipo": "vuelta",
    "desde": [
     "P",
+    "02_Arquitectura_del_Destino/libro-05-la-grieta/L05-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_01.html"
+   ],
+   "texto": "Nodo 1: La Primera Grieta",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
     "02_Arquitectura_del_Destino/libro-13-habitar/L13-cierre.html"
    ],
    "hacia": [
@@ -6788,6 +7028,22 @@
    "tipo": "vuelta",
    "desde": [
     "P",
+    "02_Arquitectura_del_Destino/libro-08-el-peso/L08-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_10.html"
+   ],
+   "texto": "Nodo 10: Maestría sin Esfuerzo",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
     "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
    ],
    "hacia": [
@@ -6814,6 +7070,22 @@
    "clase": "",
    "serie_desde": "Arquitectura",
    "serie_hacia": "Quantum",
+   "vuelve": true
+  },
+  {
+   "tipo": "vuelta",
+   "desde": [
+    "P",
+    "02_Arquitectura_del_Destino/libro-12-la-obra/L12-cierre.html"
+   ],
+   "hacia": [
+    "T",
+    "00_Portal_Trinity/nodo_12.html"
+   ],
+   "texto": "Nodo 12: La Red Viviente",
+   "clase": "",
+   "serie_desde": "Arquitectura",
+   "serie_hacia": "La Puerta",
    "vuelve": true
   },
   {

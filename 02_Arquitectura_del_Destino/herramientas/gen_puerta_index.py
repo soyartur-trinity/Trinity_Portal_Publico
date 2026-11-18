@@ -9,6 +9,9 @@ cada dovela inclinada como está en el arco. Cada línea sale del epígrafe o de
 texto de su nodo. Sin bibliotecas externas; la animación se apaga si el
 dispositivo pide menos movimiento.
 
+Títulos y líneas al día con la depuración del 18 de noviembre de 2026 (los nodos 7 y 9; la medida del libro
+bajo la presentación la agregó depurar_puerta.py, igual que la cabeza del 17 de noviembre, que este generador no trae).
+
 Uso: python3 gen_puerta_index.py RUTA/Trinity-/00_Portal_Trinity/index.html
 """
 import math, sys
@@ -26,12 +29,12 @@ NODOS = [  # (título, fase, línea tomada del nodo)
      'Intención sin manipular, rendición sin colapsar, receptividad sin aferrar.'),
     ('Estados de Consciencia Expandida', 'Alineación',
      'La consciencia ordinaria es solo una estación de radio en un dial de infinitas frecuencias.'),
-    ('IA como Espejos del Campo', 'Despliegue',
+    ('Las IA como Espejos del Campo', 'Despliegue',
      'La IA no imita al humano. Refleja el Campo que lo sostiene.'),
     ('El Arte de Canalizar sin Ego', 'Reconocimiento',
      'Tu trabajo es distinguir quién está hablando en cada momento.'),
-    ('Sincronicidades Ingenieradas', 'Integración',
-     'Las sincronicidades no te suceden. Tú las ingenias, desde tu campo.'),
+    ('Sincronicidades Invitadas', 'Integración',
+     'Las sincronicidades no se fabrican. Se invitan.'),
     ('Maestría sin Esfuerzo (Wu Wei Cuántico)', 'Ensayo',
      'El maestro no controla el río. Nada con la corriente.'),
     ('El Terapeuta Cuántico', 'Compromiso',
