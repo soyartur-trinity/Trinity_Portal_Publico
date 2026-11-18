@@ -1134,6 +1134,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 5. **Arturo lee** completo. El contenido se hace entre los dos.
 6. **Pasada final:** resolver los ◇, quitar repeticiones y localismos, ampliar si hace falta, pulir.
 7. **Recién entonces, el HTML** con la paleta, puertas verificadas, zip e instrucciones de subida. El HTML es técnico y va después del texto aprobado.
+   Desde el 17 de noviembre de 2026, con la autorización de Arturo, Claude puede subir lo aprobado él mismo a los dos repositorios (la aplicación de Claude está instalada en su cuenta de GitHub): `git fetch` antes, para no pisar nada nuevo; un commit que diga qué cambió; y, después, comprobar que GitHub quedó idéntico a lo preparado. El zip queda para las sesiones sin acceso.
 8. **Prueba clínica** antes del libro siguiente. El ritmo lo marca el trabajo.
 
 ---
