@@ -1595,7 +1595,7 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 - El inventario de la Red (`herramientas/red_puertas.json`) y el mapa (`03_La_Red/index.html`), regenerados con fecha del 18 de noviembre de 2026: el mapa es idéntico salvo la fecha.
 - El generador del índice (`herramientas/gen_puerta_index.py`) tiene los títulos y la línea nuevos; la medida del libro y la cabeza del 17 de noviembre las lleva el índice publicado, no el generador.
 - Comparado contra el original en Chromium, con las animaciones detenidas en el mismo instante, a 412 × 883 y 800 × 1280 como teléfono y a 1366 × 900: lo que no cambió, idéntico en estilo y en caja; ningún desborde ni error de consola; la letra del texto, 18,4 px en el teléfono, y la del bloque de las puertas, la misma del nodo. Los 131 enlaces internos de las páginas tocadas responden.
-- La etiqueta `puerta-original` no pudo subirse desde la sesión (el servidor rechazó el envío de etiquetas); el original está en el commit `96a61bf` y la etiqueta se crea desde GitHub Desktop.
+- La etiqueta `puerta-original` no pudo subirse desde la sesión (el servidor rechazó el envío de etiquetas); el original está en el commit `96a61bf` y la etiqueta la crea Arturo desde GitHub.
 
 ---
 
