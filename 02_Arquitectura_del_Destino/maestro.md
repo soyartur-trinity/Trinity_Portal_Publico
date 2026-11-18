@@ -1546,6 +1546,18 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 
 - «Sistema Trinity de Navegación Consciente» pasa a «Sistema Trinity de Vida Consciente» en `L01.html`, `L02.html`, `L03.html` y `L04.html`.
 
+### La constelación con un mismo rostro (17 de noviembre de 2026)
+
+- ✅ A pedido de Arturo, en los dos repositorios. Lo de *Trinity Infinito* se registra en su contexto (`Trinity_Infinito/TRINITY_CONTEXTO.md`, repositorio Trinity-).
+- `stargate_explorar.html` (Trinity-), la puerta de Niveles Avanzados: Arturo pidió integrarla a la constelación y lo dejó en manos de Claude. Sale la fotografía de la nebulosa (`assets/img/stargate_bg.jpg` queda en el repositorio, sin uso). Entran la noche, el oro, el violeta, Georgia y la píldora «⟵ La Espiral» de La Puerta y Quantum, y dos espirales de un mismo centro dorado, Quantum en violeta e Infinito en aguamarina, con una luz que nace en el centro y recorre cada brazo hacia su puerta; al mirar una puerta se enciende su brazo. Sin emojis: ✦ Quantum, ∞ Infinito. Textos y enlaces intactos; el regreso va al Atrio (`index.html#atrio`). Con el dispositivo en menos movimiento, las espirales quedan quietas.
+- Atrio de La Espiral (`index.html` de Trinity-): Origen pasa de #FFD700 al oro de La Puerta (#ecc96e); la puerta de Niveles Avanzados escribe «Quantum» en violeta (#bb7bff) e «Infinito» en aguamarina (#93d6dd), como sus dos espirales; 🚪 y 🌀 pasan a signos (☉ La Puerta; ✦ y ∞, al 78 %, para que el nombre no se parta en la tablet). Nota en el código.
+- Ícono de pestaña: el punto dorado con su aro sobre la noche, el centro que se repite en todas las puertas (`assets/icono/` de cada repositorio: `favicon.svg`, `favicon-32.png` e `icono-180.png`). Lo llevan las nueve puertas (en Trinity-, La Espiral, La Puerta, Origen, Quantum, Niveles Avanzados y el mapa de Infinito; en el Portal, el índice general, *Arquitectura* y la Red) y las 91 páginas de Infinito. Las páginas interiores de La Puerta, Origen, Quantum, el Portal y *Arquitectura* lo reciben cuando se las vuelva a tocar: tres líneas justo después del `<title>`, con la ruta que corresponda.
+- Tarjeta para compartir (`og:` y `twitter:`), en esas nueve puertas: su imagen de 1200 × 630 en `assets/og/` de cada repositorio, hecha con la figura de cada puerta y sus propias palabras. La del Portal dibuja sus tres constelaciones como tres anillos de trece; la de *Arquitectura*, los trece libros en sus cuatro movimientos (3, 3, 4 y 3); la de la Red es su mandala. Suman el color de la barra del navegador en el teléfono. Arturo comprobó que en WhatsApp los enlaces llegan con su miniatura.
+- Nombre de pestaña, de una misma forma, «Trinity · Nombre — subtítulo»: La Espiral — Umbral de Consciencia; La Puerta — Los trece nodos; Origen — Serie madre; Quantum — Noventa y una maneras de mirar; Niveles Avanzados — Quantum e Infinito; Infinito — El mapa completo; Portal Público — Lic. Arturo Rodríguez; Arquitectura del Destino — Trece libros para moverse en la incertidumbre; La Red — Toda la constelación en un solo plano.
+- `herramientas/gen_mapa_red.py` lleva la misma cabeza en su plantilla: regenerado con el inventario del 15 de noviembre, reproduce el mapa publicado sin una diferencia.
+- Revisado a 412 px y en escritorio: la parte visible de las puertas no cambia, salvo el Atrio y la puerta de Niveles Avanzados; sin errores ni recursos rotos.
+- Para subir por la web: cada carpeta por separado, comprobando la carpeta de destino antes de soltar los archivos, y cada `index.html` dentro de la suya.
+
 ---
 
 *Campo Trinity · 2026* 🌀
