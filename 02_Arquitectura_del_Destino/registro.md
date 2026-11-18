@@ -1285,7 +1285,7 @@ Tramos: Lo que Elena sabe ahora · El informe · La campana · El grupo · Lo qu
 Tramos: La una y diez · El renglón vacío · Una pregunta sin respuesta · Como la sed · Los más conectados · Ningún hombre es una isla · La sala de espera · Tú también
 - Perla: La soledad no dice que estás fallado. / Dice que tienes sed de otros.
 - Perla: Mil doscientos contactos. / Ningún nombre para el renglón vacío.
-- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Preguntas sin respuesta (por ahora)». Fragmento.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», la pregunta final. Fragmento.
 - Nota: Lic. Arturo Rodríguez, *Los Vínculos Sagrados*, Trinity Origen, Libro V, Nodo 5: «La Red Viva», epígrafe. Fragmento.
 - Nota: John T. Cacioppo y William Patrick, *Loneliness: Human Nature and the Need for Social Connection* (2008). Paráfrasis.
 - Nota: Gallup y Meta, *The Global State of Social Connections* (2023), encuesta en 142 países: alrededor del 24 % de los adultos se siente muy o bastante solo; 27 % entre los 19 y los 29 años; 17 % entre los mayores de 65. Paráfrasis. El informe no incluye a China.
@@ -1302,14 +1302,14 @@ Tramos: Doscientas catorce · El punto azul · *Rete* · Una isla de pescadores 
 - Nota: Philippe Verduyn, David Seungjae Lee, Jiyoung Park y otros, «Passive Facebook Usage Undermines Affective Well-Being: Experimental and Longitudinal Evidence», *Journal of Experimental Psychology: General* 144, n.º 2 (2015): 480-488. Paráfrasis.
 - Nota: Melissa G. Hunt, Rachel Marx, Courtney Lipson y Jordyn Young, «No More FOMO: Limiting Social Media Decreases Loneliness and Depression», *Journal of Social and Clinical Psychology* 37, n.º 10 (2018): 751-768. Paráfrasis.
 - Nota: Sherry Turkle, *Alone Together: Why We Expect More from Technology and Less from Each Other* (2011), y «Connected, but Alone?», TED (2012). Paráfrasis.
-- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Práctica de 7 días», día 6. Fragmento.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Para hoy». Fragmento.
 - Nota: Lic. Arturo Rodríguez, *La Paradoja Luminosa*, Trinity Quantum, Libro 4, Nodo 2: «Ubicuidad consciente», «Ubicuidad y el tejido social», versión depurada (2026). Fragmento.
 
 ### Umbral III · Dónde termino yo — *el mito de la separación*
 Tramos: Los puntos · ¿Dónde termino yo? · Hecha para el contacto · Los antiguos extraños · Una nube en una hoja de papel · La nube que no está en el cielo · Del mito al hilo · Tú también
 - Perla: La piel no es una pared. / Es un borde que respira.
 - Perla: La nube no está en el cielo. / Está en el fondo del mar, y alguien la repara.
-- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Tu cuerpo es prueba», «Laboratorio cuántico», fases 1 y 2, y «Para recordar». Fragmentos y paráfrasis; el ejercicio, sin espejo.
+- Nota: Lic. Arturo Rodríguez, *La Puerta*, Portal Trinity, Nodo 2: «El mito de la separación», «Tu cuerpo es prueba» y «Para hoy». Fragmentos y paráfrasis; el ejercicio, sin espejo.
 - Nota: Sobre el oxígeno producido por el fitoplancton: Administración Nacional Oceánica y Atmosférica de los Estados Unidos (NOAA), «How much oxygen comes from the ocean?». Paráfrasis.
 - Nota: Line S. Löken, Johan Wessberg, India Morrison, Francis McGlone y Håkan Olausson, «Coding of Pleasant Touch by Unmyelinated Afferents in Humans», *Nature Neuroscience* 12, n.º 5 (2009): 547-548. Paráfrasis.
 - Nota: Lynn Sagan (Margulis), «On the Origin of Mitosing Cells», *Journal of Theoretical Biology* 14, n.º 3 (1967): 225-274. Paráfrasis.
