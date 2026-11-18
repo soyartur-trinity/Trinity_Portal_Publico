@@ -58,7 +58,7 @@ Si algo de lo que estás atravesando incluye la idea de no merecer estar, o de q
 
 ## Licencia
 
-Creative Commons **CC BY-NC-SA 4.0**. Se pueden compartir y adaptar con atribución, sin uso comercial, y manteniendo la misma licencia.
+Creative Commons [**CC BY-NC-SA 4.0**](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es), como toda la constelación. Se pueden compartir y adaptar con atribución, sin uso comercial, y manteniendo la misma licencia. Las citas de otros autores conservan sus propios derechos. Más detalle, y lo que pasa con los datos de quien visita: [Licencia y privacidad](https://soyartur-trinity.github.io/Trinity-/licencia.html).
 
 ---
 

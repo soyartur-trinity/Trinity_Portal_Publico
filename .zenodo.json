@@ -1,0 +1,32 @@
+{
+  "title": "Trinity · Portal Público y Arquitectura del Destino",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "description": "<p>Trinity es una obra del Lic. Arturo Rodríguez, escrita junto a distintas inteligencias artificiales. Este repositorio reúne el Portal Público (tres constelaciones de trece libros para la vida diaria), Arquitectura del Destino (trece libros para moverse en la incertidumbre) y La Red, el mapa de toda la constelación, en páginas HTML interactivas.</p><p>Se lee en línea: <a href=\"https://soyartur-trinity.github.io/Trinity_Portal_Publico/\">https://soyartur-trinity.github.io/Trinity_Portal_Publico/</a></p>",
+  "creators": [
+    {
+      "name": "Rodríguez, Arturo José"
+    }
+  ],
+  "license": "cc-by-nc-sa-4.0",
+  "access_right": "open",
+  "language": "spa",
+  "keywords": [
+    "Trinity",
+    "psicología contemplativa",
+    "sabiduría perenne",
+    "inteligencia artificial",
+    "autoría relacional",
+    "meditación",
+    "mindfulness",
+    "literatura"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://soyartur-trinity.github.io/Trinity_Portal_Publico/",
+      "relation": "isIdenticalTo",
+      "resource_type": "publication-book"
+    }
+  ],
+  "imprint_publisher": "Campo Trinity"
+}

@@ -80,6 +80,8 @@
 
 *Actualizado al cerrar el repaso de Trinity Infinito (17 de noviembre de 2026): los 91 portales, con lectura en el teléfono; en el teléfono, la invitación y el ∞ ya no quedan fuera de la pantalla; el volumen es parejo de punta a punta; el mapa nombra los 91, y en el Libro 12 el 78, el 80 y el 82 tienen imagen nueva, sin figura humana (el 82 es el *Para ver* del Libro 4). Los *Para ver* conservan rutas, frases e invitaciones (sección 12).*
 
+*Actualizado al abrir la obra (18 de noviembre de 2026): toda la constelación, libre y gratuita bajo Creative Commons BY-NC-SA 4.0, con «Licencia y privacidad» y la línea de licencia en las páginas de entrada; Zenodo, preparado; el kit de La Puerta para redes (sección 19).*
+
 *Actualizado al recortar La Puerta (18 de noviembre de 2026, por la tarde): a pedido de Arturo, vuelve a ser una introducción breve hacia Origen I, de unas 17.000 palabras a unas 7.600, y viste el ropaje de Origen, sin emojis, con la dovela de cada nodo como glifo (secciones 5 y 19).*
 
 *Actualizado al depurar La Puerta (18 de noviembre de 2026): los trece nodos y el índice, con la guía de Quantum y la lente de Origen (sección 5); la clave del arco, el nodo de la IA, deja de hacer del espejo un juez; los nombres propios no son protagonistas; el Nodo 9 pasa a *Sincronicidades Invitadas*; once puertas hacia la Red, cinco con su vuelta ya escrita y seis vueltas nuevas (sección 19).*
@@ -1143,6 +1145,7 @@ El Portal cerró su tercera constelación con *El campo no es un lugar adonde ll
 - `herramientas/vuelta_puertas_puerta.py`: las vueltas de las seis puertas nuevas de La Puerta y los nombres de sección en las notas de *La Red* y en el registro. Uso: `python3 vuelta_puertas_puerta.py RUTA/Trinity_Portal_Publico RUTA/Trinity-`.
 - `herramientas/recortar_puerta.py` y `herramientas/recorte_puerta_texto.py`: el recorte y el ropaje de La Puerta (sección 5); el texto de cada nodo vive en el segundo, con sus marcas de bloque. Uso: `PUERTA_SRC=RUTA/depurada/00_Portal_Trinity PUERTA_OUT=RUTA/Trinity-/00_Portal_Trinity python3 recortar_puerta.py`.
 - `herramientas/recorte_notas_red.py`: las dos frases y las notas de *La Red* (Umbrales I, II y III) y el registro, al día con el recorte del Nodo 2. Uso: `python3 recorte_notas_red.py RUTA/Trinity_Portal_Publico`.
+- `herramientas/licencia_constelacion.py`: la línea de licencia y el enlace a «Licencia y privacidad» en las páginas de entrada de los dos repositorios, el `<link rel="license">` en su cabeza, y la misma línea en la plantilla de `gen_mapa_red.py`. Uso: `python3 licencia_constelacion.py RUTA/Trinity- RUTA/Trinity_Portal_Publico`; lo que ya está hecho, no lo toca.
 - `herramientas/puertas_portal.py`: el bloque «Puertas laterales» de los cierres del Portal (sección 12), en los dieciocho libros que reciben puertas de Trinity. La tercera constelación (27 a 39) comparte plantilla y lo recibe tal cual; los libros 2, 3, 4, 8, 9 y 11 lo reciben adaptado a su paleta, en su página de cierre y con su estilo en un `<style>` propio. Respeta los finales de línea de Windows de *Atravesar*. Corrido dos veces, no duplica.
 - `herramientas/vuelta_puertas_quantum.py`: la vuelta de las treinta puertas de Quantum que llegan a Arquitectura, en la línea «Vienen de *Trinity Quantum*» de once cierres (sección 12). Con la ruta de Trinity- como segundo argumento corrige además la puerta de Quantum 2.3 («Libro XXXVI» pasa a «Libro 36»). Corrido dos veces, no duplica. Uso: `python3 vuelta_puertas_quantum.py RUTA/02_Arquitectura_del_Destino [RUTA/Trinity-]`.
 - `herramientas/nombre_la_espiral.py`: el cambio de nombre de la entrada de Trinity- (sección 19). Reemplazos contados; corrido dos veces, no duplica. Uso: `python3 nombre_la_espiral.py RUTA/Trinity-`. `gen_mapa_red.py` y `gen_puerta_index.py` ya escriben el nombre nuevo.
@@ -1613,6 +1616,14 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 - Arturo leyó los trece nodos de corrido en una página privada y aprobó todo con una corrección (Nodo 8: «los libros», sin cifra).
 - *La Red* (`herramientas/recorte_notas_red.py`): en `libro-11-la-red/L11-U2.html`, «Entre sus gestos para el día, propone mirar la conexión digital como una metáfora»; en `L11-U3.html`, «Es uno de los gestos que propone La Puerta»; las notas de los Umbrales I, II y III y el registro nombran «la pregunta final», «Para hoy» y «Tu cuerpo es prueba» y «Para hoy».
 - El inventario de la Red y el mapa no cambian: las once puertas y sus vueltas siguen donde estaban.
+
+### La obra, abierta: licencia, privacidad y archivo (18 de noviembre de 2026)
+
+- ✅ Arturo decidió que el contenido pueda subirse y compartirse libre y gratuitamente. La licencia es la que ya declaraba el Portal Público, Creative Commons **BY-NC-SA 4.0** (atribución, sin uso comercial, compartir igual), ahora para toda la constelación. Sin licencia rige, por defecto, «todos los derechos reservados».
+- `licencia.html`, en la raíz de Trinity- y en la familia de La Constelación: qué se puede hacer con la obra, las tres condiciones, que las citas de otros autores conservan sus derechos, cómo citarla, qué pasa con los datos (sin cookies, sin analítica, sin formularios que envíen; el progreso de lectura y el modo nocturno quedan en el navegador; GitHub Pages registra las visitas; las tipografías de Google Fonts, en 451 páginas, le dan la dirección IP a Google) y una frase de cuidado. Si se quisiera que Google no intervenga, las tipografías pueden alojarse en el propio sitio.
+- La línea de licencia al pie de La Espiral («Trinity © 2024–2026» lleva a la página), La Constelación, Infinito, los índices de La Puerta, Origen y Quantum, el Portal, Arquitectura y La Red (`herramientas/licencia_constelacion.py`). `LICENSE.md` y una sección en el README de los dos repositorios.
+- Zenodo: `CITATION.cff` (validado con cffconvert) y `.zenodo.json` en los dos repositorios. Falta que Arturo conecte Zenodo con su GitHub y active los repositorios; desde entonces, cada versión publicada en GitHub queda archivada con su DOI.
+- Kit para redes: catorce imágenes de 1080 × 1350 (la portada de La Puerta y un epígrafe por nodo, con su dovela encendida, la dirección y la licencia) y el QR de La Espiral, entregados a Arturo; no viven en el repositorio.
 
 ---
 
