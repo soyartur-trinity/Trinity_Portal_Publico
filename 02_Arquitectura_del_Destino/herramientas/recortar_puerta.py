@@ -241,6 +241,27 @@ def pasos(n):
     else: a.append('<a href="../01_Trinity_Origen/Libro_01/index.html">Origen I ⟶</a>')
     return '<nav class="pasos" aria-label="Entre nodos">\n  %s\n</nav>' % '\n  '.join(a)
 
+BASE = 'https://soyartur-trinity.github.io/Trinity-/'
+
+def og(n, d):
+    """La tarjeta al compartir el nodo: la imagen la hace tarjetas_puerta.py (assets/og/la-puerta-nodo-NN.jpg)."""
+    alt = ('El arco de trece dovelas de La Puerta, con la clave, la del nodo 7, encendida en oro.' if n == 7
+           else 'El arco de trece dovelas de La Puerta, con la del nodo %d encendida en oro.' % n)
+    t = html.escape('%s · La Puerta, nodo %d de 13' % (d['titulo'], n), quote=True)
+    s = html.escape(d['sub'], quote=True)
+    return '\n'.join([
+        '<meta name="description" content="%s. La Puerta, nodo %d de 13.">' % (s, n),
+        '<meta property="og:type" content="article">',
+        '<meta property="og:site_name" content="Trinity">',
+        '<meta property="og:title" content="%s">' % t,
+        '<meta property="og:description" content="%s">' % s,
+        '<meta property="og:url" content="%s00_Portal_Trinity/nodo_%02d.html">' % (BASE, n),
+        '<meta property="og:image" content="%sassets/og/la-puerta-nodo-%02d.jpg">' % (BASE, n),
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta property="og:image:alt" content="%s">' % alt,
+        '<meta name="twitter:card" content="summary_large_image">'])
+
 def pagina(n, d, src, dov, gli):
     titulo = re.search(r'<title>([^<]+)</title>', src)
     if not titulo: FALTAN.append('el título del nodo %d' % n)
@@ -261,6 +282,7 @@ def pagina(n, d, src, dov, gli):
 <link rel="icon" href="../assets/icono/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/icono/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../assets/icono/icono-180.png">
+{og(n, d)}
 <meta name="theme-color" content="#0b0616">
 <style>{CSS}</style>
 </head>
