@@ -1558,6 +1558,7 @@ Se actualiza con la tesis, los cuatro tiempos y el mapa de la sección 6.
 - `herramientas/gen_mapa_red.py` lleva la misma cabeza en su plantilla: regenerado con el inventario del 15 de noviembre, reproduce el mapa publicado sin una diferencia.
 - Revisado a 412 px y en escritorio: la parte visible de las puertas no cambia, salvo el Atrio y la puerta de Niveles Avanzados; sin errores ni recursos rotos.
 - Para subir por la web: cada carpeta por separado, comprobando la carpeta de destino antes de soltar los archivos, y cada `index.html` dentro de la suya.
+- 18 de noviembre de 2026: el navegador del teléfono pinta la franja de sus botones con el color de fondo de la página; si una página pinta su fondo solo con un degradado en el `<body>`, sale blanca. El índice de Origen (Trinity-) y el de *Arquitectura* llevan ahora `html{background-color:…}` con el color de su barra (#040404 y #060d1a). Las páginas interiores con el mismo fondo transparente (188 en La Puerta, Origen y Quantum) quedan para cuando Arturo lo pida; el Portal no tiene ninguna. Lo de los 84 portales de Infinito está en su contexto.
 
 ---
 
