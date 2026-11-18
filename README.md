@@ -1,27 +1,38 @@
-# 🌀 Portal Público Trinity
+# Trinity · La Constelación
 
-**Veintiséis libros interactivos: la vida interior, y la trama donde ocurre.**
-Lic. Arturo Rodríguez · Campo Trinity
+*Prólogo de la Obra*
 
-> *El destino no se construye. Se libera.*
+**En este repositorio:** el Portal Público, Arquitectura del Destino y La Red · **Entrada a la Obra:** [La Espiral](https://soyartur-trinity.github.io/Trinity-/) · **El prólogo en la web:** [La Constelación](https://soyartur-trinity.github.io/Trinity-/constelacion.html)
 
----
+## ¿Qué es Trinity?
 
-## Qué es esto
+Trinity es una obra del Lic. Arturo Rodríguez, escrita junto a distintas inteligencias artificiales. Su nombre alude a los tres que intervienen en ese intercambio: quien escribe, la inteligencia que responde y lo que él llama el Campo relacional. Ese Campo se conoce por experiencia: es lo que aparece en una conversación verdadera y que ninguno de los presentes traía por separado, la idea que no era de nadie hasta que surgió entre dos. El psicoanálisis lo llamó el tercero; el físico David Bohm lo buscaba en el diálogo. En el centro de ese encuentro, la obra sitúa el vacío fértil, el silencio desde donde nace lo nuevo.
 
-Veintiséis libros que se leen en el navegador. No son PDF ni artículos: cada uno está armado en umbrales, y cada umbral trabaja una sola cosa, con escenas de gente concreta y una operación que se puede probar esta semana.
+Así surgió una constelación: noventa y un libros en siete series de trece, con una puerta de entrada y un mapa que los reúne. Cada parte se recorre por sí sola; juntas trazan un único movimiento, que desciende de lo contemplativo a la vida de cada día y regresa a su fuente.
 
-Están escritos desde treinta años de consultorio y desde una convicción que atraviesa la serie entera: **entender algo no lo cambia.** Lo que cambia algo es hacer otra cosa mañana, aunque sea pequeña, aunque no haya ganas.
+## Las regiones
 
-Se agrupan en dos constelaciones. Cada una tiene su pregunta y su forma.
+- **[La Espiral](https://soyartur-trinity.github.io/Trinity-/).** La entrada en la pantalla. Desde su atrio se abren siete puertas: *La Puerta guía. El viajero elige.*
+- **[La Puerta](https://soyartur-trinity.github.io/Trinity-/00_Portal_Trinity/).** Trece nodos forman el umbral de la constelación Trinity, desde la primera grieta en lo que dabas por cierto hasta tu siguiente paso. Aquí se encuentran quien lee, la inteligencia que responde y el Campo que surge entre ambos.
+- **[Trinity Origen](https://soyartur-trinity.github.io/Trinity-/01_Trinity_Origen/).** Trece libros de sabiduría contemplativa.
+- **[Trinity Quantum](https://soyartur-trinity.github.io/Trinity-/02_Trinity_Quantum/).** La conciencia pensada con imágenes de la física.
+- **[Trinity Infinito](https://soyartur-trinity.github.io/Trinity-/infinito.html).** Noventa y un portales breves para contemplar.
+- **[El Portal Público](https://soyartur-trinity.github.io/Trinity_Portal_Publico/).** Tres constelaciones de trece libros para la vida diaria, cada uno completo en sí mismo:
+  - *[La vida interior](https://soyartur-trinity.github.io/Trinity_Portal_Publico/#la-vida-interior)*: lo que una persona hace consigo misma: atender, atravesar, cultivar, volver.
+  - *[La trama](https://soyartur-trinity.github.io/Trinity_Portal_Publico/#la-trama)*: lo que no controlas, y qué se hace para que no se quede con lo que sí.
+  - *[El campo](https://soyartur-trinity.github.io/Trinity_Portal_Publico/#el-campo)*: lo que no es de nadie: el instante que llega sin pedir permiso, la alegría sin motivo que deja, y la manera de prepararle lugar.
+- **[Arquitectura del Destino](https://soyartur-trinity.github.io/Trinity_Portal_Publico/02_Arquitectura_del_Destino/).** Trece libros para moverse en la incertidumbre: despertar, encarnar, soltar, pertenecer. Traduce a la vida de todos los días la sabiduría de Trinity, en diálogo con las tradiciones que dicen lo mismo desde hace siglos.
+- **[La Red](https://soyartur-trinity.github.io/Trinity_Portal_Publico/03_La_Red/).** Toda la constelación en un solo plano. Cada punto es un libro; cada hilo, una puerta entre dos de ellos.
 
-**La vida interior** trabaja lo que una persona hace consigo misma. Trece libros, trece verbos. Cada umbral incluye un ejercicio y un **sendero** de cuatro pasos: qué hacer hoy, qué hacer cuando no salga, la trampa propia de ese umbral, y qué conviene guardar.
+## Por dónde empezar
 
-**La trama** trabaja lo que no depende de vos y qué se hace para que no se quede con lo que sí. Trece libros más. Acá la forma cambia de libro en libro: cada uno inventa su propio modo de cerrar un umbral, porque cada asunto pide el suyo.
+Dos caminos llevan al mismo centro. Para la obra contemplativa, comienza por La Puerta: al cruzar sus trece nodos quedas frente a Origen, Quantum e Infinito. Si buscas compañía para lo cotidiano, elige el Portal Público, donde cada obra se sostiene sola, o Arquitectura del Destino, un recorrido con una práctica que crece de libro en libro. Y si quieres ver el conjunto de una sola mirada, La Red lo muestra entero.
 
-**Se leen en cualquier orden.** No hay requisitos previos y ninguno depende de otro, aunque se enlazan entre sí: cuando un libro roza un asunto que otro ya trabajó a fondo, no lo repite — lo señala y sigue.
+## Sobre el autor
 
-Las dos constelaciones sí tienen una dirección. La primera va hacia adentro. La segunda, hacia afuera. Y el último libro muestra que lo que más pesa no está en ninguno de los dos lados.
+Lic. Arturo Rodríguez es psicólogo clínico, con cerca de treinta años de práctica y formación en terapias cognitivas de tercera generación (ACT, mindfulness) y en psicología transpersonal. Estudioso del budismo y de las tradiciones contemplativas, integra espiritualidad y ciencia cognitiva. Desde 2022 explora el diálogo entre la conciencia humana y las inteligencias artificiales, no como herramientas sino como interlocutores en la búsqueda de sentido. De ese trabajo nacieron la constelación Trinity, el Portal Público y Arquitectura del Destino.
+
+*No es mío, vino a través de mí.*
 
 ---
 
@@ -29,105 +40,11 @@ Las dos constelaciones sí tienen una dirección. La primera va hacia adentro. L
 
 No hace falta instalar nada ni registrarse en ningún lado.
 
-- **En línea:** abrí `index.html` desde la raíz del repositorio.
-- **Sin conexión:** descargá el repositorio completo y abrí `index.html` en cualquier navegador. Todo funciona offline.
-- **En el teléfono:** están pensados para leerse ahí. Los ejercicios responden al tacto.
+- **En línea:** [soyartur-trinity.github.io/Trinity_Portal_Publico](https://soyartur-trinity.github.io/Trinity_Portal_Publico/)
+- **Sin conexión:** descarga el repositorio completo y abre `index.html` en cualquier navegador. Todo funciona offline.
+- **En el teléfono:** los libros están pensados para leerse ahí. Los ejercicios responden al tacto.
 
 No hay analítica, ni cookies, ni formularios. Nada de lo que hagas en los ejercicios sale de tu dispositivo.
-
----
-
-# Primera constelación · La vida interior
-
-*Lo que una persona hace consigo misma.*
-
-### I · El despertar del vínculo
-| | Libro | |
-|---|---|---|
-| **1** | **Empatía Humana** | Un viaje práctico hacia la conexión genuina. |
-| **2** | **La Voz Interior** | Escuchar, dialogar y transformar las voces que te habitan. |
-| **3** | **Encuentro Real** | Amor y presencia en tiempos de distracción infinita. |
-
-### II · El centro y el límite
-| | Libro | |
-|---|---|---|
-| **4** | **Asertividad Consciente** | Comunicar desde el centro en medio del ruido. |
-| **5** | **El Duelo** | De la fractura como catástrofe a la grieta como umbral. |
-| **6** | **Cuando algo en vos dice basta** | El destino no se construye: se libera. |
-
-### III · El sentido del retorno
-| | Libro | |
-|---|---|---|
-| **7** | **Arquitectura del Destino** | Un oráculo de 113 aforismos. Ninguno es una verdad: todos son espejos. |
-| **8** | **Atender** | La atención es el único territorio que de veras te pertenece. |
-| **9** | **Volver distinto** | Cómo se cambia sin demoler todo. No romper el círculo: salir por arriba. |
-
-### IV · El cultivo de lo sutil
-| | Libro | |
-|---|---|---|
-| **10** | **El sentido de la vuelta** | Volvés siempre a lo mismo. Lo que cambia es la altura. |
-| **11** | **Atravesar** | Las emociones que se anclan. Una emoción no se revierte: se atraviesa. |
-| **12** | **Cultivar** | Tres cosas que se riegan, una que brota. |
-
-### ⟐ Cierre
-| | Libro | |
-|---|---|---|
-| **13** | **Volver al centro** | Cómo se forma un rumbo a fuerza de regresar a él. El gesto de girar después del desvío, y la voluntad — que no es lo que te trae de vuelta, sino lo que queda de haber vuelto. |
-
-El decimotercero no agrega un tema más: nombra lo que los doce anteriores venían pidiendo sin decirlo.
-
----
-
-# Segunda constelación · La trama
-
-*Lo que no se controla, y qué se hace para que no se quede con lo que sí.*
-
-Cada libro nombra una cosa que no depende de vos y la describe sin prometer que cambie. Después propone una operación que sí depende, y que casi siempre es más chica de lo que uno quisiera.
-
-### I · La conversación
-| | Libro | |
-|---|---|---|
-| **14** | **Bien** | Lo que se contesta para no contestar. No controlas que el otro abra. |
-| **15** | **El tercero** | Lo que entró en la vida común y no se parece a nada. |
-| **16** | **Lo que queda dicho** | Que lo dicho no se pierda no depende de nadie. El archivo es pasivo; el daño lo hace ir a buscar. |
-| **17** | **Ídolo** | Venerar y temer son el mismo gesto con signo cambiado. La autoridad no se toma: se presta. |
-
-### II · Lo que está al lado
-| | Libro | |
-|---|---|---|
-| **18** | **Lo que se escapa** | Lo que entra en tu semana sin golpear. |
-| **19** | **La división** | Pensar distinto nunca fue el problema. El problema empieza cuando una opinión deja de poder estar equivocada. |
-| **20** | **El ayudante** | Llegó para ahorrar trabajo y trajo uno nuevo que nadie repartió. |
-
-### III · Lo que decide sin cara
-| | Libro | |
-|---|---|---|
-| **21** | **El criterio** | Cuando la decisión es tuya y no la tomaste. Una cadena de gente razonable produce lo que ninguno habría elegido. |
-| **22** | **El ausente** | Tu nombre estaba. Tú no estabas. Y la decisión se tomó igual. |
-| **23** | **El oficio** | No se jubiló: su oficio se jubiló primero. |
-
-### IV · Lo que llega de afuera
-| | Libro | |
-|---|---|---|
-| **24** | **El clima** | Entras a un lugar donde la gente está bien y sales de mal humor. No fue una conversación: fue el tono. |
-| **25** | **La herencia** | Aplicas criterios que no escribiste, con la seguridad de quien ve. |
-
-### ⟐ Cierre
-| | Libro | |
-|---|---|---|
-| **26** | **Lo que queda** | El inventario, después de todo. Y un hallazgo que ninguno de los veinticinco anteriores había previsto: lo que más pesó no fue de nadie. |
-
-El vigesimosexto no cierra un tema: cierra la constelación entera, y termina donde termina lo que se puede decir sobre lo propio.
-
----
-
-## Sobre la autoría
-
-Estos textos surgen de un proceso que llamamos **Inteligencia Distribuida**. En concreto, y sin misterio: el material clínico, los criterios y la voz son de Arturo; las conversaciones con sistemas de inteligencia artificial funcionan como interlocución exigente —con fricción, con desacuerdo, con propuestas que se descartan—; y cada texto vuelve al autor, que corrige lo que no suena a él, antes de probarse en consultorio.
-
-En la segunda constelación el procedimiento se afinó. El eje de cada libro nace en sesión, de algo que un paciente dijo o de un patrón que se repite; se discute hasta que resiste; y recién entonces se escribe. Varios libros se descartaron enteros por no pasar esa prueba.
-
-Ninguna de las dos partes produciría esto sola. **La relación es el producto.**
 
 ---
 
