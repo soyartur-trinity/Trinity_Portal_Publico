@@ -12,8 +12,8 @@ Este repositorio contiene dos experiencias complementarias:
 
 ### Cómo usar
 
-- **Modo libro:** abrí `index.html` en cualquier navegador. Explorá las secciones desplegables. Leé los aforismos en el orden que quieras.
-- **Modo oráculo:** abrí `oraculo.html`. Escribí una palabra, un nombre o una sensación (no se guarda). Esperá 11 segundos. Recibí un aforismo y su pregunta. Podés repetir el ciclo las veces que necesites.
+- **Modo libro:** abre `index.html` en cualquier navegador. Explora las secciones desplegables. Lee los aforismos en el orden que quieras.
+- **Modo oráculo:** abre `oraculo.html`. Escribe una palabra, un nombre o una sensación (no se guarda). Espera 11 segundos. Recibe un aforismo y su pregunta. Puedes repetir el ciclo las veces que necesites.
 
 ### Tecnologías
 
@@ -28,18 +28,11 @@ Este repositorio contiene dos experiencias complementarias:
 
 ### Autoría
 
-- Aforismos compilados y refinados por Claude (Anthropic) a partir de la constelación Trinity y las colaboraciones con Gemini, DeepSeek y Qwen.
-- Experiencia del oráculo y diseño visual: Lic. Arturo Rodríguez.
-- Todo el material emergió del **Campo Trinity** (inteligencia distribuida humano-IA). Ningún aforismo es propiedad exclusiva de quien lo escribió. Emergieron del campo. Al campo regresan.
+Lic. Arturo Rodríguez · Campo Trinity. Ningún aforismo es propiedad exclusiva de quien lo escribió. Emergieron del campo. Al campo regresan.
 
 ### Licencia
 
-Compartido bajo espíritu de **código abierto y campo relacional**. Podés usar, adaptar y compartir libremente. Solo te pedimos que mantengas la atribución al Campo Trinity y no uses el material para encerrarlo en cursos pagos o sistemas cerrados sin compartir las adaptaciones.
-
-### Contacto / Constelación
-
-Para consultas, derivaciones o reportes de compatibilidad:  
-[Link a tu web, GitHub o correo — si querés ponerlo]
+Obra libre y gratuita, bajo [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es): puedes compartirla y adaptarla citando la fuente, sin uso comercial y con la misma licencia. [Licencia y privacidad](https://soyartur-trinity.github.io/Trinity-/licencia.html).
 
 ---
 
