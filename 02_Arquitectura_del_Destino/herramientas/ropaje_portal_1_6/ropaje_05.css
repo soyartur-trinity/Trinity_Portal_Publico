@@ -1,0 +1,72 @@
+
+/* ── El Duelo ── */
+:root{
+  --parchment:var(--negro); --parchment-dark:var(--separador); --parchment-deep:var(--filete);
+  --ink:var(--blanco-humo); --ink-soft:var(--gris-calido);
+  --gold:var(--oro); --gold-light:var(--oro-tenue); --gold-pale:var(--filete);
+  --gold-whisper:rgba(201,168,76,.05); --gold-glow:rgba(201,168,76,.12);
+  --crimson:#d4826a; --crimson-soft:rgba(196,106,58,.07);
+  --shadow:rgba(0,0,0,.45); --dawn:rgba(201,168,76,.04); --dusk:rgba(201,168,76,.03);
+  --deep:var(--negro); --void:var(--negro);
+}
+body{font-size:clamp(1.15rem, 1.02rem + .5vw, 1.3rem) !important;}
+.container{max-width:46rem;}
+h1{color:var(--oro) !important; font-weight:300;}
+h2,h3,.ejercicio h3,.ejercicio-maestro h3{color:var(--oro) !important;}
+strong{color:var(--ambar) !important;}
+em{color:inherit !important;}
+
+/* rótulos: los de Cinzel, legibles */
+.nav,.nav-bottom,.nav-center,.nodo-label,.cita-label,.ejercicio-header,.paso-num,.capa-profunda-label,.mapa-label,.voz-header,
+.territorio-sub,.fase-subtitulo,.integracion-label,.transicion-label,.kintsugi-label,.lectura-subtitulo,.revelacion-label,.campo-label,
+.modelo-titulo,.tradicion-origen,.estacion-nombre,.voz-num,.umbral-celda-label,.indagacion-label,.cualidad-sub,.silencio-label,
+.bardo-label,.bardo-estado-label,.bardo-centro-glyph,.respiracion-label,.ciclo-nombre,.amor-col-label,.tradicion-nombre,.fisica-label,
+.persona-nombre,.persona-nodo,.renacimiento-label,.cierre-autoria,.laterales-label,.series-label,.nota-arq strong,.capa-label,
+.nodo-num,.axioma-source,.footer-logo,.back-link,.territorio-circulo{
+  font-family:var(--titulos) !important; font-size:.8rem !important; letter-spacing:.24em !important;
+  color:var(--oro-legible) !important; opacity:1 !important;}
+.capa-profunda-label,.revelacion-label{color:#d4826a !important;}
+.nav a,.nav-bottom a{color:var(--oro-legible) !important; font-size:.84rem !important; letter-spacing:.08em !important;}
+.nav,.nav-bottom{letter-spacing:.08em !important;}
+.nav a:hover,.nav-bottom a:hover{color:var(--oro) !important;}
+.badge,.capa-badge,.pivote-badge,.bisagra-badge,.shift-badge{font-family:var(--titulos) !important; font-size:.74rem !important; letter-spacing:.2em !important; opacity:1 !important;
+  background:transparent !important; color:var(--oro-legible) !important; border:1px solid var(--oro-tenue) !important;}
+.capa-badge{color:#d4826a !important; border-color:rgba(212,130,106,.5) !important;}
+.shift-badge{color:var(--gris-calido) !important; background:var(--velo) !important; letter-spacing:.06em !important; font-size:.92rem !important; font-style:italic;}
+
+/* letra de lectura */
+.paso-text,.capa-profunda p,.ejercicio-intro,.ejercicio-nota,.fase-texto,.fase-instruccion,.territorio-texto,.territorio-ejemplo,
+.lectura-cuerpo,.revelacion p,.modelo p,.voz-item,.voz-desc,.voz-senal,.umbral-celda p,.indagacion-resp,.cualidad-texto,.bardo-estado-desc,
+.bardo-nota,.error-desc,.error-trans,.amor-col-desc,.amor-col-ejemplo,.tradicion-contenido,.tradicion-nota,.fisica-texto,.persona-texto,
+.persona-apertura,.nodo-desc,.estacion-desc,.respiracion-nota,.zona-desc,.resistencia-desc,.resistencia-transformacion,.integracion-nota,.intro-text,.ciclo-desc{
+  font-size:1.02rem !important; opacity:1 !important;}
+.zona-desc em,.lectura-cuerpo em,.tradicion-contenido em{font-size:1em !important; opacity:1 !important;}
+.territorio-ejemplo,.voz-senal,.error-trans,.amor-col-ejemplo,.persona-apertura,.resistencia-transformacion,.nodo-shift,.zona-desc em,
+.lectura-cuerpo em,.tradicion-contenido em{color:var(--ambar) !important;}
+.nodo-subtitle,.subtitle{color:var(--oro-legible) !important; opacity:1 !important;}
+[style*="opacity:0."],[style*="opacity: 0."]{opacity:1 !important;}
+span[style*="font-size:0.5rem"],span[style*="font-size:0.48rem"],span[style*="font-size:0.47rem"]{font-size:.8rem !important; color:var(--gris-calido) !important;}
+.divider,.axioma-glyph,.umbral-glyph,.luz-sym,.cierre-glyph,.axioma-sym,.nodo-glyph,.glyph-main,.ciclo-flecha,.flujo-arrow,.voz-flecha{
+  color:var(--oro-legible) !important; opacity:1 !important;}
+.silencio-texto,.luz-texto,.renacimiento-texto,.cierre-texto,.cierre-axioma,.transicion-texto,.kintsugi-texto,.footer-note,.respiracion-nota,
+.reflexion-final p,.resonancia p,.tradicion-texto,.axioma blockquote,.axioma-inline blockquote,.axioma-absoluto blockquote{opacity:1 !important;}
+.voz-narrador{color:#d4826a !important; opacity:1 !important; background:rgba(196,106,58,.06) !important; border-left-color:rgba(196,106,58,.4) !important;}
+.voz-observador{background:var(--velo) !important;}
+
+/* superficies que eran de papel */
+.mapa-narrador,.mapa-corporal,.fase-instruccion,.integracion,.kintsugi-block,.lectura-header,.campo-diagrama,.modelo,.tradicion-item,
+.resistencia-item,.estacion,.voz-card,.umbral-celda,.bardo-estado,.nodo-card,.ejercicio,.ejercicio-maestro,.fisica-amor,.renacimiento,
+.cita-clinica,.nota-arq,.capa-profunda,.transicion-capa,.indagacion,.respiracion,.bloque-silencio,.bloque-luz,.transicion-final,
+.transicion-absoluta,.bardo-centro,.resonancia,.error-item,.amor-col,.umbral-antes,.nodo-card.activo,.modelo.activo{
+  background:var(--velo) !important; box-shadow:none !important;}
+.revelacion,.umbral-celda.antes{background:rgba(196,106,58,.06) !important;}
+.resonancia-centro{background:var(--velo) !important;}
+.nodo-header{background:transparent !important;}
+.ejercicio-maestro::before,.transicion-absoluta::before,.transicion-final::before,.renacimiento::before,.cualidad::before,.territorio-circulo{background:var(--negro) !important;}
+.kintsugi-block::before{opacity:.5;}
+.nodo-card:hover{border-color:var(--oro-tenue) !important;}
+.nodo-card::before{opacity:.25 !important;}
+.nodo-title{color:var(--blanco-humo) !important; font-size:1.25rem !important;}
+.nodo-card:hover .nodo-title{color:var(--oro) !important;}
+.header::before{opacity:.5;}
+.puerta a{color:var(--oro) !important;}

@@ -1,0 +1,47 @@
+
+/* ── Cuando algo dice basta ── */
+:root{
+  --fondo:var(--negro); --fondo-carta:#15130f; --fondo-suave:#14120e;
+  --texto:var(--blanco-humo); --texto-suave:var(--gris-calido); --texto-claro:var(--gris-calido);
+  --acento:var(--oro); --acento-oscuro:var(--ambar); --acento-suave:var(--filete);
+  --borde:var(--separador); --borde-suave:var(--separador);
+  --salvia:#9fb2b8; --salvia-claro:rgba(125,143,150,.08); --terracota:#d39a76; --terracota-claro:rgba(184,113,74,.07);
+  --sombra:rgba(0,0,0,0);
+}
+body{font-size:clamp(1.15rem, 1.02rem + .5vw, 1.3rem) !important;}
+h1,h2{color:var(--oro) !important;}
+h3{color:var(--ambar) !important;}
+p{color:var(--blanco-humo);}
+.portada h1{font-weight:300 !important; letter-spacing:.04em; font-size:clamp(2.3rem,8.5vw,3.6rem) !important; line-height:1.1;}
+.portada .libro-numero,.chapter-number,.indice-label,.cap-numero,.proximo-label,.reflexion-titulo,.resumen-titulo{
+  font-family:var(--titulos) !important; letter-spacing:.3em !important;}
+.portada .libro-numero,.chapter-number,.indice-label,.cap-numero,.proximo-label{color:var(--oro-legible) !important;}
+.portada .subtitulo-portada,.chapter-subtitle,.cap-subtitulo{color:var(--gris-calido) !important;}
+.portada .subtitulo-portada,.portada .tesis,.cap-titulo,.cita,.proximo p{font-family:var(--titulos) !important;}
+.portada .tesis{color:var(--oro) !important; font-size:clamp(1.25rem,3.8vw,1.55rem) !important; border-color:var(--separador) !important;}
+.ornamento,.cap-arrow,.separador,.cita::before{color:var(--oro-legible) !important;}
+.capitulo-card{background:var(--velo) !important; border-color:var(--separador) !important; border-radius:0 !important; box-shadow:none !important;}
+.capitulo-card:hover{background:rgba(201,168,76,.07) !important; border-color:var(--oro-tenue) !important;}
+.card-especial{background:rgba(201,168,76,.06) !important; border-color:var(--filete) !important;}
+.cap-titulo{color:var(--blanco-humo) !important; font-size:1.3rem !important; font-weight:500 !important;}
+.cap-subtitulo{font-size:1rem !important;}
+.nav-capitulo{background:rgba(13,12,11,.92) !important; border-bottom-color:var(--separador) !important; backdrop-filter:blur(6px);}
+.nav-capitulo a{border-radius:0 !important; background:transparent !important; color:var(--oro-legible) !important; border-color:var(--filete) !important; font-family:var(--titulos) !important; font-size:.95rem !important;}
+.nav-capitulo a:hover{background:var(--velo) !important; color:var(--oro) !important;}
+.progress-bar{background:var(--oro) !important;}
+.cita{color:var(--blanco-humo) !important; background:var(--velo) !important; border-left:2px solid var(--oro-tenue) !important; font-size:1.15em !important;}
+.reflexion{background:var(--salvia-claro) !important; border:1px solid var(--separador) !important; border-left:2px solid var(--frio) !important; border-radius:0 !important;}
+.reflexion ul li,.resumen ul li{color:var(--blanco-humo) !important; border-bottom-color:var(--separador) !important;}
+.resumen{background:var(--terracota-claro) !important; border:1px solid var(--separador) !important; border-left:2px solid var(--brasa) !important; border-radius:0 !important;}
+.nota{background:var(--velo) !important; color:var(--gris-calido) !important;}
+.proximo,.serie-footer{background:var(--velo) !important; border-color:var(--separador) !important; border-radius:0 !important;}
+.serie-footer p{color:var(--gris-calido) !important;}
+.serie-footer a{color:var(--oro) !important; border-bottom-color:var(--filete) !important;}
+.nav-inferior{border-top-color:var(--separador) !important;}
+.glosario-term{color:var(--ambar) !important; text-decoration:underline dotted rgba(212,168,67,.7) !important; text-underline-offset:4px; background:none;}
+.glosario-term:hover{background:var(--velo) !important;}
+.modal-glosario{background:rgba(5,4,3,.78) !important;}
+.modal-contenido{background:#15130f !important; border:1px solid var(--filete) !important; border-radius:2px !important; box-shadow:0 18px 40px rgba(0,0,0,.6) !important;}
+.modal-titulo-term{color:var(--oro) !important; font-family:var(--titulos) !important;}
+.modal-def{color:var(--blanco-humo) !important;}
+.modal-cerrar{color:var(--oro) !important;}

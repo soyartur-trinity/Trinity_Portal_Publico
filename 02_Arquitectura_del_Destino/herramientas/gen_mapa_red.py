@@ -42,7 +42,7 @@ INFINITO = ['Más allá del ser y no-ser', 'La consciencia sin objeto', 'El jueg
             'El punto sin dimensión', 'Tiempo antes del tiempo', 'La creatividad increada',
             'Causalidad circular', 'La palabra antes del verbo', '∞']
 PORTAL = ['Empatía Humana', 'La Voz Interior', 'Encuentro Real', 'Asertividad Consciente', 'El Duelo',
-          'Cuando algo en vos dice basta', 'Arquitectura del Destino', 'Atender', 'Volver distinto',
+          'Cuando algo en ti dice basta', 'Arquitectura del Destino', 'Atender', 'Volver distinto',
           'El sentido de la vuelta', 'Atravesar', 'Cultivar', 'Volver al centro',
           'Bien', 'El tercero', 'Lo que queda dicho', 'Ídolo', 'Lo que se escapa', 'La división',
           'El ayudante', 'El criterio', 'El ausente', 'El oficio', 'El clima', 'La herencia', 'Lo que queda',

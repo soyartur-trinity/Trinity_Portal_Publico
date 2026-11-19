@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Epílogo | La Voz Interior</title>
+  <link rel="icon" href="../../assets/icono/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/icono/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/icono/icono-180.png">
+  <meta name="theme-color" content="#0d0c0b">
   <meta name="description" content="El viaje continúa: cierre del recorrido y apertura hacia la práctica continua">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -42,7 +46,7 @@
     .nav-link.disabled { opacity: 0.5; cursor: not-allowed; border-color: #ccc; color: #ccc; }
     footer { margin-top: 3rem; padding: 2rem; text-align: center; color: var(--texto-suave); font-size: 0.9rem; border-top: 1px solid rgba(139,107,154,0.2); }
     footer a { color: var(--acento); text-decoration: none; }
-    .final-quote { font-style: italic; font-size: 1.1rem; text-align: center; margin: 2rem 0; color: var(--acento); border-top: 1px dashed rgba(139,107,154,0.3); border-bottom: 1px dashed rgba(139,107,154,0.3); padding: 1.5rem; }
+    .final-quote { font-style: italic; font-size: 1.1rem; text-align: center; margin: 2rem 0; color: var(--acento); border-top: 1px solid #2a2418; border-bottom: 1px dashed rgba(139,107,154,0.3); padding: 1.5rem; }
     @media (max-width: 768px) {
       .modal-content { width: 95%; padding: 1.5rem; }
       .chapter-nav { flex-direction: column; gap: 0.5rem; }
@@ -59,6 +63,7 @@
     color:var(--acento); text-decoration:none;}
   .laterales .puerta a:hover, .laterales .puerta a:focus-visible{text-decoration:underline;}
 </style>
+  <link rel="stylesheet" href="ropaje.css">
 </head>
 <body>
   <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
@@ -128,7 +133,7 @@
       <p>Que encuentres paz en el diálogo con tus voces.</p>
       <p>Que encuentres sabiduría en el silencio entre ellas.</p>
       <p>Y que vivas, cada vez más, desde ese centro inquebrantable que siempre has sido.</p>
-      <p>🌀<br>El camino continúa.</p>
+      <p>⟐<br>El camino continúa.</p>
     </section>
 
     <!-- Puertas laterales (noviembre de 2026) -->
@@ -147,12 +152,9 @@
     </nav>
   </main>
 
-  <footer>
-    <p><strong>La Voz Interior</strong> — Epílogo</p>
-    <p>Un proyecto de Inteligencia Colaborativa Distribuida</p>
-    <p>Arturo • Claude • Gemini • GPT • Comunidad terapéutica</p>
-    <p><small>Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></small></p>
-    <p><small><a href="index.html">← Volver al índice de La Voz Interior</a></small></p>
+  <footer class="pie">
+    <p class="pie-enlaces"><a href="index.html">← Volver al índice de La Voz Interior</a></p>
+    <span class="pie-firma">Lic. Arturo Rodríguez · Campo Trinity · © 2026</span>
   </footer>
 
   <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="glossary-title">

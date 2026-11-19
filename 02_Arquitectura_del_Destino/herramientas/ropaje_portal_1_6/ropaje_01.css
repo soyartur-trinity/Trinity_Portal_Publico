@@ -1,0 +1,36 @@
+
+/* ── Empatía Humana ── */
+:root{
+  --fondo:var(--negro); --texto:var(--blanco-humo); --primario:var(--brasa); --secundario:var(--oro-legible);
+  --acento:var(--oro); --borde:var(--separador); --blanco:#15130f;
+}
+body{font-size:clamp(1.15rem, 1.02rem + .5vw, 1.3rem) !important;}
+p{text-align:left;}
+.hero p{text-align:center !important;}
+em{color:inherit !important;}
+.container{max-width:46rem;}
+header{border-bottom:1px solid var(--separador) !important;}
+.numero-capitulo,.capitulo-numero{font-family:var(--titulos) !important; letter-spacing:.32em !important; color:var(--oro-legible) !important;}
+h1{font-weight:300; letter-spacing:.03em;}
+.subtitulo{color:var(--gris-calido) !important; font-style:italic;}
+nav{background:rgba(13,12,11,.92) !important; border-bottom:1px solid var(--separador) !important; backdrop-filter:blur(6px);}
+nav a{color:var(--oro-legible) !important; font-family:var(--titulos) !important; font-size:1.05rem;}
+nav a:hover{color:var(--oro) !important;}
+h2{color:var(--oro) !important;}
+.caso-clinico{background:rgba(184,113,74,.07) !important;}
+.ejercicio-practico{border:1px solid var(--separador) !important; border-left:2px solid var(--ambar) !important;}
+.separador{color:var(--oro-legible) !important;}
+.nav-capitulos{border-color:var(--separador) !important;}
+.nav-capitulos a{font-family:var(--titulos) !important; font-size:1.08rem; color:var(--oro) !important; border:1px solid var(--filete) !important; border-radius:0 !important; background:transparent !important;}
+.nav-capitulos a:hover{background:var(--velo) !important; color:var(--ambar) !important; border-color:var(--oro-tenue) !important;}
+/* índice */
+.hero{background:transparent !important; border-bottom:1px solid var(--separador) !important; padding:5rem 1.5rem 3.5rem !important;}
+.hero h1{color:var(--oro) !important; font-size:clamp(2.4rem,9vw,4rem) !important; letter-spacing:.06em; line-height:1.08;}
+.hero .subtitulo{font-family:var(--titulos) !important; font-size:clamp(1.15rem,3.4vw,1.4rem) !important;}
+.introduccion{font-size:1.08em !important;}
+.capitulo-card{background:var(--velo) !important; border:1px solid var(--separador) !important; border-radius:0 !important;}
+.capitulo-card:hover{border-color:var(--oro-tenue) !important; box-shadow:none !important;}
+.capitulo-titulo{font-family:var(--titulos) !important; color:var(--blanco-humo) !important; font-weight:500 !important;}
+.capitulo-card:hover .capitulo-titulo{color:var(--oro) !important;}
+.capitulo-descripcion{color:var(--gris-calido) !important; font-size:1rem !important;}
+@media (max-width:768px){ .capitulos-grid{grid-template-columns:1fr !important;} }

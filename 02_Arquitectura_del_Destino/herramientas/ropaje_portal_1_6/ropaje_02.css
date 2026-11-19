@@ -1,0 +1,30 @@
+
+/* ── La Voz Interior ── */
+:root{
+  --fondo:var(--negro); --acento:var(--oro); --primario:var(--brasa); --secundario:var(--ambar);
+  --texto:var(--blanco-humo); --texto-suave:var(--gris-calido);
+  --caso-clinico:rgba(184,113,74,.07); --ejercicio-practico:rgba(212,168,67,.06);
+  --tecnica-practica:rgba(125,143,150,.08); --nota-importante:rgba(201,168,76,.05);
+  --borde-suave:var(--separador); --borde-acento:var(--filete);
+  --sombra:none;
+}
+body{max-width:46rem; padding:0 1.5rem 3rem;}
+h1{font-size:clamp(2.3rem,7.5vw,3.4rem);}
+h2{font-size:clamp(1.65rem,5vw,2.15rem);}
+h3{font-size:clamp(1.35rem,4vw,1.6rem);}
+h4{font-size:1.2rem;}
+
+/* portada */
+.cover{border-bottom:1px solid var(--separador) !important; padding:4.5rem 1rem 3rem !important;}
+.cover h1{color:var(--oro); font-weight:300; letter-spacing:.05em; line-height:1.08;}
+.cover .subtitle{font-family:var(--titulos); color:var(--gris-calido); font-size:clamp(1.15rem,3.4vw,1.4rem); letter-spacing:.04em;}
+.toc h2{font-size:.85rem; letter-spacing:.4em; text-transform:uppercase; color:var(--oro-legible); font-weight:500;}
+.toc-part h3{font-size:.82rem; letter-spacing:.3em; text-transform:uppercase; color:var(--oro-legible);
+  border-bottom:1px solid var(--separador) !important; font-weight:500;}
+.toc-list li{border-left:1px solid var(--oro-tenue) !important;}
+.toc-list li:hover{background:var(--velo) !important;}
+.toc-list a{color:var(--blanco-humo); font-family:var(--titulos) !important; font-size:1.22rem; font-weight:500; text-decoration:none;}
+.toc-list a:hover{color:var(--oro);}
+.glossary-note{color:var(--gris-calido) !important; font-size:1rem !important;}
+
+@media (max-width:768px){ body{padding:0 1.15rem 2rem;} }

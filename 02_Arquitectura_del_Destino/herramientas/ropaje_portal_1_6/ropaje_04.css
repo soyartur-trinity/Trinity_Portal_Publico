@@ -1,0 +1,61 @@
+
+/* ── Asertividad Consciente ── */
+:root{
+  --fondo:var(--negro); --texto:var(--blanco-humo); --texto-suave:var(--gris-calido);
+  --acento:var(--oro); --secundario:var(--oro-legible); --terracota:var(--brasa);
+  --borde:var(--separador); --blanco:#15130f; --sombra:rgba(0,0,0,0);
+  --caso-clinico-bg:rgba(184,113,74,.07); --ejercicio-bg:rgba(212,168,67,.06);
+  --tecnica-bg:rgba(125,143,150,.08); --nota-bg:rgba(201,168,76,.05);
+}
+body{font-size:clamp(1.15rem, 1.02rem + .5vw, 1.3rem) !important;}
+main,.container{max-width:46rem;}
+p{text-align:left !important;}
+em{color:inherit !important;}
+section h2{border-bottom-color:var(--separador) !important;}
+section h3{color:#d39a76;}
+
+/* índice */
+.nav-portal{background:rgba(13,12,11,.92) !important; border-bottom:1px solid var(--separador) !important; backdrop-filter:blur(6px);}
+.nav-portal a{color:var(--oro-legible) !important; font-family:var(--titulos) !important; font-size:1rem; letter-spacing:.06em;}
+.nav-portal .breadcrumb{color:var(--gris-calido) !important;}
+.hero{background:transparent !important; border-bottom:1px solid var(--separador) !important;}
+.hero::before{display:none;}
+.libro-badge{background:transparent !important; color:var(--oro-legible) !important; border:1px solid var(--filete); border-radius:0 !important;
+  font-family:var(--titulos) !important; letter-spacing:.35em !important;}
+.hero h1{color:var(--oro) !important; font-weight:300; letter-spacing:.04em;}
+.hero .subtitulo{color:var(--gris-calido) !important; opacity:1 !important; font-family:var(--titulos) !important; font-size:clamp(1.15rem,3.4vw,1.4rem) !important;}
+.nota-autoria,.sobre-libro{background:var(--velo) !important; border-left:2px solid var(--oro-tenue) !important; border-radius:0 !important;}
+.partes-titulo,.hermanos-titulo{color:var(--oro-legible) !important; font-family:var(--titulos) !important; letter-spacing:.35em !important;}
+.parte-card,.hermano-card{background:var(--velo) !important; border:1px solid var(--separador) !important; border-radius:0 !important; box-shadow:none !important;}
+.parte-card:hover,.hermano-card:hover{border-color:var(--oro-tenue) !important;}
+.parte-numeral,.cap-numero,.hermano-num{color:var(--oro-legible) !important; font-family:var(--titulos) !important;}
+.parte-nombre,.hermano-nombre{color:var(--oro) !important; font-family:var(--titulos) !important; font-size:1.25rem !important; font-weight:500 !important;}
+.parte-desc{color:var(--gris-calido) !important; font-size:1rem !important;}
+.indice-titulo{color:var(--oro) !important; border-bottom-color:var(--separador) !important; font-family:var(--titulos) !important;}
+.capitulo-item{border-bottom-color:var(--separador) !important;}
+.capitulo-item:hover{background:var(--velo) !important;}
+.capitulo-item a{color:var(--blanco-humo) !important; font-family:var(--titulos) !important; font-size:1.25rem !important; font-weight:500;}
+.capitulo-item a:hover{color:var(--oro) !important;}
+.cap-parte{color:var(--oro-legible) !important; background:transparent !important; border:1px solid var(--separador);}
+.cap-subtitulo{color:var(--gris-calido) !important; font-size:1rem !important;}
+.separador{opacity:1 !important;}
+
+/* capítulos */
+.chapter-nav{background:transparent !important; border-bottom:1px solid var(--separador) !important;}
+.nav-centro{color:var(--gris-calido) !important;}
+.nav-centro a{color:var(--oro-legible) !important;}
+.parte-badge{background:transparent !important; color:var(--oro-legible) !important; border:1px solid var(--separador); font-family:var(--titulos) !important;}
+.caso-clinico,.ejercicio-practico,.tecnica-practica,.nota-importante{font-size:1em !important;}
+.tabla-comparativa th{background:var(--velo) !important; color:var(--oro) !important;}
+.tabla-comparativa td{border-bottom-color:var(--separador) !important;}
+.tabla-comparativa tr:nth-child(even) td{background:rgba(201,168,76,.025) !important;}
+.tabla-comparativa tr:hover td{background:var(--velo) !important;}
+.col-asertivo{color:var(--ambar) !important;} .col-reactivo{color:#d39a76 !important;}
+.link-cruzado,.link-voz-interior{color:var(--oro) !important; border-bottom-color:var(--oro-tenue) !important;}
+.bloque-cruzado{background:var(--velo) !important; border:1px solid var(--separador) !important; border-radius:0 !important;}
+.bloque-cruzado::before{color:var(--oro);}
+.resumen-capitulo{background:var(--velo) !important; border-left:2px solid var(--oro-tenue) !important; border-radius:0 !important;}
+.proximo{background:var(--velo) !important; border:1px solid var(--separador) !important; border-radius:0 !important;}
+.modal-header{border-bottom-color:var(--separador) !important; color:var(--oro);}
+.proximo,.proximo p,.resumen-capitulo .proximo{font-size:1.05rem !important;}
+.tabla-comparativa{font-size:1rem !important;}

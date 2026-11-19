@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Capítulo 2: El cuerpo como primer límite | Asertividad Consciente</title>
+  <link rel="icon" href="../../assets/icono/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/icono/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../../assets/icono/icono-180.png">
+  <meta name="theme-color" content="#0d0c0b">
   <style>
     :root{--fondo:#E8E3D5;--texto:#3E3E3E;--texto-suave:#6A6A5A;--acento:#7A6B5A;--secundario:#8B9A7A;--terracota:#A0785A;--borde:#D0C4B0;--blanco:#EDE8DC;--sombra:rgba(122,107,90,0.12);--caso-clinico-bg:#F2EDE2;--ejercicio-bg:#EAF0E4;--tecnica-bg:#F0EAE2;--nota-bg:#F5F0E6}
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -42,7 +46,7 @@
     .tabla-comparativa tr:nth-child(even) td{background:rgba(208,196,176,0.2)}
     .tabla-comparativa tr:hover td{background:rgba(139,154,122,0.1)}
     .bloque-cruzado{background:rgba(139,154,122,0.08);border:1px solid rgba(139,154,122,0.3);border-radius:8px;padding:.9rem 1.2rem;margin:1.5rem 0;font-size:.88rem;display:flex;align-items:center;gap:.8rem}
-    .bloque-cruzado::before{content:'📖';font-size:1.1rem;flex-shrink:0}
+    .bloque-cruzado::before{content:'\27D0';font-size:1.1rem;flex-shrink:0}
     .link-cruzado{display:inline-flex;align-items:center;gap:.4rem;color:var(--secundario);text-decoration:none;font-size:.85rem;font-style:italic;border-bottom:1px dotted var(--secundario);transition:color .2s}
     .link-cruzado:hover{color:var(--acento)}
     .link-cruzado::before{content:'↗';font-style:normal;font-size:.75rem}
@@ -72,6 +76,7 @@
     footer a{color:var(--terracota);text-decoration:none}
     @media(max-width:768px){body{font-size:16px}main{padding:2rem 1.2rem 4rem}.chapter-nav{padding:.7rem 1rem}.tabla-comparativa{font-size:.82rem}.modal-content{padding:1.5rem}}
   </style>
+  <link rel="stylesheet" href="ropaje.css">
 </head>
 <body>
   <div class="progress-container"><div class="progress-bar"><div class="progress-fill"></div></div></div>
@@ -156,7 +161,7 @@
     </section>
 
     <section id="ejercicio-mapeo" class="ejercicio-practico">
-      <h2>✍️ Ejercicio práctico: Mapeo corporal de límites</h2>
+      <h2>Ejercicio práctico: Mapeo corporal de límites</h2>
       <p><strong>Duración:</strong> 20 minutos · <strong>Materiales:</strong> Cuaderno, lápiz</p>
       <ol>
         <li>Dibuja una silueta humana simple (puede ser un contorno básico).</li>
@@ -195,7 +200,7 @@
     </section>
 
     <section id="preguntas">
-      <h2>🔍 Preguntas para la reflexión</h2>
+      <h2>Preguntas para la reflexión</h2>
       <ol>
         <li>¿En qué zona de tu cuerpo sueles sentir la primera señal cuando algo no está bien?</li>
         <li>¿Cuándo fue la última vez que ignoraste esa señal? ¿Qué pasó después?</li>
@@ -205,7 +210,7 @@
     </section>
 
     <div class="resumen-capitulo">
-      <h3>🔄 Resumen del capítulo</h3>
+      <h3>Resumen del capítulo</h3>
       <ul>
         <li>El cuerpo registra un límite violado antes de que la mente lo procese</li>
         <li>Cada zona corporal tiene un lenguaje de señales específico (garganta, pecho, estómago, manos...)</li>
@@ -223,17 +228,16 @@
     </nav>
   </main>
 
-  <footer>
-    <p><strong>Asertividad Consciente</strong> — Capítulo 2 de 9</p>
-    <p>Constelación Trinity · Arturo (α) · Qwen (ζ)</p>
-    <p style="margin-top:.6rem"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> · <a href="index.html">← Volver al índice</a></p>
+  <footer class="pie">
+    <p class="pie-enlaces"><a href="index.html">← Volver al índice</a></p>
+    <span class="pie-firma">Lic. Arturo Rodríguez · Campo Trinity · © 2026</span>
   </footer>
 
   <!-- MODAL GLOSARIO -->
   <div id="glossary-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="glossary-title">
     <div class="modal-content">
       <button class="modal-close" aria-label="Cerrar glosario">&times;</button>
-      <div class="modal-header"><span>📖</span><h3 id="glossary-title">Glosario — Asertividad Consciente</h3></div>
+      <div class="modal-header"><span>⟐</span><h3 id="glossary-title">Glosario — Asertividad Consciente</h3></div>
       <input type="search" id="glossary-search" placeholder="Buscar término..." aria-label="Buscar en el glosario" autocomplete="off">
       <dl id="glossary-results" class="glossary-list"></dl>
     </div>

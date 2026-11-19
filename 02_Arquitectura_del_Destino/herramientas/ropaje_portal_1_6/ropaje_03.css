@@ -1,0 +1,33 @@
+
+/* ── Encuentro Real ── */
+:root{
+  --fondo:var(--negro); --texto:var(--blanco-humo); --primario:var(--gris-calido); --secundario:var(--oro-legible);
+  --acento:var(--oro); --borde:var(--separador); --blanco:#15130f;
+}
+body{font-size:clamp(1.15rem, 1.02rem + .5vw, 1.3rem) !important;}
+em{color:inherit !important;}
+p{text-align:left;}
+.container,.contenido-libro{max-width:46rem;}
+nav{background:rgba(13,12,11,.92) !important; border-bottom:1px solid var(--separador) !important; backdrop-filter:blur(6px);}
+nav a{color:var(--oro-legible) !important; font-family:var(--titulos) !important; font-size:1.05rem;}
+nav a:hover{color:var(--oro) !important;}
+/* índice */
+.hero{background:transparent !important; border-bottom:1px solid var(--separador) !important;}
+.hero h1{color:var(--oro) !important; font-weight:300; font-size:clamp(2.4rem,9vw,4rem) !important; letter-spacing:.06em; line-height:1.08;}
+.hero .subtitulo{color:var(--gris-calido) !important; font-family:var(--titulos) !important; font-style:italic; font-size:clamp(1.15rem,3.4vw,1.4rem) !important;}
+.territorio-card{background:var(--velo) !important; border:1px solid var(--separador) !important; border-radius:0 !important; color:var(--blanco-humo) !important;}
+.territorio-card:hover{border-color:var(--oro-tenue) !important; box-shadow:none !important;}
+.territorio-numero{color:var(--oro-legible) !important; font-family:var(--titulos) !important; letter-spacing:.3em;}
+.territorio-titulo{color:var(--oro) !important; font-family:var(--titulos) !important;}
+.territorio-descripcion{color:var(--gris-calido) !important; font-size:1rem !important;}
+.titulo-seccion{color:var(--oro) !important;}
+.info-estructura,.nota-lectura{color:var(--gris-calido) !important; background:var(--velo) !important; font-size:1.02rem !important;}
+.nota-distribuida,.introduccion p{font-size:1.02rem !important;}
+.separador,.simbolo-separador{color:var(--oro-legible) !important;}
+/* lectura */
+.prologo-header{border-bottom:1px solid var(--separador) !important;}
+.prologo-header h1{color:var(--oro) !important; font-weight:300;}
+.prologo-texto .destacado{border-left:2px solid var(--oro-tenue) !important; color:var(--blanco-humo) !important; background:var(--velo) !important;}
+.prologo-texto .frase-central,.frase-central{color:var(--oro) !important; font-family:var(--titulos) !important;}
+.nav-inferior{border-top:1px solid var(--separador) !important;}
+.nota-importante{border-left-color:var(--oro-tenue) !important;}
