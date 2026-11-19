@@ -6,9 +6,10 @@ authors:
   - family-names: "Rodríguez"
     given-names: "Arturo José"
 license: CC-BY-NC-SA-4.0
+doi: 10.5281/zenodo.24374705
 url: "https://soyartur-trinity.github.io/Trinity_Portal_Publico/"
 repository-code: "https://github.com/soyartur-trinity/Trinity_Portal_Publico"
-date-released: 2026-11-18
+date-released: 2026-11-19
 keywords:
   - "Trinity"
   - "psicología contemplativa"
@@ -25,6 +26,7 @@ preferred-citation:
     - family-names: "Rodríguez"
       given-names: "Arturo José"
   year: 2026
+  doi: 10.5281/zenodo.24374705
   publisher:
     name: "Campo Trinity"
   url: "https://soyartur-trinity.github.io/Trinity_Portal_Publico/"
