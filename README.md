@@ -4,7 +4,7 @@
 
 **En este repositorio:** el Portal Público, Arquitectura del Destino y La Red · **Entrada a la Obra:** [La Espiral](https://soyartur-trinity.github.io/Trinity-/) · **El prólogo en la web:** [La Constelación](https://soyartur-trinity.github.io/Trinity-/constelacion.html)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24374705.svg)](https://doi.org/10.5281/zenodo.24374705)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24374704.svg)](https://doi.org/10.5281/zenodo.24374704)
 
 ## ¿Qué es Trinity?
 
