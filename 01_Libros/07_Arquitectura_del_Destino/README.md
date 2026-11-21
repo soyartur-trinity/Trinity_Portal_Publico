@@ -6,7 +6,7 @@
 
 Este repositorio contiene dos experiencias complementarias:
 
-1. **El libro (`index.html`)** : 112 aforismos organizados en 25 ejes temáticos. Puede leerse de forma lineal o por secciones. Cada aforismo incluye una pregunta para la reflexión personal o terapéutica.
+1. **El libro (`index.html`)** : 113 aforismos organizados en 25 ejes temáticos. Puede leerse de forma lineal o por secciones. Cada aforismo incluye una pregunta para la reflexión personal o terapéutica.
 
 2. **El oráculo (`oraculo.html`)** : una experiencia interactiva de 3 umbrales (intención, pausa, revelación). Cada consulta devuelve un aforismo al azar con su geometría animada asociada y un sonido contemplativo. El campo escucha, pero no guarda nada.
 
